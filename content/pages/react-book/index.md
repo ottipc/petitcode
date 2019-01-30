@@ -1,5 +1,5 @@
 ---
-slug: "/react-book"
+slug: "react-book"
 date: "2017-07-14T03:49:16.408Z"
 title: "The Road to learn React"
 description: "The Road to learn React Description ..."

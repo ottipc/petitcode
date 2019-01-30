@@ -1,114 +1,110 @@
-const path = require('path');
-const componentWithMDXScope = require('gatsby-mdx/component-with-mdx-scope');
+const { resolve } = require('path')
 
-const PAGINATION_OFFSET = 2;
+const { createLocalizedPath } = require('./src/utils/i18n')
+const { defaultLocale } = require('./src/data/languages')
 
-const pluckCategories = edges =>
-  Object.keys(
-    edges.reduce((acc, value) => {
-      value.node.fields.categories.forEach(category => {
-        if (!acc[category]) {
-          acc[category] = category;
-        }
-      });
+exports.onCreateNode = (all) => {
+  const { node, actions } = all
+  const { createNodeField } = actions
 
-      return acc;
-    }, {}),
-  );
+  if (node.internal.type === `Mdx`) {
+    const {
+      frontmatter: { slug: frontmatterSlug },
+      fileAbsolutePath
+    } = node
 
-const groupByCategory = edges =>
-  edges.reduce((acc, value) => {
-    value.node.fields.categories.forEach(category => {
-      if (!acc[category]) {
-        acc[category] = [];
-      }
-      acc[category].push(value);
-    });
-    return acc;
-  }, {});
+    // Extract human identifier and locale from the file path
+    const pathRegex = /\/([^/]+?)\/[^/]+?(?:\.([a-z-]+))?\.md$/i
+    let [all, humanId, locale] = pathRegex.exec(fileAbsolutePath)
 
-const createCategoryPages = (createPage, edges) => {
-  const categories = pluckCategories(edges);
-
-  const posts = groupByCategory(edges);
-
-  Object.keys(posts).forEach(category => {
-    createPaginatedPages(
-      createPage,
-      posts[category],
-      `/categories/${category}`,
-      { categories, activeCategory: category },
-    );
-  });
-};
-
-const createPosts = (createPage, edges) => {
-  edges.forEach(({ node }, i) => {
-    const prev = i === 0 ? null : edges[i - 1].node;
-    const next = i === edges.length - 1 ? null : edges[i + 1].node;
-
-    createPage({
-      path: node.fields.slug,
-      component: componentWithMDXScope(
-        path.resolve(`./src/templates/post.js`),
-        node.code.scope,
-        __dirname,
-      ),
-      context: {
-        id: node.id,
-        prev,
-        next,
-      },
-    });
-  });
-};
-
-const createBlog = (createPage, edges) => {
-  const categories = pluckCategories(edges);
-
-  createPaginatedPages(createPage, edges, '/blog', { categories });
-};
-
-const createPaginatedPages = (
-  createPage,
-  edges,
-  pathPrefix,
-  context,
-) => {
-  const pages = edges.reduce((acc, value, index) => {
-    const pageIndex = Math.floor(index / PAGINATION_OFFSET);
-
-    if (!acc[pageIndex]) {
-      acc[pageIndex] = [];
+    if (!all) {
+      throw new Error(
+        `Unable to extract metadata from path "${fileAbsolutePath}"`
+      )
     }
 
-    acc[pageIndex].push(value.node.id);
+    // Fallback to default locale if locale was forgotten by author
+    locale = locale || defaultLocale
 
-    return acc;
-  }, []);
+    // Fallback to human id when slug was forgotten by author
+    const slug = frontmatterSlug || humanId
 
-  pages.forEach((page, index) => {
-    const previousPagePath = `${pathPrefix}/${index + 1}`;
-    const nextPagePath =
-      index === 1 ? pathPrefix : `${pathPrefix}/${index - 1}`;
-
-    createPage({
-      path: index > 0 ? `${pathPrefix}/${index}` : `${pathPrefix}`,
-      component: path.resolve(`src/templates/blog.js`),
-      context: {
-        pagination: {
-          page,
-          nextPagePath: index === 0 ? null : nextPagePath,
-          previousPagePath:
-            index === pages.length - 1 ? null : previousPagePath,
-          pageCount: pages.length,
-          pathPrefix,
+    console.log(
+      JSON.stringify(
+        {
+          fileAbsolutePath,
+          locale,
+          defaultLocale,
+          slug,
+          frontmatterSlug,
+          humanId
         },
-        ...context,
-      },
-    });
-  });
-};
+        null,
+        2
+      )
+    )
+
+    createNodeField({
+      name: 'id',
+      node,
+      value: node.id
+    })
+
+    createNodeField({
+      name: 'locale',
+      node,
+      value: locale
+    })
+
+    createNodeField({
+      name: 'humanId',
+      node,
+      value: humanId
+    })
+
+    createNodeField({
+      name: 'slug',
+      node,
+      value: slug
+    })
+
+    createNodeField({
+      name: 'title',
+      node,
+      value: node.frontmatter.title
+    })
+
+    createNodeField({
+      name: 'description',
+      node,
+      value: node.frontmatter.description
+    })
+
+    createNodeField({
+      name: 'date',
+      node,
+      value: node.frontmatter.date || ''
+    })
+
+    createNodeField({
+      name: 'banner',
+      node,
+      banner: node.frontmatter.banner
+    })
+
+    createNodeField({
+      name: 'categories',
+      node,
+      value: node.frontmatter.categories || []
+    })
+
+    createNodeField({
+      name: 'keywords',
+      node,
+      value: node.frontmatter.keywords || []
+    })
+  }
+}
 
 exports.createPages = ({ actions, graphql }) =>
   graphql(`
@@ -117,10 +113,12 @@ exports.createPages = ({ actions, graphql }) =>
         edges {
           node {
             id
+            fileAbsolutePath
             excerpt(pruneLength: 250)
             fields {
               title
               slug
+              locale
               categories
             }
             code {
@@ -132,79 +130,35 @@ exports.createPages = ({ actions, graphql }) =>
     }
   `).then(({ data, errors }) => {
     if (errors) {
-      return Promise.reject(errors);
+      return Promise.reject(errors)
     }
 
-    const { edges } = data.allMdx;
+    const { edges } = data.allMdx
 
-    createBlog(actions.createPage, edges);
-    createPosts(actions.createPage, edges);
-    createCategoryPages(actions.createPage, edges);
-  });
+    edges.forEach((edge) => {
+      const {
+        id,
+        fields: { slug, locale }
+      } = edge.node
+      const path = createLocalizedPath({ slug, locale })
+
+      actions.createPage({
+        path,
+        component: resolve(`./src/templates/page.js`),
+        context: {
+          id
+        }
+      })
+    })
+  })
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      modules: [resolve(__dirname, 'src'), 'node_modules'],
       alias: {
-        $components: path.resolve(__dirname, 'src/components'),
-      },
-    },
-  });
-};
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent);
-
-    createNodeField({
-      name: 'id',
-      node,
-      value: node.id,
-    });
-
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title,
-    });
-
-    createNodeField({
-      name: 'description',
-      node,
-      value: node.frontmatter.description,
-    });
-
-    createNodeField({
-      name: 'slug',
-      node,
-      value: node.frontmatter.slug,
-    });
-
-    createNodeField({
-      name: 'date',
-      node,
-      value: node.frontmatter.date || '',
-    });
-
-    createNodeField({
-      name: 'banner',
-      node,
-      banner: node.frontmatter.banner,
-    });
-
-    createNodeField({
-      name: 'categories',
-      node,
-      value: node.frontmatter.categories || [],
-    });
-
-    createNodeField({
-      name: 'keywords',
-      node,
-      value: node.frontmatter.keywords || [],
-    });
-  }
-};
+        $components: resolve(__dirname, 'src/components/mdx')
+      }
+    }
+  })
+}
