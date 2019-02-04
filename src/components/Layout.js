@@ -30,8 +30,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p:last-child {
-    margin-bottom: 0;
+  h1, h2, h3, h4, h5, h6, p {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `
 
@@ -122,7 +124,7 @@ const Wrapper = styled.div`
   transition: 0.3s transform linear;
 `
 
-export default class Layout extends React.Component {
+export default class Layout extends React.PureComponent {
   static propTypes = {
     children: propTypes.node.isRequired
   }

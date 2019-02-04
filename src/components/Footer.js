@@ -6,6 +6,8 @@ import GridWrapper from './GridWrapper'
 import LanguageSelect from './LanguageSelect'
 
 const FooterWrapper = styled.footer`
+  position: relative;
+  z-index: 200;
   padding: ${({ theme }) => theme.spacingUnit * 4}px 0
     ${({ theme }) => theme.spacingUnit * 2}px;
 `

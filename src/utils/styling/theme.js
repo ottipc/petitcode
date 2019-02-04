@@ -25,7 +25,7 @@ module.exports = {
   },
   fonts: {
     header: [
-      'Oswald',
+      'Fira Sans',
       'Helvetica Neue',
       'Segoe UI',
       'Helvetica',

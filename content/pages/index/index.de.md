@@ -5,14 +5,70 @@ title: "petitcode"
 description: "Sehr sehr wichtige beschreibung ..."
 ---
 
-Ja, wir finden auch, dass man über die Copy noch mal reden sollte. Das hier kann es jedenfalls nicht sein. Das klingt ja wie auf dem Totenbett getextet. Da muss wesentlich mehr Produktaussage rein. Ja, wir finden auch, dass man über die Copy noch mal reden sollte. Das hier kann es jedenfalls nicht sein. Das klingt ja wie auf dem Totenbett getextet. Da muss wesentlich mehr Produktaussage rein.
+import Sections from "$components/Sections";
+import Section from "$components/Section";
+import Grid from "$components/Grid";
 
-## Jetzt mal ganz ehrlich
+<Sections>
+<Section>
 
-Ja, wir finden auch, dass man über die Copy noch mal reden sollte. Das hier kann es jedenfalls nicht sein. Das klingt ja wie auf dem Totenbett getextet. Da muss wesentlich mehr Produktaussage rein. Ja, wir finden auch, dass man über die Copy noch mal reden sollte. Das hier kann es jedenfalls nicht sein. Das klingt ja wie auf dem Totenbett getextet. Da muss wesentlich mehr Produktaussage rein. Ja, wir finden auch, dass man über die Copy noch mal reden sollte.
+# avantgarde <br/> freelance  <br/> collective.
 
-## Wusstest du schon?
+</Section>
+<Section design="cutout">
 
-Das hier kann es jedenfalls nicht sein. Das klingt ja wie auf dem Totenbett getextet. Da muss wesentlich mehr Produktaussage rein.
+# petitcode is a create collective for digital producs. wether individual assignments or complete projects.
 
+<Grid>
 
+Sebastian Melz
+
+Edgar Bongkishiy
+
+Ottavio Braun
+
+Samer Murad
+
+Rodolfo Lopez
+
+Mario Mielke
+
+</Grid>
+
+</Section>
+
+<Section design="cutout">
+
+# Our Clients
+
+Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
+
+<Grid>
+
+![world-health-organization](./images/clients/world-health-organization.png)
+
+![infologis](./images/clients/infologis.png)
+
+![jung-von-matt](./images/clients/jung-von-matt.png)
+
+![mcfit](./images/clients/mcfit.png)
+
+![universal-music](./images/clients/universal-music.png)
+
+![villeroy-boch](./images/clients/villeroy-boch.png)
+
+![vorwerk](./images/clients/vorwerk.png)
+
+</Grid>
+
+</Section>
+<Section design="cutout">
+
+# Need more information?
+
+[HERE]() you can download our bridge loan proposal.
+
+## [hi@petitcode.de](mailto:hi@petitcode.de) [+49 (0) 30 640 803 38](tel:+493064080338)
+
+</Section>
+</Sections>

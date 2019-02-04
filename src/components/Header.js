@@ -6,6 +6,8 @@ import GridWrapper from './GridWrapper'
 import Logo from '../assets/petitcode-logo-text.svg'
 
 const Wrapper = styled.nav`
+  position: relative;
+  z-index: 200;
   padding: 1rem;
 `
 

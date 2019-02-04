@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import GatsbyLink from 'gatsby-link'
 
-class Link extends React.Component {
+class Link extends React.PureComponent {
   propTypes = {
     children: propTypes.node.isRequired,
     to: propTypes.string.isRequired

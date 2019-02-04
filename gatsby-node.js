@@ -29,21 +29,6 @@ exports.onCreateNode = (all) => {
     // Fallback to human id when slug was forgotten by author
     const slug = frontmatterSlug || humanId
 
-    console.log(
-      JSON.stringify(
-        {
-          fileAbsolutePath,
-          locale,
-          defaultLocale,
-          slug,
-          frontmatterSlug,
-          humanId
-        },
-        null,
-        2
-      )
-    )
-
     createNodeField({
       name: 'id',
       node,

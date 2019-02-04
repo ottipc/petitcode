@@ -2,7 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { Link, StaticQuery } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 import PageContext from '../utils/PageContext'
 import { createLocalizedPath } from '../utils/i18n'
@@ -54,7 +54,7 @@ class Navigation extends React.PureComponent {
                       }) => locale === activeLocale
                     )
                     .map(({ node: { fields: { title, slug } } }) => (
-                      <li>
+                      <li key={`menuitem-${slug}`}>
                         <Link
                           to={createLocalizedPath({
                             locale: activeLocale,
