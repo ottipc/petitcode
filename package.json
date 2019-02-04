@@ -24,6 +24,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.16.8",
     "@mdx-js/tag": "^0.16.8",
+    "@researchgate/react-intersection-observer": "^0.7.4",
     "core-js": "^2.6.3",
     "gatsby": "^2.0.81",
     "gatsby-image": "^2.0.25",

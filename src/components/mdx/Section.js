@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import Observer from '@researchgate/react-intersection-observer'
 import { MDXProvider } from '@mdx-js/tag'
 
 const SectionWrapper = styled.article`
@@ -73,12 +74,20 @@ export default class Section extends React.PureComponent {
     children: propTypes.node.isRequired
   }
 
+  handleIntersection = (event) => {
+    if (event.isIntersecting) {
+      console.log(this.props.design === 'cutout' ? 'black' : 'white')
+    }
+  }
+
   render() {
     const { design, children } = this.props
     return (
-      <SectionWrapper design={design}>
-        <MDXProvider>{children}</MDXProvider>
-      </SectionWrapper>
+      <Observer onChange={this.handleIntersection}>
+        <SectionWrapper design={design}>
+          <MDXProvider>{children}</MDXProvider>
+        </SectionWrapper>
+      </Observer>
     )
   }
 }
