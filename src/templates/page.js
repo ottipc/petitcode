@@ -15,6 +15,7 @@ const VideoWrapper = styled.div`
   right: 0;
   bottom: 0;
   z-index: 50;
+  background: #000;
 `
 const Video = styled.video``
 
