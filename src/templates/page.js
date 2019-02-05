@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
-import PageContext from '../utils/PageContext'
+import { LocationContext } from '../utils/Contexts'
 
 const VideoWrapper = styled.div`
   position: fixed;
@@ -31,7 +31,7 @@ class PageTemplate extends React.PureComponent {
     } = this.props.data.mdx
 
     return (
-      <PageContext.Provider
+      <LocationContext.Provider
         value={{ activeHumandId: humanId, activeLocale: locale }}
       >
         <Layout>
@@ -76,7 +76,7 @@ class PageTemplate extends React.PureComponent {
           <MDXRenderer>{body}</MDXRenderer>
           {/* <ContentWrapper /> */}
         </Layout>
-      </PageContext.Provider>
+      </LocationContext.Provider>
     )
   }
 }
