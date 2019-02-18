@@ -22,13 +22,13 @@
     ]
   },
   "dependencies": {
-    "@mdx-js/mdx": "^0.16.8",
-    "@mdx-js/tag": "^0.16.8",
+    "@mdx-js/mdx": "^0.17.5",
+    "@mdx-js/tag": "^0.17.5",
     "@researchgate/react-intersection-observer": "^0.7.4",
     "core-js": "^2.6.3",
     "gatsby": "^2.0.81",
     "gatsby-image": "^2.0.25",
-    "gatsby-mdx": "^0.3.5",
+    "gatsby-mdx": "^0.3.6",
     "gatsby-plugin-catch-links": "^2.0.9",
     "gatsby-plugin-i18n": "^1.0.0",
     "gatsby-plugin-manifest": "^2.0.13",

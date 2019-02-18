@@ -2,15 +2,28 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
-import { MDXProvider } from '@mdx-js/tag'
+
+const Wrapper = styled.div`
+  position: relative;
+`
+
+const VideoWrapper = styled.div`
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+`
 
 const SectionWrapper = styled.article`
+  position: relative;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
 
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 
   & > h1,
   & > h2,
@@ -43,50 +56,43 @@ const SectionWrapper = styled.article`
     padding-bottom: 20vh;
   }
 
-  ${({ design }) => {
-    if (design === 'cutout') {
-      return css`
-        background-color: #fff;
-        color: #000;
-        /* min-height: 100vh; */
-
-        & > * {
-          background-color: #fff;
-        }
-
-        & > h1 {
-          font-weight: bold;
-          text-transform: uppercase;
-
-          /* This makes the cutout text possible */
-          background-color: #fff;
-          color: #000;
-          mix-blend-mode: screen;
-        }
-      `
-    }
-  }}
+  ${({ video }) =>
+    video &&
+    css`
+      background: transparent;
+      color: #fff;
+    `}
 `
 
 export default class Section extends React.PureComponent {
   static propTypes = {
-    design: propTypes.string,
+    video: propTypes.bool,
     children: propTypes.node.isRequired
   }
 
   handleIntersection = (event) => {
     if (event.isIntersecting) {
-      console.log(this.props.design === 'cutout' ? 'black' : 'white')
+      console.log(this.props.video ? 'white' : 'black')
     }
   }
 
   render() {
-    const { design, children } = this.props
+    const { video, children } = this.props
     return (
       <Observer onChange={this.handleIntersection}>
-        <SectionWrapper design={design}>
-          <MDXProvider>{children}</MDXProvider>
-        </SectionWrapper>
+        <Wrapper>
+          {video && (
+            <VideoWrapper>
+              <video autoPlay loop muted playsInline>
+                <source
+                  src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </VideoWrapper>
+          )}
+          <SectionWrapper video={video}>{children}</SectionWrapper>
+        </Wrapper>
       </Observer>
     )
   }

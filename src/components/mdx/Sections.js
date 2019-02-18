@@ -1,6 +1,5 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import { MDXProvider } from '@mdx-js/tag'
 
 export default class Sections extends React.PureComponent {
   static propTypes = {
@@ -8,6 +7,6 @@ export default class Sections extends React.PureComponent {
   }
   render() {
     const { children } = this.props
-    return <MDXProvider>{children}</MDXProvider>
+    return children
   }
 }

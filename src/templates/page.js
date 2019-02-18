@@ -2,23 +2,10 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
-
-const VideoWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  background: #000;
-`
-const Video = styled.video``
-
 class PageTemplate extends React.PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired
@@ -66,16 +53,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <VideoWrapper>
-            <Video autoPlay loop>
-              <source
-                src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
-                type="video/mp4"
-              />
-            </Video>
-          </VideoWrapper>
           <MDXRenderer>{body}</MDXRenderer>
-          {/* <ContentWrapper /> */}
         </Layout>
       </LocationContext.Provider>
     )
