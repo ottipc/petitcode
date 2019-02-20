@@ -67,19 +67,52 @@ const SectionWrapper = styled.article`
 export default class Section extends React.PureComponent {
   static propTypes = {
     video: propTypes.bool,
-    children: propTypes.node.isRequired
+    children: propTypes.node.isRequired,
+    nr: propTypes.number.isRequired
+  }
+
+  state = {
+    intersectInfo: 'none'
   }
 
   handleIntersection = (event) => {
-    if (event.isIntersecting) {
-      console.log(this.props.video ? 'white' : 'black')
+    const { isIntersecting, intersectionRatio } = event
+
+    // console.log(`nr: ${this.props.nr}`, intersectionRatio, event)
+
+    if (isIntersecting) {
+      // let intersectInfo = 'none'
+      if (intersectionRatio >= 0.8) {
+        console.log(
+          `nr: ${this.props.nr}`,
+          this.props.video ? 'white header' : 'black header'
+        )
+      }
+      if (intersectionRatio >= 0.4) {
+        console.log(
+          `nr: ${this.props.nr}`,
+          this.props.video ? 'white menu' : 'black menu'
+        )
+      }
+      if (intersectionRatio >= 0.05) {
+        console.log(
+          `nr: ${this.props.nr}`,
+          this.props.video ? 'white footer' : 'black footer'
+        )
+      }
+      // console.log({ nr: this.props.nr, intersectInfo })
+      // this.setState({ intersectInfo })
     }
   }
 
   render() {
     const { video, children } = this.props
     return (
-      <Observer onChange={this.handleIntersection}>
+      <Observer
+        onChange={this.handleIntersection}
+        // rootMargin="-200px 0px -200px 0px"
+        threshold={[0.05, 0.5, 0.85]}
+      >
         <Wrapper>
           {video && (
             <VideoWrapper>
