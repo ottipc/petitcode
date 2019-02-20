@@ -92,13 +92,30 @@ const HamburgerInner = styled.span`
   }
 `
 
+const HeaderWrapper = styled.div`
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+`
+const FooterWrapper = styled.div`
+  position: fixed;
+  z-index: 200;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`
+
 export default class Overlays extends React.PureComponent {
   render() {
     return (
       <NavigationContext.Consumer>
         {({ toggleNavigation, navigationActive }) => (
           <React.Fragment>
-            <Header />
+            <HeaderWrapper>
+              <Header />
+            </HeaderWrapper>
             <Navigation navigationActive={navigationActive} />
             <Hamburger
               onClick={toggleNavigation}
@@ -109,7 +126,9 @@ export default class Overlays extends React.PureComponent {
                 <HamburgerInner />
               </HamburgerBox>
             </Hamburger>
-            <Footer />
+            <FooterWrapper>
+              <Footer />
+            </FooterWrapper>
           </React.Fragment>
         )}
       </NavigationContext.Consumer>
