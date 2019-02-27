@@ -12,6 +12,15 @@ const VideoWrapper = styled.div`
   z-index: 50;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `
 
 const SectionWrapper = styled.article`
@@ -116,12 +125,12 @@ export default class Section extends React.PureComponent {
         <Wrapper>
           {video && (
             <VideoWrapper>
-              <video autoPlay loop muted playsInline>
+              <Video autoPlay loop muted playsInline>
                 <source
                   src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
                   type="video/mp4"
                 />
-              </video>
+              </Video>
             </VideoWrapper>
           )}
           <SectionWrapper video={video}>{children}</SectionWrapper>
