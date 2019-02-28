@@ -9,3 +9,10 @@ export const NavigationContext = createContext({
   toggleNavigation: () => {},
   navigationActive: false
 })
+
+export const SectionContext = createContext({
+  setSections: () => {},
+  setActiveSection: () => {},
+  activeSection: 1,
+  sections: []
+})

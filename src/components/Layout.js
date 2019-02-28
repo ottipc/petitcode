@@ -10,7 +10,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Navigation from './Navigation'
 import Overlays from './Overlays'
 import theme from '../utils/styling/theme'
-import { NavigationContext } from '../utils/Contexts'
+import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
@@ -43,7 +43,16 @@ export default class Layout extends React.PureComponent {
   }
 
   state = {
-    navigationActive: false
+    navigationActive: false,
+    activeSection: 1,
+    sections: []
+  }
+
+  setSections = (sections) => {
+    this.setState({ sections })
+  }
+  setActiveSection = (activeSection) => {
+    this.setState({ activeSection })
   }
 
   toggleNavigation = () => {
@@ -54,104 +63,110 @@ export default class Layout extends React.PureComponent {
 
   render() {
     const { children } = this.props
-    const { navigationActive } = this.state
-    const { toggleNavigation } = this
+    const { navigationActive, sections, activeSection } = this.state
+    const { toggleNavigation, setActiveSection, setSections } = this
+
+    console.log({ sections, activeSection })
 
     return (
       <NavigationContext.Provider
         value={{ toggleNavigation, navigationActive }}
       >
-        <StaticQuery
-          query={graphql`
-            query LayoutQuery {
-              site {
-                siteMetadata {
-                  title
-                  description
+        <SectionContext.Provider
+          value={{ sections, activeSection, setActiveSection, setSections }}
+        >
+          <StaticQuery
+            query={graphql`
+              query LayoutQuery {
+                site {
+                  siteMetadata {
+                    title
+                    description
+                  }
+                  ...Metadata
                 }
-                ...Metadata
+                allMdx {
+                  ...Pages
+                }
               }
-              allMdx {
-                ...Pages
-              }
-            }
-          `}
-          render={(data) => {
-            const {
-              siteMetadata: {
-                siteUrl,
-                languages: { langs, defaultLocale }
-              }
-            } = data.site
+            `}
+            render={(data) => {
+              const {
+                siteMetadata: {
+                  siteUrl,
+                  languages: { langs, defaultLocale }
+                }
+              } = data.site
 
-            return (
-              <Location>
-                {({ location }) => {
-                  const url = location.pathname
-                  const locale = getCurrentLangKey(langs, defaultLocale, url)
-                  return (
-                    <>
-                      <Helmet
-                        /**
-                         * Meta information based on:
-                         * https://moz.com/blog/meta-data-templates-123
-                         * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-                         */
-                        htmlAttributes={{
-                          lang: locale
-                        }}
-                        title={data.site.siteMetadata.title}
-                        meta={[
-                          {
-                            name: 'description',
-                            content: data.site.siteMetadata.description
-                          },
-                          {
-                            name: 'twitter:card',
-                            value: 'summary'
-                          },
-                          {
-                            property: 'og:title',
-                            content: data.site.siteMetadata.title
-                          },
-                          { property: 'og:type', content: 'website' },
-                          {
-                            property: 'og:url',
-                            content: `${siteUrl}${location.pathname}`
-                          },
-                          {
-                            property: 'og:description',
-                            content: data.site.siteMetadata.description
-                          },
-                          {
-                            name: 'apple-mobile-web-app-capable',
-                            content: 'yes'
-                          },
-                          {
-                            name: 'apple-mobile-web-app-status-bar-style',
-                            content: 'black-translucent'
-                          },
-                          {
-                            name: 'format-detection',
-                            content: 'telephone=no'
-                          }
-                        ]}
-                      />
-                      <ThemeProvider theme={theme}>
-                        <Wrapper>
-                          <GlobalStyle />
-                          <Overlays />
-                          <Navigation navigationActive={navigationActive} />
-                          <main>{children}</main>
-                        </Wrapper>
-                      </ThemeProvider>
-                    </>
-                  )
-                }}
-              </Location>
-            )
-          }}
-        />
+              return (
+                <Location>
+                  {({ location }) => {
+                    const url = location.pathname
+                    const locale = getCurrentLangKey(langs, defaultLocale, url)
+                    return (
+                      <>
+                        <Helmet
+                          /**
+                           * Meta information based on:
+                           * https://moz.com/blog/meta-data-templates-123
+                           * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+                           */
+                          htmlAttributes={{
+                            lang: locale
+                          }}
+                          title={data.site.siteMetadata.title}
+                          meta={[
+                            {
+                              name: 'description',
+                              content: data.site.siteMetadata.description
+                            },
+                            {
+                              name: 'twitter:card',
+                              value: 'summary'
+                            },
+                            {
+                              property: 'og:title',
+                              content: data.site.siteMetadata.title
+                            },
+                            { property: 'og:type', content: 'website' },
+                            {
+                              property: 'og:url',
+                              content: `${siteUrl}${location.pathname}`
+                            },
+                            {
+                              property: 'og:description',
+                              content: data.site.siteMetadata.description
+                            },
+                            {
+                              name: 'apple-mobile-web-app-capable',
+                              content: 'yes'
+                            },
+                            {
+                              name: 'apple-mobile-web-app-status-bar-style',
+                              content: 'black-translucent'
+                            },
+                            {
+                              name: 'format-detection',
+                              content: 'telephone=no'
+                            }
+                          ]}
+                        />
+                        <ThemeProvider theme={theme}>
+                          <Wrapper>
+                            <GlobalStyle />
+                            <Overlays />
+                            <Navigation navigationActive={navigationActive} />
+                            <main>{children}</main>
+                          </Wrapper>
+                        </ThemeProvider>
+                      </>
+                    )
+                  }}
+                </Location>
+              )
+            }}
+          />
+        </SectionContext.Provider>
       </NavigationContext.Provider>
     )
   }

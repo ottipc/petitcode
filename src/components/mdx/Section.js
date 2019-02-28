@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
+
+import { SectionContext } from '../../utils/Contexts'
 
 const Wrapper = styled.section`
   position: relative;
@@ -71,69 +73,44 @@ const ContentWrapper = styled.div`
     `}
 `
 
-export default class Section extends React.PureComponent {
-  static propTypes = {
-    video: propTypes.bool,
-    children: propTypes.node.isRequired,
-    nr: propTypes.number.isRequired
-  }
+function Section({ video, children, nr }) {
+  const { setActiveSection } = useContext(SectionContext)
 
-  state = {
-    intersectInfo: 'none'
-  }
-
-  handleIntersection = (event) => {
-    const { isIntersecting, intersectionRatio } = event
-
-    // console.log(`nr: ${this.props.nr}`, intersectionRatio, event)
+  const handleIntersection = (event) => {
+    const { isIntersecting } = event
 
     if (isIntersecting) {
-      // let intersectInfo = 'none'
-      if (intersectionRatio >= 0.8) {
-        console.log(
-          `nr: ${this.props.nr}`,
-          this.props.video ? 'white header' : 'black header'
-        )
-      }
-      if (intersectionRatio >= 0.4) {
-        console.log(
-          `nr: ${this.props.nr}`,
-          this.props.video ? 'white menu' : 'black menu'
-        )
-      }
-      if (intersectionRatio >= 0.05) {
-        console.log(
-          `nr: ${this.props.nr}`,
-          this.props.video ? 'white footer' : 'black footer'
-        )
-      }
-      // console.log({ nr: this.props.nr, intersectInfo })
-      // this.setState({ intersectInfo })
+      console.log({
+        nr: nr,
+        color: video ? 'white' : 'black'
+      })
+      setActiveSection(nr)
     }
   }
 
-  render() {
-    const { video, children } = this.props
-    return (
-      <Observer
-        onChange={this.handleIntersection}
-        // rootMargin="-200px 0px -200px 0px"
-        threshold={[0.05, 0.5, 0.85]}
-      >
-        <Wrapper>
-          {video && (
-            <VideoWrapper>
-              <Video autoPlay loop muted playsInline>
-                <source
-                  src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
-                  type="video/mp4"
-                />
-              </Video>
-            </VideoWrapper>
-          )}
-          <ContentWrapper video={video}>{children}</ContentWrapper>
-        </Wrapper>
-      </Observer>
-    )
-  }
+  return (
+    <Observer onChange={handleIntersection} threshold={0.7}>
+      <Wrapper>
+        {video && (
+          <VideoWrapper>
+            <Video autoPlay loop muted playsInline>
+              <source
+                src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
+                type="video/mp4"
+              />
+            </Video>
+          </VideoWrapper>
+        )}
+        <ContentWrapper video={video}>{children}</ContentWrapper>
+      </Wrapper>
+    </Observer>
+  )
 }
+
+Section.prototype.propTypes = {
+  video: propTypes.bool,
+  children: propTypes.node.isRequired,
+  nr: propTypes.number.isRequired
+}
+
+export default Section

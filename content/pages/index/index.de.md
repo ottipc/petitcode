@@ -11,12 +11,12 @@ import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
 
 <Sections>
-<Section video nr="1">
+<Section video nr={1}>
 
 # avantgarde <br/> freelance  <br/> collective.
 
 </Section>
-<Section nr="2">
+<Section nr={2}>
 
 <KnockoutText>petitcode is a create collective for digital producs. wether individual assignments or complete projects.</KnockoutText>
 
@@ -38,7 +38,7 @@ Mario Mielke
 
 </Section>
 
-<Section nr="3">
+<Section nr={3}>
 
 <KnockoutText>Our Clients</KnockoutText>
 
@@ -63,7 +63,7 @@ Our Clients are the life-source of our business and we strive to operate a highl
 </Grid>
 
 </Section>
-<Section nr="4">
+<Section nr={4}>
 
 <KnockoutText>Need more information?</KnockoutText>
 
