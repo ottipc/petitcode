@@ -12,7 +12,9 @@ export const NavigationContext = createContext({
 
 export const SectionContext = createContext({
   setSections: () => {},
+  sections: [],
   setActiveSection: () => {},
-  activeSection: 1,
-  sections: []
+  activeSection: 0,
+  setScrollToSection: () => {},
+  scrollToSection: null
 })

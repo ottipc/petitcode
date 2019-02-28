@@ -52,6 +52,8 @@ const ContentWrapper = styled.div`
 `
 
 const ContentGridWrapper = styled(GridWrapper)`
+  padding: 0 2.5rem;
+
   & > h1,
   & > h2,
   & > h3,
@@ -87,7 +89,7 @@ function Section({ video, children, nr }) {
 
   return (
     <Observer onChange={handleIntersection} threshold={0.7}>
-      <Wrapper>
+      <Wrapper id={`section-${nr}`}>
         {video && (
           <VideoWrapper>
             <Video autoPlay loop muted playsInline>

@@ -15,7 +15,6 @@ const Hamburger = styled.button`
   right: 0;
   transform: translateY(-50%);
 
-  padding: 15px 15px;
   display: block;
   cursor: pointer;
   transition-property: opacity, filter, color;
@@ -28,7 +27,6 @@ const Hamburger = styled.button`
   border: 0;
   margin: 0;
   overflow: visible;
-  transform: scale(0.8);
 
   &:focus {
     outline: none;
@@ -56,8 +54,8 @@ const Hamburger = styled.button`
 `
 
 const HamburgerBox = styled.span`
-  width: 40px;
-  height: 24px;
+  width: 30px;
+  height: 20px;
   display: block;
   position: relative;
 `
@@ -69,8 +67,8 @@ const HamburgerInner = styled.span`
   &,
   &::before,
   &::after {
-    width: 40px;
-    height: 4px;
+    width: 30px;
+    height: 3px;
     background-color: ${({ colorScheme }) => colorScheme};
     transition: background-color 0.3s linear;
     border-radius: 4px;
@@ -85,10 +83,10 @@ const HamburgerInner = styled.span`
     display: block;
   }
   &::before {
-    top: -10px;
+    top: -7px;
   }
   &::after {
-    bottom: -10px;
+    bottom: -7px;
   }
 `
 

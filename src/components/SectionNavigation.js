@@ -22,10 +22,11 @@ const Button = styled.button`
   border: 0;
   overflow: hidden;
   color: transparent;
-  opacity: 0.5;
+  opacity: ${({ colorScheme }) => (colorScheme === 'white' ? 0.5 : 0.3)};
   transition-property: opacity, color, height;
   transition-duration: 0.3s;
   background: ${({ colorScheme }) => colorScheme};
+  cursor: pointer;
 
   &:last-child {
     margin-bottom: 0;
@@ -44,7 +45,9 @@ const Button = styled.button`
 `
 
 export default function SectionNavigation({ colorScheme }) {
-  const { sections, activeSection } = useContext(SectionContext)
+  const { sections, activeSection, setScrollToSection } = useContext(
+    SectionContext
+  )
 
   if (!sections.length) {
     return null
@@ -55,6 +58,7 @@ export default function SectionNavigation({ colorScheme }) {
       colorScheme={colorScheme}
       key={`section-navigation-${i}`}
       active={i === activeSection}
+      onClick={() => setScrollToSection(i)}
     >
       {i}
     </Button>

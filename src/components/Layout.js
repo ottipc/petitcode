@@ -43,6 +43,7 @@ export default class Layout extends React.Component {
   state = {
     navigationActive: false,
     activeSection: null,
+    scrollToSection: null,
     sections: []
   }
 
@@ -51,6 +52,9 @@ export default class Layout extends React.Component {
   }
   setActiveSection = (activeSection) => {
     this.setState({ activeSection })
+  }
+  setScrollToSection = (scrollToSection) => {
+    this.setState({ scrollToSection })
   }
 
   toggleNavigation = () => {
@@ -69,15 +73,32 @@ export default class Layout extends React.Component {
 
   render() {
     const { children } = this.props
-    const { navigationActive, sections, activeSection } = this.state
-    const { toggleNavigation, setActiveSection, setSections } = this
+    const {
+      navigationActive,
+      sections,
+      activeSection,
+      scrollToSection
+    } = this.state
+    const {
+      toggleNavigation,
+      setActiveSection,
+      setSections,
+      setScrollToSection
+    } = this
 
     return (
       <NavigationContext.Provider
         value={{ toggleNavigation, navigationActive }}
       >
         <SectionContext.Provider
-          value={{ sections, activeSection, setActiveSection, setSections }}
+          value={{
+            sections,
+            activeSection,
+            setActiveSection,
+            setSections,
+            scrollToSection,
+            setScrollToSection
+          }}
         >
           <StaticQuery
             query={graphql`

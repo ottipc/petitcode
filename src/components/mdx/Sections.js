@@ -10,6 +10,7 @@ const Article = styled.article`
   -ms-overflow-style: none;
   overflow-y: scroll;
   height: 100vh;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     width: 0 !important;
@@ -17,7 +18,9 @@ const Article = styled.article`
 `
 
 function Sections({ children }) {
-  const { setSections } = useContext(SectionContext)
+  const { setSections, scrollToSection, setScrollToSection } = useContext(
+    SectionContext
+  )
 
   // Automagically append numbering to sections
   children = React.Children.map(children, (child, nr) => {
@@ -27,7 +30,6 @@ function Sections({ children }) {
   })
 
   // Store sections array to context
-
   const sections = React.Children.toArray(children).map((section) => ({
     nr: section.props.nr,
     video: !!section.props.video
@@ -35,6 +37,11 @@ function Sections({ children }) {
 
   useEffect(() => {
     setSections(sections)
+    if (scrollToSection !== null) {
+      const section = document.getElementById(`section-${scrollToSection}`)
+      section.scrollIntoView()
+      setScrollToSection(null)
+    }
     return () => {
       setSections([])
     }
