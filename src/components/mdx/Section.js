@@ -3,8 +3,10 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   position: relative;
+  scroll-snap-align: start;
+  min-height: 100vh;
 `
 
 const VideoWrapper = styled.div`
@@ -21,10 +23,12 @@ const Video = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #000;
 `
 
-const SectionWrapper = styled.article`
+const ContentWrapper = styled.div`
   position: relative;
+  min-height: 100vh;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -33,6 +37,8 @@ const SectionWrapper = styled.article`
 
   background-color: #fff;
   color: #000;
+
+  padding: 10vh 0;
 
   & > h1,
   & > h2,
@@ -55,14 +61,6 @@ const SectionWrapper = styled.article`
 
   & > h1 {
     font-size: 12vmin;
-  }
-
-  & > :first-child {
-    padding-top: 20vh;
-  }
-
-  & > :last-child {
-    padding-bottom: 20vh;
   }
 
   ${({ video }) =>
@@ -133,7 +131,7 @@ export default class Section extends React.PureComponent {
               </Video>
             </VideoWrapper>
           )}
-          <SectionWrapper video={video}>{children}</SectionWrapper>
+          <ContentWrapper video={video}>{children}</ContentWrapper>
         </Wrapper>
       </Observer>
     )

@@ -1,12 +1,9 @@
-import React from 'react'
-import propTypes from 'prop-types'
+import styled from 'styled-components'
 
-export default class Sections extends React.PureComponent {
-  static propTypes = {
-    children: propTypes.node.isRequired
-  }
-  render() {
-    const { children } = this.props
-    return children
-  }
-}
+const Sections = styled.article`
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+`
+
+export default Sections
