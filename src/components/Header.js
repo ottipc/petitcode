@@ -21,19 +21,21 @@ const Grid = styled.div`
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.large}) {
-    flex-direction: column;
-    align-items: center;
-    padding: ${({ theme }) => theme.spacingUnit}px;
-    > * {
-      margin-bottom: ${({ theme }) => theme.spacingUnit}px !important;
-    }
-  }
 `
 
-const LogoWrapper = styled.div``
-const ContactWrapper = styled.div``
+const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  max-width: 40vw;
+
+  & svg {
+    width: 100%;
+    height: auto;
+  }
+`
+const ContactWrapper = styled.div`
+  font-size: calc(14px + 4 * ((100vw - 320px) / 600));
+`
 
 export default function Header({ colorScheme }) {
   return (

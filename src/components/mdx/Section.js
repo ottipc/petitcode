@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 
+import GridWrapper from '../GridWrapper'
 import { SectionContext } from '../../utils/Contexts'
 
 const Wrapper = styled.section`
@@ -42,6 +43,15 @@ const ContentWrapper = styled.div`
 
   padding: 10vh 0;
 
+  ${({ video }) =>
+    video &&
+    css`
+      background: transparent;
+      color: #fff;
+    `}
+`
+
+const ContentGridWrapper = styled(GridWrapper)`
   & > h1,
   & > h2,
   & > h3,
@@ -53,8 +63,6 @@ const ContentWrapper = styled.div`
     position: relative;
     z-index: 100;
     margin: 0;
-    padding-left: 10vw;
-    padding-right: 10vw;
 
     &:not(:last-child) {
       padding-bottom: 5vh;
@@ -64,13 +72,6 @@ const ContentWrapper = styled.div`
   & > h1 {
     font-size: 12vmin;
   }
-
-  ${({ video }) =>
-    video &&
-    css`
-      background: transparent;
-      color: #fff;
-    `}
 `
 
 function Section({ video, children, nr }) {
@@ -101,7 +102,9 @@ function Section({ video, children, nr }) {
             </Video>
           </VideoWrapper>
         )}
-        <ContentWrapper video={video}>{children}</ContentWrapper>
+        <ContentWrapper video={video}>
+          <ContentGridWrapper>{children}</ContentGridWrapper>
+        </ContentWrapper>
       </Wrapper>
     </Observer>
   )

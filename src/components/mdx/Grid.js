@@ -6,7 +6,6 @@ import { MDXProvider } from '@mdx-js/tag'
 const ActualGrid = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 10vw 5vh !important; /* !important needed here due to overwrite from section child padding */
   flex-wrap: wrap;
 
   & > * {
