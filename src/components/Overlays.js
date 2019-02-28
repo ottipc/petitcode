@@ -121,7 +121,7 @@ export default function Overlays() {
       <Hamburger
         onClick={toggleNavigation}
         navigationActive={navigationActive}
-        titleAccess="Open menu"
+        aria-label="toggle menu"
         colorScheme={colorScheme}
       >
         <HamburgerBox>

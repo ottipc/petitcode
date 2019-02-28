@@ -43,7 +43,7 @@ export default function Header({ colorScheme }) {
       <GridWrapper>
         <Grid>
           <LogoWrapper>
-            <Link to="/">
+            <Link to="/" aria-label="Home">
               <Logo />
             </Link>
           </LogoWrapper>
