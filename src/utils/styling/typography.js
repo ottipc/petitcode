@@ -10,17 +10,7 @@ const typography = new Typography({
   scaleRatio: 2.2,
   headerFontFamily: theme.fonts.header,
   headerWeight: 'normal',
-  bodyFontFamily: theme.fonts.body,
-  googleFonts: [
-    {
-      name: theme.fonts.header[0],
-      styles: ['400']
-    },
-    {
-      name: theme.fonts.body[0],
-      styles: ['400', '400i', '700', '700i']
-    }
-  ]
+  bodyFontFamily: theme.fonts.body
 })
 
 module.exports = typography

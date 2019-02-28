@@ -12,8 +12,26 @@ import Overlays from './Overlays'
 import theme from '../utils/styling/theme'
 import { NavigationContext, SectionContext } from '../utils/Contexts'
 
+import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
+import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
+
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Noto Sans';
+    src: local('Noto Sans'), url(${NotoSansBold}) format('woff2');
+    font-weight: bold;
+    font-style: normal;
+
+  }
+
+  @font-face {
+    font-family: 'Noto Sans';
+    src: local('Noto Sans'), url(${NotoSansRegular}) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colors.bg};
   }

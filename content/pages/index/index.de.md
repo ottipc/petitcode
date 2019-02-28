@@ -18,7 +18,7 @@ import KnockoutText from "$components/KnockoutText";
 </Section>
 <Section>
 
-<KnockoutText>petitcode is a create collective for digital producs. wether individual assignments or complete projects.</KnockoutText>
+<KnockoutText>petitcode ist ein kreatives kollektiv für digitale produkte. german translation still missing.</KnockoutText>
 
 <Grid>
 
