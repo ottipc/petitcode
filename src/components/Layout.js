@@ -37,14 +37,14 @@ const Wrapper = styled.div`
   transition: 0.3s transform linear;
 `
 
-export default class Layout extends React.PureComponent {
+export default class Layout extends React.Component {
   static propTypes = {
     children: propTypes.node.isRequired
   }
 
   state = {
     navigationActive: false,
-    activeSection: 1,
+    activeSection: null,
     sections: []
   }
 
@@ -59,6 +59,14 @@ export default class Layout extends React.PureComponent {
     this.setState(({ navigationActive }) => ({
       navigationActive: !navigationActive
     }))
+  }
+
+  shouldComponentUpdate = (nextProps, nextState) => {
+    // Only rerender when state truely changed
+    if (JSON.stringify(nextState) === JSON.stringify(this.state)) {
+      return false
+    }
+    return true
   }
 
   render() {

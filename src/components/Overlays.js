@@ -1,13 +1,11 @@
-import React from 'react'
-// import propTypes from 'prop-types'
-// import { StaticQuery, graphql } from 'gatsby'
+import React, { useContext } from 'react'
 
 import styled, { css } from 'styled-components'
 
 import Header from './Header'
 import Footer from './Footer'
 import Navigation from './Navigation'
-import { NavigationContext } from '../utils/Contexts'
+import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 const Hamburger = styled.button`
   position: fixed;
@@ -107,31 +105,30 @@ const FooterWrapper = styled.div`
   right: 0;
 `
 
-export default class Overlays extends React.PureComponent {
-  render() {
-    return (
-      <NavigationContext.Consumer>
-        {({ toggleNavigation, navigationActive }) => (
-          <React.Fragment>
-            <HeaderWrapper>
-              <Header />
-            </HeaderWrapper>
-            <Navigation navigationActive={navigationActive} />
-            <Hamburger
-              onClick={toggleNavigation}
-              navigationActive={navigationActive}
-              titleAccess="Open menu"
-            >
-              <HamburgerBox>
-                <HamburgerInner />
-              </HamburgerBox>
-            </Hamburger>
-            <FooterWrapper>
-              <Footer />
-            </FooterWrapper>
-          </React.Fragment>
-        )}
-      </NavigationContext.Consumer>
-    )
-  }
+export default function Overlays() {
+  const { toggleNavigation, navigationActive } = useContext(NavigationContext)
+  const { sections, activeSection } = useContext(SectionContext)
+  const section = sections[activeSection]
+  const colorScheme = (section && section.video ? 'white' : 'black') || 'black'
+
+  return (
+    <React.Fragment>
+      <HeaderWrapper>
+        <Header colorScheme={colorScheme} />
+      </HeaderWrapper>
+      <Navigation navigationActive={navigationActive} />
+      <Hamburger
+        onClick={toggleNavigation}
+        navigationActive={navigationActive}
+        titleAccess="Open menu"
+      >
+        <HamburgerBox>
+          <HamburgerInner />
+        </HamburgerBox>
+      </Hamburger>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
+    </React.Fragment>
+  )
 }
