@@ -1,5 +1,12 @@
 # petitcode Gatsby website
 
+## installation
+
+```
+npm ci
+pip install -r requirements.txt
+```
+
 ## development
 
 `npm run develop` to start a development server with live reload.

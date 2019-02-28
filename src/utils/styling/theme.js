@@ -25,7 +25,7 @@ module.exports = {
   },
   fonts: {
     header: [
-      'Fira Sans',
+      'Noto Sans',
       'Helvetica Neue',
       'Segoe UI',
       'Helvetica',
@@ -33,7 +33,7 @@ module.exports = {
       'sans-serif'
     ],
     body: [
-      'Roboto',
+      'Noto Sans',
       'Helvetica Neue',
       'Segoe UI',
       'Helvetica',
