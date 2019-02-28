@@ -72,8 +72,6 @@ export default class Layout extends React.Component {
     const { navigationActive, sections, activeSection } = this.state
     const { toggleNavigation, setActiveSection, setSections } = this
 
-    console.log({ sections, activeSection })
-
     return (
       <NavigationContext.Provider
         value={{ toggleNavigation, navigationActive }}

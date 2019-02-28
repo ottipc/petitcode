@@ -81,10 +81,6 @@ function Section({ video, children, nr }) {
     const { isIntersecting } = event
 
     if (isIntersecting) {
-      console.log({
-        nr: nr,
-        color: video ? 'white' : 'black'
-      })
       setActiveSection(nr)
     }
   }
