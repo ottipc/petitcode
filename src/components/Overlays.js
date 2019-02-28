@@ -5,6 +5,7 @@ import styled, { css } from 'styled-components'
 import Header from './Header'
 import Footer from './Footer'
 import Navigation from './Navigation'
+import SectionNavigation from './SectionNavigation'
 import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 const Hamburger = styled.button`
@@ -128,6 +129,7 @@ export default function Overlays() {
           <HamburgerInner colorScheme={colorScheme} />
         </HamburgerBox>
       </Hamburger>
+      <SectionNavigation colorScheme={colorScheme} />
       <FooterWrapper>
         <Footer colorScheme={colorScheme} />
       </FooterWrapper>
