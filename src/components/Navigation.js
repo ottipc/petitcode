@@ -4,16 +4,18 @@ import styled, { css } from 'styled-components'
 
 import { Link, StaticQuery, graphql } from 'gatsby'
 
-import PageContext from '../utils/PageContext'
+import { LocationContext } from '../utils/Contexts'
 import { createLocalizedPath } from '../utils/i18n'
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   display: none;
-  ${({ menuActive }) =>
-    menuActive &&
+  ${({ navigationActive }) =>
+    navigationActive &&
     css`
-      display: block;
+      display: flex;
     `};
+  justify-content: flex-end;
+  align-items: center;
   position: fixed;
   z-index: 10000;
   top: 0;
@@ -25,14 +27,31 @@ const Wrapper = styled.div`
   padding: 5rem;
 `
 
+const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: ${({
+    theme: {
+      fonts: { header }
+    }
+  }) => header.join(', ')};
+  font-size: 5.5vw;
+  text-align: right;
+`
+const ListItem = styled.li`
+  margin: 0;
+  padding: 0;
+`
+
 class Navigation extends React.PureComponent {
   static propTypes = {
-    menuActive: propTypes.bool.isRequired
+    navigationActive: propTypes.bool.isRequired
   }
   render() {
-    const { menuActive } = this.props
+    const { navigationActive } = this.props
     return (
-      <PageContext.Consumer>
+      <LocationContext.Consumer>
         {({ activeLocale }) => (
           <StaticQuery
             query={graphql`
@@ -43,8 +62,8 @@ class Navigation extends React.PureComponent {
               }
             `}
             render={({ allMdx: { edges: pages } }) => (
-              <Wrapper menuActive={menuActive}>
-                <ul>
+              <Wrapper navigationActive={navigationActive}>
+                <List>
                   {pages
                     .filter(
                       ({
@@ -54,7 +73,7 @@ class Navigation extends React.PureComponent {
                       }) => locale === activeLocale
                     )
                     .map(({ node: { fields: { title, slug } } }) => (
-                      <li key={`menuitem-${slug}`}>
+                      <ListItem key={`menuitem-${slug}`}>
                         <Link
                           to={createLocalizedPath({
                             locale: activeLocale,
@@ -63,14 +82,14 @@ class Navigation extends React.PureComponent {
                         >
                           {title}
                         </Link>
-                      </li>
+                      </ListItem>
                     ))}
-                </ul>
+                </List>
               </Wrapper>
             )}
           />
         )}
-      </PageContext.Consumer>
+      </LocationContext.Consumer>
     )
   }
 }

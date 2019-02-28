@@ -1,15 +1,58 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import { MDXProvider } from '@mdx-js/tag'
+import Observer from '@researchgate/react-intersection-observer'
 
-const SectionWrapper = styled.article`
+import GridWrapper from '../GridWrapper'
+import { SectionContext } from '../../utils/Contexts'
+
+const Wrapper = styled.section`
+  position: relative;
+  scroll-snap-align: start;
+  min-height: 100vh;
+`
+
+const VideoWrapper = styled.div`
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`
+
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+`
+
+const ContentWrapper = styled.div`
+  position: relative;
+  min-height: 100vh;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
 
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+
+  padding: 10vh 0;
+
+  ${({ video }) =>
+    video &&
+    css`
+      background: transparent;
+      color: #fff;
+    `}
+`
+
+const ContentGridWrapper = styled(GridWrapper)`
+  padding: 0 2.5rem;
 
   & > h1,
   & > h2,
@@ -22,8 +65,6 @@ const SectionWrapper = styled.article`
     position: relative;
     z-index: 100;
     margin: 0;
-    padding-left: 10vw;
-    padding-right: 10vw;
 
     &:not(:last-child) {
       padding-bottom: 5vh;
@@ -33,52 +74,44 @@ const SectionWrapper = styled.article`
   & > h1 {
     font-size: 12vmin;
   }
-
-  & > :first-child {
-    padding-top: 20vh;
-  }
-
-  & > :last-child {
-    padding-bottom: 20vh;
-  }
-
-  ${({ design }) => {
-    if (design === 'cutout') {
-      return css`
-        background-color: #fff;
-        color: #000;
-        /* min-height: 100vh; */
-
-        & > * {
-          background-color: #fff;
-        }
-
-        & > h1 {
-          font-weight: bold;
-          text-transform: uppercase;
-
-          /* This makes the cutout text possible */
-          background-color: #fff;
-          color: #000;
-          mix-blend-mode: screen;
-        }
-      `
-    }
-  }}
 `
 
-export default class Section extends React.PureComponent {
-  static propTypes = {
-    design: propTypes.string,
-    children: propTypes.node.isRequired
+function Section({ video, children, nr }) {
+  const { setActiveSection } = useContext(SectionContext)
+
+  const handleIntersection = (event) => {
+    const { isIntersecting } = event
+
+    if (isIntersecting) {
+      setActiveSection(nr)
+    }
   }
 
-  render() {
-    const { design, children } = this.props
-    return (
-      <SectionWrapper design={design}>
-        <MDXProvider>{children}</MDXProvider>
-      </SectionWrapper>
-    )
-  }
+  return (
+    <Observer onChange={handleIntersection} threshold={0.7}>
+      <Wrapper id={`section-${nr}`}>
+        {video && (
+          <VideoWrapper>
+            <Video autoPlay loop muted playsInline>
+              <source
+                src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
+                type="video/mp4"
+              />
+            </Video>
+          </VideoWrapper>
+        )}
+        <ContentWrapper video={video}>
+          <ContentGridWrapper>{children}</ContentGridWrapper>
+        </ContentWrapper>
+      </Wrapper>
+    </Observer>
+  )
 }
+
+Section.prototype.propTypes = {
+  video: propTypes.bool,
+  children: propTypes.node.isRequired,
+  nr: propTypes.number.isRequired
+}
+
+export default Section

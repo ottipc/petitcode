@@ -8,16 +8,17 @@ description: "Sehr sehr wichtige beschreibung ..."
 import Sections from "$components/Sections";
 import Section from "$components/Section";
 import Grid from "$components/Grid";
+import KnockoutText from "$components/KnockoutText";
 
 <Sections>
-<Section>
+<Section video>
 
 # avantgarde <br/> freelance  <br/> collective.
 
 </Section>
-<Section design="cutout">
+<Section>
 
-# petitcode is a create collective for digital producs. wether individual assignments or complete projects.
+<KnockoutText>petitcode is a create collective for digital producs. wether individual assignments or complete projects.</KnockoutText>
 
 <Grid>
 
@@ -36,10 +37,9 @@ Mario Mielke
 </Grid>
 
 </Section>
+<Section>
 
-<Section design="cutout">
-
-# Our Clients
+<KnockoutText>Our Clients</KnockoutText>
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
@@ -62,9 +62,9 @@ Our Clients are the life-source of our business and we strive to operate a highl
 </Grid>
 
 </Section>
-<Section design="cutout">
+<Section>
 
-# Need more information?
+<KnockoutText>Need more information?</KnockoutText>
 
 [HERE]() you can download our bridge loan proposal.
 

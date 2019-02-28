@@ -3,7 +3,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import { createLocalizedPath } from '../utils/i18n'
-import PageContext from '../utils/PageContext'
+import { LocationContext } from '../utils/Contexts'
 import { defaultLocale } from '../data/languages'
 
 const List = styled.ul({
@@ -18,7 +18,7 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
-  transition: 0.15s opacity linear;
+  transition: 0.3s opacity linear;
   opacity: 0.65;
 
   &:hover {
@@ -92,7 +92,7 @@ function generatePageSelector({ pages, activeHumandId, langs }) {
 export default class LanguageSelect extends React.PureComponent {
   render() {
     return (
-      <PageContext.Consumer>
+      <LocationContext.Consumer>
         {({ activeHumandId }) => (
           <StaticQuery
             query={graphql`
@@ -123,7 +123,7 @@ export default class LanguageSelect extends React.PureComponent {
             )}
           />
         )}
-      </PageContext.Consumer>
+      </LocationContext.Consumer>
     )
   }
 }
