@@ -18,7 +18,7 @@ const ListItem = styled.li({
 })
 
 const SwitcherLink = styled(Link)`
-  transition: 0.15s opacity linear;
+  transition: 0.3s opacity linear;
   opacity: 0.65;
 
   &:hover {

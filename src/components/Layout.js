@@ -33,9 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Wrapper = styled.div`
-  transition: 0.3s transform linear;
-`
+const Wrapper = styled.div``
 
 export default class Layout extends React.Component {
   static propTypes = {

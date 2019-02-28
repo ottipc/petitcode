@@ -17,11 +17,11 @@ const Hamburger = styled.button`
   padding: 15px 15px;
   display: block;
   cursor: pointer;
-  transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-property: opacity, filter, color;
+  transition-duration: 0.3s;
   transition-timing-function: linear;
   font: inherit;
-  color: #000;
+  color: ${({ colorScheme }) => colorScheme};
   text-transform: none;
   background-color: transparent;
   border: 0;
@@ -70,7 +70,8 @@ const HamburgerInner = styled.span`
   &::after {
     width: 40px;
     height: 4px;
-    background-color: #000;
+    background-color: ${({ colorScheme }) => colorScheme};
+    transition: background-color 0.3s linear;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
@@ -121,13 +122,14 @@ export default function Overlays() {
         onClick={toggleNavigation}
         navigationActive={navigationActive}
         titleAccess="Open menu"
+        colorScheme={colorScheme}
       >
         <HamburgerBox>
-          <HamburgerInner />
+          <HamburgerInner colorScheme={colorScheme} />
         </HamburgerBox>
       </Hamburger>
       <FooterWrapper>
-        <Footer />
+        <Footer colorScheme={colorScheme} />
       </FooterWrapper>
     </React.Fragment>
   )
