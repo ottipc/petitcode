@@ -6,6 +6,8 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
+import DarkTheme from './themes/DarkTheme'
+
 class PageTemplate extends React.PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired
@@ -13,10 +15,24 @@ class PageTemplate extends React.PureComponent {
 
   render() {
     const {
-      frontmatter: { title, description },
+      frontmatter: { title, description, theme },
       code: { body },
       fields: { humanId, locale }
     } = this.props.data.mdx
+
+    let content = null
+    switch (theme) {
+      case 'dark':
+        content = (
+          <DarkTheme>
+            <MDXRenderer>{body}</MDXRenderer>
+          </DarkTheme>
+        )
+        break
+      case 'sections':
+      default:
+        content = <MDXRenderer>{body}</MDXRenderer>
+    }
 
     return (
       <LocationContext.Provider
@@ -53,7 +69,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <MDXRenderer>{body}</MDXRenderer>
+          {content}
         </Layout>
       </LocationContext.Provider>
     )
@@ -68,16 +84,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        banner {
-          childImageSharp {
-            sizes(maxWidth: 900) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
-        categories
-        keywords
         description
+        theme
       }
       fields {
         slug

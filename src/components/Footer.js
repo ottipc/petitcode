@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 
+import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import LanguageSelect from './LanguageSelect'
 
@@ -33,31 +34,7 @@ export default class Footer extends React.PureComponent {
             <div>
               <LanguageSelect />
             </div>
-            <div>
-              <a
-                target="_blank"
-                href="https://web.facebook.com/thecodetosuccess/"
-                rel="noopener"
-              >
-                FB
-              </a>
-              &nbsp;
-              <a
-                target="_blank"
-                href="https://www.instagram.com/thecodetosuccess/"
-                rel="noopener"
-              >
-                IN
-              </a>
-              &nbsp;
-              <a
-                target="_blank"
-                href="https://twitter.com/the_petitcode"
-                rel="noopener"
-              >
-                TW
-              </a>
-            </div>
+            <Social />
           </Grid>
         </GridWrapper>
       </FooterWrapper>

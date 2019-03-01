@@ -72,21 +72,9 @@ exports.onCreateNode = (all) => {
     })
 
     createNodeField({
-      name: 'banner',
+      name: 'theme',
       node,
-      banner: node.frontmatter.banner
-    })
-
-    createNodeField({
-      name: 'categories',
-      node,
-      value: node.frontmatter.categories || []
-    })
-
-    createNodeField({
-      name: 'keywords',
-      node,
-      value: node.frontmatter.keywords || []
+      value: node.frontmatter.theme || 'default'
     })
   }
 }
@@ -104,7 +92,6 @@ exports.createPages = ({ actions, graphql }) =>
               title
               slug
               locale
-              categories
             }
             code {
               scope
