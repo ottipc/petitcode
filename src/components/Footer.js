@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import LanguageSelect from './LanguageSelect'
+import FooterNavigation from './FooterNavigation'
 
 const FooterWrapper = styled.footer`
   position: relative;
@@ -23,17 +24,16 @@ const Grid = styled.div`
 
 export default class Footer extends React.PureComponent {
   static propTypes = {
-    colorScheme: propTypes.string.isRequired
+    colorScheme: propTypes.string.isRequired,
+    navigationActive: propTypes.bool.isRequired
   }
   render() {
-    const { colorScheme } = this.props
+    const { colorScheme, navigationActive } = this.props
     return (
       <FooterWrapper colorScheme={colorScheme}>
         <GridWrapper>
           <Grid>
-            <div>
-              <LanguageSelect />
-            </div>
+            {navigationActive ? <FooterNavigation /> : <LanguageSelect />}
             <Social />
           </Grid>
         </GridWrapper>

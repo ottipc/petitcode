@@ -18,14 +18,14 @@ const HeaderWrapper = styled.div`
 `
 const FooterWrapper = styled.div`
   position: fixed;
-  z-index: 200;
+  z-index: 1100;
   bottom: 0;
   left: 0;
   right: 0;
 `
 
 export default function Overlays() {
-  const { toggleNavigation, navigationActive } = useContext(NavigationContext)
+  const { navigationActive } = useContext(NavigationContext)
   const { sections, activeSection } = useContext(SectionContext)
   const section = sections[activeSection]
   const colorScheme = (section && section.video ? 'white' : 'black') || 'black'
@@ -39,7 +39,7 @@ export default function Overlays() {
       <Hamburger colorScheme={colorScheme} />
       <SectionNavigation colorScheme={colorScheme} />
       <FooterWrapper>
-        <Footer colorScheme={colorScheme} />
+        <Footer colorScheme={colorScheme} navigationActive={navigationActive} />
       </FooterWrapper>
     </React.Fragment>
   )

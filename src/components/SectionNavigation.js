@@ -5,7 +5,7 @@ import { SectionContext } from '../utils/Contexts'
 
 const Wrapper = styled.div`
   position: fixed;
-  z-index: 10010;
+  z-index: 900;
   top: 50%;
   left: 1vw;
   transform: translateY(-50%);
