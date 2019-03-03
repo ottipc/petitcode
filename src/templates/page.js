@@ -7,6 +7,7 @@ import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 import DarkTheme from './themes/DarkTheme'
+import DefaultTheme from './themes/DefaultTheme'
 
 class PageTemplate extends React.PureComponent {
   static propTypes = {
@@ -30,8 +31,14 @@ class PageTemplate extends React.PureComponent {
         )
         break
       case 'sections':
-      default:
         content = <MDXRenderer>{body}</MDXRenderer>
+        break
+      default:
+        content = (
+          <DefaultTheme>
+            <MDXRenderer>{body}</MDXRenderer>
+          </DefaultTheme>
+        )
     }
 
     return (
