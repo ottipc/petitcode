@@ -7,6 +7,7 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import GridWrapper from './GridWrapper'
 import { LocationContext } from '../utils/Contexts'
 import { createLocalizedPath } from '../utils/i18n'
+import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -30,6 +31,18 @@ const Wrapper = styled.nav`
     `};
 `
 
+const ContentWrapper = styled(GridWrapper)`
+  display: flex;
+  align-items: center;
+`
+
+const Logo = styled(PetitcodeTransparent)`
+  display: none;
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    display: block;
+  }
+`
+
 const List = styled.ul`
   list-style: none;
   margin: 0;
@@ -40,7 +53,7 @@ const List = styled.ul`
     }
   }) => header.join(', ')};
   font-weight: bold;
-  font-size: 12vmin;
+  font-size: 11vmin;
   text-align: right;
   text-transform: uppercase;
 `
@@ -79,7 +92,8 @@ class Navigation extends React.PureComponent {
             `}
             render={({ allMdx: { edges: pages } }) => (
               <Wrapper navigationActive={navigationActive}>
-                <GridWrapper>
+                <ContentWrapper>
+                  <Logo />
                   <List>
                     {pages
                       .filter(
@@ -102,7 +116,7 @@ class Navigation extends React.PureComponent {
                         </ListItem>
                       ))}
                   </List>
-                </GridWrapper>
+                </ContentWrapper>
               </Wrapper>
             )}
           />
