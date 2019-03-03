@@ -3,6 +3,7 @@ slug: "index"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode"
 description: "Very imortant description..."
+theme: "sections"
 ---
 
 import Sections from "$components/Sections";

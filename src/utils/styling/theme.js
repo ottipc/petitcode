@@ -5,6 +5,7 @@ const blue2 = '#13CCC4'
 
 module.exports = {
   spacingUnit: 16,
+  outerSpacing: '3vmin',
   elements: {
     headerHeight: 100
   },
