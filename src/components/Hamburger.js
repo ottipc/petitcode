@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
+import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
 const hamburgerLayerWidth = '35px'
 const hamburgerLayerHeight = '4px'
 const hamburgerLayerSpacing = '6px'
-const hamburgerPaddingX = '15px'
-const hamburgerPaddingY = '15px'
+const hamburgerPaddingX = theme.outerSpacing
+const hamburgerPaddingY = theme.outerSpacing
 const hamburgerActiveLayerColor = '#000000'
 const hamburgerLayerBorderRadius = '3px'
 

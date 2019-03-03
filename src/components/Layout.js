@@ -49,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: 0;
     }
   }
+
+  pre {
+    overflow: scroll;
+  }
 `
 
 const Wrapper = styled.div``
