@@ -10,7 +10,6 @@ const hamburgerLayerSpacing = '6px'
 const hamburgerPaddingX = '15px'
 const hamburgerPaddingY = '15px'
 const hamburgerActiveLayerColor = '#000000'
-const hamburgerLayerColor = '#ffffff'
 const hamburgerLayerBorderRadius = '3px'
 
 const hamburgerHoverOpacity = 0.7
@@ -66,7 +65,7 @@ const HamburgerInner = styled.span`
   &::after {
     width: ${hamburgerLayerWidth};
     height: ${hamburgerLayerHeight};
-    background-color: ${hamburgerLayerColor};
+    background-color: ${({ colorScheme }) => colorScheme};
     border-radius: ${hamburgerLayerBorderRadius};
     position: absolute;
     transition-property: transform;
