@@ -7,6 +7,7 @@ import Helmet from 'react-helmet'
 import { Location } from '@reach/router'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
+import ReactCookieConsent from 'react-cookie-consent'
 
 import Navigation from './Navigation'
 import Overlays from './Overlays'
@@ -15,6 +16,7 @@ import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
 import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
+import MenuItem from './MenuItem'
 
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
@@ -257,6 +259,29 @@ export default class Layout extends React.Component {
                                 <div />
                               </Observer>
                             </main>
+                            <ReactCookieConsent
+                              buttonText="Ok"
+                              style={{
+                                zIndex: 1200,
+                                fontSize: '0.7em'
+                              }}
+                              buttonStyle={{
+                                background: 'white',
+                                color: 'black',
+                                borderRadius: '3px',
+                                border: 'none',
+                                padding: '0 5px'
+                              }}
+                            >
+                              {`Um die Webseite und Services für Sie zu optimieren,
+                          werden Cookies verwendet. Durch die weitere Nutzung
+                          der Webseite stimmen Sie der `}
+                              <MenuItem
+                                humanId="data-protection"
+                                title="Verwendung von Cookies"
+                              />
+                              {` zu.`}
+                            </ReactCookieConsent>
                           </Wrapper>
                         </ThemeProvider>
                       </>

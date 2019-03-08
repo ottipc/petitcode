@@ -8,7 +8,7 @@ import { NavigationContext, LocationContext } from '../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
-export default function MenuItem({ className = null, humanId }) {
+export default function MenuItem({ className = null, humanId, title = null }) {
   const { pages } = useContext(NavigationContext)
   const { activeLocale } = useContext(LocationContext)
 
@@ -18,13 +18,13 @@ export default function MenuItem({ className = null, humanId }) {
   )
 
   if (page) {
-    const { slug, locale, title } = page.fields
+    const { slug, locale, title: pageTitle } = page.fields
     return (
       <StyledLink
         className={className}
         to={createLocalizedPath({ locale, slug })}
       >
-        {title}
+        {title || pageTitle}
       </StyledLink>
     )
   }
@@ -34,5 +34,6 @@ export default function MenuItem({ className = null, humanId }) {
 
 MenuItem.propTypes = {
   humanId: propTypes.string.isRequired,
+  title: propTypes.string,
   className: propTypes.string
 }
