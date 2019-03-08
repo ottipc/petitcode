@@ -56,7 +56,7 @@ const GlobalStyle = createGlobalStyle`
       transition: width 0.1s ease-in-out;
     }
 
-    &.active {
+    &[aria-current='page'] {
       &:after {
         width: 80%;
       }

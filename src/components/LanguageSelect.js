@@ -17,20 +17,9 @@ const ListItem = styled.li({
   margin: '0.25rem'
 })
 
-const SwitcherLink = styled(Link)`
-  transition: 0.3s opacity linear;
-  opacity: 0.65;
+const SwitcherLink = styled(Link)``
 
-  &:hover {
-    opacity: 0.8;
-    text-decoration: none;
-  }
-  &[aria-current='page'] {
-    opacity: 1;
-  }
-`
-
-function generatePageSelector({ pages, activeHumandId, langs }) {
+function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
   // Map of slugs for the current active page
   const slugMap = pages
     .filter((page) => page.node.fields.humanId === activeHumandId)
@@ -42,45 +31,52 @@ function generatePageSelector({ pages, activeHumandId, langs }) {
     }, {})
 
   // Array representing the language switcher menu
-  const langsMenu = langs.map((locale) => {
-    let path
+  const langsMenu = langs
+    .map((locale) => {
+      let path
 
-    // Generate path to translated version
-    if (slugMap[locale]) {
-      path = createLocalizedPath({
+      // Skip link for current locale
+      if (locale === activeLocale) {
+        return null
+      }
+
+      // Generate path to translated version
+      if (slugMap[locale]) {
+        path = createLocalizedPath({
+          locale,
+          slug: slugMap[locale]
+        })
+      }
+
+      // Fallback to default locale if translation is not available
+      if (!path && slugMap[defaultLocale]) {
+        path = createLocalizedPath({
+          locale: defaultLocale,
+          slug: slugMap[defaultLocale]
+        })
+      }
+
+      // Fallback if no version with default locale is available
+      if (!path && slugMap.length) {
+        path = createLocalizedPath({
+          locale: Object.keys(slugMap)[0],
+          slug: slugMap[Object.keys(slugMap)[0]]
+        })
+      }
+
+      // Unable to create any path. This should not happen.
+      if (!path) {
+        throw new Error(
+          `Unable to generate language selector link for ${activeHumandId} with locale ${locale}`
+        )
+      }
+
+      return {
         locale,
-        slug: slugMap[locale]
-      })
-    }
-
-    // Fallback to default locale if translation is not available
-    if (!path && slugMap[defaultLocale]) {
-      path = createLocalizedPath({
-        locale: defaultLocale,
-        slug: slugMap[defaultLocale]
-      })
-    }
-
-    // Fallback if no version with default locale is available
-    if (!path && slugMap.length) {
-      path = createLocalizedPath({
-        locale: Object.keys(slugMap)[0],
-        slug: slugMap[Object.keys(slugMap)[0]]
-      })
-    }
-
-    // Unable to create any path. This should not happen.
-    if (!path) {
-      throw new Error(
-        `Unable to generate language selector link for ${activeHumandId} with locale ${locale}`
-      )
-    }
-
-    return {
-      locale,
-      path
-    }
-  })
+        path
+      }
+    })
+    .filter(Boolean)
 
   return langsMenu.map(({ path, locale }) => (
     <ListItem key={locale}>
@@ -93,7 +89,7 @@ export default class LanguageSelect extends React.PureComponent {
   render() {
     return (
       <LocationContext.Consumer>
-        {({ activeHumandId }) => (
+        {({ activeHumandId, activeLocale }) => (
           <StaticQuery
             query={graphql`
               query LanguageSelectQuery {
@@ -117,7 +113,8 @@ export default class LanguageSelect extends React.PureComponent {
                 {generatePageSelector({
                   pages,
                   langs,
-                  activeHumandId
+                  activeHumandId,
+                  activeLocale
                 })}
               </List>
             )}

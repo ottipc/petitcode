@@ -22,7 +22,6 @@ export default function MenuItem({ className = null, humanId }) {
     return (
       <StyledLink
         className={className}
-        activeClassName="active"
         to={createLocalizedPath({ locale, slug })}
       >
         {title}
