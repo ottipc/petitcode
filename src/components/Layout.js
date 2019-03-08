@@ -220,7 +220,10 @@ export default class Layout extends React.Component {
                             <Navigation navigationActive={navigationActive} />
                             <main>
                               {children}
-                              <Observer onChange={this.handleIntersection}>
+                              <Observer
+                                onChange={this.handleIntersection}
+                                rootMargin="0px 0px 100px 0px"
+                              >
                                 <div />
                               </Observer>
                             </main>
