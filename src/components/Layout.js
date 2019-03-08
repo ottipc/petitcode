@@ -6,6 +6,7 @@ import { getCurrentLangKey } from 'ptz-i18n'
 import Helmet from 'react-helmet'
 import { Location } from '@reach/router'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Observer from '@researchgate/react-intersection-observer'
 
 import Navigation from './Navigation'
 import Overlays from './Overlays'
@@ -66,7 +67,8 @@ export default class Layout extends React.Component {
     navigationActive: false,
     activeSection: null,
     scrollToSection: null,
-    sections: []
+    sections: [],
+    scrolledDown: false
   }
 
   setSections = (sections) => {
@@ -85,6 +87,10 @@ export default class Layout extends React.Component {
     }))
   }
 
+  handleIntersection = ({ isIntersecting: scrolledDown }) => {
+    this.setState({ scrolledDown })
+  }
+
   shouldComponentUpdate = (nextProps, nextState) => {
     // Only rerender when state truely changed
     if (JSON.stringify(nextState) === JSON.stringify(this.state)) {
@@ -99,7 +105,8 @@ export default class Layout extends React.Component {
       navigationActive,
       sections,
       activeSection,
-      scrollToSection
+      scrollToSection,
+      scrolledDown
     } = this.state
     const {
       toggleNavigation,
@@ -110,7 +117,7 @@ export default class Layout extends React.Component {
 
     return (
       <NavigationContext.Provider
-        value={{ toggleNavigation, navigationActive }}
+        value={{ toggleNavigation, navigationActive, scrolledDown }}
       >
         <SectionContext.Provider
           value={{
@@ -203,7 +210,12 @@ export default class Layout extends React.Component {
                             <GlobalStyle />
                             <Overlays />
                             <Navigation navigationActive={navigationActive} />
-                            <main>{children}</main>
+                            <main>
+                              {children}
+                              <Observer onChange={this.handleIntersection}>
+                                <div />
+                              </Observer>
+                            </main>
                           </Wrapper>
                         </ThemeProvider>
                       </>

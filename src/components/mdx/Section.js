@@ -79,9 +79,7 @@ const ContentGridWrapper = styled(GridWrapper)`
 function Section({ video, children, nr }) {
   const { setActiveSection } = useContext(SectionContext)
 
-  const handleIntersection = (event) => {
-    const { isIntersecting } = event
-
+  const handleIntersection = ({ isIntersecting }) => {
     if (isIntersecting) {
       setActiveSection(nr)
     }
