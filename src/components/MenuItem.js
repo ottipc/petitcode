@@ -8,7 +8,7 @@ import { NavigationContext, LocationContext } from '../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
-export default function MenuItem({ className = 'hover', humanId }) {
+export default function MenuItem({ className = null, humanId }) {
   const { pages } = useContext(NavigationContext)
   const { activeLocale } = useContext(LocationContext)
 

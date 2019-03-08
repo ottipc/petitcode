@@ -12,6 +12,10 @@ const Wrapper = styled.nav`
   transition: color 0.3s linear;
   ${({ colorScheme }) => css`
     color: ${colorScheme};
+
+    & a:after {
+      background-color: ${colorScheme};
+    }
   `}
 `
 
@@ -43,18 +47,14 @@ export default function Header({ colorScheme }) {
     <Wrapper colorScheme={colorScheme}>
       <Grid>
         <LogoWrapper>
-          <Link to={`${activeLocale}/`} aria-label="Home">
+          <Link className="nohover" to={`${activeLocale}/`} aria-label="Home">
             <Logo />
           </Link>
         </LogoWrapper>
         <ContactWrapper>
-          <a className="hover" href="mailto:hi@petitcode.de">
-            hi@petitcode.de
-          </a>
+          <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
           <br />
-          <a className="hover" href="tel:+493064080338">
-            +49 (0) 30 640 803 38
-          </a>
+          <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
         </ContactWrapper>
       </Grid>
     </Wrapper>

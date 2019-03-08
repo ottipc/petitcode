@@ -1,6 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import Social from './mdx/Social'
 import LanguageSelect from './LanguageSelect'
@@ -11,8 +11,14 @@ const FooterWrapper = styled.footer`
   position: relative;
   z-index: 200;
   padding: ${({ theme }) => theme.outerSpacing};
-  color: ${({ colorScheme }) => colorScheme};
   transition: color 0.3s linear;
+  ${({ colorScheme }) => css`
+    color: ${colorScheme};
+
+    & a:after {
+      background-color: ${colorScheme};
+    }
+  `}
 `
 
 const Grid = styled.div`
