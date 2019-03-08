@@ -72,7 +72,7 @@ const ContentGridWrapper = styled(GridWrapper)`
   }
 
   & > h1 {
-    font-size: 12vmin;
+    font-size: 10vmin;
   }
 `
 

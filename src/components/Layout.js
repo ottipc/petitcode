@@ -19,7 +19,7 @@ import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Noto Sans';
-    src: local('Noto Sans'), url(${NotoSansBold}) format('woff2');
+    src: local('Noto Sans Bold'), url(${NotoSansBold}) format('woff2');
     font-weight: bold;
     font-style: normal;
 
