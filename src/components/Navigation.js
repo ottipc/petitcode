@@ -2,11 +2,9 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
-import { Link, StaticQuery, graphql } from 'gatsby'
-
 import GridWrapper from './GridWrapper'
+import MenuItem from './MenuItem'
 import { LocationContext } from '../utils/Contexts'
-import { createLocalizedPath } from '../utils/i18n'
 import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
 
 const Wrapper = styled.nav`
@@ -60,9 +58,10 @@ const List = styled.ul`
 const ListItem = styled.li`
   margin: 0;
   padding: 0;
+  line-height: 1.3em;
 `
 
-const MenuLink = styled(Link)`
+const MenuBasicStyling = css`
   letter-spacing: 4px;
 
   &:hover {
@@ -71,6 +70,14 @@ const MenuLink = styled(Link)`
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
       1px 1px 0 #fff;
   }
+`
+
+const MenuLink = styled(MenuItem)`
+  ${MenuBasicStyling}
+`
+
+const ExternalLink = styled.a`
+  ${MenuBasicStyling}
 `
 
 class Navigation extends React.PureComponent {
@@ -82,44 +89,34 @@ class Navigation extends React.PureComponent {
     return (
       <LocationContext.Consumer>
         {({ activeLocale }) => (
-          <StaticQuery
-            query={graphql`
-              query NavigationQuery {
-                allMdx {
-                  ...Pages
-                }
-              }
-            `}
-            render={({ allMdx: { edges: pages } }) => (
-              <Wrapper navigationActive={navigationActive}>
-                <ContentWrapper>
-                  <Logo />
-                  <List>
-                    {pages
-                      .filter(
-                        ({
-                          node: {
-                            fields: { locale }
-                          }
-                        }) => locale === activeLocale
-                      )
-                      .map(({ node: { fields: { title, slug } } }) => (
-                        <ListItem key={`menuitem-${slug}`}>
-                          <MenuLink
-                            to={createLocalizedPath({
-                              locale: activeLocale,
-                              slug
-                            })}
-                          >
-                            {title}
-                          </MenuLink>
-                        </ListItem>
-                      ))}
-                  </List>
-                </ContentWrapper>
-              </Wrapper>
-            )}
-          />
+          <Wrapper navigationActive={navigationActive}>
+            <ContentWrapper>
+              <Logo />
+              <List>
+                <ListItem>
+                  <ExternalLink
+                    href="https://petitcode.com/jobs/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Jobs
+                  </ExternalLink>
+                </ListItem>
+                <ListItem>
+                  <MenuLink humanId="contact" />
+                </ListItem>
+                <ListItem>
+                  <ExternalLink
+                    href="https://petitcode.com/blog/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Blog
+                  </ExternalLink>
+                </ListItem>
+              </List>
+            </ContentWrapper>
+          </Wrapper>
         )}
       </LocationContext.Consumer>
     )

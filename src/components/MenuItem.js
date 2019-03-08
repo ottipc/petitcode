@@ -1,40 +1,39 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 import { createLocalizedPath } from '../utils/i18n'
+import { NavigationContext, LocationContext } from '../utils/Contexts'
 
-class MenuItem extends React.PureComponent {
-  static propTypes = {
-    pages: propTypes.array.isRequired,
-    id: propTypes.string.isRequired,
-    locale: propTypes.string.isRequired,
-    className: propTypes.string
-  }
-  static defaultProptypes = {
-    className: null
-  }
-  render() {
-    const { pages, id, locale, className } = this.props
-    const page = pages.find(
-      (entry) => entry.node.id === id && entry.node.locale === locale
+const StyledLink = styled(Link)``
+
+export default function MenuItem({ className = null, humanId }) {
+  const { pages } = useContext(NavigationContext)
+  const { activeLocale } = useContext(LocationContext)
+
+  const page = pages.find(
+    (page) =>
+      page.fields.humanId === humanId && page.fields.locale === activeLocale
+  )
+
+  if (page) {
+    const { slug, locale, title } = page.fields
+    return (
+      <StyledLink
+        className={className}
+        activeClassName="active"
+        to={createLocalizedPath({ locale, slug })}
+      >
+        {title}
+      </StyledLink>
     )
-
-    if (page) {
-      const { slug, title } = page.node
-      return (
-        <Link
-          className={className}
-          activeClassName="active"
-          to={createLocalizedPath({ locale, slug })}
-        >
-          {title}
-        </Link>
-      )
-    }
-
-    return null
   }
+
+  return null
 }
 
-export default MenuItem
+MenuItem.propTypes = {
+  humanId: propTypes.string.isRequired,
+  className: propTypes.string
+}

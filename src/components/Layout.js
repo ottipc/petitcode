@@ -116,43 +116,51 @@ export default class Layout extends React.Component {
     } = this
 
     return (
-      <NavigationContext.Provider
-        value={{ toggleNavigation, navigationActive, scrolledDown }}
-      >
-        <SectionContext.Provider
-          value={{
-            sections,
-            activeSection,
-            setActiveSection,
-            setSections,
-            scrollToSection,
-            setScrollToSection
-          }}
-        >
-          <StaticQuery
-            query={graphql`
-              query LayoutQuery {
-                site {
-                  siteMetadata {
-                    title
-                    description
-                  }
-                  ...Metadata
-                }
-                allMdx {
-                  ...Pages
-                }
+      <StaticQuery
+        query={graphql`
+          query LayoutQuery {
+            site {
+              siteMetadata {
+                title
+                description
               }
-            `}
-            render={(data) => {
-              const {
-                siteMetadata: {
-                  siteUrl,
-                  languages: { langs, defaultLocale }
-                }
-              } = data.site
+              ...Metadata
+            }
+            allMdx {
+              ...Pages
+            }
+          }
+        `}
+        render={(data) => {
+          const {
+            siteMetadata: {
+              siteUrl,
+              languages: { langs, defaultLocale }
+            }
+          } = data.site
+          const { edges } = data.allMdx
 
-              return (
+          const pages = edges.map((edge) => edge.node)
+
+          return (
+            <NavigationContext.Provider
+              value={{
+                toggleNavigation,
+                navigationActive,
+                scrolledDown,
+                pages
+              }}
+            >
+              <SectionContext.Provider
+                value={{
+                  sections,
+                  activeSection,
+                  setActiveSection,
+                  setSections,
+                  scrollToSection,
+                  setScrollToSection
+                }}
+              >
                 <Location>
                   {({ location }) => {
                     const url = location.pathname
@@ -222,11 +230,11 @@ export default class Layout extends React.Component {
                     )
                   }}
                 </Location>
-              )
-            }}
-          />
-        </SectionContext.Provider>
-      </NavigationContext.Provider>
+              </SectionContext.Provider>
+            </NavigationContext.Provider>
+          )
+        }}
+      />
     )
   }
 }
