@@ -7,7 +7,8 @@ export const LocationContext = createContext({
 
 export const NavigationContext = createContext({
   toggleNavigation: () => {},
-  navigationActive: false
+  navigationActive: false,
+  scrolledDown: false
 })
 
 export const SectionContext = createContext({

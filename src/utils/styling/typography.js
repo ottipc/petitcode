@@ -9,7 +9,7 @@ const typography = new Typography({
   baseLineHeight: 1.75,
   scaleRatio: 2.2,
   headerFontFamily: theme.fonts.header,
-  headerWeight: 'normal',
+  headerWeight: 'bold',
   bodyFontFamily: theme.fonts.body
 })
 

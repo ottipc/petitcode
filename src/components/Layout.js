@@ -6,6 +6,8 @@ import { getCurrentLangKey } from 'ptz-i18n'
 import Helmet from 'react-helmet'
 import { Location } from '@reach/router'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import Observer from '@researchgate/react-intersection-observer'
+import ReactCookieConsent from 'react-cookie-consent'
 
 import Navigation from './Navigation'
 import Overlays from './Overlays'
@@ -14,12 +16,13 @@ import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
 import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
+import MenuItem from './MenuItem'
 
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Noto Sans';
-    src: local('Noto Sans'), url(${NotoSansBold}) format('woff2');
+    src: local('Noto Sans Bold'), url(${NotoSansBold}) format('woff2');
     font-weight: bold;
     font-style: normal;
 
@@ -37,10 +40,40 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    position: relative;
+    display: inline-block;
     color: inherit;
     text-decoration: none;
+
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: #000;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.1s ease-in-out;
+    }
+
+    &[aria-current='page'] {
+      &:after {
+        width: 80%;
+      }
+    }
     &:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      &:after {
+        width: 110%;
+      }
+    }
+
+    &.nohover {
+      &:after {
+        display: none !important;
+      }
     }
   }
 
@@ -66,7 +99,8 @@ export default class Layout extends React.Component {
     navigationActive: false,
     activeSection: null,
     scrollToSection: null,
-    sections: []
+    sections: [],
+    scrolledDown: false
   }
 
   setSections = (sections) => {
@@ -85,6 +119,10 @@ export default class Layout extends React.Component {
     }))
   }
 
+  handleIntersection = ({ isIntersecting: scrolledDown }) => {
+    this.setState({ scrolledDown })
+  }
+
   shouldComponentUpdate = (nextProps, nextState) => {
     // Only rerender when state truely changed
     if (JSON.stringify(nextState) === JSON.stringify(this.state)) {
@@ -99,7 +137,8 @@ export default class Layout extends React.Component {
       navigationActive,
       sections,
       activeSection,
-      scrollToSection
+      scrollToSection,
+      scrolledDown
     } = this.state
     const {
       toggleNavigation,
@@ -109,43 +148,51 @@ export default class Layout extends React.Component {
     } = this
 
     return (
-      <NavigationContext.Provider
-        value={{ toggleNavigation, navigationActive }}
-      >
-        <SectionContext.Provider
-          value={{
-            sections,
-            activeSection,
-            setActiveSection,
-            setSections,
-            scrollToSection,
-            setScrollToSection
-          }}
-        >
-          <StaticQuery
-            query={graphql`
-              query LayoutQuery {
-                site {
-                  siteMetadata {
-                    title
-                    description
-                  }
-                  ...Metadata
-                }
-                allMdx {
-                  ...Pages
-                }
+      <StaticQuery
+        query={graphql`
+          query LayoutQuery {
+            site {
+              siteMetadata {
+                title
+                description
               }
-            `}
-            render={(data) => {
-              const {
-                siteMetadata: {
-                  siteUrl,
-                  languages: { langs, defaultLocale }
-                }
-              } = data.site
+              ...Metadata
+            }
+            allMdx {
+              ...Pages
+            }
+          }
+        `}
+        render={(data) => {
+          const {
+            siteMetadata: {
+              siteUrl,
+              languages: { langs, defaultLocale }
+            }
+          } = data.site
+          const { edges } = data.allMdx
 
-              return (
+          const pages = edges.map((edge) => edge.node)
+
+          return (
+            <NavigationContext.Provider
+              value={{
+                toggleNavigation,
+                navigationActive,
+                scrolledDown,
+                pages
+              }}
+            >
+              <SectionContext.Provider
+                value={{
+                  sections,
+                  activeSection,
+                  setActiveSection,
+                  setSections,
+                  scrollToSection,
+                  setScrollToSection
+                }}
+              >
                 <Location>
                   {({ location }) => {
                     const url = location.pathname
@@ -203,18 +250,49 @@ export default class Layout extends React.Component {
                             <GlobalStyle />
                             <Overlays />
                             <Navigation navigationActive={navigationActive} />
-                            <main>{children}</main>
+                            <main>
+                              {children}
+                              <Observer
+                                onChange={this.handleIntersection}
+                                rootMargin="0px 0px 100px 0px"
+                              >
+                                <div />
+                              </Observer>
+                            </main>
+                            <ReactCookieConsent
+                              buttonText="Ok"
+                              style={{
+                                zIndex: 1200,
+                                fontSize: '0.7em'
+                              }}
+                              buttonStyle={{
+                                background: 'white',
+                                color: 'black',
+                                borderRadius: '3px',
+                                border: 'none',
+                                padding: '0 5px'
+                              }}
+                            >
+                              {`Um die Webseite und Services für Sie zu optimieren,
+                          werden Cookies verwendet. Durch die weitere Nutzung
+                          der Webseite stimmen Sie der `}
+                              <MenuItem
+                                humanId="data-protection"
+                                title="Verwendung von Cookies"
+                              />
+                              {` zu.`}
+                            </ReactCookieConsent>
                           </Wrapper>
                         </ThemeProvider>
                       </>
                     )
                   }}
                 </Location>
-              )
-            }}
-          />
-        </SectionContext.Provider>
-      </NavigationContext.Provider>
+              </SectionContext.Provider>
+            </NavigationContext.Provider>
+          )
+        }}
+      />
     )
   }
 }

@@ -72,16 +72,14 @@ const ContentGridWrapper = styled(GridWrapper)`
   }
 
   & > h1 {
-    font-size: 12vmin;
+    font-size: 10vmin;
   }
 `
 
 function Section({ video, children, nr }) {
   const { setActiveSection } = useContext(SectionContext)
 
-  const handleIntersection = (event) => {
-    const { isIntersecting } = event
-
+  const handleIntersection = ({ isIntersecting }) => {
     if (isIntersecting) {
       setActiveSection(nr)
     }

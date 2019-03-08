@@ -28,7 +28,12 @@ export default function Overlays() {
   const { navigationActive } = useContext(NavigationContext)
   const { sections, activeSection } = useContext(SectionContext)
   const section = sections[activeSection]
-  const colorScheme = (section && section.video ? 'white' : 'black') || 'black'
+  // White overlays when navigation is active
+  // White or black depending on section
+  // Fallback to black
+  const colorScheme = navigationActive
+    ? 'white'
+    : (section && section.video ? 'white' : 'black') || 'black'
 
   return (
     <React.Fragment>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
 import Logo from '../assets/petitcode-logo-text.svg'
+import { LocationContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
   position: relative;
@@ -11,6 +12,10 @@ const Wrapper = styled.nav`
   transition: color 0.3s linear;
   ${({ colorScheme }) => css`
     color: ${colorScheme};
+
+    & a:after {
+      background-color: ${colorScheme};
+    }
   `}
 `
 
@@ -37,11 +42,12 @@ const ContactWrapper = styled.div`
 `
 
 export default function Header({ colorScheme }) {
+  const { activeLocale } = useContext(LocationContext)
   return (
     <Wrapper colorScheme={colorScheme}>
       <Grid>
         <LogoWrapper>
-          <Link to="/" aria-label="Home">
+          <Link className="nohover" to={`${activeLocale}/`} aria-label="Home">
             <Logo />
           </Link>
         </LogoWrapper>
