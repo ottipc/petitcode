@@ -38,10 +38,37 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    position: relative;
+    display: inline-block;
     color: inherit;
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
+
+
+    &.hover {
+      &:after {
+        content: '';
+        display: block;
+        height: 1px;
+        background: #000;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.1s ease-in-out;
+      }
+
+      &.active {
+        &:after {
+          width: 80%;
+        }
+      }
+      &:hover {
+        text-decoration: none;
+        &:after {
+          width: 110%;
+        }
+      }
     }
   }
 

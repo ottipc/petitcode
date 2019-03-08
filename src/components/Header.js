@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
 import Logo from '../assets/petitcode-logo-text.svg'
+import { LocationContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
   position: relative;
@@ -37,18 +38,23 @@ const ContactWrapper = styled.div`
 `
 
 export default function Header({ colorScheme }) {
+  const { activeLocale } = useContext(LocationContext)
   return (
     <Wrapper colorScheme={colorScheme}>
       <Grid>
         <LogoWrapper>
-          <Link to="/" aria-label="Home">
+          <Link to={`${activeLocale}/`} aria-label="Home">
             <Logo />
           </Link>
         </LogoWrapper>
         <ContactWrapper>
-          <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+          <a className="hover" href="mailto:hi@petitcode.de">
+            hi@petitcode.de
+          </a>
           <br />
-          <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+          <a className="hover" href="tel:+493064080338">
+            +49 (0) 30 640 803 38
+          </a>
         </ContactWrapper>
       </Grid>
     </Wrapper>
