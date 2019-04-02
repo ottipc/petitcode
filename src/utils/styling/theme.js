@@ -12,7 +12,9 @@ module.exports = {
   breakpoints: {
     small: '576px',
     medium: '768px',
-    large: '992px'
+    large: '992px',
+    headerLogo: '1299px',
+    headerLogoText: '1300px'
   },
   colors: {
     bg: '#F3F3F3',
