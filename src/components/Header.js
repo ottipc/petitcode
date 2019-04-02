@@ -47,6 +47,12 @@ const LogoWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.headerLogo}) {
     & svg.notext {
       display: block;
+      width: 20px;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    & svg.notext {
+      width: auto;
     }
   }
 `

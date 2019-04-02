@@ -9,6 +9,7 @@ const Wrapper = styled.section`
   position: relative;
   scroll-snap-align: start;
   min-height: 100vh;
+  padding: 0 ${({ theme }) => theme.spacingUnit}px;
 `
 
 const VideoWrapper = styled.div`
@@ -40,7 +41,7 @@ const ContentWrapper = styled.div`
   background-color: #fff;
   color: #000;
 
-  padding: 10vh 0;
+  padding: 20vh 0;
 
   ${({ video }) =>
     video &&

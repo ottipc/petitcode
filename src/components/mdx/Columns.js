@@ -30,23 +30,29 @@ export const ColumnContentWrapper = styled.div`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.grid.width}px;
 
-  ${({ reverse }) =>
-    reverse &&
-    css`
-      flex-direction: row-reverse;
-    `}
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    ${({ reverse }) =>
+      reverse &&
+      css`
+        flex-direction: row-reverse;
+      `}
+  }
 `
 
 export const ColumnContentText = styled.div`
   box-sizing: content-box;
   padding: 0 ${({ theme }) => theme.grid.gutter}px;
-  ${({ width }) =>
-    css`
-      flex: ${width};
-    `}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    ${({ width }) =>
+      css`
+        flex: ${width};
+      `}
+  }
 `
 
 const ColumnFiller = styled.div`
+  display: none;
   padding: 0 ${({ theme }) => theme.grid.gutter}px;
   ${({
     width,
@@ -57,6 +63,10 @@ const ColumnFiller = styled.div`
     css`
       flex: ${columns - width};
     `}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    display: block;
+  }
 `
 
 export function ColumnContent({ reverse, width = 8, children }) {
@@ -75,36 +85,38 @@ ColumnContent.propTypes = {
 }
 
 export const ColumnImage = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 33vw;
-  overflow: hidden;
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33vw;
+    overflow: hidden;
 
-  ${({ reverse }) =>
-    reverse
-      ? css`
-          left: 0;
-        `
-      : css`
-          right: 0;
-        `}
-
-  & img {
-    object-fit: cover;
-  }
-
-  & span.gatsby-resp-image-wrapper {
-    position: absolute !important;
-    width: 100%;
-    height: 100%;
     ${({ reverse }) =>
       reverse
         ? css`
-            left: 0;
+            left: -${({ theme }) => theme.spacingUnit}px;
           `
         : css`
-            right: 0;
+            right: -${({ theme }) => theme.spacingUnit}px;
           `}
+
+    & img {
+      object-fit: cover;
+    }
+
+    & span.gatsby-resp-image-wrapper {
+      position: absolute !important;
+      width: 100%;
+      height: 100%;
+      ${({ reverse }) =>
+        reverse
+          ? css`
+              left: 0;
+            `
+          : css`
+              right: 0;
+            `}
+    }
   }
 `

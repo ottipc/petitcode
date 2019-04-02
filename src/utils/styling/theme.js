@@ -5,7 +5,7 @@ const blue2 = '#13CCC4'
 
 module.exports = {
   spacingUnit: 16,
-  outerSpacing: '3vmin',
+  outerSpacing: '2vmin',
   elements: {
     headerHeight: 100
   },
@@ -23,7 +23,7 @@ module.exports = {
     headerLogoText: '1700px'
   },
   colors: {
-    bg: '#F3F3F3',
+    bg: white,
     font: black,
     primary: blue,
     primaryText: white,
