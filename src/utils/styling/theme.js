@@ -1,7 +1,6 @@
 const white = '#fff'
-const black = '#3C4757'
-const blue = '#0E65F1'
-const blue2 = '#13CCC4'
+const black = '#000'
+const grey = '#f0f0f0'
 
 module.exports = {
   spacingUnit: 16,
@@ -25,12 +24,9 @@ module.exports = {
   colors: {
     bg: white,
     font: black,
-    primary: blue,
-    primaryText: white,
-    secondary: blue2,
-    secondaryText: white,
     white,
-    black
+    black,
+    grey
   },
   fonts: {
     header: [

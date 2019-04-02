@@ -7,6 +7,10 @@ const ColumnsWrapper = styled.div`
   display: flex;
   align-items: center;
   min-height: 50vh;
+
+  & + & {
+    border-top: 1px solid ${({ theme }) => theme.colors.grey};
+  }
 `
 
 export function Columns({ children, reverse = false }) {
@@ -41,7 +45,7 @@ export const ColumnContentWrapper = styled.div`
 
 export const ColumnContentText = styled.div`
   box-sizing: content-box;
-  padding: 0 ${({ theme }) => theme.grid.gutter}px;
+  padding: 10vh ${({ theme }) => theme.grid.gutter}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     ${({ width }) =>
