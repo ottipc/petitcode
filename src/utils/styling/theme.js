@@ -9,12 +9,18 @@ module.exports = {
   elements: {
     headerHeight: 100
   },
+  grid: {
+    width: 1320,
+    columns: 12,
+    gutter: 14,
+    columnWidth: 1320 / 12
+  },
   breakpoints: {
     small: '576px',
     medium: '768px',
     large: '992px',
-    headerLogo: '1299px',
-    headerLogoText: '1300px'
+    headerLogo: '1699px',
+    headerLogoText: '1700px'
   },
   colors: {
     bg: '#F3F3F3',

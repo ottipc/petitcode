@@ -10,18 +10,30 @@ import Sections from "$components/Sections";
 import Section from "$components/Section";
 import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
+import Centered from "$components/Centered";
+import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
 
 <Sections>
 <Section>
+<Columns>
+<ColumnContent>
 
 <KnockoutText>Petitcode</KnockoutText>
 
 # your avantgarde creative web agency Berlin and worldwide
 
 Petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign,product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
+</ColumnContent>
+<ColumnImage>
 
+![our decentralised web agency structure will help you connect to top quality freelancers](./images/med-badr-chemmaoui-630239-unsplash.jpg)
+
+</ColumnImage>
+</Columns>
 </Section>
 <Section>
+<Columns reverse>
+<ColumnContent width="6">
 
 # Web development agency
 
@@ -31,10 +43,18 @@ Front end developers tend to get more credit because only their work is seen by 
 
 *hire a webdesign freelancer*
 
-</Section>
-<Section>
+</ColumnContent>
+<ColumnImage>
 
+![petitcode’s web design agency only executes state-of-the-art solutions](./images/irfan-simsar-1144378-unsplash.jpg)
+
+</ColumnImage>
+</Columns>
+
+<Columns reverse>
+<ColumnContent width="6">
 <Grid>
+
 <div>
 
 ####  Front End Development projects
@@ -95,13 +115,20 @@ and we will make sure to put you in touch with relevant freelancers.
 *hire a webdesign freelancer*
 
 </div>
-</Grid>
 
+</Grid>
+</ColumnContent>
+<ColumnImage>
+
+![petitcode’s web design agency only executes state-of-the-art solutions](./images/joshua-aragon-1280300-unsplash.jpg)
+
+</ColumnImage>
+</Columns>
 </Section>
 <Section>
+<Centered>
 
-# What makes petitcode
-different from other digital agencies?
+# What makes petitcode different from other digital agencies?
 
 petitcode’s collective originated from the flaws of this model and the ambition
 of solving these issues. Traditional agencies have several layers of
@@ -119,5 +146,6 @@ services. By choosing petitcode you will be in direct communication
 with the freelancer, with no hidden layers. Simply get in touch with
 us and let’s get the project started.
 
+</Centered>
 </Section>
 </Sections>
