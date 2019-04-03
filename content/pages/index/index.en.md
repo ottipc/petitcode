@@ -12,6 +12,7 @@ import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
 import Centered from "$components/Centered";
 import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
+import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
 
 <Sections>
 <Section>
@@ -32,8 +33,8 @@ Petitcode is a **creative collective of senior technology specialists** from Ber
 </Columns>
 </Section>
 <Section>
-<Columns reverse>
-<ColumnContent width="6">
+<Columns reverse contentWidth="6">
+<ColumnContent>
 
 # Web development agency
 
@@ -51,16 +52,25 @@ Front end developers tend to get more credit because only their work is seen by 
 </ColumnImage>
 </Columns>
 
-<Columns reverse>
-<ColumnContent width="6">
-<Grid>
+<Columns reverse contentWidth="6">
+<ColumnContent>
 
-<div>
+# Where can we help?
 
-####  Front End Development projects
+<Carousel>
+<CarouselNavigation>
 
-**The
-difference** between
+Front End Development
+
+Back End Development
+
+Web design
+
+</CarouselNavigation>
+<CarouselSlides>
+<CarouselSlide>
+
+**The difference** between
 generic front end development and senior front end development **is understanding
 which tools are best fit for specific tasks.**
 This will define whether the software will look slick or simply
@@ -73,18 +83,13 @@ your business, simply [get in touch](/contact) with us.
 
 *hire a front end developer*
 
-</div>
-<div>
+</CarouselSlide>
+<CarouselSlide>
 
-#### []()Back End Development
-projects
-
-The
-developer’s task is to write, read, and process data from a
+The developer’s task is to write, read, and process data from a
 database or any data source.
 
-Considering
-that the back-end developer is responsible for building the
+Considering that the back-end developer is responsible for building the
 architecture and internal design of the website, a back-end developer
 needs to know much more about website architecture. Petitcode’s
 collective of senior freelancers has **only
@@ -94,13 +99,10 @@ your business, simply [get in touch](http://de-en/contact) with us.
 
 *hire a back end developer*
 
-</div>
-<div>
+</CarouselSlide>
+<CarouselSlide>
 
-#### []()Web design
-
-When
-you are simply looking for the design of your product only - whether
+When you are simply looking for the design of your product only - whether
 app, website, shop, etc - we recommend using the services of a
 webdesign freelancer. As web design can be very subjective and
 directly related to your own experiences and related emotions.
@@ -108,15 +110,14 @@ Finding the right designer is not just matching skills but also
 reviewing portfolios, previous clients and listening to your gut
 feeling.
 
-If
-you are looking for a kick-ass designer, simply get in touch with us
+If you are looking for a kick-ass designer, simply get in touch with us
 and we will make sure to put you in touch with relevant freelancers.
 
 *hire a webdesign freelancer*
 
-</div>
-
-</Grid>
+</CarouselSlide>
+</CarouselSlides>
+</Carousel>
 </ColumnContent>
 <ColumnImage>
 

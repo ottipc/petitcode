@@ -60,7 +60,7 @@ const ContentWrapper = styled.div`
   }
 
   & h1 {
-    font-size: 3.5vmin;
+    font-size: 3.5vw;
   }
 `
 

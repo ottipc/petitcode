@@ -51,7 +51,7 @@ const List = styled.ul`
     }
   }) => header.join(', ')};
   font-weight: bold;
-  font-size: 11vmin;
+  font-size: 11vw;
   text-align: right;
   text-transform: uppercase;
 `

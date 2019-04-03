@@ -4,37 +4,25 @@ import styled, { css } from 'styled-components'
 
 const ColumnsWrapper = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
   min-height: 50vh;
 
   & + & {
-    border-top: 1px solid ${({ theme }) => theme.colors.grey};
+    border-top: 1px solid ${({ theme }) => theme.colors.grey800};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    display: flex;
+    align-items: center;
   }
 `
 
-export function Columns({ children, reverse = false }) {
-  // Automagically append numbering to sections
-  children = React.Children.map(children, (child, nr) => {
-    return React.cloneElement(child, {
-      reverse
-    })
-  })
-
-  return <ColumnsWrapper>{children}</ColumnsWrapper>
-}
-
-Columns.propTypes = {
-  children: propTypes.node.isRequired,
-  reverse: propTypes.bool
-}
-
 export const ColumnContentWrapper = styled.div`
-  display: flex;
   margin: 0 auto;
   max-width: ${({ theme }) => theme.grid.width}px;
+  width: 100%;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    display: flex;
     ${({ reverse }) =>
       reverse &&
       css`
@@ -48,9 +36,15 @@ export const ColumnContentText = styled.div`
   padding: 10vh ${({ theme }) => theme.grid.gutter}px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    ${({ width }) =>
+    ${({
+      contentWidth,
+      theme: {
+        grid: { columns }
+      }
+    }) =>
       css`
-        flex: ${width};
+        flex: 0 0 ${(contentWidth / columns) * 100}%;
+        overflow: hidden;
       `}
   }
 `
@@ -59,13 +53,14 @@ const ColumnFiller = styled.div`
   display: none;
   padding: 0 ${({ theme }) => theme.grid.gutter}px;
   ${({
-    width,
+    contentWidth,
     theme: {
       grid: { columns }
     }
   }) =>
     css`
-      flex: ${columns - width};
+      flex: 0 0 ${((columns - contentWidth) / columns) * 100}%;
+      overflow: hidden;
     `}
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
@@ -73,18 +68,38 @@ const ColumnFiller = styled.div`
   }
 `
 
-export function ColumnContent({ reverse, width = 8, children }) {
+export function Columns({ children, contentWidth = 8, reverse = false }) {
+  // Automagically append numbering to sections
+  children = React.Children.map(children, (child, nr) => {
+    return React.cloneElement(child, {
+      reverse,
+      contentWidth: parseInt(contentWidth)
+    })
+  })
+
+  return <ColumnsWrapper>{children}</ColumnsWrapper>
+}
+
+Columns.propTypes = {
+  children: propTypes.node.isRequired,
+  reverse: propTypes.bool,
+  contentWidth: propTypes.string
+}
+
+export function ColumnContent({ reverse, contentWidth = 8, children }) {
   return (
     <ColumnContentWrapper reverse={reverse}>
-      <ColumnContentText width={width}>{children}</ColumnContentText>
-      <ColumnFiller width={width} />
+      <ColumnContentText contentWidth={contentWidth}>
+        {children}
+      </ColumnContentText>
+      <ColumnFiller contentWidth={contentWidth} />
     </ColumnContentWrapper>
   )
 }
 
 ColumnContent.propTypes = {
   children: propTypes.node.isRequired,
-  width: propTypes.string,
+  contentWidth: propTypes.number,
   reverse: propTypes.bool
 }
 
@@ -93,8 +108,17 @@ export const ColumnImage = styled.div`
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 33vw;
     overflow: hidden;
+
+    ${({
+      contentWidth,
+      theme: {
+        grid: { columns }
+      }
+    }) => css`
+      width: ${console.log({ columns, contentWidth }) ||
+        ((columns - (contentWidth + 1)) / columns) * 100}vw;
+    `}
 
     ${({ reverse }) =>
       reverse
