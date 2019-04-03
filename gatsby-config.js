@@ -25,9 +25,12 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-relative-images`
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1035,
+              maxWidth: 576,
               sizeByPixelDensity: true,
               linkImagesToOriginal: false
             }

@@ -116,8 +116,7 @@ export const ColumnImage = styled.div`
         grid: { columns }
       }
     }) => css`
-      width: ${console.log({ columns, contentWidth }) ||
-        ((columns - (contentWidth + 1)) / columns) * 100}vw;
+      width: ${((columns - (contentWidth + 1)) / columns) * 100}vw;
     `}
 
     ${({ reverse }) =>

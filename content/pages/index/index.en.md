@@ -147,6 +147,9 @@ services. By choosing petitcode you will be in direct communication
 with the freelancer, with no hidden layers. Simply get in touch with
 us and let’s get the project started.
 
+## this images fixes a bug that prevents images from being rendered:
+![our decentralised web agency structure will help you connect to top quality freelancers](./images/med-badr-chemmaoui-630239-unsplash.jpg)
+
 </Centered>
 </Section>
 </Sections>
