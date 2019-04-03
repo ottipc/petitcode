@@ -1,6 +1,8 @@
 const languages = require(`./src/data/languages`)
 const theme = require(`./src/utils/styling/theme`)
 
+const IS_PRODUCTION = process.env.NODE_ENV === 'production'
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://petitcode.com`,
@@ -53,21 +55,23 @@ module.exports = {
         uselocaleLayout: false
       }
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `petitcode | Your avantgarde digital agency`,
-        short_name: `petitcode`,
-        start_url: `/`,
-        background_color: theme.colors.bg,
-        theme_color: theme.colors.primary,
-        display: `minimal-ui`,
-        icon: `src/assets/petitcode-logo.svg`,
-        legacy: true
-      }
-    },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-webpack-size`,
-    `gatsby-plugin-subfont`
-  ]
+    IS_PRODUCTION
+      ? {
+          resolve: `gatsby-plugin-manifest`,
+          options: {
+            name: `petitcode | Your avantgarde digital agency`,
+            short_name: `petitcode`,
+            start_url: `/`,
+            background_color: theme.colors.bg,
+            theme_color: theme.colors.primary,
+            display: `minimal-ui`,
+            icon: `src/assets/petitcode-logo.svg`,
+            legacy: true
+          }
+        }
+      : null,
+    IS_PRODUCTION ? `gatsby-plugin-offline` : null,
+    IS_PRODUCTION ? `gatsby-plugin-subfont` : null,
+    `gatsby-plugin-webpack-size`
+  ].filter(Boolean)
 }
