@@ -76,7 +76,7 @@ const Submit = styled.input`
 
 export default function ContactForm() {
   return (
-    <form data-netlify="true">
+    <form data-netlify="true" action="#success">
       <Grid>
         <RadioGroup>
           <Radio
@@ -105,6 +105,7 @@ export default function ContactForm() {
       <Input type="email" name="email" placeholder="EMAIL" required />
       <Separator />
       <TextArea name="message" placeholder="ENTER MESSAGE" required />
+      <input type="hidden" name="form-name" value="contact" />
       <Submit type="submit" value="Send message" />
     </form>
   )
