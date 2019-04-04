@@ -11,13 +11,36 @@ const grey600 = '#9AA5B1'
 const grey700 = '#CBD2D9'
 const grey800 = '#E4E7EB'
 const grey900 = '#F5F7FA'
+const spacingUnit = 16
 
 module.exports = {
-  spacingUnit: 16,
-  outerSpacing: '2vmin',
   elements: {
     headerHeight: 100
   },
+  spacings: [
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.5,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32,
+    40,
+    48
+  ].reduce(
+    (spacings, scale) => ({
+      ...spacings,
+      ['s' + scale]: `${scale * spacingUnit}px`
+    }),
+    {}
+  ),
   grid: {
     width: 1320,
     columns: 12,

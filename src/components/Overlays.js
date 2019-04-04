@@ -3,10 +3,10 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import Header from './Header'
-import Footer from './Footer'
-import Navigation from './Navigation'
+import LanguageSelect from './LanguageSelect'
+// import Navigation from './Navigation'
 import SectionNavigation from './SectionNavigation'
-import Hamburger from './Hamburger'
+// import Hamburger from './Hamburger'
 import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 const HeaderWrapper = styled.div`
@@ -16,12 +16,11 @@ const HeaderWrapper = styled.div`
   left: 0;
   right: 0;
 `
-const FooterWrapper = styled.div`
+const LanguageSelectWrapper = styled.div`
   position: fixed;
   z-index: 1100;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: ${({ theme }) => theme.spacings.s1};
+  left: ${({ theme }) => theme.spacings.s1};
 `
 
 export default function Overlays() {
@@ -40,12 +39,12 @@ export default function Overlays() {
       <HeaderWrapper>
         <Header colorScheme={colorScheme} />
       </HeaderWrapper>
-      <Navigation navigationActive={navigationActive} />
-      <Hamburger colorScheme={colorScheme} />
+      {/* <Navigation navigationActive={navigationActive} />
+      <Hamburger colorScheme={colorScheme} /> */}
       <SectionNavigation colorScheme={colorScheme} />
-      <FooterWrapper>
-        <Footer colorScheme={colorScheme} navigationActive={navigationActive} />
-      </FooterWrapper>
+      <LanguageSelectWrapper>
+        <LanguageSelect />
+      </LanguageSelectWrapper>
     </React.Fragment>
   )
 }

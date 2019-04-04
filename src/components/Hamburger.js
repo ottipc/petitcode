@@ -8,8 +8,8 @@ import { NavigationContext } from '../utils/Contexts'
 const hamburgerLayerWidth = '35px'
 const hamburgerLayerHeight = '4px'
 const hamburgerLayerSpacing = '6px'
-const hamburgerPaddingX = theme.outerSpacing
-const hamburgerPaddingY = theme.outerSpacing
+const hamburgerPaddingX = theme.spacings.s1
+const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'
 const hamburgerLayerBorderRadius = '3px'
 

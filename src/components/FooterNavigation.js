@@ -5,10 +5,7 @@ import MenuItem from './MenuItem'
 export default function FooterNavigation() {
   return (
     <div>
-      <MenuItem humanId="imprint" /> / <MenuItem humanId="data-protection" /> /{' '}
-      <a href="https://petitcode.com/press-kit/" rel="noopener" target="_blank">
-        Presse
-      </a>
+      <MenuItem humanId="imprint" /> / <MenuItem humanId="data-protection" />
     </div>
   )
 }

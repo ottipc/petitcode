@@ -25,7 +25,7 @@ const Grid = styled.div`
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding: ${({ theme }) => theme.outerSpacing};
+  padding: ${({ theme }) => theme.spacings.s1};
 `
 
 const LogoWrapper = styled.div`
@@ -52,7 +52,7 @@ const LogoWrapper = styled.div`
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     & svg.notext {
-      width: auto;
+      width: 35px;
     }
   }
 `

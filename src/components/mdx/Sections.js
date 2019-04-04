@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { SectionContext } from '../../utils/Contexts'
+import Footer from '../Footer'
 
 const Article = styled.article`
   scroll-snap-type: y proximity;
@@ -47,7 +48,12 @@ function Sections({ children }) {
     }
   })
 
-  return <Article>{children}</Article>
+  return (
+    <Article>
+      {children}
+      <Footer />
+    </Article>
+  )
 }
 
 Sections.propTypes = {
