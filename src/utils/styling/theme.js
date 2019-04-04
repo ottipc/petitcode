@@ -1,28 +1,74 @@
 const white = '#fff'
-const black = '#3C4757'
-const blue = '#0E65F1'
-const blue2 = '#13CCC4'
+const black = '#000'
+
+const grey000 = '#1F2933'
+const grey100 = '#323F4B'
+const grey200 = '#3E4C59'
+const grey300 = '#52606D'
+const grey400 = '#616E7C'
+const grey500 = '#7B8794'
+const grey600 = '#9AA5B1'
+const grey700 = '#CBD2D9'
+const grey800 = '#E4E7EB'
+const grey900 = '#F5F7FA'
+const spacingUnit = 16
 
 module.exports = {
-  spacingUnit: 16,
-  outerSpacing: '3vmin',
   elements: {
     headerHeight: 100
+  },
+  spacings: [
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.5,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32,
+    40,
+    48
+  ].reduce(
+    (spacings, scale) => ({
+      ...spacings,
+      ['s' + scale]: `${scale * spacingUnit}px`
+    }),
+    {}
+  ),
+  grid: {
+    width: 1320,
+    columns: 12,
+    gutter: 14,
+    columnWidth: 1320 / 12
   },
   breakpoints: {
     small: '576px',
     medium: '768px',
-    large: '992px'
+    large: '992px',
+    headerLogo: '1699px',
+    headerLogoText: '1700px'
   },
   colors: {
-    bg: '#F3F3F3',
+    bg: white,
     font: black,
-    primary: blue,
-    primaryText: white,
-    secondary: blue2,
-    secondaryText: white,
     white,
-    black
+    black,
+    grey000,
+    grey100,
+    grey200,
+    grey300,
+    grey400,
+    grey500,
+    grey600,
+    grey700,
+    grey800,
+    grey900
   },
   fonts: {
     header: [

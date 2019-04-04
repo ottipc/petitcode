@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   position: fixed;
   z-index: 900;
   top: 50%;
-  left: ${({ theme }) => theme.outerSpacing};
+  left: ${({ theme }) => theme.spacings.s1};
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;

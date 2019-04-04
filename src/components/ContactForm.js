@@ -20,11 +20,12 @@ const RadioLabel = styled.label`
   text-transform: uppercase;
   cursor: pointer;
   padding-left: 1rem;
+  font-weight: bold;
 `
 const Input = styled.input`
   display: block;
   width: 100%;
-  color: #767676;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 20px;
   background: transparent;
   border: none;
@@ -34,14 +35,14 @@ const Input = styled.input`
   &::-moz-input-placeholder,
   &:-ms-input-placeholder,
   &::-ms-input-placeholder {
-    color: #767676;
+    color: ${({ theme }) => theme.colors.grey500};
   }
 `
 
 const TextArea = styled.textarea`
   display: block;
   width: 100%;
-  color: #767676;
+  color: ${({ theme }) => theme.colors.grey500};
   font-size: 20px;
   background: transparent;
   border: none;
@@ -51,7 +52,7 @@ const TextArea = styled.textarea`
   &::-moz-input-placeholder,
   &:-ms-input-placeholder,
   &::-ms-input-placeholder {
-    color: #767676;
+    color: ${({ theme }) => theme.colors.grey500};
   }
 `
 
@@ -63,16 +64,19 @@ const Separator = styled.div`
 `
 
 const Submit = styled.input`
-  color: #767676;
+  display: block;
+  margin-top: ${({ theme }) => theme.grid.gutter * 4}px;
+  color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   background: transparent;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 `
 
 export default function ContactForm() {
   return (
-    <form netlify>
+    <form data-netlify="true">
       <Grid>
         <RadioGroup>
           <Radio
@@ -80,9 +84,9 @@ export default function ContactForm() {
             name="contact-reason"
             id="contact-reason-contact"
             value="contact"
-            checked
+            defaultChecked
           />
-          <RadioLabel for="contact-reason-contact">Contact</RadioLabel>
+          <RadioLabel htmlFor="contact-reason-contact">Contact</RadioLabel>
         </RadioGroup>
         <RadioGroup>
           <Radio
@@ -91,7 +95,9 @@ export default function ContactForm() {
             id="contact-reason-recruitment"
             value="recruitment"
           />
-          <RadioLabel for="contact-reason-recruitment">Recruitment</RadioLabel>
+          <RadioLabel htmlFor="contact-reason-recruitment">
+            Recruitment
+          </RadioLabel>
         </RadioGroup>
       </Grid>
       <Input name="name" placeholder="NAME" required />

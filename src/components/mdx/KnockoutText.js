@@ -4,7 +4,6 @@ import Observer from '@researchgate/react-intersection-observer'
 
 const H1OutterWrapper = styled.div`
   background-color: #fff;
-  padding: 5vh 0;
 `
 
 const H1Wrapper = styled.div`
@@ -34,10 +33,10 @@ const Video = styled.video`
 const KnockoutH1 = styled.h1`
   position: relative;
   margin: 0;
-  padding: 0 0 1rem !important;
+  padding: 0;
   color: black;
-  font-size: 7vmin;
-  font-weight: bold;
+  font-size: 7vw;
+  font-weight: bold !important;
   z-index: 100;
   background-color: white;
   mix-blend-mode: screen;

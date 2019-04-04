@@ -1,62 +1,104 @@
 import React from 'react'
-import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
+import ContactForm from './ContactForm'
 import Social from './mdx/Social'
-import LanguageSelect from './LanguageSelect'
+import GridWrapper from './GridWrapper'
 import FooterNavigation from './FooterNavigation'
-import { SectionContext, NavigationContext } from '../utils/Contexts'
+import MenuItem from './MenuItem'
 
-const FooterWrapper = styled.footer`
-  position: relative;
-  z-index: 200;
-  padding: ${({ theme }) => theme.outerSpacing};
-  transition: color 0.3s linear;
-  ${({ colorScheme }) => css`
-    color: ${colorScheme};
+import PetitcodeLogo from '../assets/petitcode-logo.svg'
 
-    & a:after {
-      background-color: ${colorScheme};
-    }
-  `}
+const FooterTopWrapper = styled.div`
+  margin-top: ${({ theme }) => theme.spacings.s4};
+
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+
+  & a:after {
+    background: ${({ theme }) => theme.colors.white};
+  }
 `
 
-const Grid = styled.div`
+const FooterTopGrid = styled(GridWrapper)`
   display: flex;
-  padding: ${({ theme }) => theme.spacingUnit}px 0;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: ${({ theme }) => theme.spacings.s8}
+    ${({ theme }) => theme.spacings.s1};
 `
 
-export default class Footer extends React.PureComponent {
-  static propTypes = {
-    colorScheme: propTypes.string.isRequired,
-    navigationActive: propTypes.bool.isRequired
+const Column = styled.div`
+  flex: 0 0 30%;
+`
+
+const ContactWrapper = styled.div`
+  font-weight: bold;
+  margin-bottom: ${({ theme }) => theme.spacings.s1};
+`
+
+const FooterBottomWrapper = styled.div`
+  ${({ theme: { spacings } }) => css`
+    padding: ${spacings.s8} ${spacings.s1};
+  `}
+
+  text-align: center;
+`
+const LogoMenuItem = styled(MenuItem)`
+  transition: opacity 0.15s linear;
+  &:after {
+    display: none;
   }
-  render() {
-    const { colorScheme, navigationActive } = this.props
-    return (
-      <SectionContext.Consumer>
-        {({ sections, activeSection }) => (
-          <NavigationContext.Consumer>
-            {({ scrolledDown }) => (
-              <FooterWrapper colorScheme={colorScheme}>
-                <Grid>
-                  <LanguageSelect />
-                  {// Show Navigation when menu is visible
-                  (navigationActive ||
-                    // Or scrolled down on non-section page
-                    (activeSection === null && scrolledDown) ||
-                    // Or on last section on section page
-                    activeSection === sections.length - 1) && (
-                    <FooterNavigation />
-                  )}
-                  <Social />
-                </Grid>
-              </FooterWrapper>
-            )}
-          </NavigationContext.Consumer>
-        )}
-      </SectionContext.Consumer>
-    )
+  &:hover {
+    opacity: 0.8;
   }
+`
+const Logo = styled(PetitcodeLogo)`
+  ${({ theme: { spacings } }) => css`
+    padding-bottom: ${spacings.s2};
+  `}
+  width: 100px;
+`
+const Copyright = styled.div`
+  ${({ theme: { spacings } }) => css`
+    padding-top: ${spacings.s2};
+  `}
+  font-size: 0.8em;
+`
+
+export default function Footer() {
+  return (
+    <>
+      <FooterTopWrapper>
+        <FooterTopGrid>
+          <Column>
+            <ContactWrapper>
+              <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+              <br />
+              <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+            </ContactWrapper>
+            <address>
+              petitcode UG
+              <br />
+              Friedrichstraße 11
+              <br />
+              10969 Berlin
+            </address>
+            <Social />
+          </Column>
+          <Column>
+            <ContactForm />
+          </Column>
+        </FooterTopGrid>
+      </FooterTopWrapper>
+      <FooterBottomWrapper>
+        <LogoMenuItem humanId="index">
+          <Logo />
+        </LogoMenuItem>
+        <FooterNavigation />
+        <Copyright>
+          Copyright © {new Date().getFullYear()} petitcode GmbH
+        </Copyright>
+      </FooterBottomWrapper>
+    </>
+  )
 }

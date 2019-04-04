@@ -41,9 +41,18 @@ class PageTemplate extends React.PureComponent {
         )
     }
 
+    // Make all images available as map to allow fine-tuned column image output
+    const images = this.props.data.allFile.edges.reduce(
+      (map, { node }) => ({
+        ...map,
+        [`${node.name}.${node.extension}`]: node
+      }),
+      {}
+    )
+
     return (
       <LocationContext.Provider
-        value={{ activeHumandId: humanId, activeLocale: locale }}
+        value={{ activeHumandId: humanId, activeLocale: locale, images }}
       >
         <Layout>
           <Helmet
@@ -101,6 +110,22 @@ export const pageQuery = graphql`
       }
       code {
         body
+      }
+    }
+    allFile(filter: { sourceInstanceName: { eq: "image" } }) {
+      edges {
+        node {
+          name
+          extension
+          childImageSharp {
+            sqip(numberOfPrimitives: 40, blur: 0) {
+              dataURI
+            }
+            fluid(maxWidth: 576) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
       }
     }
   }

@@ -3,7 +3,8 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
-import Logo from '../assets/petitcode-logo-text.svg'
+import LogoText from '../assets/petitcode-logo-text.svg'
+import Logo from '../assets/petitcode-logo.svg'
 import { LocationContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
@@ -24,7 +25,7 @@ const Grid = styled.div`
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding: ${({ theme }) => theme.outerSpacing};
+  padding: ${({ theme }) => theme.spacings.s1};
 `
 
 const LogoWrapper = styled.div`
@@ -33,8 +34,26 @@ const LogoWrapper = styled.div`
   max-width: 40vw;
 
   & svg {
+    display: none;
     width: 100%;
     height: auto;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.headerLogoText}) {
+    & svg.text {
+      display: block;
+    }
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.headerLogo}) {
+    & svg.notext {
+      display: block;
+      width: 20px;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    & svg.notext {
+      width: 35px;
+    }
   }
 `
 const ContactWrapper = styled.div`
@@ -48,7 +67,8 @@ export default function Header({ colorScheme }) {
       <Grid>
         <LogoWrapper>
           <Link className="nohover" to={`${activeLocale}/`} aria-label="Home">
-            <Logo />
+            <Logo className="notext" />
+            <LogoText className="text" />
           </Link>
         </LogoWrapper>
         <ContactWrapper>

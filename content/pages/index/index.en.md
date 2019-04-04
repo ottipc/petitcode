@@ -1,8 +1,8 @@
 ---
 slug: "index"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode"
-description: "Very imortant description..."
+title: "petitcode - the avantgarde web agency Berlin and worldwide"
+description: "Petitcode is a creative collective of senior technology specialists. Whether you need a webdesign freelancer or a complete software solution, we only offer the best."
 theme: "sections"
 ---
 
@@ -10,66 +10,138 @@ import Sections from "$components/Sections";
 import Section from "$components/Section";
 import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
+import Centered from "$components/Centered";
+import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
+import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
+import Video from "$components/Video"
 
 <Sections>
-<Section video>
+<Section>
+<Columns>
+<ColumnContent>
 
-# avantgarde <br/> freelance  <br/> collective.
+<KnockoutText>Petitcode</KnockoutText>
 
+# your avantgarde creative web agency Berlin and worldwide
+
+Petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign,product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
+</ColumnContent>
+<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
+</ColumnImage>
+</Columns>
 </Section>
 <Section>
-
-<KnockoutText>petitcode is a create collective for digital producs. wether individual assignments or complete projects.</KnockoutText>
-
-<Grid>
-
-Sebastian Melz
-
-Edgar Bongkishiy
-
-Ottavio Braun
-
-Samer Murad
-
-Rodolfo Lopez
-
-Mario Mielke
-
-</Grid>
-
+  <Video youtubeId="Jwkoo9k1tsg" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,sed diam nonumy eirmod tempor invidunt."/>
 </Section>
 <Section>
+<Columns reverse contentWidth="6">
+<ColumnContent>
 
-<KnockoutText>Our Clients</KnockoutText>
+# Web development agency
 
-Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
+In software architecture, whether web or mobile development, there are two perspectives. The back end is the server side, where all data is stored and where the business logic and rules of the software operate. The front end is the component controlled by the end user, the user interface, and serves as layer of make-up for the server side of the software.
 
-<Grid>
+Front end developers tend to get more credit because only their work is seen by the end users. Nevertheless, most of the existing code for any software will be predominantly back end based.
 
-![world-health-organization](./images/clients/world-health-organization.png)
+*hire a webdesign freelancer*
 
-![infologis](./images/clients/infologis.png)
+</ColumnContent>
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+</ColumnImage>
+</Columns>
 
-![jung-von-matt](./images/clients/jung-von-matt.png)
+<Columns reverse contentWidth="6">
+<ColumnContent>
 
-![mcfit](./images/clients/mcfit.png)
+# Where can we help?
 
-![universal-music](./images/clients/universal-music.png)
+<Carousel>
+<CarouselNavigation>
 
-![villeroy-boch](./images/clients/villeroy-boch.png)
+Front End Development
 
-![vorwerk](./images/clients/vorwerk.png)
+Back End Development
 
-</Grid>
+Web design
 
+</CarouselNavigation>
+<CarouselSlides>
+<CarouselSlide>
+
+**The difference** between
+generic front end development and senior front end development **is understanding
+which tools are best fit for specific tasks.**
+This will define whether the software will look slick or simply
+hacked. Front-end developers may also have design skills but it might
+not be their main skill. Petitcode’s
+collective of senior freelancers has **only
+experienced front end developers**
+to offer. If you are not sure which tools and platforms best suit
+your business, simply [get in touch](/contact) with us.
+
+*hire a front end developer*
+
+</CarouselSlide>
+<CarouselSlide>
+
+The developer’s task is to write, read, and process data from a
+database or any data source.
+
+Considering that the back-end developer is responsible for building the
+architecture and internal design of the website, a back-end developer
+needs to know much more about website architecture. Petitcode’s
+collective of senior freelancers has **only
+experienced back end developers**
+to offer. If you are not sure which tools and platforms best suit
+your business, simply [get in touch](http://de-en/contact) with us.
+
+*hire a back end developer*
+
+</CarouselSlide>
+<CarouselSlide>
+
+When you are simply looking for the design of your product only - whether
+app, website, shop, etc - we recommend using the services of a
+webdesign freelancer. As web design can be very subjective and
+directly related to your own experiences and related emotions.
+Finding the right designer is not just matching skills but also
+reviewing portfolios, previous clients and listening to your gut
+feeling.
+
+If you are looking for a kick-ass designer, simply get in touch with us
+and we will make sure to put you in touch with relevant freelancers.
+
+*hire a webdesign freelancer*
+
+</CarouselSlide>
+</CarouselSlides>
+</Carousel>
+</ColumnContent>
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+</ColumnImage>
+</Columns>
 </Section>
 <Section>
+<Centered>
 
-<KnockoutText>Need more information?</KnockoutText>
+# What makes petitcode different from other digital agencies?
 
-[HERE]() you can download our bridge loan proposal.
+petitcode’s collective originated from the flaws of this model and the ambition
+of solving these issues. Traditional agencies have several layers of
+human resources: from interns, to juniors, seniors and executives.
+Most of the web development work is done by the lower levels and the
+higher levels end up having little involvement. From own experience,
+we confirm that agency-work is related to long hours, as if it were a
+contest of who spends the most time in the office. Additionally, the
+bigger the value-chain, the higher the costs and the higher the
+invoice you will be paying.
 
-## [hi@petitcode.de](mailto:hi@petitcode.de) [+49 (0) 30 640 803 38](tel:+493064080338)
+Petitcode believes in increasing productivity over extensive working hours and
+that any client deserves senior-level web design and development
+services. By choosing petitcode you will be in direct communication
+with the freelancer, with no hidden layers. Simply get in touch with
+us and let’s get the project started.
 
+</Centered>
 </Section>
 </Sections>
