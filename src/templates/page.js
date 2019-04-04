@@ -103,5 +103,18 @@ export const pageQuery = graphql`
         body
       }
     }
+    allFile(filter: { extension: { eq: "jpg" } }) {
+      edges {
+        node {
+          name
+          extension
+          childImageSharp {
+            fluid(maxWidth: 576) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
   }
 `

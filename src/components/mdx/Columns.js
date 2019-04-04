@@ -103,7 +103,7 @@ ColumnContent.propTypes = {
   reverse: propTypes.bool
 }
 
-export const ColumnImage = styled.div`
+const ColumnImageWrapper = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     position: absolute;
     top: 0;
@@ -147,3 +147,16 @@ export const ColumnImage = styled.div`
     }
   }
 `
+export const ColumnImage = function({ children, reverse, contentWidth }) {
+  return (
+    <ColumnImageWrapper reverse={reverse} contentWidth={contentWidth}>
+      {children}
+    </ColumnImageWrapper>
+  )
+}
+
+ColumnImage.propTypes = {
+  children: propTypes.node.isRequired,
+  reverse: propTypes.bool,
+  contentWidth: propTypes.string
+}
