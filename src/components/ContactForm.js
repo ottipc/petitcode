@@ -76,7 +76,7 @@ const Submit = styled.input`
 
 export default function ContactForm() {
   return (
-    <form netlify>
+    <form data-netlify="true">
       <Grid>
         <RadioGroup>
           <Radio
@@ -84,9 +84,9 @@ export default function ContactForm() {
             name="contact-reason"
             id="contact-reason-contact"
             value="contact"
-            checked
+            defaultChecked
           />
-          <RadioLabel for="contact-reason-contact">Contact</RadioLabel>
+          <RadioLabel htmlFor="contact-reason-contact">Contact</RadioLabel>
         </RadioGroup>
         <RadioGroup>
           <Radio
@@ -95,7 +95,9 @@ export default function ContactForm() {
             id="contact-reason-recruitment"
             value="recruitment"
           />
-          <RadioLabel for="contact-reason-recruitment">Recruitment</RadioLabel>
+          <RadioLabel htmlFor="contact-reason-recruitment">
+            Recruitment
+          </RadioLabel>
         </RadioGroup>
       </Grid>
       <Input name="name" placeholder="NAME" required />
