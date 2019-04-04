@@ -152,8 +152,12 @@ const ColumnImageWrapper = styled.div`
 `
 export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
   const { images } = useContext(LocationContext)
-
-  const image = { ...images[file].childImageSharp, alt }
+  const imageData = images[file].childImageSharp
+  const image = {
+    ...imageData,
+    fluid: { ...imageData.fluid, base64: imageData.sqip.dataURI },
+    alt
+  }
 
   return (
     <ColumnImageWrapper reverse={reverse} contentWidth={contentWidth}>
@@ -166,5 +170,5 @@ ColumnImage.propTypes = {
   file: propTypes.string.isRequired,
   alt: propTypes.string.isRequired,
   reverse: propTypes.bool,
-  contentWidth: propTypes.string
+  contentWidth: propTypes.number
 }

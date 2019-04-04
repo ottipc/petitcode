@@ -118,8 +118,11 @@ export const pageQuery = graphql`
           name
           extension
           childImageSharp {
+            sqip(numberOfPrimitives: 40, blur: 0) {
+              dataURI
+            }
             fluid(maxWidth: 576) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
