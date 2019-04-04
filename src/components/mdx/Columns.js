@@ -122,10 +122,10 @@ export const ColumnImage = styled.div`
     ${({ reverse }) =>
       reverse
         ? css`
-            left: -${({ theme }) => theme.spacingUnit}px;
+            left: calc(${({ theme }) => theme.spacings.s1} * -1);
           `
         : css`
-            right: -${({ theme }) => theme.spacingUnit}px;
+            right: calc(${({ theme }) => theme.spacings.s1} * -1);
           `}
 
     & img {

@@ -9,7 +9,7 @@ const Wrapper = styled.section`
   position: relative;
   scroll-snap-align: start;
   min-height: 100vh;
-  padding: 0 ${({ theme }) => theme.spacingUnit}px;
+  padding: 0 ${({ theme }) => theme.spacings.s1};
 `
 
 const VideoWrapper = styled.div`
