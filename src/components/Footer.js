@@ -43,6 +43,15 @@ const FooterBottomWrapper = styled.div`
 
   text-align: center;
 `
+const LogoMenuItem = styled(MenuItem)`
+  transition: opacity 0.15s linear;
+  &:after {
+    display: none;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+`
 const Logo = styled(PetitcodeLogo)`
   ${({ theme: { spacings } }) => css`
     padding-bottom: ${spacings.s2};
@@ -82,9 +91,9 @@ export default function Footer() {
         </FooterTopGrid>
       </FooterTopWrapper>
       <FooterBottomWrapper>
-        <MenuItem humanId="index">
+        <LogoMenuItem humanId="index">
           <Logo />
-        </MenuItem>
+        </LogoMenuItem>
         <FooterNavigation />
         <Copyright>
           Copyright © {new Date().getFullYear()} petitcode GmbH

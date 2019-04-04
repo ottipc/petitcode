@@ -37,6 +37,22 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${({ theme }) => theme.colors.bg};
+
+    line-height: 1.8em;
+    /*
+      Liquid typography:
+      https://css-tricks.com/snippets/css/fluid-typography/
+      Settings: 14-20px font size from 320-1320
+    */
+    font-size: 14px;
+
+    @media screen and (min-width: 320px) {
+      font-size: calc(14px + 6 * ((100vw - 320px) / 1000));
+    }
+
+    @media screen and (min-width: 1320px) {
+      font-size: 20px;
+    }
   }
 
   a {
@@ -77,10 +93,17 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+
   h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: ${({ theme }) => theme.spacings.s3};
+
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  p {
+    margin-bottom: ${({ theme }) => theme.spacings.s2};
   }
 
   pre {
