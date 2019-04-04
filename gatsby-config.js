@@ -20,6 +20,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/images`,
+        name: `image`
+      }
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],

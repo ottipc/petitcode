@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
+import Image from 'gatsby-image'
+
+import { LocationContext } from '../../utils/Contexts'
 
 const ColumnsWrapper = styled.div`
   position: relative;
@@ -132,7 +135,7 @@ const ColumnImageWrapper = styled.div`
       object-fit: cover;
     }
 
-    & span.gatsby-resp-image-wrapper {
+    & .gatsby-image-wrapper {
       position: absolute !important;
       width: 100%;
       height: 100%;
@@ -147,16 +150,21 @@ const ColumnImageWrapper = styled.div`
     }
   }
 `
-export const ColumnImage = function({ children, reverse, contentWidth }) {
+export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
+  const { images } = useContext(LocationContext)
+
+  const image = { ...images[file].childImageSharp, alt }
+
   return (
     <ColumnImageWrapper reverse={reverse} contentWidth={contentWidth}>
-      {children}
+      <Image {...image} />
     </ColumnImageWrapper>
   )
 }
 
 ColumnImage.propTypes = {
-  children: propTypes.node.isRequired,
+  file: propTypes.string.isRequired,
+  alt: propTypes.string.isRequired,
   reverse: propTypes.bool,
   contentWidth: propTypes.string
 }

@@ -25,10 +25,7 @@ import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$comp
 
 Petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign,product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
 </ColumnContent>
-<ColumnImage>
-
-![our decentralised web agency structure will help you connect to top quality freelancers](./images/med-badr-chemmaoui-630239-unsplash.jpg)
-
+<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
 </ColumnImage>
 </Columns>
 </Section>
@@ -45,10 +42,7 @@ Front end developers tend to get more credit because only their work is seen by 
 *hire a webdesign freelancer*
 
 </ColumnContent>
-<ColumnImage>
-
-![petitcode’s web design agency only executes state-of-the-art solutions](./images/irfan-simsar-1144378-unsplash.jpg)
-
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
 </ColumnImage>
 </Columns>
 
@@ -119,10 +113,7 @@ and we will make sure to put you in touch with relevant freelancers.
 </CarouselSlides>
 </Carousel>
 </ColumnContent>
-<ColumnImage>
-
-![petitcode’s web design agency only executes state-of-the-art solutions](./images/joshua-aragon-1280300-unsplash.jpg)
-
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
 </ColumnImage>
 </Columns>
 </Section>
