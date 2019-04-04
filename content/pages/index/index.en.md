@@ -13,6 +13,7 @@ import KnockoutText from "$components/KnockoutText";
 import Centered from "$components/Centered";
 import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
 import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
+import Video from "$components/Video"
 
 <Sections>
 <Section>
@@ -28,6 +29,9 @@ Petitcode is a **creative collective of senior technology specialists** from Ber
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
 </ColumnImage>
 </Columns>
+</Section>
+<Section>
+  <Video youtubeId="Jwkoo9k1tsg" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,sed diam nonumy eirmod tempor invidunt."/>
 </Section>
 <Section>
 <Columns reverse contentWidth="6">
