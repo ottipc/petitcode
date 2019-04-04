@@ -66,23 +66,26 @@ module.exports = {
         uselocaleLayout: false
       }
     },
-    IS_PRODUCTION
-      ? {
-          resolve: `gatsby-plugin-manifest`,
-          options: {
-            name: `petitcode | Your avantgarde digital agency`,
-            short_name: `petitcode`,
-            start_url: `/`,
-            background_color: theme.colors.bg,
-            theme_color: theme.colors.primary,
-            display: `minimal-ui`,
-            icon: `src/assets/petitcode-logo.svg`,
-            legacy: true
-          }
-        }
-      : null,
-    IS_PRODUCTION ? `gatsby-plugin-offline` : null,
-    IS_PRODUCTION ? `gatsby-plugin-subfont` : null,
-    `gatsby-plugin-webpack-size`
-  ].filter(Boolean)
+    ...(IS_PRODUCTION
+      ? [
+          {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: `petitcode | Your avantgarde digital agency`,
+              short_name: `petitcode`,
+              start_url: `/`,
+              background_color: theme.colors.bg,
+              theme_color: theme.colors.primary,
+              display: `minimal-ui`,
+              icon: `src/assets/petitcode-logo.svg`,
+              legacy: true
+            }
+          },
+          `gatsby-plugin-offline`,
+          `gatsby-plugin-subfont`,
+          `gatsby-plugin-webpack-size`,
+          `gatsby-plugin-netlify-cache`
+        ]
+      : [])
+  ]
 }
