@@ -22,7 +22,6 @@ const Button = styled.button`
   border: 0;
   overflow: hidden;
   color: transparent;
-  opacity: ${({ colorScheme }) => (colorScheme === 'white' ? 0.5 : 0.3)};
   transition-property: opacity, color, height;
   transition-duration: 0.3s;
   background: ${({ colorScheme }) => colorScheme};
@@ -31,6 +30,13 @@ const Button = styled.button`
   &:last-child {
     margin-bottom: 0;
   }
+
+  opacity: 0;
+  ${({ show }) =>
+    show &&
+    css`
+      opacity: ${({ colorScheme }) => (colorScheme === 'white' ? 0.5 : 0.3)};
+    `}
 
   ${({ active }) =>
     active &&
@@ -59,6 +65,7 @@ export default function SectionNavigation({ colorScheme }) {
       key={`section-navigation-${i}`}
       active={i === activeSection}
       onClick={() => setScrollToSection(i)}
+      show={activeSection !== null}
     >
       {i}
     </Button>

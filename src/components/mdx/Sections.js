@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
+import Observer from '@researchgate/react-intersection-observer'
 
 import { SectionContext } from '../../utils/Contexts'
 import Footer from '../Footer'
@@ -19,9 +20,12 @@ const Article = styled.article`
 `
 
 function Sections({ children }) {
-  const { setSections, scrollToSection, setScrollToSection } = useContext(
-    SectionContext
-  )
+  const {
+    setSections,
+    scrollToSection,
+    setScrollToSection,
+    setActiveSection
+  } = useContext(SectionContext)
 
   // Automagically append numbering to sections
   children = React.Children.map(children, (child, nr) => {
@@ -48,10 +52,20 @@ function Sections({ children }) {
     }
   })
 
+  const handleFooterIntersection = ({ isIntersecting }) => {
+    if (isIntersecting) {
+      setActiveSection(null)
+    }
+  }
+
   return (
     <Article>
       {children}
-      <Footer />
+      <Observer onChange={handleFooterIntersection} threshold={0.3}>
+        <div>
+          <Footer />
+        </div>
+      </Observer>
     </Article>
   )
 }
