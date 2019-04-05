@@ -193,6 +193,7 @@ export default class Layout extends React.Component {
               siteMetadata {
                 title
                 description
+                siteUrl
               }
               ...Metadata
             }
