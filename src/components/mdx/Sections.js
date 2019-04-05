@@ -7,7 +7,7 @@ import { SectionContext } from '../../utils/Contexts'
 import Footer from '../Footer'
 
 const Article = styled.article`
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity;
   overflow-y: -moz-scrollbars-none;
   -ms-overflow-style: none;
   overflow-y: scroll;
@@ -16,7 +16,7 @@ const Article = styled.article`
 
   &::-webkit-scrollbar {
     width: 0 !important;
-  }
+  } */
 `
 
 function Sections({ children }) {

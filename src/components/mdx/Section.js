@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   padding: 0 ${({ theme }) => theme.spacings.s2};
   background: #fff;
 
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
 
   &:first-of-type {
     margin-top: ${({ theme }) =>
