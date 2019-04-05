@@ -7,11 +7,16 @@ import { SectionContext } from '../../utils/Contexts'
 
 const Wrapper = styled.section`
   position: relative;
-  min-height: 100vh;
+  min-height: 60vh;
   padding: 0 ${({ theme }) => theme.spacings.s2};
   background: #fff;
 
   scroll-snap-align: start;
+
+  &:first-of-type {
+    margin-top: ${({ theme }) =>
+      theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     padding: 0 ${({ theme }) => theme.spacings.s1};
@@ -47,7 +52,7 @@ const ContentWrapper = styled.div`
   background-color: #fff;
   color: #000;
 
-  padding: 20vh 0;
+  padding: ${({ theme }) => theme.spacings.s4} 0;
 
   ${({ video }) =>
     video &&
@@ -66,7 +71,10 @@ const ContentWrapper = styled.div`
   }
 
   & h1 {
-    font-size: 3.5vw;
+    font-size: 17px;
+    @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+      font-size: 3.5vw;
+    }
   }
 `
 
@@ -80,7 +88,7 @@ function Section({ video, children, nr }) {
   }
 
   return (
-    <Observer onChange={handleIntersection} threshold={0.3}>
+    <Observer onChange={handleIntersection} threshold={0.05}>
       <Wrapper id={`section-${nr}`}>
         {video && (
           <VideoWrapper>

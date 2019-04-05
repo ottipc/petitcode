@@ -11,7 +11,7 @@ const grey600 = '#9AA5B1'
 const grey700 = '#CBD2D9'
 const grey800 = '#E4E7EB'
 const grey900 = '#F5F7FA'
-const spacingUnit = 16
+const spacingUnit = 14
 
 module.exports = {
   elements: {
@@ -44,7 +44,7 @@ module.exports = {
   grid: {
     width: 1320,
     columns: 12,
-    gutter: 14,
+    gutter: spacingUnit,
     columnWidth: 1320 / 12
   },
   breakpoints: {

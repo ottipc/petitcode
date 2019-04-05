@@ -4,6 +4,7 @@ import Observer from '@researchgate/react-intersection-observer'
 
 const H1OutterWrapper = styled.div`
   background-color: #fff;
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
 `
 
 const H1Wrapper = styled.div`
@@ -35,11 +36,15 @@ const KnockoutH1 = styled.h1`
   margin: 0;
   padding: 0;
   color: black;
-  font-size: 7vw;
   font-weight: bold !important;
   z-index: 100;
   background-color: white;
   mix-blend-mode: screen;
+
+  font-size: 32px !important;
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+    font-size: 7vw !important;
+  }
 
   /* css hack to get chrome render the knockout text properly */
   transition: 0.5s z-index;

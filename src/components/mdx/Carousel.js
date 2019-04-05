@@ -22,6 +22,8 @@ const SliderWrapper = styled.div`
     margin: 0;
     overflow: scroll;
 
+    padding-bottom: 1rem; /* allows proper scrollbar placement */
+
     &:after {
       content: '';
       position: absolute;

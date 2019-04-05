@@ -9,13 +9,13 @@ const ColumnsWrapper = styled.div`
   position: relative;
   min-height: 50vh;
 
-  /* & + & {
-    border-top: 1px solid ${({ theme }) => theme.colors.grey800};
-  } */
-
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     display: flex;
     align-items: center;
+
+    & + & {
+      padding-top: ${({ theme }) => theme.spacings.s8};
+    }
   }
 `
 
@@ -36,7 +36,7 @@ export const ColumnContentWrapper = styled.div`
 
 export const ColumnContentText = styled.div`
   box-sizing: content-box;
-  padding: 10vh ${({ theme }) => theme.grid.gutter}px;
+  padding: ${({ theme }) => theme.spacings.s1};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     ${({
@@ -71,47 +71,15 @@ const ColumnFiller = styled.div`
   }
 `
 
-export function Columns({ children, contentWidth = 8, reverse = false }) {
-  // Automagically append numbering to sections
-  children = React.Children.map(children, (child, nr) => {
-    return React.cloneElement(child, {
-      reverse,
-      contentWidth: parseInt(contentWidth)
-    })
-  })
-
-  return <ColumnsWrapper>{children}</ColumnsWrapper>
-}
-
-Columns.propTypes = {
-  children: propTypes.node.isRequired,
-  reverse: propTypes.bool,
-  contentWidth: propTypes.string
-}
-
-export function ColumnContent({ reverse, contentWidth = 8, children }) {
-  return (
-    <ColumnContentWrapper reverse={reverse}>
-      <ColumnContentText contentWidth={contentWidth}>
-        {children}
-      </ColumnContentText>
-      <ColumnFiller contentWidth={contentWidth} />
-    </ColumnContentWrapper>
-  )
-}
-
-ColumnContent.propTypes = {
-  children: propTypes.node.isRequired,
-  contentWidth: propTypes.number,
-  reverse: propTypes.bool
-}
-
 const ColumnImageWrapper = styled.div`
+  margin: ${({ theme }) => theme.spacings.s4} 0;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     position: absolute;
     top: 0;
     bottom: 0;
     overflow: hidden;
+    margin: 0;
 
     ${({
       contentWidth,
@@ -150,6 +118,42 @@ const ColumnImageWrapper = styled.div`
     }
   }
 `
+
+export function Columns({ children, contentWidth = 8, reverse = false }) {
+  // Automagically append numbering to sections
+  children = React.Children.map(children, (child, nr) => {
+    return React.cloneElement(child, {
+      reverse,
+      contentWidth: parseInt(contentWidth)
+    })
+  })
+
+  return <ColumnsWrapper>{children}</ColumnsWrapper>
+}
+
+Columns.propTypes = {
+  children: propTypes.node.isRequired,
+  reverse: propTypes.bool,
+  contentWidth: propTypes.string
+}
+
+export function ColumnContent({ reverse, contentWidth = 8, children }) {
+  return (
+    <ColumnContentWrapper reverse={reverse}>
+      <ColumnContentText contentWidth={contentWidth}>
+        {children}
+      </ColumnContentText>
+      <ColumnFiller contentWidth={contentWidth} />
+    </ColumnContentWrapper>
+  )
+}
+
+ColumnContent.propTypes = {
+  children: propTypes.node.isRequired,
+  contentWidth: propTypes.number,
+  reverse: propTypes.bool
+}
+
 export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
   const { images } = useContext(LocationContext)
   const imageData = images[file].childImageSharp

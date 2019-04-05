@@ -10,6 +10,9 @@ const VideoWrapper = styled.div`
 
 const PlayerWrapper = styled.div`
   position: relative;
+  max-width: 65vw;
+  margin: 0 auto;
+
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 4px 30px 43px rgba(0, 0, 0, 0.18);
