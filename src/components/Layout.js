@@ -123,7 +123,8 @@ export default class Layout extends React.Component {
     activeSection: null,
     scrollToSection: null,
     sections: [],
-    scrolledDown: false
+    scrolledDown: false,
+    isScrolling: false
   }
 
   setSections = (sections) => {
@@ -134,6 +135,9 @@ export default class Layout extends React.Component {
   }
   setScrollToSection = (scrollToSection) => {
     this.setState({ scrollToSection })
+  }
+  setIsScrolling = (isScrolling) => {
+    this.setState({ isScrolling })
   }
 
   toggleNavigation = () => {
@@ -161,13 +165,15 @@ export default class Layout extends React.Component {
       sections,
       activeSection,
       scrollToSection,
-      scrolledDown
+      scrolledDown,
+      isScrolling
     } = this.state
     const {
       toggleNavigation,
       setActiveSection,
       setSections,
-      setScrollToSection
+      setScrollToSection,
+      setIsScrolling
     } = this
 
     return (
@@ -213,7 +219,9 @@ export default class Layout extends React.Component {
                   setActiveSection,
                   setSections,
                   scrollToSection,
-                  setScrollToSection
+                  setScrollToSection,
+                  isScrolling,
+                  setIsScrolling
                 }}
               >
                 <Location>

@@ -18,5 +18,7 @@ export const SectionContext = createContext({
   setActiveSection: () => {},
   activeSection: 0,
   setScrollToSection: () => {},
-  scrollToSection: null
+  scrollToSection: null,
+  isScrolling: false,
+  setIsScrolling: () => {}
 })

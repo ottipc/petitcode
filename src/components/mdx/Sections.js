@@ -24,7 +24,8 @@ function Sections({ children }) {
     setSections,
     scrollToSection,
     setScrollToSection,
-    setActiveSection
+    setActiveSection,
+    setIsScrolling
   } = useContext(SectionContext)
 
   // Automagically append numbering to sections
@@ -58,8 +59,15 @@ function Sections({ children }) {
     }
   }
 
+  const handleIsScrollingIntersection = ({ isIntersecting }) => {
+    setIsScrolling(!isIntersecting)
+  }
+
   return (
     <Article>
+      <Observer onChange={handleIsScrollingIntersection}>
+        <div />
+      </Observer>
       {children}
       <Observer onChange={handleFooterIntersection} threshold={0.3}>
         <div>

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 import LogoText from '../assets/petitcode-logo-text.svg'
 import Logo from '../assets/petitcode-logo.svg'
-import { LocationContext } from '../utils/Contexts'
+import { LocationContext, SectionContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
   position: relative;
@@ -34,19 +34,12 @@ const LogoWrapper = styled.div`
   max-width: 40vw;
 
   & svg {
-    display: none;
     width: 100%;
     height: auto;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.headerLogoText}) {
-    & svg.text {
-      display: block;
-    }
-  }
   @media (max-width: ${({ theme }) => theme.breakpoints.headerLogo}) {
     & svg.notext {
-      display: block;
       width: 20px;
     }
   }
@@ -58,20 +51,31 @@ const LogoWrapper = styled.div`
 `
 const ContactWrapper = styled.div`
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
+  display: none;
+
+  ${({ show }) =>
+    show &&
+    css`
+      display: block;
+    `}
 `
 
 export default function Header({ colorScheme }) {
   const { activeLocale } = useContext(LocationContext)
+  const { isScrolling } = useContext(SectionContext)
   return (
     <Wrapper colorScheme={colorScheme}>
       <Grid>
         <LogoWrapper>
-          <Link className="nohover" to={`${activeLocale}/`} aria-label="Home">
-            <Logo className="notext" />
-            <LogoText className="text" />
+          <Link className="nohover" to={`/${activeLocale}/`} aria-label="Home">
+            {isScrolling ? (
+              <Logo className="notext" />
+            ) : (
+              <LogoText className="text" />
+            )}
           </Link>
         </LogoWrapper>
-        <ContactWrapper>
+        <ContactWrapper show={!isScrolling}>
           <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
           <br />
           <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
