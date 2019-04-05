@@ -42,7 +42,7 @@ const Input = styled.input`
 const TextArea = styled.textarea`
   display: block;
   width: 100%;
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 20px;
   background: transparent;
   border: none;
