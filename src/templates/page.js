@@ -121,7 +121,7 @@ export const pageQuery = graphql`
             sqip(numberOfPrimitives: 40, blur: 0) {
               dataURI
             }
-            fluid(maxWidth: 576) {
+            fluid(maxWidth: 1152) {
               ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
