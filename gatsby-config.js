@@ -74,8 +74,8 @@ module.exports = {
               name: `petitcode | Your avantgarde digital agency`,
               short_name: `petitcode`,
               start_url: `/`,
-              background_color: theme.colors.bg,
-              theme_color: theme.colors.primary,
+              background_color: theme.colors.white,
+              theme_color: theme.colors.black,
               display: `minimal-ui`,
               icon: `src/assets/petitcode-logo.svg`,
               legacy: true

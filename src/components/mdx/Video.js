@@ -34,7 +34,7 @@ const PlayerWrapper = styled.div`
 `
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey400};
   text-align: center;
   width: 80%;
   margin: ${({ theme }) => theme.spacings.s3} auto 0;

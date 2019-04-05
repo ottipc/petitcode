@@ -97,7 +97,7 @@ export default function Footer() {
         </FooterTopGrid>
       </FooterTopWrapper>
       <FooterBottomWrapper>
-        <LogoMenuItem humanId="index">
+        <LogoMenuItem humanId="index" aria-label="Home">
           <Logo />
         </LogoMenuItem>
         <FooterNavigation />

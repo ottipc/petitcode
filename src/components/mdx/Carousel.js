@@ -54,7 +54,7 @@ const SliderWrapper = styled.div`
       border: none;
       outline: none;
       border-bottom: 1px solid transparent;
-      color: ${({ theme }) => theme.colors.grey600};
+      color: ${({ theme }) => theme.colors.grey400};
       cursor: pointer;
       white-space: nowrap;
     }
