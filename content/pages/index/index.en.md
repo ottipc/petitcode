@@ -2,7 +2,7 @@
 slug: "index"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - the avantgarde web agency Berlin and worldwide"
-description: "Petitcode is a creative collective of senior technology specialists. Whether you need a webdesign freelancer or a complete software solution, we only offer the best."
+description: "petitcode is a creative collective of senior technology specialists. Whether you need a webdesign freelancer or a complete software solution, we only offer the best."
 theme: "sections"
 ---
 
@@ -20,11 +20,11 @@ import Video from "$components/Video"
 <Columns>
 <ColumnContent>
 
-<KnockoutText>Petitcode</KnockoutText>
+<KnockoutText>petitcode</KnockoutText>
 
 # your avantgarde creative web agency Berlin and worldwide
 
-Petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign,product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
+petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign, product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
 </ColumnContent>
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
 </ColumnImage>
@@ -73,7 +73,7 @@ generic front end development and senior front end development **is understandin
 which tools are best fit for specific tasks.**
 This will define whether the software will look slick or simply
 hacked. Front-end developers may also have design skills but it might
-not be their main skill. Petitcode’s
+not be their main skill. petitcode’s
 collective of senior freelancers has **only
 experienced front end developers**
 to offer. If you are not sure which tools and platforms best suit
@@ -89,7 +89,7 @@ database or any data source.
 
 Considering that the back-end developer is responsible for building the
 architecture and internal design of the website, a back-end developer
-needs to know much more about website architecture. Petitcode’s
+needs to know much more about website architecture. petitcode’s
 collective of senior freelancers has **only
 experienced back end developers**
 to offer. If you are not sure which tools and platforms best suit
@@ -136,7 +136,7 @@ contest of who spends the most time in the office. Additionally, the
 bigger the value-chain, the higher the costs and the higher the
 invoice you will be paying.
 
-Petitcode believes in increasing productivity over extensive working hours and
+petitcode believes in increasing productivity over extensive working hours and
 that any client deserves senior-level web design and development
 services. By choosing petitcode you will be in direct communication
 with the freelancer, with no hidden layers. Simply get in touch with
