@@ -9,9 +9,9 @@ const ColumnsWrapper = styled.div`
   position: relative;
   min-height: 50vh;
 
-  & + & {
+  /* & + & {
     border-top: 1px solid ${({ theme }) => theme.colors.grey800};
-  }
+  } */
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     display: flex;
