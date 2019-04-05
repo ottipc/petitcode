@@ -77,7 +77,7 @@ export default function Footer() {
               <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
             </ContactWrapper>
             <address>
-              petitcode UG
+              petitcode GmbH
               <br />
               Friedrichstraße 11
               <br />
