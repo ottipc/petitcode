@@ -51,6 +51,7 @@ module.exports = {
     small: '576px',
     medium: '768px',
     large: '992px',
+    huge: '1620px',
     headerLogo: '1699px',
     headerLogoText: '1700px'
   },

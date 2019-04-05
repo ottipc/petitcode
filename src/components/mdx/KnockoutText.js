@@ -46,6 +46,10 @@ const KnockoutH1 = styled.h1`
     font-size: 7vw !important;
   }
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+    font-size: 130px !important;
+  }
+
   /* css hack to get chrome render the knockout text properly */
   transition: 0.5s z-index;
   ${({ isVisible }) =>
