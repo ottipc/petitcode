@@ -10,7 +10,8 @@ import MenuItem from './MenuItem'
 import PetitcodeLogo from '../assets/petitcode-logo.svg'
 
 const FooterWrapper = styled.div`
-  margin-top: ${({ theme }) => theme.spacings.s4};
+  padding-top: ${({ theme }) => theme.spacings.s4};
+  background: ${({ theme }) => theme.colors.white};
 `
 
 const FooterTopWrapper = styled.div`
