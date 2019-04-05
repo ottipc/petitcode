@@ -31,8 +31,8 @@ const Grid = styled.div`
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  width: 40vw;
-  max-width: 200px;
+  width: 100%;
+  max-width: 30vw;
 
   & svg {
     width: 100%;

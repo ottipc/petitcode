@@ -71,7 +71,7 @@ const ContentWrapper = styled.div`
   }
 
   & h1 {
-    font-size: 17px;
+    font-size: 19px;
     @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
       font-size: 3.5vw;
     }
