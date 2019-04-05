@@ -272,6 +272,10 @@ export default class Layout extends React.Component {
                               content: data.site.siteMetadata.description
                             },
                             {
+                              property: 'og:image',
+                              content: '/social.png'
+                            },
+                            {
                               name: 'apple-mobile-web-app-capable',
                               content: 'yes'
                             },
