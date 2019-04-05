@@ -23,12 +23,15 @@ const FooterTopWrapper = styled.div`
 const FooterTopGrid = styled(GridWrapper)`
   display: flex;
   justify-content: space-around;
-  padding: ${({ theme }) => theme.spacings.s8}
+  flex-wrap: wrap;
+  padding: ${({ theme }) => theme.spacings.s6}
     ${({ theme }) => theme.spacings.s1};
 `
 
 const Column = styled.div`
   flex: 0 0 30%;
+  min-width: 300px;
+  padding: ${({ theme }) => theme.spacings.s2} 0;
 `
 
 const ContactWrapper = styled.div`
