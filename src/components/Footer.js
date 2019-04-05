@@ -9,9 +9,11 @@ import MenuItem from './MenuItem'
 
 import PetitcodeLogo from '../assets/petitcode-logo.svg'
 
-const FooterTopWrapper = styled.div`
+const FooterWrapper = styled.div`
   margin-top: ${({ theme }) => theme.spacings.s4};
+`
 
+const FooterTopWrapper = styled.div`
   background: ${({ theme }) => theme.colors.black};
   color: ${({ theme }) => theme.colors.white};
 
@@ -70,7 +72,7 @@ const Copyright = styled.div`
 
 export default function Footer() {
   return (
-    <>
+    <FooterWrapper>
       <FooterTopWrapper>
         <FooterTopGrid>
           <Column>
@@ -102,6 +104,6 @@ export default function Footer() {
           Copyright © {new Date().getFullYear()} petitcode GmbH
         </Copyright>
       </FooterBottomWrapper>
-    </>
+    </FooterWrapper>
   )
 }

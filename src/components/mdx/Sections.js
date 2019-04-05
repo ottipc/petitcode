@@ -69,7 +69,7 @@ function Sections({ children }) {
         <div />
       </Observer>
       {children}
-      <Observer onChange={handleFooterIntersection} threshold={0.3}>
+      <Observer onChange={handleFooterIntersection} threshold={0.05}>
         <div>
           <Footer />
         </div>

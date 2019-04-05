@@ -7,9 +7,15 @@ import { SectionContext } from '../../utils/Contexts'
 
 const Wrapper = styled.section`
   position: relative;
-  scroll-snap-align: start;
   min-height: 100vh;
-  padding: 0 ${({ theme }) => theme.spacings.s1};
+  padding: 0 ${({ theme }) => theme.spacings.s2};
+  background: #fff;
+
+  scroll-snap-align: start;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    padding: 0 ${({ theme }) => theme.spacings.s1};
+  }
 `
 
 const VideoWrapper = styled.div`

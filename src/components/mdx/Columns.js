@@ -125,10 +125,10 @@ const ColumnImageWrapper = styled.div`
     ${({ reverse }) =>
       reverse
         ? css`
-            left: calc(${({ theme }) => theme.spacings.s1} * -1);
+            left: calc(${({ theme }) => theme.spacings.s2} * -1);
           `
         : css`
-            right: calc(${({ theme }) => theme.spacings.s1} * -1);
+            right: calc(${({ theme }) => theme.spacings.s2} * -1);
           `}
 
     & img {

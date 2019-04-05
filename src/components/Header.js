@@ -31,11 +31,16 @@ const Grid = styled.div`
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  max-width: 40vw;
+  width: 40vw;
+  max-width: 200px;
 
   & svg {
     width: 100%;
     height: auto;
+  }
+
+  & svg.notext {
+    transform: translateX(-50%);
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.headerLogo}) {
@@ -45,7 +50,7 @@ const LogoWrapper = styled.div`
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     & svg.notext {
-      width: 35px;
+      width: 30px;
     }
   }
 `
