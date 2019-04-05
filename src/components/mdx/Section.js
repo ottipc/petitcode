@@ -88,7 +88,11 @@ function Section({ video, children, nr }) {
   }
 
   return (
-    <Observer onChange={handleIntersection} threshold={0.05}>
+    <Observer
+      onChange={handleIntersection}
+      rootMargin="-25% 0% -25% 0%"
+      threshold={0}
+    >
       <Wrapper id={`section-${nr}`}>
         {video && (
           <VideoWrapper>

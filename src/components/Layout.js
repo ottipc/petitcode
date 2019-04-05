@@ -11,6 +11,7 @@ import ReactCookieConsent from 'react-cookie-consent'
 
 import Navigation from './Navigation'
 import Overlays from './Overlays'
+import Footer from './Footer'
 import theme from '../utils/styling/theme'
 import { NavigationContext, SectionContext } from '../utils/Contexts'
 
@@ -146,8 +147,14 @@ export default class Layout extends React.Component {
     }))
   }
 
-  handleIntersection = ({ isIntersecting: scrolledDown }) => {
-    this.setState({ scrolledDown })
+  handleFooterIntersection = ({ isIntersecting }) => {
+    if (isIntersecting) {
+      this.setActiveSection(null)
+    }
+  }
+
+  handleIsScrollingIntersection = ({ isIntersecting }) => {
+    this.setIsScrolling(!isIntersecting)
   }
 
   shouldComponentUpdate = (nextProps, nextState) => {
@@ -173,7 +180,9 @@ export default class Layout extends React.Component {
       setActiveSection,
       setSections,
       setScrollToSection,
-      setIsScrolling
+      setIsScrolling,
+      handleIsScrollingIntersection,
+      handleFooterIntersection
     } = this
 
     return (
@@ -282,12 +291,19 @@ export default class Layout extends React.Component {
                             <Overlays />
                             <Navigation navigationActive={navigationActive} />
                             <main>
-                              {children}
                               <Observer
-                                onChange={this.handleIntersection}
-                                rootMargin="0px 0px 100px 0px"
+                                onChange={handleIsScrollingIntersection}
                               >
                                 <div />
+                              </Observer>
+                              {children}
+                              <Observer
+                                onChange={handleFooterIntersection}
+                                rootMargin={'-50% 0px'}
+                              >
+                                <div>
+                                  <Footer />
+                                </div>
                               </Observer>
                             </main>
                             <ReactCookieConsent
