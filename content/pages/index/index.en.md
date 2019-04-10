@@ -8,7 +8,6 @@ theme: "sections"
 
 import Sections from "$components/Sections";
 import Section from "$components/Section";
-import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
 import Centered from "$components/Centered";
 import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
