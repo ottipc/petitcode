@@ -9,6 +9,8 @@ const ColumnsWrapper = styled.div`
   position: relative;
   min-height: 50vh;
 
+  margin: 0 ${({ theme }) => `-${theme.spacings.s1}`};
+
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     display: flex;
     align-items: center;

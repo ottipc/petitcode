@@ -13,10 +13,14 @@ const Wrapper = styled.section`
 
   /* scroll-snap-align: start; */
 
-  &:first-of-type {
-    margin-top: ${({ theme }) =>
-      theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
-  }
+  ${({ video }) =>
+    !video &&
+    css`
+      &:first-of-type {
+        margin-top: ${({ theme }) =>
+          theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
+      }
+    `}
 
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     padding: 0 ${({ theme }) => theme.spacings.s1};
@@ -52,7 +56,8 @@ const ContentWrapper = styled.div`
   background-color: #fff;
   color: #000;
 
-  padding: ${({ theme }) => theme.spacings.s4} 0;
+  padding: ${({ theme }) => theme.spacings.s4}
+    ${({ theme }) => theme.spacings.s1};
 
   ${({ video }) =>
     video &&
@@ -97,7 +102,7 @@ function Section({ video, children, nr }) {
       rootMargin="-25% 0% -25% 0%"
       threshold={0}
     >
-      <Wrapper id={`section-${nr}`}>
+      <Wrapper video={video} id={`section-${nr}`}>
         {video && (
           <VideoWrapper>
             <Video autoPlay loop muted playsInline>
