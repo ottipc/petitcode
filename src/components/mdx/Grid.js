@@ -1,7 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import { MDXProvider } from '@mdx-js/tag'
 
 const ActualGrid = styled.div`
   display: flex;
@@ -25,10 +24,6 @@ export default class Grid extends React.PureComponent {
   }
   render() {
     const { children } = this.props
-    return (
-      <ActualGrid>
-        <MDXProvider>{children}</MDXProvider>
-      </ActualGrid>
-    )
+    return <ActualGrid>{children}</ActualGrid>
   }
 }

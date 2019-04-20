@@ -73,11 +73,11 @@ export function Carousel({ children }) {
   })
 
   const Nav = children.find(
-    (child) => child.type.displayName === 'Carousel__CarouselNavigation'
+    (child) => child.props.mdxType === 'CarouselNavigation'
   )
 
   const Main = children.find(
-    (child) => child.type.displayName === 'Carousel__CarouselSlides'
+    (child) => child.props.mdxType === 'CarouselSlides'
   )
 
   const settings = {
