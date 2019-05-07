@@ -8,6 +8,7 @@ theme: "sections"
 
 import Sections from "$components/Sections";
 import Section from "$components/Section";
+import Person from "$components/Person";
 import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
 
@@ -22,18 +23,38 @@ import KnockoutText from "$components/KnockoutText";
 <KnockoutText>petitcode ist ein kreatives kollektiv für digitale produkte. german translation still missing.</KnockoutText>
 
 <Grid>
+<Person name="Sebastian Melz" image="sebastian-melz.jpg">
 
-Sebastian Melz
+CEO / 🤡
 
-Edgar Bongkishiy
+</Person>
+<Person name="Edgar Bongkishiy" image="edgar-bongkishiy.jpg">
 
-Ottavio Braun
+CTO
 
-Samer Murad
+</Person>
+<Person name="Ottavio Braun" image="ottavio-braun.jpg">
 
-Rodolfo Lopez
+CTO
 
-Mario Mielke
+</Person>
+<Person name="Samer Murad" image="samer-murad.jpg">
+
+Dings
+
+</Person>
+<Person name="Rodolfo Lopez" image="rodolfo-lopez.jpg">
+
+Was andres
+
+</Person>
+<Person name="Mario Mielke" image="mario-mielke.jpg">
+
+Nix
+
+aber viel andres
+
+</Person>
 
 </Grid>
 

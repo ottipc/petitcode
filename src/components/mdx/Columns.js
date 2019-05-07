@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Image from 'gatsby-image'
 
-import { LocationContext } from '../../utils/Contexts'
+import { GlobalContext } from '../../utils/Contexts'
 
 const ColumnsWrapper = styled.div`
   position: relative;
@@ -157,8 +157,8 @@ ColumnContent.propTypes = {
 }
 
 export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
-  const { images } = useContext(LocationContext)
-  const imageData = images[file].childImageSharp
+  const { columns } = useContext(GlobalContext)
+  const imageData = columns[file].childImageSharp
   const image = {
     ...imageData,
     fluid: { ...imageData.fluid, base64: imageData.sqip.dataURI },
