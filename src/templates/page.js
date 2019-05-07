@@ -2,12 +2,49 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 import DarkTheme from './themes/DarkTheme'
 import DefaultTheme from './themes/DefaultTheme'
+
+import Sections from '../components/mdx/Sections'
+import Section from '../components/mdx/Section'
+import SectionContent from '../components/mdx/SectionContent'
+import Grid from '../components/mdx/Grid'
+import Centered from '../components/mdx/Centered'
+import { Columns, ColumnContent, ColumnImage } from '../components/mdx/Columns'
+import { Card, CardImage, CardContent } from '../components/mdx/Card'
+import {
+  Carousel,
+  CarouselNavigation,
+  CarouselSlides,
+  CarouselSlide
+} from '../components/mdx/Carousel'
+import KnockoutText from '../components/mdx/KnockoutText'
+import Video from '../components/mdx/Video'
+
+const components = {
+  Sections,
+  SectionContent,
+  Section,
+  Grid,
+  Card,
+  CardImage,
+  CardContent,
+  Centered,
+  Columns,
+  ColumnContent,
+  ColumnImage,
+  Carousel,
+  CarouselNavigation,
+  CarouselSlides,
+  CarouselSlide,
+  KnockoutText,
+  Video
+}
 
 class PageTemplate extends React.PureComponent {
   static propTypes = {
@@ -76,7 +113,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          {content}
+          <MDXProvider components={components}>{content}</MDXProvider>
         </Layout>
       </LocationContext.Provider>
     )

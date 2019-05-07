@@ -6,12 +6,6 @@ description: "whether you need a full product or support for your teams, through
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-
 <Sections>
 <Section>
 <Columns>

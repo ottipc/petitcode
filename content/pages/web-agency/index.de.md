@@ -6,14 +6,6 @@ description: "petitcode is a creative collective of senior technology specialist
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import KnockoutText from "$components/KnockoutText";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-import Video from "$components/Video"
-
 <Sections>
 <Section>
 <Columns>
