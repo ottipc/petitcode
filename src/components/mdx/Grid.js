@@ -1,27 +1,34 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const ActualGrid = styled.div`
   display: flex;
-  justify-content: ${({ spacing }) => spacing};
   flex-wrap: wrap;
 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+
   & > * {
-    padding: 1rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    min-width: 250px;
+    ${({ centered }) =>
+      centered &&
+      css`
+        text-align: center;
+      `}
   }
 
+  /* @todo Whats that? */
   & .gatsby-resp-image-wrapper {
     width: 100vw;
   }
 `
 
-export default function Grid({ children, spacing = 'space-between' }) {
-  return <ActualGrid spacing={spacing}>{children}</ActualGrid>
+export default function Grid({ children, centered = false }) {
+  return <ActualGrid centered={centered}>{children}</ActualGrid>
 }
 Grid.propTypes = {
   children: propTypes.node.isRequired,
-  spacing: propTypes.string
+  centered: propTypes.bool
 }

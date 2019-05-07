@@ -10,7 +10,7 @@ const grey500 = '#7B8794'
 const grey600 = '#9AA5B1'
 const grey700 = '#CBD2D9'
 const grey800 = '#E4E7EB'
-const grey900 = '#F5F7FA'
+const grey900 = '#f4f5f6'
 const spacingUnit = 14
 
 module.exports = {

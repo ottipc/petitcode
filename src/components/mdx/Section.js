@@ -8,10 +8,6 @@ import { SectionContext } from '../../utils/Contexts'
 const Wrapper = styled.section`
   position: relative;
   min-height: 60vh;
-  padding: 0 ${({ theme }) => theme.spacings.s2};
-  background: #fff;
-
-  /* scroll-snap-align: start; */
 
   ${({ video }) =>
     !video &&
@@ -21,10 +17,6 @@ const Wrapper = styled.section`
           theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
       }
     `}
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    padding: 0 ${({ theme }) => theme.spacings.s1};
-  }
 `
 
 const VideoWrapper = styled.div`
@@ -53,38 +45,19 @@ const ContentWrapper = styled.div`
   align-items: stretch;
   flex-direction: column;
 
-  background-color: #fff;
-  color: #000;
-
-  padding: ${({ theme }) => theme.spacings.s4}
-    ${({ theme }) => theme.spacings.s1};
-
   ${({ video }) =>
     video &&
     css`
-      background: transparent;
       color: #fff;
+
+      h1 {
+        font-size: calc(40px + 80 * ((100vw - 320px) / 1400));
+
+        @media (min-width: 1400px) {
+          font-size: 120px;
+        }
+      }
     `}
-
-  & h1,
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
-    font-weight: normal;
-  }
-
-  & h1 {
-    font-size: 19px;
-    @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
-      font-size: 3.5vw;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
-      font-size: 70px;
-    }
-  }
 `
 
 function Section({ video, children, nr }) {

@@ -41,16 +41,13 @@ const LogoWrapper = styled.div`
 
   & svg.notext {
     transform: translateX(-50%);
+    width: ${({ theme }) => theme.spacings.s1};
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.headerLogo}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     & svg.notext {
-      width: 20px;
-    }
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    & svg.notext {
-      width: 30px;
+      transform: none;
+      width: ${({ theme }) => theme.spacings.s2};
     }
   }
 `

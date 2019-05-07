@@ -7,6 +7,14 @@ const H1OutterWrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    margin-bottom: ${({ theme }) => theme.spacings.s6};
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    margin-bottom: ${({ theme }) => theme.spacings.s4};
+  }
+
   animation: knockout 8s infinite alternate;
 
   @keyframes knockout {
@@ -34,13 +42,10 @@ const KnockoutH1 = styled.h1`
   background-color: white;
   mix-blend-mode: screen;
 
-  font-size: 32px !important;
-  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
-    font-size: 7vw !important;
-  }
+  font-size: calc(30px + 70 * ((100vw - 320px) / 1400));
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
-    font-size: 130px !important;
+  @media (min-width: ${({ theme }) => theme.grid.width}px) {
+    font-size: 100px;
   }
 
   ${({ centered }) =>

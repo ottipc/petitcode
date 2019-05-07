@@ -5,24 +5,21 @@ import Image from 'gatsby-image'
 
 import { GlobalContext } from '../../utils/Contexts'
 
-const PersonWrapper = styled.section`
-  display: flex;
-  width: 300px;
-`
-const PersonCard = styled.div`
-  border-radius: 0.5rem;
+const PersonCard = styled.section`
   padding: ${({ theme }) => theme.spacings.s3};
-  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  background-color: ${({ theme }) => theme.colors.grey900};
+  box-shadow: 5px 5px 0px hsla(0, 0%, 0%, 0.2);
   text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacings.s3};
-  width: 100%;
 `
 const PersonImage = styled.div`
   width: 100%;
   max-width: 250px;
-  border-radius: 100%;
   overflow: hidden;
   margin: 0 auto ${({ theme }) => theme.spacings.s2};
+
+  & img {
+    border-radius: 100%;
+  }
 `
 const PersonContent = styled.div``
 const PersonName = styled.h1`
@@ -48,15 +45,13 @@ export default function Person({ image, name, children }) {
   }
 
   return (
-    <PersonWrapper>
-      <PersonCard>
-        <PersonImage>{renderedImage}</PersonImage>
-        <PersonContent>
-          <PersonName>{name}</PersonName>
-          {children}
-        </PersonContent>
-      </PersonCard>
-    </PersonWrapper>
+    <PersonCard>
+      <PersonImage>{renderedImage}</PersonImage>
+      <PersonContent>
+        <PersonName>{name}</PersonName>
+        {children}
+      </PersonContent>
+    </PersonCard>
   )
 }
 

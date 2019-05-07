@@ -9,18 +9,22 @@ theme: "sections"
 import Sections from "$components/Sections";
 import Section from "$components/Section";
 import Person from "$components/Person";
+import SectionContent from "$components/SectionContent";
 import Grid from "$components/Grid";
 import KnockoutText from "$components/KnockoutText";
 
 <Sections>
 <Section video>
+<SectionContent>
 
-# avantgarde <br/> freelance  <br/> collective.
+# the code <br/> to your success.
 
+</SectionContent>
 </Section>
 <Section>
+<SectionContent>
 
-<KnockoutText>petitcode ist ein kreatives kollektiv für digitale produkte. german translation still missing.</KnockoutText>
+<KnockoutText>petitcode is a creative collective for digital products</KnockoutText>
 
 <Grid>
 <Person name="Sebastian Melz" image="sebastian-melz.jpg">
@@ -57,10 +61,10 @@ aber viel andres
 </Person>
 
 </Grid>
-
+</SectionContent>
 </Section>
 <Section>
-
+<SectionContent>
 <KnockoutText>Our Clients</KnockoutText>
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
@@ -82,19 +86,19 @@ Our Clients are the life-source of our business and we strive to operate a highl
 ![vorwerk](./images/clients/vorwerk.png)
 
 </Grid>
-
+</SectionContent>
 </Section>
 <Section>
-
+<SectionContent>
 <KnockoutText centered>I am a</KnockoutText>
 
-<Grid spacing="space-around">
+<Grid centered>
 
 # [Freelancer](/freelancer)
 
 # [Client](/client)
 
 </Grid>
-
+</SectionContent>
 </Section>
 </Sections>
