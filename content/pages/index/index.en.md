@@ -65,9 +65,9 @@ Our Clients are the life-source of our business and we strive to operate a highl
 </Section>
 <Section>
 
-<KnockoutText>How can we help you?</KnockoutText>
+<KnockoutText centered>I am a</KnockoutText>
 
-<Grid>
+<Grid spacing="space-around">
 
 # [Freelancer](/freelancer)
 

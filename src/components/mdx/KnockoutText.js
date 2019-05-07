@@ -57,6 +57,12 @@ const KnockoutH1 = styled.h1`
     css`
       z-index: 200;
     `}
+
+  ${({ centered }) =>
+    centered &&
+    css`
+      text-align: center;
+    `}
 `
 
 const KnockoutText = (props) => {

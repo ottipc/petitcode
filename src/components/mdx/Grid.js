@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const ActualGrid = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ spacing }) => spacing};
   flex-wrap: wrap;
 
   & > * {
@@ -18,12 +18,10 @@ const ActualGrid = styled.div`
   }
 `
 
-export default class Grid extends React.PureComponent {
-  static propTypes = {
-    children: propTypes.node.isRequired
-  }
-  render() {
-    const { children } = this.props
-    return <ActualGrid>{children}</ActualGrid>
-  }
+export default function Grid({ children, spacing = 'space-between' }) {
+  return <ActualGrid spacing={spacing}>{children}</ActualGrid>
+}
+Grid.propTypes = {
+  children: propTypes.node.isRequired,
+  spacing: propTypes.string
 }
