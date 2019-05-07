@@ -46,7 +46,7 @@ const LogoWrapper = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     & svg.notext {
-      transform: none;
+      transform: translateX(-25%);
       width: ${({ theme }) => theme.spacings.s2};
     }
   }
