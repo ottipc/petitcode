@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Card = styled.section`
   padding: ${({ theme }) => theme.spacings.s3};
   background-color: ${({ theme }) => theme.colors.grey900};
-  box-shadow: 5px 5px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 10px 10px 0px hsla(0, 0%, 0%, 0.2);
   text-align: center;
 `
 export const CardImage = styled.div`

@@ -8,14 +8,13 @@ import { SectionContext } from '../../utils/Contexts'
 const Wrapper = styled.section`
   position: relative;
   min-height: 60vh;
+  background: ${({ theme }) => theme.colors.bg};
 
   ${({ video }) =>
     !video &&
     css`
       &:first-of-type {
-        margin-top: ${({ theme }) =>
-          theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
-      }
+        margin-top: ${({ theme }) => theme.elements.headerHeight}px;
     `}
 `
 

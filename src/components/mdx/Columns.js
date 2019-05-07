@@ -38,10 +38,10 @@ export const ColumnContentWrapper = styled.div`
 
 export const ColumnContentText = styled.div`
   box-sizing: content-box;
-  padding: 0 ${({ theme }) => theme.spacings.s2};
+  padding: 10vh ${({ theme }) => theme.spacings.s2};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    padding: 0 ${({ theme }) => theme.spacings.s4};
+    padding: 10vh ${({ theme }) => theme.spacings.s4};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
