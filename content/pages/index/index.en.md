@@ -87,9 +87,23 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <Grid centered>
 
-# [Freelancer](/freelancer)
+<Card>
+<CardContent>
+<h1><Link humanId="freelancer">Freelancer</Link></h1>
 
-# [Client](/client)
+and want to join the network
+
+</CardContent>
+</Card>
+
+<Card>
+<CardContent>
+<h1><Link humanId="client">Client</Link></h1>
+
+and want to get stuff done
+
+</CardContent>
+</Card>
 
 </Grid>
 </SectionContent>

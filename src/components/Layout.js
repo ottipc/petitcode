@@ -17,7 +17,7 @@ import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
 import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
-import MenuItem from './MenuItem'
+import Link from './mdx/Link'
 
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
@@ -328,7 +328,7 @@ export default class Layout extends React.Component {
                               {`Um die Webseite und Services für Sie zu optimieren,
                           werden Cookies verwendet. Durch die weitere Nutzung
                           der Webseite stimmen Sie der `}
-                              <MenuItem
+                              <Link
                                 humanId="data-protection"
                                 title="Verwendung von Cookies"
                               />

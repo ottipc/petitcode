@@ -1,11 +1,11 @@
 import React from 'react'
 
-import MenuItem from './MenuItem'
+import Link from './mdx/Link'
 
 export default function FooterNavigation() {
   return (
     <div>
-      <MenuItem humanId="imprint" /> / <MenuItem humanId="data-protection" />
+      <Link humanId="imprint" /> / <Link humanId="data-protection" />
     </div>
   )
 }

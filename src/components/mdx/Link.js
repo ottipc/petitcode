@@ -3,12 +3,12 @@ import propTypes from 'prop-types'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { createLocalizedPath } from '../utils/i18n'
-import { NavigationContext, LocationContext } from '../utils/Contexts'
+import { createLocalizedPath } from '../../utils/i18n'
+import { NavigationContext, LocationContext } from '../../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
-export default function MenuItem({
+export default function MdxLink({
   className = null,
   humanId,
   title = null,
@@ -37,7 +37,7 @@ export default function MenuItem({
   return null
 }
 
-MenuItem.propTypes = {
+MdxLink.propTypes = {
   humanId: propTypes.string.isRequired,
   title: propTypes.string,
   className: propTypes.string,

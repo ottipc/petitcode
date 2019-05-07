@@ -26,6 +26,7 @@ import {
 import KnockoutText from '../components/mdx/KnockoutText'
 import Video from '../components/mdx/Video'
 import Person from '../components/mdx/Person'
+import Link from '../components/mdx/Link'
 
 const components = {
   Sections,
@@ -45,7 +46,8 @@ const components = {
   CarouselSlide,
   KnockoutText,
   Video,
-  Person
+  Person,
+  Link
 }
 
 class PageTemplate extends React.PureComponent {

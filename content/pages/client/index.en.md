@@ -38,12 +38,11 @@ Below you find an overview of our services.
 
 </CardImage>
 <CardContent>
+<h2><Link humanId="app-development">App development</Link></h2>
 
-# App development
+Lorem ipsum dolor ...
 
-Lorem ipsum und so weiter
-
-@todo @bene add CTA element to link pages
+<Link humanId="app-development">Learn more</Link>
 
 </CardContent>
 </Card>
@@ -51,16 +50,47 @@ Lorem ipsum und so weiter
 <Card>
 <CardImage>
 
-![](./images/icons/ci-design.svg)
+![](./images/icons/digital-consultancy.svg)
 
 </CardImage>
 <CardContent>
+<h2><Link humanId="digital-consultancy">Digital consultancy</Link></h2>
 
-# CI design
+Lorem ipsum dolor ...
 
-Lorem ipsum und so weiter
+<Link humanId="digital-consultancy">Learn more</Link>
 
-@todo @bene add CTA element to link pages
+</CardContent>
+</Card>
+
+<Card>
+<CardImage>
+
+![](./images/icons/ecommerce-agency.svg)
+
+</CardImage>
+<CardContent>
+<h2><Link humanId="ecommerce-agency">Ecommerce agency</Link></h2>
+
+Lorem ipsum dolor ...
+
+<Link humanId="ecommerce-agency">Learn more</Link>
+
+</CardContent>
+</Card>
+
+<Card>
+<CardImage>
+
+![](./images/icons/user-interface-design.svg)
+
+</CardImage>
+<CardContent>
+<h2><Link humanId="user-interface-design">User interface design</Link></h2>
+
+Lorem ipsum dolor ...
+
+<Link humanId="user-interface-design">Learn more</Link>
 
 </CardContent>
 </Card>

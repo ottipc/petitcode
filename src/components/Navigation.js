@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import GridWrapper from './GridWrapper'
-import MenuItem from './MenuItem'
+import Link from './mdx/Link'
 import { LocationContext } from '../utils/Contexts'
 import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
 
@@ -72,7 +72,7 @@ const MenuBasicStyling = css`
   }
 `
 
-const MenuLink = styled(MenuItem)`
+const MenuLink = styled(Link)`
   ${MenuBasicStyling}
 `
 

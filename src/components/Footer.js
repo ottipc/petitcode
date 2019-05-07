@@ -5,7 +5,7 @@ import ContactForm from './ContactForm'
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import FooterNavigation from './FooterNavigation'
-import MenuItem from './MenuItem'
+import Link from './mdx/Link'
 
 import PetitcodeLogo from '../assets/petitcode-logo.svg'
 
@@ -49,7 +49,7 @@ const FooterBottomWrapper = styled.div`
 
   text-align: center;
 `
-const LogoMenuItem = styled(MenuItem)`
+const LogoMenuItem = styled(Link)`
   transition: opacity 0.15s linear;
   &:after {
     display: none;
