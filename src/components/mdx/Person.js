@@ -20,7 +20,10 @@ export default function Person({ image, name, children }) {
     const { childImageSharp } = persons[image]
     const imageProps = {
       ...childImageSharp,
-      fluid: { ...childImageSharp.fluid, base64: childImageSharp.sqip.dataURI },
+      fluid: {
+        ...childImageSharp.fluid
+        // , base64: childImageSharp.sqip.dataURI
+      },
       alt: name
     }
     renderedImage = <Image {...imageProps} />

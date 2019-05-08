@@ -165,7 +165,10 @@ export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
   const imageData = columns[file].childImageSharp
   const image = {
     ...imageData,
-    fluid: { ...imageData.fluid, base64: imageData.sqip.dataURI },
+    fluid: {
+      ...imageData.fluid
+      // , base64: imageData.sqip.dataURI
+    },
     alt
   }
 

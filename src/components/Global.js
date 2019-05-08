@@ -18,11 +18,11 @@ export default function Global({ children }) {
             name
             extension
             childImageSharp {
-              sqip(numberOfPrimitives: 5, blur: 0) {
-                dataURI
-              }
+              # sqip(numberOfPrimitives: 5, blur: 0) {
+              #   dataURI
+              # }
               fluid(maxWidth: 1152) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
@@ -39,11 +39,11 @@ export default function Global({ children }) {
             name
             extension
             childImageSharp {
-              sqip(numberOfPrimitives: 5, blur: 0) {
-                dataURI
-              }
-              fluid(maxWidth: 1152) {
-                ...GatsbyImageSharpFluid_withWebp_noBase64
+              # sqip(numberOfPrimitives: 5, blur: 0) {
+              #   dataURI
+              # }
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
               }
             }
           }
