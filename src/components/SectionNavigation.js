@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import propTypes from 'prop-types'
+// import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { SectionContext } from '../utils/Contexts'
 
@@ -63,7 +63,7 @@ const Button = styled.button`
   }
 `
 
-export default function SectionNavigation({ colorScheme }) {
+export default function SectionNavigation() {
   const { sections, activeSection, setScrollToSection } = useContext(
     SectionContext
   )
@@ -74,7 +74,6 @@ export default function SectionNavigation({ colorScheme }) {
 
   const buttons = sections.map((section, i) => (
     <Button
-      colorScheme={colorScheme}
       key={`section-navigation-${i}`}
       active={i === activeSection}
       onClick={() => setScrollToSection(i)}
@@ -87,6 +86,6 @@ export default function SectionNavigation({ colorScheme }) {
   return <Wrapper>{buttons}</Wrapper>
 }
 
-SectionNavigation.propTypes = {
-  colorScheme: propTypes.string.isRequired
-}
+// SectionNavigation.propTypes = {
+//   colorScheme: propTypes.string.isRequired
+// }

@@ -6,16 +6,16 @@ import { createLocalizedPath } from '../utils/i18n'
 import { LocationContext } from '../utils/Contexts'
 import { defaultLocale } from '../data/languages'
 
-const List = styled.ul({
-  display: 'flex',
-  margin: 0,
-  listStyleType: 'none',
-  textTransform: 'uppercase'
-})
+const List = styled.ul`
+  display: flex;
+  margin: 0;
+  list-style-type: none;
+  text-transform: uppercase;
+`
 
-const ListItem = styled.li({
-  margin: '0.25rem'
-})
+const ListItem = styled.li`
+  margin: 0.25rem;
+`
 
 const SwitcherLink = styled(Link)``
 

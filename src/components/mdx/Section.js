@@ -14,7 +14,7 @@ const Wrapper = styled.section`
     !video &&
     css`
       &:first-of-type {
-        margin-top: ${({ theme }) => theme.elements.headerHeight}px;
+        padding-top: ${({ theme }) => theme.elements.headerHeight}px;
       }
     `}
   ${({ inverted }) =>

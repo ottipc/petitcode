@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import propTypes from 'prop-types'
+// import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -11,13 +11,6 @@ const Wrapper = styled.nav`
   position: relative;
   z-index: 200;
   transition: color 0.3s linear;
-  ${({ colorScheme }) => css`
-    color: ${colorScheme};
-
-    & a:after {
-      background-color: ${colorScheme};
-    }
-  `}
 `
 
 const Grid = styled.div`
@@ -62,11 +55,11 @@ const ContactWrapper = styled.div`
     `}
 `
 
-export default function Header({ colorScheme }) {
+export default function Header() {
   const { activeLocale } = useContext(LocationContext)
   const { isScrolling } = useContext(SectionContext)
   return (
-    <Wrapper colorScheme={colorScheme}>
+    <Wrapper>
       <Grid>
         <LogoWrapper>
           <Link className="nohover" to={`/${activeLocale}/`} aria-label="Home">
@@ -87,6 +80,6 @@ export default function Header({ colorScheme }) {
   )
 }
 
-Header.propTypes = {
-  colorScheme: propTypes.string.isRequired
-}
+// Header.propTypes = {
+//   colorScheme: propTypes.string.isRequired
+// }
