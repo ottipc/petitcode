@@ -102,11 +102,11 @@ Producing an interface which makes it easy, efficient, and enjoyable to operate 
 
 </CardImage>
 <CardContent>
-<h2><Link humanId="web-development">Web Development</Link></h2>
+<h2><Link humanId="web-agency">Web Development</Link></h2>
 
 Web development and design can be very subjective and directly related to your own experiences and related emotions.
 
-<Link humanId="user-interface-design">Learn more</Link>
+<Link humanId="web-agency">Learn more</Link>
 
 </CardContent>
 </Card>
