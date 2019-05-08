@@ -17,8 +17,11 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-<KnockoutText>petitcode is a creative collective for digital products</KnockoutText>
-
+<KnockoutText>We are petitcode - an innovative collective of senior freelancers for digital conception, communication and production that stands for premium quality. </KnockoutText>
+</SectionContent>
+</Section
+<Section>
+SectionContent
 <Grid>
 <Person name="Sebastian Melz" image="sebastian-melz.jpg">
 
