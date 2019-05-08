@@ -98,7 +98,7 @@ and want to join the network
 
 <Card>
 <CardContent>
-<h1><Link humanId="client">Client</Link></h1>
+<h1><Link humanId="company">Client</Link></h1>
 
 and want to get stuff done
 

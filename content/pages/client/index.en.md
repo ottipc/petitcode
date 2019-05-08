@@ -40,7 +40,7 @@ Below you find an overview of our services.
 <CardContent>
 <h2><Link humanId="app-development">App development</Link></h2>
 
-Lorem ipsum dolor ...
+Whether Android or iOS, developing a mobile app can be a high risk project for your business, making the sourcing of the right developers absolutely crucial.
 
 <Link humanId="app-development">Learn more</Link>
 
@@ -56,7 +56,7 @@ Lorem ipsum dolor ...
 <CardContent>
 <h2><Link humanId="digital-consultancy">Digital consultancy</Link></h2>
 
-Lorem ipsum dolor ...
+When creating new concepts, implementing the newest technologies to guarantee a significant ROI on tech is easy to plan and perform.
 
 <Link humanId="digital-consultancy">Learn more</Link>
 
@@ -72,7 +72,7 @@ Lorem ipsum dolor ...
 <CardContent>
 <h2><Link humanId="ecommerce-agency">Ecommerce agency</Link></h2>
 
-Lorem ipsum dolor ...
+By analysing your business first, choosing the right ecommerce technologies for your business will be a no-brainer.
 
 <Link humanId="ecommerce-agency">Learn more</Link>
 
@@ -88,7 +88,23 @@ Lorem ipsum dolor ...
 <CardContent>
 <h2><Link humanId="user-interface-design">User interface design</Link></h2>
 
-Lorem ipsum dolor ...
+Producing an interface which makes it easy, efficient, and enjoyable to operate any software or device in a way which produces the desired outcome.
+
+<Link humanId="user-interface-design">Learn more</Link>
+
+</CardContent>
+</Card>
+
+<Card>
+<CardImage>
+
+![](./images/icons/user-interface-design.svg)
+
+</CardImage>
+<CardContent>
+<h2><Link humanId="web-development">Web Development</Link></h2>
+
+Web development and design can be very subjective and directly related to your own experiences and related emotions.
 
 <Link humanId="user-interface-design">Learn more</Link>
 
