@@ -99,7 +99,7 @@ und will mich Euch anschließen
 
 <Card>
 <CardContent>
-<h1><Link humanId="company">Firma</Link></h1>
+<h1><Link humanId="client">Firma</Link></h1>
 
 and benötige Unterstützung
 
