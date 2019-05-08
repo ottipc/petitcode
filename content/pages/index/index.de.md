@@ -1,5 +1,5 @@
 ---
-slug: "DEUTSCHE HOMESEITE"
+slug: "index"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - das avantgarde freelance kollektiv in Berlin und Weltweit"
 description: "petitcode ist ein kreatives kollektiv von Technologie Haiopeis."
