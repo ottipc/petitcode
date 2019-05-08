@@ -15,6 +15,17 @@ const Wrapper = styled.section`
     css`
       &:first-of-type {
         margin-top: ${({ theme }) => theme.elements.headerHeight}px;
+      }
+    `}
+  ${({ inverted }) =>
+    inverted &&
+    css`
+      color: ${({ theme }) => theme.colors.white};
+      background: ${({ theme }) => theme.colors.black};
+
+      & a:after {
+        background: ${({ theme }) => theme.colors.white};
+      }
     `}
 `
 
@@ -59,7 +70,7 @@ const ContentWrapper = styled.div`
     `}
 `
 
-function Section({ video, children, nr }) {
+function Section({ video, inverted, children, nr }) {
   const { setActiveSection } = useContext(SectionContext)
 
   const handleIntersection = ({ isIntersecting }) => {
@@ -74,7 +85,7 @@ function Section({ video, children, nr }) {
       rootMargin="-25% 0% -25% 0%"
       threshold={0}
     >
-      <Wrapper video={video} id={`section-${nr}`}>
+      <Wrapper video={video} inverted={inverted} id={`section-${nr}`}>
         {video && (
           <VideoWrapper>
             <Video autoPlay loop muted playsInline>
@@ -93,6 +104,7 @@ function Section({ video, children, nr }) {
 
 Section.prototype.propTypes = {
   video: propTypes.bool,
+  inverted: propTypes.bool,
   children: propTypes.node.isRequired,
   nr: propTypes.number.isRequired
 }

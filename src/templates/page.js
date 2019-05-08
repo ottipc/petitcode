@@ -27,6 +27,7 @@ import KnockoutText from '../components/mdx/KnockoutText'
 import Video from '../components/mdx/Video'
 import Person from '../components/mdx/Person'
 import Link from '../components/mdx/Link'
+import ClientForm from '../components/mdx/ClientForm'
 
 const components = {
   Sections,
@@ -47,20 +48,23 @@ const components = {
   KnockoutText,
   Video,
   Person,
-  Link
+  Link,
+  ClientForm
 }
 
 class PageTemplate extends React.PureComponent {
   static propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   }
 
   render() {
+    const { location, data } = this.props
     const {
       frontmatter: { title, description, theme },
       code: { body },
       fields: { humanId, locale }
-    } = this.props.data.mdx
+    } = data.mdx
 
     let content = null
     switch (theme) {
@@ -84,7 +88,7 @@ class PageTemplate extends React.PureComponent {
 
     return (
       <LocationContext.Provider
-        value={{ activeHumandId: humanId, activeLocale: locale }}
+        value={{ activeHumandId: humanId, activeLocale: locale, location }}
       >
         <Layout>
           <Helmet

@@ -2,7 +2,8 @@ import { createContext } from 'react'
 
 export const LocationContext = createContext({
   activeLocale: null,
-  activeHumanId: null
+  activeHumanId: null,
+  location: {}
 })
 
 export const NavigationContext = createContext({
