@@ -10,16 +10,27 @@ import Hamburger from './Hamburger'
 import { NavigationContext } from '../utils/Contexts'
 
 const HeaderWrapper = styled.div`
-  mix-blend-mode: difference;
-  color: white;
   position: fixed;
   z-index: 1200;
   top: 0;
   left: 0;
   right: 0;
+  background: ${({ theme }) => theme.colors.white};
+  padding-bottom: ${({ theme }) => theme.spacings.s1};
 
-  & a:after {
-    background: white;
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    mix-blend-mode: difference;
+    background: transparent;
+    color: white;
+    & a:after {
+      background: white;
+    }
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
   }
 `
 
@@ -40,9 +51,19 @@ const HamburgerWrapper = styled.div`
   mix-blend-mode: difference;
   position: fixed;
   z-index: 10010;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  top: ${({ theme }) => theme.spacings.s1};
+  right: ${({ theme }) => theme.spacings.s1};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+  }
 `
 
 export default function Overlays() {
@@ -52,15 +73,15 @@ export default function Overlays() {
     <React.Fragment>
       <HeaderWrapper>
         <Header />
+        <HamburgerWrapper>
+          <Hamburger />
+        </HamburgerWrapper>
+        <SectionNavigation />
       </HeaderWrapper>
-      <Navigation navigationActive={navigationActive} />
-      <HamburgerWrapper>
-        <Hamburger />
-      </HamburgerWrapper>
-      <SectionNavigation />
       <LanguageSelectWrapper>
         <LanguageSelect />
       </LanguageSelectWrapper>
+      <Navigation navigationActive={navigationActive} />
     </React.Fragment>
   )
 }

@@ -33,6 +33,7 @@ const LogoWrapper = styled.div`
   }
 
   & svg.notext {
+    display: none;
     transform: translateX(-50%);
     width: ${({ theme }) => theme.spacings.s1};
   }
@@ -43,6 +44,16 @@ const LogoWrapper = styled.div`
       width: ${({ theme }) => theme.spacings.s2};
     }
   }
+  ${({ isScrolling }) => css`
+    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+      & svg.notext {
+        display: block;
+      }
+      & svg.text {
+        display: none;
+      }
+    }
+  `}
 `
 const ContactWrapper = styled.div`
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
@@ -51,7 +62,15 @@ const ContactWrapper = styled.div`
   ${({ show }) =>
     show &&
     css`
-      display: block;
+      @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+        display: block;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+      }
     `}
 `
 
@@ -61,13 +80,10 @@ export default function Header() {
   return (
     <Wrapper>
       <Grid>
-        <LogoWrapper>
+        <LogoWrapper isScrolling={isScrolling}>
           <Link className="nohover" to={`/${activeLocale}/`} aria-label="Home">
-            {isScrolling ? (
-              <Logo className="notext" />
-            ) : (
-              <LogoText className="text" />
-            )}
+            <Logo className="notext" />
+            <LogoText className="text" />
           </Link>
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
