@@ -1,40 +1,30 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import ContactForm from './ContactForm'
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import FooterNavigation from './FooterNavigation'
 import Link from './mdx/Link'
 
-import PetitcodeLogo from '../assets/petitcode-logo.svg'
+import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
 
 const FooterWrapper = styled.div`
   padding-top: ${({ theme }) => theme.spacings.s4};
   background: ${({ theme }) => theme.colors.white};
 `
 
-const FooterTopWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.black};
-  color: ${({ theme }) => theme.colors.white};
-
-  & a:after {
-    background: ${({ theme }) => theme.colors.white};
-  }
-`
-
-const FooterTopGrid = styled(GridWrapper)`
+const FooterGrid = styled(GridWrapper)`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: ${({ theme }) => theme.spacings.s6}
-    ${({ theme }) => theme.spacings.s1};
+  text-align: center;
+  margin-top: ${({ theme }) => theme.spacings.s2};
 `
 
 const Column = styled.div`
   flex: 0 0 30%;
   min-width: 300px;
-  padding: ${({ theme }) => theme.spacings.s2} 0;
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
 `
 
 const ContactWrapper = styled.div`
@@ -42,13 +32,6 @@ const ContactWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s1};
 `
 
-const FooterBottomWrapper = styled.div`
-  ${({ theme: { spacings } }) => css`
-    padding: ${spacings.s8} ${spacings.s1};
-  `}
-
-  text-align: center;
-`
 const LogoMenuItem = styled(Link)`
   transition: opacity 0.15s linear;
   &:after {
@@ -62,49 +45,48 @@ const Logo = styled(PetitcodeLogo)`
   ${({ theme: { spacings } }) => css`
     padding-bottom: ${spacings.s2};
   `}
-  width: 100px;
+  width: 100%;
+  max-width: 200px;
 `
 const Copyright = styled.div`
   ${({ theme: { spacings } }) => css`
-    padding-top: ${spacings.s2};
+    padding-bottom: ${spacings.s2};
   `}
   font-size: 0.8em;
+  text-align: center;
 `
 
 export default function Footer() {
   return (
     <FooterWrapper>
-      <FooterTopWrapper>
-        <FooterTopGrid>
-          <Column>
-            <ContactWrapper>
-              <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-              <br />
-              <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
-            </ContactWrapper>
-            <address>
-              petitcode GmbH
-              <br />
-              Friedrichstraße 11
-              <br />
-              10969 Berlin
-            </address>
-            <Social />
-          </Column>
-          <Column>
-            <ContactForm />
-          </Column>
-        </FooterTopGrid>
-      </FooterTopWrapper>
-      <FooterBottomWrapper>
-        <LogoMenuItem humanId="index" aria-label="Home">
-          <Logo />
-        </LogoMenuItem>
-        <FooterNavigation />
-        <Copyright>
-          Copyright © {new Date().getFullYear()} petitcode GmbH
-        </Copyright>
-      </FooterBottomWrapper>
+      <FooterGrid>
+        <Column>
+          <LogoMenuItem humanId="index" aria-label="Home">
+            <Logo />
+          </LogoMenuItem>
+          <ContactWrapper>
+            <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+            <br />
+            <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+          </ContactWrapper>
+          <Social />
+        </Column>
+        <Column>
+          <address>
+            petitcode GmbH
+            <br />
+            Friedrichstraße 11
+            <br />
+            10969 Berlin
+          </address>
+        </Column>
+        <Column>
+          <FooterNavigation />
+        </Column>
+      </FooterGrid>
+      <Copyright>
+        Copyright © {new Date().getFullYear()} petitcode GmbH
+      </Copyright>
     </FooterWrapper>
   )
 }
