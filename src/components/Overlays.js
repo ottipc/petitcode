@@ -17,6 +17,10 @@ const HeaderWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
+
+  & a:after {
+    background: white;
+  }
 `
 
 const LanguageSelectWrapper = styled.div`
@@ -26,6 +30,10 @@ const LanguageSelectWrapper = styled.div`
   z-index: 1100;
   bottom: ${({ theme }) => theme.spacings.s1};
   left: ${({ theme }) => theme.spacings.s1};
+
+  & a:after {
+    background: white;
+  }
 `
 
 const HamburgerWrapper = styled.div`
