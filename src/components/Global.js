@@ -17,6 +17,7 @@ export default function Global({ children }) {
           node {
             name
             extension
+            publicURL
             childImageSharp {
               # sqip(numberOfPrimitives: 5, blur: 0) {
               #   dataURI
@@ -38,6 +39,29 @@ export default function Global({ children }) {
           node {
             name
             extension
+            publicURL
+            childImageSharp {
+              # sqip(numberOfPrimitives: 5, blur: 0) {
+              #   dataURI
+              # }
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+      }
+      grid: allFile(
+        filter: {
+          sourceInstanceName: { eq: "image" }
+          relativePath: { regex: "/^grid/" }
+        }
+      ) {
+        edges {
+          node {
+            name
+            extension
+            publicURL
             childImageSharp {
               # sqip(numberOfPrimitives: 5, blur: 0) {
               #   dataURI
@@ -67,9 +91,16 @@ export default function Global({ children }) {
     }),
     {}
   )
+  const grid = data.grid.edges.reduce(
+    (map, { node }) => ({
+      ...map,
+      [`${node.name}.${node.extension}`]: node
+    }),
+    {}
+  )
 
   return (
-    <GlobalContext.Provider value={{ columns, persons }}>
+    <GlobalContext.Provider value={{ columns, persons, grid }}>
       {children}
     </GlobalContext.Provider>
   )

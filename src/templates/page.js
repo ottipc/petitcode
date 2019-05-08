@@ -13,7 +13,7 @@ import DefaultTheme from './themes/DefaultTheme'
 import Sections from '../components/mdx/Sections'
 import Section from '../components/mdx/Section'
 import SectionContent from '../components/mdx/SectionContent'
-import Grid from '../components/mdx/Grid'
+import { Grid, GridImage } from '../components/mdx/Grid'
 import Centered from '../components/mdx/Centered'
 import { Columns, ColumnContent, ColumnImage } from '../components/mdx/Columns'
 import { Card, CardImage, CardContent } from '../components/mdx/Card'
@@ -49,7 +49,8 @@ const components = {
   Video,
   Person,
   Link,
-  ClientForm
+  ClientForm,
+  GridImage
 }
 
 class PageTemplate extends React.PureComponent {

@@ -19,6 +19,7 @@ theme: "sections"
 
 <KnockoutText>Wir sind Petitcode - ein innovatives Kollektiv für digitale Konzeption, Kommunikation und Produktion, das für höchste Qualität steht. </KnockoutText>
 </SectionContent>
+
 </Section>
 <Section>
 <SectionContent>
@@ -65,19 +66,19 @@ aber viel andres
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
-<Grid>
+<Grid minWidth="100px">
 
-![world-health-organization](./images/clients/world-health-organization.png)
+<GridImage maxWidth="120px" alt="World Health Organization" image="world-health-organization.svg" />
 
-![infologis](./images/clients/infologis.png)
+<GridImage maxWidth="120px" alt="Infologis" image="infologis.svg" />
 
-![jung-von-matt](./images/clients/jung-von-matt.png)
+<GridImage maxWidth="120px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-![universal-music](./images/clients/universal-music.png)
+<GridImage maxWidth="120px" alt="Universal Music" image="universal-music.svg" />
 
-![villeroy-boch](./images/clients/villeroy-boch.png)
+<GridImage maxWidth="120px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-![vorwerk](./images/clients/vorwerk.png)
+<GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
 
 </Grid>
 </SectionContent>
