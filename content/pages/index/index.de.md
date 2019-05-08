@@ -18,8 +18,10 @@ theme: "sections"
 <SectionContent>
 
 <KnockoutText>Wir sind Petitcode - ein innovatives Kollektiv für digitale Konzeption, Kommunikation und Produktion, das für höchste Qualität steht. </KnockoutText>
+</SectionContent>
 </Section>
 <Section>
+<SectionContent>
 <Grid>
 <Person name="Sebastian Melz" image="sebastian-melz.jpg">
 
