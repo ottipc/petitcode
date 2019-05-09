@@ -29,14 +29,12 @@ Nachfolgend finden Sie eine Übersicht unserer Leistungen.
 
 # Unsere Dienstleistungen
 
-<Grid>
+<Grid minWidth="300px">
 
 <Card>
-<CardImage>
-
-![](./images/icons/app-development.svg)
-
-</CardImage>
+<Link className="nohover" humanId="app-development">
+  <CardImage image="development.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="app-development">App Entwicklung</Link></h2>
 
@@ -48,13 +46,11 @@ Ob Android oder iOS - die Entwicklung einer mobilen App kann ein risikoreiches P
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/digital-consultancy.svg)
-
-</CardImage>
+<Link className="nohover" humanId="digital-consultancy">
+  <CardImage image="therapist.svg" />
+</Link>
 <CardContent>
-<h2><Link humanId="digital-consultancy">Digitalisierungsberatung</Link></h2>
+<h2><Link humanId="digital-consultancy">Digitalisierungs<wbr/>beratung</Link></h2>
 
 Bei der Erstellung neuer Konzepte ist es einfach, die neuesten Technologien zu implementieren, um einen signifikanten ROI für die Technologie zu gewährleisten.
 
@@ -64,11 +60,9 @@ Bei der Erstellung neuer Konzepte ist es einfach, die neuesten Technologien zu i
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/ecommerce-agency.svg)
-
-</CardImage>
+<Link className="nohover" humanId="ecommerce-agency">
+  <CardImage image="online-shop.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="ecommerce-agency">Ecommerce</Link></h2>
 
@@ -80,11 +74,9 @@ Durch die Analyse Ihres Unternehmens wird, wie bereits erwähnt, die Wahl der ri
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/user-interface-design.svg)
-
-</CardImage>
+<Link className="nohover" humanId="user-interface-design">
+  <CardImage image="graphic-design.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="user-interface-design">Corporate Design</Link></h2>
 
@@ -96,11 +88,9 @@ Erstellen einer Benutzeroberfläche, die es einfach, effizient und unterhaltsam 
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/user-interface-design.svg)
-
-</CardImage>
+<Link className="nohover" humanId="web-agency">
+  <CardImage image="app-development.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="web-agency">Webentwicklung</Link></h2>
 

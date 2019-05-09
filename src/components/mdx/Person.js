@@ -12,6 +12,12 @@ const PersonName = styled.h1`
   opacity: 0.8;
 `
 
+const PersonImage = styled(CardImage)`
+  & img {
+    border-radius: 100%;
+  }
+`
+
 export default function Person({ image, name, children }) {
   const { persons } = useContext(GlobalContext)
   let renderedImage
@@ -33,7 +39,7 @@ export default function Person({ image, name, children }) {
 
   return (
     <Card>
-      <CardImage>{renderedImage}</CardImage>
+      <PersonImage>{renderedImage}</PersonImage>
       <CardContent>
         <PersonName>{name}</PersonName>
         {children}

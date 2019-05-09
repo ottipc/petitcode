@@ -179,6 +179,28 @@ export default function Global({ children, location }) {
           }
         }
       }
+      card: allFile(
+        filter: {
+          sourceInstanceName: { eq: "image" }
+          relativePath: { regex: "/^card/" }
+        }
+      ) {
+        edges {
+          node {
+            name
+            extension
+            publicURL
+            childImageSharp {
+              # sqip(numberOfPrimitives: 5, blur: 0) {
+              #   dataURI
+              # }
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -206,6 +228,13 @@ export default function Global({ children, location }) {
     }),
     {}
   )
+  const card = data.card.edges.reduce(
+    (map, { node }) => ({
+      ...map,
+      [`${node.name}.${node.extension}`]: node
+    }),
+    {}
+  )
   const { langs, defaultLocale } = useContext(GlobalContext)
   const { i18n } = useTranslation()
 
@@ -224,6 +253,7 @@ export default function Global({ children, location }) {
           columns,
           persons,
           grid,
+          card,
           langs,
           defaultLocale,
           activeLocale,

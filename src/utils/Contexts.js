@@ -29,6 +29,7 @@ export const GlobalContext = createContext({
   columns: {},
   grid: {},
   persons: {},
+  card: {},
   langs,
   defaultLocale,
   activeLocale: defaultLocale,

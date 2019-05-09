@@ -72,11 +72,9 @@ of the columns layout
 
 ```markdown
 <Card>
-<CardImage>
-
-![](./images/icons/some-image.svg)
-
-</CardImage>
+<Link humanId="link-to-somewhere">
+  <CardImage image="image-from-card-folder.jpg" alt="some alt text" />
+</Link>
 <CardContent>
 
 the **actual** card content.

@@ -29,14 +29,12 @@ Below you find an overview of our services.
 
 # Our provided services
 
-<Grid>
+<Grid minWidth="300px">
 
 <Card>
-<CardImage>
-
-![](./images/icons/app-development.svg)
-
-</CardImage>
+<Link className="nohover" humanId="app-development">
+  <CardImage image="development.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="app-development">App development</Link></h2>
 
@@ -48,11 +46,9 @@ Whether Android or iOS, developing a mobile app can be a high risk project for y
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/digital-consultancy.svg)
-
-</CardImage>
+<Link className="nohover" humanId="digital-consultancy">
+  <CardImage image="therapist.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="digital-consultancy">Digital consultancy</Link></h2>
 
@@ -64,11 +60,9 @@ When creating new concepts, implementing the newest technologies to guarantee a 
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/ecommerce-agency.svg)
-
-</CardImage>
+<Link className="nohover" humanId="ecommerce-agency">
+  <CardImage image="online-shop.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="ecommerce-agency">Ecommerce agency</Link></h2>
 
@@ -80,11 +74,9 @@ By analysing your business first, choosing the right ecommerce technologies for 
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/user-interface-design.svg)
-
-</CardImage>
+<Link className="nohover" humanId="user-interface-design">
+  <CardImage image="graphic-design.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="user-interface-design">User interface design</Link></h2>
 
@@ -96,11 +88,9 @@ Producing an interface which makes it easy, efficient, and enjoyable to operate 
 </Card>
 
 <Card>
-<CardImage>
-
-![](./images/icons/user-interface-design.svg)
-
-</CardImage>
+<Link className="nohover" humanId="web-agency">
+  <CardImage image="app-development.svg" />
+</Link>
 <CardContent>
 <h2><Link humanId="web-agency">Web Development</Link></h2>
 
