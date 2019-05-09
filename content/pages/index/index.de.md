@@ -102,7 +102,7 @@ und will mich Euch anschließen
 <CardContent>
 <h1><Link humanId="client">Firma</Link></h1>
 
-and benötige Unterstützung
+und benötige Unterstützung
 
 </CardContent>
 </Card>
