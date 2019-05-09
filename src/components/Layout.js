@@ -1,350 +1,192 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import { getCurrentLangKey } from 'ptz-i18n'
 import Helmet from 'react-helmet'
 import { Location } from '@reach/router'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 import ReactCookieConsent from 'react-cookie-consent'
 
 import Navigation from './Navigation'
 import Overlays from './Overlays'
 import Footer from './Footer'
-import theme from '../utils/styling/theme'
-import { NavigationContext, SectionContext } from '../utils/Contexts'
 
-import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
-import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
+import {
+  NavigationContext,
+  SectionContext,
+  GlobalContext
+} from '../utils/Contexts'
+
 import Link from './mdx/Link'
-
-// Rare global style, mostly for text formatting and normalizing.
-const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Noto Sans';
-    src: local('Noto Sans Bold'), url(${NotoSansBold}) format('woff2');
-    font-weight: bold;
-    font-style: normal;
-
-  }
-
-  @font-face {
-    font-family: 'Noto Sans';
-    src: local('Noto Sans'), url(${NotoSansRegular}) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  body {
-    background-color: ${({ theme }) => theme.colors.bg};
-
-    line-height: 1.8em;
-    /*
-      Liquid typography:
-      https://css-tricks.com/snippets/css/fluid-typography/
-      Settings: 14-20px font size from 320-1320
-    */
-    font-size: 14px;
-
-    @media screen and (min-width: 320px) {
-      font-size: calc(14px + 6 * ((100vw - 320px) / 1000));
-    }
-
-    @media screen and (min-width: 1320px) {
-      font-size: 20px;
-    }
-  }
-
-  a {
-    position: relative;
-    display: inline-block;
-    color: inherit;
-    text-decoration: none;
-
-    &:after {
-      content: '';
-      display: block;
-      height: 1px;
-      background: #000;
-      width: 0;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: width 0.1s ease-in-out;
-    }
-
-    &[aria-current='page'] {
-      &:after {
-        width: 80%;
-      }
-    }
-    &:hover {
-      text-decoration: none;
-      &:after {
-        width: 110%;
-      }
-    }
-
-    &.nohover {
-      &:after {
-        display: none !important;
-      }
-    }
-  }
-
-
-  h1, h2, h3, h4, h5, h6, p, address {
-    margin-bottom: ${({ theme }) => theme.spacings.s3};
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  p {
-    margin-bottom: ${({ theme }) => theme.spacings.s2};
-  }
-
-  pre {
-    overflow: scroll;
-  }
-`
 
 const Wrapper = styled.div``
 
-export default class Layout extends React.Component {
-  static propTypes = {
-    children: propTypes.node.isRequired
-  }
+export default function Layout({ children }) {
+  const [navigationActive, setNavigationActive] = useState(false)
+  const [activeSection, setActiveSection] = useState(null)
+  const [scrollToSection, setScrollToSection] = useState(null)
+  const [sections, setSections] = useState([])
+  const [isScrolling, setIsScrolling] = useState(false)
 
-  state = {
-    navigationActive: false,
-    activeSection: null,
-    scrollToSection: null,
-    sections: [],
-    scrolledDown: false,
-    isScrolling: false
-  }
-
-  setSections = (sections) => {
-    this.setState({ sections })
-  }
-  setActiveSection = (activeSection) => {
-    this.setState({ activeSection })
-  }
-  setScrollToSection = (scrollToSection) => {
-    this.setState({ scrollToSection })
-  }
-  setIsScrolling = (isScrolling) => {
-    this.setState({ isScrolling })
-  }
-
-  toggleNavigation = () => {
-    this.setState(({ navigationActive }) => ({
-      navigationActive: !navigationActive
-    }))
-  }
-
-  handleFooterIntersection = ({ isIntersecting }) => {
+  const handleFooterIntersection = ({ isIntersecting }) => {
     if (isIntersecting) {
-      this.setActiveSection(null)
+      setActiveSection(null)
     }
   }
 
-  handleIsScrollingIntersection = ({ isIntersecting }) => {
-    this.setIsScrolling(!isIntersecting)
+  const handleIsScrollingIntersection = ({ isIntersecting }) => {
+    setIsScrolling(!isIntersecting)
   }
 
-  shouldComponentUpdate = (nextProps, nextState) => {
-    // Only rerender when state truely changed
-    if (JSON.stringify(nextState) === JSON.stringify(this.state)) {
-      return false
+  const toggleNavigation = () => {
+    setNavigationActive(!navigationActive)
+  }
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      site {
+        siteMetadata {
+          title
+          description
+          siteUrl
+        }
+      }
     }
-    return true
-  }
+  `)
 
-  render() {
-    const { children } = this.props
-    const {
-      navigationActive,
-      sections,
-      activeSection,
-      scrollToSection,
-      scrolledDown,
-      isScrolling
-    } = this.state
-    const {
-      toggleNavigation,
-      setActiveSection,
-      setSections,
-      setScrollToSection,
-      setIsScrolling,
-      handleIsScrollingIntersection,
-      handleFooterIntersection
-    } = this
+  const {
+    siteMetadata: { title, description, siteUrl }
+  } = data.site
 
-    return (
-      <StaticQuery
-        query={graphql`
-          query LayoutQuery {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-              }
-              ...Metadata
-            }
-            allMdx {
-              ...Pages
-            }
-          }
-        `}
-        render={(data) => {
-          const {
-            siteMetadata: {
-              siteUrl,
-              languages: { langs, defaultLocale }
-            }
-          } = data.site
-          const { edges } = data.allMdx
+  const { pages, langs, defaultLocale } = useContext(GlobalContext)
 
-          const pages = edges.map((edge) => edge.node)
+  return (
+    <NavigationContext.Provider
+      value={{
+        toggleNavigation,
+        navigationActive,
+        pages
+      }}
+    >
+      <SectionContext.Provider
+        value={{
+          sections,
+          activeSection,
+          setActiveSection,
+          setSections,
+          scrollToSection,
+          setScrollToSection,
+          isScrolling,
+          setIsScrolling
+        }}
+      >
+        <Location>
+          {({ location }) => {
+            const url = location.pathname
+            const locale = getCurrentLangKey(langs, defaultLocale, url)
+            return (
+              <>
+                <Helmet
+                  /**
+                   * Meta information based on:
+                   * https://moz.com/blog/meta-data-templates-123
+                   * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+                   */
+                  htmlAttributes={{
+                    lang: locale
+                  }}
+                  title={title}
+                  meta={[
+                    {
+                      name: 'description',
+                      content: description
+                    },
+                    {
+                      name: 'twitter:card',
+                      value: 'summary'
+                    },
+                    {
+                      property: 'og:title',
+                      content: title
+                    },
+                    { property: 'og:type', content: 'website' },
+                    {
+                      property: 'og:url',
+                      content: `${siteUrl}${location.pathname}`
+                    },
+                    {
+                      property: 'og:description',
+                      content: description
+                    },
+                    {
+                      property: 'og:image',
+                      content: '/social.png'
+                    },
+                    {
+                      name: 'apple-mobile-web-app-capable',
+                      content: 'yes'
+                    },
+                    {
+                      name: 'apple-mobile-web-app-status-bar-style',
+                      content: 'black-translucent'
+                    },
+                    {
+                      name: 'format-detection',
+                      content: 'telephone=no'
+                    }
+                  ]}
+                />
 
-          return (
-            <NavigationContext.Provider
-              value={{
-                toggleNavigation,
-                navigationActive,
-                scrolledDown,
-                pages
-              }}
-            >
-              <SectionContext.Provider
-                value={{
-                  sections,
-                  activeSection,
-                  setActiveSection,
-                  setSections,
-                  scrollToSection,
-                  setScrollToSection,
-                  isScrolling,
-                  setIsScrolling
-                }}
-              >
-                <Location>
-                  {({ location }) => {
-                    const url = location.pathname
-                    const locale = getCurrentLangKey(langs, defaultLocale, url)
-                    return (
-                      <>
-                        <Helmet
-                          /**
-                           * Meta information based on:
-                           * https://moz.com/blog/meta-data-templates-123
-                           * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-                           */
-                          htmlAttributes={{
-                            lang: locale
-                          }}
-                          title={data.site.siteMetadata.title}
-                          meta={[
-                            {
-                              name: 'description',
-                              content: data.site.siteMetadata.description
-                            },
-                            {
-                              name: 'twitter:card',
-                              value: 'summary'
-                            },
-                            {
-                              property: 'og:title',
-                              content: data.site.siteMetadata.title
-                            },
-                            { property: 'og:type', content: 'website' },
-                            {
-                              property: 'og:url',
-                              content: `${siteUrl}${location.pathname}`
-                            },
-                            {
-                              property: 'og:description',
-                              content: data.site.siteMetadata.description
-                            },
-                            {
-                              property: 'og:image',
-                              content: '/social.png'
-                            },
-                            {
-                              name: 'apple-mobile-web-app-capable',
-                              content: 'yes'
-                            },
-                            {
-                              name: 'apple-mobile-web-app-status-bar-style',
-                              content: 'black-translucent'
-                            },
-                            {
-                              name: 'format-detection',
-                              content: 'telephone=no'
-                            }
-                          ]}
-                        />
-                        <ThemeProvider theme={theme}>
-                          <Wrapper>
-                            <GlobalStyle />
-                            <Overlays />
-                            <Navigation navigationActive={navigationActive} />
-                            <main>
-                              <Observer
-                                onChange={handleIsScrollingIntersection}
-                              >
-                                <div />
-                              </Observer>
-                              {children}
-                              <Observer
-                                onChange={handleFooterIntersection}
-                                rootMargin={'-50% 0px'}
-                              >
-                                <div>
-                                  <Footer />
-                                </div>
-                              </Observer>
-                            </main>
-                            <ReactCookieConsent
-                              buttonText="Ok"
-                              style={{
-                                zIndex: 1200,
-                                fontSize: '0.7em'
-                              }}
-                              buttonStyle={{
-                                background: 'white',
-                                color: 'black',
-                                borderRadius: '3px',
-                                border: 'none',
-                                padding: '0 5px'
-                              }}
-                            >
-                              {`Um die Webseite und Services für Sie zu optimieren,
+                <Wrapper>
+                  <Overlays />
+                  <Navigation navigationActive={navigationActive} />
+                  <main>
+                    <Observer onChange={handleIsScrollingIntersection}>
+                      <div />
+                    </Observer>
+                    {children}
+                    <Observer
+                      onChange={handleFooterIntersection}
+                      rootMargin={'-50% 0px'}
+                    >
+                      <div>
+                        <Footer />
+                      </div>
+                    </Observer>
+                  </main>
+                  <ReactCookieConsent
+                    buttonText="Ok"
+                    style={{
+                      zIndex: 1200,
+                      fontSize: '0.7em'
+                    }}
+                    buttonStyle={{
+                      background: 'white',
+                      color: 'black',
+                      borderRadius: '3px',
+                      border: 'none',
+                      padding: '0 5px'
+                    }}
+                  >
+                    {`Um die Webseite und Services für Sie zu optimieren,
                           werden Cookies verwendet. Durch die weitere Nutzung
                           der Webseite stimmen Sie der `}
-                              <Link
-                                humanId="data-protection"
-                                title="Verwendung von Cookies"
-                              />
-                              {` zu.`}
-                            </ReactCookieConsent>
-                          </Wrapper>
-                        </ThemeProvider>
-                      </>
-                    )
-                  }}
-                </Location>
-              </SectionContext.Provider>
-            </NavigationContext.Provider>
-          )
-        }}
-      />
-    )
-  }
+                    <Link
+                      humanId="data-protection"
+                      title="Verwendung von Cookies"
+                    />
+                    {` zu.`}
+                  </ReactCookieConsent>
+                </Wrapper>
+              </>
+            )
+          }}
+        </Location>
+      </SectionContext.Provider>
+    </NavigationContext.Provider>
+  )
+}
+Layout.propTypes = {
+  children: propTypes.node.isRequired
 }
