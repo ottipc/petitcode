@@ -4,7 +4,11 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { createLocalizedPath } from '../../utils/i18n'
-import { NavigationContext, LocationContext } from '../../utils/Contexts'
+import {
+  NavigationContext,
+  LocationContext,
+  GlobalContext
+} from '../../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
@@ -16,11 +20,28 @@ export default function MdxLink({
 }) {
   const { pages } = useContext(NavigationContext)
   const { activeLocale } = useContext(LocationContext)
+  const { langs, defaultLocale } = useContext(GlobalContext)
 
-  const page = pages.find(
+  let page = pages.find(
     (page) =>
       page.fields.humanId === humanId && page.fields.locale === activeLocale
   )
+
+  // Fallback to default locale if translation is not available
+  if (!page) {
+    page = pages.find(
+      (page) =>
+        page.fields.humanId === humanId && page.fields.locale === defaultLocale
+    )
+  }
+
+  // Fallback if no version with default locale is available
+  if (!page) {
+    page = pages.find(
+      (page) =>
+        page.fields.humanId === humanId && page.fields.locale === langs[0]
+    )
+  }
 
   if (page) {
     const { slug, locale, title: pageTitle } = page.fields

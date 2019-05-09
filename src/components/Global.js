@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -98,9 +98,12 @@ export default function Global({ children }) {
     }),
     {}
   )
+  const { langs, defaultLocale } = useContext(GlobalContext)
 
   return (
-    <GlobalContext.Provider value={{ columns, persons, grid }}>
+    <GlobalContext.Provider
+      value={{ columns, persons, grid, langs, defaultLocale }}
+    >
       {children}
     </GlobalContext.Provider>
   )

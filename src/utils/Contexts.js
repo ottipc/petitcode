@@ -1,5 +1,7 @@
 import { createContext } from 'react'
 
+import { langs, defaultLocale } from '../data/languages'
+
 export const LocationContext = createContext({
   activeLocale: null,
   activeHumanId: null,
@@ -25,5 +27,7 @@ export const SectionContext = createContext({
 
 export const GlobalContext = createContext({
   images: {},
-  persons: {}
+  persons: {},
+  langs,
+  defaultLocale
 })
