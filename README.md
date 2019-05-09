@@ -26,8 +26,11 @@ Just some paragraph
 
 #### Grid
 
+* Set minimum width per column via `minWidth`. Default is 250px.
+* Add `centered` to center all text within the each column.
+
 ```markdown
-<Grid>
+<Grid minWidth="500px" centered>
 
 Column 1
 
