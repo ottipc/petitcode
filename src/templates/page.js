@@ -28,6 +28,7 @@ import Video from '../components/mdx/Video'
 import Person from '../components/mdx/Person'
 import Link from '../components/mdx/Link'
 import ClientForm from '../components/mdx/ClientForm'
+import FreelancerForm from '../components/mdx/FreelancerForm'
 
 const components = {
   Sections,
@@ -50,7 +51,8 @@ const components = {
   Person,
   Link,
   ClientForm,
-  GridImage
+  GridImage,
+  FreelancerForm
 }
 
 class PageTemplate extends React.PureComponent {
