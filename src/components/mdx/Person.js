@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Image from 'gatsby-image'
 
 import { GlobalContext } from '../../utils/Contexts'
-import { Card, CardImage, CardContent } from './Card'
+import { Card, CardContent } from './Card'
 
 const PersonName = styled.h1`
   font-size: 1.2rem !important;
@@ -12,8 +12,15 @@ const PersonName = styled.h1`
   opacity: 0.8;
 `
 
-const PersonImage = styled(CardImage)`
+const PersonImage = styled.div`
+  width: 100%;
+  max-width: 250px;
+  overflow: hidden;
+  margin: 0 auto ${({ theme }) => theme.spacings.s2};
+
   & img {
+    width: 100%;
+    margin: 0;
     border-radius: 100%;
   }
 `
