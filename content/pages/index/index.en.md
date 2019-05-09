@@ -17,7 +17,7 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-<KnockoutText>We are petitcode - an innovative collective of senior freelancers for digital conception, communication and production that stands for premium quality. </KnockoutText>
+<KnockoutText>We are petitcode - an innovative collective of senior freelancers for premium digital conception, communication and production. </KnockoutText>
 </SectionContent>
 </Section>
 <Section>
