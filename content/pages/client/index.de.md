@@ -11,7 +11,7 @@ theme: "sections"
 <Columns>
 <ColumnContent>
 
-# Which digital services can petitcode deliver?
+# Welche digitalen Dienstleistungen kann petitcode liefern?
 
 Die richtigen Mitarbeiter zu finden, die so zuverlässig wie kompetent und verfügbar sind, wird immer schwieriger.
 
