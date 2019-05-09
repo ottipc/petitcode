@@ -2,12 +2,17 @@ import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { useTranslation } from 'react-i18next'
+import { getCurrentLangKey } from 'ptz-i18n'
 
 import NotoSansRegular from '../assets/fonts/notosans-regular-webfont.woff2'
 import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
 
 import { GlobalContext } from '../utils/Contexts'
 import theme from '../utils/styling/theme'
+import i18nextInit from '../utils/i18next'
+
+i18nextInit()
 
 // Rare global style, mostly for text formatting and normalizing.
 const GlobalStyle = createGlobalStyle`
@@ -102,7 +107,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export default function Global({ children }) {
+export default function Global({ children, location }) {
   const data = useStaticQuery(graphql`
     {
       pages: allMdx {
@@ -202,11 +207,28 @@ export default function Global({ children }) {
     {}
   )
   const { langs, defaultLocale } = useContext(GlobalContext)
+  const { i18n } = useTranslation()
+
+  const { pathname } = location
+  const activeLocale = getCurrentLangKey(langs, defaultLocale, pathname)
+
+  if (i18n.language !== activeLocale) {
+    i18n.changeLanguage(activeLocale)
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalContext.Provider
-        value={{ pages, columns, persons, grid, langs, defaultLocale }}
+        value={{
+          pages,
+          columns,
+          persons,
+          grid,
+          langs,
+          defaultLocale,
+          activeLocale,
+          pathname
+        }}
       >
         <GlobalStyle />
         {children}
@@ -216,5 +238,6 @@ export default function Global({ children }) {
 }
 
 Global.propTypes = {
-  children: propTypes.node.isRequired
+  children: propTypes.node.isRequired,
+  location: propTypes.object.isRequired
 }

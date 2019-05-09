@@ -25,8 +25,12 @@ export const SectionContext = createContext({
 })
 
 export const GlobalContext = createContext({
-  images: {},
+  pages: [],
+  columns: {},
+  grid: {},
   persons: {},
   langs,
-  defaultLocale
+  defaultLocale,
+  activeLocale: defaultLocale,
+  pathname: '/'
 })
