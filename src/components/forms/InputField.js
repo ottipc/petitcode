@@ -12,7 +12,8 @@ const StyledTextField = styled(TextField)`
   }
 
   & .MuiFormLabel-root {
-    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+      transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
   }
 `
 
