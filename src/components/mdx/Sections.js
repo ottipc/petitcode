@@ -6,6 +6,30 @@ import { SectionContext } from '../../utils/Contexts'
 
 const Article = styled.article``
 
+const scrollTo = (selector) => {
+  const el = document.querySelector(selector)
+
+  if (el) {
+    const box = el.getBoundingClientRect()
+
+    const scrollTop =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop
+
+    const clientTop =
+      document.documentElement.clientTop || document.body.clientTop || 0
+
+    const top = box.top + scrollTop - clientTop - 100
+
+    return window.scrollTo({
+      top,
+      behavior: 'smooth'
+    })
+  }
+  return false
+}
+
 function Sections({ children }) {
   const { setSections, scrollToSection, setScrollToSection } = useContext(
     SectionContext
@@ -27,8 +51,7 @@ function Sections({ children }) {
   useEffect(() => {
     setSections(sections)
     if (scrollToSection !== null) {
-      const section = document.getElementById(`section-${scrollToSection}`)
-      section.scrollIntoView()
+      scrollTo(`#section-${scrollToSection}`)
       setScrollToSection(null)
     }
     return () => {
