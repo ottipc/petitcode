@@ -120,7 +120,7 @@ const GlobalStyle = createGlobalStyle`
   button {
     background: transparent;
     border-radius: 0;
-    border: 2px solid ${({ theme }) => theme.colors.black};
+    border: 1px solid ${({ theme }) => theme.colors.black};
   }
 `
 

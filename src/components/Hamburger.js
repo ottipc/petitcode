@@ -5,13 +5,13 @@ import styled, { css } from 'styled-components'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
-const hamburgerLayerWidth = '38px'
-const hamburgerLayerHeight = '2px'
+const hamburgerLayerWidth = '34px'
+const hamburgerLayerHeight = '1px'
 const hamburgerLayerSpacing = '8px'
 const hamburgerPaddingX = theme.spacings.s1
 const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'
-const hamburgerLayerBorderRadius = '3px'
+const hamburgerLayerBorderRadius = 'none'
 
 const hamburgerHoverOpacity = 0.7
 

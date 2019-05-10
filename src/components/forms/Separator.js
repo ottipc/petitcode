@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Separator = styled.div`
   background: rgba(216, 216, 216, 0.3);
-  height: 2px;
+  height: 1px;
   width: 100%;
   margin: 1rem 0;
 `
