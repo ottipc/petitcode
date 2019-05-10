@@ -66,6 +66,12 @@ module.exports = {
         uselocaleLayout: false
       }
     },
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`IntersectionObserver`]
+      }
+    },
     ...(IS_PRODUCTION
       ? [
           {
