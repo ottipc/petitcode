@@ -5,6 +5,9 @@ import { Link } from 'gatsby'
 
 import LogoText from '../assets/petitcode-logo-text.svg'
 import Logo from '../assets/petitcode-logo.svg'
+import TelephoneIcon from '../assets/icons/telephone.svg'
+import EmailIcon from '../assets/icons/email.svg'
+
 import { LocationContext, SectionContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
@@ -16,6 +19,7 @@ const Wrapper = styled.nav`
 const Grid = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: ${({ theme }) => theme.spacings.s1};
@@ -28,8 +32,10 @@ const LogoWrapper = styled.div`
   max-width: 30vw;
 
   & svg {
+    display: block;
     width: 100%;
     height: auto;
+    max-width: ${({ theme }) => theme.spacings.s12};
   }
 
   & svg.notext {
@@ -44,16 +50,18 @@ const LogoWrapper = styled.div`
       width: ${({ theme }) => theme.spacings.s2};
     }
   }
-  ${({ isScrolling }) => css`
-    @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-      & svg.notext {
-        display: block;
+  ${({ isScrolling }) =>
+    isScrolling &&
+    css`
+      @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+        & svg.notext {
+          display: block;
+        }
+        & svg.text {
+          display: none;
+        }
       }
-      & svg.text {
-        display: none;
-      }
-    }
-  `}
+    `}
 `
 const ContactWrapper = styled.div`
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
@@ -65,13 +73,32 @@ const ContactWrapper = styled.div`
       @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-        display: block;
+        display: flex;
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
       }
     `}
+
+  & a {
+    display: block;
+    opacity: 1;
+    transition: 0.15s opacity linear;
+    margin-right: ${({ theme }) => theme.spacings.s1};
+
+    &:last-child {
+      margin-right: none;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  & svg {
+    width: 24px;
+  }
 `
 
 export default function Header() {
@@ -87,9 +114,12 @@ export default function Header() {
           </Link>
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
-          <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-          <br />
-          <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+          <a className="nohover" href="mailto:hi@petitcode.de">
+            <TelephoneIcon />
+          </a>
+          <a className="nohover" href="tel:+493064080338">
+            <EmailIcon />
+          </a>
         </ContactWrapper>
       </Grid>
     </Wrapper>

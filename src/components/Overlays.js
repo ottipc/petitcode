@@ -16,7 +16,6 @@ const HeaderWrapper = styled.div`
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.white};
-  padding-bottom: ${({ theme }) => theme.spacings.s1};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }
