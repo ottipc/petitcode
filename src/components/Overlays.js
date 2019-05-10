@@ -42,6 +42,7 @@ const LanguageSelectWrapper = styled.div`
   z-index: 1100;
   bottom: ${({ theme }) => theme.spacing.viewport.default};
   left: ${({ theme }) => theme.spacing.viewport.default};
+  transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     bottom: ${({ theme }) => theme.spacing.viewport.medium};

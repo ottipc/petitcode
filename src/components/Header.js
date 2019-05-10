@@ -65,6 +65,7 @@ const LogoWrapper = styled.div`
       @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
         & svg.notext {
           display: block;
+          transform: translateX(-7%); /* visually blend logo on 13" screens */
         }
         & svg.text {
           display: none;

@@ -67,10 +67,10 @@ const Copyright = styled.div`
       spacing: { viewport }
     }
   }) => css`
-    padding: 0 1.5rem ${viewport.default};
+    padding: 0 1rem ${viewport.default};
 
     @media (min-width: ${breakpoints.medium}) {
-      padding: 0 1.5rem ${viewport.medium};
+      padding: 0 1rem ${viewport.medium};
     }
   `}
   font-size: 0.7em;
