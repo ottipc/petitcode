@@ -53,7 +53,7 @@ const Wrapper = styled.section`
     `}
 
     & img, svg {
-      filter: grayscale(80%);
+      filter: grayscale(100%);
       transition: 1s filter linear, 0.5s opacity linear !important;
 
       &:hover {
