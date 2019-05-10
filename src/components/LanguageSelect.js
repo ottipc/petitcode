@@ -1,32 +1,32 @@
-import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import React, { useContext } from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { createLocalizedPath } from '../utils/i18n'
-import { LocationContext } from '../utils/Contexts'
+import { LocationContext, GlobalContext } from '../utils/Contexts'
 import { defaultLocale } from '../data/languages'
 
-const List = styled.ul({
-  display: 'flex',
-  margin: 0,
-  listStyleType: 'none',
-  textTransform: 'uppercase'
-})
+const List = styled.ul`
+  display: flex;
+  margin: 0;
+  list-style-type: none;
+  text-transform: uppercase;
+`
 
-const ListItem = styled.li({
-  margin: '0.25rem'
-})
+const ListItem = styled.li`
+  margin: 0;
+`
 
 const SwitcherLink = styled(Link)``
 
 function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
   // Map of slugs for the current active page
   const slugMap = pages
-    .filter((page) => page.node.fields.humanId === activeHumandId)
+    .filter((page) => page.fields.humanId === activeHumandId)
     .reduce((slugs, page) => {
       return {
         ...slugs,
-        [page.node.fields.locale]: page.node.fields.slug
+        [page.fields.locale]: page.fields.slug
       }
     }, {})
 
@@ -85,42 +85,17 @@ function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
   ))
 }
 
-export default class LanguageSelect extends React.PureComponent {
-  render() {
-    return (
-      <LocationContext.Consumer>
-        {({ activeHumandId, activeLocale }) => (
-          <StaticQuery
-            query={graphql`
-              query LanguageSelectQuery {
-                site {
-                  ...Metadata
-                }
-                allMdx {
-                  ...Pages
-                }
-              }
-            `}
-            render={({
-              site: {
-                siteMetadata: {
-                  languages: { langs }
-                }
-              },
-              allMdx: { edges: pages }
-            }) => (
-              <List>
-                {generatePageSelector({
-                  pages,
-                  langs,
-                  activeHumandId,
-                  activeLocale
-                })}
-              </List>
-            )}
-          />
-        )}
-      </LocationContext.Consumer>
-    )
-  }
+export default function LanguageSelect() {
+  const { activeHumandId } = useContext(LocationContext)
+  const { pages, langs, activeLocale } = useContext(GlobalContext)
+  return (
+    <List>
+      {generatePageSelector({
+        pages,
+        langs,
+        activeHumandId,
+        activeLocale
+      })}
+    </List>
+  )
 }

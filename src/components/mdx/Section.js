@@ -8,22 +8,60 @@ import { SectionContext } from '../../utils/Contexts'
 const Wrapper = styled.section`
   position: relative;
   min-height: 60vh;
-  padding: 0 ${({ theme }) => theme.spacings.s2};
-  background: #fff;
+  background: ${({ theme }) => theme.colors.bg};
 
-  /* scroll-snap-align: start; */
+  border-bottom: 2px solid black;
 
   ${({ video }) =>
     !video &&
     css`
       &:first-of-type {
-        margin-top: ${({ theme }) =>
-          theme.elements.headerHeight - parseInt(theme.spacings.s4)}px;
+        padding-top: ${({ theme }) => theme.elements.headerHeight}px;
+      }
+    `}
+  ${({ inverted }) =>
+    inverted &&
+    css`
+      color: ${({ theme }) => theme.colors.white};
+      background: ${({ theme }) => theme.colors.black};
+
+      & a:after {
+        background: ${({ theme }) => theme.colors.white};
+      }
+
+      & button {
+        border-color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiInputBase-root {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiFormLabel-root {
+        color: ${({ theme }) => theme.colors.grey500};
+      }
+
+      & .MuiFormControl-root:hover .MuiFormLabel-root {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiInput-underline:before {
+        border-bottom-color: ${({ theme }) => theme.colors.grey500};
+      }
+
+      & .MuiInput-underline:hover:not(.Mui-disabled):before {
+        border-bottom-color: ${({ theme }) => theme.colors.white};
       }
     `}
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    padding: 0 ${({ theme }) => theme.spacings.s1};
+    & img, svg {
+      filter: grayscale(80%);
+      transition: 1s filter linear, 0.5s opacity linear !important;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
   }
 `
 
@@ -53,41 +91,22 @@ const ContentWrapper = styled.div`
   align-items: stretch;
   flex-direction: column;
 
-  background-color: #fff;
-  color: #000;
-
-  padding: ${({ theme }) => theme.spacings.s4}
-    ${({ theme }) => theme.spacings.s1};
-
   ${({ video }) =>
     video &&
     css`
-      background: transparent;
       color: #fff;
+
+      h1 {
+        font-size: calc(40px + 80 * ((100vw - 320px) / 1400));
+
+        @media (min-width: 1400px) {
+          font-size: 120px;
+        }
+      }
     `}
-
-  & h1,
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
-    font-weight: normal;
-  }
-
-  & h1 {
-    font-size: 19px;
-    @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
-      font-size: 3.5vw;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
-      font-size: 70px;
-    }
-  }
 `
 
-function Section({ video, children, nr }) {
+function Section({ video, inverted, children, nr }) {
   const { setActiveSection } = useContext(SectionContext)
 
   const handleIntersection = ({ isIntersecting }) => {
@@ -102,7 +121,7 @@ function Section({ video, children, nr }) {
       rootMargin="-25% 0% -25% 0%"
       threshold={0}
     >
-      <Wrapper video={video} id={`section-${nr}`}>
+      <Wrapper video={video} inverted={inverted} id={`section-${nr}`}>
         {video && (
           <VideoWrapper>
             <Video autoPlay loop muted playsInline>
@@ -121,6 +140,7 @@ function Section({ video, children, nr }) {
 
 Section.prototype.propTypes = {
   video: propTypes.bool,
+  inverted: propTypes.bool,
   children: propTypes.node.isRequired,
   nr: propTypes.number.isRequired
 }

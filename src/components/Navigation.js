@@ -3,14 +3,14 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import GridWrapper from './GridWrapper'
-import MenuItem from './MenuItem'
+import Link from './mdx/Link'
 import { LocationContext } from '../utils/Contexts'
 import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
 
 const Wrapper = styled.nav`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 1000;
   top: 0;
@@ -51,9 +51,18 @@ const List = styled.ul`
     }
   }) => header.join(', ')};
   font-weight: bold;
-  font-size: 11vw;
   text-align: right;
   text-transform: uppercase;
+
+  font-size: 26px;
+
+  @media screen and (min-width: 320px) {
+    font-size: calc(30px + 50 * ((100vw - 320px) / 1000));
+  }
+
+  @media screen and (min-width: 1320px) {
+    font-size: 80px;
+  }
 `
 const ListItem = styled.li`
   margin: 0;
@@ -72,11 +81,7 @@ const MenuBasicStyling = css`
   }
 `
 
-const MenuLink = styled(MenuItem)`
-  ${MenuBasicStyling}
-`
-
-const ExternalLink = styled.a`
+const MenuLink = styled(Link)`
   ${MenuBasicStyling}
 `
 
@@ -94,25 +99,16 @@ class Navigation extends React.PureComponent {
               <Logo />
               <List>
                 <ListItem>
-                  <ExternalLink
-                    href="https://petitcode.com/jobs/"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Jobs
-                  </ExternalLink>
+                  <MenuLink humanId="freelancer">Freelancer</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink humanId="contact" />
+                  <MenuLink humanId="client">Client</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <ExternalLink
-                    href="https://petitcode.com/blog/"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Blog
-                  </ExternalLink>
+                  <MenuLink humanId="imprint">Imprint</MenuLink>
+                </ListItem>
+                <ListItem>
+                  <MenuLink humanId="press">Press</MenuLink>
                 </ListItem>
               </List>
             </ContentWrapper>

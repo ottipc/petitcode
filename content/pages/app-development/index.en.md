@@ -6,12 +6,6 @@ description: "whether you need a full product or support for your teams, through
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-
 <Sections>
 <Section>
 <Columns>
@@ -99,6 +93,7 @@ If you are looking for a kick-ass app designer, simply get in touch with us and 
 </Columns>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Make a hiring request to support your mobile app development project
@@ -108,5 +103,24 @@ If you still have questions regarding **mobile app development**, whether techni
 *hire an app developer link*
 
 </Centered>
+</SectionContent>
+</Section>
+<Section inverted>
+<SectionContent>
+<Grid>
+<div>
+
+# Get in touch with us!
+
+Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+</div>
+<ClientForm />
+</Grid>
+</SectionContent>
 </Section>
 </Sections>

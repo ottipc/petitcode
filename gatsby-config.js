@@ -49,6 +49,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-sqip`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-react-helmet`,
@@ -64,6 +72,12 @@ module.exports = {
         localeForNull: `any`,
         localeDefault: languages.defaultLocale,
         uselocaleLayout: false
+      }
+    },
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`IntersectionObserver`]
       }
     },
     ...(IS_PRODUCTION
@@ -82,7 +96,6 @@ module.exports = {
             }
           },
           `gatsby-plugin-offline`,
-          `gatsby-plugin-subfont`,
           `gatsby-plugin-webpack-size`,
           `gatsby-plugin-netlify-cache`
         ]

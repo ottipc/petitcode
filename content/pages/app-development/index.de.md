@@ -1,16 +1,10 @@
 ---
 slug: "app-development-berlin"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - your senior level talent for mobile app development berlin"
-description: "whether you need a full product or support for your teams, through our network, petitcode can source you exclusive senior freelancers according to any requirement. "
+title: "petitcode - Ihr Senior Talent für App Entwicklung berlin"
+description: "Unabhängig davon, ob Sie ein vollständiges Produkt oder Support für Ihre Teams benötigen, kann petitcode Ihnen über unser Netzwerk exklusive erfahrene Freiberufler zur Verfügung stellen."
 theme: "sections"
 ---
-
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
 
 <Sections>
 <Section>
@@ -24,7 +18,7 @@ Egal, ob Android oder iOS - die Entwicklung einer mobilen App kann für Ihr Unte
 Das Auffinden von App-Entwicklern, die zuverlässig, kompetent und verfügbar sind, wird schwieriger. petitcode stellt sicher, dass alle Freelancers in unserem Netzwerk in ihren Kompetenzen nachgewiesene Seniorität besitzen, damit wir Ihnen schnelle Verfügbarkeit und erstklassige Qualität anbieten.
 
 </ColumnContent>
-<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="a mobile application can be the easiest way to reach high numbers of customers">
+<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt=" Die Entwicklung einer mobilen App ermöglicht Ihnen schneller mehr potenziellen Kunden zu erreichen.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -39,7 +33,7 @@ petitcode ist als Kollektiv von ausschließlich hochrangigen Freelancers viel me
 *ein Entwicklungsteam für mobile Anwendungen zusammenstellen*
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="Mit petitcode können Sie nicht nur die besten Freelancer für App-Entwicklung finden, sondern auch ein qualifiziertes Team von Fachleuten zusammenstellen, das auf Ihre digitale Strategie hin optimiert ist.">
 </ColumnImage>
 </Columns>
 
@@ -99,6 +93,7 @@ Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach
 </Columns>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Recruiting von App-Entwickler
@@ -114,5 +109,24 @@ Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder prod
 *nach einem App-Entwickler anfragen*
 
 </Centered>
+</SectionContent>
+</Section>
+<Section inverted>
+<SectionContent>
+<Grid>
+<div>
+
+# Get in touch with us!
+
+Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+</div>
+<ClientForm />
+</Grid>
+</SectionContent>
 </Section>
 </Sections>

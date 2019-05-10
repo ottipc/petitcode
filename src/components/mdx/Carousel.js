@@ -48,12 +48,12 @@ const SliderWrapper = styled.div`
 
     & button {
       background: transparent;
-      padding: 0;
+      padding: 0 5%;
       height: 2rem;
       line-height: 2rem;
       border: none;
       outline: none;
-      border-bottom: 1px solid transparent;
+      border-bottom: 2px solid transparent;
       color: ${({ theme }) => theme.colors.grey400};
       cursor: pointer;
       white-space: nowrap;

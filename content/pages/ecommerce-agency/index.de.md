@@ -6,12 +6,6 @@ description: "petitcode provides practical talent sourcing for any ecommerce pro
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-
 <Sections>
 <Section>
 <Columns contentWidth="6">
@@ -129,5 +123,23 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 *nach einen E-Commerce Entwickler nachfragen*
 
 </Centered>
+</Section>
+<Section inverted>
+<SectionContent>
+<Grid>
+<div>
+
+# Get in touch with us!
+
+Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+</div>
+<ClientForm />
+</Grid>
+</SectionContent>
 </Section>
 </Sections>

@@ -6,14 +6,6 @@ description: "petitcode is a creative collective of senior technology specialist
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import KnockoutText from "$components/KnockoutText";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-import Video from "$components/Video"
-
 <Sections>
 <Section>
 <Columns>
@@ -142,5 +134,23 @@ with the freelancer, with no hidden layers. Simply get in touch with
 us and let’s get the project started.
 
 </Centered>
+</Section>
+<Section inverted>
+<SectionContent>
+<Grid>
+<div>
+
+# Get in touch with us!
+
+Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+</div>
+<ClientForm />
+</Grid>
+</SectionContent>
 </Section>
 </Sections>

@@ -1,14 +1,16 @@
 import { createContext } from 'react'
 
+import { langs, defaultLocale } from '../data/languages'
+
 export const LocationContext = createContext({
   activeLocale: null,
-  activeHumanId: null
+  activeHumanId: null,
+  location: {}
 })
 
 export const NavigationContext = createContext({
   toggleNavigation: () => {},
-  navigationActive: false,
-  scrolledDown: false
+  navigationActive: false
 })
 
 export const SectionContext = createContext({
@@ -23,6 +25,13 @@ export const SectionContext = createContext({
 })
 
 export const GlobalContext = createContext({
-  images: {},
-  persons: {}
+  pages: [],
+  columns: {},
+  grid: {},
+  persons: {},
+  card: {},
+  langs,
+  defaultLocale,
+  activeLocale: defaultLocale,
+  pathname: '/'
 })

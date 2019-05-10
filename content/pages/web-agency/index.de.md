@@ -6,14 +6,6 @@ description: "petitcode is a creative collective of senior technology specialist
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import KnockoutText from "$components/KnockoutText";
-import Centered from "$components/Centered";
-import {Columns, ColumnContent, ColumnImage} from "$components/Columns"
-import {Carousel, CarouselNavigation, CarouselSlides, CarouselSlide} from "$components/Carousel"
-import Video from "$components/Video"
-
 <Sections>
 <Section>
 <Columns>
@@ -48,7 +40,8 @@ Frontend Entwickler neigen dazu, mehr Anerkennung zu erhalten, da nur ihre Arbei
 <ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
 </ColumnImage>
 </Columns>
-
+</Section>
+<Section>
 <Columns reverse contentWidth="6">
 <ColumnContent>
 
@@ -104,6 +97,7 @@ Wenn Sie einen Senior Designer suchen, setzen Sie sich einfach mit uns in Verbin
 </Columns>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 # Workshop
@@ -115,8 +109,10 @@ Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihn
 Nehmen Sie einfach Kontakt mit uns auf und lassen Sie das Projekt beginnen.
 
 </Centered>
+</SectionContent>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 # Was unterscheidet petitcode von anderen digitalen Agenturen?
@@ -126,5 +122,20 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 **petitcode glaubt daran**, die Produktivität über fokussierte Arbeitszeiten zu steigern und dass **jeder Kunde Webdesign und Webentwicklung auf hohem Niveau verdient**. Wenn Sie sich für petitcode entscheiden, stehen Sie in direkter Kommunikation mit dem Freelancer, ohne verborgene Ebenen.
 
 </Centered>
+</SectionContent>
+</Section>
+<Section inverted>
+<SectionContent>
+
+# Get in touch with us!
+
+Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+<ClientForm />
+</SectionContent>
 </Section>
 </Sections>

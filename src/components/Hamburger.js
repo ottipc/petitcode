@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
-import propTypes from 'prop-types'
+// import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
-const hamburgerLayerWidth = '35px'
-const hamburgerLayerHeight = '4px'
-const hamburgerLayerSpacing = '6px'
+const hamburgerLayerWidth = '38px'
+const hamburgerLayerHeight = '2px'
+const hamburgerLayerSpacing = '8px'
 const hamburgerPaddingX = theme.spacings.s1
 const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'
@@ -16,11 +16,6 @@ const hamburgerLayerBorderRadius = '3px'
 const hamburgerHoverOpacity = 0.7
 
 const HamburgerWrapper = styled.button`
-  position: fixed;
-  z-index: 10010;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
   padding: ${hamburgerPaddingY} ${hamburgerPaddingX};
   display: block;
   cursor: pointer;
@@ -66,7 +61,7 @@ const HamburgerInner = styled.span`
   &::after {
     width: ${hamburgerLayerWidth};
     height: ${hamburgerLayerHeight};
-    background-color: ${({ colorScheme }) => colorScheme};
+    background-color: ${({ theme }) => theme.colors.white};
     border-radius: ${hamburgerLayerBorderRadius};
     position: absolute;
     transition-property: transform;
@@ -145,25 +140,18 @@ const HamburgerInner = styled.span`
     `}
 `
 
-export default function Hamburger({ colorScheme }) {
+export default function Hamburger() {
   const { toggleNavigation, navigationActive } = useContext(NavigationContext)
 
   return (
-    <HamburgerWrapper
-      onClick={toggleNavigation}
-      aria-label="toggle menu"
-      colorScheme={colorScheme}
-    >
+    <HamburgerWrapper onClick={toggleNavigation} aria-label="toggle menu">
       <HamburgerBox>
-        <HamburgerInner
-          colorScheme={colorScheme}
-          navigationActive={navigationActive}
-        />
+        <HamburgerInner navigationActive={navigationActive} />
       </HamburgerBox>
     </HamburgerWrapper>
   )
 }
 
-Hamburger.propTypes = {
-  colorScheme: propTypes.string.isRequired
-}
+// Hamburger.propTypes = {
+//   colorScheme: propTypes.string.isRequired
+// }

@@ -9,12 +9,11 @@ const ColumnsWrapper = styled.div`
   position: relative;
   min-height: 50vh;
 
-  margin: 0 ${({ theme }) => `-${theme.spacings.s1}`};
-
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     display: flex;
     align-items: center;
 
+    /* @todo check this, maybe vh or padding just in text area to let images touch each other */
     & + & {
       padding-top: ${({ theme }) => theme.spacings.s8};
     }
@@ -36,9 +35,22 @@ export const ColumnContentWrapper = styled.div`
   }
 `
 
-export const ColumnContentText = styled.div`
-  box-sizing: content-box;
-  padding: ${({ theme }) => theme.spacings.s1};
+const ColumnContentText = styled.div`
+  padding: 10vh ${({ theme }) => theme.spacing.content.default};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    padding: 10vh 0;
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.medium};`}
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.large};`}
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.huge};`}
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     ${({
@@ -51,25 +63,6 @@ export const ColumnContentText = styled.div`
         flex: 0 0 ${(contentWidth / columns) * 100}%;
         overflow: hidden;
       `}
-  }
-`
-
-const ColumnFiller = styled.div`
-  display: none;
-  padding: 0 ${({ theme }) => theme.grid.gutter}px;
-  ${({
-    contentWidth,
-    theme: {
-      grid: { columns }
-    }
-  }) =>
-    css`
-      flex: 0 0 ${((columns - contentWidth) / columns) * 100}%;
-      overflow: hidden;
-    `}
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    display: block;
   }
 `
 
@@ -95,14 +88,15 @@ const ColumnImageWrapper = styled.div`
     ${({ reverse }) =>
       reverse
         ? css`
-            left: calc(${({ theme }) => theme.spacings.s2} * -1);
+            left: 0;
           `
         : css`
-            right: calc(${({ theme }) => theme.spacings.s2} * -1);
+            right: 0;
           `}
 
     & img {
       object-fit: cover;
+      margin-bottom: 0;
     }
 
     & .gatsby-image-wrapper {
@@ -142,10 +136,9 @@ Columns.propTypes = {
 export function ColumnContent({ reverse, contentWidth = 8, children }) {
   return (
     <ColumnContentWrapper reverse={reverse}>
-      <ColumnContentText contentWidth={contentWidth}>
+      <ColumnContentText contentWidth={contentWidth} reverse={reverse}>
         {children}
       </ColumnContentText>
-      <ColumnFiller contentWidth={contentWidth} />
     </ColumnContentWrapper>
   )
 }
@@ -161,7 +154,10 @@ export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
   const imageData = columns[file].childImageSharp
   const image = {
     ...imageData,
-    fluid: { ...imageData.fluid, base64: imageData.sqip.dataURI },
+    fluid: {
+      ...imageData.fluid
+      // , base64: imageData.sqip.dataURI
+    },
     alt
   }
 

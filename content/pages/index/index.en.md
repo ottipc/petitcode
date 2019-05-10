@@ -6,22 +6,22 @@ description: "petitcode is a creative collective of senior technology specialist
 theme: "sections"
 ---
 
-import Sections from "$components/Sections";
-import Section from "$components/Section";
-import Person from "$components/Person";
-import Grid from "$components/Grid";
-import KnockoutText from "$components/KnockoutText";
-
 <Sections>
 <Section video>
+<SectionContent>
 
-# avantgarde <br/> freelance  <br/> collective.
+# the code <br/> to your success.
 
+</SectionContent>
 </Section>
 <Section>
+<SectionContent>
 
-<KnockoutText>petitcode ist ein kreatives kollektiv für digitale produkte. german translation still missing.</KnockoutText>
-
+<KnockoutText>We are petitcode - an innovative collective of senior freelancers for premium digital conception, communication and production. </KnockoutText>
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
 <Grid>
 <Person name="Sebastian Melz" image="sebastian-melz.jpg">
 
@@ -57,44 +57,56 @@ aber viel andres
 </Person>
 
 </Grid>
-
+</SectionContent>
 </Section>
 <Section>
-
+<SectionContent>
 <KnockoutText>Our Clients</KnockoutText>
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
-<Grid>
+<Grid minWidth="100px">
 
-![world-health-organization](./images/clients/world-health-organization.png)
+<GridImage maxWidth="120px" alt="World Health Organization" image="world-health-organization.svg" />
 
-![infologis](./images/clients/infologis.png)
+<GridImage maxWidth="120px" alt="Infologis" image="infologis.svg" />
 
-![jung-von-matt](./images/clients/jung-von-matt.png)
+<GridImage maxWidth="120px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-![mcfit](./images/clients/mcfit.png)
+<GridImage maxWidth="120px" alt="Universal Music" image="universal-music.svg" />
 
-![universal-music](./images/clients/universal-music.png)
+<GridImage maxWidth="120px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-![villeroy-boch](./images/clients/villeroy-boch.png)
-
-![vorwerk](./images/clients/vorwerk.png)
+<GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
 
 </Grid>
-
+</SectionContent>
 </Section>
 <Section>
-
+<SectionContent>
 <KnockoutText centered>I am a</KnockoutText>
 
-<Grid spacing="space-around">
+<Grid centered>
 
-# [Freelancer](/freelancer)
+<Card>
+<CardContent>
+<h1><Link humanId="freelancer">Freelancer</Link></h1>
 
-# [Client](/client)
+and want to join the network
+
+</CardContent>
+</Card>
+
+<Card>
+<CardContent>
+<h1><Link humanId="client">Company</Link></h1>
+
+and want to get stuff done
+
+</CardContent>
+</Card>
 
 </Grid>
-
+</SectionContent>
 </Section>
 </Sections>

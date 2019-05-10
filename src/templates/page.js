@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
 import Layout from '../components/Layout'
@@ -9,17 +10,64 @@ import { LocationContext } from '../utils/Contexts'
 import DarkTheme from './themes/DarkTheme'
 import DefaultTheme from './themes/DefaultTheme'
 
+import Sections from '../components/mdx/Sections'
+import Section from '../components/mdx/Section'
+import SectionContent from '../components/mdx/SectionContent'
+import { Grid, GridImage } from '../components/mdx/Grid'
+import Centered from '../components/mdx/Centered'
+import { Columns, ColumnContent, ColumnImage } from '../components/mdx/Columns'
+import { Card, CardImage, CardContent } from '../components/mdx/Card'
+import {
+  Carousel,
+  CarouselNavigation,
+  CarouselSlides,
+  CarouselSlide
+} from '../components/mdx/Carousel'
+import KnockoutText from '../components/mdx/KnockoutText'
+import Video from '../components/mdx/Video'
+import Person from '../components/mdx/Person'
+import Link from '../components/mdx/Link'
+import ClientForm from '../components/mdx/ClientForm'
+import FreelancerForm from '../components/mdx/FreelancerForm'
+
+const components = {
+  Sections,
+  SectionContent,
+  Section,
+  Grid,
+  Card,
+  CardImage,
+  CardContent,
+  Centered,
+  Columns,
+  ColumnContent,
+  ColumnImage,
+  Carousel,
+  CarouselNavigation,
+  CarouselSlides,
+  CarouselSlide,
+  KnockoutText,
+  Video,
+  Person,
+  Link,
+  ClientForm,
+  GridImage,
+  FreelancerForm
+}
+
 class PageTemplate extends React.PureComponent {
   static propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   }
 
   render() {
+    const { location, data } = this.props
     const {
       frontmatter: { title, description, theme },
       code: { body },
       fields: { humanId, locale }
-    } = this.props.data.mdx
+    } = data.mdx
 
     let content = null
     switch (theme) {
@@ -43,7 +91,7 @@ class PageTemplate extends React.PureComponent {
 
     return (
       <LocationContext.Provider
-        value={{ activeHumandId: humanId, activeLocale: locale }}
+        value={{ activeHumandId: humanId, activeLocale: locale, location }}
       >
         <Layout>
           <Helmet
@@ -76,7 +124,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          {content}
+          <MDXProvider components={components}>{content}</MDXProvider>
         </Layout>
       </LocationContext.Provider>
     )
