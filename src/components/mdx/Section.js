@@ -10,6 +10,8 @@ const Wrapper = styled.section`
   min-height: 60vh;
   background: ${({ theme }) => theme.colors.bg};
 
+  border-bottom: 1px solid black;
+
   ${({ video }) =>
     !video &&
     css`
