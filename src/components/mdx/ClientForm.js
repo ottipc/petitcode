@@ -10,7 +10,6 @@ import Label from '../forms/Label'
 import InputField from '../forms/InputField'
 import TextAreaField from '../forms/TextAreaField'
 import Submit from '../forms/Submit'
-import Separator from '../forms/Separator'
 
 const Wrapper = styled.div``
 
@@ -43,7 +42,6 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field name="website">
               {({ input, meta }) => (
                 <InputField
@@ -54,7 +52,6 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Label visible>Contact person</Label>
             <FormGrid>
               <Field
@@ -90,7 +87,6 @@ export default function ClientForm() {
                 )}
               </Field>
             </FormGrid>
-            <Separator />
             <Field name="telephone">
               {({ input, meta }) => (
                 <InputField
@@ -101,7 +97,6 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field
               name="email"
               valueMissing="Tell us your email so we can contact you"
@@ -118,7 +113,6 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field
               name="type-of-enquiry"
               valueMissing="What is your reason to contact us?"
@@ -133,7 +127,6 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field name="comment">
               {({ input, meta }) => (
                 <TextAreaField

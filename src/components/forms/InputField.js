@@ -1,49 +1,44 @@
 import React from 'react'
 import propTypes from 'prop-types'
-
 import styled from 'styled-components'
+import TextField from '@material-ui/core/TextField'
 
-import Label from './Label'
-import Error from './Error'
-
-const Input = styled.input`
-  display: block;
+const StyledTextField = styled(TextField)`
   width: 100%;
-  color: inherit;
-  font-size: 20px;
-  background: transparent;
-  border: none;
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
 
-  &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-input-placeholder,
-  &:-ms-input-placeholder,
-  &::-ms-input-placeholder {
-    opacity: 0.6;
+  & .MuiInput-underline:before {
+    border-bottom-width: 2px;
+  }
+
+  & .MuiFormLabel-root {
+    transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
 `
 
-export default function InputField({ input, meta, label, ...props }) {
+export default function InputField({
+  input: { name, onChange, value, ...restInput },
+  meta,
+  ...rest
+}) {
+  const showError =
+    ((meta.submitError && !meta.dirtySinceLastSubmit) || meta.error) &&
+    meta.touched
+
   return (
-    <div>
-      <Label
-        visible={meta.touched && (!!input.value || props.type === 'file')}
-        htmlFor={input.name}
-      >
-        {label}
-        {props.type === 'file' && ':'}
-      </Label>
-      <Input {...input} {...props} placeholder={label} />
-      <Error>
-        {meta.touched && meta.error && <span>{`⚠️ ${meta.error}`}</span>}
-      </Error>
-    </div>
+    <StyledTextField
+      {...rest}
+      name={name}
+      helperText={showError ? meta.error || meta.submitError : undefined}
+      error={showError}
+      inputProps={restInput}
+      onChange={onChange}
+      value={value}
+    />
   )
 }
 
 InputField.propTypes = {
   input: propTypes.object.isRequired,
-  meta: propTypes.object.isRequired,
-  label: propTypes.string.isRequired,
-  type: propTypes.string.isRequired
+  meta: propTypes.object.isRequired
 }

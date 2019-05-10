@@ -32,6 +32,26 @@ const Wrapper = styled.section`
       & button {
         border-color: ${({ theme }) => theme.colors.white};
       }
+
+      & .MuiInputBase-root {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiFormLabel-root {
+        color: ${({ theme }) => theme.colors.grey500};
+      }
+
+      & .MuiFormControl-root:hover .MuiFormLabel-root {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiInput-underline:before {
+        border-bottom-color: ${({ theme }) => theme.colors.grey500};
+      }
+
+      & .MuiInput-underline:hover:not(.Mui-disabled):before {
+        border-bottom-color: ${({ theme }) => theme.colors.white};
+      }
     `}
 `
 

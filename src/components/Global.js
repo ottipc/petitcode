@@ -12,6 +12,17 @@ import { GlobalContext } from '../utils/Contexts'
 import theme from '../utils/styling/theme'
 import i18nextInit from '../utils/i18next'
 
+import { ThemeProvider as MaterialUiThemeProvider } from '@material-ui/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import { createMuiTheme } from '@material-ui/core/styles'
+import grey from '@material-ui/core/colors/grey'
+
+const materialUiTheme = createMuiTheme({
+  palette: {
+    primary: grey
+  }
+})
+
 i18nextInit()
 
 // Rare global style, mostly for text formatting and normalizing.
@@ -252,24 +263,28 @@ export default function Global({ children, location }) {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalContext.Provider
-        value={{
-          pages,
-          columns,
-          persons,
-          grid,
-          card,
-          langs,
-          defaultLocale,
-          activeLocale,
-          pathname
-        }}
-      >
-        <GlobalStyle />
-        {children}
-      </GlobalContext.Provider>
-    </ThemeProvider>
+    <MaterialUiThemeProvider theme={materialUiTheme}>
+      <ThemeProvider theme={theme}>
+        <GlobalContext.Provider
+          value={{
+            pages,
+            columns,
+            persons,
+            grid,
+            card,
+            langs,
+            defaultLocale,
+            activeLocale,
+            pathname
+          }}
+        >
+          <CssBaseline />
+          <GlobalStyle />
+
+          {children}
+        </GlobalContext.Provider>
+      </ThemeProvider>
+    </MaterialUiThemeProvider>
   )
 }
 

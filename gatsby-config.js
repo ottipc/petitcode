@@ -49,6 +49,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-sqip`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-react-helmet`,
