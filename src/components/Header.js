@@ -14,6 +14,7 @@ const Wrapper = styled.nav`
   position: relative;
   z-index: 200;
   transition: color 0.3s linear;
+  pointer-events: none;
 `
 
 const Grid = styled.div`
@@ -25,6 +26,7 @@ const Grid = styled.div`
 `
 
 const LogoWrapper = styled.div`
+  pointer-events: auto;
   display: flex;
   align-items: center;
   width: 100%;
@@ -89,6 +91,7 @@ const LogoWrapper = styled.div`
   }
 `
 const ContactWrapper = styled.div`
+  pointer-events: auto;
   padding: ${({ theme }) => theme.spacings.s1};
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
   display: none;
