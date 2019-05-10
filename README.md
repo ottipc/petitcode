@@ -157,7 +157,6 @@ Some description to the person
 
 ```
 npm ci
-pip install -r requirements.txt
 ```
 
 ## development

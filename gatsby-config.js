@@ -88,7 +88,6 @@ module.exports = {
             }
           },
           `gatsby-plugin-offline`,
-          `gatsby-plugin-subfont`,
           `gatsby-plugin-webpack-size`,
           `gatsby-plugin-netlify-cache`
         ]
