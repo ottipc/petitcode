@@ -96,11 +96,21 @@ const ContentWrapper = styled.div`
       mix-blend-mode: difference;
 
       h1 {
-        font-size: calc(40px + 80 * ((100vw - 320px) / 1400));
+        ${({
+          theme: {
+            grid: { width }
+          }
+        }) => css`
+          font-size: 40px;
 
-        @media (min-width: 1400px) {
-          font-size: 120px;
-        }
+          @media screen and (min-width: 320px) {
+            font-size: calc(40px + 80 * ((100vw - 320px) / ${width - 320}));
+          }
+
+          @media screen and (min-width: ${width}px) {
+            font-size: 120px;
+          }
+        `}
       }
     `}
 `

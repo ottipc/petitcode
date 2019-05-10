@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider, css } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { getCurrentLangKey } from 'ptz-i18n'
 
@@ -51,15 +51,21 @@ const GlobalStyle = createGlobalStyle`
       https://css-tricks.com/snippets/css/fluid-typography/
       Settings: 14-20px font size from 320-1320
     */
-    font-size: 14px;
+    ${({
+      theme: {
+        grid: { width }
+      }
+    }) => css`
+      font-size: 14px;
 
-    @media screen and (min-width: 320px) {
-      font-size: calc(14px + 6 * ((100vw - 320px) / 1000));
-    }
+      @media screen and (min-width: 320px) {
+        font-size: calc(14px + 6 * ((100vw - 320px) / ${width - 320}));
+      }
 
-    @media screen and (min-width: 1320px) {
-      font-size: 20px;
-    }
+      @media screen and (min-width: ${width}px) {
+        font-size: 20px;
+      }
+    `}
   }
 
   a {

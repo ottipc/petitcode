@@ -53,7 +53,7 @@ module.exports = {
   },
   spacings,
   grid: {
-    width: 1320,
+    width: 1920,
     columns: 12,
     gutter: `${spacingUnit * 4}px`
     // columnWidth: 1320 / 12
