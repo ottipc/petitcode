@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import FacebookLogo from '../../assets/icons/social/facebook.svg'
+import InstagramLogo from '../../assets/icons/social/instagram.svg'
+import TwitterLogo from '../../assets/icons/social/twitter.svg'
+
 const Link = styled.a`
   font-weight: bold;
+  width: 30px;
+  & + & {
+    margin-left: ${({ theme }) => theme.spacings.s1};
+  }
 `
 
 export default function Social() {
@@ -13,7 +21,7 @@ export default function Social() {
         href="https://web.facebook.com/thecodetosuccess/"
         rel="noopener"
       >
-        FB
+        <FacebookLogo />
       </Link>
       &nbsp;
       <Link
@@ -21,7 +29,7 @@ export default function Social() {
         href="https://www.instagram.com/thecodetosuccess/"
         rel="noopener"
       >
-        IN
+        <InstagramLogo />
       </Link>
       &nbsp;
       <Link
@@ -29,7 +37,7 @@ export default function Social() {
         href="https://twitter.com/the_petitcode"
         rel="noopener"
       >
-        TW
+        <TwitterLogo />
       </Link>
     </div>
   )
