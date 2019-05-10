@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
-import { LocationContext } from '../../utils/Contexts'
-
 import styled from 'styled-components'
 
-// import FormGrid from '../forms/FormGrid'
+import { LocationContext } from '../../utils/Contexts'
+
+import FormGrid from '../forms/FormGrid'
+import Label from '../forms/Label'
 import InputField from '../forms/InputField'
 import TextAreaField from '../forms/TextAreaField'
 import Submit from '../forms/Submit'
@@ -32,19 +32,72 @@ export default function ClientForm() {
             name="client-form"
             action={`${pathname}success`}
           >
-            <Field
-              name="name"
-              tooShort="Your full name would be great"
-              valueMissing="Tell us who u are"
-            >
+            <Field name="company" valueMissing="Tell us who u are">
               {({ input, meta }) => (
                 <InputField
                   input={input}
                   meta={meta}
                   type="text"
-                  label="Name"
+                  label="Company name"
                   required
-                  minLength={3}
+                />
+              )}
+            </Field>
+            <Separator />
+            <Field name="website">
+              {({ input, meta }) => (
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Company website"
+                />
+              )}
+            </Field>
+            <Separator />
+            <Label visible>Contact person</Label>
+            <FormGrid>
+              <Field
+                name="name"
+                tooShort="Your first name would be great"
+                valueMissing="Tell us who u are"
+              >
+                {({ input, meta }) => (
+                  <InputField
+                    input={input}
+                    meta={meta}
+                    type="text"
+                    label="Name"
+                    required
+                    minLength={3}
+                  />
+                )}
+              </Field>
+              <Field
+                name="surname"
+                tooShort="Your surname would be great"
+                valueMissing="Tell us who u are"
+              >
+                {({ input, meta }) => (
+                  <InputField
+                    input={input}
+                    meta={meta}
+                    type="text"
+                    label="Surname"
+                    required
+                    minLength={3}
+                  />
+                )}
+              </Field>
+            </FormGrid>
+            <Separator />
+            <Field name="telephone">
+              {({ input, meta }) => (
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Telephone"
                 />
               )}
             </Field>
@@ -67,18 +120,27 @@ export default function ClientForm() {
             </Field>
             <Separator />
             <Field
-              name="message"
-              tooShort="Tell us a little bit more"
-              valueMissing="What do you want to tell us?"
+              name="type-of-enquiry"
+              valueMissing="What is your reason to contact us?"
             >
+              {({ input, meta }) => (
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Type of enquiry (source a freelancer / develop a complete solution)"
+                  required
+                />
+              )}
+            </Field>
+            <Separator />
+            <Field name="comment">
               {({ input, meta }) => (
                 <TextAreaField
                   input={input}
                   meta={meta}
                   type="text"
-                  label="Message"
-                  required
-                  minLength={3}
+                  label="Additional comment"
                 />
               )}
             </Field>

@@ -29,7 +29,7 @@ export default function FreelancerForm() {
           <form
             onSubmit={handleSubmit}
             data-netlify="true"
-            name="client-form"
+            name="freelancer-form"
             action={`${pathname}success`}
           >
             <FormGrid>
