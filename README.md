@@ -171,3 +171,9 @@ For more, see `npm run` for all available scripts.
 `npm run build` to create a production ready website.
 
 `npm run production` to emulate production environment on the current device.
+
+## deployment
+
+The repo is connected to netlify. `master` is automatically deployed to live (https://amazing-hermann-f50450.netlify.com), all branches are available via `http://BRANCH-NAME--amazing-hermann-f50450.netlify.com/`
+
+Every merge request will trigger a netlify deployment, which shows up in [GitLab](https://gitlab.com/axe312/petitcode-react.js-website-).
