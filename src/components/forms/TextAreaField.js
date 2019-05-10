@@ -26,7 +26,6 @@ const TextArea = styled.textarea`
 `
 
 export default function TextAreaField({ input, meta, label, ...props }) {
-  console.log({ input, meta, props })
   return (
     <div>
       <Label visible={!!input.valu} htmlFor={input.name}>
