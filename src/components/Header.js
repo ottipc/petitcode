@@ -22,37 +22,44 @@ const Grid = styled.div`
   align-items: center;
   list-style-type: none;
   margin: 0;
-  padding: ${({ theme }) => theme.spacings.s1};
 `
 
 const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 30vw;
+  max-width: 40vw;
+  padding: ${({ theme }) => theme.spacing.viewport.default};
 
   & svg {
     display: block;
     width: 100%;
     height: auto;
-    max-width: ${({ theme }) => theme.spacings.s12};
   }
 
   & svg.notext {
     display: none;
-    transform: translateX(-50%);
-    width: ${({ theme }) => theme.spacings.s1};
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    & svg.notext {
-      transform: translateX(-25%);
-      width: ${({ theme }) => theme.spacings.s2};
-    }
+  /* keep order of this section below to ensure correct overwrites */
+  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
+    max-width: 25vw;
   }
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    padding: ${({ theme }) => theme.spacing.viewport.medium};
+  }
+
   ${({ isScrolling }) =>
     isScrolling &&
     css`
+      @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+        padding: ${({ theme }) => parseInt(theme.spacing.content.medium) / 4}px;
+        max-width: ${({ theme }) => theme.spacing.content.medium};
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+        padding: ${({ theme }) => parseInt(theme.spacing.content.large) / 4}px;
+        max-width: ${({ theme }) => theme.spacing.content.large};
+      }
       @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
         & svg.notext {
           display: block;
@@ -61,9 +68,28 @@ const LogoWrapper = styled.div`
           display: none;
         }
       }
+      @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+        & svg.notext {
+          display: none;
+        }
+        & svg.text {
+          display: block;
+        }
+      }
     `}
+
+  /* Keep this at last rule to ensure correct overwrites */
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+    padding: ${({ theme }) => parseInt(theme.spacing.content.huge) / 4}px;
+    /* fit in text logo between left border and left content border */
+    max-width: calc(
+      (100vw - ${({ theme }) => theme.grid.width}px) / 2 +
+        ${({ theme }) => theme.spacing.content.huge}
+    );
+  }
 `
 const ContactWrapper = styled.div`
+  padding: ${({ theme }) => theme.spacings.s1};
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
   display: none;
 

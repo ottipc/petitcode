@@ -38,8 +38,13 @@ const LanguageSelectWrapper = styled.div`
   color: white;
   position: fixed;
   z-index: 1100;
-  bottom: ${({ theme }) => theme.spacings.s1};
-  left: ${({ theme }) => theme.spacings.s1};
+  bottom: ${({ theme }) => theme.spacing.viewport.default};
+  left: ${({ theme }) => theme.spacing.viewport.default};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    bottom: ${({ theme }) => theme.spacing.viewport.medium};
+    left: ${({ theme }) => theme.spacing.viewport.medium};
+  }
 
   & a:after {
     background: white;
@@ -50,8 +55,8 @@ const HamburgerWrapper = styled.div`
   mix-blend-mode: difference;
   position: fixed;
   z-index: 10010;
-  top: ${({ theme }) => theme.spacings.s1};
-  right: ${({ theme }) => theme.spacings.s1};
+  top: 0;
+  right: 0;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }

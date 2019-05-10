@@ -4,12 +4,13 @@ import styled, { css } from 'styled-components'
 import { SectionContext } from '../utils/Contexts'
 
 const Wrapper = styled.div`
-  display: flex;
-  mix-blend-mode: difference;
+  display: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    display: flex;
+    mix-blend-mode: difference;
     position: fixed;
     z-index: 900;
     transform: translateY(-50%);

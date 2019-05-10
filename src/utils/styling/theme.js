@@ -12,48 +12,57 @@ const grey700 = '#CBD2D9'
 const grey800 = '#E4E7EB'
 const grey900 = '#f4f5f6'
 const spacingUnit = 14
+// Generates spacings map like spacings.s1 = 14px, spacings[s0.25] = 3px...
+const spacings = [
+  0.25,
+  0.5,
+  0.75,
+  1,
+  1.5,
+  2,
+  3,
+  4,
+  6,
+  8,
+  12,
+  16,
+  24,
+  32,
+  40,
+  48
+].reduce(
+  (spacings, scale) => ({
+    ...spacings,
+    ['s' + scale]: `${Math.floor(scale * spacingUnit)}px`
+  }),
+  {}
+)
 
 module.exports = {
   elements: {
     headerHeight: 100
   },
-  spacings: [
-    0.25,
-    0.5,
-    0.75,
-    1,
-    1.5,
-    2,
-    3,
-    4,
-    6,
-    8,
-    12,
-    16,
-    24,
-    32,
-    40,
-    48
-  ].reduce(
-    (spacings, scale) => ({
-      ...spacings,
-      ['s' + scale]: `${scale * spacingUnit}px`
-    }),
-    {}
-  ),
+  spacing: {
+    content: {
+      default: spacings.s2,
+      medium: spacings.s4,
+      large: spacings.s8,
+      huge: spacings.s16
+    },
+    viewport: { default: spacings.s1, medium: spacings.s2 }
+  },
+  spacings,
   grid: {
     width: 1320,
     columns: 12,
-    gutter: spacingUnit,
-    columnWidth: 1320 / 12
+    gutter: spacingUnit
+    // columnWidth: 1320 / 12
   },
   breakpoints: {
     small: '576px',
     medium: '768px',
     large: '992px',
-    huge: '1620px',
-    headerLogo: '1699px',
-    headerLogoText: '1700px'
+    huge: '1620px'
   },
   colors: {
     bg: white,

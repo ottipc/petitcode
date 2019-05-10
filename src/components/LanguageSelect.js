@@ -14,7 +14,7 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-  margin: 0.25rem;
+  margin: 0;
 `
 
 const SwitcherLink = styled(Link)``

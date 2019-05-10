@@ -8,8 +8,21 @@ import Link from './mdx/Link'
 import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
 
 const FooterWrapper = styled.div`
-  padding-top: ${({ theme }) => theme.spacings.s4};
   background: ${({ theme }) => theme.colors.white};
+
+  ${({
+    theme: {
+      spacings,
+      breakpoints,
+      spacing: { viewport }
+    }
+  }) => css`
+    padding: ${spacings.s4} ${viewport.default} 0;
+
+    @media (min-width: ${breakpoints.medium}) {
+      padding: ${spacings.s4} ${viewport.medium} 0;
+    }
+  `}
 `
 
 const FooterGrid = styled(GridWrapper)`
@@ -48,10 +61,19 @@ const Logo = styled(PetitcodeLogo)`
   max-width: 200px;
 `
 const Copyright = styled.div`
-  ${({ theme: { spacings } }) => css`
-    padding-bottom: ${spacings.s2};
+  ${({
+    theme: {
+      breakpoints,
+      spacing: { viewport }
+    }
+  }) => css`
+    padding: 0 1.5rem ${viewport.default};
+
+    @media (min-width: ${breakpoints.medium}) {
+      padding: 0 1.5rem ${viewport.medium};
+    }
   `}
-  font-size: 0.8em;
+  font-size: 0.7em;
   text-align: center;
 `
 

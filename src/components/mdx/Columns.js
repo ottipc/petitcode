@@ -35,19 +35,20 @@ export const ColumnContentWrapper = styled.div`
 `
 
 const ColumnContentText = styled.div`
-  padding: 10vh ${({ theme }) => theme.spacings.s2};
+  padding: 10vh ${({ theme }) => theme.spacing.content.default};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     padding: 10vh 0;
-
-    ${({ reverse }) =>
-      reverse
-        ? css`
-            padding-right: ${({ theme }) => theme.spacings.s4};
-          `
-        : css`
-            padding-left: ${({ theme }) => theme.spacings.s4};
-          `}
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.medium};`}
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.large};`}
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+    ${({ reverse, theme }) =>
+      `padding-${reverse ? 'right' : 'left'}: ${theme.spacing.content.huge};`}
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
