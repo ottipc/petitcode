@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
       content: '';
       display: block;
       height: 1px;
-      background: #000;
+      background: ${({ theme }) => theme.colors.black};
       width: 0;
       position: absolute;
       bottom: 0;
@@ -109,7 +109,7 @@ const GlobalStyle = createGlobalStyle`
   button {
     background: transparent;
     border-radius: 0;
-    border: 3px solid white;
+    border: 2px solid ${({ theme }) => theme.colors.black};
   }
 `
 

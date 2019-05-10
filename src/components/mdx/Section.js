@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   min-height: 60vh;
   background: ${({ theme }) => theme.colors.bg};
 
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 
   ${({ video }) =>
     !video &&
@@ -27,6 +27,10 @@ const Wrapper = styled.section`
 
       & a:after {
         background: ${({ theme }) => theme.colors.white};
+      }
+
+      & button {
+        border-color: ${({ theme }) => theme.colors.white};
       }
     `}
 `
