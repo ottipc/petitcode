@@ -13,6 +13,7 @@ const ColumnsWrapper = styled.div`
     display: flex;
     align-items: center;
 
+    /* @todo check this, maybe vh or padding just in text area to let images touch each other */
     & + & {
       padding-top: ${({ theme }) => theme.spacings.s8};
     }
