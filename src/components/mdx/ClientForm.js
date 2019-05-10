@@ -4,76 +4,15 @@ import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
 import { LocationContext } from '../../utils/Contexts'
 
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  background: ${({ theme }) => theme.colors.black};
-  max-width: 500px;
-  padding: 0 ${({ theme }) => theme.spacings.s4};
-`
-const Input = styled.input`
-  display: block;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 20px;
-  background: transparent;
-  border: none;
+// import FormGrid from '../forms/FormGrid'
+import InputField from '../forms/InputField'
+import TextAreaField from '../forms/TextAreaField'
+import Submit from '../forms/Submit'
+import Separator from '../forms/Separator'
 
-  &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-input-placeholder,
-  &:-ms-input-placeholder,
-  &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey500};
-  }
-`
-
-const TextArea = styled.textarea`
-  display: block;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 20px;
-  background: transparent;
-  border: none;
-
-  &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-input-placeholder,
-  &:-ms-input-placeholder,
-  &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey500};
-  }
-`
-
-const Separator = styled.div`
-  background: rgba(216, 216, 216, 0.3);
-  height: 1px;
-  width: 100%;
-  margin: 1rem 0;
-`
-
-const Submit = styled.button`
-  display: block;
-  margin-top: ${({ theme }) => theme.grid.gutter * 4}px;
-  color: ${({ theme }) => theme.colors.white};
-  text-transform: uppercase;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      color: ${({ theme }) => theme.colors.grey500};
-      cursor: not-allowed;
-    `}
-`
-
-const Error = styled.div`
-  opacity: 0.8;
-  font-size: 0.8em;
-`
+const Wrapper = styled.div``
 
 export default function ClientForm() {
   const {
@@ -99,18 +38,14 @@ export default function ClientForm() {
               valueMissing="Tell us who u are"
             >
               {({ input, meta }) => (
-                <>
-                  <Input
-                    {...input}
-                    type="text"
-                    placeholder="Name"
-                    required
-                    minLength={3}
-                  />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Name"
+                  required
+                  minLength={3}
+                />
               )}
             </Field>
             <Separator />
@@ -120,19 +55,14 @@ export default function ClientForm() {
               patternMismatch="Make sure your email is valid"
             >
               {({ input, meta }) => (
-                <>
-                  <Input
-                    {...input}
-                    type="text"
-                    placeholder="Email"
-                    required
-                    minLength={3}
-                    pattern=".+@.+"
-                  />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Email"
+                  required
+                  pattern="[^\s]+@[^\s]+"
+                />
               )}
             </Field>
             <Separator />
@@ -142,18 +72,14 @@ export default function ClientForm() {
               valueMissing="What do you want to tell us?"
             >
               {({ input, meta }) => (
-                <>
-                  <TextArea
-                    {...input}
-                    type="text"
-                    placeholder="Message"
-                    required
-                    minLength={10}
-                  />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
+                <TextAreaField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Message"
+                  required
+                  minLength={3}
+                />
               )}
             </Field>
             <Submit type="submit" disabled={pristine || invalid}>

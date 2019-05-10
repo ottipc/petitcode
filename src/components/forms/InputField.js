@@ -27,14 +27,16 @@ export default function InputField({ input, meta, label, ...props }) {
   return (
     <div>
       <Label
-        visible={!!input.value || props.type === 'file'}
+        visible={meta.touched && (!!input.value || props.type === 'file')}
         htmlFor={input.name}
       >
         {label}
         {props.type === 'file' && ':'}
       </Label>
       <Input {...input} {...props} placeholder={label} />
-      <Error>{meta.touched && meta.error && <span>{meta.error}</span>}</Error>
+      <Error>
+        {meta.touched && meta.error && <span>{`⚠️ ${meta.error}`}</span>}
+      </Error>
     </div>
   )
 }

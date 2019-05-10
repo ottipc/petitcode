@@ -10,7 +10,8 @@ const TextArea = styled.textarea`
   display: block;
   width: 100%;
   color: inherit;
-  font-size: 20px;
+  font-size: 16px;
+  min-height: 20vh;
   background: transparent;
   border: none;
 

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 
 const Submit = styled.button`
   display: block;
-  margin-top: ${({ theme }) => theme.spacings.s4}px;
+  margin-top: ${({ theme }) => theme.spacings.s2};
   color: inherit;
   text-transform: uppercase;
   cursor: pointer;
