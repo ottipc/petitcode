@@ -6,6 +6,14 @@ import Image from 'gatsby-image'
 import { GlobalContext } from '../../utils/Contexts'
 import { Card, CardContent } from './Card'
 
+const PersonWrapper = styled(Card)`
+  text-align: center;
+
+  & p {
+    text-align: center;
+  }
+`
+
 const PersonName = styled.h1`
   font-size: 1.2rem !important;
   margin-bottom: ${({ theme }) => theme.spacings.s1};
@@ -14,7 +22,7 @@ const PersonName = styled.h1`
 
 const PersonImage = styled.div`
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
   overflow: hidden;
   margin: 0 auto ${({ theme }) => theme.spacings.s2};
 
@@ -45,13 +53,13 @@ export default function Person({ image, name, children }) {
   }
 
   return (
-    <Card>
+    <PersonWrapper>
       <PersonImage>{renderedImage}</PersonImage>
       <CardContent>
         <PersonName>{name}</PersonName>
         {children}
       </CardContent>
-    </Card>
+    </PersonWrapper>
   )
 }
 
