@@ -93,6 +93,7 @@ Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach
 </Columns>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Recruiting von App-Entwickler
@@ -108,6 +109,7 @@ Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder prod
 *nach einem App-Entwickler anfragen*
 
 </Centered>
+</SectionContent>
 </Section>
 <Section inverted>
 <SectionContent>
