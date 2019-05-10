@@ -20,6 +20,7 @@ export default function Social() {
         target="_blank"
         href="https://web.facebook.com/thecodetosuccess/"
         rel="noopener"
+        aria-label="Find us on facebook"
       >
         <FacebookLogo />
       </Link>
@@ -28,6 +29,7 @@ export default function Social() {
         target="_blank"
         href="https://www.instagram.com/thecodetosuccess/"
         rel="noopener"
+        aria-label="Find us on instagram"
       >
         <InstagramLogo />
       </Link>
@@ -36,6 +38,7 @@ export default function Social() {
         target="_blank"
         href="https://twitter.com/the_petitcode"
         rel="noopener"
+        aria-label="Find us on twitter"
       >
         <TwitterLogo />
       </Link>

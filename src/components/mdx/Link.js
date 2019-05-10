@@ -12,12 +12,7 @@ import {
 
 const StyledLink = styled(Link)``
 
-export default function MdxLink({
-  className = null,
-  humanId,
-  title = null,
-  children
-}) {
+export default function MdxLink({ humanId, title = null, children, ...props }) {
   const { pages } = useContext(NavigationContext)
   const { activeLocale } = useContext(LocationContext)
   const { langs, defaultLocale } = useContext(GlobalContext)
@@ -46,10 +41,7 @@ export default function MdxLink({
   if (page) {
     const { slug, locale, title: pageTitle } = page.fields
     return (
-      <StyledLink
-        className={className}
-        to={createLocalizedPath({ locale, slug })}
-      >
+      <StyledLink to={createLocalizedPath({ locale, slug })} {...props}>
         {children || title || pageTitle}
       </StyledLink>
     )
@@ -61,6 +53,5 @@ export default function MdxLink({
 MdxLink.propTypes = {
   humanId: propTypes.string.isRequired,
   title: propTypes.string,
-  className: propTypes.string,
   children: propTypes.node
 }
