@@ -42,11 +42,11 @@ const KnockoutH1 = styled.h1`
   background-color: white;
   mix-blend-mode: screen;
 
-  font-size: calc(30px + 70 * ((100vw - 320px) / 1400));
+  font-size: calc(30px + 50 * ((100vw - 320px) / 1400));
   line-height: 1.6em;
 
   @media (min-width: ${({ theme }) => theme.grid.width}px) {
-    font-size: 100px;
+    font-size: 80px;
   }
 
   ${({ centered }) =>
