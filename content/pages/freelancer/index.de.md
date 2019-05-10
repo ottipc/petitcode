@@ -38,6 +38,15 @@ Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
 </div>
 <FreelancerForm />
 </Grid>
+
+# Get in touch with us!
+
+<FreelancerForm />
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+<FreelancerForm />
 </SectionContent>
 </Section>
 </Sections>

@@ -55,7 +55,7 @@ module.exports = {
   grid: {
     width: 1320,
     columns: 12,
-    gutter: spacingUnit
+    gutter: `${spacingUnit * 4}px`
     // columnWidth: 1320 / 12
   },
   breakpoints: {

@@ -105,6 +105,12 @@ const GlobalStyle = createGlobalStyle`
   pre {
     overflow: scroll;
   }
+
+  button {
+    background: transparent;
+    border-radius: 0;
+    border: 3px solid white;
+  }
 `
 
 export default function Global({ children, location }) {

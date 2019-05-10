@@ -4,76 +4,15 @@ import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
 import { LocationContext } from '../../utils/Contexts'
 
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-const Wrapper = styled.div`
-  background: ${({ theme }) => theme.colors.black};
-  max-width: 500px;
-  padding: 0 ${({ theme }) => theme.spacings.s4};
-`
-const Input = styled.input`
-  display: block;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 20px;
-  background: transparent;
-  border: none;
+import FormGrid from '../forms/FormGrid'
+import InputField from '../forms/InputField'
+import TextAreaField from '../forms/TextAreaField'
+import Submit from '../forms/Submit'
+import Separator from '../forms/Separator'
 
-  &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-input-placeholder,
-  &:-ms-input-placeholder,
-  &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey500};
-  }
-`
-
-const TextArea = styled.textarea`
-  display: block;
-  width: 100%;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 20px;
-  background: transparent;
-  border: none;
-
-  &::placeholder,
-  &::-webkit-input-placeholder,
-  &::-moz-input-placeholder,
-  &:-ms-input-placeholder,
-  &::-ms-input-placeholder {
-    color: ${({ theme }) => theme.colors.grey500};
-  }
-`
-
-const Separator = styled.div`
-  background: rgba(216, 216, 216, 0.3);
-  height: 1px;
-  width: 100%;
-  margin: 1rem 0;
-`
-
-const Submit = styled.button`
-  display: block;
-  margin-top: ${({ theme }) => theme.grid.gutter * 4}px;
-  color: ${({ theme }) => theme.colors.white};
-  text-transform: uppercase;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-
-  ${({ disabled }) =>
-    disabled &&
-    css`
-      color: ${({ theme }) => theme.colors.grey500};
-      cursor: not-allowed;
-    `}
-`
-
-const Error = styled.div`
-  opacity: 0.8;
-  font-size: 0.8em;
-`
+const Wrapper = styled.div``
 
 export default function FreelancerForm() {
   const {
@@ -93,67 +32,79 @@ export default function FreelancerForm() {
             name="client-form"
             action={`${pathname}success`}
           >
-            <Field
-              name="name"
-              tooShort="Your full name would be great"
-              valueMissing="Tell us who u are"
-            >
-              {({ input, meta }) => (
-                <>
-                  <Input
-                    {...input}
+            <FormGrid>
+              <Field
+                name="name"
+                tooShort="Your first name would be great"
+                valueMissing="Tell us who u are"
+              >
+                {({ input, meta }) => (
+                  <InputField
+                    input={input}
+                    meta={meta}
                     type="text"
-                    placeholder="Name"
+                    label="Name"
                     required
                     minLength={3}
                   />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
+                )}
+              </Field>
+              <Field
+                name="surname"
+                tooShort="Your surname would be great"
+                valueMissing="Tell us who u are"
+              >
+                {({ input, meta }) => (
+                  <InputField
+                    input={input}
+                    meta={meta}
+                    type="text"
+                    label="Surname"
+                    required
+                    minLength={3}
+                  />
+                )}
+              </Field>
+            </FormGrid>
+            <Separator />
+            <Field name="occupation" valueMissing="Tell us what you do">
+              {({ input, meta }) => (
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="text"
+                  label="Occupation / Specialization"
+                  required
+                />
+              )}
+            </Field>
+            <Separator />
+            <Field name="upload" valueMissing="Show us what you do">
+              {({ input, meta }) => (
+                <InputField
+                  input={input}
+                  meta={meta}
+                  type="file"
+                  label="Upload your CV.pdf, awesomepic.jpg or references.md"
+                  accept="image/*,.pdf,.md"
+                  multiple
+                  required
+                />
               )}
             </Field>
             <Separator />
             <Field
-              name="email"
-              valueMissing="Tell us your email so we can contact you"
-              patternMismatch="Make sure your email is valid"
+              name="additional-links"
+              valueMissing="Give us some links to check out your work. Your website, LinkedIn, GitHub, dribbble, codepen..."
             >
               {({ input, meta }) => (
-                <>
-                  <Input
-                    {...input}
-                    type="text"
-                    placeholder="Email"
-                    required
-                    minLength={3}
-                    pattern=".+@.+"
-                  />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
-              )}
-            </Field>
-            <Separator />
-            <Field
-              name="message"
-              tooShort="Tell us a little bit more"
-              valueMissing="What do you want to tell us?"
-            >
-              {({ input, meta }) => (
-                <>
-                  <TextArea
-                    {...input}
-                    type="text"
-                    placeholder="Why do you want to work with us?"
-                    required
-                    minLength={10}
-                  />
-                  <Error>
-                    {meta.touched && meta.error && <span>{meta.error}</span>}
-                  </Error>
-                </>
+                <TextAreaField
+                  input={input}
+                  meta={meta}
+                  label="Some links representing your work"
+                  required
+                  minLength={10}
+                />
               )}
             </Field>
             <Submit type="submit" disabled={pristine || invalid}>

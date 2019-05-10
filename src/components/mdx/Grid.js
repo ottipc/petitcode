@@ -14,7 +14,7 @@ const ActualGrid = styled.div`
     auto-fit,
     minmax(${({ minWidth = '250px' }) => minWidth}, 1fr)
   );
-  grid-gap: 30px;
+  grid-gap: ${({ theme }) => theme.grid.gutter};
 
   & > * {
     ${({ centered }) =>
