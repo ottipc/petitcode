@@ -6,7 +6,6 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "precommit": "lint-staged",
     "build": "NODE_ENV=production gatsby build",
     "develop": "nodemon -x 'gatsby develop' -w './*.js'",
     "production": "gatsby build && gatsby serve",
@@ -85,5 +84,10 @@
     "lint-staged": "^8.1.6",
     "nodemon": "^1.19.0",
     "prettier": "^1.17.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
