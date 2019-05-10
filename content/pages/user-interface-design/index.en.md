@@ -100,6 +100,7 @@ With the senior advice of our collective of freelance professionals, you will be
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Hire a freelancer or a user experience design agency team
@@ -111,7 +112,10 @@ If you still have questions regarding user interfaces, how to evaluate user expe
 *hire a designer link*
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

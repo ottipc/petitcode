@@ -113,6 +113,7 @@ and we will make sure to put you in touch with relevant freelancers.
 </Columns>
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 # What makes petitcode different from other digital agencies?
@@ -134,7 +135,10 @@ with the freelancer, with no hidden layers. Simply get in touch with
 us and let’s get the project started.
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

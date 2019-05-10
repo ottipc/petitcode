@@ -112,6 +112,7 @@ Mit dem Senior-Rat unseres Freelance-Kollektivs werden Sie umfassend beraten, um
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Beauftragen Sie einen Freelancer oder ein engagiertes Entwicklerteam
@@ -123,7 +124,10 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 *nach einen E-Commerce Entwickler nachfragen*
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>
