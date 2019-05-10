@@ -53,6 +53,16 @@ const Wrapper = styled.section`
         border-bottom-color: ${({ theme }) => theme.colors.white};
       }
     `}
+
+    & img, svg {
+      filter: grayscale(80%);
+      transition: 1s filter linear, 0.5s opacity linear !important;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
 `
 
 const VideoWrapper = styled.div`
