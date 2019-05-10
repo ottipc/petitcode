@@ -29,12 +29,6 @@ export default function Layout({ children }) {
   const [sections, setSections] = useState([])
   const [isScrolling, setIsScrolling] = useState(false)
 
-  const handleFooterIntersection = ({ isIntersecting }) => {
-    if (isIntersecting) {
-      setActiveSection(null)
-    }
-  }
-
   const handleIsScrollingIntersection = ({ isIntersecting }) => {
     setIsScrolling(!isIntersecting)
   }
@@ -140,14 +134,7 @@ export default function Layout({ children }) {
               <div />
             </Observer>
             {children}
-            <Observer
-              onChange={handleFooterIntersection}
-              rootMargin={'-50% 0px'}
-            >
-              <div>
-                <Footer />
-              </div>
-            </Observer>
+            <Footer />
           </main>
           <ReactCookieConsent
             buttonText="Ok"
