@@ -93,6 +93,7 @@ const ContentWrapper = styled.div`
     video &&
     css`
       color: #fff;
+      mix-blend-mode: difference;
 
       h1 {
         font-size: calc(40px + 80 * ((100vw - 320px) / 1400));
