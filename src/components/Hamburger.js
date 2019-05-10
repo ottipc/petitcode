@@ -5,9 +5,9 @@ import styled, { css } from 'styled-components'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
-const hamburgerLayerWidth = '35px'
-const hamburgerLayerHeight = '4px'
-const hamburgerLayerSpacing = '6px'
+const hamburgerLayerWidth = '38px'
+const hamburgerLayerHeight = '2px'
+const hamburgerLayerSpacing = '8px'
 const hamburgerPaddingX = theme.spacings.s1
 const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'

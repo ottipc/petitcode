@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   position: relative;
   display: block;
-  height: 8px;
+  height: 4px;
   flex: 1 1 auto;
   border: 0;
   overflow: hidden;
@@ -83,7 +83,7 @@ const VisibleArea = styled.div`
   bottom: 0;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    width: 6px;
+    width: 2px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
