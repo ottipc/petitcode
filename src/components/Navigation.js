@@ -39,6 +39,7 @@ const Logo = styled(PetitcodeTransparent)`
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     display: block;
   }
+  margin-right: ${({ theme }) => theme.spacings.s4};
 `
 
 const List = styled.ul`
