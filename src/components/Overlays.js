@@ -16,10 +16,12 @@ const HeaderWrapper = styled.div`
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.white};
+  border-bottom: 3px solid ${({ theme }) => theme.colors.grey600};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    border-bottom: none;
     mix-blend-mode: difference;
     background: transparent;
     color: white;

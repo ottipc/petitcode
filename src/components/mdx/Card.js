@@ -8,7 +8,7 @@ import { GlobalContext } from '../../utils/Contexts'
 export const Card = styled.section`
   padding: ${({ theme }) => theme.spacings.s3};
   background-color: ${({ theme }) => theme.colors.grey900};
-  box-shadow: 10px 10px 0px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 10px 10px 0px ${({ theme }) => theme.colors.grey700};
   text-align: center;
 `
 
