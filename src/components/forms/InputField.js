@@ -7,10 +7,6 @@ const StyledTextField = styled(TextField)`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacings.s2};
 
-  & .MuiInput-underline:before {
-    border-bottom-width: 2px;
-  }
-
   & .MuiFormLabel-root {
     transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
       transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;

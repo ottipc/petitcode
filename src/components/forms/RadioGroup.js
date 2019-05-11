@@ -16,7 +16,7 @@ const RadioWrapper = ({
 RadioWrapper.propTypes = {
   input: propTypes.object.isRequired,
   meta: propTypes.object.isRequired,
-  children: propTypes.children.isRequired
+  children: propTypes.node.isRequired
 }
 
 export default RadioWrapper

@@ -8,9 +8,8 @@ import { LocationContext } from '../../utils/Contexts'
 import FormGrid from '../forms/FormGrid'
 import Label from '../forms/Label'
 import InputField from '../forms/InputField'
-import TextAreaField from '../forms/TextAreaField'
-import Submit from '../forms/Submit'
 import RadioGroup from '../forms/RadioGroup'
+import Button from '@material-ui/core/Button'
 import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 
@@ -55,7 +54,7 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Label visible>Contact person</Label>
+            <Label>Contact person</Label>
             <FormGrid>
               <Field
                 name="name"
@@ -128,7 +127,7 @@ export default function ClientForm() {
                   input={input}
                   meta={meta}
                 >
-                  <Label visible>Contact reason</Label>
+                  <Label>Contact reason</Label>
                   <FormGrid>
                     <FormControlLabel
                       value="source a freelancer"
@@ -146,17 +145,22 @@ export default function ClientForm() {
             </Field>
             <Field name="comment">
               {({ input, meta }) => (
-                <TextAreaField
+                <InputField
                   input={input}
                   meta={meta}
-                  type="text"
                   label="Additional comment"
+                  multiline
                 />
               )}
             </Field>
-            <Submit type="submit" disabled={pristine || invalid}>
+            <Button
+              variant="outlined"
+              size="large"
+              color="primary"
+              type="submit"
+            >
               Submit
-            </Submit>
+            </Button>
           </form>
         )}
       />

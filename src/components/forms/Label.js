@@ -1,15 +1,9 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const Label = styled.label`
-  font-size: 0.8em;
-  opacity: 0;
+  font-size: 0.85em;
+  opacity: 0.6;
   transition: 0.3s opacity linear;
-
-  ${({ visible }) =>
-    visible &&
-    css`
-      opacity: 0.6;
-    `}
 `
 
 export default Label
