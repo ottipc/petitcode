@@ -10,6 +10,9 @@ import Label from '../forms/Label'
 import InputField from '../forms/InputField'
 import TextAreaField from '../forms/TextAreaField'
 import Submit from '../forms/Submit'
+import RadioGroup from '../forms/RadioGroup'
+import Radio from '@material-ui/core/Radio'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 const Wrapper = styled.div``
 
@@ -116,15 +119,29 @@ export default function ClientForm() {
             <Field
               name="type-of-enquiry"
               valueMissing="What is your reason to contact us?"
+              type="radio"
             >
               {({ input, meta }) => (
-                <InputField
+                <RadioGroup
+                  aria-label="Contact reason"
+                  name="contact-reason"
                   input={input}
                   meta={meta}
-                  type="text"
-                  label="Type of enquiry (source a freelancer / develop a complete solution)"
-                  required
-                />
+                >
+                  <Label visible>Contact reason</Label>
+                  <FormGrid>
+                    <FormControlLabel
+                      value="source a freelancer"
+                      control={<Radio />}
+                      label="source a freelancer"
+                    />
+                    <FormControlLabel
+                      value="develop a complete solution"
+                      control={<Radio />}
+                      label="develop a complete solution"
+                    />
+                  </FormGrid>
+                </RadioGroup>
               )}
             </Field>
             <Field name="comment">

@@ -15,11 +15,13 @@ import i18nextInit from '../utils/i18next'
 import { ThemeProvider as MaterialUiThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
-import grey from '@material-ui/core/colors/grey'
+import blueGrey from '@material-ui/core/colors/blueGrey'
+import blue from '@material-ui/core/colors/blue'
 
 const materialUiTheme = createMuiTheme({
   palette: {
-    primary: grey
+    primary: blueGrey,
+    secondary: blue
   }
 })
 
@@ -286,7 +288,6 @@ export default function Global({ children, location }) {
         >
           <CssBaseline />
           <GlobalStyle />
-
           {children}
         </GlobalContext.Provider>
       </ThemeProvider>

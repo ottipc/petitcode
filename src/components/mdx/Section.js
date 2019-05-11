@@ -50,6 +50,13 @@ const Wrapper = styled.section`
       & .MuiInput-underline:hover:not(.Mui-disabled):before {
         border-bottom-color: ${({ theme }) => theme.colors.white};
       }
+      & .MuiRadio-colorSecondary.Mui-checked {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiRadio-root {
+        color: ${({ theme }) => theme.colors.grey500};
+      }
     `}
 
     & img, svg {
