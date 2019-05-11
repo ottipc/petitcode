@@ -8,9 +8,7 @@ import styled from 'styled-components'
 
 import FormGrid from '../forms/FormGrid'
 import InputField from '../forms/InputField'
-import TextAreaField from '../forms/TextAreaField'
-import Submit from '../forms/Submit'
-import Separator from '../forms/Separator'
+import Button from '@material-ui/core/Button'
 
 const Wrapper = styled.div``
 
@@ -66,7 +64,6 @@ export default function FreelancerForm() {
                 )}
               </Field>
             </FormGrid>
-            <Separator />
             <Field name="occupation" valueMissing="Tell us what you do">
               {({ input, meta }) => (
                 <InputField
@@ -78,7 +75,6 @@ export default function FreelancerForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field name="upload" valueMissing="Show us what you do">
               {({ input, meta }) => (
                 <InputField
@@ -92,24 +88,29 @@ export default function FreelancerForm() {
                 />
               )}
             </Field>
-            <Separator />
             <Field
               name="additional-links"
               valueMissing="Give us some links to check out your work. Your website, LinkedIn, GitHub, dribbble, codepen..."
             >
               {({ input, meta }) => (
-                <TextAreaField
+                <InputField
                   input={input}
                   meta={meta}
                   label="Some links representing your work"
                   required
                   minLength={10}
+                  multiple
                 />
               )}
             </Field>
-            <Submit type="submit" disabled={pristine || invalid}>
+            <Button
+              variant="contained"
+              size="large"
+              color="primary"
+              type="submit"
+            >
               Submit
-            </Submit>
+            </Button>
           </form>
         )}
       />

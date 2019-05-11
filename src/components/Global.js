@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider, css } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { getCurrentLangKey } from 'ptz-i18n'
 
@@ -15,11 +15,27 @@ import i18nextInit from '../utils/i18next'
 import { ThemeProvider as MaterialUiThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
-import grey from '@material-ui/core/colors/grey'
+const themeColor = {
+  '50': theme.colors.grey900,
+  '100': theme.colors.grey800,
+  '200': theme.colors.grey700,
+  '300': theme.colors.grey600,
+  '400': theme.colors.grey500,
+  '500': theme.colors.grey400,
+  '600': theme.colors.grey300,
+  '700': theme.colors.grey200,
+  '800': theme.colors.grey100,
+  '900': theme.colors.grey000,
+  A100: theme.colors.grey800,
+  A200: theme.colors.grey700,
+  A400: theme.colors.grey500,
+  A700: theme.colors.grey200
+}
 
 const materialUiTheme = createMuiTheme({
   palette: {
-    primary: grey
+    primary: themeColor,
+    secondary: themeColor
   }
 })
 
@@ -51,15 +67,21 @@ const GlobalStyle = createGlobalStyle`
       https://css-tricks.com/snippets/css/fluid-typography/
       Settings: 14-20px font size from 320-1320
     */
-    font-size: 14px;
+    ${({
+      theme: {
+        grid: { width }
+      }
+    }) => css`
+      font-size: 14px;
 
-    @media screen and (min-width: 320px) {
-      font-size: calc(14px + 6 * ((100vw - 320px) / 1000));
-    }
+      @media screen and (min-width: 320px) {
+        font-size: calc(14px + 6 * ((100vw - 320px) / ${width - 320}));
+      }
 
-    @media screen and (min-width: 1320px) {
-      font-size: 20px;
-    }
+      @media screen and (min-width: ${width}px) {
+        font-size: 20px;
+      }
+    `}
   }
 
   a {
@@ -120,7 +142,7 @@ const GlobalStyle = createGlobalStyle`
   button {
     background: transparent;
     border-radius: 0;
-    border: 2px solid ${({ theme }) => theme.colors.black};
+    border: 1px solid ${({ theme }) => theme.colors.black};
   }
 `
 
@@ -280,7 +302,6 @@ export default function Global({ children, location }) {
         >
           <CssBaseline />
           <GlobalStyle />
-
           {children}
         </GlobalContext.Provider>
       </ThemeProvider>

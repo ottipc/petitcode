@@ -10,8 +10,6 @@ const Wrapper = styled.section`
   min-height: 60vh;
   background: ${({ theme }) => theme.colors.bg};
 
-  border-bottom: 2px solid black;
-
   ${({ video }) =>
     !video &&
     css`
@@ -52,10 +50,17 @@ const Wrapper = styled.section`
       & .MuiInput-underline:hover:not(.Mui-disabled):before {
         border-bottom-color: ${({ theme }) => theme.colors.white};
       }
+      & .MuiRadio-colorSecondary.Mui-checked {
+        color: ${({ theme }) => theme.colors.white};
+      }
+
+      & .MuiRadio-root {
+        color: ${({ theme }) => theme.colors.grey500};
+      }
     `}
 
     & img, svg {
-      filter: grayscale(80%);
+      filter: grayscale(100%);
       transition: 1s filter linear, 0.5s opacity linear !important;
 
       &:hover {
@@ -95,13 +100,24 @@ const ContentWrapper = styled.div`
     video &&
     css`
       color: #fff;
+      mix-blend-mode: difference;
 
       h1 {
-        font-size: calc(40px + 80 * ((100vw - 320px) / 1400));
+        ${({
+          theme: {
+            grid: { width }
+          }
+        }) => css`
+          font-size: 40px;
 
-        @media (min-width: 1400px) {
-          font-size: 120px;
-        }
+          @media screen and (min-width: 320px) {
+            font-size: calc(40px + 80 * ((100vw - 320px) / ${width - 320}));
+          }
+
+          @media screen and (min-width: ${width}px) {
+            font-size: 120px;
+          }
+        `}
       }
     `}
 `

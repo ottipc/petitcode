@@ -45,6 +45,10 @@ const Column = styled.div`
 const ContactWrapper = styled.div`
   font-weight: bold;
   margin-bottom: ${({ theme }) => theme.spacings.s1};
+
+  & a {
+    padding: 0.2em 0;
+  }
 `
 
 const LogoMenuItem = styled(Link)`
@@ -67,10 +71,10 @@ const Copyright = styled.div`
       spacing: { viewport }
     }
   }) => css`
-    padding: 0 1.5rem ${viewport.default};
+    padding: 0 1rem ${viewport.default};
 
     @media (min-width: ${breakpoints.medium}) {
-      padding: 0 1.5rem ${viewport.medium};
+      padding: 0 1rem ${viewport.medium};
     }
   `}
   font-size: 0.7em;

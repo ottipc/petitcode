@@ -57,7 +57,7 @@ petitcode ist fest davon überzeugt, dass es für die Gestaltung der besten User
 <Columns reverse contentWidth="6">
 <ColumnContent>
 
-## Brauche ich ein Style Guide? 
+## Brauche ich ein Style Guide?
 
 Es ist immer besser, das **Corporate Design und die Corporate Identity gut zu dokumentieren**. Je größer Ihr Unternehmen ist, desto wichtiger wird es, eine klare Dokumentation und damit eine offizielle Referenz für alle Ihre Teams zu haben. Abhängig von Ihren HR-Praktiken ist dies für das Onboarding von Praktikanten, Junioren, Freiberuflern und befristeten Anstellungen sehr hilfreich.
 
@@ -85,7 +85,7 @@ By following the above mentioned quality principles, petitcode will guarantee yo
 
 Wenn Sie sich mit der Überlegung tragen, eine neue Corporate Identity aufzusetzen oder eine bestehende zu aktualisieren, empfehlen wir Ihnen zuallererst ein Workshop. Nach der ersten Recherche und einem intensiven Austausch mit Ihnen können wir rational herausarbeiten, welches das geeignetste Erscheinungsbild für Ihrem Unternehmen ist.
 
-In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget. 
+In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget.
 
 * nach einer Corporate Design Beratung anfragen. *
 
@@ -96,6 +96,7 @@ In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuell
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Beauftragen Sie ein Freelancer - oder ein spezialisiertes Corporate Design Team
@@ -108,7 +109,10 @@ Wenn Sie noch Fragen zu Branding, Markenentwicklung haben, wie Sie die Benutzere
 
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

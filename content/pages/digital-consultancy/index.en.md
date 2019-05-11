@@ -87,6 +87,7 @@ The added value will be seen in the short, mid and long term in different ways. 
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Need a digital consultant? Simply contact us
@@ -98,7 +99,10 @@ If you still have questions regarding digital consulting, whether technical or m
 *hire a freelance consultant link*
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

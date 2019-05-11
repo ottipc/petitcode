@@ -16,7 +16,7 @@ const HeaderWrapper = styled.div`
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.white};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.black};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.black};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }
@@ -42,6 +42,7 @@ const LanguageSelectWrapper = styled.div`
   z-index: 1100;
   bottom: ${({ theme }) => theme.spacing.viewport.default};
   left: ${({ theme }) => theme.spacing.viewport.default};
+  transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     bottom: ${({ theme }) => theme.spacing.viewport.medium};

@@ -86,6 +86,7 @@ Der Mehrwert wird kurz-, mittel- und langfristig auf unterschiedliche Weise gese
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Benötigen Sie einen digitalen Berater? Kontaktieren Sie uns einfach
@@ -97,7 +98,10 @@ Wenn Sie noch Fragen zur **digitalen Beratung** haben, ob technisch oder Marketi
 *nach einen digitalisierungsberater nachfragen*
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

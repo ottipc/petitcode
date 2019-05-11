@@ -39,6 +39,7 @@ const Logo = styled(PetitcodeTransparent)`
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     display: block;
   }
+  margin-right: ${({ theme }) => theme.spacings.s4};
 `
 
 const List = styled.ul`
@@ -54,15 +55,21 @@ const List = styled.ul`
   text-align: right;
   text-transform: uppercase;
 
-  font-size: 26px;
+  ${({
+    theme: {
+      grid: { width }
+    }
+  }) => css`
+    font-size: 26px;
 
-  @media screen and (min-width: 320px) {
-    font-size: calc(30px + 50 * ((100vw - 320px) / 1000));
-  }
+    @media screen and (min-width: 320px) {
+      font-size: calc(30px + 50 * ((100vw - 320px) / ${width - 320}));
+    }
 
-  @media screen and (min-width: 1320px) {
-    font-size: 80px;
-  }
+    @media screen and (min-width: ${width}px) {
+      font-size: 80px;
+    }
+  `}
 `
 const ListItem = styled.li`
   margin: 0;

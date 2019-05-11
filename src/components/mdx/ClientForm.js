@@ -8,8 +8,10 @@ import { LocationContext } from '../../utils/Contexts'
 import FormGrid from '../forms/FormGrid'
 import Label from '../forms/Label'
 import InputField from '../forms/InputField'
-import TextAreaField from '../forms/TextAreaField'
-import Submit from '../forms/Submit'
+import RadioGroup from '../forms/RadioGroup'
+import Button from '@material-ui/core/Button'
+import Radio from '@material-ui/core/Radio'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 const Wrapper = styled.div``
 
@@ -52,7 +54,7 @@ export default function ClientForm() {
                 />
               )}
             </Field>
-            <Label visible>Contact person</Label>
+            <Label>Contact person</Label>
             <FormGrid>
               <Field
                 name="name"
@@ -116,30 +118,49 @@ export default function ClientForm() {
             <Field
               name="type-of-enquiry"
               valueMissing="What is your reason to contact us?"
+              type="radio"
             >
               {({ input, meta }) => (
-                <InputField
+                <RadioGroup
+                  aria-label="Contact reason"
+                  name="contact-reason"
                   input={input}
                   meta={meta}
-                  type="text"
-                  label="Type of enquiry (source a freelancer / develop a complete solution)"
-                  required
-                />
+                >
+                  <Label>Contact reason</Label>
+                  <FormGrid>
+                    <FormControlLabel
+                      value="source a freelancer"
+                      control={<Radio />}
+                      label="source a freelancer"
+                    />
+                    <FormControlLabel
+                      value="develop a complete solution"
+                      control={<Radio />}
+                      label="develop a complete solution"
+                    />
+                  </FormGrid>
+                </RadioGroup>
               )}
             </Field>
             <Field name="comment">
               {({ input, meta }) => (
-                <TextAreaField
+                <InputField
                   input={input}
                   meta={meta}
-                  type="text"
                   label="Additional comment"
+                  multiline
                 />
               )}
             </Field>
-            <Submit type="submit" disabled={pristine || invalid}>
+            <Button
+              variant="outlined"
+              size="large"
+              color="primary"
+              type="submit"
+            >
               Submit
-            </Submit>
+            </Button>
           </form>
         )}
       />

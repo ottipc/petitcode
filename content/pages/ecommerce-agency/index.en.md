@@ -93,6 +93,7 @@ With the senior advice of our collective of freelance professionals, you will be
 
 </Section>
 <Section>
+<SectionContent>
 <Centered>
 
 ## Hire a freelancer or a dedicated ecommerce team of developers
@@ -104,7 +105,10 @@ If you still have questions regarding ecommerce, how to link your shop to your m
 *hire an ecommerce developer link*
 
 </Centered>
+</SectionContent>
 </Section>
+
+
 <Section inverted>
 <SectionContent>
 <Grid>

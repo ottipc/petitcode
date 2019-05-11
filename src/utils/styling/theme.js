@@ -1,16 +1,16 @@
 const white = '#fff'
 const black = '#000'
 
-const grey000 = '#1F2933'
-const grey100 = '#323F4B'
-const grey200 = '#3E4C59'
-const grey300 = '#52606D'
-const grey400 = '#616E7C'
-const grey500 = '#7B8794'
-const grey600 = '#9AA5B1'
-const grey700 = '#CBD2D9'
-const grey800 = '#E4E7EB'
-const grey900 = '#f4f5f6'
+const grey000 = '#292929'
+const grey100 = '#404040'
+const grey200 = '#4d4d4d'
+const grey300 = '#5e5e5e'
+const grey400 = '#6e6e6e'
+const grey500 = '#878787'
+const grey600 = '#a6a6a6'
+const grey700 = '#d1d1d1'
+const grey800 = '#e8e8e8'
+const grey900 = '#f4f4f4'
 const spacingUnit = 14
 // Generates spacings map like spacings.s1 = 14px, spacings[s0.25] = 3px...
 const spacings = [
@@ -53,7 +53,7 @@ module.exports = {
   },
   spacings,
   grid: {
-    width: 1320,
+    width: 1920,
     columns: 12,
     gutter: `${spacingUnit * 4}px`
     // columnWidth: 1320 / 12

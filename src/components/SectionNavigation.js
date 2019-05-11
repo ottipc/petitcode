@@ -83,7 +83,7 @@ const VisibleArea = styled.div`
   bottom: 0;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    width: 2px;
+    width: 1px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
