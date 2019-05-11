@@ -45,6 +45,10 @@ const Column = styled.div`
 const ContactWrapper = styled.div`
   font-weight: bold;
   margin-bottom: ${({ theme }) => theme.spacings.s1};
+
+  & a {
+    padding: 0.2em 0;
+  }
 `
 
 const LogoMenuItem = styled(Link)`
