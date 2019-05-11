@@ -15,13 +15,27 @@ import i18nextInit from '../utils/i18next'
 import { ThemeProvider as MaterialUiThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme } from '@material-ui/core/styles'
-import blueGrey from '@material-ui/core/colors/blueGrey'
-import blue from '@material-ui/core/colors/blue'
+const themeColor = {
+  '50': theme.colors.grey900,
+  '100': theme.colors.grey800,
+  '200': theme.colors.grey700,
+  '300': theme.colors.grey600,
+  '400': theme.colors.grey500,
+  '500': theme.colors.grey400,
+  '600': theme.colors.grey300,
+  '700': theme.colors.grey200,
+  '800': theme.colors.grey100,
+  '900': theme.colors.grey000,
+  A100: theme.colors.grey800,
+  A200: theme.colors.grey700,
+  A400: theme.colors.grey500,
+  A700: theme.colors.grey200
+}
 
 const materialUiTheme = createMuiTheme({
   palette: {
-    primary: blueGrey,
-    secondary: blue
+    primary: themeColor,
+    secondary: themeColor
   }
 })
 
