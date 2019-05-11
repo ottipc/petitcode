@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { Link } from 'gatsby'
 
@@ -145,17 +144,13 @@ export default function Header() {
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
           <a className="nohover" href="mailto:hi@petitcode.de">
-            <TelephoneIcon />
+            <EmailIcon />
           </a>
           <a className="nohover" href="tel:+493064080338">
-            <EmailIcon />
+            <TelephoneIcon />
           </a>
         </ContactWrapper>
       </Grid>
     </Wrapper>
   )
 }
-
-// Header.propTypes = {
-//   colorScheme: propTypes.string.isRequired
-// }
