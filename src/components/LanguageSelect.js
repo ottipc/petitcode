@@ -11,6 +11,7 @@ const List = styled.ul`
   margin: 0;
   list-style-type: none;
   text-transform: uppercase;
+  font-weight: bold;
 `
 
 const ListItem = styled.li`
