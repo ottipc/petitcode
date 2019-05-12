@@ -1,8 +1,8 @@
 ---
 slug: "ecommerce-agency-berlin"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - the senior level freelance ecommerce agency berlin"
-description: "petitcode provides practical talent sourcing for any ecommerce project."
+title: "petitcode - die Senior e Commerce Agentur Berlin"
+description: "petitcode bietet praktische Talentsuche für jedes E-Commerce-Projekt."
 theme: "sections"
 ---
 
@@ -16,7 +16,7 @@ theme: "sections"
 Beim elektronischen Handel werden Technologien wie mobiler Handel, elektronischer Geldtransfer, Lieferkettenmanagement, Internet-Marketing, Online-Transaktionsverarbeitung, elektronischer Datenaustausch, Bestandsverwaltungssysteme und automatisierte Datenerfassungssysteme genutzt. Kurz gesagt, E-Commerce ist die spezifische Tätigkeit des Kaufs oder Verkaufs von Produkten oder Dienstleistungen über das Internet. Heißt auch, dass E-Commerce eine Kategorie der Web- und Mobile-Entwicklung ist.
 
 </ColumnContent>
-<ColumnImage file="kyle-glenn-392519-unsplash.jpg" alt="ecommerce is a continuous process of optimization">
+<ColumnImage file="kyle-glenn-392519-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess">
 </ColumnImage>
 </Columns>
 </Section>
@@ -41,7 +41,7 @@ Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehm
 Wenn Sie Fragen haben oder direkt anfangen möchten, kontaktieren Sie uns doch.
 
 </ColumnContent>
-<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
+<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="Ob im Business oder E-Commerce, wir alle wollen mehr erreichen">
 </ColumnImage>
 </Columns>
 
@@ -67,7 +67,7 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
 
 </ColumnContent>
-<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
+<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
 </ColumnImage>
 </Columns>
 </Section>
@@ -84,7 +84,7 @@ Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihn
 *nach einen E-Commerce Workshop nachfragen*
 
 </ColumnContent>
-<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
+<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
 </ColumnImage>
 </Columns>
 </Section>
@@ -101,7 +101,7 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 Mit dem Senior-Rat unseres Freelance-Kollektivs werden Sie umfassend beraten, um technik- und geschäftssichere Entscheidungen zu treffen, die Ihren ROI im Laufe der Zeit steigern und Ihre Leistung steigern.
 
 </ColumnContent>
-<ColumnImage file="william-iven-19843-unsplash.jpg" alt="ecommerce is a continuous process of optimization">
+<ColumnImage file="william-iven-19843-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess ">
 </ColumnImage>
 </Columns>
 

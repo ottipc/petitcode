@@ -88,7 +88,7 @@ Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung.  Wir werden Sie mit den relevantesten Freelancers in Kontakt bringen">
 </ColumnImage>
 </Columns>
 </Section>
