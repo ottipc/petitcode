@@ -1,9 +1,8 @@
-import React from 'react'
-// import React, { useContext } from 'react'
+import React, { useContext } from 'react'
 
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
-// import { LocationContext } from '../../utils/Contexts'
+import { LocationContext } from '../../utils/Contexts'
 
 import styled from 'styled-components'
 
@@ -14,23 +13,21 @@ import Button from '@material-ui/core/Button'
 const Wrapper = styled.div``
 
 export default function FreelancerForm() {
-  // const {
-  //   location: { pathname }
-  // } = useContext(LocationContext)
-  const onSubmit = () => {
-    console.log('thanks')
-  }
+  const {
+    location: { pathname }
+  } = useContext(LocationContext)
   return (
     <Wrapper>
       <Form
-        onSubmit={onSubmit}
-        render={({ handleSubmit, pristine, invalid }) => (
+        onSubmit={() => {}}
+        render={() => (
           <form
-            // onSubmit={handleSubmit}
+            method="port"
             data-netlify="true"
             name="freelancer-form"
-            // action={`${pathname}success`}
+            action={`${pathname}success`}
           >
+            <input type="hidden" name="form-name" value="freelancer-form" />
             <FormGrid>
               <Field
                 name="name"
