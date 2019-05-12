@@ -20,7 +20,9 @@ import {
 
 import Link from './mdx/Link'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  background-color: ${({ theme }) => theme.colors.bg};
+`
 
 export default function Layout({ children }) {
   const [navigationActive, setNavigationActive] = useState(false)
