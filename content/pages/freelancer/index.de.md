@@ -29,7 +29,7 @@ Bist du ein Freelancer, du arbeitest remote und hast Referenzen zu deiner Erfahr
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 

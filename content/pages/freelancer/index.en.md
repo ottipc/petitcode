@@ -1,7 +1,7 @@
 ---
 slug: "join-the-collective"
 date: "2019-01-30T03:49:16.408Z"
-title: "what clients can expect to get from petitcode"
+title: "Joining the petitcode collective"
 description: "listing of digital services provided by the senior collective of petitcode."
 theme: "sections"
 ---
@@ -29,7 +29,7 @@ Are you a freelancer, work remotely and have references to back your seniority? 
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
