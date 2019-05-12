@@ -28,17 +28,7 @@ Beim elektronischen Handel werden Technologien wie mobiler Handel, elektronische
 
 Das petitcode Kollektiv, aus ausschließlich hochrangigen Freelancern bestehend, ist der Ansicht, dass die Auswahl der richtigen Tools stark von Ihrem Unternehmen, Ihren Kunden, der Anzahl Ihrer derzeit verkauften Produkte und Ihren Prognosen zusammen abhängt. Mit unsere Kompetenzen, bieten wir Ihnen von Mikroleistungen bis gesamte e commerce Beratung und Entwicklung. Dank unser technischen Fachkenntnisse, können wir Ihnen auch nennen, welche Technologien die größte online Marketing verwertbarkeit ermöglichen.
 
-*nach einer E-Commerce Beratung nachfragen*
-
-</ColumnContent>
-<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
-</ColumnImage>
-</Columns>
-
-</Section>
-<Section>
-
-### petitcodes kreativer Ansatz
+## petitcodes kreativer Ansatz
 
 Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehmen sind, empfehlen wir Ihnen zunächst eine gründliche Analyse der Anzahl der Produkte, der voraussichtlichen Mengen, die Sie über Ihre Plattform verkaufen möchten, wer Ihre Kunden sind und welche Kaufgewohnheiten sie haben, damit wir definieren können E Commerce Lösung passt am besten zu Ihren Bedürfnissen. Zusammen werden wir die folgenden Schritte ausführen:
 
@@ -50,15 +40,10 @@ Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehm
 
 Wenn Sie Fragen haben oder direkt anfangen möchten, kontaktieren Sie uns doch.
 
-### Workflow für den Erfolg im E-Commerce
-
-Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in drei Stufen, insbesondere je länger die Projekte:
-
-1.  **BUILD** - Wir fertigen modernste E Commerce Lösungen für Ihre Strategie, mit denen Sie Ihre Konkurrenten und Ihre eigenen Erwartungen übertreffen können.
-
-2.  **MEASURE** - Entsprechend den Zielen jedes Projekts erstellen wir Produkt- und Designstrategien, um den Erfolg und die Entwicklung Ihres Projekts zu überwachen und zu analysieren.
-
-3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
+</ColumnContent>
+<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
+</ColumnImage>
+</Columns>
 
 </Section>
 <Section>
@@ -70,6 +55,16 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 Sie kennen die Namen Magento, WooComerce, Shopware, Shopify, TYPO3, Oxid, aber kennen Sie den Unterschied? Bevor Sie unzählige Vergleiche aller bestehenden E-Commerce-Unternehmen, Tools und Plattformen durchgehen, die Sie möglicherweise nur unter den Top 15 oder 20 finden, setzen Sie sich einfach mit uns in Verbindung und lassen Sie es uns für Sie tun. Das erspart Ihnen viel Ärger, Zeit und Energie.
 
 Einige E Commerce Technologien lassen sich aufgrund bestehender Geschäftsbeziehungen stärker in andere vorhandene Plattformen integrieren. Durch die Analyse Ihres Unternehmens wird, wie bereits erwähnt, die Wahl der richtigen E Commerce Technologie für Ihr Unternehmen ein Kinderspiel. Wenn Sie einfach nur Ihren Onlineshop weiter aufbauen wollen, dann muss der Rad auch nicht Neu erfunden werden und bleiben bei dem verwendeten Stack.
+
+### Workflow für den Erfolg im E-Commerce
+
+Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in drei Stufen, insbesondere je länger die Projekte:
+
+1.  **BUILD** - Wir fertigen modernste E Commerce Lösungen für Ihre Strategie, mit denen Sie Ihre Konkurrenten und Ihre eigenen Erwartungen übertreffen können.
+
+2.  **MEASURE** - Entsprechend den Zielen jedes Projekts erstellen wir Produkt- und Designstrategien, um den Erfolg und die Entwicklung Ihres Projekts zu überwachen und zu analysieren.
+
+3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
 
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">

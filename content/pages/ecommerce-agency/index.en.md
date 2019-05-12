@@ -28,14 +28,6 @@ Electronic commerce draws on technologies such as mobile commerce, electronic fu
 
 petitcode's collective of senior freelancers believes that the choice for the right tools heavily depends on your business, your clients, how many products do you currently sell and your forecasts. This is applicable regardless of who you chose to work with to develop your ecommerce platform.
 
-</ColumnContent>
-<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
-</ColumnImage>
-</Columns>
-
-</Section>
-<Section>
-
 ### petitcode's creative approach
 
 Whether you are a startup or an established business, we recommend to start with a thorough analysis of the number of products, forecasted quantities you intend to sell through your platform, who your customers are and what their buying habits are so that we can define which ecommerce solution best suits your needs. Together, we will follow the following steps:
@@ -48,15 +40,10 @@ Whether you are a startup or an established business, we recommend to start with
 
 Feel free to contact us directly if you have any questions or would like to get started directly.
 
-### Workflow for success in ecommerce
-
-Petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
-
-1.  **BUILD** - We handcraft state-of-the-art ecommerce solutions suited to your strategy that will let you outperform competitors and even your own expectations.
-
-2.  **MEASURE** - In accordance to the goals of each project, we build product and design strategies to monitor and analyse the success and evolution of your project.
-
-3.  **LEARN** - Thanks to all the measurements made and the empirical learnings, the client, together with petitcode, will be able to make sound, evidence-based decision making.
+</ColumnContent>
+<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
+</ColumnImage>
+</Columns>
 
 </Section>
 <Section>
@@ -68,6 +55,16 @@ Petitcode's collective of senior freelancers structures its processes in three s
 You know the names Magento, WooComerce, Shopware, Shopify, TYPO3, Oxid but you don't know the difference between them? Before going through countless comparisons of all existing ecommerce companies, tools and platforms - fyi: you will find top15s or top20s, but there are way more - simply get in touch with us and let us do it for you. That will save you a lot of hassle, time and energy.
 
 Some ecommerce technologies have more integrations with other existing platforms due to existing business relationships. By analysing your business first, as mentioned previously, **choosing the right ecommerce technology for your business will be a no-brainer**.
+
+### Workflow for success in ecommerce
+
+Petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
+
+1.  **BUILD** - We handcraft state-of-the-art ecommerce solutions suited to your strategy that will let you outperform competitors and even your own expectations.
+
+2.  **MEASURE** - In accordance to the goals of each project, we build product and design strategies to monitor and analyse the success and evolution of your project.
+
+3.  **LEARN** - Thanks to all the measurements made and the empirical learnings, the client, together with petitcode, will be able to make sound, evidence-based decision making.
 
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
