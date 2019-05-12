@@ -135,7 +135,7 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 

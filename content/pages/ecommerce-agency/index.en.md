@@ -116,7 +116,7 @@ If you still have questions regarding ecommerce, how to link your shop to your m
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 

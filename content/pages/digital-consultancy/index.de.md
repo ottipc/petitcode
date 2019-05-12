@@ -109,7 +109,7 @@ Wenn Sie noch Fragen zur **digitalen Beratung** haben, ob technisch oder Marketi
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 

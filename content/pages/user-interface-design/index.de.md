@@ -120,7 +120,7 @@ Wenn Sie noch Fragen zu Branding, Markenentwicklung haben, wie Sie die Benutzere
 
 # Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 

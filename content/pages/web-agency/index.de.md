@@ -129,7 +129,7 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
