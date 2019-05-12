@@ -118,7 +118,7 @@ Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder prod
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Aufwandschätzungen kann ohne einen ausführlichen Austausch schwierig werden. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
