@@ -8,6 +8,7 @@ import { Card, CardContent } from './Card'
 
 const PersonWrapper = styled(Card)`
   text-align: center;
+  max-width: 400px;
 
   & p {
     text-align: center;

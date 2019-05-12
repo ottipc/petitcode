@@ -12,17 +12,20 @@ const ActualGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(${({ minWidth = '250px' }) => minWidth}, 1fr)
+    minmax(
+      ${({ minWidth = '250px' }) => minWidth},
+      ${({ maxWidth = '1fr' }) => maxWidth}
+    )
   );
   grid-gap: ${({ theme }) => theme.grid.gutter};
 
-  & > * {
-    ${({ centered }) =>
-      centered &&
-      css`
-        text-align: center;
-      `}
-  }
+  ${({ centered }) =>
+    centered &&
+    css`
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    `}
 `
 
 const GridImageWrapper = styled.div`
@@ -37,9 +40,14 @@ const GridImageWrapper = styled.div`
   }
 `
 
-export function Grid({ children, minWidth = '250px', centered = false }) {
+export function Grid({
+  children,
+  minWidth = '250px',
+  maxWidth = '1fr',
+  centered = false
+}) {
   return (
-    <ActualGrid minWidth={minWidth} centered={centered}>
+    <ActualGrid minWidth={minWidth} maxWidth={maxWidth} centered={centered}>
       {children}
     </ActualGrid>
   )
@@ -47,7 +55,8 @@ export function Grid({ children, minWidth = '250px', centered = false }) {
 Grid.propTypes = {
   children: propTypes.node.isRequired,
   centered: propTypes.bool,
-  minWidth: propTypes.string
+  minWidth: propTypes.string,
+  maxWidth: propTypes.string
 }
 
 export function GridImage({ image, alt = '', maxWidth = '100%' }) {
