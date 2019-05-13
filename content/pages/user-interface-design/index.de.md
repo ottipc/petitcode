@@ -111,12 +111,10 @@ Wenn Sie noch Fragen zu Branding, Markenentwicklung haben, wie Sie die Benutzere
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Kontaktieren Sie uns doch!
 
@@ -126,9 +124,15 @@ Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Au
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

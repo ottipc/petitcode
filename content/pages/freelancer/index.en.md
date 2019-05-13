@@ -22,10 +22,10 @@ Are you a freelancer, work remotely and have references to back your seniority? 
 </ColumnImage>
 </Columns>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
 
 # Get in touch with us!
 
@@ -35,9 +35,15 @@ As a senior collective, we care about quality. That is why referrals from third-
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<FreelancerForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</FreelancerForm>
 </SectionContent>
 </Section>
 </Sections>

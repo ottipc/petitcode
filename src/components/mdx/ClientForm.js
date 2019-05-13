@@ -1,38 +1,52 @@
 import React, { useContext } from 'react'
+import propTypes from 'prop-types'
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
 import styled from 'styled-components'
+import queryString from 'query-string'
 
-import { LocationContext } from '../../utils/Contexts'
-
-import FormGrid from '../forms/FormGrid'
-import Label from '../forms/Label'
-import InputField from '../forms/InputField'
-import RadioGroup from '../forms/RadioGroup'
 import Button from '@material-ui/core/Button'
 import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 
+import { LocationContext } from '../../utils/Contexts'
+import FormGrid from '../forms/FormGrid'
+import Label from '../forms/Label'
+import InputField from '../forms/InputField'
+import RadioGroup from '../forms/RadioGroup'
+
 const Wrapper = styled.div``
 
-export default function ClientForm() {
+export default function ClientForm({ children, scrollTo }) {
+  const formName = 'client-form'
   const {
-    location: { pathname }
+    location: { pathname, search }
   } = useContext(LocationContext)
-  const onSubmit = () => {
-    console.log('thanks')
+  const parsed = queryString.parse(search)
+
+  const intro = children.find((child) => child.props.mdxType === 'FormIntro')
+
+  const success = children.find(
+    (child) => child.props.mdxType === 'FormSuccess'
+  )
+
+  if (parsed.success === formName) {
+    return <Wrapper>{success}</Wrapper>
   }
+
   return (
     <Wrapper>
+      {intro}
       <Form
-        onSubmit={onSubmit}
-        render={({ handleSubmit, pristine, invalid }) => (
+        onSubmit={() => {}}
+        render={() => (
           <form
-            onSubmit={handleSubmit}
+            method="post"
             data-netlify="true"
-            name="client-form"
-            action={`${pathname}success`}
+            name={formName}
+            action={`${pathname}?success=${formName}#${scrollTo}`}
           >
+            <input type="hidden" name="form-name" value={formName} />
             <Field name="company" valueMissing="Tell us who u are">
               {({ input, meta }) => (
                 <InputField
@@ -166,4 +180,9 @@ export default function ClientForm() {
       />
     </Wrapper>
   )
+}
+
+ClientForm.propTypes = {
+  children: propTypes.node.isRequired,
+  scrollTo: propTypes.string.isRequired
 }

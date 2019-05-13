@@ -22,12 +22,12 @@ Bist du ein Freelancer, du arbeitest remote und hast Referenzen zu deiner Erfahr
 </ColumnImage>
 </Columns>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
 Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
 
@@ -35,18 +35,15 @@ Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empf
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<FreelancerForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
 
-# Get in touch with us!
+# Dankeschön.
 
-<FreelancerForm />
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-<FreelancerForm />
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</FreelancerForm>
 </SectionContent>
 </Section>
 </Sections>

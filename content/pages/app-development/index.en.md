@@ -105,10 +105,10 @@ If you still have questions regarding **mobile app development**, whether techni
 </Centered>
 </SectionContent>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Get in touch with us!
 
@@ -118,9 +118,15 @@ Determining cost estimations accurately can be tricky without a proper exchange.
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

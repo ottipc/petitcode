@@ -1,33 +1,52 @@
 import React, { useContext } from 'react'
-
+import propTypes from 'prop-types'
 import { Form } from 'react-final-form'
 import { Field } from 'react-final-form-html5-validation'
-import { LocationContext } from '../../utils/Contexts'
-
+import queryString from 'query-string'
 import styled from 'styled-components'
 
-import FormGrid from '../forms/FormGrid'
-import InputField from '../forms/InputField'
 import Button from '@material-ui/core/Button'
 
-const Wrapper = styled.div``
+import { LocationContext } from '../../utils/Contexts'
+import FormGrid from '../forms/FormGrid'
+import InputField from '../forms/InputField'
 
-export default function FreelancerForm() {
+const Wrapper = styled.div``
+export const FormIntro = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacings.s4};
+`
+export const FormSuccess = styled.div``
+
+export default function FreelancerForm({ scrollTo, children }) {
+  const formName = 'client-form'
   const {
-    location: { pathname }
+    location: { pathname, search }
   } = useContext(LocationContext)
+  const parsed = queryString.parse(search)
+
+  const intro = children.find((child) => child.props.mdxType === 'FormIntro')
+
+  const success = children.find(
+    (child) => child.props.mdxType === 'FormSuccess'
+  )
+
+  if (parsed.success === formName) {
+    return <Wrapper>{success}</Wrapper>
+  }
+
   return (
     <Wrapper>
+      {intro}
       <Form
         onSubmit={() => {}}
         render={() => (
           <form
-            method="port"
+            method="post"
             data-netlify="true"
-            name="freelancer-form"
-            action={`${pathname}success`}
+            name={formName}
+            action={`${pathname}?success=${formName}#${scrollTo}`}
           >
-            <input type="hidden" name="form-name" value="freelancer-form" />
+            <input type="hidden" name="form-name" value={formName} />
             <FormGrid>
               <Field
                 name="name"
@@ -114,4 +133,9 @@ export default function FreelancerForm() {
       />
     </Wrapper>
   )
+}
+
+FreelancerForm.propTypes = {
+  children: propTypes.node.isRequired,
+  scrollTo: propTypes.string.isRequired
 }

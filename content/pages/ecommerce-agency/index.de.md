@@ -121,14 +121,12 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
 Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
@@ -136,9 +134,15 @@ Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Au
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

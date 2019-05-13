@@ -124,10 +124,12 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 </Centered>
 </SectionContent>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
 Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
@@ -135,7 +137,15 @@ Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Au
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-<ClientForm />
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>
