@@ -90,7 +90,7 @@ module.exports = {
       'sans-serif'
     ],
     body: [
-      'Noto Sans',
+      'Fira Sans',
       'Helvetica Neue',
       'Segoe UI',
       'Helvetica',
