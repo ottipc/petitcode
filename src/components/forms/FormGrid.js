@@ -14,11 +14,10 @@ const FormGrid = styled.div`
   );
   ${({
     theme: {
-      grid: { gutter },
-      spacings: { s1 }
+      grid: { gutter }
     }
   }) => css`
-    grid-gap: ${s1} ${gutter};
+    grid-gap: 0 ${gutter};
   `}
 `
 

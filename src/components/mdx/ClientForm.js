@@ -120,12 +120,11 @@ export default function ClientForm({ children, scrollTo }) {
             >
               {({ input, meta }) => (
                 <InputField
-                  input={input}
+                  input={{ ...input, pattern: '^[^\\s]+@[^\\s]+$' }}
                   meta={meta}
                   type="text"
                   label="Email"
                   required
-                  pattern="[^\s]+@[^\s]+"
                 />
               )}
             </Field>

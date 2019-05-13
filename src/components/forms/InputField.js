@@ -28,7 +28,7 @@ export default function InputField({
       name={name}
       helperText={showError ? meta.error || meta.submitError : undefined}
       error={showError}
-      inputProps={restInput}
+      inputProps={{ ...restInput }}
       onChange={onChange}
       value={value}
     />

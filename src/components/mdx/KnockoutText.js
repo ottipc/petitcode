@@ -36,7 +36,7 @@ const KnockoutH1 = styled.h1`
   position: relative;
   margin: 0;
   padding: 0;
-  color: black;
+  color: inherit;
   font-weight: bold !important;
   z-index: 100;
   /* background-color: white; */
