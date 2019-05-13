@@ -85,6 +85,7 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   background: #000;
+  filter: grayscale(50%);
 `
 
 const ContentWrapper = styled.div`
@@ -100,7 +101,7 @@ const ContentWrapper = styled.div`
     video &&
     css`
       color: #fff;
-      mix-blend-mode: difference;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 
       h1 {
         ${({
@@ -131,6 +132,15 @@ function Section({ video, inverted, children, nr }) {
     }
   }
 
+  const videos = [
+    '1025735357-preview.mp4',
+    '11465744-preview.mp4',
+    '15072064-preview.mp4',
+    '18395326-preview.mp4',
+    '25801799-preview.mp4',
+    '28715236-preview.mp4'
+  ]
+
   return (
     <Observer
       onChange={handleIntersection}
@@ -142,7 +152,7 @@ function Section({ video, inverted, children, nr }) {
           <VideoWrapper>
             <Video autoPlay loop muted playsInline>
               <source
-                src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
+                src={`/${videos[Math.floor(Math.random() * videos.length)]}`}
                 type="video/mp4"
               />
             </Video>
