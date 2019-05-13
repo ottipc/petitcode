@@ -44,7 +44,7 @@ The **user interface (UI)** is where and how humans interact with the functionin
 
 Generally, the goal is to produce an interface which makes it easy, efficient, and enjoyable to operate any software or device in the way which produces the desired outcome. This means that the operator needs to provide minimal input to achieve the desired output, and also that the machine minimizes undesired outputs to the human.
 
-*Hire a UI Designer link*
+[Hire a UI Designer](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -53,7 +53,7 @@ Generally, the goal is to produce an interface which makes it easy, efficient, a
 
 **User experience** (**UX**) refers to a person's emotions and attitudes about using a particular product, system or service. It includes the practical, experiential, affective, meaningful and valuable aspects of human--software interaction and product ownership. Additionally, it includes a person's perceptions of system aspects such as utility, ease of use and efficiency. User experience may be considered subjective in nature to the degree that it is about individual perception and thought with respect to the system. User experience is dynamic as it is constantly evolving over time due to changing usage circumstances and changes to individual systems as well as the wider usage context in which they can be found. In the end, user experience is about how the user interacts with and experiences the product.
 
-*hire a UX designer link*
+[hire a UX designer](#contact)
 
 </CarouselSlide>
 </CarouselSlides>
@@ -129,7 +129,7 @@ petitcode is a collective of senior freelance designers. If you are unsure of wh
 
 If you still have questions regarding user interfaces, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your project would be.
 
-*hire a designer link*
+[hire a designer](#contact)
 
 </Centered>
 </SectionContent>

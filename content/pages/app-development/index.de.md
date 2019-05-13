@@ -59,7 +59,7 @@ Der Unterschied zwischen generischer Frontend App-Entwicklung und der bestmögli
 
 Das petitcode-Kollektiv von Senior Freelancers weist nur erfahrene Android- und iOS-Entwickler auf. Wenn Sie nicht sicher sind, welche Sprachen und Technologien für Ihr Produkt am besten geeignet sind, lassen Sie uns das vorschlagen, was am besten funktioniert und am längsten trägt.
 
-*nach einem Frontend-Entwickler anfragen*
+[nach einem Frontend-Entwickler anfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -70,7 +70,7 @@ Die Aufgabe des Entwicklers besteht darin, Daten aus einer Datenbank oder einer 
 
 Da der Backend-Entwickler für die Erstellung der Architektur und des internen Designs der mobilen Anwendung verantwortlich ist, muss er einfach alles über die Anwendungsarchitektur wissen. Das petitcode-Kollektiv von Senior Freelancers weist nur erfahrene Android- und iOS-Entwickler auf. Wenn Sie nicht sicher sind, welche Sprachen und Technologien für Ihr Produkt am besten geeignet sind, lassen Sie uns das vorschlagen, was am besten funktioniert und am längsten trägt.
 
-*nach einem Backend Entwickler anfragen*
+[nach einem Backend Entwickler anfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -81,7 +81,7 @@ Falls Sie nach dem besten Design für Ihre App suchen, empfehlen wir Ihnen, die 
 
 Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung. Wir werden Sie mit den relevantesten Freelancers in Kontakt  bringen.
 
-*nach einem App-Designer anfragen*
+[nach einem App-Designer anfragen](#contact)
 
 </CarouselSlide>
 </CarouselSlides>
@@ -107,7 +107,7 @@ Die Suche nach motivierten Festangestellten, die perfekt in Ihr Unternehmen pass
 
 Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder produktbezogen, wie Sie die Benutzererfahrung bewerten oder ob Sie noch nicht festgelegt haben, was Sie genau benötigen - wenden Sie sich einfach einmal direkt an uns. Wir würden uns sehr freuen, uns mit Ihnen auszutauschen und dabei gemeinsam herauszuarbeiten, wie der beste Ansatz für Ihr Projekt aussehen könnte.
 
-*nach einem App-Entwickler anfragen*
+[nach einem App-Entwickler anfragen](#contact)
 
 </Centered>
 </SectionContent>

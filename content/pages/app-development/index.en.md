@@ -59,7 +59,7 @@ Mobile app design
 
 petitcode's collective of senior freelancers has **only experienced Android and iOS developers** to offer. If you are not sure which languages and technologies best suit your product, simply [get in touch](/contact) with us.
 
-*hire a front end developer link*
+[hire a front end developer](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -70,7 +70,7 @@ The developer's task is to write, read, and process data from a database or any 
 
 Considering that the back-end developer is responsible for building the architecture and internal design of the mobile application, a back-end developer needs to know much more about application architecture. petitcode's collective of senior freelancers has **only experienced Android and iOS developers** to offer. If you are not sure which languages and technologies best suit your product, simply [get in touch](/contact) with us.
 
-*hire a back end developer link*
+[hire a back end developer](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -81,7 +81,7 @@ When you are simply looking for the design of your product only, we recommend us
 
 If you are looking for a kick-ass app designer, simply get in touch with us and we will make sure to put you in touch with relevant freelancers.
 
-*hire an app designer link*
+[hire an app designer](#contact)
 
 </CarouselSlide>
 </CarouselSlides>
@@ -100,7 +100,7 @@ If you are looking for a kick-ass app designer, simply get in touch with us and 
 
 If you still have questions regarding **mobile app development**, whether technical or product related, how to evaluate user experience or are unsure of what exactly do you need, feel free to contact us directly. We would be glad to have a first contact and determine what the best approach for your project would be.
 
-*hire an app developer link*
+[hire an app developer](#contact)
 
 </Centered>
 </SectionContent>

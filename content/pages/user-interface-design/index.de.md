@@ -63,7 +63,7 @@ Es ist immer besser, das **Corporate Design und die Corporate Identity gut zu do
 
 Natürlich kann petitcode Ihnen helfen, **Ihren eigenen Style Guide** zu konzipieren und auszuarbeiten.
 
-* ach einem Style Guide anfragen *
+[ach einem Style Guide anfragen](#contact)
 
 
 ## Why is the design important for software and apps
@@ -105,7 +105,7 @@ petitcode ist ein Kollektiv hochrangiger Freelancer. Unabhängig davon ob Sie ei
 
 Wenn Sie noch Fragen zu Branding, Markenentwicklung haben, wie Sie die Benutzererfahrung bewerten und oder nicht wissen, was genau Sie benötigen, können Sie sich direkt an uns wenden. Gerne gehen wir mit Ihnen die ersten Schritte durch und ermitteln den besten Ansatz für Ihr Projekt.
 
-* nach einem Corporate Design Freelancer anfragen *
+[nach einem Corporate Design Freelancer anfragen](#contact)
 
 
 </Centered>

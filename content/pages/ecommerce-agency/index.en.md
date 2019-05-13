@@ -99,7 +99,7 @@ Petitcode is a collective of senior freelancers. Regardless of, whether you are 
 
 If you still have questions regarding ecommerce, how to link your shop to your marketing channels or are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your ecommerce project would be.
 
-*hire an ecommerce developer link*
+[hire an ecommerce developer](#contact)
 
 </Centered>
 </SectionContent>
