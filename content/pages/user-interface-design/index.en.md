@@ -48,6 +48,7 @@ Generally, the goal is to produce an interface which makes it easy, efficient, a
 
 </Section>
 <Section>
+<SectionContent>
 
 ## What is the difference between a graphic designer, UI/UX and a front end developer
 
@@ -55,6 +56,7 @@ Graphic designers already existed in the 19th Century and have mostly been invol
 
 As [previously mentioned](http://petitcode.com/), a front end developer is responsible for the component controlled by the end user, the user interface, which serves as layer of make-up for the server side of the software. The developer may have design skills but that is not their primary skill.
 
+</SectionContent>
 </Section>
 <Section>
 <Columns reverse contentWidth="6">
