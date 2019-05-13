@@ -6,10 +6,13 @@ import queryString from 'query-string'
 import styled from 'styled-components'
 
 import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/InputBase'
 
+import theme from '../../utils/styling/theme'
 import { LocationContext } from '../../utils/Contexts'
 import FormGrid from '../forms/FormGrid'
 import InputField from '../forms/InputField'
+import Label from '../forms/Label'
 
 const Wrapper = styled.div``
 export const FormIntro = styled.div`
@@ -94,15 +97,21 @@ export default function FreelancerForm({ scrollTo, children }) {
             </Field>
             <Field name="upload" valueMissing="Show us what you do">
               {({ input, meta }) => (
-                <InputField
-                  input={input}
-                  meta={meta}
-                  type="file"
-                  label="Upload your CV.pdf, awesomepic.jpg or references.md"
-                  accept="image/*,.pdf,.md"
-                  multiple
-                  required
-                />
+                <div style={{ marginBottom: theme.spacings.s2 }}>
+                  <Label className={meta.error && 'Mui-error'}>
+                    Upload your CV.pdf, awesomepic.jpg or references.md *
+                  </Label>
+                  <div>
+                    <Input
+                      input={input}
+                      meta={meta}
+                      type="file"
+                      accept="image/*,.pdf,.md"
+                      multiple
+                      required
+                    />
+                  </div>
+                </div>
               )}
             </Field>
             <Field
