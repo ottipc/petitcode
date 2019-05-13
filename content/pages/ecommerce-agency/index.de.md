@@ -1,8 +1,8 @@
 ---
 slug: "ecommerce-agency-berlin"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - the senior level freelance ecommerce agency berlin"
-description: "petitcode provides practical talent sourcing for any ecommerce project."
+title: "petitcode - die Senior e Commerce Agentur Berlin"
+description: "petitcode bietet praktische Talentsuche für jedes E-Commerce-Projekt."
 theme: "sections"
 ---
 
@@ -16,7 +16,7 @@ theme: "sections"
 Beim elektronischen Handel werden Technologien wie mobiler Handel, elektronischer Geldtransfer, Lieferkettenmanagement, Internet-Marketing, Online-Transaktionsverarbeitung, elektronischer Datenaustausch, Bestandsverwaltungssysteme und automatisierte Datenerfassungssysteme genutzt. Kurz gesagt, E-Commerce ist die spezifische Tätigkeit des Kaufs oder Verkaufs von Produkten oder Dienstleistungen über das Internet. Heißt auch, dass E-Commerce eine Kategorie der Web- und Mobile-Entwicklung ist.
 
 </ColumnContent>
-<ColumnImage file="kyle-glenn-392519-unsplash.jpg" alt="ecommerce is a continuous process of optimization">
+<ColumnImage file="kyle-glenn-392519-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess">
 </ColumnImage>
 </Columns>
 </Section>
@@ -28,17 +28,7 @@ Beim elektronischen Handel werden Technologien wie mobiler Handel, elektronische
 
 Das petitcode Kollektiv, aus ausschließlich hochrangigen Freelancern bestehend, ist der Ansicht, dass die Auswahl der richtigen Tools stark von Ihrem Unternehmen, Ihren Kunden, der Anzahl Ihrer derzeit verkauften Produkte und Ihren Prognosen zusammen abhängt. Mit unsere Kompetenzen, bieten wir Ihnen von Mikroleistungen bis gesamte e commerce Beratung und Entwicklung. Dank unser technischen Fachkenntnisse, können wir Ihnen auch nennen, welche Technologien die größte online Marketing verwertbarkeit ermöglichen.
 
-*nach einer E-Commerce Beratung nachfragen*
-
-</ColumnContent>
-<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
-</ColumnImage>
-</Columns>
-
-</Section>
-<Section>
-
-### petitcodes kreativer Ansatz
+## petitcodes kreativer Ansatz
 
 Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehmen sind, empfehlen wir Ihnen zunächst eine gründliche Analyse der Anzahl der Produkte, der voraussichtlichen Mengen, die Sie über Ihre Plattform verkaufen möchten, wer Ihre Kunden sind und welche Kaufgewohnheiten sie haben, damit wir definieren können E Commerce Lösung passt am besten zu Ihren Bedürfnissen. Zusammen werden wir die folgenden Schritte ausführen:
 
@@ -50,15 +40,10 @@ Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehm
 
 Wenn Sie Fragen haben oder direkt anfangen möchten, kontaktieren Sie uns doch.
 
-### Workflow für den Erfolg im E-Commerce
-
-Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in drei Stufen, insbesondere je länger die Projekte:
-
-1.  **BUILD** - Wir fertigen modernste E Commerce Lösungen für Ihre Strategie, mit denen Sie Ihre Konkurrenten und Ihre eigenen Erwartungen übertreffen können.
-
-2.  **MEASURE** - Entsprechend den Zielen jedes Projekts erstellen wir Produkt- und Designstrategien, um den Erfolg und die Entwicklung Ihres Projekts zu überwachen und zu analysieren.
-
-3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
+</ColumnContent>
+<ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="Ob im Business oder E-Commerce, wir alle wollen mehr erreichen">
+</ColumnImage>
+</Columns>
 
 </Section>
 <Section>
@@ -71,8 +56,18 @@ Sie kennen die Namen Magento, WooComerce, Shopware, Shopify, TYPO3, Oxid, aber k
 
 Einige E Commerce Technologien lassen sich aufgrund bestehender Geschäftsbeziehungen stärker in andere vorhandene Plattformen integrieren. Durch die Analyse Ihres Unternehmens wird, wie bereits erwähnt, die Wahl der richtigen E Commerce Technologie für Ihr Unternehmen ein Kinderspiel. Wenn Sie einfach nur Ihren Onlineshop weiter aufbauen wollen, dann muss der Rad auch nicht Neu erfunden werden und bleiben bei dem verwendeten Stack.
 
+### Workflow für den Erfolg im E-Commerce
+
+Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in drei Stufen, insbesondere je länger die Projekte:
+
+1.  **BUILD** - Wir fertigen modernste E Commerce Lösungen für Ihre Strategie, mit denen Sie Ihre Konkurrenten und Ihre eigenen Erwartungen übertreffen können.
+
+2.  **MEASURE** - Entsprechend den Zielen jedes Projekts erstellen wir Produkt- und Designstrategien, um den Erfolg und die Entwicklung Ihres Projekts zu überwachen und zu analysieren.
+
+3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
+
 </ColumnContent>
-<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
+<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
 </ColumnImage>
 </Columns>
 </Section>
@@ -89,7 +84,7 @@ Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihn
 *nach einen E-Commerce Workshop nachfragen*
 
 </ColumnContent>
-<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
+<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
 </ColumnImage>
 </Columns>
 </Section>
@@ -106,7 +101,7 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 Mit dem Senior-Rat unseres Freelance-Kollektivs werden Sie umfassend beraten, um technik- und geschäftssichere Entscheidungen zu treffen, die Ihren ROI im Laufe der Zeit steigern und Ihre Leistung steigern.
 
 </ColumnContent>
-<ColumnImage file="william-iven-19843-unsplash.jpg" alt="ecommerce is a continuous process of optimization">
+<ColumnImage file="william-iven-19843-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess ">
 </ColumnImage>
 </Columns>
 
@@ -126,24 +121,28 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

@@ -32,6 +32,7 @@ const Wrapper = styled.nav`
 const ContentWrapper = styled(GridWrapper)`
   display: flex;
   align-items: center;
+  justify-content: space-around;
 `
 
 const Logo = styled(PetitcodeTransparent)`
@@ -112,10 +113,13 @@ class Navigation extends React.PureComponent {
                   <MenuLink humanId="client">Client</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink humanId="imprint">Imprint</MenuLink>
+                  <MenuLink humanId="press">Press</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink humanId="press">Press</MenuLink>
+                  <MenuLink humanId="jobs">Jobs</MenuLink>
+                </ListItem>
+                <ListItem>
+                  <MenuLink humanId="imprint">Imprint</MenuLink>
                 </ListItem>
               </List>
             </ContentWrapper>

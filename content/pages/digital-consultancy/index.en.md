@@ -96,29 +96,33 @@ Petitcode is a collective of senior freelancers only. Regardless of, whether you
 
 If you still have questions regarding digital consulting, whether technical or marketing, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to a first contact and determine what the best approach for your project would be.
 
-*hire a freelance consultant link*
+[hire a freelance consultant](#contact)
 
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

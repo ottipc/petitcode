@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-// import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import { SectionContext } from '../utils/Contexts'
 
@@ -41,8 +40,6 @@ const Button = styled.button`
   @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    padding: 0 ${({ theme }) => theme.spacings.s1};
-    width: ${({ theme }) => theme.spacings.s4};
     height: auto;
     margin-bottom: ${({ theme }) => theme.spacings.s1};
 
@@ -53,6 +50,15 @@ const Button = styled.button`
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    padding: 0 ${({ theme }) => parseInt(theme.spacing.content.medium) / 2}px;
+    max-width: ${({ theme }) => theme.spacing.content.medium};
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    padding: 0 ${({ theme }) => parseInt(theme.spacing.content.large) / 2}px;
+    max-width: ${({ theme }) => theme.spacing.content.large};
   }
 
   opacity: 0;
@@ -112,7 +118,3 @@ export default function SectionNavigation() {
 
   return <Wrapper>{buttons}</Wrapper>
 }
-
-// SectionNavigation.propTypes = {
-//   colorScheme: propTypes.string.isRequired
-// }

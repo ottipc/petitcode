@@ -148,9 +148,25 @@ Some description to the person
 
 #### Forms
 
+Either `<ClientForm>` or `<FreelancerForm>`
+
 ```markdown
-<ClientForm />
-<FreelancerForm />
+<ClientForm>
+<FormIntro>
+
+# Get in touch with us.
+
+Some text for the user.
+
+</FormIntro>
+<FormSuccess>
+
+# Thanks.
+
+I'll be shown when the form was successfully submitted.
+
+</FormSuccess>
+</ClientForm>
 ```
 
 ## installation

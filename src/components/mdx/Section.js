@@ -5,11 +5,7 @@ import Observer from '@researchgate/react-intersection-observer'
 
 import { SectionContext } from '../../utils/Contexts'
 
-const Wrapper = styled.section`
-  position: relative;
-  min-height: 60vh;
-  background: ${({ theme }) => theme.colors.bg};
-
+const OuterWrapper = styled.div`
   ${({ video }) =>
     !video &&
     css`
@@ -17,6 +13,13 @@ const Wrapper = styled.section`
         padding-top: ${({ theme }) => theme.elements.headerHeight}px;
       }
     `}
+`
+
+const Wrapper = styled.section`
+  position: relative;
+  min-height: 60vh;
+  background: ${({ theme }) => theme.colors.bg};
+
   ${({ inverted }) =>
     inverted &&
     css`
@@ -85,6 +88,7 @@ const Video = styled.video`
   height: 100%;
   object-fit: cover;
   background: #000;
+  filter: grayscale(50%);
 `
 
 const ContentWrapper = styled.div`
@@ -100,7 +104,7 @@ const ContentWrapper = styled.div`
     video &&
     css`
       color: #fff;
-      mix-blend-mode: difference;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 
       h1 {
         ${({
@@ -122,7 +126,7 @@ const ContentWrapper = styled.div`
     `}
 `
 
-function Section({ video, inverted, children, nr }) {
+function Section({ video, inverted, children, nr, scrollId = null }) {
   const { setActiveSection } = useContext(SectionContext)
 
   const handleIntersection = ({ isIntersecting }) => {
@@ -131,26 +135,37 @@ function Section({ video, inverted, children, nr }) {
     }
   }
 
+  const videos = [
+    '1025735357-preview.mp4',
+    '11465744-preview.mp4',
+    '15072064-preview.mp4',
+    '18395326-preview.mp4',
+    '25801799-preview.mp4',
+    '28715236-preview.mp4'
+  ]
+
   return (
-    <Observer
-      onChange={handleIntersection}
-      rootMargin="-25% 0% -25% 0%"
-      threshold={0}
-    >
-      <Wrapper video={video} inverted={inverted} id={`section-${nr}`}>
-        {video && (
-          <VideoWrapper>
-            <Video autoPlay loop muted playsInline>
-              <source
-                src="//videos.ctfassets.net/pbrj6jtwg849/j7qCb94g9yMOi8MYIw40U/405d516b9e9cb3557906237cab5836be/SaaS_Video_3.mp4"
-                type="video/mp4"
-              />
-            </Video>
-          </VideoWrapper>
-        )}
-        <ContentWrapper video={video}>{children}</ContentWrapper>
-      </Wrapper>
-    </Observer>
+    <OuterWrapper id={scrollId} video={video}>
+      <Observer
+        onChange={handleIntersection}
+        rootMargin="-25% 0% -25% 0%"
+        threshold={0}
+      >
+        <Wrapper video={video} inverted={inverted} id={`section-${nr}`}>
+          {video && (
+            <VideoWrapper>
+              <Video autoPlay loop muted playsInline>
+                <source
+                  src={`/${videos[Math.floor(Math.random() * videos.length)]}`}
+                  type="video/mp4"
+                />
+              </Video>
+            </VideoWrapper>
+          )}
+          <ContentWrapper video={video}>{children}</ContentWrapper>
+        </Wrapper>
+      </Observer>
+    </OuterWrapper>
   )
 }
 
@@ -158,7 +173,8 @@ Section.prototype.propTypes = {
   video: propTypes.bool,
   inverted: propTypes.bool,
   children: propTypes.node.isRequired,
-  nr: propTypes.number.isRequired
+  nr: propTypes.number.isRequired,
+  scrollId: propTypes.string
 }
 
 export default Section

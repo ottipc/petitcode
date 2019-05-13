@@ -3,26 +3,23 @@ import styled from 'styled-components'
 import propTypes from 'prop-types'
 
 import GridWrapper from '../../components/GridWrapper'
+import SectionContent from '../../components/mdx/SectionContent'
 
 const DefaultThemeWrapper = styled.div`
-  padding: 0 ${({ theme }) => theme.spacings.s2};
-
-  margin-top: ${({ theme }) =>
-    theme.elements.headerHeight + parseInt(theme.spacings.s4)}px;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    padding: 0 ${({ theme }) => theme.spacings.s1};
-  }
+  padding-top: ${({ theme }) =>
+    theme.elements.headerHeight + parseInt(theme.spacings.s2)}px;
 `
 
-export default function DarkTheme({ children }) {
+export default function DefaultTheme({ children }) {
   return (
     <DefaultThemeWrapper>
-      <GridWrapper>{children}</GridWrapper>
+      <SectionContent>
+        <GridWrapper>{children}</GridWrapper>
+      </SectionContent>
     </DefaultThemeWrapper>
   )
 }
 
-DarkTheme.propTypes = {
+DefaultTheme.propTypes = {
   children: propTypes.node.isRequired
 }

@@ -59,7 +59,7 @@ Der Unterschied zwischen generischer Frontend App-Entwicklung und der bestmögli
 
 Das petitcode-Kollektiv von Senior Freelancers weist nur erfahrene Android- und iOS-Entwickler auf. Wenn Sie nicht sicher sind, welche Sprachen und Technologien für Ihr Produkt am besten geeignet sind, lassen Sie uns das vorschlagen, was am besten funktioniert und am längsten trägt.
 
-*nach einem Frontend-Entwickler anfragen*
+[nach einem Frontend-Entwickler anfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -70,7 +70,7 @@ Die Aufgabe des Entwicklers besteht darin, Daten aus einer Datenbank oder einer 
 
 Da der Backend-Entwickler für die Erstellung der Architektur und des internen Designs der mobilen Anwendung verantwortlich ist, muss er einfach alles über die Anwendungsarchitektur wissen. Das petitcode-Kollektiv von Senior Freelancers weist nur erfahrene Android- und iOS-Entwickler auf. Wenn Sie nicht sicher sind, welche Sprachen und Technologien für Ihr Produkt am besten geeignet sind, lassen Sie uns das vorschlagen, was am besten funktioniert und am längsten trägt.
 
-*nach einem Backend Entwickler anfragen*
+[nach einem Backend Entwickler anfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -81,14 +81,14 @@ Falls Sie nach dem besten Design für Ihre App suchen, empfehlen wir Ihnen, die 
 
 Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung. Wir werden Sie mit den relevantesten Freelancers in Kontakt  bringen.
 
-*nach einem App-Designer anfragen*
+[nach einem App-Designer anfragen](#contact)
 
 </CarouselSlide>
 </CarouselSlides>
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung.  Wir werden Sie mit den relevantesten Freelancers in Kontakt bringen">
 </ColumnImage>
 </Columns>
 </Section>
@@ -102,31 +102,38 @@ Wir verstehen, dass Festangestellte weiterhin vorgezogen werden. Und dennoch gib
 
 Die Suche nach motivierten Festangestellten, die perfekt in Ihr Unternehmen passen, kann wesentlich länger dauern als erwünscht oder als es durch den Projektdruck akzeptabel erscheint. Daher schlagen wir Ihnen vor, **einen Freelancer von petitcode zur kurzzeitigen Überbrückung in Erwägung zu ziehen mit dem Effekt**, dass Ihr Projekt nicht zum Stillstand kommt bzw. früher beginnen kann. Parallel dazu **engagiert sich petitcode, am Markt die richtigen Senior-Kandidaten für Sie zu finden**, um Ihre Vollzeitstelle zu besetzen.
 
+
 ### Stellen Sie eine Einstellungsanfrage, um Ihr Entwicklungsprojekt für mobile Apps zu unterstützen
 
 Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder produktbezogen, wie Sie die Benutzererfahrung bewerten oder ob Sie noch nicht festgelegt haben, was Sie genau benötigen - wenden Sie sich einfach einmal direkt an uns. Wir würden uns sehr freuen, uns mit Ihnen auszutauschen und dabei gemeinsam herauszuarbeiten, wie der beste Ansatz für Ihr Projekt aussehen könnte.
 
-*nach einem App-Entwickler anfragen*
+[nach einem App-Entwickler anfragen](#contact)
 
 </Centered>
 </SectionContent>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

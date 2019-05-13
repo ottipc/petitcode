@@ -29,6 +29,8 @@ import Person from '../components/mdx/Person'
 import Link from '../components/mdx/Link'
 import ClientForm from '../components/mdx/ClientForm'
 import FreelancerForm from '../components/mdx/FreelancerForm'
+import FormIntro from '../components/forms/FormIntro'
+import FormSuccess from '../components/forms/FormSuccess'
 
 const components = {
   Sections,
@@ -52,7 +54,9 @@ const components = {
   Link,
   ClientForm,
   GridImage,
-  FreelancerForm
+  FreelancerForm,
+  FormIntro,
+  FormSuccess
 }
 
 class PageTemplate extends React.PureComponent {

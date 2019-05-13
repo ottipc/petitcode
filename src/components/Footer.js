@@ -8,8 +8,6 @@ import Link from './mdx/Link'
 import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
 
 const FooterWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.white};
-
   ${({
     theme: {
       spacings,
@@ -64,21 +62,32 @@ const Logo = styled(PetitcodeLogo)`
   width: 100%;
   max-width: 200px;
 `
-const Copyright = styled.div`
+const BottomGrid = styled.div`
   ${({
     theme: {
       breakpoints,
       spacing: { viewport }
     }
   }) => css`
-    padding: 0 1rem ${viewport.default};
+    padding: 0 0 ${viewport.default};
 
     @media (min-width: ${breakpoints.medium}) {
-      padding: 0 1rem ${viewport.medium};
+      padding: 0 0 ${viewport.medium};
     }
   `}
-  font-size: 0.7em;
+
+  font-size: 0.8em;
   text-align: center;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.grey500};
+  font-family: ${({ theme }) => theme.fonts.header.join(', ')};
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
+const BottomGridElement = styled.div`
+  padding: 0 1rem;
 `
 
 export default function Footer() {
@@ -101,10 +110,17 @@ export default function Footer() {
           <Social />
         </Column>
       </FooterGrid>
-      <Copyright>
-        Copyright © {new Date().getFullYear()} petitcode GmbH |{' '}
-        <Link humanId="imprint" /> | <Link humanId="data-protection" />
-      </Copyright>
+      <BottomGrid>
+        <BottomGridElement>
+          <Link humanId="imprint" />
+        </BottomGridElement>
+        <BottomGridElement>
+          <Link humanId="data-protection" />
+        </BottomGridElement>
+        <BottomGridElement>
+          Copyright © {new Date().getFullYear()} petitcode GmbH
+        </BottomGridElement>
+      </BottomGrid>
     </FooterWrapper>
   )
 }

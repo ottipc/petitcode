@@ -34,7 +34,7 @@ In software architecture, whether web or mobile development, there are two persp
 
 Front end developers tend to get more credit because only their work is seen by the end users. Nevertheless, most of the existing code for any software will be predominantly back end based.
 
-*hire a webdesign freelancer*
+[hire a webdesign freelancer](#contact)
 
 </ColumnContent>
 <ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
@@ -70,7 +70,7 @@ experienced front end developers**
 to offer. If you are not sure which tools and platforms best suit
 your business, simply [get in touch](/contact) with us.
 
-*hire a front end developer*
+[hire a front end developer](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -86,7 +86,7 @@ experienced back end developers**
 to offer. If you are not sure which tools and platforms best suit
 your business, simply [get in touch](http://de-en/contact) with us.
 
-*hire a back end developer*
+[hire a back end developer](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -102,7 +102,7 @@ feeling.
 If you are looking for a kick-ass designer, simply get in touch with us
 and we will make sure to put you in touch with relevant freelancers.
 
-*hire a webdesign freelancer*
+[hire a webdesign freelancer](#contact)
 
 </CarouselSlide>
 </CarouselSlides>
@@ -137,24 +137,28 @@ us and let’s get the project started.
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

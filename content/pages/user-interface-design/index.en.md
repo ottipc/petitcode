@@ -27,19 +27,37 @@ Since the release of smartphones, the number of apps increased exponentially whi
 What is UI/UX?
 ---------------
 
+<Carousel>
+<CarouselNavigation>
+
+User interface design
+
+User experience design
+
+</CarouselNavigation>
+<CarouselSlides>
+<CarouselSlide>
+
 ### User interface design
 
 The **user interface (UI)** is where and how humans interact with the functioning software. The goal of this interaction is to allow effective operation and control of the software from the user's end.
 
 Generally, the goal is to produce an interface which makes it easy, efficient, and enjoyable to operate any software or device in the way which produces the desired outcome. This means that the operator needs to provide minimal input to achieve the desired output, and also that the machine minimizes undesired outputs to the human.
 
-*Hire a UI Designer link*
+[Hire a UI Designer](#contact)
+
+</CarouselSlide>
+<CarouselSlide>
 
 ### User experience design
 
 **User experience** (**UX**) refers to a person's emotions and attitudes about using a particular product, system or service. It includes the practical, experiential, affective, meaningful and valuable aspects of human--software interaction and product ownership. Additionally, it includes a person's perceptions of system aspects such as utility, ease of use and efficiency. User experience may be considered subjective in nature to the degree that it is about individual perception and thought with respect to the system. User experience is dynamic as it is constantly evolving over time due to changing usage circumstances and changes to individual systems as well as the wider usage context in which they can be found. In the end, user experience is about how the user interacts with and experiences the product.
 
-*hire a UX designer link*
+[hire a UX designer](#contact)
+
+</CarouselSlide>
+</CarouselSlides>
+</Carousel>
 
 </ColumnContent>
 <ColumnImage file="jose-alejandro-cuffia-799485-unsplash.jpg" alt="">
@@ -48,6 +66,7 @@ Generally, the goal is to produce an interface which makes it easy, efficient, a
 
 </Section>
 <Section>
+<SectionContent>
 
 ## What is the difference between a graphic designer, UI/UX and a front end developer
 
@@ -55,6 +74,7 @@ Graphic designers already existed in the 19th Century and have mostly been invol
 
 As [previously mentioned](http://petitcode.com/), a front end developer is responsible for the component controlled by the end user, the user interface, which serves as layer of make-up for the server side of the software. The developer may have design skills but that is not their primary skill.
 
+</SectionContent>
 </Section>
 <Section>
 <Columns reverse contentWidth="6">
@@ -109,29 +129,33 @@ petitcode is a collective of senior freelance designers. If you are unsure of wh
 
 If you still have questions regarding user interfaces, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your project would be.
 
-*hire a designer link*
+[hire a designer](#contact)
 
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Get in touch with us!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

@@ -1,8 +1,8 @@
 ---
-slug: "user-interface-design-berlin"
+slug: "corporate-design-entwicklung"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - die Senior Corporate Design Agentur Berlin für Branding und Markenentwicklung"
-description: "petitcode will source you the best user interface design berlin"
+description: "petitcode bietet Corporate Design auf Senior Niveau."
 theme: "sections"
 ---
 
@@ -18,7 +18,7 @@ theme: "sections"
 **Corporate Identity ist alles, über das Ihr Unternehmen** von Ihren Kunden, Mitarbeitern und Investoren **direkt vertreten und wahrgenommen wird**. Sie reicht weit über einfache Medien hinaus, denn sie spiegelt sich überall in Form von Logos, Firmenfarben, Websites, Werbung, Slogans, Plakaten, Uniformen, E-Mail-Vorlagen, Adressierungsansprüchen von Kunden, Stellplätzen und vielem mehr wider.
 
 </ColumnContent>
-<ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="">
+<ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="petitcode ist mehr als eine Design-Agentur. Unsere Basis ist Berlin, wir agieren aber weltweit agil. Mit unserer Freelance-Struktur und unseren starken Design- Ansätzen sehen wir uns als Vorreiter für die Kreativagentur der Zukunft.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -35,7 +35,7 @@ Betrachten Sie es als Aktion-Reaktion: **die Identität bestimmt das Design**, u
 Wenn Ihre Kunden mehrmals über Ihre gesamte Marke hinweg mit einer konsistenten Botschaft konfrontiert werden, wächst das Vertrauen in Ihre Botschaft und die Existenz Ihrer Marke wird schneller akzeptiert. Das heißt, **die Entwicklung eines einheitlichen Corporate Design ist der Schlüssel für eine starke Markenpräsenz.**
 
 </ColumnContent>
-<ColumnImage file="jose-alejandro-cuffia-799485-unsplash.jpg" alt="">
+<ColumnImage file="jose-alejandro-cuffia-799485-unsplash.jpg" alt="Der erster Strich ist der schwierigste. Zusammen mit petitcode wird es Ihnen leicht gemacht, das beste Erscheinungsbild für ein stärkeres Branding zu entwickeln.">
 </ColumnImage>
 </Columns>
 
@@ -63,7 +63,7 @@ Es ist immer besser, das **Corporate Design und die Corporate Identity gut zu do
 
 Natürlich kann petitcode Ihnen helfen, **Ihren eigenen Style Guide** zu konzipieren und auszuarbeiten.
 
-* ach einem Style Guide anfragen *
+[ach einem Style Guide anfragen](#contact)
 
 
 ## Why is the design important for software and apps
@@ -73,7 +73,7 @@ A good design is not measured on how fancy it looks. A quality interface require
 By following the above mentioned quality principles, petitcode will guarantee you adequate focus on what really matters. There is nothing worse than a slick design that does not answer to the user's needs and priorities.
 
 </ColumnContent>
-<ColumnImage file="hal-gatewood-613602-unsplash.jpg" alt="">
+<ColumnImage file="hal-gatewood-613602-unsplash.jpg" alt="Corporate Design heißt auch wie Sie Ihrem Büro oder Studio gestalten. Als Kommunikationsagentur ist petitcode in der Lage Innenräume passend zu jeder Corporate Identity zu entwickeln.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -90,7 +90,7 @@ In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuell
 * nach einer Corporate Design Beratung anfragen. *
 
 </ColumnContent>
-<ColumnImage file="william-iven-19843-unsplash.jpg" alt="">
+<ColumnImage file="william-iven-19843-unsplash.jpg" alt="Auch Außenräume können mit Ihrem Corporate Design angepasst werden. Als Spezialisten für Corporate Design und Branding, auch für Messestände und  spezifische Events, ist petitcode Ihr idealer Partner für Raumgestaltung und Konzipierung.">
 </ColumnImage>
 </Columns>
 
@@ -105,30 +105,34 @@ petitcode ist ein Kollektiv hochrangiger Freelancer. Unabhängig davon ob Sie ei
 
 Wenn Sie noch Fragen zu Branding, Markenentwicklung haben, wie Sie die Benutzererfahrung bewerten und oder nicht wissen, was genau Sie benötigen, können Sie sich direkt an uns wenden. Gerne gehen wir mit Ihnen die ersten Schritte durch und ermitteln den besten Ansatz für Ihr Projekt.
 
-* nach einem Corporate Design Freelancer anfragen *
+[nach einem Corporate Design Freelancer anfragen](#contact)
 
 
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
 # Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

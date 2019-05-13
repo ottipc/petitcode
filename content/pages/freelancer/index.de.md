@@ -2,7 +2,7 @@
 slug: "join-the-collective"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode: freelancers. gather. together."
-description: "listing of digital services provided by the senior collective of petitcode."
+description: "Bist du Freelancer und möchtest Teil von petitcode werden?"
 theme: "sections"
 ---
 
@@ -18,35 +18,32 @@ Freelancer zu sein und Remote zu arbeiten, ist ein Traum für viele, jedoch ist 
 Bist du ein Freelancer, du arbeitest remote und hast Referenzen zu deiner Erfahrung? Wenn Dir das Konzept von Petitcode gefällt, kannst Du dich mit uns in Verbindung setzen. Stell einfach sicher, dass Du eine Empfehlung von einer dritten Person hast. Dies kann von einem anderen Freelancer, ehemaligen Kollegen, Chef oder Kunden sein.
 
 </ColumnContent>
-<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="a mobile application can be the easiest way to reach high numbers of customers">
+<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="Die Identifizierung von App-Entwicklern, die zuverlässig, kompetent und verfügbar sind, wird schwieriger. petitcode stellt sicher, dass alle Freelancers in unserem Netzwerk nachgewiesene Seniorität in ihren jeweiligen Kompetenzen mitbringen, damit wir Ihnen nur schnelle Verfügbarkeit und erstklassige Qualität anbieten.">
 </ColumnImage>
 </Columns>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<FreelancerForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
 
-# Get in touch with us!
+# Dankeschön.
 
-<FreelancerForm />
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-<FreelancerForm />
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</FreelancerForm>
 </SectionContent>
 </Section>
 </Sections>

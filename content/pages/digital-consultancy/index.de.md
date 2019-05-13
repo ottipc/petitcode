@@ -1,8 +1,8 @@
 ---
 slug: "digital-consultancy-berlin"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - your senior level partner for digital consulting berlin"
-description: "Our collective of senior professionals are more than capable of advising you a sound digital strategy and the best way to achieve long-lasting digital success."
+title: "Digitalisierungsberatung leicht gemacht mit petitcode"
+description: "Unser Team ist mehr als in der Lage, Ihnen eine fundierte digitale Strategie und den besten Weg für einen dauerhaften digitalen Erfolg zu empfehlen."
 theme: "sections"
 ---
 
@@ -20,7 +20,7 @@ Als Unternehmer, Freiberufler und als Gesellschaft haben wir höchste Priorität
 petitcode ist in allen Fällen eine wertvolle Hilfe für Sie und Ihr Unternehmen. Unser Kollektiv aus erfahrenen Fachleuten ist mehr als fähig, Sie über eine solide Strategie und den besten Weg zu einem dauerhaften Online-Erfolg zu beraten.
 
 </ColumnContent>
-<ColumnImage file="lost-co-178990-unsplash.jpg" alt="Finding an experienced and reliable digital partner can be a real hustle">
+<ColumnImage file="lost-co-178990-unsplash.jpg" alt=" Einen erfahrenen und zuverlässigen digitalen Partner zu finden, kann eine echte Hektik sein">
 </ColumnImage>
 </Columns>
 </Section>
@@ -61,7 +61,7 @@ Sie sind erschwinglich - es ist wie im Gesundheitswesen, Prävention ist besser 
 Hält Sie fit und wettbewerbsfähig - zu wissen, wie Ihre direkten Mitbewerber aufgestellt sind, ist immer von Vorteil. Technologie-Proofing - Technologien kommen und gehen, daher ist ein Feedback von höchster Qualität unerlässlich.
 
 </ColumnContent>
-<ColumnImage file="ryoji-iwata-669950-unsplash.jpg" alt="Digital consultants will help you prioritize your marketing decisions">
+<ColumnImage file="ryoji-iwata-669950-unsplash.jpg" alt="Digitale Berater helfen Ihnen dabei, Ihre Marketingentscheidungen zu priorisieren">
 </ColumnImage>
 </Columns>
 </Section>
@@ -80,7 +80,7 @@ Der Mehrwert wird kurz-, mittel- und langfristig auf unterschiedliche Weise gese
 - Mit den erforderlichen modernisierten Funktionen wandeln Sie Ihre IT-Funktionen von der richtigen Systemarchitektur und dem Betriebsmodell in eine effektive Kostenstruktur um, um die digitale Zukunft des Unternehmens zu unterstützen.
 
 </ColumnContent>
-<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="having an innovative digital strategy can be the puzzle’s missing piece to success">
+<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="Eine innovative digitale Strategie kann das fehlende Teil des Puzzles zum Erfolg sein">
 </ColumnImage>
 </Columns>
 
@@ -100,24 +100,28 @@ Wenn Sie noch Fragen zur **digitalen Beratung** haben, ob technisch oder Marketi
 </Centered>
 </SectionContent>
 </Section>
-
-
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
-<Grid>
-<div>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-</div>
-<ClientForm />
-</Grid>
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>

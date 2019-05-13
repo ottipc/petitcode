@@ -1,8 +1,8 @@
 ---
 slug: "web-agency-berlin"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - the avantgarde web agency Berlin and worldwide"
-description: "petitcode is a creative collective of senior technology specialists. Whether you need a webdesign freelancer or a complete software solution, we only offer the best."
+title: "petitcode - Ihr Avantgarde-Kollektiv für Webentwicklung und Webdesign Berlin und weltweit"
+description: "petitcode ist ein kreatives Kollektiv hochrangiger Technologiespezialisten. Egal, ob Sie einen Webdesign-Freiberufler oder eine komplette Softwarelösung benötigen, wir bieten nur das Beste."
 theme: "sections"
 ---
 
@@ -17,7 +17,7 @@ theme: "sections"
 
 petitcode ist ein kreatives Kollektiv von hochrangigen Technologiespezialisten aus Berlin, die **Beratung**, Einstellung und Webentwicklung aus erster Hand anbieten. Unsere Unterstützung umfasst stets Beratung auf Senior-Ebene für Ihre Kampagne, Ihr Produkt und Ihr Projekt **sowie die technische Entwicklung von Apps, Websites, Shops oder Medieninhalten**. Wir pflegen eine dezentrale und transparente Herangehensweise an das Standard-Agenturumfeld und haben ein hochrangiges, Netzwerk aus ausschließlich Senior Freelancer aufgebaut, in dem Freiberufler von ihrem bevorzugten Büro remote aus und produktiv arbeiten können.
 </ColumnContent>
-<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
+<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="Unsere dezentrale Webagentur-Struktur hilft Ihnen dabei, sich mit Freelancern höchster Qualität zu verbinden">
 </ColumnImage>
 </Columns>
 </Section>
@@ -37,7 +37,7 @@ Frontend Entwickler neigen dazu, mehr Anerkennung zu erhalten, da nur ihre Arbei
 *nach einen freelance Webentwickler nachfragen*
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode bietet die beste senior webentwicklung berlins an">
 </ColumnImage>
 </Columns>
 </Section>
@@ -92,7 +92,7 @@ Wenn Sie einen Senior Designer suchen, setzen Sie sich einfach mit uns in Verbin
 </CarouselSlides>
 </Carousel>
 </ColumnContent>
-<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="senior webentwicklung berlin leicht gemacht mit petitcode. Freelancer suchen kann jeder. petitcode bietet Ihnen nur die besten, von Berlin aus für die Welt">
 </ColumnImage>
 </Columns>
 </Section>
@@ -124,18 +124,28 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 </Centered>
 </SectionContent>
 </Section>
-<Section inverted>
+<Section inverted scrollId="contact">
 <SectionContent>
+<ClientForm scrollTo="contact">
+<FormIntro>
 
-# Get in touch with us!
+# Kontaktieren Sie uns doch!
 
-Dic in quovis conventu te omnia petitcode, ne doleas. Quae sequuntur igitur?
+Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
 <a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
 
 <a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
 
-<ClientForm />
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</ClientForm>
 </SectionContent>
 </Section>
 </Sections>
