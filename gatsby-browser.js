@@ -42,3 +42,7 @@ export const onRouteUpdate = ({ location: { hash } }) => {
     window.setTimeout(smoothScrollTo(hash), 10)
   }
 }
+
+// Ensure user gets the latest content as soon updates are ready
+// Might prevent: https://github.com/gatsbyjs/gatsby/issues/13410
+export const onServiceWorkerUpdateReady = () => window.location.reload(true)
