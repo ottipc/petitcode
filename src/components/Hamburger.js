@@ -47,6 +47,7 @@ const HamburgerBox = styled.span`
   height: calc(${hamburgerLayerHeight} * 3 + ${hamburgerLayerSpacing} * 2);
   display: inline-block;
   position: relative;
+  vertical-align: middle;
   /* 3dx */
   perspective: calc(${hamburgerLayerWidth} * 2);
 `
