@@ -9,7 +9,7 @@ const Link = styled.a`
   font-weight: bold;
   width: 30px;
   & + & {
-    margin-left: ${({ theme }) => theme.spacings.s1};
+    margin-left: ${({ theme }) => theme.spacings.s2};
   }
 `
 

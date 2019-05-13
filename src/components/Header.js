@@ -29,7 +29,7 @@ const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 40vw;
+  max-width: 120px;
   padding: ${({ theme }) => theme.spacing.viewport.default};
 
   & svg {
@@ -43,11 +43,14 @@ const LogoWrapper = styled.div`
   }
 
   /* keep order of this section below to ensure correct overwrites */
-  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
-    max-width: 25vw;
-  }
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    padding: ${({ theme }) => theme.spacing.viewport.medium};
+    padding-top: ${({ theme }) =>
+      parseInt(theme.spacing.viewport.medium) / 2}px;
+    padding-left: ${({ theme }) =>
+      parseInt(theme.spacing.viewport.medium) / 2}px;
+    max-width: 180px;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
   }
 
   ${({ isScrolling }) =>
@@ -114,7 +117,7 @@ const ContactWrapper = styled.div`
     display: block;
     opacity: 1;
     transition: 0.15s opacity linear;
-    margin-right: ${({ theme }) => theme.spacings.s1};
+    margin-right: ${({ theme }) => theme.spacings.s2};
 
     &:last-child {
       margin-right: none;
@@ -143,11 +146,11 @@ export default function Header() {
           </Link>
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
-          <a className="nohover" href="mailto:hi@petitcode.de">
-            <EmailIcon />
-          </a>
           <a className="nohover" href="tel:+493064080338">
             <TelephoneIcon />
+          </a>
+          <a className="nohover" href="mailto:hi@petitcode.de">
+            <EmailIcon />
           </a>
         </ContactWrapper>
       </Grid>
