@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components'
 
 const H1OutterWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s2};
-  background: url('/knockout-image.jpg');
+  /* background: url('/knockout-image.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
     margin-bottom: ${({ theme }) => theme.spacings.s6};
@@ -15,7 +15,7 @@ const H1OutterWrapper = styled.div`
     margin-bottom: ${({ theme }) => theme.spacings.s4};
   }
 
-  animation: knockout 8s infinite alternate;
+  /* animation: knockout 8s infinite alternate;
 
   @keyframes knockout {
     from {
@@ -24,7 +24,7 @@ const H1OutterWrapper = styled.div`
     to {
       background-position: bottom left;
     }
-  }
+  } */
 `
 
 const H1Wrapper = styled.div`
@@ -39,8 +39,8 @@ const KnockoutH1 = styled.h1`
   color: black;
   font-weight: bold !important;
   z-index: 100;
-  background-color: white;
-  mix-blend-mode: screen;
+  /* background-color: white; */
+  /* mix-blend-mode: screen; */
 
   line-height: 1.6em;
 
