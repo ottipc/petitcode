@@ -40,6 +40,8 @@ Whether you are a startup or an established business, we recommend to start with
 
 Feel free to contact us directly if you have any questions or would like to get started directly.
 
+[hire an ecommerce developer](#contact)
+
 </ColumnContent>
 <ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="whether in business or ecommerce, we all search to do and achieve more">
 </ColumnImage>
@@ -66,6 +68,8 @@ Petitcode's collective of senior freelancers structures its processes in three s
 
 3.  **LEARN** - Thanks to all the measurements made and the empirical learnings, the client, together with petitcode, will be able to make sound, evidence-based decision making.
 
+[hire an ecommerce developer](#contact)
+
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="a sound marketing analysis and ecommerce strategy will translate into solid figures">
 </ColumnImage>
@@ -82,6 +86,8 @@ It's a known fact, that the number of physical stores is decreasing, whilst Ecom
 petitcode's collective originated from the flaws of this model and the ambition of solving these issues. Traditional agencies have several layers of experience: from interns, to juniors, seniors and executives. Most of the work is done by the lower levels and the higher levels end up having little involvement. From own experience, we confirm that agency-work is related to long hours, as if it were a contest of who spends the most time in the office. Additionally, the bigger the value-chain, the higher the costs and the higher the invoice you will be paying. petitcode believes in increasing productivity over extensive working hours and that any client deserves senior-level services.
 
 With the senior advice of our collective of freelance professionals, you will be guided all the way to make technology and business savvy decisions that will keep bringing you ROI over time and boost your performance.
+
+[hire an ecommerce developer](#contact)
 
 </ColumnContent>
 <ColumnImage file="william-iven-19843-unsplash.jpg" alt="ecommerce is a continuous process of optimization">
