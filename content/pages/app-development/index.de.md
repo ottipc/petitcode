@@ -1,5 +1,5 @@
 ---
-slug: "app-development-berlin"
+slug: "app-entwicklung-berlin"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - Ihr Senior Talent für App Entwicklung berlin"
 description: "Unabhängig davon, ob Sie ein vollständiges Produkt oder Support für Ihre Teams benötigen, kann petitcode Ihnen über unser Netzwerk exklusive erfahrene Freiberufler zur Verfügung stellen."
@@ -18,7 +18,7 @@ Egal, ob Android oder iOS - die Entwicklung einer mobilen App kann für Ihr Unte
 Das Auffinden von App-Entwicklern, die zuverlässig, kompetent und verfügbar sind, wird schwieriger. petitcode stellt sicher, dass alle Freelancers in unserem Netzwerk in ihren Kompetenzen nachgewiesene Seniorität besitzen, damit wir Ihnen schnelle Verfügbarkeit und erstklassige Qualität anbieten.
 
 </ColumnContent>
-<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt=" Die Entwicklung einer mobilen App ermöglicht Ihnen schneller mehr potenziellen Kunden zu erreichen.">
+<ColumnImage file="luis-villasmil-1291753-unsplash.jpg" alt="Die Identifizierung von App-Entwicklern, die zuverlässig, kompetent und verfügbar sind, wird schwieriger. petitcode stellt sicher, dass alle Freelancers in unserem Netzwerk nachgewiesene Seniorität in ihren jeweiligen Kompetenzen mitbringen, damit wir Ihnen nur schnelle Verfügbarkeit und erstklassige Qualität anbieten.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -30,10 +30,10 @@ Das Auffinden von App-Entwicklern, die zuverlässig, kompetent und verfügbar si
 
 petitcode ist als Kollektiv von ausschließlich hochrangigen Freelancers viel mehr als eine App Agentur. Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehmen sind und nicht sicher sind, lieber einen freiberuflichen **App-Entwickler** oder ein engagiertes **Team von App-Entwicklern** einzustellen, können Sie mit petitcode nicht nur die besten freiberuflichen Talente finden, sondern auch ein qualifiziertes Team von Fachleuten zusammenstellen, das auf Ihre digitale Strategie hin optimiert ist.
 
-*ein Entwicklungsteam für mobile Anwendungen zusammenstellen*
+[Ein Entwicklungsteam für mobile Anwendungen zusammenstellen](#contact)
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="Mit petitcode können Sie nicht nur die besten Freelancer für App-Entwicklung finden, sondern auch ein qualifiziertes Team von Fachleuten zusammenstellen, das auf Ihre digitale Strategie hin optimiert ist.">
+<ColumnImage file="austin-distel-1462323-unsplash.jpg" alt="Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung.  Wir werden Sie mit den relevantesten Freelancers in Kontakt bringen.n">
 </ColumnImage>
 </Columns>
 
@@ -88,7 +88,7 @@ Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="Wenn Sie nach einem anspruchsvollen App-Designer suchen, setzen Sie sich einfach mit uns in Verbindung.  Wir werden Sie mit den relevantesten Freelancers in Kontakt bringen">
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="Mit petitcode können Sie nicht nur die besten Freelancer für App-Entwicklung finden, sondern auch ein qualifiziertes Team von Fachleuten zusammenstellen, das auf Ihre digitale Strategie hin optimiert ist.">
 </ColumnImage>
 </Columns>
 </Section>
