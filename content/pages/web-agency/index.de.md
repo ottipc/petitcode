@@ -1,5 +1,5 @@
 ---
-slug: "web-agency-berlin"
+slug: "webentwicklung-berlin"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - Ihr Avantgarde-Kollektiv für Webentwicklung und Webdesign Berlin und weltweit"
 description: "petitcode ist ein kreatives Kollektiv hochrangiger Technologiespezialisten. Egal, ob Sie einen Webdesign-Freiberufler oder eine komplette Softwarelösung benötigen, wir bieten nur das Beste."
@@ -22,7 +22,7 @@ petitcode ist ein kreatives Kollektiv von hochrangigen Technologiespezialisten a
 </Columns>
 </Section>
 <Section>
-  <Video youtubeId="Jwkoo9k1tsg" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,sed diam nonumy eirmod tempor invidunt."/>
+  <Video youtubeId="Jwkoo9k1tsg" description="Hier bitte Video anschauen"/>
 </Section>
 <Section>
 <Columns reverse contentWidth="6">
