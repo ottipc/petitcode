@@ -4,8 +4,6 @@ import { Link } from 'gatsby'
 
 import LogoText from '../assets/petitcode-logo-text.svg'
 import Logo from '../assets/petitcode-logo.svg'
-import TelephoneIcon from '../assets/icons/telephone.svg'
-import EmailIcon from '../assets/icons/email.svg'
 
 import { LocationContext, SectionContext } from '../utils/Contexts'
 
@@ -95,7 +93,6 @@ const LogoWrapper = styled.div`
 `
 const ContactWrapper = styled.div`
   pointer-events: auto;
-  padding: ${({ theme }) => theme.spacings.s1};
   font-size: calc(14px + 3 * ((100vw - 320px) / 600));
   display: none;
 
@@ -106,6 +103,9 @@ const ContactWrapper = styled.div`
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
         display: flex;
+        flex-direction: column;
+        padding: ${({ theme }) => theme.spacings.s1};
+        align-items: flex-end;
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
       }
@@ -117,7 +117,6 @@ const ContactWrapper = styled.div`
     display: block;
     opacity: 1;
     transition: 0.15s opacity linear;
-    margin-right: ${({ theme }) => theme.spacings.s2};
 
     &:last-child {
       margin-right: none;
@@ -147,10 +146,10 @@ export default function Header() {
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
           <a className="nohover" href="tel:+493064080338">
-            <TelephoneIcon />
+            +49 (0) 30 640 803 38
           </a>
           <a className="nohover" href="mailto:hi@petitcode.de">
-            <EmailIcon />
+            hi@petitcode.de
           </a>
         </ContactWrapper>
       </Grid>
