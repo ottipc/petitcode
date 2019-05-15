@@ -41,7 +41,7 @@ Front end developers tend to get more credit because only their work is seen by 
 </ColumnImage>
 </Columns>
 
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
 # Where can we help?
