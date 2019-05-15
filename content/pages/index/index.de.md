@@ -24,14 +24,14 @@ theme: "sections"
 <Section>
 <SectionContent>
 <Grid>
-<Person name="Sebastian Melz" image="sebastian-melz.jpg">
+<Person name="Sebastian Melz" image="seb-small.jpg">
 
-CEO / 🤡
+Managing Director 
 
 </Person>
-<Person name="Edgar Bongkishiy" image="edgar-bongkishiy.jpg">
+<Person name="Axel Stett" image="axel-stett-small.jpg">
 
-CTO
+Managing Director
 
 </Person>
 <Person name="Ottavio Braun" image="ottavio-braun.jpg">
@@ -39,21 +39,34 @@ CTO
 CTO
 
 </Person>
-<Person name="Samer Murad" image="samer-murad.jpg">
+<Person name="Guy de Macedo Behrndt" image="guy-small.jpg">
 
-Dings
+Marketing & Sales
+
+</Person>
+<Person name="Lukas Polakowski" image="lukas-small.jpg">
+
+Accounting
 
 </Person>
 <Person name="Rodolfo Lopez" image="rodolfo-lopez.jpg">
 
-Was andres
+Heavyweight Dev
 
 </Person>
 <Person name="Mario Mielke" image="mario-mielke.jpg">
 
-Nix
+Creative Director
 
-aber viel andres
+</Person>
+<Person name="Bernadette Zawal-Pfeil" image="bernadette-small.jpg">
+
+Investor
+
+</Person>
+<Person name="Hubert Pfeil" image="hubert-small.jpg">
+
+Investor
 
 </Person>
 
