@@ -10,16 +10,15 @@ description: ""
 ### Angaben gemäß § 5 TMG:
 
 ```
-petitcode UG
-(haftungsbeschränkt)
-Friedrichstrasse 11
-10969 Berlin
+petitcode GmbH
+Rheinsberger Str. 76/77
+10115 Berlin
 ```
 
 ### Postadresse:
 
 ```
-petitcode UG (haftungsbeschränkt)
+petitcode GmbH
 c/o Factory
 Rheinsberger Str. 76/77,
 10115 Berlin
@@ -29,13 +28,13 @@ Germany
 ### Vertreten durch:
 
 ```
-petitcode UG (haftungsbeschränkt),
-vertreten durch den GF Sebastian Melz
+petitcode GmbH
+vertreten durch die GF Sebastian Melz und Axel Stett
 ```
 
 ### Kontakt:
 
-* Telefon: +49 030 549 065 690
+* Telefon: +49 30 549 065 690
 * E-Mail: info@petitcode.com
 
 ### Registereintrag:
