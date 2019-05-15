@@ -1,5 +1,5 @@
 ---
-slug: "services-for-clients"
+slug: "dienstleistungen"
 date: "2019-01-30T03:49:16.408Z"
 title: "Was können Kunden von petitcode erwarten"
 description: "Angebotene Dienstleistungen von petitcode."
