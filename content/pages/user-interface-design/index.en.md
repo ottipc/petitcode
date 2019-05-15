@@ -16,7 +16,7 @@ theme: "sections"
 Since the release of smartphones, the number of apps increased exponentially which also influenced the way business and consumers interact with websites and digital services. Petitcode's collective of senior designers firmly believe in structured methods to develop tailored-made interfaces based on the experience of users for any digital platform. In order to understand the full process, let's take it step by step.
 
 </ColumnContent>
-<ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="">
+<ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="Each screen is unique and contributes to a smooth user interface that promotes the best user experience possible. Get in touch with petitcode to learn more">
 </ColumnImage>
 </Columns>
 </Section>
@@ -60,7 +60,7 @@ Generally, the goal is to produce an interface which makes it easy, efficient, a
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="jose-alejandro-cuffia-799485-unsplash.jpg" alt="">
+<ColumnImage file="kelly-sikkema-736887-unsplash.jpg" alt="Is your interface feeling outdated? Don’t worry and get in touch with petitcode.">
 </ColumnImage>
 </Columns>
 
@@ -77,7 +77,7 @@ As [previously mentioned](http://petitcode.com/), a front end developer is respo
 </SectionContent>
 </Section>
 <Section>
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
 ## Quality principles
@@ -97,7 +97,7 @@ A good design is not measured on how fancy it looks. A quality interface require
 By following the above mentioned quality principles, petitcode will guarantee you adequate focus on what really matters. There is nothing worse than a slick design that does not answer to the user's needs and priorities.
 
 </ColumnContent>
-<ColumnImage file="hal-gatewood-613602-unsplash.jpg" alt="">
+<ColumnImage file="hal-gatewood-613602-unsplash.jpg" alt="The art of designing a kick as user interface is balancing all components perfectly.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -114,7 +114,7 @@ petitcode's collective originated from the flaws of this model and the ambition 
 With the senior advice of our collective of freelance professionals, you will be guided all the way to make technology and business savvy decisions that will keep bringing you ROI over time and boost your performance.
 
 </ColumnContent>
-<ColumnImage file="william-iven-19843-unsplash.jpg" alt="">
+<ColumnImage file="jose-alejandro-cuffia-792587-unsplash.jpg" alt="Designing the right user interface is what we do best at petitcode. Get in touch with us to learn more">
 </ColumnImage>
 </Columns>
 
@@ -129,7 +129,7 @@ petitcode is a collective of senior freelance designers. If you are unsure of wh
 
 If you still have questions regarding user interfaces, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your project would be.
 
-[hire a designer](#contact)
+[hire a UI/UX designer](#contact)
 
 </Centered>
 </SectionContent>
