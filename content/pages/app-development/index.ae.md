@@ -1,7 +1,7 @@
 ---
-slug: "app-development-berlin"
+slug: "app-developers-dubai"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - your senior level talent for mobile app development berlin"
+title: "petitcode - your senior level talent for mobile app developers dubai"
 description: "whether you need a full product or support for your teams, through our network, petitcode can source you exclusive senior freelancers according to any requirement. "
 theme: "sections"
 ---
@@ -11,14 +11,14 @@ theme: "sections"
 <Columns>
 <ColumnContent>
 
-# Sourcing senior mobile app development Berlin made easy by petitcode
+# Sourcing senior mobile app developers Dubai made easy by petitcode
 
-Whether Android or iOS, **developing a mobile app** can already be a high risk project for your business, making the sourcing of the right developers absolutely crucial. Did you know that there are 57.000+ open full-time IT positions per year that go unfilled in Germany alone? This trend can also be found in other european countries.
+Whether Android or iOS, developing a mobile app can be a high risk project for your business, making the sourcing of the right developers absolutely crucial. Did you know that there are considerably more open full-time IT positions per year that go unfilled worldwide than there are IT engineers? 
 
-Sourcing someone as reliable as skilled and available is becoming tougher. petitcode ensures that all its freelancers fulfill seniority in their skills to provide you with availability and top-notch quality only.
+Sourcing someone who is reliable, skilled and available is becoming tougher. petitcode ensures that all its freelancers fulfill seniority in their skills to provide you with availability and top-notch quality only.
 
 </ColumnContent>
-<ColumnImage file="luis-villasmil-1291753-unsplash.jpg" alt="Obtaining app developers that are reliable, knowledgeable, and available becomes more difficult. petitcode ensures that all of its freelancers fulfill seniority in their abilities to provide only availability and first-class quality.">
+<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="a mobile application can be the easiest way to reach high numbers of customers">
 </ColumnImage>
 </Columns>
 </Section>
@@ -26,14 +26,14 @@ Sourcing someone as reliable as skilled and available is becoming tougher. petit
 <Columns reverse contentWidth="6">
 <ColumnContent>
 
-## Need a mobile app developer? Has to be Berlin based?
+## Need a mobile app developer? Do they have to be Dubai based?
 
 petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a **freelance app developer or a dedicated team of mobile developers**, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your digital strategy is fine-tuned.
 
 [Assemble a mobile application development team](#contact)
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="If you're looking for a sophisticated app designer, just get in touch with us and we'll get in touch with relevant freelancers.">
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
 </ColumnImage>
 </Columns>
 
@@ -88,7 +88,41 @@ If you are looking for a kick-ass app designer, simply get in touch with us and 
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="austin-distel-1462323-unsplash.jpg" alt="If you're looking for a sophisticated app designer, just get in touch with us and we'll get in touch with relevant freelancers.">
+<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+</ColumnImage>
+</Columns>
+</Section>
+<Section>
+<SectionContent>
+<ColumnContent>
+## Quality principles
+
+It is petitcode’s strong belief that, in order to design and develop the best digital solutions for your business, it is important to consider several aspects and break down this process in steps:
+
+1) Analyse your business - do you provide a product or a service? According to your Corporate Identity, how do you present yourself to your customers? 
+
+2) How do your customers interact with your product or service - this will determine the user experience with your product/service. Do your customers use your solution just once or is their usage recurring? Focus on your product’s life cycle, all different stages and what does that mean to your customer in all stages. The answer to these questions will highlight the real issues and solutions.
+
+3) Technology stack - According to your resources and project, it might not even be needed to split the development according to devices. Thanks to native technologies, petitcode is able to develop your desired app with just one single code. 
+You might want to consider developing user studies to fully grasp and define suiting user flows, user experience, priorities and good-to-haves.
+
+</ColumnContent>
+<ColumnImage file="rob-hampson-494775-unsplash.jpg" alt="petitcode can suggest a freelancer for you for a short time, so that your project progresses. At the same time, petitcode is committed to finding candidates to fill any full-time job.">
+</ColumnImage>
+<Section>
+<Columns>
+<ColumnContent>
+
+## Workshop
+
+If you are thinking about developing an app or updating an existing one, we recommend a workshop first of all. After the first research and an intensive exchange with you, we can rationally work out which is the most suitable approach for the project.
+
+In a petitcode workshop, our senior freelancers will assess all development stages, define priorities and conceive a project timeline. At the end, you will receive a complete report of all items to consider, an accurate estimate of each task, subtask and the estimated total budget.
+
+Want to develop an application solution for your business? Simply [get in touch with us](#contact) and let us get started.
+
+</ColumnContent>
+<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="a mobile application can be the easiest way to reach high numbers of customers">
 </ColumnImage>
 </Columns>
 </Section>
