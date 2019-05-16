@@ -13,7 +13,7 @@ theme: "sections"
 
 # Sourcing senior mobile app developers Dubai made easy by petitcode
 
-Whether Android or iOS, developing a mobile app can be a high risk project for your business, making the sourcing of the right developers absolutely crucial. Did you know that there are considerably more open full-time IT positions per year that go unfilled worldwide than there are IT engineers? 
+Whether Android or iOS, developing a mobile app can be a high risk project for your business, making the sourcing of the right developers absolutely crucial. Did you know that there are considerably more open full-time IT positions per year that go unfilled worldwide than there are IT engineers?
 
 Sourcing someone who is reliable, skilled and available is becoming tougher. petitcode ensures that all its freelancers fulfill seniority in their skills to provide you with availability and top-notch quality only.
 
@@ -93,22 +93,24 @@ If you are looking for a kick-ass app designer, simply get in touch with us and 
 </Columns>
 </Section>
 <Section>
-<SectionContent>
+<Columns>
 <ColumnContent>
 ## Quality principles
 
 It is petitcode’s strong belief that, in order to design and develop the best digital solutions for your business, it is important to consider several aspects and break down this process in steps:
 
-1) Analyse your business - do you provide a product or a service? According to your Corporate Identity, how do you present yourself to your customers? 
+1) Analyse your business - do you provide a product or a service? According to your Corporate Identity, how do you present yourself to your customers?
 
 2) How do your customers interact with your product or service - this will determine the user experience with your product/service. Do your customers use your solution just once or is their usage recurring? Focus on your product’s life cycle, all different stages and what does that mean to your customer in all stages. The answer to these questions will highlight the real issues and solutions.
 
-3) Technology stack - According to your resources and project, it might not even be needed to split the development according to devices. Thanks to native technologies, petitcode is able to develop your desired app with just one single code. 
+3) Technology stack - According to your resources and project, it might not even be needed to split the development according to devices. Thanks to native technologies, petitcode is able to develop your desired app with just one single code.
 You might want to consider developing user studies to fully grasp and define suiting user flows, user experience, priorities and good-to-haves.
 
 </ColumnContent>
 <ColumnImage file="rob-hampson-494775-unsplash.jpg" alt="petitcode can suggest a freelancer for you for a short time, so that your project progresses. At the same time, petitcode is committed to finding candidates to fill any full-time job.">
 </ColumnImage>
+</Columns>
+</Section>
 <Section>
 <Columns>
 <ColumnContent>
