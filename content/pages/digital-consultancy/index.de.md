@@ -1,5 +1,5 @@
 ---
-slug: "digital-consultancy-berlin"
+slug: "digitalisierungsberatung"
 date: "2019-01-30T03:49:16.408Z"
 title: "Digitalisierungsberatung leicht gemacht mit petitcode"
 description: "Unser Team ist mehr als in der Lage, Ihnen eine fundierte digitale Strategie und den besten Weg für einen dauerhaften digitalen Erfolg zu empfehlen."
@@ -20,7 +20,7 @@ Als Unternehmer, Freiberufler und als Gesellschaft haben wir höchste Priorität
 petitcode ist in allen Fällen eine wertvolle Hilfe für Sie und Ihr Unternehmen. Unser Kollektiv aus erfahrenen Fachleuten ist mehr als fähig, Sie über eine solide Strategie und den besten Weg zu einem dauerhaften Online-Erfolg zu beraten.
 
 </ColumnContent>
-<ColumnImage file="lost-co-178990-unsplash.jpg" alt=" Einen erfahrenen und zuverlässigen digitalen Partner zu finden, kann eine echte Hektik sein">
+<ColumnImage file="marc-olivier-jodoin-291607-unsplash.jpg" alt="Unternehmen benötigen Unterstützung zur Digitalisierung. Zusammen mit petitcode sind Sie optimal aufgestellt, um die digitale Transformation zu Ihrem Vorteil zu machen. ">
 </ColumnImage>
 </Columns>
 </Section>
@@ -38,17 +38,15 @@ Durch die Digitalisierung der Markenkommunikation wurden unzählige interaktive 
 
 Dies erfordert einen datengetriebenen und ausgereiften Ansatz, den nur wenige beherrschen. Wenn Sie einen Berater mit technischen und kundenorientierten Kenntnissen an Ihrer Seite haben, können Sie die richtige Erfahrung sowohl online als auch offline erstellen, um Ihr Geschäft anzukurbeln.
 
-Deswegen ist Digitalisierungsberatung zu empfehlen.
-
-*nach einen digitalisierungsberater nachfragen*
+[Deswegen ist Digitalisierungsberatung zu empfehlen.](#Contact)
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="andy-kelly-402111-unsplash.jpg" alt="Digitalisierungsberatung hilft Ihnen die richtigen Entscheidungen zu treffen. Zusammen mit petitcode sind Sie auf der richtigen Spur">
 </ColumnImage>
 </Columns>
 </Section>
 <Section>
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
 ## Gründe für die Einstellung eines Digitalisierungsberaters für Ihre Online-Strategie
@@ -59,6 +57,8 @@ Sie leiten die Strategie, Sie setzen sie um - mit ihrem Wissen entwickeln Sie ei
 
 Sie sind erschwinglich - es ist wie im Gesundheitswesen, Prävention ist besser als Heilungen. Außerdem muss die Strategie angewendet werden, um zuerst Ergebnisse zu erhalten.
 Hält Sie fit und wettbewerbsfähig - zu wissen, wie Ihre direkten Mitbewerber aufgestellt sind, ist immer von Vorteil. Technologie-Proofing - Technologien kommen und gehen, daher ist ein Feedback von höchster Qualität unerlässlich.
+
+[Nach einen Digitalisierungsberater nachfragen](#Contact)
 
 </ColumnContent>
 <ColumnImage file="ryoji-iwata-669950-unsplash.jpg" alt="Digitale Berater helfen Ihnen dabei, Ihre Marketingentscheidungen zu priorisieren">
@@ -79,6 +79,8 @@ Der Mehrwert wird kurz-, mittel- und langfristig auf unterschiedliche Weise gese
 
 - Mit den erforderlichen modernisierten Funktionen wandeln Sie Ihre IT-Funktionen von der richtigen Systemarchitektur und dem Betriebsmodell in eine effektive Kostenstruktur um, um die digitale Zukunft des Unternehmens zu unterstützen.
 
+[Nach einen Digitalisierungsberater nachfragen](#Contact)
+
 </ColumnContent>
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="Eine innovative digitale Strategie kann das fehlende Teil des Puzzles zum Erfolg sein">
 </ColumnImage>
@@ -95,7 +97,7 @@ petitcode ist ein Kollektiv von hochrangigen Freelancern. Unabhängig davon ob S
 
 Wenn Sie noch Fragen zur **digitalen Beratung** haben, ob technisch oder Marketing, wie Sie die Benutzererfahrung bewerten und oder nicht wissen, was genau Sie benötigen, können Sie sich direkt an uns wenden. Wir freuen uns über einen ersten Kontakt und ermitteln, welch der beste Ansatz für Ihr Projekt wäre.
 
-*nach einen digitalisierungsberater nachfragen*
+[Nach einen Digitalisierungsberater nachfragen](#Contact)
 
 </Centered>
 </SectionContent>

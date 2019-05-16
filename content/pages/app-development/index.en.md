@@ -18,7 +18,7 @@ Whether Android or iOS, **developing a mobile app** can already be a high risk p
 Sourcing someone as reliable as skilled and available is becoming tougher. petitcode ensures that all its freelancers fulfill seniority in their skills to provide you with availability and top-notch quality only.
 
 </ColumnContent>
-<ColumnImage file="ruben-bagues-716364-unsplash.jpg" alt="a mobile application can be the easiest way to reach high numbers of customers">
+<ColumnImage file="luis-villasmil-1291753-unsplash.jpg" alt="Obtaining app developers that are reliable, knowledgeable, and available becomes more difficult. petitcode ensures that all of its freelancers fulfill seniority in their abilities to provide only availability and first-class quality.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -30,10 +30,10 @@ Sourcing someone as reliable as skilled and available is becoming tougher. petit
 
 petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a **freelance app developer or a dedicated team of mobile developers**, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your digital strategy is fine-tuned.
 
-*assemble a mobile application development team*
+[assemble a mobile application development team](#contact)
 
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="If you're looking for a sophisticated app designer, just get in touch with us and we'll get in touch with relevant freelancers.">
 </ColumnImage>
 </Columns>
 
@@ -88,7 +88,7 @@ If you are looking for a kick-ass app designer, simply get in touch with us and 
 </Carousel>
 
 </ColumnContent>
-<ColumnImage file="joshua-aragon-1280300-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="austin-distel-1462323-unsplash.jpg" alt="If you're looking for a sophisticated app designer, just get in touch with us and we'll get in touch with relevant freelancers.">
 </ColumnImage>
 </Columns>
 </Section>

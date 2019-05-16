@@ -1,5 +1,5 @@
 ---
-slug: "digital-consultancy-berlin"
+slug: "digital-consulting-berlin"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - your senior level partner for digital consulting berlin"
 description: "Our collective of senior professionals are more than capable of advising you a sound digital strategy and the best way to achieve long-lasting digital success."
@@ -38,13 +38,15 @@ The digitalisation of brand communication created countless interactive opportun
 
 This requires a data driven and sophisticated approach that few have mastered. Therefore, having a consultant by your side, with both technical and customer-oriented expertise, will help you designing the right experience both online and offline to boost your business.
 
+[Hire a freelance consultant](#contact)
+
 </ColumnContent>
-<ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode’s web design agency only executes state-of-the-art solutions">
+<ColumnImage file="andy-kelly-402111-unsplash.jpg" alt="Digitization consulting helps you make the right decisions. Together with petitcode you are on the right track.">
 </ColumnImage>
 </Columns>
 </Section>
 <Section>
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
 ## Reasons to hire a consulting freelancer for your online strategy
@@ -61,8 +63,10 @@ This requires a data driven and sophisticated approach that few have mastered. T
 
 5.  Technology proofing - technologies come and go, therefore having top quality feedback is essential.
 
+[Hire a freelance consultant](#contact)
+
 </ColumnContent>
-<ColumnImage file="ryoji-iwata-669950-unsplash.jpg" alt="Digital consultants will help you prioritize your marketing decisions">
+<ColumnImage file="marc-olivier-jodoin-291607-unsplash.jpg" alt="Companies need support for digitization. Together with petitcode you are optimally positioned to make the digital transformation to your advantage.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -80,6 +84,8 @@ The added value will be seen in the short, mid and long term in different ways. 
 
 - With the modernized capabilities needed, you will transform your IT function from the right system architecture and operating model to an effective cost structure, to support the company's digital future.
 
+[Hire a freelance consultant](#contact)
+
 </ColumnContent>
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="having an innovative digital strategy can be the puzzle’s missing piece to success">
 </ColumnImage>
@@ -96,7 +102,7 @@ Petitcode is a collective of senior freelancers only. Regardless of, whether you
 
 If you still have questions regarding digital consulting, whether technical or marketing, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to a first contact and determine what the best approach for your project would be.
 
-[hire a freelance consultant](#contact)
+[Hire a freelance consultant](#contact)
 
 </Centered>
 </SectionContent>

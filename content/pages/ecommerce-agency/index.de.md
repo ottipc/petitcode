@@ -1,5 +1,5 @@
 ---
-slug: "ecommerce-agency-berlin"
+slug: "ecommerce-agentur-berlin"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode - die Senior e Commerce Agentur Berlin"
 description: "petitcode bietet praktische Talentsuche für jedes E-Commerce-Projekt."
@@ -11,7 +11,7 @@ theme: "sections"
 <Columns contentWidth="6">
 <ColumnContent>
 
-# petitcode - the senior level ecommerce agency berlin
+# petitcode - Die Ecommerce Agentur Berlin mit Senior Niveau
 
 Beim elektronischen Handel werden Technologien wie mobiler Handel, elektronischer Geldtransfer, Lieferkettenmanagement, Internet-Marketing, Online-Transaktionsverarbeitung, elektronischer Datenaustausch, Bestandsverwaltungssysteme und automatisierte Datenerfassungssysteme genutzt. Kurz gesagt, E-Commerce ist die spezifische Tätigkeit des Kaufs oder Verkaufs von Produkten oder Dienstleistungen über das Internet. Heißt auch, dass E-Commerce eine Kategorie der Web- und Mobile-Entwicklung ist.
 
@@ -40,6 +40,8 @@ Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehm
 
 Wenn Sie Fragen haben oder direkt anfangen möchten, kontaktieren Sie uns doch.
 
+[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+
 </ColumnContent>
 <ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="Ob im Business oder E-Commerce, wir alle wollen mehr erreichen">
 </ColumnImage>
@@ -66,6 +68,8 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 
 3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
 
+[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
 </ColumnImage>
@@ -81,7 +85,7 @@ Es macht wenig Sinn, dass wir Ihnen konkrete Vorschläge machen wenn es noch gru
 
 Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen Workshop durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
 
-*nach einen E-Commerce Workshop nachfragen*
+[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
 
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
@@ -100,6 +104,8 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 
 Mit dem Senior-Rat unseres Freelance-Kollektivs werden Sie umfassend beraten, um technik- und geschäftssichere Entscheidungen zu treffen, die Ihren ROI im Laufe der Zeit steigern und Ihre Leistung steigern.
 
+[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+
 </ColumnContent>
 <ColumnImage file="william-iven-19843-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess ">
 </ColumnImage>
@@ -116,7 +122,7 @@ petitcode ist ein Kollektiv hochrangiger Freelancer. Unabhängig davon ob Sie ei
 
 Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Marketing-Kanälen verknüpfen können oder unsicher sind, was genau Sie benötigen, können Sie sich direkt an uns wenden. Gerne gehen wir mit Ihnen die ersten Schritte durch und ermitteln den besten Ansatz für Ihr E Commerce Projekt.
 
-*nach einen E-Commerce Entwickler nachfragen*
+[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
 
 </Centered>
 </SectionContent>
