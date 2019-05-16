@@ -15,14 +15,14 @@ theme: "sections"
 <Grid centered>
 <Person name="Guy de Macedo Behrndt" image="image-in-persons-folder.jpg">
 
-Sales Consultant
+Marketing
 Mobile +49 162 527 4869
 [guy@petitcode.com](mailto:guy@petitcode.com)
 
 </Person>
 <Person name="Sebastian Melz" image="sebastian-melz.jpg">
 
-Busienss Development & Partnership Management
+Business Development & Partnership Management
 Mobile +49 163 508 1987
 [seb@petitcode.com](mailto:guy@petitcode.com)
 

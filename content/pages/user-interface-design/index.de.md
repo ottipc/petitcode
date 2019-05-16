@@ -18,7 +18,7 @@ theme: "sections"
 **Corporate Identity ist alles, über das Ihr Unternehmen** von Ihren Kunden, Mitarbeitern und Investoren **direkt vertreten und wahrgenommen wird**. Sie reicht weit über einfache Medien hinaus, denn sie spiegelt sich überall in Form von Logos, Firmenfarben, Websites, Werbung, Slogans, Plakaten, Uniformen, E-Mail-Vorlagen, Adressierungsansprüchen von Kunden, Stellplätzen und vielem mehr wider.
 
 </ColumnContent>
-<ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="petitcode ist mehr als eine Design-Agentur. Unsere Basis ist Berlin, wir agieren aber weltweit agil. Mit unserer Freelance-Struktur und unseren starken Design- Ansätzen sehen wir uns als Vorreiter für die Kreativagentur der Zukunft.">
+<ColumnImage file="krisztian-tabori-785758-unsplash.jpg" alt="petitcode ist mehr als eine Design-Agentur. Unsere Basis ist Berlin, wir agieren aber weltweit agil. Mit unserer Freelance-Struktur und unseren starken Design- Ansätzen sehen wir uns als Vorreiter für die Kreativagentur der Zukunft.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -35,7 +35,7 @@ Betrachten Sie es als Aktion-Reaktion: **die Identität bestimmt das Design**, u
 Wenn Ihre Kunden mehrmals über Ihre gesamte Marke hinweg mit einer konsistenten Botschaft konfrontiert werden, wächst das Vertrauen in Ihre Botschaft und die Existenz Ihrer Marke wird schneller akzeptiert. Das heißt, **die Entwicklung eines einheitlichen Corporate Design ist der Schlüssel für eine starke Markenpräsenz.**
 
 </ColumnContent>
-<ColumnImage file="jose-alejandro-cuffia-799485-unsplash.jpg" alt="Der erster Strich ist der schwierigste. Zusammen mit petitcode wird es Ihnen leicht gemacht, das beste Erscheinungsbild für ein stärkeres Branding zu entwickeln.">
+<ColumnImage file="tanialee-gonzalez-698417-unsplash.jpg" alt="Corporate Design heißt auch wie Sie Ihrem Büro oder Studio gestalten. Als Kommunikationsagentur ist petitcode in der Lage Innenräume passend zu jeder Corporate Identity zu entwickeln.">
 </ColumnImage>
 </Columns>
 
@@ -63,17 +63,10 @@ Es ist immer besser, das **Corporate Design und die Corporate Identity gut zu do
 
 Natürlich kann petitcode Ihnen helfen, **Ihren eigenen Style Guide** zu konzipieren und auszuarbeiten.
 
-[ach einem Style Guide anfragen](#contact)
-
-
-## Why is the design important for software and apps
-
-A good design is not measured on how fancy it looks. A quality interface requires foremost to address the concerns and emotions of the users, considering what your business represents to them and the total product life cycle.
-
-By following the above mentioned quality principles, petitcode will guarantee you adequate focus on what really matters. There is nothing worse than a slick design that does not answer to the user's needs and priorities.
+[Nach einem Style Guide anfragen](#contact)
 
 </ColumnContent>
-<ColumnImage file="hal-gatewood-613602-unsplash.jpg" alt="Corporate Design heißt auch wie Sie Ihrem Büro oder Studio gestalten. Als Kommunikationsagentur ist petitcode in der Lage Innenräume passend zu jeder Corporate Identity zu entwickeln.">
+<ColumnImage file="ilnur-kalimullin-332587-unsplash.jpg" alt="Auch Außenräume können mit Ihrem Corporate Design angepasst werden. Als Spezialisten für Corporate Design und Branding, auch für Messestände und  spezifische Events, ist petitcode Ihr idealer Partner für Raumgestaltung und Konzipierung.">
 </ColumnImage>
 </Columns>
 </Section>
@@ -87,10 +80,10 @@ Wenn Sie sich mit der Überlegung tragen, eine neue Corporate Identity aufzusetz
 
 In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget.
 
-* nach einer Corporate Design Beratung anfragen. *
+[nach einer Corporate Design Beratung anfragen.](#Contact)
 
 </ColumnContent>
-<ColumnImage file="william-iven-19843-unsplash.jpg" alt="Auch Außenräume können mit Ihrem Corporate Design angepasst werden. Als Spezialisten für Corporate Design und Branding, auch für Messestände und  spezifische Events, ist petitcode Ihr idealer Partner für Raumgestaltung und Konzipierung.">
+<ColumnImage file="neven-krcmarek-145603-unsplash.jpg" alt="Der erster Strich ist der schwierigste. Zusammen mit petitcode wird es Ihnen leicht gemacht, das beste Erscheinungsbild für ein stärkeres Branding zu entwickeln.">
 </ColumnImage>
 </Columns>
 

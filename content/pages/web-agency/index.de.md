@@ -34,7 +34,7 @@ In der Softwarearchitektur, egal ob Web oder Mobile Entwicklung, gibt es zwei Pe
 
 Frontend Entwickler neigen dazu, mehr Anerkennung zu erhalten, da nur ihre Arbeit von den Endbenutzern gesehen wird. Trotzdem wird der größte Teil des vorhandenen Codes für Software überwiegend auf Backend basieren.
 
-*nach einen freelance Webentwickler nachfragen*
+[nach einen freelance Webentwickler nachfragen](#contact)
 
 </ColumnContent>
 <ColumnImage file="irfan-simsar-1144378-unsplash.jpg" alt="petitcode bietet die beste senior webentwicklung berlins an">
@@ -42,10 +42,10 @@ Frontend Entwickler neigen dazu, mehr Anerkennung zu erhalten, da nur ihre Arbei
 </Columns>
 </Section>
 <Section>
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
-# Where can we help?
+# Wobei können wir helfen?
 
 <Carousel>
 <CarouselNavigation>
@@ -64,7 +64,7 @@ Web design
 
 Der Unterschied zwischen generischer Frontend Entwicklung und Senior Frontend Entwicklung besteht darin, zu verstehen, welche Tools für bestimmte Aufgaben am besten geeignet sind. Hiermit wird festgelegt, ob die Software glatt oder unecht aussehen wird. Frontend Entwickler verfügen möglicherweise auch über Designfähigkeiten, dies ist jedoch möglicherweise nicht ihre Hauptkompetenz. Das Petitcode-Kollektiv hochrangiger Freelancer hat **nur erfahrene Frontend Entwickler** anzubieten. Wenn Sie nicht sicher sind, welche Tools und Plattformen für Ihr Unternehmen am besten geeignet sind, wenden Sie sich einfach an uns.
 
-*nach einen freelance Frontend Entwickler nachfragen*
+[nach einen freelance Frontend Entwickler nachfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -75,7 +75,7 @@ Die Aufgabe des Entwicklers besteht darin, Daten aus einer Datenbank oder einer 
 
 In Anbetracht dessen, dass der Back-End-Entwickler für die Erstellung der Architektur und des internen Designs der Website verantwortlich ist, muss ein Back-End-Entwickler viel mehr über die Websitenarchitektur wissen. Das Petitcode-Kollektiv hochrangiger Freelancer hat **nur erfahrene Backend Entwickler** anzubieten. Wenn Sie nicht sicher sind, welche Tools und Plattformen für Ihr Unternehmen am besten geeignet sind, wenden Sie sich einfach an uns.
 
-*nach einen Back-End-Entwickler nachfragen*
+[Nach einen Back-End-Entwickler nachfragen](#contact)
 
 </CarouselSlide>
 <CarouselSlide>
@@ -86,7 +86,7 @@ Wenn Sie nur nach dem Design Ihres Produkts suchen - egal ob App, Website, Shop 
 
 Wenn Sie einen Senior Designer suchen, setzen Sie sich einfach mit uns in Verbindung und wir werden Sie mit relevanten Freelancern in Verbindung setzen.
 
-*nach einen freelance Webdesigner nachfragen*
+[Nach einen freelance Webdesigner nachfragen](#contact)
 
 </CarouselSlide>
 </CarouselSlides>

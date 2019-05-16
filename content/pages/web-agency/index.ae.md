@@ -1,7 +1,7 @@
 ---
-slug: "web-agency-berlin"
+slug: "web-design-agency-dubai"
 date: "2019-01-30T03:49:16.408Z"
-title: "petitcode - the avantgarde web agency Berlin and worldwide"
+title: "petitcode - the avantgarde web agency Dubai and worldwide"
 description: "petitcode is a creative collective of senior technology specialists. Whether you need a webdesign freelancer or a complete software solution, we only offer the best."
 theme: "sections"
 ---
@@ -13,9 +13,9 @@ theme: "sections"
 
 <KnockoutText>petitcode</KnockoutText>
 
-# your avantgarde creative web agency Berlin and worldwide
+# petitcode - your avantgarde creative web design agency Dubai and worldwide
 
-petitcode is a **creative collective of senior technology specialists** from Berlin, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign, product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
+petitcode is a **creative collective of senior technology specialists**, who offer consulting, hiring and first hand **web development services**. Our assistance always includes senior level consultancy services for your campaign, product and project as well as technical development of apps, websites, shops or media content. We foster a decentralised and transparent approach to the standard agency environment and have built a senior freelance network, where freelancers can work remotely and productively from their office of choice.
 </ColumnContent>
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
 </ColumnImage>
@@ -113,26 +113,47 @@ and we will make sure to put you in touch with relevant freelancers.
 </Columns>
 </Section>
 <Section>
+<Columns>
+<ColumnContent>
+
+## Quality principles
+
+It is petitcode’s strong belief that, in order to design and develop the best digital solutions for your business, it is important to consider several aspects and break down this process in steps:
+
+1. Analyse your business - do you provide a product or a service? According to your Corporate Identity, how do you present yourself to your customers? What technology stack do you use? Are there any changes/updates worth considering?
+2. How do your customers interact with your product or service - this will determine the user experience with your product/service. Do your customers use your solution just once or is their usage recurring? Focus on your product’s life cycle, all different stages and what does that mean to your customer in all stages. The answer to these questions will highlight the real issues and solutions.
+
+You might want to consider developing user studies to fully grasp and define suiting user flows, user experience, priorities and good-to-haves.
+
+</ColumnContent>
+<ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
+</ColumnImage>
+</Columns>
+</Section>
+<Section>
+<Columns>
+<ColumnContent>
+
+## Workshop
+
+If you are thinking about developing a web solution or updating an existing one, we recommend a workshop first of all. After the first research and an intensive exchange with you, we can rationally work out which is the most suitable approach for the project.
+
+In a petitcode workshop, our senior freelancers will assess all development stages, define priorities and conceive a project timeline. At the end, you will receive a complete report of all items to consider, an accurate estimate of each task, subtask and the estimated total budget.
+
+</ColumnContent>
+<ColumnImage reverse file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">
+</ColumnImage>
+</Columns>
+</Section>
+<Section>
 <SectionContent>
 <Centered>
 
-# What makes petitcode different from other digital agencies?
+# What makes petitcode different from other web design agencies Dubai?
 
-petitcode’s collective originated from the flaws of this model and the ambition
-of solving these issues. Traditional agencies have several layers of
-human resources: from interns, to juniors, seniors and executives.
-Most of the web development work is done by the lower levels and the
-higher levels end up having little involvement. From own experience,
-we confirm that agency-work is related to long hours, as if it were a
-contest of who spends the most time in the office. Additionally, the
-bigger the value-chain, the higher the costs and the higher the
-invoice you will be paying.
+petitcode’s collective originated from the flaws of this model and the ambition of solving these issues. Traditional agencies have several layers of human resources: from interns, to juniors, seniors and executives. Most of the web development work is done by the lower levels, and the higher levels end up having little involvement. From our own experience, we can confirm that agency-work is related to long hours, as if it were a contest of who spends the most time in the office. Additionally, the bigger the value-chain, the higher the costs and the higher the invoice you will be paying. 
 
-petitcode believes in increasing productivity over extensive working hours and
-that any client deserves senior-level web design and development
-services. By choosing petitcode you will be in direct communication
-with the freelancer, with no hidden layers. Simply get in touch with
-us and let’s get the project started.
+petitcode believes in increasing productivity over extensive working hours and that every client deserves senior-level web design and development services. By choosing petitcode you will be in direct communication with the freelancer, with no hidden layers. Simply get in touch with us and let’s get the project started.
 
 </Centered>
 </SectionContent>

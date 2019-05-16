@@ -31,12 +31,13 @@ Germany
 ### Represented by:
 
 ```
-petitcode GmbH, represented by Sebastian Melz and Axel Stett
+petitcode UG GmbH, vertreten durch den
+GF Sebastian Melz, Axel Stett
 ```
 
 ### Contact:
 
-* Telephone: +49 30 549 065 690
+* Telephone: +49 30 640 80 338
 * Email: info@petitcode.com
 
 ### Register entry:
