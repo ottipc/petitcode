@@ -60,7 +60,7 @@ Some ecommerce technologies have more integrations with other existing platforms
 
 ### Workflow for success in ecommerce
 
-Petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
+petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
 
 1.  **BUILD** - We handcraft state-of-the-art ecommerce solutions suited to your strategy that will let you outperform competitors and even your own expectations.
 
@@ -101,7 +101,7 @@ With the senior advice of our collective of freelance professionals, you will be
 
 ## Hire a freelancer or a dedicated ecommerce team of developers
 
-Petitcode is a collective of senior freelancers. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance ecommerce specialist or a dedicated team, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your ecommerce solution becomes and remains state-of-the-art.
+petitcode is a collective of senior freelancers. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance ecommerce specialist or a dedicated team, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your ecommerce solution becomes and remains state-of-the-art.
 
 If you still have questions regarding ecommerce, how to link your shop to your marketing channels or are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your ecommerce project would be.
 

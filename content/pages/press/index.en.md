@@ -84,7 +84,7 @@ A digital agency with a decentralised network of professionals, such as develope
 
 ## Digital Nomads Documentary
 
-Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & Petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
+Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
 
 <Video youtubeId="iXGtx-hroKE" />
 

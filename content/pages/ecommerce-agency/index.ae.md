@@ -54,7 +54,7 @@ Feel free to [contact us directly](#contact) if you have any questions or would 
 
 ## Workflow for success in digital marketing
 
-Petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
+petitcode's collective of senior freelancers structures its processes in three stages, especially the longer the projects:
 
 1.  **BUILD** - We handcraft state-of-the-art ecommerce solutions suited to your strategy that will let you outperform competitors and even your own expectations.
 
@@ -74,7 +74,7 @@ Petitcode's collective of senior freelancers structures its processes in three s
 ## Choosing the right channels
 
 Digital marketing is responsible for driving brand awareness and lead generation through all the digital channels -- both free and paid. These channels include social media, the company's own website, search engine rankings, email, display advertising and the company's blog.
- 
+
 You know the names SEO, SEA, PPC, Affiliate Marketing or Native Advertising but do you know the difference between them? Before going through countless examples of best-case practice digital marketing campaigns, simply get in touch with us and let us do it for you. That will save you a lot of hassle, time and energy.
 
 </ColumnContent>
@@ -125,7 +125,7 @@ In a petitcode workshop, our senior freelancers will assess all development stag
 
 ## Hire a freelancer or a dedicated ecommerce team of developers
 
-Petitcode is a collective of senior freelancers. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance ecommerce specialist or a dedicated team, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your ecommerce solution becomes and remains state-of-the-art.
+petitcode is a collective of senior freelancers. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance ecommerce specialist or a dedicated team, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your ecommerce solution becomes and remains state-of-the-art.
 
 If you still have questions regarding ecommerce, how to link your shop to your marketing channels or are unsure of what exactly do you need, feel free to contact us directly. We would be glad to walk through the initial steps with you and determine what the best approach for your ecommerce project would be.
 

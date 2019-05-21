@@ -13,7 +13,7 @@ theme: "sections"
 
 # How to source the best user interface design berlin
 
-Since the release of smartphones, the number of apps increased exponentially which also influenced the way business and consumers interact with websites and digital services. Petitcode's collective of senior designers firmly believe in structured methods to develop tailored-made interfaces based on the experience of users for any digital platform. In order to understand the full process, let's take it step by step.
+Since the release of smartphones, the number of apps increased exponentially which also influenced the way business and consumers interact with websites and digital services. petitcode's collective of senior designers firmly believe in structured methods to develop tailored-made interfaces based on the experience of users for any digital platform. In order to understand the full process, let's take it step by step.
 
 </ColumnContent>
 <ColumnImage file="alvaro-reyes-735660-unsplash.jpg" alt="Each screen is unique and contributes to a smooth user interface that promotes the best user experience possible. Get in touch with petitcode to learn more">

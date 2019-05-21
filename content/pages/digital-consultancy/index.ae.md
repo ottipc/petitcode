@@ -30,11 +30,11 @@ petitcode is of valuable help to you and your business in all cases. Our collect
 
 ## Why is digital consulting important
 
-Through digital transformation, many industries have been disrupted, merged and split. This is also applicable to brand communication, marketing and sales. The number of potential online marketing channels to choose from is so vast that you need to be sure which ones are relevant and adequate. 
+Through digital transformation, many industries have been disrupted, merged and split. This is also applicable to brand communication, marketing and sales. The number of potential online marketing channels to choose from is so vast that you need to be sure which ones are relevant and adequate.
 
 By now, the majority of all users worldwide have adopted a mobile first behavior and turn to tablets or smartphones for their online activities. Whilst print, radio, TV and billboards gave brands the opportunity to promote their names and build familiarity; homepages, platforms and apps improved the level of interaction in what was usually a stationary setting.
 
-The digitalisation of brand communication created countless interactive opportunities directly attached to the consumer, in whatever geography or context they travel to, providing almost unlimited access to the consumer and brands simultaneously. 
+The digitalisation of brand communication created countless interactive opportunities directly attached to the consumer, in whatever geography or context they travel to, providing almost unlimited access to the consumer and brands simultaneously.
 
 This requires a data driven and sophisticated approach that few have mastered. Therefore, having a consultant by your side, with both technical and customer-oriented expertise, will help you design the right experience both online and offline to boost your business.
 
@@ -97,7 +97,7 @@ The added value will be seen in the short, mid and long term in different ways. 
 
 ## Why should you hire petitcode as a digital transformation agency?
 
-It’s a known fact that the number of physical stores is decreasing, whilst Ecommerce is still wildly booming. It is a known fact that we all shop differently compared to 10 years ago. That is why many different digital marketplaces keep popping up and the generated revenues keep skyrocketing. 
+It’s a known fact that the number of physical stores is decreasing, whilst Ecommerce is still wildly booming. It is a known fact that we all shop differently compared to 10 years ago. That is why many different digital marketplaces keep popping up and the generated revenues keep skyrocketing.
 
 As a direct result, the boom of digital marketing and the need for it has increased proportionally ever since. Unlike most offline marketing efforts, digital marketing allows to see accurate results in real time. Additionally, you can measure the ROI of pretty much any aspect of your marketing efforts.
 
@@ -137,7 +137,7 @@ In a petitcode workshop, our senior freelancers will assess all development stag
 
 ## Need a digital consultant? Simply contact us
 
-Petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance consultant or a dedicated team of digital consultants, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your online strategy is fine-tuned.
+petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance consultant or a dedicated team of digital consultants, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your online strategy is fine-tuned.
 
 If you still have questions regarding digital consulting, whether technical or marketing, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to a first contact and determine what the best approach for your project would be.
 

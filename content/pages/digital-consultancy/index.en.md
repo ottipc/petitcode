@@ -98,7 +98,7 @@ The added value will be seen in the short, mid and long term in different ways. 
 
 ## Need a digital consultant? Simply contact us
 
-Petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance consultant or a dedicated team of digital consultants, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your online strategy is fine-tuned.
+petitcode is a collective of senior freelancers only. Regardless of, whether you are a startup or an established business and are unsure of whether hiring a freelance consultant or a dedicated team of digital consultants, petitcode can help you not only finding the most senior freelancing talent but also assemble a qualified team of professionals to ensure that your online strategy is fine-tuned.
 
 If you still have questions regarding digital consulting, whether technical or marketing, how to evaluate user experience and are unsure of what exactly do you need, feel free to contact us directly. We would be glad to a first contact and determine what the best approach for your project would be.
 

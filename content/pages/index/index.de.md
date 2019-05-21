@@ -17,7 +17,7 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-<KnockoutText>Wir sind Petitcode - ein innovatives Kollektiv für digitale Konzeption, Kommunikation und Produktion, das für höchste Qualität steht. </KnockoutText>
+<KnockoutText>Wir sind petitcode - ein innovatives Kollektiv für digitale Konzeption, Kommunikation und Produktion, das für höchste Qualität steht. </KnockoutText>
 </SectionContent>
 
 </Section>
@@ -26,7 +26,7 @@ theme: "sections"
 <Grid>
 <Person name="Sebastian Melz" image="seb-small.jpg">
 
-Managing Director 
+Managing Director
 
 </Person>
 <Person name="Axel Stett" image="axel-stett-small.jpg">
