@@ -22,9 +22,6 @@ petitcode ist ein kreatives Kollektiv von hochrangigen Technologiespezialisten a
 </Columns>
 </Section>
 <Section>
-  <Video youtubeId="Jwkoo9k1tsg" description="Hier bitte Video anschauen"/>
-</Section>
-<Section>
 <Columns reverse contentWidth="6">
 <ColumnContent>
 
