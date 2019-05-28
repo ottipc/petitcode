@@ -128,13 +128,55 @@ Web development and design can be very subjective and directly related to your o
 <Section>
 <SectionContent>
 
+<Timeline>
+<TimelineEntry>
+
+# Free Video Consultation
+
+Simply book a timeslot and we will be in touch.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Matching our most suitable specialist
+
+We find you the best available specialist and define an action plan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Execution of project
+
+In accordance to the action plan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Launch of project
+
+75% of our projects are launched before estimated deadline.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Support
+
+We are here to help at anytimes.
+
+</TimelineEntry>
+</Timeline>
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+
 #Team
 
 <Grid>
 
 <Person name="Sebastian Melz" image="seb-square.jpg">
 
-Managing Director 
+Managing Director
 
 </Person>
 <Person name="Axel Stett" image="axel-square.jpg">
