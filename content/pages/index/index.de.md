@@ -41,7 +41,7 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 
 <GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="120px" alt="Treatwell" image="treatwell logo.svg" />
+<GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
 
 </Grid>
 </SectionContent>

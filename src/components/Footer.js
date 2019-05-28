@@ -114,7 +114,7 @@ export default function Footer() {
         <BottomGridElement>
           <Link humanId="imprint" />
         </BottomGridElement>
-          <BottomGridElement>
+        <BottomGridElement>
           <Link humanId="press" />
         </BottomGridElement>
         <BottomGridElement>

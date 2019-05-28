@@ -40,7 +40,7 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="120px" alt="Treatwell" image="treatwell logo.svg" />
+<GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
 
 </Grid>
 </SectionContent>
