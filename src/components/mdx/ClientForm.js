@@ -54,7 +54,6 @@ export default function ClientForm({ children, scrollTo }) {
                   meta={meta}
                   type="text"
                   label="Company name"
-                  required
                 />
               )}
             </Field>
@@ -143,14 +142,14 @@ export default function ClientForm({ children, scrollTo }) {
                   <Label>Contact reason</Label>
                   <FormGrid>
                     <FormControlLabel
-                      value="source a freelancer"
+                      value="Join as a freelancer"
                       control={<Radio />}
-                      label="source a freelancer"
+                      label="Join as a freelancer"
                     />
                     <FormControlLabel
-                      value="develop a complete solution"
+                      value="Get stuff done"
                       control={<Radio />}
-                      label="develop a complete solution"
+                      label="Get stuff done"
                     />
                   </FormGrid>
                 </RadioGroup>
