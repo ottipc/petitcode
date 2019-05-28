@@ -128,9 +128,10 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 </Section>
 <Section>
 <SectionContent>
-<Grid>
 
-#Team
+#Team 
+
+<Grid>
 
 <Person name="Sebastian Melz" image="seb-square.jpg">
 

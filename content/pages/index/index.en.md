@@ -127,10 +127,10 @@ Web development and design can be very subjective and directly related to your o
 </Section>
 <Section>
 <SectionContent>
-<Grid>
 
 #Team
 
+<Grid>
 
 <Person name="Sebastian Melz" image="seb-square.jpg">
 
