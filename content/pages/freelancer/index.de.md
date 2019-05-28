@@ -31,10 +31,6 @@ Bist du ein Freelancer, du arbeitest remote und hast Referenzen zu deiner Erfahr
 
 Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
 
-<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-
-<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
-
 </FormIntro>
 <FormSuccess>
 
