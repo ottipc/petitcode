@@ -136,10 +136,6 @@ Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Ma
 
 Das genaue Bestimmen von Kostenschätzungen kann ohne einen ordnungsgemäßen Austausch schwierig sein. Senden Sie uns eine Nachricht und wir werden uns mit Ihnen in Verbindung setzen.
 
-<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-
-<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
-
 </FormIntro>
 <FormSuccess>
 

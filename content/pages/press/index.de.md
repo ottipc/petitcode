@@ -1,5 +1,5 @@
 ---
-slug: "press"
+slug: "presse"
 date: "2019-01-30T03:49:16.408Z"
 title: "Press"
 description: ""
@@ -10,7 +10,7 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-# Press Kit and Partner Contacts
+# Press Kit und Partner Contacts
 
 <Grid centered>
 <Person name="Guy de Macedo Behrndt" image="guy-square.jpg">
@@ -57,7 +57,7 @@ Mobile +49 163 508 1987
 <Section>
 <SectionContent>
 
-## Material to download
+## Downloads
 
 <Grid>
 
@@ -76,7 +76,7 @@ Mobile +49 163 508 1987
 <Section>
 <SectionContent>
 
-## petitcode in one sentence
+## petitcode in ein Satz
 
 A digital agency with a decentralised network of professionals, such as developers, designers and digital strategists working under one umbrella in the StartUp Hub of Berlin.
 
@@ -85,7 +85,7 @@ A digital agency with a decentralised network of professionals, such as develope
 <Section>
 <SectionContent>
 
-## Digital Nomads Documentary
+## Digitalen Nomaden auf ARTE/DW
 
 Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
 
@@ -96,7 +96,7 @@ Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) relea
 <Section>
 <SectionContent>
 
-## Short Profile
+## Kurzes Profile
 
 petitcode offers its clients the highest possible outcome through the power of senior freelancers and their professional networks from all around Germany, Europe and the world. At petitcode we make sure that the client's expectations are not just reached, but actually exceeded. Our freelancers are interviewed and well selected by our technical directors, who have more than 20 years experience.
 

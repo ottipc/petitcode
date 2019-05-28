@@ -31,10 +31,6 @@ Are you a freelancer, work remotely and have references to back your seniority? 
 
 As a senior collective, we care about quality. That is why referrals from third-persons are important to us.
 
-<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-
-<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
-
 </FormIntro>
 <FormSuccess>
 

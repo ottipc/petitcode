@@ -164,10 +164,6 @@ petitcode believes in increasing productivity over extensive working hours and t
 
 Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
 
-<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
-
-<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
-
 </FormIntro>
 <FormSuccess>
 
