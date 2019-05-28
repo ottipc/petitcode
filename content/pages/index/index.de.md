@@ -23,9 +23,9 @@ theme: "sections"
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText>Our Clients</KnockoutText>
+<KnockoutText>Unsere Kunden</KnockoutText>
 
-Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
+Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hocheffektive und effiziente Organisation an, die auf die Erreichung der Kundenziele ausgerichtet ist
 
 <Grid minWidth="100px">
 
@@ -174,33 +174,6 @@ Gesellschafter
 Gesellschafter
 
 </Person>
-
-</Grid>
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-<KnockoutText centered>Ich bin ein</KnockoutText>
-
-<Grid centered>
-
-<Card>
-<CardContent>
-<h1><Link humanId="freelancer">Freelancer</Link></h1>
-
-und will mich Euch anschließen
-
-</CardContent>
-</Card>
-
-<Card>
-<CardContent>
-<h1><Link humanId="client">Firma</Link></h1>
-
-und benötige Unterstützung
-
-</CardContent>
-</Card>
 
 </Grid>
 </SectionContent>

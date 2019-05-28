@@ -10,66 +10,14 @@ theme: "sections"
 <Section video>
 <SectionContent>
 
-# the code <br/> to your success.
+# the avantgarde <br/> freelance collective <br/> from Berlin.
 
 </SectionContent>
 </Section>
 <Section>
 <SectionContent>
 
-<KnockoutText>We are petitcode - an innovative collective of senior freelancers for premium digital conception, communication and production. </KnockoutText>
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-<Grid>
-<Person name="Sebastian Melz" image="seb-small.jpg">
-
-Managing Director 
-
-</Person>
-<Person name="Axel Stett" image="axel-stett-small.jpg">
-
-Managing Director
-
-</Person>
-<Person name="Ottavio Braun" image="ottavio-braun.jpg">
-
-CTO
-
-</Person>
-<Person name="Guy de Macedo Behrndt" image="guy-small.jpg">
-
-Marketing & Sales
-
-</Person>
-<Person name="Lukas Polakowski" image="lukas-small.jpg">
-
-Accounting
-
-</Person>
-<Person name="Rodolfo Lopez" image="rodolfo-lopez.jpg">
-
-Heavyweight Dev
-
-</Person>
-<Person name="Mario Mielke" image="mario-mielke.jpg">
-
-Creative Director
-
-</Person>
-<Person name="Bernadette Zawal-Pfeil" image="bernadette-small.jpg">
-
-Investor
-
-</Person>
-<Person name="Hubert Pfeil" image="hubert-small.jpg">
-
-Investor
-
-</Person>
-
-</Grid>
+<KnockoutText>petitcode is a collective of senior technology specialists from Berlin, who offer consulting, hiring and first hand development services. </KnockoutText>
 </SectionContent>
 </Section>
 <Section>
@@ -92,32 +40,139 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
 
+<GridImage maxWidth="120px" alt="Treatwell" image="treatwell logo.svg" />
+
 </Grid>
 </SectionContent>
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText centered>I am a</KnockoutText>
 
-<Grid centered>
+# Our provided services
+
+<Grid minWidth="300px">
 
 <Card>
+<Link className="nohover" humanId="app-development">
+  <CardImage image="development.svg" />
+</Link>
 <CardContent>
-<h1><Link humanId="freelancer">Freelancer</Link></h1>
+<h2><Link humanId="app-development">App development</Link></h2>
 
-and want to join the network
+Whether Android or iOS, developing a mobile app can be a high risk project for your business, making the sourcing of the right developers absolutely crucial.
+
+<Link humanId="app-development">Learn more</Link>
 
 </CardContent>
 </Card>
 
 <Card>
+<Link className="nohover" humanId="digital-consultancy">
+  <CardImage image="therapist.svg" />
+</Link>
 <CardContent>
-<h1><Link humanId="client">Company</Link></h1>
+<h2><Link humanId="digital-consultancy">Digital consultancy</Link></h2>
 
-and want to get stuff done
+When creating new concepts, implementing the newest technologies to guarantee a significant ROI on tech is easy to plan and perform.
+
+<Link humanId="digital-consultancy">Learn more</Link>
 
 </CardContent>
 </Card>
+
+<Card>
+<Link className="nohover" humanId="ecommerce-agency">
+  <CardImage image="online-shop.svg" />
+</Link>
+<CardContent>
+<h2><Link humanId="ecommerce-agency">Ecommerce agency</Link></h2>
+
+By analysing your business first, choosing the right ecommerce technologies for your business will be a no-brainer.
+
+<Link humanId="ecommerce-agency">Learn more</Link>
+
+</CardContent>
+</Card>
+
+<Card>
+<Link className="nohover" humanId="user-interface-design">
+  <CardImage image="graphic-design.svg" />
+</Link>
+<CardContent>
+<h2><Link humanId="user-interface-design">User interface design</Link></h2>
+
+Producing an interface which makes it easy, efficient, and enjoyable to operate any software or device in a way which produces the desired outcome.
+
+<Link humanId="user-interface-design">Learn more</Link>
+
+</CardContent>
+</Card>
+
+<Card>
+<Link className="nohover" humanId="web-agency">
+  <CardImage image="app-development.svg" />
+</Link>
+<CardContent>
+<h2><Link humanId="web-agency">Web Development</Link></h2>
+
+Web development and design can be very subjective and directly related to your own experiences and related emotions.
+
+<Link humanId="web-agency">Learn more</Link>
+
+</CardContent>
+</Card>
+
+</Grid>
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+<Grid>
+<Person name="Sebastian Melz" image="seb-square.jpg">
+
+Managing Director 
+
+</Person>
+<Person name="Axel Stett" image="axel-square.jpg">
+
+Managing Director
+
+</Person>
+<Person name="Ottavio Braun" image="ottavio-braun.jpg">
+
+CTO
+
+</Person>
+<Person name="Guy de Macedo Behrndt" image="guy-square.jpg">
+
+Marketing & Sales
+
+</Person>
+<Person name="Lukas Polakowski" image="lukas-square.jpg">
+
+Accounting
+
+</Person>
+<Person name="Rodolfo Lopez" image="rodolfo-lopez.jpg">
+
+Heavyweight Dev
+
+</Person>
+<Person name="Mario Mielke" image="mario-mielke.jpg">
+
+Creative Director
+
+</Person>
+<Person name="Bernadette Zawal-Pfeil" image="bernadette-square.jpg">
+
+Board Member
+
+</Person>
+<Person name="Hubert Pfeil" image="hubert-square.jpg">
+
+Board Member
+
+</Person>
 
 </Grid>
 </SectionContent>
