@@ -10,7 +10,7 @@ theme: "sections"
 <Section video>
 <SectionContent>
 
-# the avantgarde <br/> freelance collective <br/> from Berlin.
+# the <br/> avantgarde <br/> collective.
 
 </SectionContent>
 </Section>
