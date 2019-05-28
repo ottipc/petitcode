@@ -47,7 +47,7 @@ export default function ClientForm({ children, scrollTo }) {
             action={`${pathname}?success=${formName}#${scrollTo}`}
           >
             <input type="hidden" name="form-name" value={formName} />
-            <Field name="company" valueMissing="Tell us who u are">
+            <Field name="company" valueMissing="Tell us who you are">
               {({ input, meta }) => (
                 <InputField
                   input={input}
@@ -72,7 +72,7 @@ export default function ClientForm({ children, scrollTo }) {
               <Field
                 name="name"
                 tooShort="Your first name would be great"
-                valueMissing="Tell us who u are"
+                valueMissing="Tell us who you are"
               >
                 {({ input, meta }) => (
                   <InputField
@@ -88,7 +88,7 @@ export default function ClientForm({ children, scrollTo }) {
               <Field
                 name="surname"
                 tooShort="Your surname would be great"
-                valueMissing="Tell us who u are"
+                valueMissing="Tell us who you are"
               >
                 {({ input, meta }) => (
                   <InputField
