@@ -5,10 +5,14 @@ import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import MDXRenderer from 'gatsby-mdx/mdx-renderer'
 
+import GridWrapper from '../components/GridWrapper'
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 import DarkTheme from './themes/DarkTheme'
 import DefaultTheme from './themes/DefaultTheme'
+
+import BlogListing from '../components/BlogListing'
+import JobListing from '../components/JobListing'
 
 import Sections from '../components/mdx/Sections'
 import Section from '../components/mdx/Section'
@@ -70,7 +74,7 @@ class PageTemplate extends React.PureComponent {
     const {
       frontmatter: { title, description, theme },
       code: { body },
-      fields: { humanId, locale }
+      fields: { humanId, locale, slug }
     } = data.mdx
 
     let content = null
@@ -90,6 +94,27 @@ class PageTemplate extends React.PureComponent {
           <DefaultTheme>
             <MDXRenderer>{body}</MDXRenderer>
           </DefaultTheme>
+        )
+    }
+
+    let extraContent = null
+    switch (slug) {
+      case 'jobs':
+        extraContent = (
+          <SectionContent>
+            <GridWrapper>
+              <JobListing />
+            </GridWrapper>
+          </SectionContent>
+        )
+        break
+      case 'blog':
+        extraContent = (
+          <SectionContent>
+            <GridWrapper>
+              <BlogListing />
+            </GridWrapper>
+          </SectionContent>
         )
     }
 
@@ -129,6 +154,7 @@ class PageTemplate extends React.PureComponent {
             ].filter(Boolean)}
           />
           <MDXProvider components={components}>{content}</MDXProvider>
+          {extraContent}
         </Layout>
       </LocationContext.Provider>
     )

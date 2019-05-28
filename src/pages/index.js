@@ -60,6 +60,13 @@ export const petitcodeFragment = graphql`
           slug
           locale
           title
+          description
+          # teaser
+        }
+        parent {
+          ... on File {
+            sourceInstanceName
+          }
         }
       }
     }

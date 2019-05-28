@@ -31,6 +31,12 @@ function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
       }
     }, {})
 
+  const {
+    parent: { sourceInstanceName }
+  } = pages.find((page) => page.fields.humanId === activeHumandId)
+
+  const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
+
   // Array representing the language switcher menu
   const langsMenu = langs
     .map((locale) => {
@@ -44,6 +50,7 @@ function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
       // Generate path to translated version
       if (slugMap[locale]) {
         path = createLocalizedPath({
+          prefix,
           locale,
           slug: slugMap[locale]
         })
@@ -52,6 +59,7 @@ function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
       // Fallback to default locale if translation is not available
       if (!path && slugMap[defaultLocale]) {
         path = createLocalizedPath({
+          prefix,
           locale: defaultLocale,
           slug: slugMap[defaultLocale]
         })
@@ -60,6 +68,7 @@ function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
       // Fallback if no version with default locale is available
       if (!path && slugMap.length) {
         path = createLocalizedPath({
+          prefix,
           locale: Object.keys(slugMap)[0],
           slug: slugMap[Object.keys(slugMap)[0]]
         })
