@@ -113,13 +113,7 @@ class Navigation extends React.PureComponent {
                   <MenuLink humanId="client">Client</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink humanId="press">Press</MenuLink>
-                </ListItem>
-                <ListItem>
                   <MenuLink humanId="jobs">Jobs</MenuLink>
-                </ListItem>
-                <ListItem>
-                  <MenuLink humanId="imprint">Imprint</MenuLink>
                 </ListItem>
               </List>
             </ContentWrapper>

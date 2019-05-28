@@ -8,7 +8,6 @@ import { defaultLocale } from '../data/languages'
 
 const List = styled.ul`
   display: flex;
-  flex-direction: column;
   margin: 0;
   list-style-type: none;
   text-transform: uppercase;

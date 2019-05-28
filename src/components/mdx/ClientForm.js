@@ -47,14 +47,13 @@ export default function ClientForm({ children, scrollTo }) {
             action={`${pathname}?success=${formName}#${scrollTo}`}
           >
             <input type="hidden" name="form-name" value={formName} />
-            <Field name="company" valueMissing="Tell us who u are">
+            <Field name="company" valueMissing="Tell us who you are">
               {({ input, meta }) => (
                 <InputField
                   input={input}
                   meta={meta}
                   type="text"
                   label="Company name"
-                  required
                 />
               )}
             </Field>
@@ -73,7 +72,7 @@ export default function ClientForm({ children, scrollTo }) {
               <Field
                 name="name"
                 tooShort="Your first name would be great"
-                valueMissing="Tell us who u are"
+                valueMissing="Tell us who you are"
               >
                 {({ input, meta }) => (
                   <InputField
@@ -89,7 +88,7 @@ export default function ClientForm({ children, scrollTo }) {
               <Field
                 name="surname"
                 tooShort="Your surname would be great"
-                valueMissing="Tell us who u are"
+                valueMissing="Tell us who you are"
               >
                 {({ input, meta }) => (
                   <InputField
@@ -143,14 +142,14 @@ export default function ClientForm({ children, scrollTo }) {
                   <Label>Contact reason</Label>
                   <FormGrid>
                     <FormControlLabel
-                      value="source a freelancer"
+                      value="Join as a freelancer"
                       control={<Radio />}
-                      label="source a freelancer"
+                      label="Join as a freelancer"
                     />
                     <FormControlLabel
-                      value="develop a complete solution"
+                      value="Get stuff done"
                       control={<Radio />}
-                      label="develop a complete solution"
+                      label="Get stuff done"
                     />
                   </FormGrid>
                 </RadioGroup>

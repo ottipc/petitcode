@@ -22,9 +22,6 @@ petitcode is a **creative collective of senior technology specialists** from Ber
 </Columns>
 </Section>
 <Section>
-  <Video youtubeId="Jwkoo9k1tsg" description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr,sed diam nonumy eirmod tempor invidunt."/>
-</Section>
-<Section>
 <Columns reverse contentWidth="6">
 <ColumnContent>
 
