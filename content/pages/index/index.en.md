@@ -177,4 +177,28 @@ Board Member
 </Grid>
 </SectionContent>
 </Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<ClientForm scrollTo="contact">
+<FormIntro>
+
+# Get in touch with us!
+
+Determining cost estimations accurately can be tricky without a proper exchange. Send us a message and we will be in touch with you.
+
+<a href="mailto:hi@petitcode.de">hi@petitcode.de</a>
+
+<a href="tel:+493064080338">+49 (0) 30 640 803 38</a>
+
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</ClientForm>
+</SectionContent>
+</Section>
 </Sections>
