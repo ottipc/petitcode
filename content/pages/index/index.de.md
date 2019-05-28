@@ -129,12 +129,12 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 <Grid>
-<Person name="Sebastian Melz" image="seb square.jpg">
+<Person name="Sebastian Melz" image="seb-square.jpg">
 
 Managing Director
 
 </Person>
-<Person name="Axel Stett" image="axel square.jpg">
+<Person name="Axel Stett" image="axel-square.jpg">
 
 Managing Director
 
@@ -144,12 +144,12 @@ Managing Director
 CTO
 
 </Person>
-<Person name="Guy de Macedo Behrndt" image="guy square.jpg">
+<Person name="Guy de Macedo Behrndt" image="guy-square.jpg">
 
 Marketing & Sales
 
 </Person>
-<Person name="Lukas Polakowski" image="lukas square.jpg">
+<Person name="Lukas Polakowski" image="lukas-square.jpg">
 
 Accounting
 
@@ -164,12 +164,12 @@ Heavyweight Dev
 Creative Director
 
 </Person>
-<Person name="Bernadette Zawal-Pfeil" image="bernadette square.jpg">
+<Person name="Bernadette Zawal-Pfeil" image="bernadette-square.jpg">
 
 Gesellschafter
 
 </Person>
-<Person name="Hubert Pfeil" image="hubert square.jpg">
+<Person name="Hubert Pfeil" image="hubert-square.jpg">
 
 Gesellschafter
 
