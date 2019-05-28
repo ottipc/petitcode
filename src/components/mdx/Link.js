@@ -4,18 +4,13 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 import { createLocalizedPath } from '../../utils/i18n'
-import {
-  NavigationContext,
-  LocationContext,
-  GlobalContext
-} from '../../utils/Contexts'
+import { LocationContext, GlobalContext } from '../../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
 export default function MdxLink({ humanId, title = null, children, ...props }) {
-  const { pages } = useContext(NavigationContext)
   const { activeLocale } = useContext(LocationContext)
-  const { langs, defaultLocale } = useContext(GlobalContext)
+  const { langs, defaultLocale, pages } = useContext(GlobalContext)
 
   let page = pages.find(
     (page) =>
@@ -39,9 +34,19 @@ export default function MdxLink({ humanId, title = null, children, ...props }) {
   }
 
   if (page) {
-    const { slug, locale, title: pageTitle } = page.fields
+    const {
+      fields: { slug, locale, title: pageTitle },
+      parent: { sourceInstanceName }
+    } = page
+    const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
+
+    const path = createLocalizedPath({
+      prefix,
+      slug,
+      locale
+    })
     return (
-      <StyledLink to={createLocalizedPath({ locale, slug })} {...props}>
+      <StyledLink to={path} {...props}>
         {children || title || pageTitle}
       </StyledLink>
     )

@@ -135,15 +135,6 @@ function Section({ video, inverted, children, nr, scrollId = null }) {
     }
   }
 
-  const videos = [
-    '1025735357-preview.mp4',
-    '11465744-preview.mp4',
-    '15072064-preview.mp4',
-    '18395326-preview.mp4',
-    '25801799-preview.mp4',
-    '28715236-preview.mp4'
-  ]
-
   return (
     <OuterWrapper id={scrollId} video={video}>
       <Observer
@@ -155,10 +146,7 @@ function Section({ video, inverted, children, nr, scrollId = null }) {
           {video && (
             <VideoWrapper>
               <Video autoPlay loop muted playsInline>
-                <source
-                  src={`/${videos[Math.floor(Math.random() * videos.length)]}`}
-                  type="video/mp4"
-                />
+                <source src={`/${video}`} type="video/mp4" />
               </Video>
             </VideoWrapper>
           )}

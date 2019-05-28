@@ -7,7 +7,7 @@ theme: "sections"
 ---
 
 <Sections>
-<Section video>
+<Section video="server-room.mp4">
 <SectionContent>
 
 # the <br/> avantgarde <br/> collective.
@@ -129,7 +129,49 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 
-#Team 
+<Timeline>
+<TimelineEntry>
+
+# Free Video Consultation
+
+Simply book a timeslot and we will be in touch.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Matching our most suitable specialist
+
+We find you the best available specialist and define an action plan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Execution of project
+
+In accordance to the action plan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Launch of project
+
+75% of our projects are launched before estimated deadline.
+
+</TimelineEntry>
+<TimelineEntry>
+
+# Support
+
+We are here to help at anytimes.
+
+</TimelineEntry>
+</Timeline>
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+
+#Team
 
 <Grid>
 

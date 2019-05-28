@@ -87,14 +87,14 @@ exports.createPages = ({ actions, graphql }) =>
           node {
             id
             fileAbsolutePath
-            excerpt(pruneLength: 250)
             fields {
-              title
               slug
               locale
             }
-            code {
-              scope
+            parent {
+              ... on File {
+                sourceInstanceName
+              }
             }
           }
         }
@@ -110,9 +110,17 @@ exports.createPages = ({ actions, graphql }) =>
     edges.forEach((edge) => {
       const {
         id,
-        fields: { slug, locale }
+        fields: { slug, locale },
+        parent: { sourceInstanceName }
       } = edge.node
-      const path = createLocalizedPath({ slug, locale })
+
+      const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
+
+      const path = createLocalizedPath({
+        prefix,
+        slug,
+        locale
+      })
 
       actions.createPage({
         path,

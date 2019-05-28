@@ -54,15 +54,14 @@ export default function Layout({ children }) {
     siteMetadata: { title, description, siteUrl }
   } = data.site
 
-  const { pages, activeLocale, pathname } = useContext(GlobalContext)
+  const { activeLocale, pathname } = useContext(GlobalContext)
   const { t } = useTranslation()
 
   return (
     <NavigationContext.Provider
       value={{
         toggleNavigation,
-        navigationActive,
-        pages
+        navigationActive
       }}
     >
       <SectionContext.Provider
