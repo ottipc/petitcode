@@ -129,6 +129,9 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 <Grid>
+
+#Team
+
 <Person name="Sebastian Melz" image="seb-square.jpg">
 
 Managing Director

@@ -128,6 +128,10 @@ Web development and design can be very subjective and directly related to your o
 <Section>
 <SectionContent>
 <Grid>
+
+#Team
+
+
 <Person name="Sebastian Melz" image="seb-square.jpg">
 
 Managing Director 
