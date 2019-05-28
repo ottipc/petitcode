@@ -7,7 +7,7 @@ theme: "sections"
 ---
 
 <Sections>
-<Section video>
+<Section video="server-room.mp4">
 <SectionContent>
 
 # the <br/> avantgarde <br/> collective.
