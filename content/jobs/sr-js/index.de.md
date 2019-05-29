@@ -2,6 +2,7 @@
 date: "2019-01-30T03:49:16.408Z"
 title: "Senior Fullstack Java Script Developer (React.js & Node.js)"
 description: ""
+theme: "sections"
 ---
 
 <Sections>

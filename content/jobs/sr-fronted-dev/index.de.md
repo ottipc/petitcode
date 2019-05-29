@@ -2,6 +2,7 @@
 date: "2019-01-30T03:49:16.408Z"
 title: "Senior Frontend Entwickler (m / w)"
 description: ""
+theme: "sections"
 ---
 
 <Sections>
