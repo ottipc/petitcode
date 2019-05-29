@@ -26,29 +26,29 @@ theme: "sections"
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
-<Grid minWidth="100px">
+<Grid minWidth="120px">
 
-<GridImage maxWidth="120px" alt="World Health Organization" image="world-health-organization.svg" />
+<GridImage maxWidth="130px" alt="World Health Organization" image="world-health-organization.svg" />
 
-<GridImage maxWidth="120px" alt="Infologis" image="infologis.svg" />
+<GridImage maxWidth="130px" alt="Infologis" image="infologis.svg" />
 
-<GridImage maxWidth="120px" alt="Jung von Matt" image="jung-von-matt.svg" />
+<GridImage maxWidth="130px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-<GridImage maxWidth="120px" alt="Universal Music" image="universal-music.svg" />
+<GridImage maxWidth="130px" alt="Universal Music" image="universal-music.svg" />
 
-<GridImage maxWidth="120px" alt="Villeroy Boch" image="villeroy-boch.svg" />
+<GridImage maxWidth="130px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-<GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
+<GridImage maxWidth="130px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
+<GridImage maxWidth="130px" alt="Treatwell" image="treatwell-logo.svg" />
 
-<GridImage maxWidth="120px" alt="leAD" image="lead.svg" />
+<GridImage maxWidth="130px" alt="leAD" image="lead.svg" />
 
-<GridImage maxWidth="120px" alt="Find Some Buddy" image="FSB.svg" />
+<GridImage maxWidth="130px" alt="Find Some Buddy" image="FSB.svg" />
 
-<GridImage maxWidth="120px" alt="Hashfox" image="hashfox.svg" />
+<GridImage maxWidth="130px" alt="Hashfox" image="hashfox.svg" />
 
-<GridImage maxWidth="120px" alt="CampusSpeicher" image="campusspeicher.svg" />
+<GridImage maxWidth="130px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
 </Grid>
 </SectionContent>
