@@ -42,6 +42,14 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
 
+<GridImage maxWidth="120px" alt="leAD" image="lead.svg" />
+
+<GridImage maxWidth="120px" alt="Find Some Buddy" image="FSB.svg" />
+
+<GridImage maxWidth="120px" alt="Hashfox" image="hashfox.svg" />
+
+<GridImage maxWidth="120px" alt="CampusSpeicher" image="campusspeicher.svg" />
+
 </Grid>
 </SectionContent>
 </Section>
@@ -172,7 +180,7 @@ We are here to help at anytimes.
 <Section>
 <SectionContent>
 
-#Team
+<KnockoutText> Team </KnockoutText>
 
 <Grid>
 
