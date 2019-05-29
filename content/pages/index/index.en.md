@@ -28,27 +28,27 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <Grid minWidth="120px">
 
-<GridImage maxWidth="130px" alt="World Health Organization" image="world-health-organization.svg" />
+<GridImage maxWidth="150px" alt="World Health Organization" image="world-health-organization.svg" />
 
-<GridImage maxWidth="130px" alt="Infologis" image="infologis.svg" />
+<GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
-<GridImage maxWidth="130px" alt="Jung von Matt" image="jung-von-matt.svg" />
+<GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-<GridImage maxWidth="130px" alt="Universal Music" image="universal-music.svg" />
+<GridImage maxWidth="150px" alt="Universal Music" image="universal-music.svg" />
 
-<GridImage maxWidth="130px" alt="Villeroy Boch" image="villeroy-boch.svg" />
+<GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-<GridImage maxWidth="130px" alt="Vorwerk" image="vorwerk.svg" />
+<GridImage maxWidth="150px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="130px" alt="Treatwell" image="treatwell-logo.svg" />
+<GridImage maxWidth="150px" alt="Treatwell" image="treatwell-logo.svg" />
 
-<GridImage maxWidth="130px" alt="leAD" image="lead.svg" />
+<GridImage maxWidth="150px" alt="leAD" image="lead.svg" />
 
-<GridImage maxWidth="130px" alt="Find Some Buddy" image="FSB.svg" />
+<GridImage maxWidth="150px" alt="Find Some Buddy" image="FSB.svg" />
 
-<GridImage maxWidth="130px" alt="Hashfox" image="hashfox.svg" />
+<GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
 
-<GridImage maxWidth="130px" alt="CampusSpeicher" image="campusspeicher.svg" />
+<GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
 </Grid>
 </SectionContent>
