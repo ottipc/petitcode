@@ -6,6 +6,7 @@ description: ""
 theme: "sections"
 ---
 
+<Sections>
 <Section>
 <SectionContent>
 
@@ -31,3 +32,4 @@ theme: "sections"
 </Grid>
 </SectionContent>
 </Section>
+</Sections>
