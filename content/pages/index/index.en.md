@@ -22,7 +22,7 @@ theme: "sections"
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText>Our Clients</KnockoutText>
+<KnockoutText>Clients & Partners</KnockoutText>
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
@@ -128,38 +128,40 @@ Web development and design can be very subjective and directly related to your o
 <Section>
 <SectionContent>
 
+# Our work process
+
 <Timeline>
 <TimelineEntry>
 
-# Free Video Consultation
+## Free Video Consultation
 
 Simply book a timeslot and we will be in touch.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Matching our most suitable specialist
+## Matching our most suitable specialist
 
 We find you the best available specialist and define an action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Execution of project
+## Execution of project
 
 In accordance to the action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Launch of project
+## Launch of project
 
 75% of our projects are launched before estimated deadline.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Support
+## Support
 
 We are here to help at anytimes.
 

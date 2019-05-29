@@ -23,7 +23,7 @@ theme: "sections"
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText>Unsere Kunden</KnockoutText>
+<KnockoutText>Clients & Partners</KnockoutText>
 
 Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hocheffektive und effiziente Organisation an, die auf die Erreichung der Kundenziele ausgerichtet ist
 
@@ -129,40 +129,42 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 
+# Unsere Arbeitsweise
+
 <Timeline>
 <TimelineEntry>
 
-# Free Video Consultation
+## Kostenlose Videoberatung
 
-Simply book a timeslot and we will be in touch.
-
-</TimelineEntry>
-<TimelineEntry>
-
-# Matching our most suitable specialist
-
-We find you the best available specialist and define an action plan.
+Buchen Sie einfach ein Zeitfenster und wir werden uns mit Ihnen in Verbindung setzen.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Execution of project
+## Spezialisten Matching
+
+Wir finden für Sie den besten verfügbaren Spezialisten und definieren einen Aktionsplan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+## Projektausführung
 
 In accordance to the action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Launch of project
+## Projektlaunch
 
-75% of our projects are launched before estimated deadline.
+75% unserer Projekte werden vor dem voraussichtlichen Termin beendet und gelauncht.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Support
+## Support
 
-We are here to help at anytimes.
+Wir sind jederzeit für Sie da.
 
 </TimelineEntry>
 </Timeline>
