@@ -57,7 +57,7 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 <Section>
 <SectionContent>
 
-# Unsere Dienstleistungen
+<KnockoutText> Unsere Dienstleistungen </KnockoutText>
 
 <Grid minWidth="300px">
 
@@ -137,7 +137,7 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 
-# Unsere Arbeitsweise
+<KnockoutText> Unsere Arbeitsweise </KnockoutText>
 
 <Timeline>
 <TimelineEntry>

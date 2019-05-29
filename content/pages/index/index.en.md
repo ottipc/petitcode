@@ -56,7 +56,7 @@ Our Clients are the life-source of our business and we strive to operate a highl
 <Section>
 <SectionContent>
 
-# Our provided services
+<KnockoutText> Our provided services </KnockoutText>
 
 <Grid minWidth="300px">
 
@@ -136,7 +136,7 @@ Web development and design can be very subjective and directly related to your o
 <Section>
 <SectionContent>
 
-# Our work process
+<KnockoutText> Our work process </KnockoutText>
 
 <Timeline>
 <TimelineEntry>
