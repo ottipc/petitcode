@@ -3,9 +3,9 @@ import propTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
-import ReactCookieConsent from 'react-cookie-consent'
+import ReactCookieConsent, { Cookies } from 'react-cookie-consent'
 import { Trans, useTranslation } from 'react-i18next'
 
 import Navigation from './Navigation'
@@ -22,6 +22,11 @@ import Link from './mdx/Link'
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
+  ${({ hasAcceptedCookies }) =>
+    !hasAcceptedCookies &&
+    css`
+      padding-bottom: 6em;
+    `}
 `
 
 export default function Layout({ children }) {
@@ -56,6 +61,8 @@ export default function Layout({ children }) {
 
   const { activeLocale, pathname } = useContext(GlobalContext)
   const { t } = useTranslation()
+
+  const hasAcceptedCookies = !!Cookies.get('CookieConsent')
 
   return (
     <NavigationContext.Provider
@@ -127,7 +134,7 @@ export default function Layout({ children }) {
           ]}
         />
 
-        <Wrapper>
+        <Wrapper hasAcceptedCookies={hasAcceptedCookies}>
           <Overlays />
           <Navigation navigationActive={navigationActive} />
           <main>
