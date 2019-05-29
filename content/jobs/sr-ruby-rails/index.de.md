@@ -4,6 +4,10 @@ title: "Senior Ruby / Ruby on Rails Developer"
 description: ""
 ---
 
+<Sections>
+<Section>
+<SectionContent>
+
 ### Senior Ruby / Ruby on Rails Developer
 
 * Freelance/ Fulltime Berlin
@@ -43,3 +47,27 @@ description: ""
 #### Contact
 
 Please send an email to [jobs@petitcode.com](mailto:jobs@petitcode.com)
+
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Kontaktieren Sie uns doch!
+
+Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
+
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>

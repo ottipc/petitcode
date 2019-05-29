@@ -4,18 +4,22 @@ title: "Senior Fullstack Java Script Developer (React.js & Node.js)"
 description: ""
 ---
 
-### Senior Fullstack Java Script Developer (React.js & Node.js)
+<Sections>
+<Section>
+<SectionContent>
+
+# Senior Fullstack Java Script Developer (React.js & Node.js)
 
 * Freelance Berlin
 * Remote 2+ Month
 
-#### Aufgaben
+## Aufgaben
 - Realisierung einer React.js Admin Panel Web App
 - Aufbau einer modularen App-Infrastruktur auf Basis von Redux
 - Gemeinsames Erstellen einer React-Native-Anwendung
 - Erstellen von React.js / React-Native UI-Komponenten
 
-#### Skills
+## Skills
 - Mindestens 3 Jahre Erfahrung in der Softwareentwicklung mit JavaScript
 - Senior Level in der Entwicklung mit React.js und Nodes
 - Senior Level in Entwicklung mit CSS
@@ -35,7 +39,31 @@ description: ""
 - Language: English
 
 
-#### Contact
+## Contact
 
 Please send your application to:  [jobs@petitcode.com](mailto:jobs@petitcode.com)
+
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Kontaktieren Sie uns doch!
+
+Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
+
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>
 
