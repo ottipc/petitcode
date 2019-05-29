@@ -4,38 +4,65 @@ title: "Senior Fullstack Java Script Developer (React.js & Node.js)"
 description: ""
 ---
 
-### Senior Fullstack Java Script Developer (React.js & Node.js)
+<Sections>
+<Section>
+<SectionContent>
+
+# Senior Fullstack Java Script Developer (React.js & Node.js)
 
 * Freelance Berlin
 * Remote 2+ Month
 
-#### Aufgaben
-- Realisierung einer React.js Admin Panel Web App
-- Aufbau einer modularen App-Infrastruktur auf Basis von Redux
-- Gemeinsames Erstellen einer React-Native-Anwendung
-- Erstellen von React.js / React-Native UI-Komponenten
+## Tasks
+- Realization of a React.js Admin Panel Web App
+- Development of a modular app infrastructure based on Redux
+- Creating a React Native application together
+- Build React.js / React-Native UI components
 
-#### Skills
-- Mindestens 3 Jahre Erfahrung in der Softwareentwicklung mit JavaScript
-- Senior Level in der Entwicklung mit React.js und Nodes
-- Senior Level in Entwicklung mit CSS
-- Erfahrung mit einem State-Management-Framework wie Redux / Mobx / Flux
-- Umgang mit einem Ticketsystem wie Jira, Redmine oder Trello
+## Skills
+- At least 3 years experience in software development with JavaScript
+- Senior level in development with React.js and Nodes
+- Senior level in development with CSS
+- Experience with a state management framework like Redux / Mobx / Flux
+- Handling a ticket system like Jira, Redmine or Trello
 
 **Nice-to-have**
 
-- Entwicklungserfahrung mit dem Framework react.js von Material UI
-- Wissen / Erfahrung in google Material Design
-- Der Umgang mit Redis, Mongodb, express.js
-- Entwicklungserfahrung auf Unix-Systemen
-- Entwicklungserfahrung mit nativen Anwendungen iOS/ Android
-- Versionserfahrung mit Git **Andere Details:** - Start date: ASAP
+- Development experience with the framework react.js of Material UI
+- Knowledge / experience in google material design
+- Dealing with Redis, Mongodb, express.js
+- Development experience on Unix systems
+- Development experience with native applications iOS / Android
+- Version experience with Git ** Other Details: ** - Start date: ASAP
 - Duration: 2+ Months
 - Location: remote (Start in Berlin desirable)
 - Language: English
 
 
-#### Contact
+## Contact
 
-Please send your application to:  [jobs@petitcode.com](mailto:jobs@petitcode.com)
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us. Please send your application to: [jobs@petitcode.com](mailto:jobs@petitcode.com)
 
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Get in touch with us!
+
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us.
+
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>
