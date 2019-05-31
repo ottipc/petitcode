@@ -111,7 +111,16 @@ module.exports = {
           },
           `gatsby-plugin-offline`,
           `gatsby-plugin-webpack-size`,
-          `gatsby-plugin-netlify-cache`
+          `gatsby-plugin-netlify-cache`,
+          {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+              trackingId: 'UA-82351127-1',
+              head: false,
+              anonymize: true,
+              respectDNT: true
+            }
+          }
         ]
       : [])
   ]
