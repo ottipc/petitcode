@@ -2,38 +2,67 @@
 date: "2019-01-30T03:49:16.408Z"
 title: "IT Sales Manager (m / w)"
 description: ""
+theme: "sections"
 ---
 
-### IT Sales Manager (m / w)
+<Sections>
+<Section>
+<SectionContent>
 
-* Freiberufliche Remote 3+
+# IT Sales Manager (m / w)
 
-#### Als IT-Vertriebsleiter bietest DU
+* Freelance / Remote 3+ months
 
-- Ein abgeschlossenes Studium bspw. der Wirtschaftsinformatik, BWL, VWL - gerne auch einen ** Quereinstieg ** mit relevanter Berufserfahrung
-- Mehrjährige Erfahrung im Vertrieb von IT-Beratungsleistungen / IT-Produkten, gerne auch mit vorheriger Tätigkeit bei einer Freiberufler-Vermittlung oder IT-Firma
-- Erfahrung in der ** Kundenbetreuung ** und ** Kundenberatung **
-- ** Out-of-the-Box Denken **
-- Eigenes Netzwerk
-- Exzellentes Verständnis für ** IT-Landschaften ** - ** Freiberufler ** und dein eigener Boss
-- ** Präferiert aus dem Berliner Raum (Einarbeitung vor Ort) **
+## Als IT-Vertriebsleiter bietest DU
 
-**Schön zu haben**
-- Recruitment Erfahrung
-- Gute Englisch Kenntnisse
+- A degree in Business Informatics, Business Administration, Economics - or **relevant professional experience**
+- Experience in the distribution of IT consulting services / IT products, also with previous experience in a freelance placement or IT company
+- Experience in ** customer care ** and ** customer service **
+- ** out-of-the-box thinking **
+- Own network
+- Excellent understanding of ** IT Landscapes ** - ** Freelancers ** and your own boss
+- ** Preferred from the Berlin area (training on site) **
 
-#### Dafür bekommst DU
+**Good to have**
+- Experience in Recruiting
+- Solid English knowledge
 
-- Partnerschaftlichkeit: ** Flache Hierarchien, ausgeprägter Teamgedanke und größtmöglichen Gestaltungsspielraum **
-- ** Festgehalt plus Provision und Boni **
-- ** Langfristigkeit & Flexibilität **
-- ** Überwiegend Remote **
-- ** Arbeiten mit einigen der besten IT-Experten **
+## What you get
 
-#### Im Vertrieb wirst DU
-- petitcode weiter als ** Beratungs- und Entwicklungspartner ** bei Neu- und Bestandskunden positionieren (Hauptaugenmerk auf Neukunden)
-- Als Vertriebsexperte ** Vertriebsstrukturen, Marketingaktivitäten ** und ** Kampagnen ** initiieren und steuern
-- Als Vertriebsberater immer das Richtige aus unserem Portfolio von ** IT-Beratungsleistungen ** (Projektmanagement, Geschäftsprozessmanagement, Qualitätssicherung), ** Softwareentwicklung, Standardsoftware ** (CRM, ERP, BI) und ** Support / Services ** anbieten
-- ** IT-Projekte ** initiieren und ** Key Accounts ** betreuen
+- Partnership: ** Flat hierarchies, pronounced team spirit and the greatest possible scope for design **
+- ** Fixed salary plus commission and bonuses **
+- ** Long term & flexibility **
+- ** mostly remote **
+- ** Working with some of the best IT experts **
 
-Bitte senden Sie uns Ihre aussagekräftige Bewerbung mit Lebenslauf, Grundgehaltsvorstellung und kurzem Anschreiben an: [hr@petitcode.com] (mailto: hr@petitcode.com)
+## You will
+- continue to position petitcode as a ** consulting and development partner ** for new and existing customers (focus on new customers)
+- As a sales expert ** Initiate and manage sales structures, marketing activities ** and ** campaigns **
+- As a sales consultant we always offer the right thing from our portfolio of ** IT consulting services ** (project management, business process management, quality assurance), ** software development, standard software ** (CRM, ERP, BI) and ** Support / Services **
+- ** Initiate IT projects ** and ** Manage Key Accounts **
+
+Please send us your detailed CV, salary expectations and short cover letter to: [hr@petitcode.com] (mailto: hr@petitcode.com)
+
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Get in touch with us!
+
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us. Please send your application to: [jobs@petitcode.com](mailto:jobs@petitcode.com)
+
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>

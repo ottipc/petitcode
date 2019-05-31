@@ -23,25 +23,33 @@ theme: "sections"
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText>Unsere Kunden</KnockoutText>
+<KnockoutText>Clients & Partners</KnockoutText>
 
 Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hocheffektive und effiziente Organisation an, die auf die Erreichung der Kundenziele ausgerichtet ist
 
-<Grid minWidth="100px">
+<Grid minWidth="120px">
 
-<GridImage maxWidth="120px" alt="World Health Organization" image="world-health-organization.svg" />
+<GridImage maxWidth="150px" alt="World Health Organization" image="world-health-organization.svg" />
 
-<GridImage maxWidth="120px" alt="Infologis" image="infologis.svg" />
+<GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
-<GridImage maxWidth="120px" alt="Jung von Matt" image="jung-von-matt.svg" />
+<GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-<GridImage maxWidth="120px" alt="Universal Music" image="universal-music.svg" />
+<GridImage maxWidth="150px" alt="Universal Music" image="universal-music.svg" />
 
-<GridImage maxWidth="120px" alt="Villeroy Boch" image="villeroy-boch.svg" />
+<GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-<GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
+<GridImage maxWidth="150px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
+<GridImage maxWidth="150px" alt="Treatwell" image="treatwell-logo.svg" />
+
+<GridImage maxWidth="150px" alt="leAD" image="lead.svg" />
+
+<GridImage maxWidth="150px" alt="Find Some Buddy" image="FSB.svg" />
+
+<GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
+
+<GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
 </Grid>
 </SectionContent>
@@ -49,7 +57,7 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 <Section>
 <SectionContent>
 
-# Unsere Dienstleistungen
+<KnockoutText> Unsere Dienstleistungen </KnockoutText>
 
 <Grid minWidth="300px">
 
@@ -129,40 +137,42 @@ Webentwicklung und -design können sehr subjektiv sein und in direktem Zusammenh
 <Section>
 <SectionContent>
 
+<KnockoutText> Unsere Arbeitsweise </KnockoutText>
+
 <Timeline>
 <TimelineEntry>
 
-# Free Video Consultation
+## Kostenlose Videoberatung
 
-Simply book a timeslot and we will be in touch.
-
-</TimelineEntry>
-<TimelineEntry>
-
-# Matching our most suitable specialist
-
-We find you the best available specialist and define an action plan.
+Buchen Sie einfach ein Zeitfenster und wir werden uns mit Ihnen in Verbindung setzen.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Execution of project
+## Spezialisten Matching
+
+Wir finden für Sie den besten verfügbaren Spezialisten und definieren einen Aktionsplan.
+
+</TimelineEntry>
+<TimelineEntry>
+
+## Projektausführung
 
 In accordance to the action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Launch of project
+## Projektlaunch
 
-75% of our projects are launched before estimated deadline.
+75% unserer Projekte werden vor dem voraussichtlichen Termin beendet und gelauncht.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Support
+## Support
 
-We are here to help at anytimes.
+Wir sind jederzeit für Sie da.
 
 </TimelineEntry>
 </Timeline>
@@ -171,7 +181,7 @@ We are here to help at anytimes.
 <Section>
 <SectionContent>
 
-#Team
+<KnockoutText> Team </KnockoutText>
 
 <Grid>
 

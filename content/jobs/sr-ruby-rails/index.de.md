@@ -2,7 +2,12 @@
 date: "2019-01-30T03:49:16.408Z"
 title: "Senior Ruby / Ruby on Rails Developer"
 description: ""
+theme: "sections"
 ---
+
+<Sections>
+<Section>
+<SectionContent>
 
 ### Senior Ruby / Ruby on Rails Developer
 
@@ -43,3 +48,27 @@ description: ""
 #### Contact
 
 Please send an email to [jobs@petitcode.com](mailto:jobs@petitcode.com)
+
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Kontaktieren Sie uns doch!
+
+Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empfehlungen von Dritten wichtig.
+
+</FormIntro>
+<FormSuccess>
+
+# Dankeschön.
+
+Wir melden uns bei Ihnen.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>

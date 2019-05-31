@@ -2,17 +2,22 @@
 date: "2019-01-30T03:49:16.408Z"
 title: "Senior Frontend Developer (m/f)"
 description: ""
+theme: "sections"
 ---
 
-### Senior Frontend Developer (m/f)
+<Sections>
+<Section>
+<SectionContent>
+
+# Senior Frontend Developer (m/f)
 
 * Freelance Berlin/ Remote 1+ Month
 
-#### Tasks
+## Tasks
 - Implement Redesigned Wordpress Website
 - Convert graphics into HTML, CSS & Javascript
 
-#### Skills
+## Skills
 - At least 4 years experience as a frontend software engineer
 - More than 2 years experience in Wordpress
 - Senior Level in development with Javascript, HTML, CSS
@@ -30,12 +35,36 @@ description: ""
 - Backend programming knowledge in a web language like PHP
 - Bachelor of Science or similar education/training in Software Engineering
 
-#### Other details
+## Other details
 - Start date: ASAP
 - Duration: 1+ Month
 - Location: Berlin or Remote
 - Language: English
 
-#### Contact
+## Contact
 
-Please send your application to: [jobs@petitcode.com](mailto:jobs@petitcode.com)
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us. Please send your application to: [jobs@petitcode.com](mailto:jobs@petitcode.com)
+
+</SectionContent>
+</Section>
+<Section inverted scrollId="contact">
+<SectionContent>
+<FreelancerForm scrollTo="contact">
+<FormIntro>
+
+# Get in touch with us!
+
+As a senior collective, we care about quality. That is why referrals from third-persons are important to us.
+
+</FormIntro>
+<FormSuccess>
+
+# Thank you.
+
+We will get in touch with you soon.
+
+</FormSuccess>
+</FreelancerForm>
+</SectionContent>
+</Section>
+</Sections>

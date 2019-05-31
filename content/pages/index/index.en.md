@@ -22,25 +22,33 @@ theme: "sections"
 </Section>
 <Section>
 <SectionContent>
-<KnockoutText>Our Clients</KnockoutText>
+<KnockoutText>Clients & Partners</KnockoutText>
 
 Our Clients are the life-source of our business and we strive to operate a highly effective and efficient organization, focused on meeting client objectives
 
-<Grid minWidth="100px">
+<Grid minWidth="120px">
 
-<GridImage maxWidth="120px" alt="World Health Organization" image="world-health-organization.svg" />
+<GridImage maxWidth="150px" alt="World Health Organization" image="world-health-organization.svg" />
 
-<GridImage maxWidth="120px" alt="Infologis" image="infologis.svg" />
+<GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
-<GridImage maxWidth="120px" alt="Jung von Matt" image="jung-von-matt.svg" />
+<GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
 
-<GridImage maxWidth="120px" alt="Universal Music" image="universal-music.svg" />
+<GridImage maxWidth="150px" alt="Universal Music" image="universal-music.svg" />
 
-<GridImage maxWidth="120px" alt="Villeroy Boch" image="villeroy-boch.svg" />
+<GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
-<GridImage maxWidth="120px" alt="Vorwerk" image="vorwerk.svg" />
+<GridImage maxWidth="150px" alt="Vorwerk" image="vorwerk.svg" />
 
-<GridImage maxWidth="120px" alt="Treatwell" image="treatwell-logo.svg" />
+<GridImage maxWidth="150px" alt="Treatwell" image="treatwell-logo.svg" />
+
+<GridImage maxWidth="150px" alt="leAD" image="lead.svg" />
+
+<GridImage maxWidth="150px" alt="Find Some Buddy" image="FSB.svg" />
+
+<GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
+
+<GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
 </Grid>
 </SectionContent>
@@ -48,7 +56,7 @@ Our Clients are the life-source of our business and we strive to operate a highl
 <Section>
 <SectionContent>
 
-# Our provided services
+<KnockoutText> Our provided services </KnockoutText>
 
 <Grid minWidth="300px">
 
@@ -128,38 +136,40 @@ Web development and design can be very subjective and directly related to your o
 <Section>
 <SectionContent>
 
+<KnockoutText> Our work process </KnockoutText>
+
 <Timeline>
 <TimelineEntry>
 
-# Free Video Consultation
+## Free Video Consultation
 
 Simply book a timeslot and we will be in touch.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Matching our most suitable specialist
+## Matching our most suitable specialist
 
 We find you the best available specialist and define an action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Execution of project
+## Execution of project
 
 In accordance to the action plan.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Launch of project
+## Launch of project
 
 75% of our projects are launched before estimated deadline.
 
 </TimelineEntry>
 <TimelineEntry>
 
-# Support
+## Support
 
 We are here to help at anytimes.
 
@@ -170,7 +180,7 @@ We are here to help at anytimes.
 <Section>
 <SectionContent>
 
-#Team
+<KnockoutText> Team </KnockoutText>
 
 <Grid>
 
