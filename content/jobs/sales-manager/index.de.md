@@ -62,7 +62,7 @@ Als Senior Kollektiv legen wir großen Wert auf Qualität. Deshalb sind uns Empf
 Wir melden uns bei Ihnen.
 
 </FormSuccess>
-</FreelancerForm>>
+</FreelancerForm>
 </SectionContent>
 </Section>
 </Sections>
