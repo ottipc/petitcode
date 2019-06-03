@@ -29,13 +29,9 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 
 <Grid minWidth="120px">
 
-<GridImage maxWidth="150px" alt="World Health Organization" image="world-health-organization.svg" />
-
 <GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
 <GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
-
-<GridImage maxWidth="150px" alt="Universal Music" image="universal-music.svg" />
 
 <GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
@@ -50,6 +46,8 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 <GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
 
 <GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
+
+<GridImage maxWidth="150px" alt="Betahaus" image="betahaus_Logo.png" />
 
 </Grid>
 </SectionContent>

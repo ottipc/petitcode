@@ -28,13 +28,9 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <Grid minWidth="120px">
 
-<GridImage maxWidth="150px" alt="World Health Organization" image="world-health-organization.svg" />
-
 <GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
 <GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
-
-<GridImage maxWidth="150px" alt="Universal Music" image="universal-music.svg" />
 
 <GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
 
@@ -49,6 +45,8 @@ Our Clients are the life-source of our business and we strive to operate a highl
 <GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
 
 <GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
+
+<GridImage maxWidth="150px" alt="Betahaus" image="betahaus_Logo.png" />
 
 </Grid>
 </SectionContent>
