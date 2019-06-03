@@ -10,7 +10,16 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-# Press Kit and Partner Contacts
+## petitcode in one sentence
+
+A digital agency with a decentralised network of professionals, such as developers, designers and digital strategists working under one umbrella in the StartUp Hub of Berlin.
+
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+
+# Press and Partner Contacts
 
 <Grid centered>
 <Person name="Guy de Macedo Behrndt" image="guy-square.jpg">
@@ -32,12 +41,19 @@ Mobile +49 163 508 1987
 </Section>
 <Section>
 <SectionContent>
-<Centered>
+
+## Digital Nomads Documentary
+
+Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
+
+<Video youtubeId="iXGtx-hroKE" />
+
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
 
 ## Social
-
-</Centered>
-
 
 <Grid>
 
@@ -70,26 +86,6 @@ Mobile +49 163 508 1987
 [petitcode press kit (PDF)](https://www.dropbox.com/s/cy1ja31iprnpu9n/Petitcode_Logo_Final.pdf?dl=0)
 
 </Grid>
-
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-
-## petitcode in one sentence
-
-A digital agency with a decentralised network of professionals, such as developers, designers and digital strategists working under one umbrella in the StartUp Hub of Berlin.
-
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-
-## Digital Nomads Documentary
-
-Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
-
-<Video youtubeId="iXGtx-hroKE" />
 
 </SectionContent>
 </Section>
