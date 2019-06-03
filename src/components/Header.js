@@ -138,7 +138,7 @@ export default function Header() {
   return (
     <Wrapper>
       <Grid>
-        <LogoWrapper isScrolling={isScrolling}>
+        <LogoWrapper isScrolling={!isScrolling}>
           <Link className="nohover" to={`/${activeLocale}/`} aria-label="Home">
             <Logo className="notext" />
             <LogoText className="text" />
