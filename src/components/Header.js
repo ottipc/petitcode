@@ -144,11 +144,11 @@ export default function Header() {
             <LogoText className="text" />
           </Link>
         </LogoWrapper>
-        <ContactWrapper show={!isScrolling}>
-          <a className="nohover" href="tel:+493064080338">
+        <ContactWrapper isScrolling={!isScrolling}>
+          <a className="nohover" to={`/${activeLocale}/`} href="tel:+493064080338">
             +49 (0) 30 640 803 38
           </a>
-          <a className="nohover" href="mailto:hi@petitcode.de">
+          <a className="nohover" to={`/${activeLocale}/`} href="mailto:hi@petitcode.de">
             hi@petitcode.de
           </a>
         </ContactWrapper>

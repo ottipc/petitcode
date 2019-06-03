@@ -10,7 +10,16 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-# Press Kit und Partner Contacts
+## petitcode in ein Satz
+
+Eine digitale Agentur mit einem dezentralen Netzwerk von Fachleuten wie Entwicklern, Designern und digitalen Strategen, die im StartUp Hub von Berlin unter einem Dach arbeiten.
+
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+
+# Presse und Partner Contacts
 
 <Grid centered>
 <Person name="Guy de Macedo Behrndt" image="guy-square.jpg">
@@ -32,22 +41,30 @@ Mobile +49 163 508 1987
 </Section>
 <Section>
 <SectionContent>
-<Centered>
+
+## Digitalen Nomaden auf ARTE/DW
+
+Ende Oktober 2018 veröffentlichte der renommierte Mediensender [ARTE] (https://www.arte.tv/) einen Dokumentarfilm über digitale Nomaden. Sebastian & petitcode sind stolz darauf, ein Teil davon zu sein und sich auf organisatorische Aspekte dieser Lebensweise zu konzentrieren. Der Dokumentarfilm ist in französischer und deutscher Sprache erhältlich. Spanische und polnische Untertitel sind ebenfalls verfügbar. Sebs Auftritt beginnt in Minute 21.
+
+<Video youtubeId="iXGtx-hroKE" />
+
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
 
 ## Social
-
-</Centered>
 
 
 <Grid>
 
 [petitcode on Facebook](https://www.facebook.com/thecodetosuccess/)
 
-[petitcode on](https://www.facebook.com/thecodetosuccess/) [Twitter](https://twitter.com/urbansportsclub?lang=de)
+[petitcode on Twitter](https://twitter.com/the_petitcode)
 
-[petitcode on](https://www.facebook.com/thecodetosuccess/) [Instagram](https://www.instagram.com/thecodetosuccess/)
+[petitcode on Instagram](https://www.instagram.com/thecodetosuccess/)
 
-[petitcode on](https://www.facebook.com/thecodetosuccess/) [LinkedIn](https://www.linkedin.com/company/petitcode/)
+[petitcode on LinkedIn](https://www.linkedin.com/company/petitcode/)
 
 [petitcode on Xing](https://www.xing.com/companies/petitcodeug)
 
@@ -70,26 +87,6 @@ Mobile +49 163 508 1987
 [petitcode press kit (PDF)](https://www.dropbox.com/s/cy1ja31iprnpu9n/Petitcode_Logo_Final.pdf?dl=0)
 
 </Grid>
-
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-
-## petitcode in ein Satz
-
-A digital agency with a decentralised network of professionals, such as developers, designers and digital strategists working under one umbrella in the StartUp Hub of Berlin.
-
-</SectionContent>
-</Section>
-<Section>
-<SectionContent>
-
-## Digitalen Nomaden auf ARTE/DW
-
-Late October 2018, the renowned media channel [ARTE](https://www.arte.tv/) released a documentary on digital nomads. Sebastian & petitcode are proud to be part of it and focused on covering organisational aspects of this way of living. The documentary is available in French and German. Spanish and Polish subtitles are also available. Seb's appearance starts on minute 21.
-
-<Video youtubeId="iXGtx-hroKE" />
 
 </SectionContent>
 </Section>
