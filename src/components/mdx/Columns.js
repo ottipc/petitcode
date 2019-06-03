@@ -151,6 +151,9 @@ ColumnContent.propTypes = {
 
 export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
   const { columns } = useContext(GlobalContext)
+  if (!columns[file]) {
+    return null
+  }
   const imageData = columns[file].childImageSharp
   const image = {
     ...imageData,

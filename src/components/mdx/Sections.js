@@ -43,21 +43,24 @@ function Sections({ children }) {
   })
 
   // Store sections array to context
-  const sections = React.Children.toArray(children).map((section) => ({
+  const newSections = React.Children.toArray(children).map((section) => ({
     nr: section.props.nr,
     video: !!section.props.video
   }))
 
   useEffect(() => {
-    setSections(sections)
+    setSections(newSections)
+    return () => {
+      setSections([])
+    }
+  }, [JSON.stringify(newSections)])
+
+  useEffect(() => {
     if (scrollToSection !== null) {
       scrollTo(`#section-${scrollToSection}`)
       setScrollToSection(null)
     }
-    return () => {
-      setSections([])
-    }
-  })
+  }, [scrollToSection])
 
   return <Article>{children}</Article>
 }
