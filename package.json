@@ -21,8 +21,8 @@
     ]
   },
   "dependencies": {
-    "@material-ui/core": "^4.0.0-beta.1",
-    "@material-ui/styles": "^4.0.0-beta.1",
+    "@material-ui/core": "^4.0.1",
+    "@material-ui/styles": "^4.0.1",
     "@mdx-js/mdx": "^1.0.20",
     "@mdx-js/react": "^1.0.20",
     "@researchgate/react-intersection-observer": "^1.0.1",
@@ -34,7 +34,7 @@
     "gatsby-plugin-google-analytics": "^2.0.20",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-material-ui": "^2.0.0-beta.0",
+    "gatsby-plugin-material-ui": "^2.0.1",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-polyfill-io": "^1.1.0",
