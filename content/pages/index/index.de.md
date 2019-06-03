@@ -210,16 +210,6 @@ Marketing & Sales
 Accounting
 
 </Person>
-<Person name="Rodolfo Lopez" image="rodolfo-lopez.jpg">
-
-Heavyweight Dev
-
-</Person>
-<Person name="Mario Mielke" image="mario-mielke.jpg">
-
-Creative Director
-
-</Person>
 <Person name="Bernadette Zawal-Pfeil" image="bernadette-square.jpg">
 
 Gesellschafter
