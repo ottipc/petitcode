@@ -21,7 +21,7 @@ export const FormIntro = styled.div`
 export const FormSuccess = styled.div``
 
 export default function FreelancerForm({ scrollTo, children }) {
-  const formName = 'client-form'
+  const formName = 'freelancer-form'
   const {
     location: { pathname, search }
   } = useContext(LocationContext)
