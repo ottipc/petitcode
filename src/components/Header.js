@@ -148,8 +148,8 @@ export default function Header() {
           <a className="nohover" href="tel:+493064080338">
             +49 (0) 30 640 803 38
           </a>
-          <a className="nohover" href="mailto:hi@petitcode.de">
-            hi@petitcode.de
+          <a className="nohover" href="mailto:info@petitcode.de">
+            info@petitcode.de
           </a>
         </ContactWrapper>
       </Grid>
