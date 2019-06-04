@@ -46,7 +46,7 @@ Our Clients are the life-source of our business and we strive to operate a highl
 
 <GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
-<GridImage maxWidth="150px" alt="Betahaus" image="betahaus_Logo.png" />
+<GridImage maxWidth="150px" alt="Betahaus" image="betahaus-logo.svg" />
 
 </Grid>
 </SectionContent>
