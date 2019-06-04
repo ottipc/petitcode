@@ -102,6 +102,24 @@ By following the above mentioned quality principles, petitcode will guarantee yo
 </Columns>
 </Section>
 <Section>
+<Columns contentWidth="6">
+<ColumnContent>
+
+## Workshop
+
+As Design can be quite subjective, we recommend to start with a workshop with the choosen senior freelancer. After initial research and an intensive exchange, we can rationally work out which is the most suitable appearance for your project and company.
+
+In a <link humanId = "article-2">petitcode workshop</link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
+
+[Enquire about a design workshop.](#Contact)
+
+</ColumnContent>
+<ColumnImage file="neven-krcmarek-145603-unsplash.jpg" alt="The first stroke is the hardest. Together with petitcode, it will be easy for you to develop the best user interface.">
+</ColumnImage>
+</Columns>
+
+</Section>
+<Section>
 <Columns reverse contentWidth="6">
 <ColumnContent>
 

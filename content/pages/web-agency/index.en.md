@@ -113,6 +113,21 @@ and we will make sure to put you in touch with relevant freelancers.
 <SectionContent>
 <Centered>
 
+## Workshop
+
+We recommend to start with a workshop with the choosen senior freelancer. After initial research and an intensive exchange, we can rationally work out which is the most suitable appearance for your project and company.
+
+In a <link humanId = "article-2"> petitcode workshop</link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
+
+[Enquire about a design workshop.](#Contact)
+
+</Centered>
+</SectionContent>
+</Section>
+<Section>
+<SectionContent>
+<Centered>
+
 # What makes petitcode different from other digital agencies?
 
 petitcode’s collective originated from the flaws of this model and the ambition

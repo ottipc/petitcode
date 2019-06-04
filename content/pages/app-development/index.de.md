@@ -103,7 +103,7 @@ Wir verstehen, dass Festangestellte weiterhin vorgezogen werden. Und dennoch gib
 Die Suche nach motivierten Festangestellten, die perfekt in Ihr Unternehmen passen, kann wesentlich länger dauern als erwünscht oder als es durch den Projektdruck akzeptabel erscheint. Daher schlagen wir Ihnen vor, **einen Freelancer von petitcode zur kurzzeitigen Überbrückung in Erwägung zu ziehen mit dem Effekt**, dass Ihr Projekt nicht zum Stillstand kommt bzw. früher beginnen kann. Parallel dazu **engagiert sich petitcode, am Markt die richtigen Senior-Kandidaten für Sie zu finden**, um Ihre Vollzeitstelle zu besetzen.
 
 
-### Stellen Sie eine Einstellungsanfrage, um Ihr Entwicklungsprojekt für mobile Apps zu unterstützen
+## Stellen Sie eine Einstellungsanfrage, um Ihr Entwicklungsprojekt für mobile Apps zu unterstützen
 
 Falls Sie noch Fragen zur Entwicklung mobiler Apps haben, ob technisch oder produktbezogen, wie Sie die Benutzererfahrung bewerten oder ob Sie noch nicht festgelegt haben, was Sie genau benötigen - wenden Sie sich einfach einmal direkt an uns. Wir würden uns sehr freuen, uns mit Ihnen auszutauschen und dabei gemeinsam herauszuarbeiten, wie der beste Ansatz für Ihr Projekt aussehen könnte.
 

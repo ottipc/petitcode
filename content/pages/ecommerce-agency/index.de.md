@@ -76,14 +76,14 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 </Columns>
 </Section>
 <Section>
-<Columns reverse contentWidth="6">
+<Columns contentWidth="6">
 <ColumnContent>
 
 ## Workshop
 
 Es macht wenig Sinn, dass wir Ihnen konkrete Vorschläge machen wenn es noch grundlegende Unklarheiten gibt. Generell, führt es wiederum zu weitere (irrelevante) Fragen und zusätzlichen Chaos. Manchmal ist es einfach nicht der richtiger Zeitpunkt, um mit der Produktion anzufangen.
 
-Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen Workshop durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
+Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen <Link humanId="article-2">Workshop</Link> durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
 
 [Nach einen E-Commerce Entwickler nachfragen.](#Contact)
 
