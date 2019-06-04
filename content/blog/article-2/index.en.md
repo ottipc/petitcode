@@ -3,7 +3,7 @@ slug: "workshop"
 date: "2019-01-30T03:49:16.408Z"
 title: "petitcode Workshops"
 description: "Before we start any project, it is essential for us to fully grasp every client's specific requirements."
-theme: "sections
+theme: "sections"
 ---
 
 <Sections>
