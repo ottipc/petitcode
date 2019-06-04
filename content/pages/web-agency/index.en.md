@@ -117,7 +117,7 @@ and we will make sure to put you in touch with relevant freelancers.
 
 We recommend to start with a workshop with the choosen senior freelancer. After initial research and an intensive exchange, we can rationally work out which is the most suitable appearance for your project and company.
 
-In a <link humanId = "article-2"> petitcode workshop</Link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
+In a <Link humanId = "article-2"> petitcode workshop</Link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
 
 [Enquire about a design workshop.](#Contact)
 
