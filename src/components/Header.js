@@ -149,7 +149,7 @@ export default function Header() {
             +49 (0) 30 640 803 38
           </a>
           <a className="nohover" href="mailto:info@petitcode.de">
-            hi@petitcode.de
+            info@petitcode.de
           </a>
         </ContactWrapper>
       </Grid>
