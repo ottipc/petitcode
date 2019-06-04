@@ -10,6 +10,8 @@ theme: "sections"
 <Section>
 <SectionContent>
 
+<KnockoutText>Workshop</KnockoutText>
+
 Angesichts der Menge an Informationen, die online verfügbar sind, haben Sie möglicherweise nicht die Zeit und Energie, um alle Anbieter zu überprüfen, auf die Sie stoßen. Unabhängig von der Branche bevorzugen potenzielle Kunden, wenn es um den Verkauf (Dienstleistungen oder Waren) geht, im Idealfall einen direkten Überblick über den erwarteten Aufwand und einen späteren Preis.
 
 Im Laufe der Jahre haben wir ein wiederkehrendes Muster festgestellt: Kommunikation ist der Schlüssel und kann, wenn sie fehlt, viele vermeidbare Probleme verursachen. Verständlich und unbestreitbar. Dies gilt in beide Richtungen: Kunden, die wissen, was sie von Auftragnehmern erhalten, und Auftragnehmer, die genau wissen, was Kunden von ihnen erwarten und wollen.

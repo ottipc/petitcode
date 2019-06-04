@@ -10,6 +10,8 @@ theme: "sections"
 <Section>
 <SectionContent>
 
+<KnockoutText>Workshop</KnockoutText>
+
 With the amount of information available online, we understand that you may not have the time and energy to go through every provider you come across. Regardless of the industry, when it comes down to Sales (services or goods), prospective clients ideally prefer to receive a direct overview of the expected time/effort and a subsequent price. 
 
 Over the years we have noticed one reoccuring pattern: communication is key and, if lacking, can cause a lot of avoidable troubles. Understandable and undeniable. This is applicable in both directions: clients knowing what they get from contractors and contractors knowing exactly what clients want and expect from them. 
