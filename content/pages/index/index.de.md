@@ -17,7 +17,7 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-<KnockoutText>petitcode ist ein Berlin basiertes Seniorkollektiv von spezialisten, die Beratung, Einstellung und Entwicklung aus erster Hand anbieten. </KnockoutText>
+<KnockoutText>petitcode ist ein Berlin basiertes Seniorkollektiv von Spezialisten, die Beratung, Recruiting und Entwicklung aus erster Hand anbieten. </KnockoutText>
 </SectionContent>
 
 </Section>

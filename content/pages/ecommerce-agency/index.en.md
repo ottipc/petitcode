@@ -76,6 +76,22 @@ petitcode's collective of senior freelancers structures its processes in three s
 </Columns>
 </Section>
 <Section>
+<Columns contentWidth="6">
+<ColumnContent>
+
+## Workshop
+
+If there are still open questions or technical uncertainties about the project, it only makes sense for us to go through it together to avoid any unnecessary chaos. Only then is the right time to start with the Production stage.
+
+In case you have further questions, you can visit our <Link humanId="article-2">blog article</Link> or [contact petitcode directly](#Contact). We will be pleased to assist you in developing a detailed project plan first. After the workshop you will have a very accurate estimation.
+
+
+</ColumnContent>
+<ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
+</ColumnImage>
+</Columns>
+</Section>
+<Section>
 <Columns reverse contentWidth="6">
 <ColumnContent>
 

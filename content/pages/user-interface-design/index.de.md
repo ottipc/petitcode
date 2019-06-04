@@ -78,9 +78,9 @@ Natürlich kann petitcode Ihnen helfen, **Ihren eigenen Style Guide** zu konzipi
 
 Wenn Sie sich mit der Überlegung tragen, eine neue Corporate Identity aufzusetzen oder eine bestehende zu aktualisieren, empfehlen wir Ihnen zuallererst ein Workshop. Nach der ersten Recherche und einem intensiven Austausch mit Ihnen können wir rational herausarbeiten, welches das geeignetste Erscheinungsbild für Ihrem Unternehmen ist.
 
-In einem petitcode-Workshop werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget.
+In einem <Link humanId="article-2">petitcode-Workshop</Link> werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget.
 
-[nach einer Corporate Design Beratung anfragen.](#Contact)
+[nach einen Corporate Design Workshop anfragen.](#Contact)
 
 </ColumnContent>
 <ColumnImage file="neven-krcmarek-145603-unsplash.jpg" alt="Der erster Strich ist der schwierigste. Zusammen mit petitcode wird es Ihnen leicht gemacht, das beste Erscheinungsbild für ein stärkeres Branding zu entwickeln.">
