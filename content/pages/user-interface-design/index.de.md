@@ -80,7 +80,7 @@ Wenn Sie sich mit der Überlegung tragen, eine neue Corporate Identity aufzusetz
 
 In einem <Link humanId="article-2">petitcode-Workshop</Link> werden unsere hochrangigen Freiberufler Ihre aktuelle Position bewerten und analysieren, wie Sie diese Änderungen in Ihrem gesamten Unternehmen am besten umsetzen können. Am Ende erhalten Sie einen vollständigen Bericht aller zu berücksichtigenden Punkte, eine genaue Aufwandsschätzung für jede Teilaufgabe und das geschätzte Gesamt-Budget.
 
-[nach einen Corporate Design Workshop anfragen.](#Contact)
+[nach einen Corporate Design Workshop anfragen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="neven-krcmarek-145603-unsplash.jpg" alt="Der erster Strich ist der schwierigste. Zusammen mit petitcode wird es Ihnen leicht gemacht, das beste Erscheinungsbild für ein stärkeres Branding zu entwickeln.">

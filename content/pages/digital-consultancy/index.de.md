@@ -38,7 +38,7 @@ Durch die Digitalisierung der Markenkommunikation wurden unzählige interaktive 
 
 Dies erfordert einen datengetriebenen und ausgereiften Ansatz, den nur wenige beherrschen. Wenn Sie einen Berater mit technischen und kundenorientierten Kenntnissen an Ihrer Seite haben, können Sie die richtige Erfahrung sowohl online als auch offline erstellen, um Ihr Geschäft anzukurbeln.
 
-[Deswegen ist Digitalisierungsberatung zu empfehlen.](#Contact)
+[Deswegen ist Digitalisierungsberatung zu empfehlen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="andy-kelly-402111-unsplash.jpg" alt="Digitalisierungsberatung hilft Ihnen die richtigen Entscheidungen zu treffen. Zusammen mit petitcode sind Sie auf der richtigen Spur">
@@ -58,7 +58,7 @@ Sie leiten die Strategie, Sie setzen sie um - mit ihrem Wissen entwickeln Sie ei
 Sie sind erschwinglich - es ist wie im Gesundheitswesen, Prävention ist besser als Heilungen. Außerdem muss die Strategie angewendet werden, um zuerst Ergebnisse zu erhalten.
 Hält Sie fit und wettbewerbsfähig - zu wissen, wie Ihre direkten Mitbewerber aufgestellt sind, ist immer von Vorteil. Technologie-Proofing - Technologien kommen und gehen, daher ist ein Feedback von höchster Qualität unerlässlich.
 
-[Nach einen Digitalisierungsberater nachfragen](#Contact)
+[Nach einen Digitalisierungsberater nachfragen](#contact)
 
 </ColumnContent>
 <ColumnImage file="ryoji-iwata-669950-unsplash.jpg" alt="Digitale Berater helfen Ihnen dabei, Ihre Marketingentscheidungen zu priorisieren">
@@ -79,7 +79,7 @@ Der Mehrwert wird kurz-, mittel- und langfristig auf unterschiedliche Weise gese
 
 - Mit den erforderlichen modernisierten Funktionen wandeln Sie Ihre IT-Funktionen von der richtigen Systemarchitektur und dem Betriebsmodell in eine effektive Kostenstruktur um, um die digitale Zukunft des Unternehmens zu unterstützen.
 
-[Nach einen Digitalisierungsberater nachfragen](#Contact)
+[Nach einen Digitalisierungsberater nachfragen](#contact)
 
 </ColumnContent>
 <ColumnImage file="med-badr-chemmaoui-630239-unsplash.jpg" alt="Eine innovative digitale Strategie kann das fehlende Teil des Puzzles zum Erfolg sein">
@@ -97,7 +97,7 @@ petitcode ist ein Kollektiv von hochrangigen Freelancern. Unabhängig davon ob S
 
 Wenn Sie noch Fragen zur **digitalen Beratung** haben, ob technisch oder Marketing, wie Sie die Benutzererfahrung bewerten und oder nicht wissen, was genau Sie benötigen, können Sie sich direkt an uns wenden. Wir freuen uns über einen ersten Kontakt und ermitteln, welch der beste Ansatz für Ihr Projekt wäre.
 
-[Nach einen Digitalisierungsberater nachfragen](#Contact)
+[Nach einen Digitalisierungsberater nachfragen](#contact)
 
 </Centered>
 </SectionContent>

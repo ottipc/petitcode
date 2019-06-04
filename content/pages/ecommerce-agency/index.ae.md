@@ -111,7 +111,7 @@ If you are thinking about developing a digital marketing strategy or simply upda
 
 In a petitcode workshop, our senior freelancers will assess all development stages, define priorities and conceive a project timeline. As a result, you will receive a complete report of all items to consider, an accurate estimate of each task, subtask and the estimated total budget.
 
-[enquire about a digital marketing workshop link](#change)
+[enquire about a digital marketing workshop link](#contact)
 
 </ColumnContent>
 <ColumnImage file="william-iven-19843-unsplash.jpg" alt="ecommerce is a continuous process of optimization">

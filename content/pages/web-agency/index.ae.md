@@ -65,7 +65,7 @@ not be their main skill. petitcode’s
 collective of senior freelancers has **only
 experienced front end developers**
 to offer. If you are not sure which tools and platforms best suit
-your business, simply [get in touch](/contact) with us.
+your business, simply [get in touch](#contact) with us.
 
 [hire a front end developer](#contact)
 
@@ -135,7 +135,7 @@ You might want to consider developing user studies to fully grasp and define sui
 
 If you are thinking about developing a web solution or updating an existing one, we recommend a workshop first of all. After the first research and an intensive exchange with you, we can rationally work out which is the most suitable approach for the project.
 
-In a petitcode workshop, our senior freelancers will assess all development stages, define priorities and conceive a project timeline. At the end, you will receive a complete report of all items to consider, an accurate estimate of each task, subtask and the estimated total budget.
+In a <Link humanId = "article-2"> petitcode workshop</Link>, our senior freelancers will assess all development stages, define priorities and conceive a project timeline. At the end, you will receive a complete report of all items to consider, an accurate estimate of each task, subtask and the estimated total budget.
 
 </ColumnContent>
 <ColumnImage reverse file="med-badr-chemmaoui-630239-unsplash.jpg" alt="our decentralised web agency structure will help you connect to top quality freelancers">

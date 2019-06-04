@@ -57,7 +57,7 @@ Mobile app design
 
 **The difference** between generic front end app development and the best front end app development **is** **understanding which tools are best fit for specific tasks.** This will define whether the software will look slick or simply hacked. Front-end developers may also have design skills but it might not be their main skill.
 
-petitcode's collective of senior freelancers has **only experienced Android and iOS developers** to offer. If you are not sure which languages and technologies best suit your product, simply [get in touch](/contact) with us.
+petitcode's collective of senior freelancers has **only experienced Android and iOS developers** to offer. If you are not sure which languages and technologies best suit your product, simply [get in touch](#contact) with us.
 
 [hire a front end developer](#contact)
 

@@ -103,7 +103,7 @@ Es macht wenig Sinn, dass wir Ihnen konkrete Vorschläge machen wenn es noch gru
 
 Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen <Link humanId="article-2">Workshop</Link> durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
 
-[Nehmen Sie einfach Kontakt mit uns auf und lassen Sie das Projekt beginnen.](#Contact)
+[Nehmen Sie einfach Kontakt mit uns auf und lassen Sie das Projekt beginnen.](#contact)
 
 </Centered>
 </SectionContent>

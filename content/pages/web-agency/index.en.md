@@ -65,7 +65,7 @@ not be their main skill. petitcode’s
 collective of senior freelancers has **only
 experienced front end developers**
 to offer. If you are not sure which tools and platforms best suit
-your business, simply [get in touch](/contact) with us.
+your business, simply [get in touch](#contact) with us.
 
 [hire a front end developer](#contact)
 
@@ -119,7 +119,7 @@ We recommend to start with a workshop with the choosen senior freelancer. After 
 
 In a <Link humanId = "article-2"> petitcode workshop</Link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
 
-[Enquire about a design workshop.](#Contact)
+[Enquire about a design workshop.](#contact)
 
 </Centered>
 </SectionContent>
