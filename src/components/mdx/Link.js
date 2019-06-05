@@ -8,7 +8,20 @@ import { LocationContext, GlobalContext } from '../../utils/Contexts'
 
 const StyledLink = styled(Link)``
 
-export default function MdxLink({ humanId, title = null, children, ...props }) {
+export default function MdxLink({
+  href,
+  humanId,
+  title = null,
+  children,
+  ...props
+}) {
+  if (href) {
+    return (
+      <a href={href} title={title} {...props}>
+        {children || title}
+      </a>
+    )
+  }
   const { activeLocale } = useContext(LocationContext)
   const { langs, defaultLocale, pages } = useContext(GlobalContext)
 
@@ -56,7 +69,8 @@ export default function MdxLink({ humanId, title = null, children, ...props }) {
 }
 
 MdxLink.propTypes = {
-  humanId: propTypes.string.isRequired,
+  humanId: propTypes.string,
+  href: propTypes.string,
   title: propTypes.string,
   children: propTypes.node
 }
