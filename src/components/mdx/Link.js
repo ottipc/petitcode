@@ -46,7 +46,7 @@ export default function MdxLink({ humanId, title = null, children, ...props }) {
       locale
     })
     return (
-      <StyledLink to={path} {...props}>
+      <StyledLink to={path} title={title || pageTitle} {...props}>
         {children || title || pageTitle}
       </StyledLink>
     )
