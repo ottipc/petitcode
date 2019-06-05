@@ -32,6 +32,7 @@ const Wrapper = styled.section`
 
       & button {
         border-color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.white};
       }
 
       & .MuiInputBase-root {
