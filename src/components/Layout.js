@@ -8,7 +8,6 @@ import Observer from '@researchgate/react-intersection-observer'
 import ReactCookieConsent, { Cookies } from 'react-cookie-consent'
 import { Trans, useTranslation } from 'react-i18next'
 
-import Navigation from './Navigation'
 import Overlays from './Overlays'
 import Footer from './Footer'
 
@@ -136,7 +135,6 @@ export default function Layout({ children }) {
 
         <Wrapper hasAcceptedCookies={hasAcceptedCookies}>
           <Overlays />
-          <Navigation navigationActive={navigationActive} />
           <main>
             <Observer onChange={handleIsScrollingIntersection}>
               <div />
