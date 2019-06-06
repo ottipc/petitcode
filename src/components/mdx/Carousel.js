@@ -5,70 +5,46 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 
 const SliderWrapper = styled.div`
-  padding-top: 2rem;
-  margin: 2rem 0;
+  margin: ${({ theme }) => theme.spacings.s2} 0;
+`
 
-  & .slick-list {
-    top: 2rem;
-  }
+const NavWrapper = styled.div`
+  & .slick-slide {
+    padding: 0 ${({ theme }) => theme.spacings['s1.5']};
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 1px solid transparent;
+    color: ${({ theme }) => theme.colors.grey400};
+    cursor: pointer;
+    white-space: nowrap;
 
-  & .slick-dots {
-    position: absolute;
-    top: -2rem;
-    left: 0;
-    right: 0;
-    display: flex !important;
-    list-style: none;
-    margin: 0;
-    overflow: scroll;
-
-    padding-bottom: 1rem; /* allows proper scrollbar placement */
-
-    &:after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 0;
-      left: 0;
-      width: 10%;
-      display: block;
-      background: red;
-    }
-
-    & li {
-      padding: 0;
-      margin: 0;
-      margin-right: 2rem;
-
-      &.slick-active button {
-        border-bottom-color: ${({ theme }) => theme.colors.black};
-        color: ${({ theme }) => theme.colors.black};
-      }
-    }
-
-    & button {
-      background: transparent;
-      padding: 0 5%;
-      height: 2rem;
-      line-height: 2rem;
-      border: none;
+    & p:focus {
       outline: none;
-      border-bottom: 1px solid transparent;
-      color: ${({ theme }) => theme.colors.grey400};
-      cursor: pointer;
-      white-space: nowrap;
+    }
+
+    &.slick-active {
+      border-bottom-color: ${({ theme }) => theme.colors.black};
+      color: ${({ theme }) => theme.colors.black};
     }
   }
+`
+const MainWrapper = styled.div`
+  margin-top: ${({ theme }) => theme.spacings.s4};
 `
 
 export function Carousel({ children }) {
   const [main, setMain] = useState(null)
+  const [nav, setNav] = useState(null)
 
   let slider1
+  let slider2
 
   useEffect(() => {
     if (!main) {
       setMain(slider1)
+    }
+    if (!nav) {
+      setNav(slider2)
     }
   })
 
@@ -80,24 +56,39 @@ export function Carousel({ children }) {
     (child) => child.props.mdxType === 'CarouselSlides'
   )
 
-  const settings = {
+  const mainSettings = {
     ref: (slider) => (slider1 = slider),
-    customPaging: (i) => (
-      <button onClick={() => main.slickGoTo(i)}>{Nav.props.children[i]}</button>
-    ),
     arrows: false,
-    dots: true,
-    dotsClass: 'slick-dots slick-thumb',
+    dots: false,
+    infinite: true,
+    fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: nav
+  }
+
+  const navSettings = {
+    ref: (slider) => (slider2 = slider),
+    arrows: false,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    variableWidth: true,
+    slidesToScroll: 1,
+    centerMode: true,
+    focusOnSelect: true,
+    asNavFor: main
   }
 
   return (
     <>
       <SliderWrapper>
-        <Slider {...settings}>{Main.props.children}</Slider>
+        <NavWrapper>
+          <Slider {...navSettings}>{Nav.props.children}</Slider>
+        </NavWrapper>
+        <MainWrapper>
+          <Slider {...mainSettings}>{Main.props.children}</Slider>
+        </MainWrapper>
       </SliderWrapper>
     </>
   )

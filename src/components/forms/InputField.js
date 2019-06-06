@@ -26,6 +26,7 @@ export default function InputField({
     <StyledTextField
       {...rest}
       name={name}
+      id={`form-field-${name}`}
       helperText={showError ? meta.error || meta.submitError : undefined}
       error={showError}
       inputProps={{ ...restInput }}

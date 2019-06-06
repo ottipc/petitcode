@@ -79,7 +79,7 @@ const BottomGrid = styled.div`
   font-size: 0.8em;
   text-align: center;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey400};
   font-family: ${({ theme }) => theme.fonts.header.join(', ')};
   display: flex;
   flex-wrap: wrap;

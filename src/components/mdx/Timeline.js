@@ -7,8 +7,14 @@ export const Timeline = styled.div`
 
 export const TimelineEntry = styled.div`
   position: relative;
-  padding: 0 ${(props) => props.theme.spacings.s2}
-    ${(props) => props.theme.spacings.s2};
+  padding: 0 ${(props) => props.theme.spacings.s6}
+    ${(props) => props.theme.spacings.s2} 0;
+
+  & h2 {
+    margin-top: ${(props) => props.theme.spacings['s0.25']};
+    margin-bottom: ${(props) => props.theme.spacings['s0.75']};
+  }
+
   &:before {
     content: '';
     position: absolute;
@@ -41,8 +47,8 @@ export const TimelineEntry = styled.div`
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     width: 50%;
-    padding: 0 ${(props) => props.theme.spacings.s6}
-      ${(props) => props.theme.spacings.s4};
+    padding: 0 0 ${(props) => props.theme.spacings.s4};
+    padding-right: ${(props) => props.theme.spacings.s4};
     text-align: right;
     &:before {
       right: -21px;
@@ -52,6 +58,8 @@ export const TimelineEntry = styled.div`
       right: -12px;
     }
     &:nth-child(2n) {
+      padding-left: ${(props) => props.theme.spacings.s4};
+      padding-right: 0;
       margin-left: 50%;
       text-align: left;
       &:before {

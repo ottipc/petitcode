@@ -1,22 +1,16 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import propTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 
-import Helmet from 'react-helmet'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 import ReactCookieConsent, { Cookies } from 'react-cookie-consent'
 import { Trans, useTranslation } from 'react-i18next'
 
-import Navigation from './Navigation'
 import Overlays from './Overlays'
 import Footer from './Footer'
+import Metatags from './Metatags'
 
-import {
-  NavigationContext,
-  SectionContext,
-  GlobalContext
-} from '../utils/Contexts'
+import { NavigationContext, SectionContext } from '../utils/Contexts'
 
 import Link from './mdx/Link'
 
@@ -43,23 +37,7 @@ export default function Layout({ children }) {
   const toggleNavigation = () => {
     setNavigationActive(!navigationActive)
   }
-  const data = useStaticQuery(graphql`
-    query LayoutQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          siteUrl
-        }
-      }
-    }
-  `)
 
-  const {
-    siteMetadata: { title, description, siteUrl }
-  } = data.site
-
-  const { activeLocale, pathname } = useContext(GlobalContext)
   const { t } = useTranslation()
 
   const hasAcceptedCookies = !!Cookies.get('CookieConsent')
@@ -83,60 +61,9 @@ export default function Layout({ children }) {
           setIsScrolling
         }}
       >
-        <Helmet
-          /**
-           * Meta information based on:
-           * https://moz.com/blog/meta-data-templates-123
-           * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-           */
-          htmlAttributes={{
-            lang: activeLocale
-          }}
-          title={title}
-          meta={[
-            {
-              name: 'description',
-              content: description
-            },
-            {
-              name: 'twitter:card',
-              value: 'summary'
-            },
-            {
-              property: 'og:title',
-              content: title
-            },
-            { property: 'og:type', content: 'website' },
-            {
-              property: 'og:url',
-              content: `${siteUrl}${pathname}`
-            },
-            {
-              property: 'og:description',
-              content: description
-            },
-            {
-              property: 'og:image',
-              content: '/social.png'
-            },
-            {
-              name: 'apple-mobile-web-app-capable',
-              content: 'yes'
-            },
-            {
-              name: 'apple-mobile-web-app-status-bar-style',
-              content: 'black-translucent'
-            },
-            {
-              name: 'format-detection',
-              content: 'telephone=no'
-            }
-          ]}
-        />
-
+        <Metatags />
         <Wrapper hasAcceptedCookies={hasAcceptedCookies}>
           <Overlays />
-          <Navigation navigationActive={navigationActive} />
           <main>
             <Observer onChange={handleIsScrollingIntersection}>
               <div />
