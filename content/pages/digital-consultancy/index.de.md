@@ -11,7 +11,7 @@ theme: "sections"
 <Columns contentWidth="6">
 <ColumnContent>
 
-# Digitalisierungs<wbr>beratung leicht gemacht mit petitcode
+# <wbr>Digitalisierungs<wbr>beratung leicht gemacht mit petitcode
 
 Machen wir uns nichts vor: Die digitale Revolution ist im vollem Gange und wir sind so tief drin, dass wir längst über den Punkt ohne Wiederkehr hinaus gegangen sind. Beratung zur **Digitalen Transformation** erfordert heutzutage einen 360-Grad-Ansatz, um betriebliche Engpässe in der Wertschöpfungskette von Informationen zu vermeiden. Neben Tech sollte die Strategie auch Bereiche wie Marketing, SEO, Social Media, Werbung, Kampagnen-Performance und Optimierung umfassen.
 
