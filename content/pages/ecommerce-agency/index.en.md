@@ -83,7 +83,7 @@ petitcode's collective of senior freelancers structures its processes in three s
 
 If there are still open questions or technical uncertainties about the project, it only makes sense for us to go through it together to avoid any unnecessary chaos. Only then is the right time to start with the Production stage.
 
-In case you have further questions, you can visit our <Link humanId="article-2">blog article</Link> or [contact petitcode directly](#Contact). We will be pleased to assist you in developing a detailed project plan first. After the workshop you will have a very accurate estimation.
+In case you have further questions, you can visit our <Link humanId="article-2">blog article</Link> or [contact petitcode directly](#contact). We will be pleased to assist you in developing a detailed project plan first. After the workshop you will have a very accurate estimation.
 
 
 </ColumnContent>

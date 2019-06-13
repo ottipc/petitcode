@@ -40,7 +40,7 @@ Unabhängig davon, ob Sie ein Startup-Unternehmen oder ein etabliertes Unternehm
 
 Wenn Sie Fragen haben oder direkt anfangen möchten, kontaktieren Sie uns doch.
 
-[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+[Nach einen E-Commerce Entwickler nachfragen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="carl-heyerdahl-181868-unsplash.jpg" alt="Ob im Business oder E-Commerce, wir alle wollen mehr erreichen">
@@ -68,7 +68,7 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 
 3.  **LEARN** - LEARN - Dank aller Messungen und empirischen Erkenntnisse kann der Kunde zusammen mit petitcode fundierte, evidenzbasierte Entscheidungen treffen.
 
-[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+[Nach einen E-Commerce Entwickler nachfragen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
@@ -83,9 +83,9 @@ Das petitcode-Kollektiv aus hochrangigen Freelancern gliedert seine Prozesse in 
 
 Es macht wenig Sinn, dass wir Ihnen konkrete Vorschläge machen wenn es noch grundlegende Unklarheiten gibt. Generell, führt es wiederum zu weitere (irrelevante) Fragen und zusätzlichen Chaos. Manchmal ist es einfach nicht der richtiger Zeitpunkt, um mit der Produktion anzufangen.
 
-Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen <Link humanId="article-2">Workshop</Link> durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
+Falls Sie konkrete technische Garantien benötigen, gerne kann petitcode mit Ihnen zusammen einen Workshop (mehr Infos in <Link humanId="article-2">unserem Blog</Link>) Workshop durchführen, um daraus ein ausführliches Projektplan zuerst zu entwickeln. In einer kurzen Zeit, erhalten Sie von uns eine haargenaue Aufwandschätzung.
 
-[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+[Nach einem Workshop nachfragen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="adeolu-eletu-13086-unsplash.jpg" alt="Eine solide Marketinganalyse und E-Commerce-Strategie werden in solide Zahlen umgesetzt">
@@ -104,7 +104,7 @@ Das Kollektiv von petitcode entstand aus den Fehlern dieses Modells und dem Best
 
 Mit dem Senior-Rat unseres Freelance-Kollektivs werden Sie umfassend beraten, um technik- und geschäftssichere Entscheidungen zu treffen, die Ihren ROI im Laufe der Zeit steigern und Ihre Leistung steigern.
 
-[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+[Nach einen E-Commerce Entwickler nachfragen.](#contact)
 
 </ColumnContent>
 <ColumnImage file="william-iven-19843-unsplash.jpg" alt="E-Commerce ist ein kontinuierliches Optimierungsprozess ">
@@ -122,7 +122,7 @@ petitcode ist ein Kollektiv hochrangiger Freelancer. Unabhängig davon ob Sie ei
 
 Wenn Sie noch Fragen zum E-Commerce haben, wie Sie Ihren Onlineshop mit Ihren Marketing-Kanälen verknüpfen können oder unsicher sind, was genau Sie benötigen, können Sie sich direkt an uns wenden. Gerne gehen wir mit Ihnen die ersten Schritte durch und ermitteln den besten Ansatz für Ihr E Commerce Projekt.
 
-[Nach einen E-Commerce Entwickler nachfragen.](#Contact)
+[Nach einen E-Commerce Entwickler nachfragen.](#contact)
 
 </Centered>
 </SectionContent>

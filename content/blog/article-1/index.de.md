@@ -10,7 +10,7 @@ theme: "sections"
 <Section>
 <SectionContent>
 
-# Intro in petitcode
+# Intro zu petitcode
 
 Vor Petitcode hatten Sebastian und Guy eine Idee bezüglich einer Sport-App - FSB -, als sie noch Meisterschüler waren. Trotz bahnbrechender Ideen wurde eine konkretere Marktnachfrage an anderer Stelle gestellt, sodass eine Änderung des Fokus erforderlich war.
 

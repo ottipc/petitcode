@@ -10,7 +10,7 @@ theme: "sections"
 <Section video="server-room.mp4">
 <SectionContent>
 
-# the <br/> avantgarde <br/> collective.
+# the <br/> freelance-based <br/> agency.
 
 </SectionContent>
 </Section>
@@ -47,7 +47,7 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 
 <GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
 
-<GridImage maxWidth="150px" alt="Betahaus" image="betahaus_Logo.png" />
+<GridImage maxWidth="150px" alt="Betahaus" image="betahaus-logo.svg" />
 
 </Grid>
 </SectionContent>

@@ -111,7 +111,7 @@ As Design can be quite subjective, we recommend to start with a workshop with th
 
 In a <Link humanId = "article-2">petitcode workshop</Link>, our senior freelancers will assess your current position and analyze what the best implementation is. At the end, you will receive a complete report of all items to consider, an accurate estimate of each subtask and the estimated total budget.
 
-[Enquire about a design workshop.](#Contact)
+[Enquire about a design workshop.](#contact)
 
 </ColumnContent>
 <ColumnImage file="neven-krcmarek-145603-unsplash.jpg" alt="The first stroke is the hardest. Together with petitcode, it will be easy for you to develop the best user interface.">
