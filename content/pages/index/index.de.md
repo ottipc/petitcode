@@ -10,7 +10,7 @@ theme: "sections"
 <Section video="server-room.mp4">
 <SectionContent>
 
-# the <br/> avantgarde <br/> collective.
+# the <br/> freelance-based <br/> agency.
 
 </SectionContent>
 </Section>
