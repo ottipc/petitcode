@@ -31,12 +31,6 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 
 <GridImage maxWidth="150px" alt="Infologis" image="infologis.svg" />
 
-<GridImage maxWidth="150px" alt="Jung von Matt" image="jung-von-matt.svg" />
-
-<GridImage maxWidth="150px" alt="Villeroy Boch" image="villeroy-boch.svg" />
-
-<GridImage maxWidth="150px" alt="Vorwerk" image="vorwerk.svg" />
-
 <GridImage maxWidth="150px" alt="Treatwell" image="treatwell-logo.svg" />
 
 <GridImage maxWidth="150px" alt="leAD" image="lead.svg" />
@@ -46,8 +40,6 @@ Unsere Kunden sind die Lebensquelle unseres Geschäfts und wir streben eine hoch
 <GridImage maxWidth="150px" alt="Hashfox" image="hashfox.svg" />
 
 <GridImage maxWidth="150px" alt="CampusSpeicher" image="campusspeicher.svg" />
-
-<GridImage maxWidth="150px" alt="Betahaus" image="betahaus-logo.svg" />
 
 </Grid>
 </SectionContent>
