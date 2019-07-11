@@ -145,8 +145,8 @@ export default function Header() {
           </Link>
         </LogoWrapper>
         <ContactWrapper show={!isScrolling}>
-          <a className="nohover" href="tel:+493064080338">
-            +49 (0) 30 640 803 38
+          <a className="nohover" href="tel:+4930549065690">
+            +49 30 549 065 690
           </a>
           <a className="nohover" href="mailto:info@petitcode.de">
             info@petitcode.de
