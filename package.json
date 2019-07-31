@@ -11,7 +11,7 @@
     "production": "gatsby build && gatsby serve",
     "lint": "eslint src",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "npm run lint && rm -rdf .cache public && npm run build"
+    "test": "npm run lint && gatsby clean && npm run build"
   },
   "lint-staged": {
     "*.js": [
