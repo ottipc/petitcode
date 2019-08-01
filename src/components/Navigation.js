@@ -97,6 +97,7 @@ class Navigation extends React.PureComponent {
   static propTypes = {
     navigationActive: propTypes.bool.isRequired
   }
+
   render() {
     const { navigationActive } = this.props
     return (
