@@ -207,6 +207,21 @@ export default function Global({ children, location }) {
           }
         }
       }
+      videos: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^video/" } } }
+      ) {
+        edges {
+          node {
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
+            }
+          }
+        }
+      }
       mediumImages: allContentfulAsset(
         filter: { file: { contentType: { regex: "/^image/" } } }
       ) {
@@ -268,6 +283,7 @@ export default function Global({ children, location }) {
 
   const largeImages = data.largeImages.edges.map(({ node }) => node)
   const mediumImages = data.mediumImages.edges.map(({ node }) => node)
+  const videos = data.videos.edges.map(({ node }) => node)
   const { langs, defaultLocale } = useContext(GlobalContext)
   const { i18n } = useTranslation()
 
@@ -286,6 +302,7 @@ export default function Global({ children, location }) {
             pages,
             largeImages,
             mediumImages,
+            videos,
             langs,
             defaultLocale,
             activeLocale,
