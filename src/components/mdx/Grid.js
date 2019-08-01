@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import Image from 'gatsby-image'
 
-import { GlobalContext } from '../../utils/Contexts'
+import Image from './Image'
 
 const ActualGrid = styled.div`
   display: flex;
@@ -59,35 +58,12 @@ Grid.propTypes = {
   maxWidth: propTypes.string
 }
 
-export function GridImage({ image, alt = '', maxWidth = '100%' }) {
-  const { grid } = useContext(GlobalContext)
-
-  if (grid[image]) {
-    const { childImageSharp, extension, publicURL } = grid[image]
-    if (extension === 'svg') {
-      return (
-        <GridImageWrapper maxWidth={maxWidth}>
-          <img src={publicURL} alt={alt} />
-        </GridImageWrapper>
-      )
-    }
-    const imageProps = {
-      ...childImageSharp,
-      fluid: {
-        ...childImageSharp.fluid
-        // , base64: childImageSharp.sqip.dataURI
-      },
-      alt
-    }
-    return (
-      <GridImageWrapper maxWidth={maxWidth}>
-        <Image {...imageProps} />
-      </GridImageWrapper>
-    )
-  }
-
-  console.error('Unable to render grid image', image)
-  return null
+export function GridImage({ maxWidth = '100%', ...props }) {
+  return (
+    <GridImageWrapper maxWidth={maxWidth}>
+      <Image {...props} />
+    </GridImageWrapper>
+  )
 }
 GridImage.propTypes = {
   image: propTypes.string.isRequired,

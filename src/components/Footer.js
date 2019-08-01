@@ -95,7 +95,7 @@ export default function Footer() {
     <FooterWrapper>
       <FooterGrid>
         <Column>
-          <LogoMenuItem humanId="index" aria-label="Home">
+          <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
             <Logo />
           </LogoMenuItem>
         </Column>
@@ -114,13 +114,13 @@ export default function Footer() {
       </FooterGrid>
       <BottomGrid>
         <BottomGridElement>
-          <Link humanId="imprint" />
+          <Link contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
         </BottomGridElement>
         <BottomGridElement>
-          <Link humanId="press" />
+          <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
         </BottomGridElement>
         <BottomGridElement>
-          <Link humanId="data-protection" />
+          <Link contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
         <BottomGridElement>
           Copyright © {new Date().getFullYear()} petitcode GmbH

@@ -1,144 +1,45 @@
 const { resolve } = require('path')
 
 const { createLocalizedPath } = require('./src/utils/i18n')
-const { defaultLocale } = require('./src/data/languages')
 
-exports.onCreateNode = (all) => {
-  const { node, actions } = all
-  const { createNodeField } = actions
+exports.createPages = async ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
 
-  if (node.internal.type === `Mdx`) {
-    const {
-      frontmatter: { slug: frontmatterSlug },
-      fileAbsolutePath
-    } = node
-
-    // Extract human identifier and locale from the file path
-    const pathRegex = /\/([^/]+?)\/[^/]+?(?:\.([a-z-]+))?\.md$/i
-    let [all, humanId, locale] = pathRegex.exec(fileAbsolutePath)
-
-    if (!all) {
-      throw new Error(
-        `Unable to extract metadata from path "${fileAbsolutePath}"`
-      )
-    }
-
-    // Fallback to default locale if locale was forgotten by author
-    locale = locale || defaultLocale
-
-    // Fallback to human id when slug was forgotten by author
-    const slug = frontmatterSlug || humanId
-
-    createNodeField({
-      name: 'id',
-      node,
-      value: node.id
-    })
-
-    createNodeField({
-      name: 'locale',
-      node,
-      value: locale
-    })
-
-    createNodeField({
-      name: 'humanId',
-      node,
-      value: humanId
-    })
-
-    createNodeField({
-      name: 'slug',
-      node,
-      value: slug
-    })
-
-    createNodeField({
-      name: 'title',
-      node,
-      value: node.frontmatter.title
-    })
-
-    createNodeField({
-      name: 'description',
-      node,
-      value: node.frontmatter.description
-    })
-
-    createNodeField({
-      name: 'date',
-      node,
-      value: node.frontmatter.date || ''
-    })
-
-    createNodeField({
-      name: 'theme',
-      node,
-      value: node.frontmatter.theme || 'default'
-    })
-  }
-}
-
-exports.createPages = ({ actions, graphql }) =>
-  graphql(`
-    query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
-        edges {
-          node {
-            id
-            fileAbsolutePath
-            fields {
-              slug
-              locale
-            }
-            parent {
-              ... on File {
-                sourceInstanceName
+  async function createPages({ createPage }) {
+    const result = await graphql(
+      `
+        {
+          allContentfulPage(limit: 1000) {
+            edges {
+              node {
+                id
+                slug
+                node_locale
               }
             }
           }
         }
-      }
+      `
+    )
+
+    if (result.errors) {
+      throw result.errors
     }
-  `).then(({ data, errors }) => {
-    if (errors) {
-      return Promise.reject(errors)
-    }
 
-    const { edges } = data.allMdx
+    result.data.allContentfulPage.edges.map((edge) => {
+      const { slug, id, node_locale: nodeLocale } = edge.node
 
-    edges.forEach((edge) => {
-      const {
-        id,
-        fields: { slug, locale },
-        parent: { sourceInstanceName }
-      } = edge.node
-
-      const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
-
-      const path = createLocalizedPath({
-        prefix,
-        slug,
-        locale
-      })
-
-      actions.createPage({
+      const path = createLocalizedPath({ slug, locale: nodeLocale })
+      createPage({
         path,
         component: resolve(`./src/templates/page.js`),
         context: {
+          slug,
           id
         }
       })
     })
-  })
+  }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      modules: [resolve(__dirname, 'src'), 'node_modules'],
-      alias: {
-        $components: resolve(__dirname, 'src/components/mdx')
-      }
-    }
-  })
+  await createPages({ createPage })
 }

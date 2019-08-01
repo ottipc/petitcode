@@ -1,67 +1,50 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
 
-import { createLocalizedPath } from '../../utils/i18n'
-import { LocationContext, GlobalContext } from '../../utils/Contexts'
-
-const StyledLink = styled(Link)``
+import { GlobalContext } from '../../utils/Contexts'
 
 export default function MdxLink({
+  contentfulId,
   href,
-  humanId,
-  title = null,
+  target = null,
+  title,
+  className = null,
+  hash,
   children,
-  ...props
+  ...linkProps
 }) {
   if (href) {
     return (
-      <a href={href} title={title} {...props}>
+      <a className={className} href={href} target={target}>
         {children || title}
       </a>
     )
   }
-  const { activeLocale } = useContext(LocationContext)
-  const { langs, defaultLocale, pages } = useContext(GlobalContext)
-
-  let page = pages.find(
-    (page) =>
-      page.fields.humanId === humanId && page.fields.locale === activeLocale
-  )
-
-  // Fallback to default locale if translation is not available
-  if (!page) {
-    page = pages.find(
-      (page) =>
-        page.fields.humanId === humanId && page.fields.locale === defaultLocale
-    )
+  const { pages, activeLocale } = useContext(GlobalContext)
+  if (!Object.prototype.hasOwnProperty.call(pages, contentfulId)) {
+    console.warn(`Unable to render menu link for ${contentfulId}`)
+    return null
   }
 
-  // Fallback if no version with default locale is available
-  if (!page) {
-    page = pages.find(
-      (page) =>
-        page.fields.humanId === humanId && page.fields.locale === langs[0]
-    )
-  }
+  const page = pages[contentfulId][activeLocale]
 
   if (page) {
-    const {
-      fields: { slug, locale, title: pageTitle },
-      parent: { sourceInstanceName }
-    } = page
-    const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
-
-    const path = createLocalizedPath({
-      prefix,
-      slug,
-      locale
-    })
+    const { path, title: pageTitle } = page
+    if (!path) {
+      console.error({ page })
+    }
+    const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
     return (
-      <StyledLink to={path} title={title || pageTitle} {...props}>
+      <Link
+        className={className}
+        activeClassName="active"
+        to={to}
+        target={target}
+        {...linkProps}
+      >
         {children || title || pageTitle}
-      </StyledLink>
+      </Link>
     )
   }
 
@@ -69,8 +52,11 @@ export default function MdxLink({
 }
 
 MdxLink.propTypes = {
-  humanId: propTypes.string,
+  contentfulId: propTypes.string,
   href: propTypes.string,
+  className: propTypes.string,
+  hash: propTypes.string,
   title: propTypes.string,
+  target: propTypes.string,
   children: propTypes.node
 }

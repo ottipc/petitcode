@@ -5,14 +5,8 @@ import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import GridWrapper from '../components/GridWrapper'
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
-import DarkTheme from './themes/DarkTheme'
-import DefaultTheme from './themes/DefaultTheme'
-
-import BlogListing from '../components/BlogListing'
-import JobListing from '../components/JobListing'
 
 import Sections from '../components/mdx/Sections'
 import Section from '../components/mdx/Section'
@@ -34,6 +28,8 @@ import Link from '../components/mdx/Link'
 import ClientForm from '../components/mdx/ClientForm'
 import FreelancerForm from '../components/mdx/FreelancerForm'
 import { Timeline, TimelineEntry } from '../components/mdx/Timeline'
+import BlogListing from '../components/mdx/BlogListing'
+import JobListing from '../components/mdx/JobListing'
 
 import FormIntro from '../components/forms/FormIntro'
 import FormSuccess from '../components/forms/FormSuccess'
@@ -64,7 +60,9 @@ const components = {
   FormIntro,
   FormSuccess,
   Timeline,
-  TimelineEntry
+  TimelineEntry,
+  JobListing,
+  BlogListing
 }
 
 class PageTemplate extends React.PureComponent {
@@ -76,55 +74,43 @@ class PageTemplate extends React.PureComponent {
   render() {
     const { location, data } = this.props
     const {
-      frontmatter: { title, description, theme },
-      body,
-      fields: { humanId, locale, slug }
-    } = data.mdx
+      title,
+      description,
+      contentful_id: contentfulId,
+      node_locale: locale,
+      content: {
+        childMdx: { body }
+      }
+    } = data.contentfulPage
 
-    let content = null
-    switch (theme) {
-      case 'dark':
-        content = (
-          <DarkTheme>
-            <MDXRenderer>{body}</MDXRenderer>
-          </DarkTheme>
-        )
-        break
-      case 'sections':
-        content = <MDXRenderer>{body}</MDXRenderer>
-        break
-      default:
-        content = (
-          <DefaultTheme>
-            <MDXRenderer>{body}</MDXRenderer>
-          </DefaultTheme>
-        )
-    }
-
-    let extraContent = null
-    switch (slug) {
-      case 'jobs':
-        extraContent = (
-          <SectionContent>
-            <GridWrapper>
-              <JobListing />
-            </GridWrapper>
-          </SectionContent>
-        )
-        break
-      case 'blog':
-        extraContent = (
-          <SectionContent>
-            <GridWrapper>
-              <BlogListing />
-            </GridWrapper>
-          </SectionContent>
-        )
-    }
+    // let extraContent = null
+    // switch (slug) {
+    //   case 'jobs':
+    //     extraContent = (
+    //       <SectionContent>
+    //         <GridWrapper>
+    //           <JobListing />
+    //         </GridWrapper>
+    //       </SectionContent>
+    //     )
+    //     break
+    //   case 'blog':
+    //     extraContent = (
+    //       <SectionContent>
+    //         <GridWrapper>
+    //           <BlogListing />
+    //         </GridWrapper>
+    //       </SectionContent>
+    //     )
+    // }
 
     return (
       <LocationContext.Provider
-        value={{ activeHumandId: humanId, activeLocale: locale, location }}
+        value={{
+          activeContentfulId: contentfulId,
+          activeLocale: locale,
+          location
+        }}
       >
         <Layout>
           <Helmet
@@ -157,8 +143,10 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <MDXProvider components={components}>{content}</MDXProvider>
-          {extraContent}
+          <MDXProvider components={components}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+          {/* {extraContent} */}
         </Layout>
       </LocationContext.Provider>
     )
@@ -169,19 +157,17 @@ export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    mdx(fields: { id: { eq: $id } }) {
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        description
-        theme
+    contentfulPage(id: { eq: $id }) {
+      id
+      contentful_id
+      title
+      slug
+      description
+      content {
+        childMdx {
+          body
+        }
       }
-      fields {
-        slug
-        humanId
-        locale
-      }
-      body
     }
   }
 `

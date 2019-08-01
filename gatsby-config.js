@@ -3,6 +3,10 @@ const theme = require(`./src/utils/styling/theme`)
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production'
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://petitcode.com`,
@@ -12,57 +16,22 @@ module.exports = {
     languages
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        path: `${__dirname}/content/pages`,
-        name: `page`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/jobs`,
-        name: `job`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/images`,
-        name: `image`
+        spaceId: `mtyay169tt6k`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-relative-images`
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 576,
-              sizeByPixelDensity: true,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
+        extensions: [`.mdx`, `.md`]
       }
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     `gatsby-transformer-sqip`,
-    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {

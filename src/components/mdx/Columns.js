@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import Image from 'gatsby-image'
 
-import { GlobalContext } from '../../utils/Contexts'
+import Image from './Image'
 
 const ColumnsWrapper = styled.div`
   position: relative;
@@ -149,24 +148,10 @@ ColumnContent.propTypes = {
   reverse: propTypes.bool
 }
 
-export const ColumnImage = function({ reverse, contentWidth, file, alt }) {
-  const { columns } = useContext(GlobalContext)
-  if (!columns[file]) {
-    return null
-  }
-  const imageData = columns[file].childImageSharp
-  const image = {
-    ...imageData,
-    fluid: {
-      ...imageData.fluid
-      // , base64: imageData.sqip.dataURI
-    },
-    alt
-  }
-
+export const ColumnImage = function({ reverse, contentWidth, ...props }) {
   return (
     <ColumnImageWrapper reverse={reverse} contentWidth={contentWidth}>
-      <Image {...image} />
+      <Image {...props} />
     </ColumnImageWrapper>
   )
 }
