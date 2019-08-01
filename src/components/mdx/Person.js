@@ -1,8 +1,8 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import Image from 'gatsby-image'
 
+import Image from './Image'
 import { Card, CardContent } from './Card'
 
 const PersonWrapper = styled(Card)`

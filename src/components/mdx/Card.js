@@ -29,10 +29,10 @@ const CardImageWrapper = styled.div`
   }
 `
 
-export function CardImage({ maxWidth = '100%', ...props }) {
+export function CardImage({ maxWidth = '100%', image, ...props }) {
   return (
     <CardImageWrapper maxWidth={maxWidth}>
-      <Image {...props} />
+      <Image contentfulId={image} {...props} />
     </CardImageWrapper>
   )
 }

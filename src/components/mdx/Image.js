@@ -24,10 +24,8 @@ const ImgWrapper = styled.div`
   }
 `
 
-export default function Image({ id, maxWidth }) {
-  const { largeImages, mediumImages, activeLanguage } = useContext(
-    GlobalContext
-  )
+export default function Image({ contentfulId, maxWidth }) {
+  const { largeImages, mediumImages, activeLocale } = useContext(GlobalContext)
   let assets = largeImages
 
   if (maxWidth > 0 && maxWidth <= 500) {
@@ -36,11 +34,11 @@ export default function Image({ id, maxWidth }) {
 
   const image = assets.find(
     ({ contentful_id: cid, node_locale: locale }) =>
-      cid === id && locale === activeLanguage
+      cid === contentfulId && locale === activeLocale
   )
 
   if (!image) {
-    console.warn('Unable to locate image ' + id)
+    console.warn('Unable to locate image ' + contentfulId)
     return null
   }
 
@@ -84,6 +82,6 @@ export default function Image({ id, maxWidth }) {
 }
 
 Image.propTypes = {
-  id: propTypes.string.isRequired,
+  contentfulId: propTypes.string.isRequired,
   maxWidth: propTypes.number
 }

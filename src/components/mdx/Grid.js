@@ -58,10 +58,10 @@ Grid.propTypes = {
   maxWidth: propTypes.string
 }
 
-export function GridImage({ maxWidth = '100%', ...props }) {
+export function GridImage({ maxWidth = '100%', image, ...props }) {
   return (
     <GridImageWrapper maxWidth={maxWidth}>
-      <Image {...props} />
+      <Image contentfulId={image} {...props} />
     </GridImageWrapper>
   )
 }
