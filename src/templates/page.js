@@ -3,7 +3,7 @@ import React from 'react'
 import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import GridWrapper from '../components/GridWrapper'
 import Layout from '../components/Layout'
@@ -77,7 +77,7 @@ class PageTemplate extends React.PureComponent {
     const { location, data } = this.props
     const {
       frontmatter: { title, description, theme },
-      code: { body },
+      body,
       fields: { humanId, locale, slug }
     } = data.mdx
 
@@ -181,9 +181,7 @@ export const pageQuery = graphql`
         humanId
         locale
       }
-      code {
-        body
-      }
+      body
     }
   }
 `
