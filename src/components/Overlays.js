@@ -80,7 +80,7 @@ export default function Overlays() {
     <React.Fragment>
       <HeaderWrapper>
         <Header />
-        <HamburgerWrapper>
+        <HamburgerWrapper style={{ display: 'none' }}>
           <Hamburger />
         </HamburgerWrapper>
         <SectionNavigation />
