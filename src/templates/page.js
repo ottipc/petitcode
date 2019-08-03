@@ -30,6 +30,8 @@ import FreelancerForm from '../components/mdx/FreelancerForm'
 import { Timeline, TimelineEntry } from '../components/mdx/Timeline'
 import BlogListing from '../components/mdx/BlogListing'
 import JobListing from '../components/mdx/JobListing'
+import Gap from '../components/mdx/Gap'
+import FluidText from '../components/mdx/FluidText'
 
 import FormIntro from '../components/forms/FormIntro'
 import FormSuccess from '../components/forms/FormSuccess'
@@ -62,7 +64,9 @@ const components = {
   Timeline,
   TimelineEntry,
   JobListing,
-  BlogListing
+  BlogListing,
+  Gap,
+  FluidText
 }
 
 class PageTemplate extends React.PureComponent {
