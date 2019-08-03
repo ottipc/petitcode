@@ -55,6 +55,7 @@ export default function ClientForm({ children, scrollTo }) {
                   label="Name"
                   required
                   minLength={3}
+                  margin="normal"
                 />
               )}
             </Field>
@@ -65,6 +66,7 @@ export default function ClientForm({ children, scrollTo }) {
                   meta={meta}
                   type="text"
                   label="Contact"
+                  margin="normal"
                 />
               )}
             </Field>
@@ -75,14 +77,18 @@ export default function ClientForm({ children, scrollTo }) {
                   meta={meta}
                   label="Additional comment"
                   multiline
+                  margin="normal"
                 />
               )}
             </Field>
+            <br />
+            <br />
             <Button
               variant="outlined"
               size="large"
               color="primary"
               type="submit"
+              margin="normal"
             >
               Submit
             </Button>
