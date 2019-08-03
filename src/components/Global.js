@@ -59,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  body {
+  html body {
     background-color: ${({ theme }) => theme.colors.bg};
 
     line-height: 1.8em;
