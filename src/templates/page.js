@@ -32,6 +32,7 @@ import BlogListing from '../components/mdx/BlogListing'
 import JobListing from '../components/mdx/JobListing'
 import Gap from '../components/mdx/Gap'
 import FluidText from '../components/mdx/FluidText'
+import DefaultLayout from '../components/mdx/DefaultLayout'
 
 import FormIntro from '../components/forms/FormIntro'
 import FormSuccess from '../components/forms/FormSuccess'
@@ -66,7 +67,8 @@ const components = {
   JobListing,
   BlogListing,
   Gap,
-  FluidText
+  FluidText,
+  DefaultLayout
 }
 
 class PageTemplate extends React.PureComponent {
