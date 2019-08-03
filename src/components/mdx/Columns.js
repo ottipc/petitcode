@@ -157,8 +157,6 @@ export const ColumnImage = function({ reverse, contentWidth, ...props }) {
 }
 
 ColumnImage.propTypes = {
-  file: propTypes.string.isRequired,
-  alt: propTypes.string.isRequired,
   reverse: propTypes.bool,
   contentWidth: propTypes.number
 }
