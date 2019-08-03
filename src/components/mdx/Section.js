@@ -106,24 +106,6 @@ const ContentWrapper = styled.div`
     css`
       color: #fff;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-
-      h1 {
-        ${({
-          theme: {
-            grid: { width }
-          }
-        }) => css`
-          font-size: 40px;
-
-          @media screen and (min-width: 320px) {
-            font-size: calc(40px + 80 * ((100vw - 320px) / ${width - 320}));
-          }
-
-          @media screen and (min-width: ${width}px) {
-            font-size: 120px;
-          }
-        `}
-      }
     `}
 `
 

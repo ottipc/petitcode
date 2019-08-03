@@ -23,14 +23,14 @@ const FluidText = styled.p`
     font-size: ${fontSizeMin};
     line-height: ${lineHeightMin};
 
-    @media screen and (min-width: 320px) {
+    @media screen and (min-width: 300px) {
       font-size: calc(
-        ${fontSizeMin} + (${parseFloat(fontSizeMax) - parseFloat(fontSizeMin)}) *
+        ${fontSizeMin} + (${parseInt(fontSizeMax) - parseInt(fontSizeMin)}) *
           ((100vw - 300px) / ${width - 300})
       );
       line-height: calc(
         ${lineHeightMin} +
-          (${parseFloat(lineHeightMax) - parseFloat(lineHeightMin)}) *
+          (${parseInt(lineHeightMax) - parseInt(lineHeightMin)}) *
           ((100vw - 300px) / ${width - 300})
       );
     }
