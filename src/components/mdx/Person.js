@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import Image from 'gatsby-image'
 
-import { GlobalContext } from '../../utils/Contexts'
+import Image from './Image'
 import { Card, CardContent } from './Card'
 
 const PersonWrapper = styled(Card)`
@@ -35,21 +34,9 @@ const PersonImage = styled.div`
 `
 
 export default function Person({ image, name, children }) {
-  const { persons } = useContext(GlobalContext)
-  let renderedImage
+  let renderedImage = <Image contentfulId={image} />
 
-  if (persons[image]) {
-    const { childImageSharp } = persons[image]
-    const imageProps = {
-      ...childImageSharp,
-      fluid: {
-        ...childImageSharp.fluid
-        // , base64: childImageSharp.sqip.dataURI
-      },
-      alt: name
-    }
-    renderedImage = <Image {...imageProps} />
-  } else {
+  if (!renderedImage) {
     renderedImage = <img src={'/social.png'} alt={name} />
   }
 

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import LogoText from '../assets/petitcode-logo-text.svg'
 import Logo from '../assets/petitcode-logo.svg'
 
-import { LocationContext, SectionContext } from '../utils/Contexts'
+import { GlobalContext, SectionContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
   position: relative;
@@ -133,7 +133,7 @@ const ContactWrapper = styled.div`
 `
 
 export default function Header() {
-  const { activeLocale } = useContext(LocationContext)
+  const { activeLocale } = useContext(GlobalContext)
   const { isScrolling } = useContext(SectionContext)
   return (
     <Wrapper>

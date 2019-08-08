@@ -90,8 +90,7 @@ export default function Layout({ children }) {
                           werden Cookies verwendet. Durch die weitere Nutzung
                           der Webseite stimmen Sie der `}
               <Link
-                humanId="data-protection"
-                id="6Rfk2Hlf44SASEIcYsgq8e"
+                contentfulId="48IUmDegZRVtDgbQTmATA6"
                 title={t('cookieConsentLink')}
               />
               {` zu.`}

@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 
-import { SectionContext } from '../../utils/Contexts'
+import { SectionContext, GlobalContext } from '../../utils/Contexts'
 
 const OuterWrapper = styled.div`
   ${({ video }) =>
@@ -106,35 +106,20 @@ const ContentWrapper = styled.div`
     css`
       color: #fff;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-
-      h1 {
-        ${({
-          theme: {
-            grid: { width }
-          }
-        }) => css`
-          font-size: 40px;
-
-          @media screen and (min-width: 320px) {
-            font-size: calc(40px + 80 * ((100vw - 320px) / ${width - 320}));
-          }
-
-          @media screen and (min-width: ${width}px) {
-            font-size: 120px;
-          }
-        `}
-      }
     `}
 `
 
 function Section({ video, inverted, children, nr, scrollId = null }) {
   const { setActiveSection } = useContext(SectionContext)
+  const { videos } = useContext(GlobalContext)
 
   const handleIntersection = ({ isIntersecting }) => {
     if (isIntersecting) {
       setActiveSection(nr)
     }
   }
+
+  const videoData = videos.find((v) => v.contentful_id === video)
 
   return (
     <OuterWrapper id={scrollId} video={video}>
@@ -144,10 +129,10 @@ function Section({ video, inverted, children, nr, scrollId = null }) {
         threshold={0}
       >
         <Wrapper video={video} inverted={inverted} id={`section-${nr}`}>
-          {video && (
+          {video && videoData && (
             <VideoWrapper>
               <Video autoPlay loop muted playsInline>
-                <source src={`/${video}`} type="video/mp4" />
+                <source src={videoData.file.url} type="video/mp4" />
               </Video>
             </VideoWrapper>
           )}

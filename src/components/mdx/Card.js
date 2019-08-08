@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
-import Image from 'gatsby-image'
 
-import { GlobalContext } from '../../utils/Contexts'
+import Image from './Image'
 
 export const Card = styled.section`
   /* padding: ${({ theme }) => theme.spacings.s2}; */
@@ -30,36 +29,14 @@ const CardImageWrapper = styled.div`
   }
 `
 
-export function CardImage({ image, alt = '', maxWidth = '100%' }) {
-  const { card } = useContext(GlobalContext)
-
-  if (card[image]) {
-    const { childImageSharp, extension, publicURL } = card[image]
-    if (extension === 'svg') {
-      return (
-        <CardImageWrapper maxWidth={maxWidth}>
-          <img src={publicURL} alt={alt} />
-        </CardImageWrapper>
-      )
-    }
-    const imageProps = {
-      ...childImageSharp,
-      fluid: {
-        ...childImageSharp.fluid
-        // , base64: childImageSharp.sqip.dataURI
-      },
-      alt
-    }
-    return (
-      <CardImageWrapper maxWidth={maxWidth}>
-        <Image {...imageProps} />
-      </CardImageWrapper>
-    )
-  }
-
-  console.error('Unable to render card image', image)
-  return null
+export function CardImage({ maxWidth = '100%', image, ...props }) {
+  return (
+    <CardImageWrapper maxWidth={maxWidth}>
+      <Image contentfulId={image} {...props} />
+    </CardImageWrapper>
+  )
 }
+
 CardImage.propTypes = {
   image: propTypes.string.isRequired,
   alt: propTypes.string,

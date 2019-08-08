@@ -1,7 +1,4 @@
-/public
-/dist
-
-.env*
+content
 
 # Created by https://www.gitignore.io/api/osx,node,code,linux,windows
 

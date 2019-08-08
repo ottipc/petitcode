@@ -2,110 +2,78 @@ import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { createLocalizedPath } from '../utils/i18n'
-import { LocationContext, GlobalContext } from '../utils/Contexts'
-import { defaultLocale } from '../data/languages'
+import { defaultLocale, langs } from '../data/languages'
+import { GlobalContext, LocationContext } from '../utils/Contexts'
 
-const List = styled.ul`
-  display: flex;
-  margin: 0;
-  list-style-type: none;
-  text-transform: uppercase;
-  font-weight: bold;
+const List = styled.ul({
+  display: 'flex',
+  margin: 0,
+  listStyleType: 'none',
+  textTransform: 'uppercase'
+})
+
+const ListItem = styled.li({
+  margin: '0.25rem'
+})
+
+const SwitcherLink = styled(Link)`
+  transition: 0.3s opacity linear;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  &[aria-current='page'] {
+    display: none;
+  }
 `
-
-const ListItem = styled.li`
-  margin: 0;
-`
-
-const SwitcherLink = styled(Link)``
-
-function generatePageSelector({ pages, activeHumandId, langs, activeLocale }) {
-  // Map of slugs for the current active page
-  const slugMap = pages
-    .filter((page) => page.fields.humanId === activeHumandId)
-    .reduce((slugs, page) => {
-      return {
-        ...slugs,
-        [page.fields.locale]: page.fields.slug
-      }
-    }, {})
-
-  const {
-    parent: { sourceInstanceName }
-  } = pages.find((page) => page.fields.humanId === activeHumandId)
-
-  const prefix = sourceInstanceName !== 'page' ? sourceInstanceName : null
-
-  // Array representing the language switcher menu
-  const langsMenu = langs
-    .map((locale) => {
-      let path
-
-      // Skip link for current locale
-      if (locale === activeLocale) {
-        return null
-      }
-
-      // Generate path to translated version
-      if (slugMap[locale]) {
-        path = createLocalizedPath({
-          prefix,
-          locale,
-          slug: slugMap[locale]
-        })
-      }
-
-      // Fallback to default locale if translation is not available
-      if (!path && slugMap[defaultLocale]) {
-        path = createLocalizedPath({
-          prefix,
-          locale: defaultLocale,
-          slug: slugMap[defaultLocale]
-        })
-      }
-
-      // Fallback if no version with default locale is available
-      if (!path && slugMap.length) {
-        path = createLocalizedPath({
-          prefix,
-          locale: Object.keys(slugMap)[0],
-          slug: slugMap[Object.keys(slugMap)[0]]
-        })
-      }
-
-      // Unable to create any path. This should not happen.
-      if (!path) {
-        throw new Error(
-          `Unable to generate language selector link for ${activeHumandId} with locale ${locale}`
-        )
-      }
-
-      return {
-        locale,
-        path
-      }
-    })
-    .filter(Boolean)
-
-  return langsMenu.map(({ path, locale }) => (
-    <ListItem key={locale}>
-      <SwitcherLink to={path}>{locale}</SwitcherLink>
-    </ListItem>
-  ))
-}
 
 export default function LanguageSelect() {
-  const { activeHumandId } = useContext(LocationContext)
-  const { pages, langs, activeLocale } = useContext(GlobalContext)
+  const { pages, activeLocale } = useContext(GlobalContext)
+  const { activeContentfulId } = useContext(LocationContext)
+  const page = pages[activeContentfulId]
+
+  // Array representing the language switcher menu
+  const langsMenu = langs.map((locale) => {
+    let path
+
+    // Generate path to translated version
+    if (page[locale]) {
+      path = page[locale].path
+    }
+
+    // Fallback to default locale if translation is not available
+    if (!path && page[defaultLocale]) {
+      path = page[defaultLocale].path
+    }
+
+    // Fallback if no version with default locale is available
+    if (!path && page.length) {
+      path = page[Object.keys(page)[0]].path
+    }
+
+    // Unable to create any path. This should not happen.
+    if (!path) {
+      throw new Error(
+        `Unable to generate language selector link for ${activeContentfulId} with locale ${locale}`
+      )
+    }
+
+    return {
+      locale,
+      path
+    }
+  })
+
   return (
     <List>
-      {generatePageSelector({
-        pages,
-        langs,
-        activeHumandId,
-        activeLocale
-      })}
+      {langsMenu.map(({ path, locale }) => (
+        <ListItem key={locale}>
+          <SwitcherLink to={path} hidden={locale === activeLocale}>
+            {locale}
+          </SwitcherLink>
+        </ListItem>
+      ))}
     </List>
   )
 }

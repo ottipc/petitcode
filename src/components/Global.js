@@ -11,6 +11,7 @@ import NotoSansBold from '../assets/fonts/notosans-bold-webfont.woff2'
 import { GlobalContext } from '../utils/Contexts'
 import theme from '../utils/styling/theme'
 import i18nextInit from '../utils/i18next'
+import { createLocalizedPath } from '../utils/i18n'
 
 import { ThemeProvider as MaterialUiThemeProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -58,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  body {
+  html body {
     background-color: ${({ theme }) => theme.colors.bg};
 
     line-height: 1.8em;
@@ -153,93 +154,94 @@ const GlobalStyle = createGlobalStyle`
 export default function Global({ children, location }) {
   const data = useStaticQuery(graphql`
     {
-      pages: allMdx {
-        ...Pages
-      }
-      columns: allFile(
-        filter: {
-          sourceInstanceName: { eq: "image" }
-          relativePath: { regex: "/^columns/" }
+      pages: allContentfulPage {
+        edges {
+          node {
+            title
+            slug
+            node_locale
+            contentful_id
+          }
         }
+      }
+      jobPostings: allContentfulJobPosting {
+        edges {
+          node {
+            title
+            slug
+            node_locale
+          }
+        }
+      }
+      blogPosts: allContentfulBlogPost {
+        edges {
+          node {
+            title
+            slug
+            node_locale
+            date
+          }
+        }
+      }
+      largeImages: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^image/" } } }
       ) {
         edges {
           node {
-            name
-            extension
-            publicURL
-            childImageSharp {
-              # sqip(numberOfPrimitives: 5, blur: 0) {
-              #   dataURI
-              # }
-              fluid(maxWidth: 1152) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
+              details {
+                image {
+                  width
+                  height
+                }
               }
+            }
+            fluid(maxWidth: 1152) {
+              ...GatsbyContentfulFluid
             }
           }
         }
       }
-      persons: allFile(
-        filter: {
-          sourceInstanceName: { eq: "image" }
-          relativePath: { regex: "/^persons/" }
-        }
+      videos: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^video/" } } }
       ) {
         edges {
           node {
-            name
-            extension
-            publicURL
-            childImageSharp {
-              # sqip(numberOfPrimitives: 5, blur: 0) {
-              #   dataURI
-              # }
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
             }
           }
         }
       }
-      grid: allFile(
-        filter: {
-          sourceInstanceName: { eq: "image" }
-          relativePath: { regex: "/^grid/" }
-        }
+      mediumImages: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^image/" } } }
       ) {
         edges {
           node {
-            name
-            extension
-            publicURL
-            childImageSharp {
-              # sqip(numberOfPrimitives: 5, blur: 0) {
-              #   dataURI
-              # }
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
+              details {
+                image {
+                  width
+                  height
+                }
               }
             }
-          }
-        }
-      }
-      card: allFile(
-        filter: {
-          sourceInstanceName: { eq: "image" }
-          relativePath: { regex: "/^card/" }
-        }
-      ) {
-        edges {
-          node {
-            name
-            extension
-            publicURL
-            childImageSharp {
-              # sqip(numberOfPrimitives: 5, blur: 0) {
-              #   dataURI
-              # }
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
+            fluid(maxWidth: 500) {
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -247,37 +249,41 @@ export default function Global({ children, location }) {
     }
   `)
 
-  const pages = data.pages.edges.map((edge) => edge.node)
+  // Create map of pages by id and with maps of their content by locale
+  const pages = [
+    ...data.pages.edges.map((edge) => ({ ...edge.node, contentType: 'page' })),
+    ...data.jobPostings.edges.map((edge) => ({
+      ...edge.node,
+      contentType: 'jobPosting'
+    })),
+    ...data.blogPosts.edges.map((edge) => ({
+      ...edge.node,
+      contentType: 'blogPost'
+    }))
+  ].reduce((pages, page) => {
+    const { contentful_id: cid, node_locale: locale, slug, contentType } = page
+    let prefix = null
+    if (contentType === 'blogPost') {
+      prefix = 'blog'
+    }
+    if (contentType === 'jobPosting') {
+      prefix = 'jobs'
+    }
+    return {
+      ...pages,
+      [cid]: {
+        ...(pages[cid] || {}),
+        [locale]: {
+          ...page,
+          path: createLocalizedPath({ locale, slug, prefix })
+        }
+      }
+    }
+  }, {})
 
-  // Make all images available as map to allow fine-tuned column image output
-  const columns = data.columns.edges.reduce(
-    (map, { node }) => ({
-      ...map,
-      [`${node.name}.${node.extension}`]: node
-    }),
-    {}
-  )
-  const persons = data.persons.edges.reduce(
-    (map, { node }) => ({
-      ...map,
-      [`${node.name}.${node.extension}`]: node
-    }),
-    {}
-  )
-  const grid = data.grid.edges.reduce(
-    (map, { node }) => ({
-      ...map,
-      [`${node.name}.${node.extension}`]: node
-    }),
-    {}
-  )
-  const card = data.card.edges.reduce(
-    (map, { node }) => ({
-      ...map,
-      [`${node.name}.${node.extension}`]: node
-    }),
-    {}
-  )
+  const largeImages = data.largeImages.edges.map(({ node }) => node)
+  const mediumImages = data.mediumImages.edges.map(({ node }) => node)
+  const videos = data.videos.edges.map(({ node }) => node)
   const { langs, defaultLocale } = useContext(GlobalContext)
   const { i18n } = useTranslation()
 
@@ -294,10 +300,9 @@ export default function Global({ children, location }) {
         <GlobalContext.Provider
           value={{
             pages,
-            columns,
-            persons,
-            grid,
-            card,
+            largeImages,
+            mediumImages,
+            videos,
             langs,
             defaultLocale,
             activeLocale,

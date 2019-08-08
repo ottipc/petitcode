@@ -26,10 +26,9 @@ export const SectionContext = createContext({
 
 export const GlobalContext = createContext({
   pages: [],
-  columns: {},
-  grid: {},
-  persons: {},
-  card: {},
+  largeImages: [],
+  mediumImages: [],
+  videos: [],
   langs,
   defaultLocale,
   activeLocale: defaultLocale,

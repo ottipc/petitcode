@@ -64,24 +64,4 @@ export const petitcodeFragment = graphql`
       }
     }
   }
-  fragment Pages on MdxConnection {
-    edges {
-      node {
-        id
-        fields {
-          humanId
-          slug
-          locale
-          title
-          description
-          # teaser
-        }
-        parent {
-          ... on File {
-            sourceInstanceName
-          }
-        }
-      }
-    }
-  }
 `
