@@ -101,7 +101,7 @@ export default function Footer() {
         </Column>
         <Column>
           <ContactWrapper>
-            <a href="mailto:info@petitcode.de">info@petitcode.de</a>
+            <a href="mailto:info@petitcode.com">info@petitcode.com</a>
             <br />
             <a className="nohover" href="tel:+4930549065690">
               +49 30 549 065 690
