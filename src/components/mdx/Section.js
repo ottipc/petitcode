@@ -63,6 +63,7 @@ const Wrapper = styled.section`
       }
     `}
 
+    /*
     & img, svg {
       filter: grayscale(100%);
       transition: 1s filter linear, 0.5s opacity linear !important;
@@ -71,6 +72,7 @@ const Wrapper = styled.section`
         filter: grayscale(0%);
       }
     }
+    */
   }
 `
 
