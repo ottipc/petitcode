@@ -7,7 +7,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
-
 import components from '../components/mdx-components'
 
 class PageTemplate extends React.PureComponent {
@@ -81,12 +80,16 @@ export default PageTemplate
 
 export const pageQuery = graphql`
   query($id: String!) {
-    contentfulPage(id: { eq: $id }) {
+    contentfulBlogPost(id: { eq: $id }) {
       id
       contentful_id
       title
       slug
-      description
+      teaser {
+        childMdx {
+          body
+        }
+      }
       content {
         childMdx {
           body

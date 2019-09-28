@@ -11,16 +11,18 @@ export default function JobListing() {
       allContentfulJobPosting {
         edges {
           node {
+            id
             contentful_id
             node_locale
+            title
           }
         }
       }
     }
   `)
-  return jobPostings.edges
+  return jobPostings.allContentfulJobPosting.edges
     .filter(({ node: { node_locale: locale } }) => locale === activeLocale)
-    .map(({ id, fields: { title, contentful_id: cid } }) => (
+    .map(({ node: { id, title, contentful_id: cid } }) => (
       <h3 key={id}>
         <Link contentfulId={cid}>{title}</Link>
       </h3>

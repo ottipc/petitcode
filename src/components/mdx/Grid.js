@@ -43,10 +43,16 @@ export function Grid({
   children,
   minWidth = '250px',
   maxWidth = '1fr',
-  centered = false
+  centered = false,
+  ...props
 }) {
   return (
-    <ActualGrid minWidth={minWidth} maxWidth={maxWidth} centered={centered}>
+    <ActualGrid
+      minWidth={minWidth}
+      maxWidth={maxWidth}
+      centered={centered}
+      {...props}
+    >
       {children}
     </ActualGrid>
   )
