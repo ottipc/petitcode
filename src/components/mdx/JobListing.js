@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { GlobalContext } from '../../utils/Contexts'
-import Link from './Link'
+// import Link from './Link'
 
 export default function JobListing() {
   const { activeLocale } = useContext(GlobalContext)
@@ -23,8 +23,6 @@ export default function JobListing() {
   return jobPostings.allContentfulJobPosting.edges
     .filter(({ node: { node_locale: locale } }) => locale === activeLocale)
     .map(({ node: { id, title, contentful_id: cid } }) => (
-      <h3 key={id}>
-        <Link contentfulId={cid}>{title}</Link>
-      </h3>
+      <h3 key={id}>{title}</h3>
     ))
 }
