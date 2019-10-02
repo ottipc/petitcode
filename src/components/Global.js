@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
   html body {
     background-color: ${({ theme }) => theme.colors.bg};
 
-    line-height: 1.8em;
+    line-height: 1.65em;
     /*
       Liquid typography:
       https://css-tricks.com/snippets/css/fluid-typography/

@@ -83,12 +83,12 @@ const LogoWrapper = styled.div`
 
   /* Keep this at last rule to ensure correct overwrites */
   @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
-    padding: ${({ theme }) => parseInt(theme.spacing.content.huge) / 4}px;
+    /* padding: ${({ theme }) => parseInt(theme.spacing.content.huge) / 4}px; */
     /* fit in text logo between left border and left content border */
-    max-width: calc(
+    /* max-width: calc(
       (100vw - ${({ theme }) => theme.grid.width}px) / 2 +
         ${({ theme }) => theme.spacing.content.huge}
-    );
+    ); */
   }
 `
 const ContactWrapper = styled.div`
