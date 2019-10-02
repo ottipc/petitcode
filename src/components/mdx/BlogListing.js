@@ -7,7 +7,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GlobalContext } from '../../utils/Contexts'
 import Link from './Link'
 
-const BlogPostWrapper = styled.div`
+const BlogPostWrapper = styled.article`
   padding-bottom: ${({ theme }) => theme.spacings.s4};
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey700};
   margin-bottom: ${({ theme }) => theme.spacings.s4};
@@ -15,7 +15,7 @@ const BlogPostWrapper = styled.div`
 const BlogPostMedia = styled.div``
 const BlogPostContent = styled.div``
 const BlogPostCategory = styled.div``
-const BlogPostTitle = styled.div``
+const BlogPostTitle = styled.h1``
 const BlogPostMeta = styled.div``
 const BlogPostTeaser = styled.div``
 

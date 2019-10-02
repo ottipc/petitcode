@@ -170,6 +170,7 @@ export default function Global({ children, location }) {
             title
             slug
             node_locale
+            contentful_id
           }
         }
       }
@@ -180,6 +181,7 @@ export default function Global({ children, location }) {
             slug
             node_locale
             date
+            contentful_id
           }
         }
       }
