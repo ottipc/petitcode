@@ -140,7 +140,7 @@ export default function ReferenceListing() {
                   }
                 }
               }
-              fluid(maxWidth: 1416) {
+              fluid(maxWidth: 708) {
                 ...GatsbyContentfulFluid
               }
             }

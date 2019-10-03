@@ -12,12 +12,39 @@ const BlogPostWrapper = styled.article`
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey700};
   margin-bottom: ${({ theme }) => theme.spacings.s4};
 `
-const BlogPostMedia = styled.div``
+const BlogPostMedia = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
+`
 const BlogPostContent = styled.div``
-const BlogPostCategory = styled.div``
-const BlogPostTitle = styled.h1``
-const BlogPostMeta = styled.div``
-const BlogPostTeaser = styled.div``
+const BlogPostCategory = styled.div`
+  color: ${({ theme }) => theme.colors.grey500};
+  text-transform: uppercase;
+`
+const BlogPostTitle = styled.h1`
+  margin-bottom: ${({ theme }) => theme.spacings['s0.5']};
+`
+const BlogPostMeta = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
+  color: ${({ theme }) => theme.colors.grey500};
+`
+const BlogPostTeaser = styled.div`
+  position: relative;
+  margin-bottom: ${({ theme }) => theme.spacings.s2};
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+`
 
 export default function BlogListing() {
   const { activeLocale } = useContext(GlobalContext)
@@ -33,13 +60,14 @@ export default function BlogListing() {
             title
             date(formatString: "DD.MM.YYYY")
             author
+            category
             teaser {
               childMdx {
                 body
               }
             }
             media {
-              fluid(maxWidth: 1152, maxHeight: 400) {
+              fluid(maxWidth: 1472, maxHeight: 400) {
                 ...GatsbyContentfulFluid
               }
             }
@@ -86,12 +114,18 @@ export default function BlogListing() {
             </BlogPostMedia>
             <BlogPostContent>
               <BlogPostCategory>{category}</BlogPostCategory>
-              <BlogPostTitle>{title}</BlogPostTitle>
+              <BlogPostTitle>
+                <Link className="nohover" contentfulId={cid}>
+                  {title}
+                </Link>
+              </BlogPostTitle>
               <BlogPostMeta>{meta}</BlogPostMeta>
               <BlogPostTeaser>
                 <MDXRenderer>{teaser.childMdx.body}</MDXRenderer>
               </BlogPostTeaser>
-              <Link contentfulId={cid}>Read More</Link>
+              <Link type="CTA" contentfulId={cid}>
+                Read More
+              </Link>
             </BlogPostContent>
           </BlogPostWrapper>
         )
