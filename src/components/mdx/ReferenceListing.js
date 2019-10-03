@@ -163,7 +163,8 @@ export default function ReferenceListing() {
           solution,
           result,
           description,
-          media
+          media,
+          link
         }
       }) => {
         const taglist =
@@ -190,7 +191,7 @@ export default function ReferenceListing() {
             <Grid>
               <ReferenceImageWrapper>
                 {media ? (
-                  <Image {...media[0]} maxWidth="708" alt={client} />
+                  <Image {...media[0]} maxWidth={708} alt={client} />
                 ) : (
                   <ReferenceFallbackImageWrapper>
                     <PetitcodeLogo />
@@ -222,6 +223,11 @@ export default function ReferenceListing() {
                       <MDXRenderer>{result.childMdx.body}</MDXRenderer>
                     </ReferenceSubContent>
                   </div>
+                )}
+                {link && (
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    Visit project website
+                  </a>
                 )}
               </ReferenceSubWrapper>
             </Grid>
