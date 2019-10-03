@@ -97,6 +97,14 @@ module.exports = {
               anonymize: true,
               respectDNT: true
             }
+          },
+          {
+            resolve: 'gatsby-plugin-hubspot',
+            options: {
+              trackingCode: '3948482',
+              respectDNT: true,
+              productionOnly: true
+            }
           }
         ]
       : [])
