@@ -42,10 +42,7 @@ const LogoWrapper = styled.div`
 
   /* keep order of this section below to ensure correct overwrites */
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
-    padding-top: ${({ theme }) =>
-      parseInt(theme.spacing.viewport.medium) / 2}px;
-    padding-left: ${({ theme }) =>
-      parseInt(theme.spacing.viewport.medium) / 2}px;
+    padding: ${({ theme }) => parseInt(theme.spacing.viewport.medium) / 2}px;
     max-width: 180px;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
@@ -72,6 +69,9 @@ const LogoWrapper = styled.div`
         }
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.huge}) {
+        max-width: 180px;
+        padding: ${({ theme }) =>
+          parseInt(theme.spacing.viewport.medium) / 2}px;
         & svg.notext {
           display: none;
         }
