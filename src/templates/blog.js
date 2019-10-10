@@ -30,7 +30,7 @@ const BlogPostContent = styled.div`
   }
 `
 const BlogPostCategory = styled.div`
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey400};
   text-transform: uppercase;
 `
 const BlogPostTitle = styled.h1`
@@ -38,7 +38,7 @@ const BlogPostTitle = styled.h1`
 `
 const BlogPostMeta = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s2};
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey400};
 `
 const BlogPostTeaser = styled.div``
 

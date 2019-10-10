@@ -89,37 +89,13 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     display: inline-block;
     color: inherit;
-    text-decoration: none;
 
-    &:after {
-      content: '';
-      display: block;
-      height: 1px;
-      background: ${({ theme }) => theme.colors.black};
-      width: 0;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: width 0.1s ease-in-out;
-    }
-
-    &[aria-current='page'] {
-      &:after {
-        width: 80%;
-      }
-    }
     &:hover {
       text-decoration: none;
-      &:after {
-        width: 110%;
-      }
     }
 
     &.nohover {
-      &:after {
-        display: none !important;
-      }
+      font-style: normal;
     }
   }
 

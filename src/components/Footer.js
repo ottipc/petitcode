@@ -123,6 +123,15 @@ export default function Footer() {
           <Link contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
         <BottomGridElement>
+          <Link contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
+        </BottomGridElement>
+        <BottomGridElement>
+          <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
+        </BottomGridElement>
+        <BottomGridElement>
+          <Link contentfulId="Ezme8PAhPlfrFV77vHXig" />
+        </BottomGridElement>
+        <BottomGridElement>
           Copyright © {new Date().getFullYear()} petitcode GmbH
         </BottomGridElement>
       </BottomGrid>

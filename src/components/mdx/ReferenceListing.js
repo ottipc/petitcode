@@ -27,14 +27,12 @@ const ReferenceHeadline = styled.h1`
 const ReferenceMeta = styled.div`
   display: flex;
   margin: 0 -${({ theme }) => theme.spacings['s0.5']};
-  color: ${({ theme }) => theme.colors.grey500};
+  color: ${({ theme }) => theme.colors.grey400};
 
   & > * {
     margin: 0 ${({ theme }) => theme.spacings['s0.5']}};
   }
 `
-
-const ReferenceProjectType = styled.div``
 
 const ReferenceIndustry = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s1};
@@ -66,7 +64,7 @@ const ReferenceTag = styled.li`
   padding: 0 1em;
   margin: 0 0.3em ${({ theme }) => theme.spacings.s1};
   border-radius: 1em;
-  background: ${({ theme }) => theme.colors.grey600};
+  background: ${({ theme }) => theme.colors.grey500};
   color: ${({ theme }) => theme.colors.white};
   font-size: 0.8em;
   line-height: 2em;
@@ -173,13 +171,10 @@ export default function ReferenceListing() {
           tags.map((tag) => <ReferenceTag key={tag}>{`${tag}`}</ReferenceTag>)
         return (
           <ReferenceWrapper key={id}>
-            <ReferenceHeadline>{client}</ReferenceHeadline>
+            <ReferenceHeadline>
+              {projectType} for {client}
+            </ReferenceHeadline>
             <ReferenceMeta>
-              {projectType && (
-                <ReferenceProjectType>
-                  <strong>Project type:</strong> {projectType}
-                </ReferenceProjectType>
-              )}
               {industry && (
                 <ReferenceIndustry>
                   <strong>Industry:</strong> {industry}

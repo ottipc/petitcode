@@ -12,6 +12,8 @@ const ctaStyle = css`
   text-transform: uppercase;
   padding: 0.7em 1em;
   line-height: 1em;
+  text-decoration: none;
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.22);
 `
 
 const StyledA = styled.a`
