@@ -100,7 +100,6 @@ const Video = styled.video`
 
 const ContentWrapper = styled.div`
   position: relative;
-  min-height: 100vh;
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -110,6 +109,7 @@ const ContentWrapper = styled.div`
   ${({ video, image }) =>
     (video || image) &&
     css`
+      min-height: 100vh;
       color: #fff;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
     `}
