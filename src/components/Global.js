@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
   html body {
     background-color: ${({ theme }) => theme.colors.bg};
 
-    line-height: 1.8em;
+    line-height: 1.65em;
     /*
       Liquid typography:
       https://css-tricks.com/snippets/css/fluid-typography/
@@ -89,37 +89,13 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     display: inline-block;
     color: inherit;
-    text-decoration: none;
 
-    &:after {
-      content: '';
-      display: block;
-      height: 1px;
-      background: ${({ theme }) => theme.colors.black};
-      width: 0;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: width 0.1s ease-in-out;
-    }
-
-    &[aria-current='page'] {
-      &:after {
-        width: 80%;
-      }
-    }
     &:hover {
       text-decoration: none;
-      &:after {
-        width: 110%;
-      }
     }
 
     &.nohover {
-      &:after {
-        display: none !important;
-      }
+      font-style: normal;
     }
   }
 
@@ -170,6 +146,7 @@ export default function Global({ children, location }) {
             title
             slug
             node_locale
+            contentful_id
           }
         }
       }
@@ -180,6 +157,7 @@ export default function Global({ children, location }) {
             slug
             node_locale
             date
+            contentful_id
           }
         }
       }
@@ -202,6 +180,30 @@ export default function Global({ children, location }) {
               }
             }
             fluid(maxWidth: 1152) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+      backgroundImages: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^image/" } } }
+      ) {
+        edges {
+          node {
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
+              details {
+                image {
+                  width
+                  height
+                }
+              }
+            }
+            fluid(maxWidth: 1980) {
               ...GatsbyContentfulFluid
             }
           }
@@ -283,6 +285,7 @@ export default function Global({ children, location }) {
 
   const largeImages = data.largeImages.edges.map(({ node }) => node)
   const mediumImages = data.mediumImages.edges.map(({ node }) => node)
+  const backgroundImages = data.backgroundImages.edges.map(({ node }) => node)
   const videos = data.videos.edges.map(({ node }) => node)
   const { langs, defaultLocale } = useContext(GlobalContext)
   const { i18n } = useTranslation()
@@ -302,6 +305,7 @@ export default function Global({ children, location }) {
             pages,
             largeImages,
             mediumImages,
+            backgroundImages,
             videos,
             langs,
             defaultLocale,

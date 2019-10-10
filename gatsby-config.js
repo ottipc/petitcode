@@ -1,7 +1,8 @@
 const languages = require(`./src/data/languages`)
 const theme = require(`./src/utils/styling/theme`)
 
-const IS_PRODUCTION = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production'
+const isStaging = !!process.env.STAGING
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
@@ -22,7 +23,14 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `mtyay169tt6k`,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        ...(isProduction && !isStaging
+          ? {
+              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+            }
+          : {
+              host: `preview.contentful.com`,
+              accessToken: process.env.CONTENTFUL_PREVIEW_TOKEN
+            })
       }
     },
     {
@@ -63,7 +71,7 @@ module.exports = {
         features: [`IntersectionObserver`]
       }
     },
-    ...(IS_PRODUCTION
+    ...(isProduction
       ? [
           {
             resolve: `gatsby-plugin-manifest`,
@@ -88,6 +96,14 @@ module.exports = {
               head: false,
               anonymize: true,
               respectDNT: true
+            }
+          },
+          {
+            resolve: 'gatsby-plugin-hubspot',
+            options: {
+              trackingCode: '3948482',
+              respectDNT: true,
+              productionOnly: true
             }
           }
         ]

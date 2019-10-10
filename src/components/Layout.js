@@ -3,16 +3,12 @@ import propTypes from 'prop-types'
 
 import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
-import ReactCookieConsent, { Cookies } from 'react-cookie-consent'
-import { Trans, useTranslation } from 'react-i18next'
 
 import Overlays from './Overlays'
 import Footer from './Footer'
 import Metatags from './Metatags'
 
 import { NavigationContext, SectionContext } from '../utils/Contexts'
-
-import Link from './mdx/Link'
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
@@ -38,10 +34,6 @@ export default function Layout({ children }) {
     setNavigationActive(!navigationActive)
   }
 
-  const { t } = useTranslation()
-
-  const hasAcceptedCookies = !!Cookies.get('CookieConsent')
-
   return (
     <NavigationContext.Provider
       value={{
@@ -62,7 +54,7 @@ export default function Layout({ children }) {
         }}
       >
         <Metatags />
-        <Wrapper hasAcceptedCookies={hasAcceptedCookies}>
+        <Wrapper>
           <Overlays />
           <main>
             <Observer onChange={handleIsScrollingIntersection}>
@@ -71,31 +63,6 @@ export default function Layout({ children }) {
             {children}
             <Footer />
           </main>
-          <ReactCookieConsent
-            buttonText="Ok"
-            style={{
-              zIndex: 1200,
-              fontSize: '0.7em'
-            }}
-            buttonStyle={{
-              background: 'white',
-              color: 'black',
-              borderRadius: '3px',
-              border: 'none',
-              padding: '0 5px'
-            }}
-          >
-            <Trans i18nKey="cookieConsent">
-              {`Um die Webseite und Services für Sie zu optimieren,
-                          werden Cookies verwendet. Durch die weitere Nutzung
-                          der Webseite stimmen Sie der `}
-              <Link
-                contentfulId="48IUmDegZRVtDgbQTmATA6"
-                title={t('cookieConsentLink')}
-              />
-              {` zu.`}
-            </Trans>
-          </ReactCookieConsent>
         </Wrapper>
       </SectionContext.Provider>
     </NavigationContext.Provider>

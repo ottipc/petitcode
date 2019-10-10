@@ -1,8 +1,28 @@
 import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import { Link } from 'gatsby'
+import styled, { css } from 'styled-components'
 
 import { GlobalContext } from '../../utils/Contexts'
+
+const ctaStyle = css`
+  background: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+  font-family: ${({ theme }) => theme.fonts.header.join()};
+  text-transform: uppercase;
+  padding: 0.7em 1em;
+  line-height: 1em;
+  text-decoration: none;
+  box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.22);
+`
+
+const StyledA = styled.a`
+  ${({ type }) => type === 'CTA' && ctaStyle}
+`
+
+const StyledLink = styled(Link)`
+  ${({ type }) => type === 'CTA' && ctaStyle}
+`
 
 export default function MdxLink({
   contentfulId,
@@ -12,13 +32,17 @@ export default function MdxLink({
   className = null,
   hash,
   children,
+  type,
   ...linkProps
 }) {
+  if (type) {
+    className = [className, `nohover`].filter(Boolean).join(' ')
+  }
   if (href) {
     return (
-      <a className={className} href={href} target={target}>
+      <StyledA type={type} className={className} href={href} target={target}>
         {children || title}
-      </a>
+      </StyledA>
     )
   }
   const { pages, activeLocale } = useContext(GlobalContext)
@@ -36,7 +60,8 @@ export default function MdxLink({
     }
     const to = [path, hash ? `#${hash}` : null].filter(Boolean).join('')
     return (
-      <Link
+      <StyledLink
+        type={type}
         className={className}
         activeClassName="active"
         to={to}
@@ -44,7 +69,7 @@ export default function MdxLink({
         {...linkProps}
       >
         {children || title || pageTitle}
-      </Link>
+      </StyledLink>
     )
   }
 
@@ -58,5 +83,6 @@ MdxLink.propTypes = {
   hash: propTypes.string,
   title: propTypes.string,
   target: propTypes.string,
-  children: propTypes.node
+  children: propTypes.node,
+  type: propTypes.string
 }
