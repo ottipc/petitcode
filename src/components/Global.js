@@ -185,6 +185,30 @@ export default function Global({ children, location }) {
           }
         }
       }
+      backgroundImages: allContentfulAsset(
+        filter: { file: { contentType: { regex: "/^image/" } } }
+      ) {
+        edges {
+          node {
+            contentful_id
+            node_locale
+            title
+            file {
+              url
+              contentType
+              details {
+                image {
+                  width
+                  height
+                }
+              }
+            }
+            fluid(maxWidth: 1980) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
       videos: allContentfulAsset(
         filter: { file: { contentType: { regex: "/^video/" } } }
       ) {
@@ -261,6 +285,7 @@ export default function Global({ children, location }) {
 
   const largeImages = data.largeImages.edges.map(({ node }) => node)
   const mediumImages = data.mediumImages.edges.map(({ node }) => node)
+  const backgroundImages = data.backgroundImages.edges.map(({ node }) => node)
   const videos = data.videos.edges.map(({ node }) => node)
   const { langs, defaultLocale } = useContext(GlobalContext)
   const { i18n } = useTranslation()
@@ -280,6 +305,7 @@ export default function Global({ children, location }) {
             pages,
             largeImages,
             mediumImages,
+            backgroundImages,
             videos,
             langs,
             defaultLocale,

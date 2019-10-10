@@ -10,6 +10,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 import components from '../components/mdx-components'
+import MdxLink from '../components/mdx/Link'
 
 const BlogPostWrapper = styled.div``
 const BlogPostMedia = styled.div``
@@ -40,7 +41,9 @@ const BlogPostMeta = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s2};
   color: ${({ theme }) => theme.colors.grey400};
 `
-const BlogPostTeaser = styled.div``
+const BlogPostMainContent = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacings.s4};
+`
 
 class BlogTemplate extends React.PureComponent {
   static propTypes = {
@@ -114,11 +117,14 @@ class BlogTemplate extends React.PureComponent {
               <BlogPostCategory>{category}</BlogPostCategory>
               <BlogPostTitle>{title}</BlogPostTitle>
               <BlogPostMeta>{meta}</BlogPostMeta>
-              <BlogPostTeaser>
+              <BlogPostMainContent>
                 <MDXProvider components={components}>
                   <MDXRenderer>{body}</MDXRenderer>
                 </MDXProvider>
-              </BlogPostTeaser>
+              </BlogPostMainContent>
+              <MdxLink type="CTA" contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+                Back
+              </MdxLink>
             </BlogPostContent>
           </BlogPostWrapper>
         </Layout>
