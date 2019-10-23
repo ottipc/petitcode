@@ -68,10 +68,8 @@ export default function LanguageSelect() {
   return (
     <List>
       {langsMenu.map(({ path, locale }) => (
-        <ListItem key={locale}>
-          <SwitcherLink to={path} hidden={locale === activeLocale}>
-            {locale}
-          </SwitcherLink>
+        <ListItem key={locale} hidden={locale === activeLocale}>
+          <SwitcherLink to={path}>{locale}</SwitcherLink>
         </ListItem>
       ))}
     </List>
