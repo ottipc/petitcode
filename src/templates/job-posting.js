@@ -44,21 +44,44 @@ const JobPostingMainContent = styled.div`
 `
 
 const JobPostingMdxSection = styled.div`
-  margin-top: ${({ theme }) => theme.spacings.s8};
+  margin-top: ${({ theme }) => theme.spacings.s6};
 `
 
 const JobPostingTemplate = ({ data, location }) => {
   const { t } = useTranslation()
   const {
     title,
+    type,
+    industry,
     date,
+    duration,
+    location: jobLocation,
     contentful_id: contentfulId,
     node_locale: locale,
     description,
     tasks,
     skills,
-    benefits
+    benefits,
+    pricePerHour,
+    pricePerYear,
+    commission,
+    referredBy
   } = data.contentfulJobPosting
+
+  const metatext = [
+    type === 'FTE' ? t('Full Time Employment') : t('Freelance'),
+    industry,
+    date && duration
+      ? t('JobPostingMetaDateAndDuration', { date, duration })
+      : date,
+    jobLocation && t('JobPostingMetaLocation', { jobLocation }),
+    pricePerHour && t('JobPostingMetaPPH', { pricePerHour }),
+    pricePerYear && t('JobPostingMetaPPY', { pricePerYear }),
+    commission && t('JobPostingMetaCommission', { commission }),
+    referredBy && t('JobPostingMetaReferredBy', { referredBy })
+  ]
+    .filter(Boolean)
+    .join(' | ')
 
   return (
     <LocationContext.Provider
@@ -102,7 +125,7 @@ const JobPostingTemplate = ({ data, location }) => {
         <JobPostingWrapper>
           <JobPostingContent>
             <JobPostingTitle>{title}</JobPostingTitle>
-            <JobPostingMeta>{date}</JobPostingMeta>
+            <JobPostingMeta>{metatext}</JobPostingMeta>
             <JobPostingMainContent>
               <MDXProvider components={components}>
                 {description && (
