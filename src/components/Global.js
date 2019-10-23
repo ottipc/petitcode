@@ -269,7 +269,7 @@ export default function Global({ children, location }) {
       prefix = 'blog'
     }
     if (contentType === 'jobPosting') {
-      prefix = 'jobs'
+      prefix = 'job'
     }
     return {
       ...pages,
