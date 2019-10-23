@@ -93,33 +93,20 @@ const JobPostingTemplate = ({ data, location }) => {
     >
       <Layout>
         <Helmet
-          /**
-           * Meta information based on:
-           * https://moz.com/blog/meta-data-templates-123
-           * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-           */
           title={title}
           meta={[
             {
               property: 'og:title',
               content: title
+            },
+            {
+              name: 'description',
+              content: metatext
+            },
+            {
+              property: 'og:description',
+              content: metatext
             }
-            // {
-            //   name: 'description',
-            //   content: description
-            // },
-            // {
-            //   property: 'og:description',
-            //   content: description
-            // }
-            // heroImage && {
-            //   property: 'twitter:image:src',
-            //   content: `${seoImage.file.url}?w=1200&h=628&fit=fill`
-            // },
-            // heroImage && {
-            //   property: 'og:image',
-            //   content: `${seoImage.file.url}?w=1200&h=630&fit=fill`
-            // }
           ].filter(Boolean)}
         />
         <JobPostingWrapper>
