@@ -108,23 +108,16 @@ class Navigation extends React.PureComponent {
               <Logo />
               <List>
                 <ListItem>
-                  <MenuLink contentfulId="1twd2qv8bTOlWsEcH44J3D">
-                    Join Network
+                  <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+                    References
                   </MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink contentfulId="1MV0gXGutUohpC1Bstkktx">
-                    Services
-                  </MenuLink>
+                  <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
                 </ListItem>
                 <ListItem>
-                  <MenuLink contentfulId="5PD3sFrAGgbHPQacurLOB4">
+                  <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
                     Blog
-                  </MenuLink>
-                </ListItem>
-                <ListItem>
-                  <MenuLink contentfulId="2QJIHRM7b1giPpUSptMfbT">
-                    Jobs
                   </MenuLink>
                 </ListItem>
               </List>

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Header from './Header'
 import LanguageSelect from './LanguageSelect'
 import Navigation from './Navigation'
-import SectionNavigation from './SectionNavigation'
 import Hamburger from './Hamburger'
 import { NavigationContext } from '../utils/Contexts'
 
@@ -77,18 +76,17 @@ export default function Overlays() {
   const { navigationActive } = useContext(NavigationContext)
 
   return (
-    <React.Fragment>
+    <>
       <HeaderWrapper>
         <Header />
-        <HamburgerWrapper style={{ display: 'none' }}>
+        <HamburgerWrapper>
           <Hamburger />
         </HamburgerWrapper>
-        <SectionNavigation />
       </HeaderWrapper>
       <LanguageSelectWrapper>
         <LanguageSelect />
       </LanguageSelectWrapper>
       <Navigation navigationActive={navigationActive} />
-    </React.Fragment>
+    </>
   )
 }
