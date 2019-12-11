@@ -126,19 +126,12 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   await createJobPostings({ createPage })
 }
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
-  const typeDefs = [
-    'type ContentfulJobPosting implements Node { frontmatter: ContentfulJobPosting }',
-    schema.buildObjectType({
-      name: 'ContentfulJobPosting',
-      fields: {
-        pricePerHour: {
-          type: '[String!]',
-          resolve: (source) => source.pricePerHour || null
-        }
-      }
-    })
-  ]
+  const typeDefs = `
+    type ContentfulJobPosting implements Node {
+      pricePerHour: String
+    }
+  `
   createTypes(typeDefs)
 }
