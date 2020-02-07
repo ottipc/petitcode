@@ -3,7 +3,7 @@ const { resolve } = require('path')
 const { createLocalizedPath } = require('./src/utils/i18n')
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+  const { createPage, createRedirect } = boundActionCreators
 
   async function createPages({ createPage }) {
     const result = await graphql(
@@ -124,6 +124,13 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   await createPages({ createPage })
   await createBlogPosts({ createPage })
   await createJobPostings({ createPage })
+  
+  createRedirect({
+    fromPath: '/',
+    toPath: '/en/',
+    isPermanent: true,
+    redirectInBrowser: true,
+  })
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
