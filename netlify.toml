@@ -8,13 +8,13 @@
 
 [[redirects]]
   from = "/"
-  to = "/de"
+  to = "/de/"
   status = 302
   force = true
   conditions = {Language = ["de"]}
 
 [[redirects]]
   from = "/"
-  to = "/en"
+  to = "/en/"
   status = 302
   force = true
