@@ -1,11 +1,8 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack')
+const path = require('path')
 
 const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+  entry: ['react-hot-loader/patch', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -58,11 +55,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.svg$/,
@@ -82,10 +75,7 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [
-      '.js',
-      '.jsx'
-    ],
+    extensions: ['.js', '.jsx'],
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
@@ -93,6 +83,6 @@ const config = {
   devServer: {
     contentBase: './dist'
   }
-};
+}
 
-module.exports = config;
+module.exports = config
