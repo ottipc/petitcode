@@ -34,7 +34,7 @@ const Button = styled.button`
 
 const DateFilter = (props) => {
   const [inputValue, setInputValue] = useState('')
-  const { dateFilter } = props;
+  const { dateFilter } = props
 
   const searchHandler = () => {
     searchFilter(inputValue)
@@ -54,7 +54,7 @@ const DateFilter = (props) => {
           lineHeight: '1.5',
           fontFamily: 'Poppins, sans-serif'
         }}
-        onOk={value => console.log('date', value)}
+        onOk={(value) => console.log('date', value)}
       />
       <Button>
         <FontAwesomeIcon icon={faCalendarWeek} />
