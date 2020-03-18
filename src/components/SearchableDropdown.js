@@ -100,6 +100,7 @@ const SearchableDropdown = (props) => {
     <Wrapper>
       <Container>
         <Select
+          values={props.selectedItems}
           options={props.options}
           style={{border: 'none'}}
           placeholder={props.placeholder}
