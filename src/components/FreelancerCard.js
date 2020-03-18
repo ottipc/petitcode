@@ -113,7 +113,6 @@ const Category = styled.div`
 
 const FreelancerCard = (props) => {
   const { data } = props
-  console.log('card data', data)
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')

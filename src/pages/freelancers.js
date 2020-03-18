@@ -28,6 +28,8 @@ export default function RedirectIndex({ data }) {
   const [csvData, setCsvData] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [cardsPerPage, setCardsPerPage] = useState(24)
+  const [skills, setSkills] = useState([])
+  const [tags, setTags] = useState([])
   let indexOfLastCard = 0
   let indexOfFirstCard = 0
   let currentCards = []
@@ -35,16 +37,26 @@ export default function RedirectIndex({ data }) {
 
   useEffect(() => {
     csv('data.csv').then((data) => {
-      console.log('please work', data)
       setCsvData(data)
     })
   }, [])
 
   if (csvData) {
+    let tagsArr = [];
+    let tagsCheck = [];
     list = csvData.map((entry, index) => {
+      entry.tags.split(', ').forEach(tag => {
+        if (tagsCheck.findIndex(item => tag.toLowerCase() === item.toLowerCase()) < 0) {
+          tagsCheck.push(tag);
+          tagsArr.push({ key: tagsArr.length, value: tag, label: tag });
+        }
+      });
       return <FreelancerCard key={index} data={entry} />
     })
 
+    if (JSON.stringify(tags) !== JSON.stringify(tagsArr.sort((a, b) => a.value > b.value ? 1 : -1))) {
+      setTags(tagsArr.sort((a, b) => a.value > b.value ? 1 : -1));
+    }
     indexOfLastCard = currentPage * cardsPerPage
     indexOfFirstCard = indexOfLastCard - cardsPerPage
     currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
@@ -53,12 +65,11 @@ export default function RedirectIndex({ data }) {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
-
   return (
     <>
       <Metatags />
       <Container>
-        <Filter />
+        <Filter tags={tags}/>
         <CardGrid>{currentCards}</CardGrid>
         <Pagination
           postsPerPage={cardsPerPage}
