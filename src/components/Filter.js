@@ -5,12 +5,16 @@ import RatingsDropdown from './RatingsDropdown'
 import SliderFilter from './SliderFilter/SliderFilter'
 import { groupOptions } from './options'
 import { typeOptions } from './options'
+import SearchFilter from './SearchFilter'
+import DateFilter from './DateFilter'
 
 const Wrapper = styled.div`
   padding: 25px;
 `
 
-const Container = styled.div`
+const ContainerUpper = styled.div`
+  display: flex;
+  flex-direction: row;
   background-color: white;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -175,10 +179,19 @@ const Filter = (props) => {
     return renderFilters;
   };
 
+  const { filterCards } = props
+
+  const searchFilter = (value) => {
+    filterCards(value)
+  }
+
   return (
     <Wrapper>
       <Container>
-        <p>This is a fitler</p>
+      <ContainerUpper>
+        <SearchFilter searchFilter={(value) => searchFilter(value)} />
+        <DateFilter />
+      </ContainerUpper>
         <Lower>
           <SearchableDropdown placeholder="Group" options={groupOptions} onFilterSet={value => activateFilter('Group', value)}/>
           <SearchableDropdown placeholder="Skills" options={groupOptions} />
