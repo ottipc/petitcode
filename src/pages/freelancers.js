@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import propTypes from 'prop-types'
-import { graphql, navigate, withPrefix } from 'gatsby'
-import { getUserLangKey } from 'ptz-i18n'
-import styled, { css } from 'styled-components'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Metatags from '../components/Metatags'
-import Link from '../components/mdx/Link'
 import FreelancerCard from '../components/FreelancerCard'
 import Pagination from '../components/Pagination'
 import Filter from '../components/Filter'
@@ -26,6 +23,7 @@ const Container = styled.div`
 
 export default function RedirectIndex({ data }) {
   const [csvData, setCsvData] = useState([])
+  const [filteredData, setFilteredData] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const [cardsPerPage, setCardsPerPage] = useState(24)
   let indexOfLastCard = 0
@@ -35,12 +33,19 @@ export default function RedirectIndex({ data }) {
 
   useEffect(() => {
     csv('data.csv').then((data) => {
-      console.log('please work', data)
       setCsvData(data)
     })
   }, [])
 
-  if (csvData) {
+  if (filteredData) {
+    list = filteredData.map((entry, index) => {
+      return <FreelancerCard key={index} data={entry} />
+    })
+
+    indexOfLastCard = currentPage * cardsPerPage
+    indexOfFirstCard = indexOfLastCard - cardsPerPage
+    currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
+  } else if (csvData) {
     list = csvData.map((entry, index) => {
       return <FreelancerCard key={index} data={entry} />
     })
@@ -54,11 +59,21 @@ export default function RedirectIndex({ data }) {
     setCurrentPage(pageNumber)
   }
 
+  const filterCards = (filterValue) => {
+    const filteredData = csvData.filter(
+      (entity) =>
+        entity.email.toLowerCase().includes(filterValue.toLowerCase()) ||
+        entity.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+        entity.surname.toLowerCase().includes(filterValue.toLowerCase())
+    )
+    setFilteredData(filteredData)
+  }
+
   return (
     <>
       <Metatags />
       <Container>
-        <Filter />
+        <Filter filterCards={(filter) => filterCards(filter)} />
         <CardGrid>{currentCards}</CardGrid>
         <Pagination
           postsPerPage={cardsPerPage}
@@ -70,10 +85,6 @@ export default function RedirectIndex({ data }) {
     </>
   )
 }
-
-// RedirectIndex.propTypes = {
-//   data: propTypes.object.isRequired
-// }
 
 // export const pageQuery = graphql`
 //   query IndexQuery {
