@@ -7,11 +7,13 @@ const Container = styled.nav`
 `
 
 const Paginator = styled.ul`
-  ${'' /* display: flex; */}
-  display: block;
+  display: flex;
+  position: absolute;
+  right: 26px;
+  ${'' /* display: block; */}
   height: 30px;
   list-style-type: none;
-  margin: 40px 25px 40px 0px;
+  margin: 10px 0 0 0;
   padding: 0;
   overflow: hidden;
   border-left: 1px solid #dddddd;
@@ -49,7 +51,7 @@ const PageNumber = styled.a`
   cursor: default;
 `
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+const PaginationTable = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = []
   let pages = []
 
@@ -84,4 +86,4 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   )
 }
 
-export default Pagination
+export default PaginationTable
