@@ -75,7 +75,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
       </Page>
     )
   })
-  console.log('pages', pages)
 
   return (
     <Container>
