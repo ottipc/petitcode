@@ -72,13 +72,27 @@ export default function RedirectIndex({ data }) {
     setCurrentPage(pageNumber)
   }
 
-  const filterCards = (filterValue) => {
-    const filteredData = csvData.filter(
-      (entity) =>
-        entity.email.toLowerCase().includes(filterValue.toLowerCase()) ||
-        entity.name.toLowerCase().includes(filterValue.toLowerCase()) ||
-        entity.surname.toLowerCase().includes(filterValue.toLowerCase())
-    )
+  console.log('scvData', csvData);
+
+  const filterCards = (activeFilters) => {
+    let filteredData = csvData;
+    console.log('active filters', activeFilters);
+    if (activeFilters.filter(filter => typeof filter.Search !== 'undefined').length > 0) {
+      let searchFilter = activeFilters.filter(filter => typeof filter.Search !== 'undefined');
+      filteredData = csvData.filter(
+        entity =>
+          entity.email.toLowerCase().includes(searchFilter[0].Search.toLowerCase()) ||
+          entity.name.toLowerCase().includes(searchFilter[0].Search.toLowerCase()) ||
+          entity.surname.toLowerCase().includes(searchFilter[0].Search.toLowerCase())
+      )
+    }
+    if (activeFilters.filter(filter => typeof filter.Group !== 'undefined' && filter.Group.length > 0).length > 0) {
+      let groupFilter = activeFilters.filter(filter => typeof filter.Group !== 'undefined');
+      filteredData = filteredData.filter(
+        entity =>
+          entity.categories.split(', ').some(item => groupFilter[0].Group.includes(item)) 
+      )
+    }
     setFilteredData(filteredData)
   }
 

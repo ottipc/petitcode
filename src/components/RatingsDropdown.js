@@ -27,6 +27,7 @@ const Placeholder = styled.p`
 const RatingsDropdown = (props) => {
 
   const {onFilterSet} = props; 
+  const {onUncheckFilter} = props; 
   const [checked, setChecked] = useState(false);
   const [rating, setRating] = useState(0);
 
@@ -38,6 +39,8 @@ const RatingsDropdown = (props) => {
   const checkedHandler = () => {
     if (checked) {
       onFilterSet(0);
+      onUncheckFilter();
+      setRating(0);
     }
     setChecked(!checked);
   };
@@ -87,7 +90,7 @@ const RatingsDropdown = (props) => {
             checkedIcon={false}
             offColor="#ffffff"
             onColor="#02BD94"
-            onHandleColor="white"
+            onHandleColor="#ffffff"
             height={18}
             width={30}
             handleDiameter={18}

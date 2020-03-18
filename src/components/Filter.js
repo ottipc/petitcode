@@ -17,6 +17,13 @@ const ContainerUpper = styled.div`
   flex-direction: row;
   background-color: white;
   width: 100%;
+  padding-bottom: 20px;
+`
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px 20px 20px 20px;
 `
@@ -34,6 +41,7 @@ const ActiveFilters = styled.div`
 
 const Filter = (props) => {
 
+  const [searchFilterValue, setSearchFilterValue] = useState();
   const [groupFilter, setGroupFilter] = useState();
   const [skillsFilter, setSkillsFilter] = useState();
   const [tagsFilter, setTagsFilter] = useState();
@@ -44,6 +52,7 @@ const Filter = (props) => {
   const [activeFilters, setActiveFilters] = useState([]);
   const [rerenderKey, setRerenderKey] = useState(0);
   const {tags} = props;
+  const { filterCards } = props;
 
   const activateFilter = (type, value) => {
     let af = activeFilters;
@@ -89,12 +98,12 @@ const Filter = (props) => {
         setRatingFilter(value);
         af.forEach(filter => {
           if (Object.keys(filter)[0] === 'Rating') {
-            filter.Rating = value.map(entry => {return entry.value});
+            filter.Rating = value;
             added = true;
           }
         });
         if (!added) {
-          af.push({Rating: value.map(entry => {return entry.value})});
+          af.push({Rating: value});
         }
         break;
       case 'Type':
@@ -109,29 +118,69 @@ const Filter = (props) => {
           af.push({Type: value.map(entry => {return entry.value})});
         }
         break;
+        case 'Type':
+        setTypeFilter(value);
+        af.forEach(filter => {
+          if (Object.keys(filter)[0] === 'Type') {
+            filter.Type = value.map(entry => {return entry.value});
+            added = true;
+          }
+        });
+        if (!added) {
+          af.push({Type: value.map(entry => {return entry.value})});
+        }
+        break;
+        case 'hRate':
+        setHRateFilter(value);
+        af.forEach(filter => {
+          if (Object.keys(filter)[0] === 'hRate') {
+            filter.hRate = value;
+            added = true;
+          }
+        });
+        if (!added) {
+          af.push({hRate: value});
+        }
+        break;
+        case 'dRate':
+        setDRateFilter(value);
+        af.forEach(filter => {
+          if (Object.keys(filter)[0] === 'dRate') {
+            filter.dRate = value;
+            added = true;
+          }
+        });
+        if (!added) {
+          af.push({dRate: value});
+        }
+        break;
       default: 
         break;
     }
     setActiveFilters(af);
+    setRerenderKey(Math.random());
+    filterCards(af);
   };
 
   const removeFilter = (group, value) => {
-    let tempFilters = activeFilters;
-    tempFilters.forEach(filter => {
+    let af = activeFilters;
+    af.forEach(filter => {
       const props = Object.entries(filter);
       if (props[0][0] === group) {
         filter[group] = props[0][1].filter(fvalue => fvalue !== value);
       }
     });
-    setActiveFilters(tempFilters);
+    setActiveFilters(af);
     setRerenderKey(Math.random());
+    filterCards(af);
   };
 
   const activeFiltersHandler = () => {
     let renderFilters = [];
+    const validFilters = ['Group', 'Skills', 'Tags', 'Type'];
     renderFilters = activeFilters.map(type => {
       const props = Object.entries(type);
-      if (props[0][1].length > 0) {
+      if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
         return (
           <div style={{
             display: 'flex',
@@ -173,16 +222,67 @@ const Filter = (props) => {
             })}
           </div>
         );
+      } else if (props[0][0] === 'Rating' && typeof props[0][1] !== 'undefined' && props[0][1] > 0) {
+        return (
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'baseline',
+          }}>
+            <p style={{
+              color: '#656A6C',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '13px',
+              fontStyle: 'italic',
+              marginRight: 10,
+            }}>
+              {props[0][0]}
+            </p> 
+              <div style={{
+                  backgroundColor: '#A4A3A3',
+                  height: 14,
+                  paddingTop: 10,
+                  paddingBottom: 10,
+                  paddingLeft: 10,
+                  borderRadius: 10,
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginRight: 10,
+               }}>
+                  <p style={{
+                  fontSize: '10px',
+                  color: 'white',
+                  marginBottom: '0px',
+                  }}>
+                    More than {props[0][1]}
+                  </p>
+                  <div>
+                    <button style={{border: 'none', fontSize: 10, color: 'white', float: 'right'}} onClick={() => removeFilter(props[0][0], value)}>X</button>
+                  </div>
+                </div>
+          </div>
+        );
       }
       return;
     });
     return renderFilters;
   };
 
-  const { filterCards } = props
-
   const searchFilter = (value) => {
-    filterCards(value)
+    let af = activeFilters;
+    let added = false;
+    setSearchFilterValue(value);
+    af.forEach(filter => {
+      if (Object.keys(filter)[0] === 'Search') {
+        filter.Search = value;
+        added = true;
+      }
+    });
+    if (!added) {
+      af.push({Search: value});
+    }
+    setActiveFilters(af);
+    filterCards(af);
   }
 
   return (
@@ -193,13 +293,13 @@ const Filter = (props) => {
         <DateFilter />
       </ContainerUpper>
         <Lower>
-          <SearchableDropdown placeholder="Group" options={groupOptions} onFilterSet={value => activateFilter('Group', value)}/>
-          <SearchableDropdown placeholder="Skills" options={groupOptions} />
+          <SearchableDropdown placeholder="Group" selectedItems={groupFilter} options={groupOptions} onFilterSet={value => activateFilter('Group', value)}/>
+          <SearchableDropdown placeholder="Skills" options={groupOptions} onFilterSet={value => activateFilter('Skills', value)}/>
           <SearchableDropdown placeholder="Tags" options={tags} onFilterSet={value => activateFilter('Tags', value)}/>
-          <RatingsDropdown placeholder="Rating" onFilterSet={value => setRatingFilter(value)}/>
+          <RatingsDropdown placeholder="Rating" onUncheckFilter={() => activateFilter('Rating', 0)} onFilterSet={value => activateFilter('Rating', value)}/>
           <SearchableDropdown placeholder="Type" options={typeOptions} onFilterSet={value => activateFilter('Type', value)}/>
-          <SliderFilter label={'Hourly Rate: '} domain={[0, 150]} onValueChange={value => setHRateFilter(value)}/>
-          <SliderFilter label={'Daily Rate: '} domain={[0, 800]} onValueChange={value => setDRateFilter(value)}/>
+          <SliderFilter label={'Hourly Rate: '} domain={[0, 150]} onValueChange={value => activateFilter('hRate', value)}/>
+          <SliderFilter label={'Daily Rate: '} domain={[0, 800]} onValueChange={value => activateFilter('dRate', value)}/>
         </Lower>
         <ActiveFilters key={rerenderKey}>{activeFiltersHandler()}</ActiveFilters>
       </Container>
