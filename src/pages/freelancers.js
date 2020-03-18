@@ -75,8 +75,9 @@ export default function RedirectIndex({ data }) {
   console.log('scvData', csvData);
 
   const filterCards = (activeFilters) => {
+
+    console.log('activeFilters', activeFilters);
     let filteredData = csvData;
-    console.log('active filters', activeFilters);
     if (activeFilters.filter(filter => typeof filter.Search !== 'undefined').length > 0) {
       let searchFilter = activeFilters.filter(filter => typeof filter.Search !== 'undefined');
       filteredData = csvData.filter(
@@ -91,6 +92,43 @@ export default function RedirectIndex({ data }) {
       filteredData = filteredData.filter(
         entity =>
           entity.categories.split(', ').some(item => groupFilter[0].Group.includes(item)) 
+      )
+    }
+    // if (activeFilters.filter(filter => typeof filter.Skills !== 'undefined' && filter.Skills.length > 0).length > 0) {
+    //   let skillsFilter = activeFilters.filter(filter => typeof filter.Skills !== 'undefined');
+    //   filteredData = filteredData.filter(
+    //     entity =>
+    //       entity.categories.split(', ').some(item => skillsFilter[0].Skills.includes(item)) 
+    //   )
+    // }
+    if (activeFilters.filter(filter => typeof filter.Tags !== 'undefined' && filter.Tags.length > 0).length > 0) {
+      let tagsFilter = activeFilters.filter(filter => typeof filter.Tags !== 'undefined');
+      filteredData = filteredData.filter(
+        entity =>
+          entity.tags.split(', ').some(item => tagsFilter[0].Tags.includes(item)) 
+      )
+    }
+    if (activeFilters.filter(filter => typeof filter.Rating !== 'undefined' && filter.Rating > 0).length > 0) {
+      let ratingFilter = activeFilters.filter(filter => typeof filter.Rating !== 'undefined');
+      filteredData = filteredData.filter(
+        entity =>
+          parseFloat(entity.rating).toFixed() >= ratingFilter[0].Rating
+      )
+    }
+    if (activeFilters.filter(filter => typeof filter.hRate !== 'undefined' && filter.hRate.length > 0).length > 0) {
+      let hRateFilter = activeFilters.filter(filter => typeof filter.hRate !== 'undefined');
+      filteredData = filteredData.filter(
+        entity => 
+          parseFloat(entity.hourly_rate) >= hRateFilter[0].hRate[0] && 
+          parseFloat(entity.hourly_rate) <= hRateFilter[0].hRate[1]
+      )
+    }
+    if (activeFilters.filter(filter => typeof filter.dRate !== 'undefined' && filter.dRate.length > 0).length > 0) {
+      let dRateFilter = activeFilters.filter(filter => typeof filter.dRate !== 'undefined');
+      filteredData = filteredData.filter(
+        entity => 
+          parseFloat(entity.daily_rate) >= dRateFilter[0].dRate[0] && 
+          parseFloat(entity.daily_rate) <= dRateFilter[0].dRate[1]
       )
     }
     setFilteredData(filteredData)

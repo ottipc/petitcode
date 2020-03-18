@@ -118,18 +118,6 @@ const Filter = (props) => {
           af.push({Type: value.map(entry => {return entry.value})});
         }
         break;
-        case 'Type':
-        setTypeFilter(value);
-        af.forEach(filter => {
-          if (Object.keys(filter)[0] === 'Type') {
-            filter.Type = value.map(entry => {return entry.value});
-            added = true;
-          }
-        });
-        if (!added) {
-          af.push({Type: value.map(entry => {return entry.value})});
-        }
-        break;
         case 'hRate':
         setHRateFilter(value);
         af.forEach(filter => {
@@ -164,12 +152,33 @@ const Filter = (props) => {
 
   const removeFilter = (group, value) => {
     let af = activeFilters;
+    let newFilterArray = [];
     af.forEach(filter => {
       const props = Object.entries(filter);
       if (props[0][0] === group) {
         filter[group] = props[0][1].filter(fvalue => fvalue !== value);
+        newFilterArray = filter[group].map((value, index) => { return {ket: index, value: value, label: value} });
       }
     });
+
+    switch(group) {
+      case 'Group':
+        setGroupFilter(newFilterArray);
+        break;
+      case 'Skills':
+        setSkillsFilter(newFilterArray);
+        break;
+      case 'Tags':
+        setTagsFilter(newFilterArray);
+        break;
+      case 'Rating':
+        setRatingFilter(newFilterArray);
+        break;
+      case 'Type':
+        setTypeFilter(newFilterArray);
+        break;
+
+    }
     setActiveFilters(af);
     setRerenderKey(Math.random());
     filterCards(af);
