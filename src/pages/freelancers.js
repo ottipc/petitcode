@@ -5,7 +5,7 @@ import Metatags from '../components/Metatags'
 import FreelancerCard from '../components/FreelancerCard'
 import Pagination from '../components/Pagination'
 import Filter from '../components/Filter'
-import { csv } from 'd3'
+import FilterWizard from '../components/mdx/FilterWizard'
 
 const CardGrid = styled.div`
   width: 100%;
@@ -34,10 +34,14 @@ export default function RedirectIndex({ data }) {
   let list = []
 
   useEffect(() => {
-    csv('data.csv').then((data) => {
-      setCsvData(data)
-    })
+    setCsvData(data.allDataCsv.nodes);
   }, [])
+
+  data.allDataCsv.nodes.forEach(entity => {
+    if (entity.unavailabilities.length > 0) {
+      console.log('available', entity);
+    }
+  })
 
   if (filteredData) {
     list = filteredData.map((entry, index) => {
@@ -50,6 +54,8 @@ export default function RedirectIndex({ data }) {
   } else if (csvData) {
     const tagsArr = []
     const tagsCheck = []
+    const skillsArr = []
+    const skillsCheck = []
     list = csvData.map((entry, index) => {
       entry.tags.split(', ').forEach((tag) => {
         if (
@@ -61,6 +67,16 @@ export default function RedirectIndex({ data }) {
           tagsArr.push({ key: tagsArr.length, value: tag, label: tag })
         }
       })
+      entry.skills.split(', ').forEach((skill) => {
+        if (
+          skillsCheck.findIndex(
+            (item) => skill.toLowerCase() === item.toLowerCase()
+          ) < 0
+        ) {
+          skillsCheck.push(skill)
+          skillsArr.push({ key: skillsArr.length, value: skill, label: skill })
+        }
+      })
       return <FreelancerCard key={index} data={entry} />
     })
 
@@ -69,6 +85,12 @@ export default function RedirectIndex({ data }) {
       JSON.stringify(tagsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
     ) {
       setTags(tagsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    }
+    if (
+      JSON.stringify(skills) !==
+      JSON.stringify(skillsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    ) {
+      setSkills(skillsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
     }
     indexOfLastCard = currentPage * cardsPerPage
     indexOfFirstCard = indexOfLastCard - cardsPerPage
@@ -111,7 +133,7 @@ export default function RedirectIndex({ data }) {
         (filter) => typeof filter.Group !== 'undefined'
       )
       filteredData = filteredData.filter((entity) =>
-        entity.categories
+        entity.groups
           .split(', ')
           .some((item) => groupFilter[0].Group.includes(item))
       )
@@ -135,6 +157,20 @@ export default function RedirectIndex({ data }) {
         entity.tags
           .split(', ')
           .some((item) => tagsFilter[0].Tags.includes(item))
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) => typeof filter.Skills !== 'undefined' && filter.Skills.length > 0
+      ).length > 0
+    ) {
+      const skillsFilter = activeFilters.filter(
+        (filter) => typeof filter.Skills !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.skills
+          .split(', ')
+          .some((item) => skillsFilter[0].Skills.includes(item))
       )
     }
     if (
@@ -187,7 +223,8 @@ export default function RedirectIndex({ data }) {
     <>
       <Metatags />
       <Container>
-        <Filter tags={tags} filterCards={(filter) => filterCards(filter)} />
+        <Filter tags={tags} skills={skills} filterCards={(filter) => filterCards(filter)} />
+        {/* <FilterWizard /> */}
         <CardGrid>{currentCards}</CardGrid>
         <Pagination
           postsPerPage={cardsPerPage}
@@ -222,4 +259,32 @@ export const petitcodeFragment = graphql`
       }
     }
   }
+`
+
+export const csvDataGrah = graphql`
+query {
+  allDataCsv {
+    nodes {
+      address
+      birth_date
+      company_name
+      daily_rate
+      email
+      hourly_rate
+      id
+      name
+      partner_since
+      partner_type
+      phone_nr
+      rating
+      social_media
+      surname
+      tags
+      type
+      skills
+      unavailabilities
+      groups
+    }
+  }
+}
 `

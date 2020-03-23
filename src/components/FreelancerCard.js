@@ -88,7 +88,7 @@ const RateLabel = styled.p`
   text-transform: uppercase;
 `
 
-const CategoriesSection = styled.div`
+const GroupsSection = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -96,7 +96,7 @@ const CategoriesSection = styled.div`
   padding: 17px 8px;
 `
 
-const Category = styled.div`
+const Group = styled.div`
   width: 23px;
   height: 23px;
   border-radius: 15px;
@@ -129,7 +129,7 @@ const FreelancerCard = (props) => {
     return formatedAddress
   }
 
-  const formatCategories = (categoriesData) => {
+  const formatGroups = (groupsData) => {
     const abrev = {
       FirstInterview: 'F',
       DEV: 'D',
@@ -139,8 +139,8 @@ const FreelancerCard = (props) => {
       MGMENT: 'M',
       MAR: 'M'
     }
-    const array = categoriesData.split(', ').map((cat, index) => {
-      return <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
+    const array = groupsData.split(', ').map((cat, index) => {
+      return <Group key={index}>{abrev[cat.replace(/\s+/g, '')]}</Group>
     })
     return array
   }
@@ -176,7 +176,7 @@ const FreelancerCard = (props) => {
           <RateLabel>Daily rate</RateLabel>
         </Rate>
       </RatesSection>
-      <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection>
+      <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
     </ContentWrapper>
   )
 }

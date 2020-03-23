@@ -9,7 +9,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-  margin-left: 30px;
 `
 
 const Input = styled(DateRangePicker)`
@@ -33,11 +32,25 @@ const Button = styled.button`
 `
 
 const DateFilter = (props) => {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState([])
   const { dateFilter } = props
 
-  const searchHandler = () => {
-    searchFilter(inputValue)
+  const formatDate = (value) => {
+    const year = new Date(value).getFullYear()
+    const month = parseInt(new Date(value).getMonth()) > 9 ? new Date(value).getMonth() : '0' + new Date(value).getMonth()
+    const day = parseInt(new Date(value).getDate()) > 9 ? new Date(value).getDate() : '0' + new Date(value).getDate()
+
+    return year+'-'+month+'-'+day
+  }
+
+  const setDateHandler = (date) => {
+    const startDate = date[0]
+    const endDate = date[1]
+    for(var dateRange=[], dt = startDate; dt<=endDate; dt.setDate(dt.getDate()+1)){
+      dateRange.push(formatDate(dt));
+    }
+    console.log('date range', dateRange);
+    setInputValue(date);
   }
 
   return (
@@ -54,7 +67,7 @@ const DateFilter = (props) => {
           lineHeight: '1.5',
           fontFamily: 'Poppins, sans-serif'
         }}
-        onOk={(value) => console.log('date', value)}
+        onOk={value => setDateHandler(value)}
       />
       <Button>
         <FontAwesomeIcon icon={faCalendarWeek} />

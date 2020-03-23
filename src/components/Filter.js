@@ -50,8 +50,7 @@ const Filter = (props) => {
   const [dRateFilter, setDRateFilter] = useState()
   const [activeFilters, setActiveFilters] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
-  const { tags } = props
-  const { filterCards } = props
+  const { tags, skills, filterCards } = props
 
   const activateFilter = (type, value) => {
     const af = activeFilters
@@ -376,7 +375,7 @@ const Filter = (props) => {
           />
           <SearchableDropdown
             placeholder="Skills"
-            options={groupOptions}
+            options={skills}
             onFilterSet={(value) => activateFilter('Skills', value)}
           />
           <SearchableDropdown
