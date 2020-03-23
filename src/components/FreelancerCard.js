@@ -22,13 +22,15 @@ const ContentWrapper = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition-property: transform;
   height: 100%;
-  
+
 `
 const Image = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 35px;
   margin-top: 30px;
+  ${'' /* add */}
+  margin-bottom:0;
 `
 
 const Name = styled.p`
@@ -80,6 +82,8 @@ const Tags = styled.div`
   line-height: 11px;
   text-align: center;
   margin-bottom: 6px;
+  ${'' /* add */}
+  margin-bottom:0;
 `
 
 const Rate = styled.div`
@@ -112,6 +116,8 @@ const CategoriesSection = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 17px 8px;
+  ${'' /* add */}
+  padding-bottom: 8px;
 `
 
 const Category = styled.div`
@@ -215,44 +221,51 @@ const FreelancerCard = (props) => {
      {data.tags}
       </span>
    }
+   const NameToolip = () => {
+    return <span className='tags-tooltip' style={{fontSize:'12px'}}>
+   {data.name + ' ' + data.surname}
+    </span>
+ }
 
 
   return (
     <Wrapper>
     
-          <Tippy theme ='translucent' content= {data.type}>
+      <Tippy theme ='translucent' content= {data.type}>
           {data.type === "self managed" ? <Type></Type> :''}
-          </Tippy>
+       </Tippy>
     <ContentWrapper>
-    
       <Image src={noImage} />
-      <Name>{data.name + ' ' + data.surname}</Name>
+      <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection>
+      <Tippy theme ='translucent' content={<NameToolip></NameToolip>}>
+        <Name>{data.name + ' ' + data.surname.charAt(0)+'.'}</Name>
+      </Tippy>
       {/* <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
           {data.type === "self managed" ? <ContentTdFirst></ContentTdFirst> : <ContentTdFirst></ContentTdFirst> }
           </Tippy> */}
       <Address>{formatAddress(data.address)}</Address>
       <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
-      <Tags>{data.tags}</Tags>
+        <Tags>{data.tags}</Tags>
       </Tippy>
       <Tippy theme ='translucent' content={<StarsToolip></StarsToolip>}>
-      <RatingWrapper>
-      <Ratings
-        rating={parseFloat(data.rating)}
-        widgetDimensions="13px"
-        widgetSpacings="0px"
-      >
-        <Ratings.Widget />
-        <Ratings.Widget />
-        <Ratings.Widget />
-        <Ratings.Widget />
-        <Ratings.Widget />
-      </Ratings></RatingWrapper>
+        <RatingWrapper>
+        <Ratings
+          rating={parseFloat(data.rating)}
+          widgetDimensions="13px"
+          widgetSpacings="0px"
+        >
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+        </Ratings></RatingWrapper>
       </Tippy>
       <RatesSection>
-        <Rate>
+        {/* <Rate>
           <RateValue>0</RateValue>
           <RateLabel>Task</RateLabel>
-        </Rate>
+        </Rate> */}
         <Rate>
           <RateValue>{data.hourly_rate}</RateValue>
           <RateLabel>Hourly rate</RateLabel>
@@ -262,7 +275,7 @@ const FreelancerCard = (props) => {
           <RateLabel>Daily rate</RateLabel>
         </Rate>
       </RatesSection>
-      <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection>
+      {/* <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection> */}
     </ContentWrapper>
     </Wrapper>
   )
