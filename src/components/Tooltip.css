@@ -1,0 +1,15 @@
+.raiting-tooltip{
+    display: block;
+    width: 200px;
+    text-align: center;
+    
+}
+.tags-tooltip{
+    display: block;
+    width: 200px;
+    text-align: center;
+}
+.footable-toggle{
+   background-color: #02bd94;
+}
+

@@ -48,14 +48,14 @@ export default class Drop extends Component {
         };
       }
 
-      handleChange=(e)=>{
+      handleChange =(e)=>{
           let sortedCards = this.props.currentCards.sort(function(a, b) {
             var nameA = a.props.data.name.toUpperCase(); // ignore upper and lowercase
             var nameB = b.props.data.name.toUpperCase(); // ignore upper and lowercase
             if (nameA < nameB) {
               return -1;
             }
-            if (nameA > nameB) {
+            else if (nameA > nameB) {
               return 1;
             }
           });
@@ -72,7 +72,7 @@ export default class Drop extends Component {
       
       render() {
         let optionTemplate = this.state.values.map(v => (
-          <DropdownFilterOption className ="option" value={v.id}>{v.title}</DropdownFilterOption>
+          <DropdownFilterOption key={v.id} className ="option" value={v.id}>{v.title}</DropdownFilterOption>
         ));
     
         return (

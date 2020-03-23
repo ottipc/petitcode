@@ -18,6 +18,11 @@ const ContainerUpper = styled.div`
   background-color: white;
   width: 100%;
   padding-bottom: 20px;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+ 
 `
 const Container = styled.div`
   display: flex;
@@ -31,6 +36,7 @@ const Lower = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `
 
 const ActiveFilters = styled.div`

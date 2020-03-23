@@ -1,15 +1,36 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarWeek } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarWeek ,faCalendarCheck} from '@fortawesome/free-solid-svg-icons'
 import { DateRangePicker } from 'rsuite'
 import 'rsuite/dist/styles/rsuite-default.css'
+
+// test
+import './Drop.css';
+
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-  margin-left: 30px;
+  margin-left: 25px;
+  display: block;
+  width: 50%;
+  @media (max-width: 991px) {
+    width: 100%;
+    margin-left: 0;
+    
+  }
+  ${'' /* &:focus{
+    border-color: #02BD94;
+  } */}
+
+  ${'' /* test */}
+  -webkit-box-align: center;
+display: flex;
+align-items: center;
+-webkit-box-flex: 1;
+flex: 1;
 `
 
 const Input = styled(DateRangePicker)`
@@ -30,6 +51,23 @@ const Button = styled.button`
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   line-height: 1.5;
+  font-size: 16px;
+  padding: 6px 12px;
+  padding: 6px 11px;
+  ${'' /* test */}
+  ${'' /* position: absolute; */}
+  ${'' /* width: 40px; */}
+  ${'' /* width: 3.7%; */}
+ 
+  line-height: 0.5;
+  float: left;
+  padding: 6px;
+  height: 30px;
+  width: 50px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: 0;
+
 `
 
 const DateFilter = (props) => {
@@ -49,14 +87,14 @@ const DateFilter = (props) => {
           backgroundColor: 'white',
           width: '92%',
           border: '1px solid #e5e6e7',
-          padding: '6px 12px',
+          padding: '0px 12px',
           fontSize: '12px',
           lineHeight: '1.5',
           fontFamily: 'Poppins, sans-serif'
         }}
       />
       <Button>
-        <FontAwesomeIcon icon={faCalendarWeek} />
+        <FontAwesomeIcon icon={faCalendarCheck} />
       </Button>
     </Container>
   )

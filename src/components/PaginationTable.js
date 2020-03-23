@@ -4,12 +4,12 @@ import styled from 'styled-components'
 const Container = styled.nav`
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  right: 26px;
 `
 
 const Paginator = styled.ul`
   display: flex;
-  position: absolute;
-  right: 26px;
   ${'' /* display: block; */}
   height: 30px;
   list-style-type: none;
@@ -17,6 +17,7 @@ const Paginator = styled.ul`
   padding: 0;
   overflow: hidden;
   border-left: 1px solid #dddddd;
+  padding-right:18px;
 `
 const Page = styled.li`
   float: left;
@@ -31,6 +32,15 @@ const Page = styled.li`
   font-size: 13px;
   color: #676a6c;
   background-color: white;
+  &:first-child{
+    border-top-left-radius: 4px;
+
+border-bottom-left-radius: 4px;
+  }
+  &:last-child{
+    border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+  }
 `
 const SelectedPage = styled.li`
   float: left;
@@ -45,11 +55,44 @@ const SelectedPage = styled.li`
   font-size: 13px;
   color: white;
   background-color: #02bd94;
+  a{
+    color:#fff;
+    width: 100%;
+text-align: center;
+background: none !important;
+&:hover{
+  color:#fff;
+  background: none !important;
+}
+  }
 `
 
 const PageNumber = styled.a`
   cursor: default;
+  color: #676a6c;
+ 
+  &:hover{
+    text-decoration:none;
+    z-index: 2;
+    color: #23527c;
+    background-color: #eeeeee;
+    border-color: #ddd;
+    width: 100%;
+    text-align: center;
+  }
+  
 `
+const PaginationText = styled.div`
+  margin: 10px 0 0 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+  margin-right: 10px;
+  span{
+    margin-left: 3px;
+  }
+`
+
 
 const PaginationTable = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = []
@@ -81,6 +124,7 @@ const PaginationTable = ({ postsPerPage, totalPosts, paginate, currentPage }) =>
 
   return (
     <Container>
+      <PaginationText><b>{totalPosts}</b><span>Results</span></PaginationText>
       <Paginator>{pages}</Paginator>
     </Container>
   )

@@ -13,6 +13,9 @@ const Wrapper = styled.div`
   margin-bottom: 30px;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
+  margin-top: 58px;
+  margin-left: 25px;
+  margin-right: 25px;
 `
 
 const Container = styled.div`
@@ -26,8 +29,8 @@ const Container = styled.div`
 `
 const Table = styled.table`
 ${'' /* margin-bottom for paginator */}
-font-family: 'Poppins', sans-serif;
-font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
   margin-bottom: 3.75rem;
   border-collapse: collapse;
   border-spacing: 0;
@@ -47,6 +50,15 @@ vertical-align: middle;
 border-bottom: 1px solid #DDDDDD;
 color: #A4A3A3;
 font-weight: normal;
+  }
+  .th-type{
+    min-width:25px;
+  }
+
+  ${'' /* .th-address{
+    @media (max-width: 767px) {
+    display: none;
+  } */}
   }
 `
 const TableFooterRight = styled.div`
@@ -115,9 +127,9 @@ const paginate = (pageNumber) => {
         <thead>
         <tr>
          
-          <th>#</th>
+          <th className='th-type'>&nbsp;</th>
           <th>Full Name</th>
-          <th>Location</th>
+          <th className='th-address'>Location</th>
           <th>Tags</th>
           <th>Hourly Rate</th>
           <th>Daily Rate</th>

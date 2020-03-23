@@ -3,6 +3,8 @@ import propTypes from 'prop-types'
 import { graphql, navigate, withPrefix } from 'gatsby'
 import { getUserLangKey } from 'ptz-i18n'
 import styled, { css } from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars,faBorderAll } from '@fortawesome/free-solid-svg-icons'
 import Metatags from '../components/Metatags'
 import Link from '../components/mdx/Link'
 import FreelancerCard from '../components/FreelancerCard'
@@ -12,15 +14,23 @@ import SortFilter from '../components/SortFilter'
 // add for testing delete later
 import Drop from '../components/Drop';
 import ListView from '../components/ListView'
+import Tooltip from '../components/Tooltip'
+import MyComponent from '../components/MyComponent'
 import { csv } from 'd3'
-
+// test
+import '../components/Drop.css';
 const CardGrid = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+  ${'' /* grid-template-columns: 15% 15% 15% 15% 15% 15%; */}
   column-gap: 2%;
   row-gap: 30px;
   padding: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  @media (max-width: 300px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
 `
 
 const Container = styled.div`
@@ -56,17 +66,27 @@ const DropdownOptions = styled.div`
 // test
 const ViewLinkWrapper = styled.div`
 text-align:end;
+display:inline-block;
+float: right;
+@media (max-width: 455px) {
+  text-align:start;
+  }
 
 `
 
 
 const ViewLink = styled.a`
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
-color: #221757;
-text-decoration: none;
-cursor: pointer;
-padding-right: 26px;
+  color: #221757;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 26px;
+&:hover{
+    text-decoration:none;
+   
+    color: #020206;
+    }
 .las{
   font-family: 'Line Awesome Free';
   font-weight: 900;
@@ -95,13 +115,19 @@ const WrapperDropown = styled.div`
   padding: 0;
    
   padding-left: 25px;
+  display: inline-block;
   
 `
 
-const SortWrapper= styled.div
-`   width:100%;
-   display:flex;
+const SortWrapper= styled.div` 
+ width:100%;
+  ${'' /* //  display:flex; */}
    justify-content: space-between;
+   @media (max-width: 455px) {
+    display: flex;
+    flex-direction: column;
+  }
+  
    `
 // endtest
 
@@ -151,6 +177,10 @@ export default function RedirectIndex({ data }) {
     console.log('cards', cards)
   }
 
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
   console.log('scvData', csvData);
 
   const filterCards = (activeFilters) => {
@@ -181,19 +211,21 @@ export default function RedirectIndex({ data }) {
       <Metatags />
       <Container>
         <Filter />
+        {/* test */}
         {/* <SortFilter filter={filter} currentCards={currentCards}/> */}
-        {/* <SortWrapper> */}
+        <SortWrapper>
         {show ? <WrapperDropown> <Drop filter={filter} currentCards={currentCards}></Drop> </WrapperDropown> :''}
     
-      <ViewLinkWrapper>
-        <ViewLink onClick={() => setDisplay(!show)}> <span>{show ? "Switch to table view " : "Switch to card view"} <i className="las la-lg la-bars"></i></span>
+        <ViewLinkWrapper>
+        <ViewLink onClick={() => setDisplay(!show)}> <span>{show ? <div>Switch to table view<FontAwesomeIcon className="custom-fa" icon={faBars} /> </div>  : <div>Switch to card view<FontAwesomeIcon className="custom-fa" icon={faBorderAll} /> </div>} </span>
         <i class="las la-lg la-th-large"></i>
         </ViewLink>
       </ViewLinkWrapper>
-      {/* </SortWrapper> */}
+      </SortWrapper>
         {/* <SortFilter></SortFilter> */}
-         {show ? <CardGrid>{currentCards}</CardGrid> : <ListView></ListView>}
-				
+        {/* this works */}
+         {/* {show ? <CardGrid>{currentCards}</CardGrid> : <ListView></ListView>} */}
+         {show ? <CardGrid>{currentCards}</CardGrid> : <MyComponent></MyComponent>} 
         {/* <CardGrid>{currentCards}</CardGrid> */}
         {/* <ListView></ListView> */}
 

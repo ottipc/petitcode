@@ -3,6 +3,12 @@ import styled from 'styled-components'
 import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/translucent.css';
+
+import './Tooltip.css';
+
 
 const ContentWrapper = styled.tr`
 font-family: 'Poppins', sans-serif;
@@ -24,11 +30,16 @@ width:20%;
 
 `
 const ContentTdFirst = styled.td`
-
   padding-right: 0;
   width: 20px;
+  background-image: linear-gradient(135deg, #02BD94 14px, #fff 14px);
+  border-bottom: 1px solid #e7eaec;
 
-
+`
+const ContentTdTest = styled.td`
+  padding-right: 0;
+  width: 20px;
+  
 `
 const Image = styled.img`
  width: 32px;
@@ -52,6 +63,10 @@ const Name = styled.a`
   color: #221757;
   text-decoration: none;
   cursor: pointer;
+  &:hover{
+    text-decoration:none;
+    color: #020206;
+    }
   
 `
 const Address = styled.p`
@@ -60,6 +75,9 @@ const Address = styled.p`
   font-size: 13px;
   line-height: 13px;
   text-align: start;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `
 
 const RatesSection = styled.div`
@@ -72,7 +90,7 @@ const RatesSection = styled.div`
 `
 const Tags = styled.div`
 ${'' /* test width */}
-  ${'' /* width: 30%; */}
+  width: 180px;
   display: block;
   justify-content: space-around;
   text-overflow: ellipsis;
@@ -147,8 +165,8 @@ const ImageWrapper = styled.div`
 `
 const RatingWrapper = styled.div`
 
-
 `
+
 
 const FreelancerRow = (props) => {
   const { data } = props
@@ -180,7 +198,10 @@ const FreelancerRow = (props) => {
       MAR: 'M'
     }
     const array = categoriesData.split(', ').map((cat, index) => {
-      return <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
+      console.log('abrev=', cat);
+      return <Tippy theme ='translucent' content={cat.replace(/\s+/g, '')}>
+               <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
+            </Tippy>
     })
     return array
   }
@@ -191,13 +212,43 @@ const FreelancerRow = (props) => {
   //      console.log('dsfasdfas');
   //    }
   // }
+  const TypeToolip = () => {
+    return <div style={{fontSize:'12px'}}>
+    {/* Self-managed partner */}
+    {data.type}
+    </div>
+   }
+  const StarsToolip = () => {
+     return <span className='raiting-tooltip' style={{fontSize:'12px'}}>
+     Based on ratings by colleagues. Assessment criteria can be changed in Settings / My Network / General.
+     </span>
+    }
+  const TagsToolip = () => {
+      return <span className='tags-tooltip' style={{fontSize:'12px'}}>
+     {data.tags}
+      </span>
+   }
 
 
+   
   return (
+    
     <ContentWrapper>
-        <ContentTdFirst className="footable-to-toggle footable-visible footable-first-column">
+        {/* <ContentTdFirst className="footable-to-toggle footable-visible footable-first-column">
+        <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
           <span className="footable-toggle"> {data.type === "self managed" ? 'SM' : ''}</span>
-        </ContentTdFirst>
+          </Tippy>
+        </ContentTdFirst> */}
+        {/* {data.type === "self managed" ? 
+        } */}
+        {/* <ContentTdFirst className="footable-to-toggle footable-visible footable-first-column">
+        </ContentTdFirst>: <ContentTdTest></ContentTdTest> */}
+        
+        <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
+          {data.type === "self managed" ? <ContentTdFirst></ContentTdFirst> : <ContentTdTest></ContentTdTest>}
+          </Tippy>
+
+          
         <ContentTd>
           <FreelancerBaseInfo>
           <ImageWrapper>
@@ -205,7 +256,9 @@ const FreelancerRow = (props) => {
           </ImageWrapper>
           <BaseInfoWrapper>
             <Name>{data.name + ' ' + data.surname}</Name>
+            <Tippy theme ='translucent' content={<StarsToolip></StarsToolip>}>
             <RatingWrapper>
+            
               <Ratings
                   rating={parseFloat(data.rating)}
                   widgetDimensions="15px"
@@ -218,6 +271,7 @@ const FreelancerRow = (props) => {
                   <Ratings.Widget />
                 </Ratings>
               </RatingWrapper>
+              </Tippy>
             </BaseInfoWrapper>
           
           </FreelancerBaseInfo>
@@ -226,7 +280,9 @@ const FreelancerRow = (props) => {
         <Address>{formatAddress(data.address)}</Address>
         </ContentTd>
         <ContentTd className="footable-tags">
+        <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
         <Tags>{data.tags}</Tags>
+        </Tippy>
         </ContentTd>
 
         <ContentTd>  

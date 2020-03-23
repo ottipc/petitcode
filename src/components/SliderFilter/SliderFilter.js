@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider';
 import { SliderRail, Handle, Track, Tick } from "./components";
+import '../Drop.css';
 
 const sliderStyle = {
     position: 'relative',
@@ -25,7 +26,22 @@ const Container = styled.div`
   background-color: white;
   width: 100%;
 `
+const SliderWrapper= styled.div`
+   ${'' /* width: 100%; */}
+   display: flex;
 
+align-items: center;
+
+flex-wrap: wrap;
+width: 380px;
+p{
+  margin-right:15px !important;
+
+  @media (max-width: 434px) {
+    margin-bottom: 15px !important;
+  } 
+}
+`
 
 const SliderFilter = (props) => {
 
@@ -39,12 +55,13 @@ const onChange = (value) => {
 
   return (
     <>
+    <SliderWrapper>
       <p 
         style={{
-          width: 100,
+          width: 80,
           marginBottom: 0, 
           color: '#A4A3A3', 
-          marginRight: '20px', 
+          marginRight: '0', 
           fontStyle: 'italic', 
           fontFamily: 'Poppins, sans-serif', 
           fontSize: '13px',
@@ -53,7 +70,7 @@ const onChange = (value) => {
       >
         {props.label}
       </p>
-      <div style={{ width: '15%', display: 'flex', alignItems: 'center'}}>
+      <div style={{ width: '250px', display: 'flex', alignItems: 'center'}}>
         <Slider
           mode={2}
           step={0.01}
@@ -97,6 +114,7 @@ const onChange = (value) => {
           </Tracks>
         </Slider>
       </div>
+      </SliderWrapper>
     </>
   )
 }
