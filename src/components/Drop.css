@@ -157,8 +157,16 @@ border-left: 4px solid transparent;
 .list-table{
     padding: 0 25px 25px 25px;
     margin-top: 60px;
-   
+
 }
+.list-table svg{
+    margin: 0;
+}
+@media(max-width:455px){
+.list-table{
+    margin-top: 35px;
+}}
+
 .list-table header{
     display: none;
 }

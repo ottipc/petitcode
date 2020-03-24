@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import propTypes from 'prop-types'
-import { graphql, navigate, withPrefix } from 'gatsby'
-import { getUserLangKey } from 'ptz-i18n'
-import styled, { css } from 'styled-components'
+import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars,faBorderAll } from '@fortawesome/free-solid-svg-icons'
 import Metatags from '../components/Metatags'
-import Link from '../components/mdx/Link'
 import FreelancerCard from '../components/FreelancerCard'
 import Pagination from '../components/Pagination'
 import Filter from '../components/Filter'
+import FilterWizard from '../components/mdx/FilterWizard'
+// added
 import SortFilter from '../components/SortFilter'
-// add for testing delete later
 import Drop from '../components/Drop';
 import ListView from '../components/ListView'
 import Tooltip from '../components/Tooltip'
-import MyComponent from '../components/MyComponent'
-import { csv } from 'd3'
-// test
+import TableComponent from '../components/TableComponent'
 import '../components/Drop.css';
+
+
+
+
 const CardGrid = styled.div`
   width: 100%;
   display: grid;
@@ -37,33 +37,6 @@ const Container = styled.div`
   width: 100%;
   background-color: rgba(221, 221, 221, 0.3);
 `
-
-// test
-const DropdownFilterOption = styled.option`
-    border-bottom: 1px solid #E7EAEC;
-    color: #656A6C;
-    position: relative;
-    padding:0px;
-    &:hover{
-    background-color: #F2F1F1;
-}
-`
-const DropdownOptions = styled.div`
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px #888888;
-    width: 230px;
-    z-index: 2;
-    max-height: 200px;
-    overflow-y: auto;
-    pointer-events: all;
-`
-
-
-// end test
-// test
 const ViewLinkWrapper = styled.div`
 text-align:end;
 display:inline-block;
@@ -73,7 +46,7 @@ float: right;
   }
 
 `
-
+// added
 
 const ViewLink = styled.a`
   font-family: 'Poppins', sans-serif;
@@ -101,8 +74,8 @@ const ViewLink = styled.a`
   content: "\f07a";
 }
 `
-// end test
-// test
+// end added
+// added
 const WrapperDropown = styled.div`
   padding: 0 25px;
   flex-wrap: wrap;
@@ -129,90 +102,247 @@ const SortWrapper= styled.div`
   }
   
    `
-// endtest
+// end added
+
+
+
+
+
 
 export default function RedirectIndex({ data }) {
   const [csvData, setCsvData] = useState([])
+  const [filteredData, setFilteredData] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const [cardsPerPage, setCardsPerPage] = useState(24)
-  const [initialState, setinitialState] = useState(true)
-  let [currentCards, setCurrentCards] = useState([])
-
+  const [skills, setSkills] = useState([])
+  const [tags, setTags] = useState([])
+  // add
   const [show, setDisplay] = useState(true)
   console.log("shown=",show)
-
-
+  //end add
   let indexOfLastCard = 0
   let indexOfFirstCard = 0
-  // let currentCards = []
+  let currentCards = []
   let list = []
 
-
-// end test
   useEffect(() => {
-    csv('data.csv').then((data) => {
-      console.log('please work', data)
-      setCsvData(data)
-    })
+    setCsvData(data.allDataCsv.nodes)
   }, [])
-  console.log('csvData=', csvData)
-  if (csvData) {
-    list = csvData.map((entry, index) => {
+
+
+    csvData.forEach(data => {
+    if (data.unavailabilities.length > 0) {
+      console.log('filtered date', data);
+    }
+  });
+
+  if (filteredData) {
+    list = filteredData.map((entry, index) => {
       return <FreelancerCard key={index} data={entry} />
     })
-    console.log('list=', list);
 
     indexOfLastCard = currentPage * cardsPerPage
     indexOfFirstCard = indexOfLastCard - cardsPerPage
-    if(initialState){
-      currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
-  }
-  }
+    currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
+  } else if (csvData) {
+    const tagsArr = []
+    const tagsCheck = []
+    const skillsArr = []
+    const skillsCheck = []
+    list = csvData.map((entry, index) => {
+      entry.tags.split(', ').forEach((tag) => {
+        if (
+          tagsCheck.findIndex(
+            (item) => tag.toLowerCase() === item.toLowerCase()
+          ) < 0
+        ) {
+          tagsCheck.push(tag)
+          tagsArr.push({ key: tagsArr.length, value: tag, label: tag })
+        }
+      })
+      entry.skills.split(', ').forEach((skill) => {
+        if (
+          skillsCheck.findIndex(
+            (item) => skill.toLowerCase() === item.toLowerCase()
+          ) < 0
+        ) {
+          skillsCheck.push(skill)
+          skillsArr.push({ key: skillsArr.length, value: skill, label: skill })
+        }
+      })
+      return <FreelancerCard key={index} data={entry} />
+    })
 
-  const filter = (cards) => {
-    console.log('sortded=', cards);
-
-    setCurrentCards(cards)
-    setinitialState(false);
-    console.log('cards', cards)
+    if (
+      JSON.stringify(tags) !==
+      JSON.stringify(tagsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    ) {
+      setTags(tagsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    }
+    if (
+      JSON.stringify(skills) !==
+      JSON.stringify(skillsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    ) {
+      setSkills(skillsArr.sort((a, b) => (a.value > b.value ? 1 : -1)))
+    }
+    indexOfLastCard = currentPage * cardsPerPage
+    indexOfFirstCard = indexOfLastCard - cardsPerPage
+    currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
   }
-
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
-  console.log('scvData', csvData);
+  //start test
+  const filter = (cards) => {
+    console.log('sortded=', cards);
 
+    setCurrentCards(cards)
+    // setinitialState(false);
+    console.log('cards', cards)
+  }
+
+  //end test
   const filterCards = (activeFilters) => {
-    let filteredData = csvData;
-    console.log('active filters', activeFilters);
-    if (activeFilters.filter(filter => typeof filter.Search !== 'undefined').length > 0) {
-      let searchFilter = activeFilters.filter(filter => typeof filter.Search !== 'undefined');
+    let filteredData = csvData
+    if (
+      activeFilters.filter((filter) => typeof filter.Search !== 'undefined')
+        .length > 0
+    ) {
+      const searchFilter = activeFilters.filter(
+        (filter) => typeof filter.Search !== 'undefined'
+      )
       filteredData = csvData.filter(
-        entity =>
-          entity.email.toLowerCase().includes(searchFilter[0].Search.toLowerCase()) ||
-          entity.name.toLowerCase().includes(searchFilter[0].Search.toLowerCase()) ||
-          entity.surname.toLowerCase().includes(searchFilter[0].Search.toLowerCase())
+        (entity) =>
+          entity.email
+            .toLowerCase()
+            .includes(searchFilter[0].Search.toLowerCase()) ||
+          entity.name
+            .toLowerCase()
+            .includes(searchFilter[0].Search.toLowerCase()) ||
+          entity.surname
+            .toLowerCase()
+            .includes(searchFilter[0].Search.toLowerCase())
       )
     }
-    if (activeFilters.filter(filter => typeof filter.Group !== 'undefined' && filter.Group.length > 0).length > 0) {
-      let groupFilter = activeFilters.filter(filter => typeof filter.Group !== 'undefined');
+    if (
+      activeFilters.filter(
+        (filter) =>
+          typeof filter.Date !== 'undefined' && filter.Date.length > 0
+      ).length > 0
+    ) {
+      const dateFilter = activeFilters.filter(
+        (filter) => typeof filter.Date !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.unavailabilities
+          .split(', ')
+          .filter((item) => dateFilter[0].Date.includes(item)).length <= 0 ||
+        entity.unavailabilities.length <= 0
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) =>
+          typeof filter.Group !== 'undefined' && filter.Group.length > 0
+      ).length > 0
+    ) {
+      const groupFilter = activeFilters.filter(
+        (filter) => typeof filter.Group !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.groups
+          .split(', ')
+          .some((item) => groupFilter[0].Group.includes(item))
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) => typeof filter.Tags !== 'undefined' && filter.Tags.length > 0
+      ).length > 0
+    ) {
+      const tagsFilter = activeFilters.filter(
+        (filter) => typeof filter.Tags !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.tags
+          .split(', ')
+          .some((item) => tagsFilter[0].Tags.includes(item))
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) =>
+          typeof filter.Skills !== 'undefined' && filter.Skills.length > 0
+      ).length > 0
+    ) {
+      const skillsFilter = activeFilters.filter(
+        (filter) => typeof filter.Skills !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.skills
+          .split(', ')
+          .some((item) => skillsFilter[0].Skills.includes(item))
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) => typeof filter.Rating !== 'undefined' && filter.Rating > 0
+      ).length > 0
+    ) {
+      const ratingFilter = activeFilters.filter(
+        (filter) => typeof filter.Rating !== 'undefined'
+      )
       filteredData = filteredData.filter(
-        entity =>
-          entity.categories.split(', ').some(item => groupFilter[0].Group.includes(item)) 
+        (entity) =>
+          parseFloat(entity.rating).toFixed() >= ratingFilter[0].Rating
       )
     }
+    if (
+      activeFilters.filter(
+        (filter) =>
+          typeof filter.hRate !== 'undefined' && filter.hRate.length > 0
+      ).length > 0
+    ) {
+      const hRateFilter = activeFilters.filter(
+        (filter) => typeof filter.hRate !== 'undefined'
+      )
+      filteredData = filteredData.filter(
+        (entity) =>
+          parseFloat(entity.hourly_rate) >= hRateFilter[0].hRate[0] &&
+          parseFloat(entity.hourly_rate) <= hRateFilter[0].hRate[1]
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) =>
+          typeof filter.dRate !== 'undefined' && filter.dRate.length > 0
+      ).length > 0
+    ) {
+      const dRateFilter = activeFilters.filter(
+        (filter) => typeof filter.dRate !== 'undefined'
+      )
+      filteredData = filteredData.filter(
+        (entity) =>
+          parseFloat(entity.daily_rate) >= dRateFilter[0].dRate[0] &&
+          parseFloat(entity.daily_rate) <= dRateFilter[0].dRate[1]
+      )
+    }
+    console.log('fdata', filteredData, activeFilters);
     setFilteredData(filteredData)
   }
 
-  // end test
   return (
     <>
       <Metatags />
       <Container>
-        <Filter />
-        {/* test */}
-        {/* <SortFilter filter={filter} currentCards={currentCards}/> */}
+        <Filter
+          tags={tags}
+          skills={skills}
+          filterCards={(filter) => filterCards(filter)}
+        />
+        {/* <FilterWizard /> */}
+        {/* //added start */}
         <SortWrapper>
         {show ? <WrapperDropown> <Drop filter={filter} currentCards={currentCards}></Drop> </WrapperDropown> :''}
     
@@ -222,13 +352,12 @@ export default function RedirectIndex({ data }) {
         </ViewLink>
       </ViewLinkWrapper>
       </SortWrapper>
-        {/* <SortFilter></SortFilter> */}
-        {/* this works */}
-         {/* {show ? <CardGrid>{currentCards}</CardGrid> : <ListView></ListView>} */}
-         {show ? <CardGrid>{currentCards}</CardGrid> : <MyComponent></MyComponent>} 
-        {/* <CardGrid>{currentCards}</CardGrid> */}
-        {/* <ListView></ListView> */}
+      {/*added end */}
+    {show ? <CardGrid>{currentCards}</CardGrid> : <TableComponent list={list} currentCards={currentCards} csvData={csvData}
+    ></TableComponent>} 
 
+        {/* <CardGrid>{currentCards}</CardGrid> */}
+        
         {show ? <Pagination
           postsPerPage={cardsPerPage}
           totalPosts={csvData.length}
@@ -236,20 +365,11 @@ export default function RedirectIndex({ data }) {
           currentPage={currentPage}
         /> :''}
 
-        {/* <Pagination
-          postsPerPage={cardsPerPage}
-          totalPosts={csvData.length}
-          paginate={paginate}
-          currentPage={currentPage}
-        /> */}
+ 
       </Container>
     </>
   )
 }
-
-// RedirectIndex.propTypes = {
-//   data: propTypes.object.isRequired
-// }
 
 // export const pageQuery = graphql`
 //   query IndexQuery {
@@ -270,6 +390,34 @@ export const petitcodeFragment = graphql`
       languages {
         defaultLocale
         langs
+      }
+    }
+  }
+`
+
+export const csvDataGrah = graphql`
+  query {
+    allDataCsv {
+      nodes {
+        address
+        birth_date
+        company_name
+        daily_rate
+        email
+        hourly_rate
+        id
+        name
+        partner_since
+        partner_type
+        phone_nr
+        rating
+        social_media
+        surname
+        tags
+        type
+        skills
+        unavailabilities
+        groups
       }
     }
   }

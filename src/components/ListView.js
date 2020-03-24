@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PaginationTable from '../components/PaginationTable'
 import Pagination from '../components/Pagination'
 import FreelancerRow from '../components/FreelancerRow'
-import { csv } from 'd3'
+// import { csv } from 'd3'
 
 
 const Wrapper = styled.div`

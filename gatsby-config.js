@@ -17,12 +17,21 @@ module.exports = {
     languages
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    `gatsby-transformer-csv`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `mtyay169tt6k`,
+        environment: 'development',
         ...(isProduction && !isStaging
           ? {
               accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
@@ -98,14 +107,6 @@ module.exports = {
               respectDNT: true
             }
           },
-          {
-            resolve: 'gatsby-plugin-hubspot',
-            options: {
-              trackingCode: '3948482',
-              respectDNT: true,
-              productionOnly: true
-            }
-          }
         ]
       : [])
   ]

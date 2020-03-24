@@ -56,7 +56,7 @@ right: 0;
 
 const Button = styled.button`
   background-color: white;
-  width: 8%;
+  width: 9%;
   border: 1px solid #e5e6e7;
   margin-left: -1px;
   font-family: 'Poppins', sans-serif;

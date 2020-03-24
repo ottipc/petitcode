@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
-import { csv } from 'd3'
+// import { csv } from 'd3'
 import './Drop.css';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -15,29 +15,25 @@ import './Tooltip.css';
 
 
 
-const  MyComponent = (props) => {
+const  TableComponent = (props) => {
   
-  const [csvData, setCsvData] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [cardsPerPage, setCardsPerPage] = useState(24)
-  let indexOfLastCard = 0
-  let indexOfFirstCard = 0
-  let currentCards = []
-  let list = []
-  useEffect(() => {
-    csv('data.csv').then((data) => {
-      
-      console.log('all data=', data)
-      setCsvData(data)
-    })
-  }, [])
-  if (csvData) {
-    list = csvData.map(x => x)
-    console.log(' list data=',  list)
-    // indexOfLastCard = currentPage * cardsPerPage
-    // indexOfFirstCard = indexOfLastCard - cardsPerPage
-    currentCards = list
+  
+
+let csvData=[...props.csvData]
+let currentCards = [props.currentCards]
+
+let list = csvData.map(x => x)
+console.log('csvData====',csvData)
+console.log('currentCards====',currentCards)
+console.log('list====',list)
+csvData.forEach(data => {
+  if (data.unavailabilities.length > 0) {
+    console.log('filtered date for table', data);
+    const name = data.name;
+    console.log('filtered date for table groups', data.groups);
   }
+});
+
 
   const Category = styled.div`
   width: 23px;
@@ -143,7 +139,7 @@ const Type = styled.div`
     }
     const array = categoriesData.split(', ').map((cat, index) => {
       console.log('abrev=', cat);
-      return <Tippy theme ='translucent' content={cat.replace(/\s+/g, '')}>
+      return <Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{cat.replace(/\s+/g, '')}</span>}>
                <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
             </Tippy>
     })
@@ -169,7 +165,7 @@ const columns = [
     left: true,
     minWidth:'10px',
     maxWidth:'30px',
-    cell: row =><Tippy theme ='translucent' content= {<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.type}</span>}>{row.type === "self managed" ? <Type></Type> :''}</Tippy>
+    cell: row =><Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.type}</span>}>{row.type === "self managed" ? <Type></Type> :''}</Tippy>
  
   },
   
@@ -177,6 +173,8 @@ const columns = [
     name: 'Full Name',
     selector: 'name',
     sortable: true,
+    minWidth:'200px',
+    maxWidth:'400px',
     cell: row => <div className="full-info"><div className="image-32-32"><img src={noImage}></img></div>
     <div className="d-flex"><Name>{row.name} {row.surname}
     </Name>
@@ -202,6 +200,7 @@ const columns = [
     cell: row =><Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.address}</span>}><Address>{formatAddress(row.address)}</Address></Tippy>
 
   },
+ 
   {
     name: 'Tags',
     selector: 'tags',
@@ -227,10 +226,10 @@ const columns = [
   },
   {
     name: 'Groups',
-    selector: 'categories',
+    selector: 'groups',
     left: true,
     hide: 'md',
-    cell: row => <div className='categories-flex'>{formatCategories(row.categories)}</div>
+    cell: row => <div className='categories-flex'>{formatCategories(row.groups)}</div>
     
   }
 ];
@@ -244,15 +243,14 @@ const ExpanableComponent = ({ data }) =>
 <div className='footable-row-detail-row tags-row'><div className='footable-row-detail'>Tags:</div><div className='footable-row-value'>{data.tags}</div></div>
 <div className='footable-row-detail-row hourly-rate-row'><div className='footable-row-detail'>Hourly rate:</div><div className='footable-row-value'>{data.hourly_rate}</div></div>
 <div className='footable-row-detail-row daily-rate-row'><div className='footable-row-detail'>Daily rate:</div><div className='footable-row-value'>{data.daily_rate}</div></div>
-<div className='footable-row-detail-row groups-row'><div className='footable-row-detail'>Groups:</div><div className='footable-row-value row-categories'>{formatCategories(data.categories)}</div></div>
+<div className='footable-row-detail-row groups-row'><div className='footable-row-detail'>Groups:</div><div className='footable-row-value row-categories'>{formatCategories(data.groups)}</div></div>
 
 </div>;
-
 
         return (
             <DataTable className="list-table"
           columns={columns}
-          data={currentCards}
+          data={props.csvData}
           // selectableRows // add for checkbox selection
           // Clicked
           // Selected={handleChange}
@@ -265,8 +263,11 @@ const ExpanableComponent = ({ data }) =>
                  
          />
            )
+        //  return (
+        //    <div>{props.currentCards.name}</div>
+        //  )
     
   }
   
-export default MyComponent
+export default TableComponent
   

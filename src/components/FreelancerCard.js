@@ -29,7 +29,6 @@ const Image = styled.img`
   height: 70px;
   border-radius: 35px;
   margin-top: 30px;
-  ${'' /* add */}
   margin-bottom:0;
 `
 
@@ -90,6 +89,7 @@ const Rate = styled.div`
   width: 25%;
   display: flex;
   flex-direction: column;
+  text-align: center;
 `
 
 const RateValue = styled.p`
@@ -110,7 +110,7 @@ const RateLabel = styled.p`
   text-transform: uppercase;
 `
 
-const CategoriesSection = styled.div`
+const GroupsSection = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -120,7 +120,7 @@ const CategoriesSection = styled.div`
   padding-bottom: 8px;
 `
 
-const Category = styled.div`
+const Group = styled.div`
   width: 23px;
   height: 23px;
   border-radius: 15px;
@@ -151,25 +151,39 @@ const Type = styled.div`
   height:20px;
   background-image: linear-gradient(135deg, #02BD94 14px, #fff 14px);
 `
-// test
-// const ContentTdFirst = styled.td`
-//   padding-right: 0;
-//   width: 20px;
-//   background-image: linear-gradient(135deg, #02BD94 14px, #fff 14px);
-//   border-bottom: 1px solid #e7eaec;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 15px;
-//   ${'' /* height: 100%; */}
-//   width:100%;
-// `
-// const ContentTdTest = styled.div`
-//   padding-right: 0;
-//   width: 20px;
+const Unavailabilities = styled.div`
+
+`
+const LinkBtn = styled.button`background-color: #02BD94;
+  border: none;
+  color: white;
+  padding: 0px 28px;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 12px 2px;
+  cursor: pointer;
+  height: 33px;
+  border-radius: 4px;
+  a{
+    color: #fff;
+    text-decoration:none;
+   &:focus{
+    color: #fff;
+    text-decoration:none; 
+   }
+   :hover{
+     color: #fff;
+    text-decoration:none;
+    }
+  }
   
-// `
-// end
+  
+
+`
+
 const FreelancerCard = (props) => {
   const { data } = props
 
@@ -188,7 +202,7 @@ const FreelancerCard = (props) => {
     return formatedAddress
   }
 
-  const formatCategories = (categoriesData) => {
+  const formatGroups = (groupsData) => {
     const abrev = {
       FirstInterview: 'F',
       DEV: 'D',
@@ -198,10 +212,20 @@ const FreelancerCard = (props) => {
       MGMENT: 'M',
       MAR: 'M'
     }
-    const array = categoriesData.split(', ').map((cat, index) => {
-      return <Tippy theme ='translucent' content={cat.replace(/\s+/g, '')}>
-      <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
-       </Tippy>
+    // const array = categoriesData.split(', ').map((cat, index) => {
+    //   
+    //   <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
+    //    </Tippy>
+    const array = groupsData.split(', ').map((cat, index) => {
+      return <Tippy theme ='translucent'  content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{cat.replace(/\s+/g, '')}</span>}>
+      <Group key={index}>{abrev[cat.replace(/\s+/g, '')]}</Group></Tippy>
+    })
+    return array
+  }
+
+  const formatAv = (dates) => {
+    const array = dates.split(', ').map((cat, index) => {
+      return <div key={index}>{cat}</div>
     })
     return array
   }
@@ -236,7 +260,8 @@ const FreelancerCard = (props) => {
        </Tippy>
     <ContentWrapper>
       <Image src={noImage} />
-      <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection>
+      {/* <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection> */}
+      <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
       <Tippy theme ='translucent' content={<NameToolip></NameToolip>}>
         <Name>{data.name + ' ' + data.surname.charAt(0)+'.'}</Name>
       </Tippy>
@@ -262,10 +287,6 @@ const FreelancerCard = (props) => {
         </Ratings></RatingWrapper>
       </Tippy>
       <RatesSection>
-        {/* <Rate>
-          <RateValue>0</RateValue>
-          <RateLabel>Task</RateLabel>
-        </Rate> */}
         <Rate>
           <RateValue>{data.hourly_rate}</RateValue>
           <RateLabel>Hourly rate</RateLabel>
@@ -275,7 +296,8 @@ const FreelancerCard = (props) => {
           <RateLabel>Daily rate</RateLabel>
         </Rate>
       </RatesSection>
-      {/* <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection> */}
+     <Unavailabilities></Unavailabilities>
+     <LinkBtn><a href="mailto:info@petitcode.com">CTA</a></LinkBtn>
     </ContentWrapper>
     </Wrapper>
   )

@@ -24,6 +24,7 @@ import Gap from './mdx/Gap'
 import FluidText from './mdx/FluidText'
 import DefaultLayout from './mdx/DefaultLayout'
 import ContentfulImage from './mdx/Image'
+import FilterWizard from './mdx/FilterWizard'
 
 import FormIntro from './forms/FormIntro'
 import FormSuccess from './forms/FormSuccess'
@@ -63,5 +64,6 @@ export default {
   FluidText,
   DefaultLayout,
   ContentfulImage,
-  ReferenceListing
+  ReferenceListing,
+  FilterWizard
 }
