@@ -1,25 +1,113 @@
 import React, { useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars,faBorderAll } from '@fortawesome/free-solid-svg-icons'
 import Metatags from '../components/Metatags'
 import FreelancerCard from '../components/FreelancerCard'
 import Pagination from '../components/Pagination'
 import Filter from '../components/Filter'
 import FilterWizard from '../components/mdx/FilterWizard'
+// added
+import SortFilter from '../components/SortFilter'
+import Drop from '../components/Drop';
+import ListView from '../components/ListView'
+import Tooltip from '../components/Tooltip'
+import TableComponent from '../components/TableComponent'
+import '../components/Drop.css';
+
+
+
 
 const CardGrid = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+  ${'' /* grid-template-columns: 15% 15% 15% 15% 15% 15%; */}
   column-gap: 2%;
   row-gap: 30px;
   padding: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  @media (max-width: 300px) {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
 `
 
 const Container = styled.div`
   width: 100%;
   background-color: rgba(221, 221, 221, 0.3);
 `
+const ViewLinkWrapper = styled.div`
+text-align:end;
+display:inline-block;
+float: right;
+@media (max-width: 455px) {
+  text-align:start;
+  }
+
+`
+// added
+
+const ViewLink = styled.a`
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #221757;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 26px;
+&:hover{
+    text-decoration:none;
+   
+    color: #020206;
+    }
+.las{
+  font-family: 'Line Awesome Free';
+  font-weight: 900;
+}
+.la-lg{
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -.0667em;
+}
+.la-bars::before{
+  ${'' /* content: "\f0c9"; */}
+  content: "\f07a";
+}
+`
+// end added
+// added
+const WrapperDropown = styled.div`
+  padding: 0 25px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #676a6c;
+
+  padding: 0;
+   
+  padding-left: 25px;
+  display: inline-block;
+  
+`
+
+const SortWrapper= styled.div` 
+ width:100%;
+  ${'' /* //  display:flex; */}
+   justify-content: space-between;
+   @media (max-width: 455px) {
+    display: flex;
+    flex-direction: column;
+  }
+  
+   `
+// end added
+
+
+
+
+
 
 export default function RedirectIndex({ data }) {
   const [csvData, setCsvData] = useState([])
@@ -28,6 +116,10 @@ export default function RedirectIndex({ data }) {
   const [cardsPerPage, setCardsPerPage] = useState(24)
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
+  // add
+  const [show, setDisplay] = useState(true)
+  console.log("shown=",show)
+  //end add
   let indexOfLastCard = 0
   let indexOfFirstCard = 0
   let currentCards = []
@@ -101,7 +193,16 @@ export default function RedirectIndex({ data }) {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
+  //start test
+  const filter = (cards) => {
+    console.log('sortded=', cards);
 
+    setCurrentCards(cards)
+    // setinitialState(false);
+    console.log('cards', cards)
+  }
+
+  //end test
   const filterCards = (activeFilters) => {
     let filteredData = csvData
     if (
@@ -241,13 +342,30 @@ export default function RedirectIndex({ data }) {
           filterCards={(filter) => filterCards(filter)}
         />
         {/* <FilterWizard /> */}
-        <CardGrid>{currentCards}</CardGrid>
-        <Pagination
+        {/* //added start */}
+        <SortWrapper>
+        {show ? <WrapperDropown> <Drop filter={filter} currentCards={currentCards}></Drop> </WrapperDropown> :''}
+    
+        <ViewLinkWrapper>
+        <ViewLink onClick={() => setDisplay(!show)}> <span>{show ? <div>Switch to table view<FontAwesomeIcon className="custom-fa" icon={faBars} /> </div>  : <div>Switch to card view<FontAwesomeIcon className="custom-fa" icon={faBorderAll} /> </div>} </span>
+        <i class="las la-lg la-th-large"></i>
+        </ViewLink>
+      </ViewLinkWrapper>
+      </SortWrapper>
+      {/*added end */}
+    {show ? <CardGrid>{currentCards}</CardGrid> : <TableComponent list={list} currentCards={currentCards} csvData={csvData}
+    ></TableComponent>} 
+
+        {/* <CardGrid>{currentCards}</CardGrid> */}
+        
+        {show ? <Pagination
           postsPerPage={cardsPerPage}
           totalPosts={csvData.length}
           paginate={paginate}
           currentPage={currentPage}
-        />
+        /> :''}
+
+ 
       </Container>
     </>
   )

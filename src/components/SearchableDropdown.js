@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
-
+import './Drop.css';
 const Wrapper = styled.div`
-  width: 10%;
+  ${'' /* width: 10%; */}
   margin-right: 20px;
+  :focus {
+      outline: none;
+      border: 1px solid #02BD94;
+    }
 `
 
 const Container = styled.div`
@@ -17,16 +21,17 @@ const SearchAndToggle = styled.div`
   color: #656A6C;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
-
+  background: #f7f7f7;
   input {
     margin: 10px 10px 0;
     line-height: 30px;
     padding: 0px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #e5e6e7;
     border-radius: 3px;
+    margin-bottom:10px;
     :focus {
       outline: none;
-      border: 1px solid deepskyblue;
+      border: 1px solid #02BD94;
     }
   }
 `;
@@ -41,6 +46,20 @@ const Item = styled.div`
   display: flex;
   margin: 10px;
   align-items: baseline;
+  ${'' /* test */}
+  display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #FFFFFF;
+padding:10px;
+border-bottom: 1px solid #E7EAEC;
+color: #656A6C;
+position: relative;
+margin: 0;
+height:40px;
+&:hover{
+  background-color: #F2F1F1;
+}
 `;
 
 const ItemLabel = styled.div`
@@ -53,9 +72,11 @@ const DropdownContainer = styled.div`
   cursor: pointer;
 `
 const Placeholder = styled.p`
-  color: #656A6C;
+  ${'' /* color: #656A6C; */}
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
+  font-style:italic;
+  color: #8e8e93;
 `
 
 

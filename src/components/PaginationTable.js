@@ -4,18 +4,20 @@ import styled from 'styled-components'
 const Container = styled.nav`
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  right: 26px;
 `
 
 const Paginator = styled.ul`
-  ${'' /* display: flex; */}
-  display: block;
+  display: flex;
+  ${'' /* display: block; */}
   height: 30px;
   list-style-type: none;
-  ${'' /* margin: 40px 25px 40px 0px; */}
-  margin: 22px 25px 58px 0px;
+  margin: 10px 0 0 0;
   padding: 0;
   overflow: hidden;
   border-left: 1px solid #dddddd;
+  padding-right:18px;
 `
 const Page = styled.li`
   float: left;
@@ -81,19 +83,21 @@ const PageNumber = styled.a`
   
 `
 const PaginationText = styled.div`
-  margin: 22px 10px 58px 0px;
+  margin: 10px 0 0 0;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   color: #676a6c;
+  margin-right: 10px;
   span{
     margin-left: 3px;
   }
 `
 
-const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
+
+const PaginationTable = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = []
   let pages = []
-   console.log('totalPosts',totalPosts);
+
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i)
   }
@@ -109,7 +113,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
       )
     }
     return (
-      
       <Page key={number} className="page-item">
         <PageNumber onClick={() => paginate(number)} className="page-link">
           {number}
@@ -117,6 +120,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
       </Page>
     )
   })
+  console.log('pages', pages)
 
   return (
     <Container>
@@ -126,4 +130,4 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   )
 }
 
-export default Pagination
+export default PaginationTable
