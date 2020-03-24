@@ -1,10 +1,7 @@
-import React from "react";
-
+import React from 'react'
 
 const SlideItem = (props) => {
-  return (
-  <div style={{height: 200}}>{props.children}</div>
-  );
+  return <div style={{ height: 200 }}>{props.children}</div>
 }
 
-export default SlideItem;
+export default SlideItem

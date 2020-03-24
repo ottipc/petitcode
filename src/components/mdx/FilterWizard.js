@@ -26,7 +26,6 @@ const ContainerInner = styled.div`
 `
 
 const FilterWizard = (props) => {
-
   return (
     <Wrapper>
       <Container>

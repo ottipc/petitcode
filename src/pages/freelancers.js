@@ -34,14 +34,15 @@ export default function RedirectIndex({ data }) {
   let list = []
 
   useEffect(() => {
-    setCsvData(data.allDataCsv.nodes);
+    setCsvData(data.allDataCsv.nodes)
   }, [])
 
-  data.allDataCsv.nodes.forEach(entity => {
-    if (entity.unavailabilities.length > 0) {
-      console.log('available', entity);
+
+    csvData.forEach(data => {
+    if (data.unavailabilities.length > 0) {
+      console.log('filtered date', data);
     }
-  })
+  });
 
   if (filteredData) {
     list = filteredData.map((entry, index) => {
@@ -126,6 +127,22 @@ export default function RedirectIndex({ data }) {
     if (
       activeFilters.filter(
         (filter) =>
+          typeof filter.Date !== 'undefined' && filter.Date.length > 0
+      ).length > 0
+    ) {
+      const dateFilter = activeFilters.filter(
+        (filter) => typeof filter.Date !== 'undefined'
+      )
+      filteredData = filteredData.filter((entity) =>
+        entity.unavailabilities
+          .split(', ')
+          .filter((item) => dateFilter[0].Date.includes(item)).length <= 0 ||
+        entity.unavailabilities.length <= 0
+      )
+    }
+    if (
+      activeFilters.filter(
+        (filter) =>
           typeof filter.Group !== 'undefined' && filter.Group.length > 0
       ).length > 0
     ) {
@@ -138,13 +155,6 @@ export default function RedirectIndex({ data }) {
           .some((item) => groupFilter[0].Group.includes(item))
       )
     }
-    // if (activeFilters.filter(filter => typeof filter.Skills !== 'undefined' && filter.Skills.length > 0).length > 0) {
-    //   let skillsFilter = activeFilters.filter(filter => typeof filter.Skills !== 'undefined');
-    //   filteredData = filteredData.filter(
-    //     entity =>
-    //       entity.categories.split(', ').some(item => skillsFilter[0].Skills.includes(item))
-    //   )
-    // }
     if (
       activeFilters.filter(
         (filter) => typeof filter.Tags !== 'undefined' && filter.Tags.length > 0
@@ -161,7 +171,8 @@ export default function RedirectIndex({ data }) {
     }
     if (
       activeFilters.filter(
-        (filter) => typeof filter.Skills !== 'undefined' && filter.Skills.length > 0
+        (filter) =>
+          typeof filter.Skills !== 'undefined' && filter.Skills.length > 0
       ).length > 0
     ) {
       const skillsFilter = activeFilters.filter(
@@ -216,6 +227,7 @@ export default function RedirectIndex({ data }) {
           parseFloat(entity.daily_rate) <= dRateFilter[0].dRate[1]
       )
     }
+    console.log('fdata', filteredData, activeFilters);
     setFilteredData(filteredData)
   }
 
@@ -223,7 +235,11 @@ export default function RedirectIndex({ data }) {
     <>
       <Metatags />
       <Container>
-        <Filter tags={tags} skills={skills} filterCards={(filter) => filterCards(filter)} />
+        <Filter
+          tags={tags}
+          skills={skills}
+          filterCards={(filter) => filterCards(filter)}
+        />
         {/* <FilterWizard /> */}
         <CardGrid>{currentCards}</CardGrid>
         <Pagination
@@ -262,29 +278,29 @@ export const petitcodeFragment = graphql`
 `
 
 export const csvDataGrah = graphql`
-query {
-  allDataCsv {
-    nodes {
-      address
-      birth_date
-      company_name
-      daily_rate
-      email
-      hourly_rate
-      id
-      name
-      partner_since
-      partner_type
-      phone_nr
-      rating
-      social_media
-      surname
-      tags
-      type
-      skills
-      unavailabilities
-      groups
+  query {
+    allDataCsv {
+      nodes {
+        address
+        birth_date
+        company_name
+        daily_rate
+        email
+        hourly_rate
+        id
+        name
+        partner_since
+        partner_type
+        phone_nr
+        rating
+        social_media
+        surname
+        tags
+        type
+        skills
+        unavailabilities
+        groups
+      }
     }
   }
-}
 `
