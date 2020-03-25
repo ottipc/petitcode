@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
 import './Custom.css';
+
+
 const Wrapper = styled.div`
-  ${'' /* width: 10%; */}
   margin-right: 20px;
   :focus {
       outline: none;
@@ -32,7 +33,7 @@ const SearchAndToggle = styled.div`
     margin-bottom:10px;
     :focus {
       outline: none;
-      border: 1px solid #02BD94;
+      border: 1px solid #eb9330;
     }
   }
 `;
@@ -49,19 +50,18 @@ const Item = styled.div`
   align-items: baseline;
   ${'' /* test */}
   display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #FFFFFF;
-padding:10px;
-border-bottom: 1px solid #E7EAEC;
-${'' /* color: #656A6C; */}
-position: relative;
-margin: 0;
-height:40px;
-color: #6a6c6e;
-&:hover{
-  background-color: #F2F1F1;
-}
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding:10px;
+  border-bottom: 1px solid #E7EAEC;
+  position: relative;
+  margin: 0;
+  height:40px;
+  color: #6a6c6e;
+  &:hover{
+    background-color: #F2F1F1;
+  }
 `;
 
 const ItemLabel = styled.div`
@@ -77,8 +77,6 @@ const DropdownContainer = styled.div`
   cursor: pointer;
 `
 const Placeholder = styled.p`
-  ${'' /* color: #656A6C; */}
-  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 1rem;
   font-style:italic;

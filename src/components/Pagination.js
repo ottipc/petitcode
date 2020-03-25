@@ -98,7 +98,6 @@ const PaginationText = styled.div`
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = []
   let pages = []
-   console.log('totalPosts',totalPosts);
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i)
   }

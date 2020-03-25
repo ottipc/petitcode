@@ -124,20 +124,38 @@ export default function RedirectIndex({ data }) {
   const [cardsPerPage, setCardsPerPage] = useState(24)
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
-  // add
   const [show, setDisplay] = useState(true)
-  console.log("shown=",show)
-  //end add
+  const [sortOrder, setSortOrder] = useState('1')
   let indexOfLastCard = 0
   let indexOfFirstCard = 0
   let currentCards = []
   let list = []
-  let  dates = ''
+
+  const sortEntities = entities => {
+    switch(sortOrder) {
+      case '1':
+        return entities.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
+        break;
+      case '2':
+        return entities.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1);
+        break;
+      case '3':
+        return entities.sort((a, b) => parseFloat(a.hourly_rate) < parseFloat(b.hourly_rate) ? 1 : -1);
+        break;
+      case '4':
+        return entities.sort((a, b) => parseFloat(a.daily_rate) < parseFloat(b.daily_rate) ? 1 : -1);
+        break;
+      default:
+        return entities;
+        break;
+    }
+  }
+
   useEffect(() => {
-    setCsvData(data.allDataCsv.nodes)
+    setCsvData(sortEntities(data.allDataCsv.nodes.filter(entity => entity.name !== '' && entity.surname !== '')))
   }, [])
 
-
+console.log('data', csvData);
     csvData.forEach(data => {
     if (data.unavailabilities.length > 0) {
       console.log('filtered date', data);
@@ -152,7 +170,7 @@ export default function RedirectIndex({ data }) {
   });
 
   if (filteredData) {
-    list = filteredData.map((entry, index) => {
+    list = sortEntities(filteredData).map((entry, index) => {
       return <FreelancerCard key={index} data={entry} />
     })
 
@@ -160,11 +178,12 @@ export default function RedirectIndex({ data }) {
     indexOfFirstCard = indexOfLastCard - cardsPerPage
     currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
   } else if (csvData) {
+    console.log('wkwkwk');
     const tagsArr = []
     const tagsCheck = []
     const skillsArr = []
     const skillsCheck = []
-    list = csvData.map((entry, index) => {
+    list = sortEntities(csvData).map((entry, index) => {
       entry.tags.split(', ').forEach((tag) => {
         if (
           tagsCheck.findIndex(
@@ -208,16 +227,7 @@ export default function RedirectIndex({ data }) {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
   }
-  //start test
-  const filter = (cards) => {
-    console.log('sortded=', cards);
 
-    setCurrentCards(cards)
-    // setinitialState(false);
-    console.log('cards', cards)
-  }
-
-  //end test
   const filterCards = (activeFilters) => {
     let filteredData = csvData
     if (
@@ -344,7 +354,7 @@ export default function RedirectIndex({ data }) {
       )
     }
     console.log('fdata', filteredData, activeFilters);
-    setFilteredData(filteredData)
+    setFilteredData(sortEntities(filteredData))
   }
 
   return (
@@ -359,7 +369,7 @@ export default function RedirectIndex({ data }) {
         {/* <FilterWizard /> */}
         {/* //added start */}
         <SortWrapper>
-        {show ? <WrapperDropown> <Drop filter={filter} currentCards={currentCards}></Drop> </WrapperDropown> :''}
+        {show ? <WrapperDropown> <Drop onChangeSelection={value => setSortOrder(value)}></Drop> </WrapperDropown> :''}
     
         <ViewLinkWrapper>
         <ViewLink onClick={() => setDisplay(!show)}> <span>{show ? <div>Switch to table view<FontAwesomeIcon className="custom-fa" icon={faBars} /> </div>  : <div>Switch to card view<FontAwesomeIcon className="custom-fa" icon={faBorderAll} /> </div>} </span>
@@ -375,7 +385,7 @@ export default function RedirectIndex({ data }) {
         
         {show ? <Pagination
           postsPerPage={cardsPerPage}
-          totalPosts={csvData.length}
+          totalPosts={typeof filteredData !== 'undefined' ? filteredData.length : csvData.length}
           paginate={paginate}
           currentPage={currentPage}
         /> :''}

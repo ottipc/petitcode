@@ -79,20 +79,30 @@ const DateFilter = (props) => {
 
   const formatDate = (value) => {
     const year = new Date(value).getFullYear()
-    const month = parseInt(new Date(value).getMonth()) > 9 ? new Date(value).getMonth() : '0' + new Date(value).getMonth()
-    const day = parseInt(new Date(value).getDate()) > 9 ? new Date(value).getDate() : '0' + new Date(value).getDate()
+    const month =
+      parseInt(new Date(value).getMonth()) > 9
+        ? (parseInt(new Date(value).getMonth()) + 1).toString()
+        : '0' + (parseInt(new Date(value).getMonth()) + 1).toString()
+    const day =
+      parseInt(new Date(value).getDate()) > 9
+        ? new Date(value).getDate()
+        : '0' + new Date(value).getDate()
 
-    return year+'-'+month+'-'+day
+    return year + '-' + month + '-' + day
   }
 
   const setDateHandler = (date) => {
-    const startDate = date[0]
-    const endDate = date[1]
-    for(var dateRange=[], dt = startDate; dt<=endDate; dt.setDate(dt.getDate()+1)){
-      dateRange.push(formatDate(dt));
+    const startDate = new Date(date[0])
+    const endDate = new Date(date[1])
+    for (
+      var dateRange = [], dt = startDate;
+      dt <= endDate;
+      dt.setDate(dt.getDate() + 1)
+    ) {
+      dateRange.push(formatDate(dt))
     }
-    console.log('date range', dateRange);
-    setInputValue(date);
+    setInputValue(dateRange)
+    dateFilter(dateRange)
   }
 
   return (
@@ -109,7 +119,7 @@ const DateFilter = (props) => {
           lineHeight: '1.5',
           // fontFamily: 'Poppins, sans-serif'
         }}
-        onOk={value => setDateHandler(value)}
+        onOk={(value) => setDateHandler(value)}
       />
       <Button>
         <FontAwesomeIcon icon={faCalendarCheck} />

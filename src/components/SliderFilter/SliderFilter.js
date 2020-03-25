@@ -32,15 +32,15 @@ const SliderWrapper= styled.div`
    align-items: center;
    flex-wrap: wrap;
    width: 380px;
-   @media (max-width: 902px) {
-    margin-top: 10px;
+   @media (max-width: 947px) {
+    padding-top:15px;
   } 
-  @media (max-width: 567px) {
-    margin-top: 20px;
+   @media (max-width: 902px) {
+    ${'' /* margin-top: 10px; */}
   } 
 p{
   margin-right:15px !important;
-  @media (max-width: 456px) {
+  @media (max-width: 457px) {
     padding-bottom: 20px ;
   } 
   ${'' /* @media (max-width: 434px) {

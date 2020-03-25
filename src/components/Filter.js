@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import SearchableDropdown from './SearchableDropdown'
 import RatingsDropdown from './RatingsDropdown'
 import SliderFilter from './SliderFilter/SliderFilter'
-import { groupOptions , typeOptions } from './options'
+import { groupOptions, typeOptions } from './options'
 
 import SearchFilter from './SearchFilter'
 import DateFilter from './DateFilter'
@@ -47,6 +47,7 @@ const ActiveFilters = styled.div`
 
 const Filter = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState()
+  const [dateFilterValue, setDateFilterValue] = useState()
   const [groupFilter, setGroupFilter] = useState()
   const [skillsFilter, setSkillsFilter] = useState()
   const [tagsFilter, setTagsFilter] = useState()
@@ -247,8 +248,8 @@ const Filter = (props) => {
                   style={{
                     backgroundColor: '#878787',
                     height: 14,
-                    paddingTop: 10,
-                    paddingBottom: 10,
+                    paddingTop: 12,
+                    paddingBottom: 12,
                     paddingLeft: 10,
                     borderRadius: '1em',
                     display: 'flex',
@@ -346,7 +347,6 @@ const Filter = (props) => {
           </div>
         )
       }
-      
     })
     return renderFilters
   }
@@ -368,12 +368,29 @@ const Filter = (props) => {
     filterCards(af)
   }
 
+  const dateFilter = (value) => {
+    const af = activeFilters
+    let added = false
+    setDateFilterValue(value)
+    af.forEach((filter) => {
+      if (Object.keys(filter)[0] === 'Date') {
+        filter.Date = value
+        added = true
+      }
+    })
+    if (!added) {
+      af.push({ Date: value })
+    }
+    setActiveFilters(af)
+    filterCards(af)
+  }
+
   return (
     <Wrapper>
       <Container>
         <ContainerUpper>
-          <SearchFilter searchFilter={(value) => searchFilter(value)} />
-          <DateFilter />
+          <SearchFilter searchFilter={value => searchFilter(value)} />
+          <DateFilter dateFilter={value => dateFilter(value)} />
         </ContainerUpper>
         <Lower>
           <SearchableDropdown

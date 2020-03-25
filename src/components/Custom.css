@@ -80,7 +80,7 @@ border-left: 4px solid transparent;
 }
 .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value{
     font-size: 0.9rem;
-    color: #676a6c !important;
+    color: hsla(0,0%,0%,0.8);
 
 }
 
@@ -122,6 +122,7 @@ border-left: 4px solid transparent;
 .rs-picker-daterange .rs-picker-toggle-clean{
     top: 5px !important;
     right: 0px !important;
+    color: hsla(0,0%,0%,0.8);
 }
 /* for slider */
 
@@ -235,7 +236,6 @@ padding-bottom: calc(0.2rem - 1px);
 }
 
 .footable-row-detail-inner{
-    /* display: table; */
     
 line-height: 1.42857;
 padding: 8px 16px;
@@ -243,8 +243,6 @@ padding: 8px 16px;
 .footable-row-detail-row{
     display: flex;
     line-height: 2.0em;
-    /* font-family: 'Poppins', sans-serif; */
-    /* font-size: 13px; */
     font-size: 1rem;
 }
 .footable-row-detail{
@@ -379,4 +377,7 @@ border-bottom-color: rgba(0,0,0,.12);
     outline: none;
     border: 1px solid #eb9330;
 
+}
+.css-12zlm52-ReactDropdownSelect:focus-within{
+    box-shadow: unset;
 }

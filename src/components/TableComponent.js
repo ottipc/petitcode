@@ -282,7 +282,7 @@ const columns = [
     // selector: 'email',
     left: true,
     hide: 'sm',
-    cell: row =><LinkBtn>Contact</LinkBtn>
+    cell: row =><LinkBtn><a href="mailto:info@petitcode.com">Contact</a></LinkBtn>
   },
 
   
