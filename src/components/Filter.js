@@ -55,9 +55,16 @@ const Filter = (props) => {
   const [typeFilter, setTypeFilter] = useState()
   const [hRateFilter, setHRateFilter] = useState()
   const [dRateFilter, setDRateFilter] = useState()
-  const [activeFilters, setActiveFilters] = useState([])
+  const [activeFilters, setActiveFilters] = useState(typeof props.activeFilters !== 'undefined' ? props.activeFilters : [])
   const [rerenderKey, setRerenderKey] = useState(0)
+  const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
+
+  if (activeFilters && initialFilter) {
+    filterCards(activeFilters)
+    setInitialFilter(false)
+    setRerenderKey(Math.random())
+  }
 
   const activateFilter = (type, value) => {
     const af = activeFilters

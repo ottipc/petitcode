@@ -109,7 +109,7 @@ const SortWrapper= styled.div`
 
 
 
-export default function RedirectIndex({ data }) {
+export default function RedirectIndex({ data, location }) {
   const [csvData, setCsvData] = useState([])
   const [filteredData, setFilteredData] = useState()
   const [currentPage, setCurrentPage] = useState(1)
@@ -122,6 +122,8 @@ export default function RedirectIndex({ data }) {
   let indexOfFirstCard = 0
   let currentCards = []
   let list = []
+
+  console.log('stateeee', location.state.activeFilters);
 
   const sortEntities = entities => {
     switch(sortOrder) {
@@ -147,13 +149,6 @@ export default function RedirectIndex({ data }) {
     setCsvData(sortEntities(data.allDataCsv.nodes.filter(entity => entity.name !== '' && entity.surname !== '')))
   }, [])
 
-console.log('data', csvData);
-    csvData.forEach(data => {
-    if (data.unavailabilities.length > 0) {
-      console.log('filtered date', data);
-    }
-  });
-
   if (filteredData) {
     list = sortEntities(filteredData).map((entry, index) => {
       return <FreelancerCard key={index} data={entry} />
@@ -163,7 +158,6 @@ console.log('data', csvData);
     indexOfFirstCard = indexOfLastCard - cardsPerPage
     currentCards = list.slice(indexOfFirstCard, indexOfLastCard)
   } else if (csvData) {
-    console.log('wkwkwk');
     const tagsArr = []
     const tagsCheck = []
     const skillsArr = []
@@ -350,6 +344,7 @@ console.log('data', csvData);
           tags={tags}
           skills={skills}
           filterCards={(filter) => filterCards(filter)}
+          activeFilters={location.state.activeFilters}
         />
         {/* <FilterWizard /> */}
         {/* //added start */}

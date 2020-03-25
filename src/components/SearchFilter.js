@@ -87,10 +87,17 @@ border-top-right-radius: 5px;
 
 const SearchFilter = (props) => {
   const [inputValue, setInputValue] = useState('')
-  const { searchFilter } = props
+  const { searchFilter, onChangeValue } = props
 
   const searchHandler = () => {
     searchFilter(inputValue)
+  }
+
+  const onChangeHandler = value => {
+    if (onChangeValue) {
+      onChangeValue(value);
+    }
+    setInputValue(value)
   }
 
   return (
@@ -98,7 +105,7 @@ const SearchFilter = (props) => {
       <Input
         type="text"
         placeholder="Search by email or name..."
-        onChange={(value) => setInputValue(value.target.value)}
+        onChange={(value) => onChangeHandler(value.target.value)}
       />
       <Button onClick={() => searchHandler()}>SEARCH</Button>
     </Container>

@@ -297,7 +297,7 @@ const FreelancerCard = (props) => {
         </Rate>
       </RatesSection>
      <Unavailabilities></Unavailabilities>
-     <LinkBtn><a href="mailto:info@petitcode.com">CTA</a></LinkBtn>
+     <LinkBtn><a href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Greetings%2C%0D%0A%0D%0AI%20would%20like%20to%20hire%20${data.name} ${data.surname}%20to%20work%20on%20my%20next%20project.%20%0D%0A%0D%0ABest%20regards.`}>CTA</a></LinkBtn>
     </ContentWrapper>
     </Wrapper>
   )
