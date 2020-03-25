@@ -307,22 +307,14 @@ const ExpanableComponent = ({ data }) =>
             <DataTable className="list-table"
           columns={columns}
           data={props.csvData}
-          // selectableRows // add for checkbox selection
-          // Clicked
-          // Selected={handleChange}
           expandableRows
           expandableRowsComponent={<ExpanableComponent />}
           // defaultSortField='surname'
           pagination ='true'
-          paginationPerPage='24'
-        
-                 
+          paginationPerPage='24'  
          />
            )
-        //  return (
-        //    <div>{props.currentCards.name}</div>
-        //  )
-    
+      
   }
   
 export default TableComponent

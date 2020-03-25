@@ -71,6 +71,10 @@ const ItemLabel = styled.div`
   font-size: 0.95rem;
   line-height: 1.75rem;
   color: hsla(0,0%,0%,0.8);
+  @media(max-width:676px){
+    font-size:13px;
+    line-height:1;
+  }
 `;
 
 const DropdownContainer = styled.div`

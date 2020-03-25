@@ -362,9 +362,21 @@ border-bottom-color: rgba(0,0,0,.12);
 .css-12zlm52-ReactDropdownSelect:focus-within{
     box-shadow: unset !important;
 }
-/* @media(max-width:676px){
+@media(max-width:676px){
     .react-dropdown-select-dropdown-position-bottom {
    
-left: -140px !important;
+        width: 140px !important
     }
-} */
+    .react-dropdown-select-dropdown-position-bottom span{
+   
+        font-size: 13px !important;
+        margin-right: 0 !important;
+    }
+    .css-1nfngl6-DropDown{
+        left: -20px;
+    }
+}
+
+.css-194s1d4-DropdownHandleComponent:hover path {
+    stroke: hsla(0,0%,0%,0.8) !important;
+}
