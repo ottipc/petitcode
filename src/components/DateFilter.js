@@ -6,7 +6,7 @@ import { DateRangePicker } from 'rsuite'
 import 'rsuite/dist/styles/rsuite-default.css'
 
 // test
-import './Drop.css';
+import './Custom.css';
 
 
 const Container = styled.div`
@@ -16,6 +16,7 @@ const Container = styled.div`
   margin-left: 25px;
   display: block;
   width: 50%;
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   @media (max-width: 991px) {
     width: 100%;
     margin-left: 0;
@@ -40,7 +41,7 @@ const Input = styled(DateRangePicker)`
   padding: 6px 12px;
   font-size: 12px;
   line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
 `
 
 const Button = styled.button`
@@ -48,7 +49,7 @@ const Button = styled.button`
   width: 8%;
   border: 1px solid #e5e6e7;
   margin-left: -1px;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-size: 12px;
   line-height: 1.5;
   font-size: 16px;
@@ -67,7 +68,9 @@ const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   outline: 0;
-
+  svg:not(:root).svg-inline--fa path{
+    fill: hsla(0,0%,0%,0.8)
+  }
 `
 
 const DateFilter = (props) => {
@@ -104,7 +107,7 @@ const DateFilter = (props) => {
           padding: '0px 12px',
           fontSize: '12px',
           lineHeight: '1.5',
-          fontFamily: 'Poppins, sans-serif'
+          // fontFamily: 'Poppins, sans-serif'
         }}
         onOk={value => setDateHandler(value)}
       />

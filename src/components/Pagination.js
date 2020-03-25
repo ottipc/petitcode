@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const Container = styled.nav`
   display: flex;
   justify-content: flex-end;
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
 `
 
 const Paginator = styled.ul`
@@ -26,7 +27,7 @@ const Page = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-size: 13px;
   color: #676a6c;
   background-color: white;
@@ -49,10 +50,12 @@ const SelectedPage = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-size: 13px;
   color: white;
-  background-color: #02bd94;
+  background-color: #eb9330;
+  font-size: 1rem;
+  line-height: 1.75rem;
   a{
     color:#fff;
     width: 100%;
@@ -67,8 +70,9 @@ background: none !important;
 
 const PageNumber = styled.a`
   cursor: default;
-  color: #676a6c;
- 
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: hsla(0,0%,0%,0.8);
   &:hover{
     text-decoration:none;
     z-index: 2;
@@ -82,9 +86,10 @@ const PageNumber = styled.a`
 `
 const PaginationText = styled.div`
   margin: 22px 10px 58px 0px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: #676a6c;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  color: hsla(0,0%,0%,0.8);
   span{
     margin-left: 3px;
   }

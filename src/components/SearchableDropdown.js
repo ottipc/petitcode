@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
-import './Drop.css';
+import './Custom.css';
 const Wrapper = styled.div`
   ${'' /* width: 10%; */}
   margin-right: 20px;
@@ -19,7 +19,8 @@ const SearchAndToggle = styled.div`
   display: flex;
   flex-direction: column;
   color: #656A6C;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
   background: #f7f7f7;
   input {
@@ -53,10 +54,11 @@ align-items: center;
 background-color: #FFFFFF;
 padding:10px;
 border-bottom: 1px solid #E7EAEC;
-color: #656A6C;
+${'' /* color: #656A6C; */}
 position: relative;
 margin: 0;
 height:40px;
+color: #6a6c6e;
 &:hover{
   background-color: #F2F1F1;
 }
@@ -64,8 +66,11 @@ height:40px;
 
 const ItemLabel = styled.div`
   color: #656A6C;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  color: hsla(0,0%,0%,0.8);
 `;
 
 const DropdownContainer = styled.div`
@@ -73,10 +78,13 @@ const DropdownContainer = styled.div`
 `
 const Placeholder = styled.p`
   ${'' /* color: #656A6C; */}
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 1rem;
   font-style:italic;
-  color: #8e8e93;
+  color: hsla(0,0%,0%,0.8);
+  font-weight: bold;
+  line-height: 1.75rem;
 `
 
 

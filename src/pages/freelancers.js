@@ -14,7 +14,8 @@ import Drop from '../components/Drop';
 import ListView from '../components/ListView'
 import Tooltip from '../components/Tooltip'
 import TableComponent from '../components/TableComponent'
-import '../components/Drop.css';
+import '../components/Custom.css';
+
 
 
 
@@ -41,20 +42,28 @@ const ViewLinkWrapper = styled.div`
 text-align:end;
 display:inline-block;
 float: right;
+@media (max-width: 501px) {
+  float: none;
+  padding-top: 10px;
+  }
 @media (max-width: 455px) {
   text-align:start;
+  padding-top: 10px;
   }
 
 `
 // added
 
 const ViewLink = styled.a`
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 0.95rem;
   color: #221757;
   text-decoration: none;
   cursor: pointer;
   padding: 0 26px;
+  color: hsla(0,0%,0%,0.8);
+  font-weight: bold;
 &:hover{
     text-decoration:none;
    
@@ -81,12 +90,11 @@ const WrapperDropown = styled.div`
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: #676a6c;
-
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 0.95rem;
+  color: hsla(0,0%,0%,0.8);
   padding: 0;
-   
   padding-left: 25px;
   display: inline-block;
   
@@ -124,7 +132,7 @@ export default function RedirectIndex({ data }) {
   let indexOfFirstCard = 0
   let currentCards = []
   let list = []
-
+  let  dates = ''
   useEffect(() => {
     setCsvData(data.allDataCsv.nodes)
   }, [])
@@ -133,7 +141,14 @@ export default function RedirectIndex({ data }) {
     csvData.forEach(data => {
     if (data.unavailabilities.length > 0) {
       console.log('filtered date', data);
+      // dates = data.unavailabilities.split(', ').slice(0, 2)
+      // console.log('filtered date available', dates.slice(0, 2))
+      // const available = dates.slice(0, 2).toString();
+     
+     
     }
+   
+    
   });
 
   if (filteredData) {

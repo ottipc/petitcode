@@ -224,16 +224,19 @@ const Filter = (props) => {
             style={{
               display: 'flex',
               flexDirection: 'row',
-              alignItems: 'baseline'
+              alignItems: 'baseline',
+              marginTop: '20px'
             }}
           >
             <p
               style={{
-                color: '#656A6C',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '13px',
+                color: 'hsla(0,0%,0%,0.8)',
+                // fontFamily: 'Poppins, sans-serif',
+                fontFamily: 'Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
+                fontSize: '1rem',
                 fontStyle: 'italic',
-                marginRight: 10
+                marginRight: 10,
+                lineHeight: '1.75rem'
               }}
             >
               {props[0][0]}
@@ -242,12 +245,12 @@ const Filter = (props) => {
               return (
                 <div
                   style={{
-                    backgroundColor: '#A4A3A3',
+                    backgroundColor: '#878787',
                     height: 14,
                     paddingTop: 10,
                     paddingBottom: 10,
                     paddingLeft: 10,
-                    borderRadius: 10,
+                    borderRadius: '1em',
                     display: 'flex',
                     alignItems: 'center',
                     marginRight: 10
@@ -255,7 +258,7 @@ const Filter = (props) => {
                 >
                   <p
                     style={{
-                      fontSize: '10px',
+                      fontSize: '0.95rem',
                       color: 'white',
                       marginBottom: '0px'
                     }}
@@ -266,7 +269,7 @@ const Filter = (props) => {
                     <button
                       style={{
                         border: 'none',
-                        fontSize: 10,
+                        fontSize: '0.95rem',
                         color: 'white',
                         float: 'right'
                       }}

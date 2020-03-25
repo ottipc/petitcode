@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
+
 import noImage from '../assets/noImage.png'
 // test
 import Tippy from '@tippyjs/react';
@@ -22,7 +23,7 @@ const ContentWrapper = styled.div`
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	transition-property: transform;
   height: 100%;
-
+  font-family: 'Fira Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
 `
 const Image = styled.img`
   width: 70px;
@@ -40,20 +41,23 @@ const Name = styled.p`
     font-style: normal;
   }
 
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.75rem;
   font-weight: 600;
   text-align: center;
-  color: #221757;
   cursor:pointer;
+  color: hsla(0,0%,0%,0.8);
+  text-transform: capitalize;
   &:hover{
     color: #020206;
   }
 `
 const Address = styled.p`
-  font-family: 'Poppins', sans-serif;
   color: #6a6c6e;
-  font-size: 13px;
+  font-size: 1rem;
+  line-height: 1.75rem;
   line-height: 13px;
   text-align: center;
   margin-top: 0;
@@ -75,39 +79,36 @@ const Tags = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  color: #a4a3a3;
-  font-size: 13px;
-  line-height: 11px;
+  color: hsla(0,0%,0%,0.8);
+  font-size: 1rem;
+  line-height: 1.75rem;
   text-align: center;
   margin-bottom: 6px;
-  ${'' /* add */}
   margin-bottom:0;
+  color: hsla(0,0%,0%,0.8);
 `
 
 const Rate = styled.div`
-  width: 25%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
 `
 
 const RateValue = styled.p`
-  font-family: 'Poppins', sans-serif;
-  color: #6a6c6e;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 11px;
   margin-bottom: 5px;
+  color: hsla(0,0%,0%,0.8);
 `
 
 const RateLabel = styled.p`
-  font-family: 'Poppins', sans-serif;
   margin-top: 4px;
-  color: #a4a3a3;
-  font-size: 10px;
+  font-size: 0.8rem;
   line-height: 11px;
   text-transform: uppercase;
+  color: hsla(0,0%,0%,0.8);
 `
 
 const GroupsSection = styled.div`
@@ -116,7 +117,6 @@ const GroupsSection = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 17px 8px;
-  ${'' /* add */}
   padding-bottom: 8px;
 `
 
@@ -129,17 +129,17 @@ const Group = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
   color: white;
   font-weight: bold;
+  background: rgb(135, 135, 135) none repeat scroll 0% 0%;
 `
 
 const RatingWrapper = styled.div`
 
 `
 const Wrapper = styled.div`
-   ${'' /* position:relative; */}
    &:hover {
     transform: scale(1.01);
 	}
@@ -149,27 +149,33 @@ const Type = styled.div`
    padding-right: 0;
   width: 20px;
   height:20px;
-  background-image: linear-gradient(135deg, #02BD94 14px, #fff 14px);
+  background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
 `
-const Unavailabilities = styled.div`
-
+const Availabilities = styled.div`
+    color: #6a6c6e;
+    font-size: 0.8rem;
+    line-height: 1.75rem;
+    margin-top: 4px;
+    color: hsla(0,0%,0%,0.8);
+    text-transform:uppercase;
+    &:hover{
+      color:#eb9330;
+      cursor:pointer;
+    }
+}
 `
-const LinkBtn = styled.button`background-color: #02BD94;
-  border: none;
-  color: white;
-  padding: 0px 28px;
-  text-align: center;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
+const LinkBtn = styled.button`
+  padding: 0px 1em;
+  border-radius: 1em;
+  background: rgb(135,135,135) none repeat scroll 0% 0%;
+  color: rgb(255,255,255);
+  font-size: 1rem;
+  line-height: 2em;
   margin: 12px 2px;
-  cursor: pointer;
-  height: 33px;
-  border-radius: 4px;
   a{
     color: #fff;
     text-decoration:none;
+    font-size: 1rem;
    &:focus{
     color: #fff;
     text-decoration:none; 
@@ -179,8 +185,6 @@ const LinkBtn = styled.button`background-color: #02BD94;
     text-decoration:none;
     }
   }
-  
-  
 
 `
 
@@ -212,10 +216,7 @@ const FreelancerCard = (props) => {
       MGMENT: 'M',
       MAR: 'M'
     }
-    // const array = categoriesData.split(', ').map((cat, index) => {
-    //   
-    //   <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
-    //    </Tippy>
+    
     const array = groupsData.split(', ').map((cat, index) => {
       return <Tippy theme ='translucent'  content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{cat.replace(/\s+/g, '')}</span>}>
       <Group key={index}>{abrev[cat.replace(/\s+/g, '')]}</Group></Tippy>
@@ -224,11 +225,21 @@ const FreelancerCard = (props) => {
   }
 
   const formatAv = (dates) => {
-    const array = dates.split(', ').map((cat, index) => {
-      return <div key={index}>{cat}</div>
-    })
-    return array
+    let array=''
+    if (dates.unavailabilities.length > 0){
+      console.log('dfdfdsfdsafas',dates.unavailabilities.length)
+       array = dates.split(', ').slice(0, 2).map((cat, index) => {
+        return <div key={index}>{cat}</div>
+      })
+      return array
+    }else{
+      return <div>test</div>
+    }
+   
+    
   }
+
+  
   const TypeToolip = () => {
     return <div style={{fontSize:'12px'}}>
     {/* Self-managed partner */}
@@ -260,15 +271,11 @@ const FreelancerCard = (props) => {
        </Tippy>
     <ContentWrapper>
       <Image src={noImage} />
-      {/* <CategoriesSection>{formatCategories(data.categories)}</CategoriesSection> */}
       <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
       <Tippy theme ='translucent' content={<NameToolip></NameToolip>}>
-        <Name>{data.name + ' ' + data.surname.charAt(0)+'.'}</Name>
+        <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
       </Tippy>
-      {/* <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
-          {data.type === "self managed" ? <ContentTdFirst></ContentTdFirst> : <ContentTdFirst></ContentTdFirst> }
-          </Tippy> */}
-      <Address>{formatAddress(data.address)}</Address>
+      {/* <Address>{formatAddress(data.address)}</Address> */}
       <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
         <Tags>{data.tags}</Tags>
       </Tippy>
@@ -287,17 +294,17 @@ const FreelancerCard = (props) => {
         </Ratings></RatingWrapper>
       </Tippy>
       <RatesSection>
-        <Rate>
+        {/* <Rate>
           <RateValue>{data.hourly_rate}</RateValue>
           <RateLabel>Hourly rate</RateLabel>
-        </Rate>
+        </Rate> */}
         <Rate>
           <RateValue>{data.daily_rate}</RateValue>
           <RateLabel>Daily rate</RateLabel>
         </Rate>
       </RatesSection>
-     <Unavailabilities></Unavailabilities>
-     <LinkBtn><a href="mailto:info@petitcode.com">CTA</a></LinkBtn>
+     <Availabilities>{data.unavailabilities ? data.unavailabilities.split(', ').slice(0, 2).toString().replace(',',' '):'Available'}</Availabilities>
+     <LinkBtn><a href="mailto:info@petitcode.com">Contact</a></LinkBtn>
     </ContentWrapper>
     </Wrapper>
   )

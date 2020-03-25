@@ -5,7 +5,7 @@ import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
 // import { csv } from 'd3'
-import './Drop.css';
+import './Custom.css';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/translucent.css';
@@ -40,14 +40,17 @@ csvData.forEach(data => {
   height: 23px;
   border-radius: 15px;
   margin: 0px 5px;
-  background-color: #686c6e;
+  ${'' /* background-color: #686c6e; */}
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  ${'' /* font-size: 11px; */}
+  font-size: 0.9rem;
   color: white;
   font-weight: bold;
+  background: rgb(135, 135, 135) none repeat scroll 0% 0%;
 `
  const Name = styled.a`
   @font-face {
@@ -57,22 +60,28 @@ csvData.forEach(data => {
     font-style: normal;
   }
 
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  ${'' /* font-size: 13px; */}
+  font-size: 1rem;
+  line-height: 1.75rem;
   font-weight: 600;
   text-align: start;
-  color: #221757;
   text-decoration: none;
   cursor: pointer;
+  color: hsla(0,0%,0%,0.8);
+  text-transform: capitalize;
   &:hover{
     text-decoration:none;
     color: #020206;
     }
 `
  const Address = styled.div`
-  font-family: 'Poppins', sans-serif;
-  color: #6a6c6e;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  color: hsla(0,0%,0%,0.8);
+  ${'' /* font-size: 13px; */}
+  font-size: 1rem;
   line-height: 13px;
   text-align: start;
   width: 200px;
@@ -87,16 +96,20 @@ csvData.forEach(data => {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  color: #6a6c6e;
-  font-size: 13px;
-  line-height: 11px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  color: hsla(0,0%,0%,0.8);
+  ${'' /* font-size: 13px; */}
+  font-size: 1rem;
+  line-height: 1.75rem;
   text-align: start;
+  min-height: 14px;
 `
 const Rate = styled.div`
   display: flex;
   flex-direction: column;
-  color: #6a6c6e;
+  color: hsla(0,0%,0%,0.8);
+  font-size: 1rem;
+  line-height: 1.75rem;
 `
 
 const Type = styled.div`
@@ -104,11 +117,33 @@ const Type = styled.div`
    padding-right: 0;
   width: 20px;
   height:20px;
-  background-image: linear-gradient(135deg, #02BD94 14px, #fff 14px);
+  background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
   position: absolute;
   top: 0;
 `
+const LinkBtn = styled.button`
+  ${'' /* background-color: #02BD94; */}
+  background-color:#eb9330;
+  padding: 0px 1em;
+  border-radius: 1em;
+  background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  line-height: 2em;
+  a{
+    color: #fff;
+    text-decoration:none;
+   &:focus{
+    color: #fff;
+    text-decoration:none; 
+   }
+   :hover{
+     color: #fff;
+    text-decoration:none;
+    }
+  }
 
+`
 
 
   const formatAddress = (adressData) => {
@@ -176,8 +211,10 @@ const columns = [
     minWidth:'200px',
     maxWidth:'400px',
     cell: row => <div className="full-info"><div className="image-32-32"><img src={noImage}></img></div>
-    <div className="d-flex"><Name>{row.name} {row.surname}
-    </Name>
+    <div className="d-flex">
+    <Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.name} {row.surname}</span>}>
+    <Name>{row.name.split(" ")[0]} {row.surname.charAt(0)+'.'}
+    </Name></Tippy>
     <Tippy theme ='translucent' content={<StarsToolip></StarsToolip>}>
     <div className='ratings'><Ratings
     rating={parseFloat(row.rating)}
@@ -192,14 +229,14 @@ const columns = [
   </Ratings></div></Tippy></div>
     </div>
   },
-  {
-    name: 'Location',
-    selector: 'address',
-    left: true,
-    hide: 'md',
-    cell: row =><Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.address}</span>}><Address>{formatAddress(row.address)}</Address></Tippy>
+  // {
+  //   name: 'Location',
+  //   selector: 'address',
+  //   left: true,
+  //   hide: 'md',
+  //   cell: row =><Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.address}</span>}><Address>{formatAddress(row.address)}</Address></Tippy>
 
-  },
+  // },
  
   {
     name: 'Tags',
@@ -208,14 +245,14 @@ const columns = [
     hide: 'sm',
     cell: row => <Tippy theme ='translucent' content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{row.tags}</span>}><Tags>{row.tags}</Tags></Tippy>
   },
-  {
-    name: 'Hourly Rate',
-    selector: 'hourly_rate',
-    sortable: true,
-    left: true,
-    hide: 'sm',
-    cell: row =><Rate>{row.hourly_rate}</Rate>
-  },
+  // {
+  //   name: 'Hourly Rate',
+  //   selector: 'hourly_rate',
+  //   sortable: true,
+  //   left: true,
+  //   hide: 'sm',
+  //   cell: row =><Rate>{row.hourly_rate}</Rate>
+  // },
   {
     name: 'Daily Rate',
     selector: 'daily_rate',
@@ -231,7 +268,24 @@ const columns = [
     hide: 'md',
     cell: row => <div className='categories-flex'>{formatCategories(row.groups)}</div>
     
-  }
+  },
+    {
+    name: 'Availability',
+    selector: 'unavailability',
+    left: true,
+    hide: 'md',
+    cell: row => <div className='available-flex'>{row.unavailabilities ? row.unavailabilities.split(', ').slice(0, 2).toString().replace(',',' '):'Available'}</div>
+  
+  },
+  {
+    name: 'Contact us',
+    // selector: 'email',
+    left: true,
+    hide: 'sm',
+    cell: row =><LinkBtn>Contact</LinkBtn>
+  },
+
+  
 ];
 
 
@@ -239,11 +293,13 @@ const columns = [
  // The row data is composed into your custom expandable component via the data prop
 const ExpanableComponent = ({ data }) => 
 <div className='footable-row-detail-inner'>
-<div className='footable-row-detail-row address-row'><div className='footable-row-detail'>Location:</div><div className='footable-row-value'>{formatAddress(data.address)}</div></div>
+{/* <div className='footable-row-detail-row address-row'><div className='footable-row-detail'>Location:</div><div className='footable-row-value'>{formatAddress(data.address)}</div></div> */}
 <div className='footable-row-detail-row tags-row'><div className='footable-row-detail'>Tags:</div><div className='footable-row-value'>{data.tags}</div></div>
-<div className='footable-row-detail-row hourly-rate-row'><div className='footable-row-detail'>Hourly rate:</div><div className='footable-row-value'>{data.hourly_rate}</div></div>
+{/* <div className='footable-row-detail-row hourly-rate-row'><div className='footable-row-detail'>Hourly rate:</div><div className='footable-row-value'>{data.hourly_rate}</div></div> */}
 <div className='footable-row-detail-row daily-rate-row'><div className='footable-row-detail'>Daily rate:</div><div className='footable-row-value'>{data.daily_rate}</div></div>
 <div className='footable-row-detail-row groups-row'><div className='footable-row-detail'>Groups:</div><div className='footable-row-value row-categories'>{formatCategories(data.groups)}</div></div>
+<div className='footable-row-detail-row available-row'><div className='footable-row-detail'>Availability:</div><div className='footable-row-value'>{data.unavailabilities ? data.unavailabilities.split(', ').slice(0, 2).toString().replace(',',' '):'Available'}</div></div>
+<div className='footable-row-detail-row cta-row'><div className='footable-row-detail'>Contact :</div><div className='footable-row-value'><LinkBtn>Contact</LinkBtn></div></div>
 
 </div>;
 
@@ -256,7 +312,7 @@ const ExpanableComponent = ({ data }) =>
           // Selected={handleChange}
           expandableRows
           expandableRowsComponent={<ExpanableComponent />}
-          defaultSortField='surname'
+          // defaultSortField='surname'
           pagination ='true'
           paginationPerPage='24'
         

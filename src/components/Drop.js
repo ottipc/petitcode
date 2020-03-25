@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import './Drop.css';
+import './Custom.css';
 import { filter } from 'minimatch';
+
+import { faBars,faBorderAll } from '@fortawesome/free-solid-svg-icons'
 
 const DropdownFilterOption = styled.option`
     border-bottom: 1px solid #E7EAEC;
@@ -10,6 +12,8 @@ const DropdownFilterOption = styled.option`
     padding:0px;
     &:hover{
     background-color: #F2F1F1;
+    color: #575757;
+    font-weight: bold;
 }
 `
 const DropdownOptions = styled.div`
@@ -76,7 +80,7 @@ export default class Drop extends Component {
         ));
     
         return (
-          <div>
+          <div className="sort-wrapper">
           <span class="sorting-label m-r-xs">Sort by:</span>
           
             <select value={this.state.value} onChange={this.handleChange}>
