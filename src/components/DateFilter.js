@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarWeek ,faCalendarCheck} from '@fortawesome/free-solid-svg-icons'
 import { DateRangePicker } from 'rsuite'
 import 'rsuite/dist/styles/rsuite-default.css'
-
-// test
 import './Custom.css';
 
 
@@ -22,16 +20,11 @@ const Container = styled.div`
     margin-left: 0;
     
   }
-  ${'' /* &:focus{
-    border-color: #02BD94;
-  } */}
-
-  ${'' /* test */}
   -webkit-box-align: center;
-display: flex;
-align-items: center;
--webkit-box-flex: 1;
-flex: 1;
+  display: flex;
+  align-items: center;
+  -webkit-box-flex: 1;
+  flex: 1;
 `
 
 const Input = styled(DateRangePicker)`
@@ -55,11 +48,6 @@ const Button = styled.button`
   font-size: 16px;
   padding: 6px 12px;
   padding: 6px 11px;
-  ${'' /* test */}
-  ${'' /* position: absolute; */}
-  ${'' /* width: 40px; */}
-  ${'' /* width: 3.7%; */}
- 
   line-height: 0.5;
   float: left;
   padding: 6px;

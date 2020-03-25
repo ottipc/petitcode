@@ -2,20 +2,15 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  ${'' /* display: flex;
-  flex-direction: row; */}
   flex: 1;
   margin-right: 25px;
-  ${'' /* test */}
   display: block;
   width: 50%;
-
-  ${'' /* test */}
   display: flex;
--webkit-box-align: center;
-align-items: center;
--webkit-box-flex: 1;
-flex: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  flex: 1;
   @media (max-width: 991px) {
     width: 100%;
     margin-right: 0;
@@ -37,21 +32,19 @@ const Input = styled.input`
   font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   float: left;
   width: 80%;
-  ${'' /* test */}
   height: 38px;
   &:focus{
     border-color: #eb9330;
   }
-  ${'' /* test */}
   display: flex;
-flex: 1;
-height: 32px;
-position: relative;
-outline: 0;
-right: 0;
-@media (max-width: 420px) {
-    width:73%;
-  }
+  flex: 1;
+  height: 32px;
+  position: relative;
+  outline: 0;
+  right: 0;
+  @media (max-width: 420px) {
+      width:73%;
+    }
 
 `
 

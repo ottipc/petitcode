@@ -8,11 +8,9 @@ const Container = styled.nav`
 `
 
 const Paginator = styled.ul`
-  ${'' /* display: flex; */}
   display: block;
   height: 30px;
   list-style-type: none;
-  ${'' /* margin: 40px 25px 40px 0px; */}
   margin: 22px 25px 58px 0px;
   padding: 0;
   overflow: hidden;
@@ -76,7 +74,7 @@ const PageNumber = styled.a`
   &:hover{
     text-decoration:none;
     z-index: 2;
-    color: #23527c;
+    color: hsla(0,0%,0%,0.8);
     background-color: #eeeeee;
     border-color: #ddd;
     width: 100%;

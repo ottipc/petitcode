@@ -13,25 +13,15 @@ body{
     background: transparent;
   }
 
-
-
-
 .caret{
     display: inline-block;
-
-width: 0;
-
-height: 0;
-
-margin-left: 2px;
-
-vertical-align: middle;
-
-border-top: 4px dashed;
-
-border-right: 4px solid transparent;
-
-border-left: 4px solid transparent;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
 }
 .option{
     border-bottom: 1px solid #E7EAEC !important;
@@ -139,10 +129,6 @@ border-left: 4px solid transparent;
 .react-dropdown-select{
     padding: 0px 5px !important;
 }
-/* .react-dropdown-select-dropdown-handle:active svg{
-    color: #8e8e93 !important;
-} */
-
 
 .react-dropdown-select-dropdown-handle{
     color: hsla(0,0%,0%,0.8);
@@ -168,7 +154,7 @@ border-left: 4px solid transparent;
 .list-table svg{
     margin: 0;
 }
-@media(max-width:455px){
+@media(max-width:501px){
 .list-table{
     margin-top: 35px;
 }}
@@ -182,7 +168,6 @@ border-left: 4px solid transparent;
 }
 .rdt_TableHeadRow div div{
     /* font-family: 'Poppins', sans-serif; */
-    /* font-size: 13px; */
     font-size: 1rem;
     color: #A4A3A3;
     font-weight: normal;
@@ -214,13 +199,11 @@ flex-direction: column;
     align-items: center;
     /* font-family: 'Poppins',sans-serif; */
     color: hsla(0,0%,0%,0.8);
-/* font-size: 13px; */
-font-size: 1rem;
-white-space: unset !important;
+    font-size: 1rem;
+    white-space: unset !important;
 }
 .full-info{
     display: flex; 
-    /* align-items: center; */
 }
 .bfAbcT{
    background-color:#02BD94; 
@@ -362,9 +345,7 @@ border-bottom-color: rgba(0,0,0,.12);
 .css-12zlm52-ReactDropdownSelect:focus{
     box-shadow: none !important;
 }
-/* .css-194s1d4-DropdownHandleComponent svg:hover path{
-    stroke: #eb9330;
-} */
+
 .fwIEmi:hover {
     text-decoration: none;
     color: #23527c;
@@ -379,5 +360,11 @@ border-bottom-color: rgba(0,0,0,.12);
 
 }
 .css-12zlm52-ReactDropdownSelect:focus-within{
-    box-shadow: unset;
+    box-shadow: unset !important;
 }
+/* @media(max-width:676px){
+    .react-dropdown-select-dropdown-position-bottom {
+   
+left: -140px !important;
+    }
+} */
