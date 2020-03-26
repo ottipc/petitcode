@@ -11,22 +11,22 @@ import './Tooltip.css';
 
 
 const ContentWrapper = styled.tr`
-font-family: 'Poppins', sans-serif;
-font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
 `
 const ContentTd = styled.td`
-border-top: 1px solid #e7eaec;
-line-height: 1.42857;
-padding: 8px;
-vertical-align: middle;
-width:20%;
-.footable-visible{
+  border-top: 1px solid #e7eaec;
+  line-height: 1.42857;
+  padding: 8px;
   vertical-align: middle;
-}
-.footable-visible.footable-to-toggle{
-  padding-right: 0;
-  width: 25px;
-}
+  width:20%;
+  .footable-visible{
+    vertical-align: middle;
+  }
+  .footable-visible.footable-to-toggle{
+    padding-right: 0;
+    width: 25px;
+  }
 
 `
 const ContentTdFirst = styled.td`
@@ -42,10 +42,10 @@ const ContentTdTest = styled.td`
   
 `
 const Image = styled.img`
- width: 32px;
-height: 32px;
-border-radius: 50%;
-margin: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0;
 `
 
 const Name = styled.a`
@@ -56,17 +56,17 @@ const Name = styled.a`
     font-style: normal;
   }
 
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  text-align: start;
-  color: #221757;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover{
-    text-decoration:none;
-    color: #020206;
-    }
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: start;
+    color: #221757;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+      text-decoration:none;
+      color: #020206;
+      }
   
 `
 const Address = styled.p`
@@ -89,7 +89,6 @@ const RatesSection = styled.div`
   margin-top: 15px;
 `
 const Tags = styled.div`
-${'' /* test width */}
   width: 180px;
   display: block;
   justify-content: space-around;
@@ -206,15 +205,8 @@ const FreelancerRow = (props) => {
     return array
   }
 
-  // const formatType = () => {
-  //    if(data.type === "self managed"){
-  //      return  true;
-  //      console.log('dsfasdfas');
-  //    }
-  // }
   const TypeToolip = () => {
     return <div style={{fontSize:'12px'}}>
-    {/* Self-managed partner */}
     {data.type}
     </div>
    }
@@ -234,16 +226,7 @@ const FreelancerRow = (props) => {
   return (
     
     <ContentWrapper>
-        {/* <ContentTdFirst className="footable-to-toggle footable-visible footable-first-column">
-        <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
-          <span className="footable-toggle"> {data.type === "self managed" ? 'SM' : ''}</span>
-          </Tippy>
-        </ContentTdFirst> */}
-        {/* {data.type === "self managed" ? 
-        } */}
-        {/* <ContentTdFirst className="footable-to-toggle footable-visible footable-first-column">
-        </ContentTdFirst>: <ContentTdTest></ContentTdTest> */}
-        
+       
         <Tippy theme ='translucent' content={<TypeToolip></TypeToolip>}>
           {data.type === "self managed" ? <ContentTdFirst></ContentTdFirst> : <ContentTdTest></ContentTdTest>}
           </Tippy>
@@ -286,11 +269,9 @@ const FreelancerRow = (props) => {
         </ContentTd>
 
         <ContentTd>  
-        {/* hourly_rate */}
           {data.hourly_rate}
        </ContentTd>
        <ContentTd>
-       {/* daily_rate */}
         {data.daily_rate}
         </ContentTd>
       

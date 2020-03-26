@@ -5,8 +5,8 @@ import Switch from "react-switch";
 import Ratings from 'react-ratings-declarative';
 import './Custom.css';
 
+
 const Wrapper = styled.div`
-  ${'' /* width: 10%; */}
   margin-right: 20px;
 `
 
@@ -19,11 +19,9 @@ const DropdownContainer = styled.div`
   cursor: pointer;
 `
 const Placeholder = styled.p`
-  ${'' /* color: #656A6C; */}
-  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 1rem;
-  font-style:italic;
+  ${'' /* font-style:italic; */}
   color: hsla(0,0%,0%,0.8);
   font-weight: bold;
   line-height: 1.75rem;

@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
-
 import noImage from '../assets/noImage.png'
-// test
+import user from '../assets/user.png'
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/translucent.css';
@@ -134,6 +133,7 @@ const Group = styled.div`
   color: white;
   font-weight: bold;
   background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+  background:hsla(0,0%,0%,0.8);
 `
 
 const RatingWrapper = styled.div`
@@ -153,13 +153,12 @@ const Type = styled.div`
 `
 const Availabilities = styled.div`
     color: #6a6c6e;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.75rem;
     margin-top: 4px;
     color: hsla(0,0%,0%,0.8);
-    text-transform:uppercase;
+    text-transform:capitalize;
     &:hover{
-      color:#eb9330;
       cursor:pointer;
     }
 }
@@ -190,6 +189,22 @@ const LinkBtn = styled.button`
 
 const FreelancerCard = (props) => {
   const { data } = props
+
+  const dates = data.unavailabilities.split(', ');
+  let until = dates[0];
+  let from = '';
+  if(dates[1]){
+  
+   from = dates[1];
+
+   const du = until.split('-');
+   const df= from.split('-');
+    until= du[2] + "/" + du[1] + "/" + du[0];
+    from =df[2] + "/" + df[1] + "/" + df[0];
+
+}
+
+
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')
@@ -224,28 +239,10 @@ const FreelancerCard = (props) => {
     return array
   }
 
-  const formatAv = (dates) => {
-    let array=''
-    if (dates.unavailabilities.length > 0){
-      console.log('dfdfdsfdsafas',dates.unavailabilities.length)
-       array = dates.split(', ').slice(0, 2).map((cat, index) => {
-        return <div key={index}>{cat}</div>
-      })
-      return array
-    }else{
-      return <div>test</div>
-    }
-   
-    
-  }
+
 
   
-  const TypeToolip = () => {
-    return <div style={{fontSize:'12px'}}>
-    {/* Self-managed partner */}
-    {data.type}
-    </div>
-   }
+ 
   const StarsToolip = () => {
      return <span className='raiting-tooltip' style={{fontSize:'12px'}}>
      Based on ratings by colleagues. Assessment criteria can be changed in Settings / My Network / General.
@@ -266,20 +263,15 @@ const FreelancerCard = (props) => {
   return (
     <Wrapper>
     
-      <Tippy theme ='translucent' content= {data.type}>
-          {data.type === "self managed" ? <Type></Type> :''}
-       </Tippy>
     <ContentWrapper>
-      <Image src={noImage} />
+      <Image src={user} />
       <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
-      <Tippy theme ='translucent' content={<NameToolip></NameToolip>}>
-        <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
-      </Tippy>
+      <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
       {/* <Address>{formatAddress(data.address)}</Address> */}
       <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
         <Tags>{data.tags}</Tags>
       </Tippy>
-      <Tippy theme ='translucent' content={<StarsToolip></StarsToolip>}>
+     
         <RatingWrapper>
         <Ratings
           rating={parseFloat(data.rating)}
@@ -292,18 +284,14 @@ const FreelancerCard = (props) => {
           <Ratings.Widget />
           <Ratings.Widget />
         </Ratings></RatingWrapper>
-      </Tippy>
+      
       <RatesSection>
-        {/* <Rate>
-          <RateValue>{data.hourly_rate}</RateValue>
-          <RateLabel>Hourly rate</RateLabel>
-        </Rate> */}
         <Rate>
           <RateValue>{data.daily_rate}</RateValue>
           <RateLabel>Daily rate</RateLabel>
         </Rate>
       </RatesSection>
-     <Availabilities>{data.unavailabilities ? data.unavailabilities.split(', ').slice(0, 2).toString().replace(',',' '):'Available'}</Availabilities>
+     <Availabilities>{data.unavailabilities ?'Until '+ until+ ' From '+ from :'Available'}</Availabilities>
      <LinkBtn><a href="mailto:info@petitcode.com">Contact</a></LinkBtn>
     </ContentWrapper>
     </Wrapper>

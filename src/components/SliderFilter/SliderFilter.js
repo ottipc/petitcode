@@ -68,7 +68,7 @@ const onChange = (value) => {
           marginBottom: 0, 
           color: 'hsla(0,0%,0%,0.8)', 
           marginRight: '0', 
-          fontStyle: 'italic', 
+          // fontStyle: 'italic', 
           // fontFamily: 'Poppins, sans-serif', 
           fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
           fontSize: '1rem',

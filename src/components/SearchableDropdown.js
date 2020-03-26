@@ -20,7 +20,6 @@ const SearchAndToggle = styled.div`
   display: flex;
   flex-direction: column;
   color: #656A6C;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
   background: #f7f7f7;
@@ -48,7 +47,6 @@ const Item = styled.div`
   display: flex;
   margin: 10px;
   align-items: baseline;
-  ${'' /* test */}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,7 +64,6 @@ const Item = styled.div`
 
 const ItemLabel = styled.div`
   color: #656A6C;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 0.95rem;
   line-height: 1.75rem;
@@ -83,7 +80,7 @@ const DropdownContainer = styled.div`
 const Placeholder = styled.p`
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 1rem;
-  font-style:italic;
+  ${'' /* font-style:italic; */}
   color: hsla(0,0%,0%,0.8);
   font-weight: bold;
   line-height: 1.75rem;

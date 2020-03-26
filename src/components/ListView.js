@@ -28,7 +28,6 @@ const Container = styled.div`
   border-width: 1px 0;
 `
 const Table = styled.table`
-${'' /* margin-bottom for paginator */}
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   margin-bottom: 3.75rem;
@@ -45,21 +44,15 @@ ${'' /* margin-bottom for paginator */}
 
   th{
     line-height: 1.42857;
-padding: 8px;
-vertical-align: middle;
-border-bottom: 1px solid #DDDDDD;
-color: #A4A3A3;
-font-weight: normal;
-  }
+    padding: 8px;
+    vertical-align: middle;
+    border-bottom: 1px solid #DDDDDD;
+    color: #A4A3A3;
+    font-weight: normal;
+   }
   .th-type{
     min-width:25px;
-  }
-
-  ${'' /* .th-address{
-    @media (max-width: 767px) {
-    display: none;
-  } */}
-  }
+   }
 `
 const TableFooterRight = styled.div`
 float: right !important;
@@ -72,35 +65,28 @@ const Td = styled.td`
 `
 const CardGrid = styled.div`
   width: 100%;
-  ${'' /* display: grid;
-  grid-template-columns: 15% 15% 15% 15% 15% 15%;
-  column-gap: 2%;
-  row-gap: 30px; */}
   padding: 25px;
 `
 const ListView = () => {
  
- 
-  // test
+  const [csvData, setCsvData] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [cardsPerPage, setCardsPerPage] = useState(24)
+  let indexOfLastCard = 0
+  let indexOfFirstCard = 0
+  let currentCards = []
+  let list = []
 
-const [csvData, setCsvData] = useState([])
-const [currentPage, setCurrentPage] = useState(1)
-const [cardsPerPage, setCardsPerPage] = useState(24)
-let indexOfLastCard = 0
-let indexOfFirstCard = 0
-let currentCards = []
-let list = []
-
-useEffect(() => {
-  csv('data.csv').then((data) => {
-    console.log('please work', data)
-    setCsvData(data)
-  })
-}, [])
-if (csvData) {
-  list = csvData.map((entry, index) => {
-    return <FreelancerRow key={index} data={entry} />
-  })
+  useEffect(() => {
+    csv('data.csv').then((data) => {
+      console.log('please work', data)
+      setCsvData(data)
+    })
+  }, [])
+  if (csvData) {
+    list = csvData.map((entry, index) => {
+      return <FreelancerRow key={index} data={entry} />
+    })
 
   indexOfLastCard = currentPage * cardsPerPage
   indexOfFirstCard = indexOfLastCard - cardsPerPage
@@ -109,14 +95,6 @@ if (csvData) {
 const paginate = (pageNumber) => {
   setCurrentPage(pageNumber)
 }
-//end
-
-// test
-
-// test
-
-
-
 
 
   return (
