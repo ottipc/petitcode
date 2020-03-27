@@ -149,7 +149,7 @@ const Type = styled.div`
    padding-right: 0;
   width: 20px;
   height:20px;
-  background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
+  background-image: linear-gradient(135deg,#000000 14px, #fff 14px);
 `
 const Availabilities = styled.div`
     color: #6a6c6e;

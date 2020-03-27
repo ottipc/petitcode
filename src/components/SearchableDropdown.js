@@ -32,7 +32,7 @@ const SearchAndToggle = styled.div`
     margin-bottom:10px;
     :focus {
       outline: none;
-      border: 1px solid #eb9330;
+      border: 1px solid #000000;
     }
   }
 `;

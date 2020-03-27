@@ -337,7 +337,7 @@ body {
 
 
 .react-switch-bg {
-    background-color: #eb9330 !important;
+    background-color: #000000 !important;
 }
 
 .rdt_Pagination button {
@@ -359,11 +359,11 @@ body {
 }
 
 .rdt_Pagination #pagination-previous-page {
-    background-color: #eb9330;
+    background-color: #000000;
 }
 
 .rdt_Pagination #pagination-next-page {
-    background-color: #eb9330;
+    background-color: #000000;
 }
 
 .rdt_Pagination #pagination-previous-page:disabled,
@@ -414,7 +414,7 @@ body {
 .dpYvgs:focus {
 
     outline: none;
-    border: 1px solid #eb9330;
+    border: 1px solid #000000;
 
 }
 

@@ -85,12 +85,12 @@ const Type = styled.div`
  padding-right: 0;
 width: 20px;
 height:20px;
-background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
+background-image: linear-gradient(135deg, #000000 14px, #fff 14px);
 position: absolute;
 top: 0;
 `
 const LinkBtn = styled.button`
-background-color:#eb9330;
+background-color:#000000;
 padding: 0px 1em;
 border-radius: 1em;
 background: rgb(135, 135, 135) none repeat scroll 0% 0%;

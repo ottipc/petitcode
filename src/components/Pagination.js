@@ -51,7 +51,7 @@ const SelectedPage = styled.li`
   ${'' /* font-family: 'Poppins', sans-serif; */}
   font-size: 13px;
   color: white;
-  background-color: #eb9330;
+  background-color: #000000;
   font-size: 1rem;
   line-height: 1.75rem;
   a{

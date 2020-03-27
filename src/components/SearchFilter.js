@@ -34,7 +34,7 @@ const Input = styled.input`
   width: 80%;
   height: 38px;
   &:focus{
-    border-color: #eb9330;
+    border-color: #000000;
   }
   display: flex;
   flex: 1;
