@@ -40,7 +40,7 @@ const SliderWrapper= styled.div`
   } 
 p{
   margin-right:15px !important;
-  @media (max-width: 457px) {
+  @media (max-width: 459px) {
     padding-bottom: 20px ;
   } 
   ${'' /* @media (max-width: 434px) {

@@ -32,18 +32,19 @@ const Input = styled.input`
   font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   float: left;
   width: 80%;
-  height: 38px;
+  color: rgba(0, 0, 0, 0.8);
   &:focus{
     border-color: #000000;
   }
   display: flex;
   flex: 1;
-  height: 32px;
+  height: 40px;
   position: relative;
   outline: 0;
   right: 0;
   @media (max-width: 420px) {
       width:73%;
+      font-size: 0.85rem;
     }
 
 `
@@ -60,7 +61,7 @@ const Button = styled.button`
   float: left;
   width: 20%;
   padding: 8px;
-  height: 32px;
+  ${'' /* height: 32px; */}
   width: 67px;
   text-transform: uppercase;
   cursor: pointer;
@@ -69,6 +70,7 @@ const Button = styled.button`
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
   color: hsla(0,0%,0%,0.8);
+  height:40px;
   &:hover{
     background: rgb(135,135,135) none repeat scroll 0% 0%;
     color:#fff;
@@ -76,6 +78,10 @@ const Button = styled.button`
 @media (max-width: 420px) {
     width:27%;
   }
+  @media (max-width: 336px) {
+    font-size: 0.75rem;
+  }
+  
 `
 
 const SearchFilter = (props) => {

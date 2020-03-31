@@ -34,7 +34,6 @@ const Input = styled(DateRangePicker)`
   padding: 6px 12px;
   font-size: 12px;
   line-height: 1.5;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
 `
 
 const Button = styled.button`
@@ -51,11 +50,13 @@ const Button = styled.button`
   line-height: 0.5;
   float: left;
   padding: 6px;
-  height: 30px;
   width: 50px;
   text-transform: uppercase;
   cursor: pointer;
   outline: 0;
+  height: 40px;
+  border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
   svg:not(:root).svg-inline--fa path{
     fill: hsla(0,0%,0%,0.8)
   }

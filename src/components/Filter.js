@@ -37,12 +37,19 @@ const Lower = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  @media (max-width: 459px) {
+    margin-bottom: 10px;
+  }
 `
 
 const ActiveFilters = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 `
 
 const Filter = (props) => {
@@ -224,15 +231,15 @@ const Filter = (props) => {
           <div
             style={{
               display: 'flex',
-              flexDirection: 'row',
+              flexDirection: 'column',
               alignItems: 'baseline',
-              marginTop: '20px'
+              marginTop: '2px',
+              marginRight:'5px'
             }}
           >
             <p
               style={{
                 color: 'hsla(0,0%,0%,0.8)',
-                // fontFamily: 'Poppins, sans-serif',
                 fontFamily: 'Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
                 fontSize: '1rem',
                 fontStyle: 'italic',
@@ -248,20 +255,22 @@ const Filter = (props) => {
                   style={{
                     backgroundColor: '#878787',
                     height: 14,
-                    paddingTop: 12,
-                    paddingBottom: 12,
+                    paddingTop: 15,
+                    paddingBottom: 15,
                     paddingLeft: 10,
                     borderRadius: '1em',
                     display: 'flex',
                     alignItems: 'center',
-                    marginRight: 10
+                    marginRight: 10,
+                    marginBottom: 4,
                   }}
                 >
                   <p
                     style={{
-                      fontSize: '0.95rem',
+                      fontSize: '0.85rem',
                       color: 'white',
-                      marginBottom: '0px'
+                      marginBottom: '0px',
+                      lineHeight:'1'
                     }}
                   >
                     {value}
@@ -270,9 +279,10 @@ const Filter = (props) => {
                     <button
                       style={{
                         border: 'none',
-                        fontSize: '0.95rem',
+                        fontSize: '0.85rem',
                         color: 'white',
-                        float: 'right'
+                        float: 'right',
+                        lineHeight:'1'
                       }}
                       onClick={() => removeFilter(props[0][0], value)}
                     >

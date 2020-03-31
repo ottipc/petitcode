@@ -66,7 +66,7 @@ body {
 
 .rs-picker-toggle-wrapper {
     flex: 1;
-    height: 30px;
+    height: 40px;
     position: relative;
     outline: 0;
     right: 0;
@@ -74,14 +74,15 @@ body {
 }
 
 .rs-picker-subtle .rs-picker-toggle {
-    height: 28px;
+    height: 38px;
     padding: 5px 12px;
 }
 
 .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
     font-size: 0.9rem;
     color: hsla(0, 0%, 0%, 0.8);
-
+    line-height: 1.75rem;
+   
 }
 
 .rs-picker-daterange-header {
@@ -133,6 +134,7 @@ body {
     top: 5px !important;
     right: 0px !important;
     color: hsla(0, 0%, 0%, 0.8);
+    line-height: 1.75rem;
 }
 
 /* for slider */
@@ -532,3 +534,26 @@ body {
 .rs-calendar-table-cell-in-range::before{
     background: transparent;
 }
+/* calendar */
+.rs-picker-daterange.rs-picker-cleanable .rs-picker-toggle{
+    padding-right: 23px;
+}
+@media(max-width:650px) {
+.rs-picker-daterange-calendar-group{
+    width: 100%;
+    min-width: unset;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.rs-picker-menu.fade.in{
+   width: 254px;
+}
+.rs-picker-daterange-menu .rs-calendar:first-child{
+    border-bottom: 1px solid hsla(0,0%,0%,0.12);
+}
+}
+@media (max-width: 336px) {
+    .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
+    font-size: 0.8rem;}
+  }
