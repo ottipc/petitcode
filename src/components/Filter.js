@@ -9,19 +9,19 @@ import SearchFilter from './SearchFilter'
 import DateFilter from './DateFilter'
 
 const Wrapper = styled.div`
-  padding: 25px;
+  padding: 0px;
+  padding-bottom:25px;
 `
 
 const ContainerUpper = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 75%;
+  width: 100%;
   padding-bottom: 20px;
   justify-content: space-between;
-  @media (max-width: 991px) {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
+ 
 `
 const Container = styled.div`
   display: flex;
@@ -30,6 +30,7 @@ const Container = styled.div`
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px 20px 20px 20px;
+  border: 1px solid hsla(0,0%,0%,0.12);
 `
 const Lower = styled.div`
   width: 100%;

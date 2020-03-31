@@ -13,14 +13,22 @@ import './Custom.css';
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 25px;
+  ${'' /* margin-left: 25px; */}
+  margin-right: 20px;
   display: block;
-  width: 20%;
+  ${'' /* width: 20%; */}
+  width: 380px;
   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
-  @media (max-width: 991px) {
+  ${'' /* @media (max-width: 991px) {
     width: 100%;
     margin-left: 0;
+  } */}
+  @media (max-width: 1377px) {
+   margin-bottom:15px;
+  }
+  @media (max-width: 480px) {
+   width:100%;
   }
   -webkit-box-align: center;
   display: flex;
@@ -57,7 +65,8 @@ const Button = styled.button`
   outline: 0;
   height: 40px;
   border-bottom-right-radius: 5px;
-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  width:50px;
   svg:not(:root).svg-inline--fa path{
     fill: hsla(0,0%,0%,0.8)
   }
@@ -109,9 +118,9 @@ const DateFilter = (props) => {
         value={inputValue}
         style={{
           backgroundColor: 'white',
-          width: '100%',
+          width: '350px',
           border: '1px solid #e5e6e7',
-          padding: '0px 12px',
+          // padding: '0px 12px',
           fontSize: '12px',
           lineHeight: '1.5'
           // fontFamily: 'Poppins, sans-serif'
