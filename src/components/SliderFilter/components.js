@@ -133,7 +133,7 @@ export const Track = ({ source, target, getTrackProps, disabled = false }) => {
         position: 'absolute',
         height: 6,
         zIndex: 1,
-        backgroundColor: disabled ? '#999' : '#eb9330',
+        backgroundColor: disabled ? '#999' : '#000000',
         borderRadius: 7,
         top: 0,
         cursor: 'pointer',

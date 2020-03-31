@@ -2,14 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
-
 import noImage from '../assets/noImage.png'
-// test
-import Tippy from '@tippyjs/react'
-import 'tippy.js/dist/tippy.css'
-import 'tippy.js/themes/translucent.css'
+import user from '../assets/user.png'
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/themes/translucent.css';
 import MD5 from 'crypto-js/md5'
-import './Tooltip.css'
+import './Tooltip.css';
+
+
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -133,6 +134,7 @@ const Group = styled.div`
   color: white;
   font-weight: bold;
   background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+  background:hsla(0,0%,0%,0.8);
 `
 
 const RatingWrapper = styled.div``
@@ -145,18 +147,17 @@ const Type = styled.div`
   position: absolute;
   padding-right: 0;
   width: 20px;
-  height: 20px;
-  background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
+  height:20px;
+  background-image: linear-gradient(135deg,#000000 14px, #fff 14px);
 `
 const Availabilities = styled.div`
     color: #6a6c6e;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.75rem;
     margin-top: 4px;
     color: hsla(0,0%,0%,0.8);
-    text-transform:uppercase;
+    text-transform:capitalize;
     &:hover{
-      color:#eb9330;
       cursor:pointer;
     }
 }
@@ -186,6 +187,22 @@ const LinkBtn = styled.button`
 
 const FreelancerCard = (props) => {
   const { data, filters } = props
+
+  const dates = data.unavailabilities.split(', ');
+  let until = dates[0];
+  let from = '';
+  if(dates[1]){
+  
+   from = dates[1];
+
+   const du = until.split('-');
+   const df= from.split('-');
+    until= du[2] + "/" + du[1] + "/" + du[0];
+    from =df[2] + "/" + df[1] + "/" + df[0];
+
+}
+
+
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')
@@ -236,29 +253,6 @@ const FreelancerCard = (props) => {
     return array
   }
 
-  const formatAv = (dates) => {
-    let array = ''
-    if (dates.unavailabilities.length > 0) {
-      array = dates
-        .split(', ')
-        .slice(0, 2)
-        .map((cat, index) => {
-          return <div key={index}>{cat}</div>
-        })
-      return array
-    } else {
-      return <div>test</div>
-    }
-  }
-
-  const TypeToolip = () => {
-    return (
-      <div style={{ fontSize: '12px' }}>
-        {/* Self-managed partner */}
-        {data.type}
-      </div>
-    )
-  }
   const StarsToolip = () => {
     return (
       <span className="raiting-tooltip" style={{ fontSize: '12px' }}>
@@ -284,70 +278,38 @@ const FreelancerCard = (props) => {
 
   return (
     <Wrapper>
-      <Tippy theme="translucent" content={data.type}>
-        {data.type === 'self managed' ? <Type /> : ''}
+    
+    <ContentWrapper>
+      <Image src={user} />
+      <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
+      <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
+      {/* <Address>{formatAddress(data.address)}</Address> */}
+      <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
+        <Tags>{data.tags}</Tags>
       </Tippy>
-      <ContentWrapper>
-        <Image src={noImage} />
-        <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
-        <Tippy theme="translucent" content={<NameToolip />}>
-          <Name>
-            {data.name.split(' ')[0] + ' ' + data.surname.charAt(0) + '.'}
-          </Name>
-        </Tippy>
-        {/* <Address>{formatAddress(data.address)}</Address> */}
-        <Tippy theme="translucent" content={<TagsToolip />}>
-          <Tags>{data.tags}</Tags>
-        </Tippy>
-        <Tippy theme="translucent" content={<StarsToolip />}>
-          <RatingWrapper>
-            <Ratings
-              rating={parseFloat(data.rating)}
-              widgetDimensions="13px"
-              widgetSpacings="0px"
-            >
-              <Ratings.Widget />
-              <Ratings.Widget />
-              <Ratings.Widget />
-              <Ratings.Widget />
-              <Ratings.Widget />
-            </Ratings>
-          </RatingWrapper>
-        </Tippy>
-        <RatesSection>
-          {/* <Rate>
-          <RateValue>{data.hourly_rate}</RateValue>
-          <RateLabel>Hourly rate</RateLabel>
-        </Rate> */}
-          <Rate>
-            <RateValue>{data.hourly_rate}</RateValue>
-            <RateLabel>Hourly rate</RateLabel>
-          </Rate>
-        </RatesSection>
-        <Availabilities>
-          {data.unavailabilities
-            ? data.unavailabilities
-                .split(', ')
-                .slice(0, 2)
-                .toString()
-                .replace(',', ' ')
-            : 'Available'}
-        </Availabilities>
-        <LinkBtn>
-          <a
-            href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' +
-              data.name.split(' ')[0] +
-              ' ' +
-              data.surname.charAt(0) +
-              '.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' +
-              MD5(
-                data.email
-              ).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}
-          >
-            CTA
-          </a>
-        </LinkBtn>
-      </ContentWrapper>
+     
+        <RatingWrapper>
+        <Ratings
+          rating={parseFloat(data.rating)}
+          widgetDimensions="13px"
+          widgetSpacings="0px"
+        >
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+          <Ratings.Widget />
+        </Ratings></RatingWrapper>
+      
+      <RatesSection>
+        <Rate>
+          <RateValue>{data.daily_rate}</RateValue>
+          <RateLabel>Daily rate</RateLabel>
+        </Rate>
+      </RatesSection>
+     <Availabilities>{data.unavailabilities ?'Until '+ until+ ' From '+ from :'Available'}</Availabilities>
+     <LinkBtn><a href="mailto:info@petitcode.com">Contact</a></LinkBtn>
+    </ContentWrapper>
     </Wrapper>
   )
 }

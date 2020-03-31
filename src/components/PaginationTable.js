@@ -10,7 +10,6 @@ const Container = styled.nav`
 
 const Paginator = styled.ul`
   display: flex;
-  ${'' /* display: block; */}
   height: 30px;
   list-style-type: none;
   margin: 10px 0 0 0;
@@ -58,12 +57,12 @@ const SelectedPage = styled.li`
   a{
     color:#fff;
     width: 100%;
-text-align: center;
-background: none !important;
-&:hover{
-  color:#fff;
-  background: none !important;
-}
+    text-align: center;
+    background: none !important;
+    &:hover{
+      color:#fff;
+      background: none !important;
+    }
   }
 `
 

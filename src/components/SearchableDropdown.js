@@ -18,8 +18,7 @@ const Container = styled.div`
 const SearchAndToggle = styled.div`
   display: flex;
   flex-direction: column;
-  color: #656a6c;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
+  color: #656A6C;
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
   background: #f7f7f7;
@@ -32,7 +31,7 @@ const SearchAndToggle = styled.div`
     margin-bottom: 10px;
     :focus {
       outline: none;
-      border: 1px solid #eb9330;
+      border: 1px solid #000000;
     }
   }
 `
@@ -47,7 +46,6 @@ const Item = styled.div`
   display: flex;
   margin: 10px;
   align-items: baseline;
-  ${'' /* test */}
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,13 +62,16 @@ const Item = styled.div`
 `
 
 const ItemLabel = styled.div`
-  color: #656a6c;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
+  color: #656A6C;
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 0.95rem;
   line-height: 1.75rem;
-  color: hsla(0, 0%, 0%, 0.8);
-`
+  color: hsla(0,0%,0%,0.8);
+  @media(max-width:676px){
+    font-size:13px;
+    line-height:1;
+  }
+`;
 
 const DropdownContainer = styled.div`
   cursor: pointer;
@@ -79,8 +80,8 @@ const Placeholder = styled.p`
   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
   font-size: 1rem;
-  font-style: italic;
-  color: hsla(0, 0%, 0%, 0.8);
+  ${'' /* font-style:italic; */}
+  color: hsla(0,0%,0%,0.8);
   font-weight: bold;
   line-height: 1.75rem;
 `

@@ -36,12 +36,19 @@ const Lower = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  @media (max-width: 459px) {
+    margin-bottom: 10px;
+  }
 `
 
 const ActiveFilters = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 `
 
 const Filter = (props) => {
@@ -282,51 +289,55 @@ const Filter = (props) => {
   const activeFiltersHandler = () => {
     let renderFilters = []
     const validFilters = ['Group', 'Skills', 'Tags', 'Type']
-    if (activeFilters) {
-      renderFilters = activeFilters.map((type) => {
-        const props = Object.entries(type)
-        if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
-          return (
-            <div
+    renderFilters = activeFilters.map((type) => {
+      const props = Object.entries(type)
+      if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'baseline',
+              marginTop: '2px',
+              marginRight:'5px'
+            }}
+          >
+            <p
               style={{
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'baseline'
+                color: 'hsla(0,0%,0%,0.8)',
+                fontFamily: 'Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
+                fontSize: '1rem',
+                fontStyle: 'italic',
+                marginRight: 10,
+                lineHeight: '1.75rem'
               }}
             >
-              <p
-                style={{
-                  color: '#656A6C',
-                  fontFamily: 'Poppins, sans-serif',
-                  fontSize: '13px',
-                  fontStyle: 'italic',
-                  marginRight: 10
-                }}
-              >
-                {props[0][0]}
-              </p>
-              {props[0][1].map((value) => {
-                return (
-                  <div
+              {props[0][0]}
+            </p>
+            {props[0][1].map((value) => {
+              return (
+                <div
+                  style={{
+                    backgroundColor: '#878787',
+                    height: 14,
+                    paddingTop: 15,
+                    paddingBottom: 15,
+                    paddingLeft: 10,
+                    borderRadius: '1em',
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginRight: 10,
+                    marginBottom: 4,
+                  }}
+                >
+                  <p
                     style={{
-                      backgroundColor: '#A4A3A3',
-                      height: 14,
-                      paddingTop: 10,
-                      paddingBottom: 10,
-                      paddingLeft: 10,
-                      borderRadius: 10,
-                      display: 'flex',
-                      alignItems: 'center',
-                      marginRight: 10
+                      fontSize: '0.85rem',
+                      color: 'white',
+                      marginBottom: '0px',
+                      lineHeight:'1'
                     }}
                   >
-                    <p
-                      style={{
-                        fontSize: '10px',
-                        color: 'white',
-                        marginBottom: '0px'
-                      }}
-                    >
                       {value}
                     </p>
                     <div>
@@ -411,7 +422,6 @@ const Filter = (props) => {
           )
         }
       })
-    }
     return renderFilters
   }
 

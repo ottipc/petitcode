@@ -37,13 +37,13 @@ const SliderWrapper = styled.div`
   }
   @media (max-width: 902px) {
     ${'' /* margin-top: 10px; */}
-  }
-  p {
-    margin-right: 15px !important;
-    @media (max-width: 457px) {
-      padding-bottom: 20px;
-    }
-    ${'' /* @media (max-width: 434px) {
+  } 
+p{
+  margin-right:15px !important;
+  @media (max-width: 459px) {
+    padding-bottom: 20px ;
+  } 
+  ${'' /* @media (max-width: 434px) {
     margin-bottom: 15px !important;
   }  */}
   }
@@ -73,7 +73,7 @@ const SliderFilter = (props) => {
             marginBottom: 0,
             color: 'hsla(0,0%,0%,0.8)',
             marginRight: '0',
-            fontStyle: 'italic',
+            //fontStyle: 'italic',
             // fontFamily: 'Poppins, sans-serif',
             fontFamily:
               'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',

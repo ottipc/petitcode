@@ -2,15 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  ${'' /* display: flex;
-  flex-direction: row; */}
   flex: 1;
   margin-right: 25px;
-  ${'' /* test */}
   display: block;
   width: 50%;
-
-  ${'' /* test */}
   display: flex;
   -webkit-box-align: center;
   align-items: center;
@@ -37,21 +32,21 @@ const Input = styled.input`
   font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   float: left;
   width: 80%;
-  ${'' /* test */}
-  height: 38px;
-  &:focus {
-    border-color: #eb9330;
+  color: rgba(0, 0, 0, 0.8);
+  &:focus{
+    border-color: #000000;
   }
-  ${'' /* test */}
   display: flex;
   flex: 1;
-  height: 32px;
+  height: 40px;
   position: relative;
   outline: 0;
   right: 0;
   @media (max-width: 420px) {
-    width: 73%;
-  }
+      width:73%;
+      font-size: 0.85rem;
+    }
+
 `
 
 const Button = styled.button`
@@ -66,7 +61,7 @@ const Button = styled.button`
   float: left;
   width: 20%;
   padding: 8px;
-  height: 32px;
+  ${'' /* height: 32px; */}
   width: 67px;
   text-transform: uppercase;
   cursor: pointer;
@@ -74,14 +69,19 @@ const Button = styled.button`
   transition: all 0.4s ease-out;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
-  color: hsla(0, 0%, 0%, 0.8);
-  &:hover {
-    background: rgb(135, 135, 135) none repeat scroll 0% 0%;
-    color: #fff;
+  color: hsla(0,0%,0%,0.8);
+  height:40px;
+  &:hover{
+    background: rgb(135,135,135) none repeat scroll 0% 0%;
+    color:#fff;
   }
   @media (max-width: 420px) {
     width: 27%;
   }
+  @media (max-width: 336px) {
+    font-size: 0.75rem;
+  }
+  
 `
 
 const SearchFilter = (props) => {

@@ -7,9 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { DateRangePicker } from 'rsuite'
 import 'rsuite/dist/styles/rsuite-default.css'
+import './Custom.css';
 
-// test
-import './Custom.css'
 
 const Container = styled.div`
   display: flex;
@@ -23,11 +22,6 @@ const Container = styled.div`
     width: 100%;
     margin-left: 0;
   }
-  ${'' /* &:focus{
-    border-color: #02BD94;
-  } */}
-
-  ${'' /* test */}
   -webkit-box-align: center;
   display: flex;
   align-items: center;
@@ -41,7 +35,6 @@ const Input = styled(DateRangePicker)`
   padding: 6px 12px;
   font-size: 12px;
   line-height: 1.5;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
 `
 
 const Button = styled.button`
@@ -55,19 +48,16 @@ const Button = styled.button`
   font-size: 16px;
   padding: 6px 12px;
   padding: 6px 11px;
-  ${'' /* test */}
-  ${'' /* position: absolute; */}
-  ${'' /* width: 40px; */}
-  ${'' /* width: 3.7%; */}
- 
   line-height: 0.5;
   float: left;
   padding: 6px;
-  height: 30px;
   width: 50px;
   text-transform: uppercase;
   cursor: pointer;
   outline: 0;
+  height: 40px;
+  border-bottom-right-radius: 5px;
+border-top-right-radius: 5px;
   svg:not(:root).svg-inline--fa path{
     fill: hsla(0,0%,0%,0.8)
   }
