@@ -97,6 +97,9 @@ background: rgb(135, 135, 135) none repeat scroll 0% 0%;
 color: rgb(255, 255, 255);
 font-size: 1rem;
 line-height: 2em;
+@media (max-width: 650px) {
+  padding: 0px 11px;
+  }
 a{
   color: #fff;
   text-decoration:none;

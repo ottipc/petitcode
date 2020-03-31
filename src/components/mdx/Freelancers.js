@@ -14,7 +14,7 @@ import Drop from '../../components/Drop'
 import ListView from '../../components/ListView'
 import Tooltip from '../../components/Tooltip'
 import TableComponent from '../../components/TableComponent'
-import './Custom.css'
+import './Freelancers.css'
 
 const CardGrid = styled.div`
   width: 100%;
@@ -22,22 +22,38 @@ const CardGrid = styled.div`
   ${'' /* grid-template-columns: 15% 15% 15% 15% 15% 15%; */}
   column-gap: 2%;
   row-gap: 30px;
-  padding: 25px;
+  padding: 25px 0;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   @media (max-width: 300px) {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
 `
-
+const Title = styled.h1`
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.75rem;
+  color: hsla(0, 0%, 0%, 0.8);
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  margin-bottom: 42px;
+      `
 const Container = styled.div`
   width: 100%;
-  background-color: rgba(221, 221, 221, 0.3);
+  ${'' /* background-color: rgba(221, 221, 221, 0.3); */}
 `
 const ViewLinkWrapper = styled.div`
   text-align: end;
   display: inline-block;
   float: right;
-  @media (max-width: 501px) {
+  @media (max-width: 506px) {
     float: none;
     padding-top: 10px;
   }
@@ -56,12 +72,16 @@ const ViewLink = styled.a`
   text-decoration: none;
   cursor: pointer;
   padding: 0 26px;
+  padding-right: 0;
   color: hsla(0, 0%, 0%, 0.8);
   font-weight: bold;
   &:hover {
     text-decoration: none;
 
     color: #020206;
+  }
+  @media (max-width: 506px) {
+    padding-left:0;
   }
   .las {
     font-family: 'Line Awesome Free';
@@ -89,7 +109,6 @@ const WrapperDropown = styled.div`
   font-size: 0.95rem;
   color: hsla(0, 0%, 0%, 0.8);
   padding: 0;
-  padding-left: 25px;
   display: inline-block;
 `
 
@@ -416,6 +435,7 @@ export default function Freelancers({ location, ...props }) {
   return (
     <>
       <Metatags />
+      <Title>Talent</Title>
       <Container>
         <h1>Talents</h1>
         <Filter

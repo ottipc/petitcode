@@ -24,6 +24,9 @@ const ContentWrapper = styled.div`
   height: 100%;
   font-family: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
+  border: 1px solid hsla(0,0%,0%,0.12);
+  ${'' /* box-shadow: none; */}
+}
 `
 const Image = styled.img`
   width: 70px;
