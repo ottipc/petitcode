@@ -10,7 +10,7 @@ const styles = {
     textAlign: 'center'
   },
   btn: {
-    //width: '30px',
+    // width: '30px',
     height: '30px',
     cursor: 'pointer',
     userSelect: 'none',
@@ -30,14 +30,20 @@ const styles = {
 export default function Buttons(props) {
   const prevBtnStyle = Object.assign({}, styles.btn, styles.left)
   const nextBtnStyle = Object.assign({}, styles.btn, styles.right)
-  const { index, total, loop, csvData, prevHandler, nextHandler, activeFilters } = props
+  const {
+    index,
+    total,
+    loop,
+    csvData,
+    prevHandler,
+    nextHandler,
+    activeFilters
+  } = props
 
   const filterFinish = () => {
-    navigate('/en/freelancers',
-      {
-        state: { activeFilters, csvData },
-      }
-    );
+    navigate('/en/freelancers', {
+      state: { activeFilters, csvData }
+    })
   }
 
   return (

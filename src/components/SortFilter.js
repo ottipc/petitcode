@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import DropdownSelect from './DropdownSelect';
-import Drop from './Drop';
-
-
+import DropdownSelect from './DropdownSelect'
+import Drop from './Drop'
 
 const Wrapper = styled.div`
   padding: 0 25px;
@@ -18,31 +16,32 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   display: flex;
-  .sorting-label{
-   font-size: 11px;
-   color: #6A6C6E;
+  .sorting-label {
+    font-size: 11px;
+    color: #6a6c6e;
   }
-  .m-r-xs{
-   margin-right: 5px;
+  .m-r-xs {
+    margin-right: 5px;
   }
-  .d-flex{
-   display: flex;
+  .d-flex {
+    display: flex;
   }
-  .d-flex.v-align{
-   align-items: center;
+  .d-flex.v-align {
+    align-items: center;
   }
 `
 
 const DropdownFilterWrapper = styled.div`
   display: flex;
   position: relative;
- .dropdown-filter__title{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 11px;
-  color: #6A6C6E;
-  padding-right: 2px;
-}`
+  .dropdown-filter__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 11px;
+    color: #6a6c6e;
+    padding-right: 2px;
+  }
+`
 
 const DropdownFilter = styled.div`
   position: relative;
@@ -73,26 +72,25 @@ span.dropdown-filter__title{
 }
 }`
 
-
 const ViewLink = styled.a`
-color: #221757;
-text-decoration: none;
-cursor: pointer;
-.las{
-  font-family: 'Line Awesome Free';
-  font-weight: 900;
-}
-.la-lg{
-  font-size: 1.33333em;
-  line-height: 0.75em;
-  vertical-align: -.0667em;
-}
-.la-bars::before{
-  content: "\f0c9";
-}
+  color: #221757;
+  text-decoration: none;
+  cursor: pointer;
+  .las {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+  }
+  .la-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -0.0667em;
+  }
+  .la-bars::before {
+    content: '\f0c9';
+  }
 `
 
-const SortFilter = ({filter, currentCards}) => {
+const SortFilter = ({ filter, currentCards }) => {
   // const [shown, setShown] = useState(true)
   // console.log("shown=",shown)
   return (
@@ -109,22 +107,17 @@ const SortFilter = ({filter, currentCards}) => {
 
       </Container> */}
 
-
-      <Drop filter={filter} currentCards={currentCards}></Drop>
+      <Drop filter={filter} currentCards={currentCards} />
       {/* test */}
       {/* <h2>this.state.shown = {shown ? "true" : "false"}</h2>
 				<button onClick={() => setShown(!shown)}>Toggle</button> */}
       {/* test */}
 
-
       {/* <ViewLink>
       <span>Switch to table view</span>
       <i className="las la-lg la-bars"></i>
       </ViewLink> */}
-     
     </Wrapper>
-    
-    
   )
 }
 

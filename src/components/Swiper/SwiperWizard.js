@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Carousel from '../../../re-carousel/src/carousel'
 import SlideItem from './SlideItem'
@@ -27,55 +27,65 @@ const ActiveFilters = styled.div`
 `
 
 const SwiperWizard = () => {
-
-  const [searchFilterValue, setSearchFilterValue] = useState('');
-  const [dateFilterValue, setDateFilterValue] = useState([]);
-  const [groupFilter, setGroupFilter] = useState([]);
-  const [skillsFilter, setSkillsFilter] = useState([]);
-  const [tagsFilter, setTagsFilter] = useState([]);
-  const [ratingFilter, setRatingFilter] = useState([]);
-  const [typeFilter, setTypeFilter] = useState([]);
-  const [hRateFilter, setHRateFilter] = useState([0, 150]);
-  const [dRateFilter, setDRateFilter] = useState([]);
+  const [searchFilterValue, setSearchFilterValue] = useState('')
+  const [dateFilterValue, setDateFilterValue] = useState([])
+  const [groupFilter, setGroupFilter] = useState([])
+  const [skillsFilter, setSkillsFilter] = useState([])
+  const [tagsFilter, setTagsFilter] = useState([])
+  const [ratingFilter, setRatingFilter] = useState([])
+  const [typeFilter, setTypeFilter] = useState([])
+  const [hRateFilter, setHRateFilter] = useState([0, 150])
+  const [dRateFilter, setDRateFilter] = useState([])
   const [activeFilters, setActiveFilters] = useState([])
   const [csvData, setCsvData] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
 
-
-const data = useStaticQuery(graphql`
-query MyQuery {
-  allDataCsv {
-    nodes {
-      address
-      birth_date
-      company_name
-      daily_rate
-      email
-      hourly_rate
-      id
-      name
-      partner_since
-      partner_type
-      phone_nr
-      rating
-      social_media
-      surname
-      tags
-      type
-      skills
-      unavailabilities
-      groups
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allDataCsv {
+        nodes {
+          address
+          birth_date
+          company_name
+          daily_rate
+          email
+          hourly_rate
+          id
+          name
+          partner_since
+          partner_type
+          phone_nr
+          rating
+          social_media
+          surname
+          tags
+          type
+          skills
+          unavailabilities
+          groups
+        }
+      }
     }
-  }
-}
-`)
+  `)
 
-  if (typeof data !== 'undefined' && JSON.stringify(csvData) !== JSON.stringify(data.allDataCsv.nodes.filter(entity => entity.name !== '' && entity.surname !== ''))) {
-    setCsvData(data.allDataCsv.nodes.filter(entity => entity.name !== '' && entity.surname !== ''));
-    setRerenderKey(Math.random());
-    let list = [];
+  if (
+    typeof data !== 'undefined' &&
+    JSON.stringify(csvData) !==
+      JSON.stringify(
+        data.allDataCsv.nodes.filter(
+          (entity) => entity.name !== '' && entity.surname !== ''
+        )
+      )
+  ) {
+    setCsvData(
+      data.allDataCsv.nodes.filter(
+        (entity) => entity.name !== '' && entity.surname !== ''
+      )
+    )
+    setRerenderKey(Math.random())
+    let list = []
     const tagsArr = []
     const tagsCheck = []
     const skillsArr = []
@@ -301,37 +311,103 @@ query MyQuery {
         break
     }
     setActiveFilters(af)
-    //setRerenderKey(Math.random())
+    // setRerenderKey(Math.random())
   }
 
-  const activeFiltersHandler = type => {
+  const activeFiltersHandler = (type) => {
     let renderFilters = []
     const validFilters = ['Group', 'Skills', 'Tags', 'Type']
     if (activeFilters) {
-    renderFilters = activeFilters.filter(filter => filter.hasOwnProperty(type)).map(type => {
-      const props = Object.entries(type)
-      if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
-        return (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'baseline'
-            }}
-          >
-            <p
-              style={{
-                color: '#656A6C',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '13px',
-                fontStyle: 'italic',
-                marginRight: 10
-              }}
-            >
-              {props[0][0]}
-            </p>
-            {props[0][1].map((value) => {
-              return (
+      renderFilters = activeFilters
+        .filter((filter) => filter.hasOwnProperty(type))
+        .map((type) => {
+          const props = Object.entries(type)
+          if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
+            return (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'baseline'
+                }}
+              >
+                <p
+                  style={{
+                    color: '#656A6C',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '13px',
+                    fontStyle: 'italic',
+                    marginRight: 10
+                  }}
+                >
+                  {props[0][0]}
+                </p>
+                {props[0][1].map((value) => {
+                  return (
+                    <div
+                      style={{
+                        backgroundColor: '#A4A3A3',
+                        height: 14,
+                        paddingTop: 10,
+                        paddingBottom: 10,
+                        paddingLeft: 10,
+                        borderRadius: 10,
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginRight: 10
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontSize: '10px',
+                          color: 'white',
+                          marginBottom: '0px'
+                        }}
+                      >
+                        {value}
+                      </p>
+                      <div>
+                        <button
+                          style={{
+                            border: 'none',
+                            fontSize: 10,
+                            color: 'white',
+                            float: 'right'
+                          }}
+                          onClick={() => removeFilter(props[0][0], value)}
+                        >
+                          X
+                        </button>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          } else if (
+            props[0][0] === 'Rating' &&
+            typeof props[0][1] !== 'undefined' &&
+            props[0][1] > 0
+          ) {
+            return (
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'baseline'
+                }}
+              >
+                <p
+                  style={{
+                    color: '#656A6C',
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '13px',
+                    fontStyle: 'italic',
+                    marginRight: 10
+                  }}
+                >
+                  {props[0][0]}
+                </p>
                 <div
                   style={{
                     backgroundColor: '#A4A3A3',
@@ -352,7 +428,7 @@ query MyQuery {
                       marginBottom: '0px'
                     }}
                   >
-                    {value}
+                    More than {props[0][1]}
                   </p>
                   <div>
                     <button
@@ -368,80 +444,21 @@ query MyQuery {
                     </button>
                   </div>
                 </div>
-              )
-            })}
-          </div>
-        )
-      } else if (
-        props[0][0] === 'Rating' &&
-        typeof props[0][1] !== 'undefined' &&
-        props[0][1] > 0
-      ) {
-        return (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'baseline'
-            }}
-          >
-            <p
-              style={{
-                color: '#656A6C',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '13px',
-                fontStyle: 'italic',
-                marginRight: 10
-              }}
-            >
-              {props[0][0]}
-            </p>
-            <div
-              style={{
-                backgroundColor: '#A4A3A3',
-                height: 14,
-                paddingTop: 10,
-                paddingBottom: 10,
-                paddingLeft: 10,
-                borderRadius: 10,
-                display: 'flex',
-                alignItems: 'center',
-                marginRight: 10
-              }}
-            >
-              <p
-                style={{
-                  fontSize: '10px',
-                  color: 'white',
-                  marginBottom: '0px'
-                }}
-              >
-                More than {props[0][1]}
-              </p>
-              <div>
-                <button
-                  style={{
-                    border: 'none',
-                    fontSize: 10,
-                    color: 'white',
-                    float: 'right'
-                  }}
-                  onClick={() => removeFilter(props[0][0], value)}
-                >
-                  X
-                </button>
               </div>
-            </div>
-          </div>
-        )
-      }
-    })
-  }
+            )
+          }
+        })
+    }
     return renderFilters
   }
 
   return (
-    <Carousel key={rerenderKey} activeFilters={activeFilters} csvData={csvData} widgets={[Buttons]}>
+    <Carousel
+      key={rerenderKey}
+      activeFilters={activeFilters}
+      csvData={csvData}
+      widgets={[Buttons]}
+    >
       {/* <SlideItem>
         <div
           style={{
@@ -460,44 +477,46 @@ query MyQuery {
       <SlideItem>
         <div
           style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 100,
-              width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
           }}
         >
           <p>Select the date of availability of a freelancer: </p>
-          <div style={{
+          <div
+            style={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              width: '100%',
-          }}>
-            <DateFilter dateFilter={value => dateFilter(value)}/>
+              width: '100%'
+            }}
+          >
+            <DateFilter dateFilter={(value) => dateFilter(value)} />
           </div>
         </div>
       </SlideItem>
       <SlideItem>
         <div
           style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 100,
-              width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
           }}
         >
           <p>Select the group of the freelancer: </p>
           <div>
             <SearchableDropdown
-                placeholder="Group"
-                options={groupOptions}
-                onFilterSet={(value) => activateFilter('Group', value)}
-              />
+              placeholder="Group"
+              options={groupOptions}
+              onFilterSet={(value) => activateFilter('Group', value)}
+            />
           </div>
           <ActiveFilters key={rerenderKey}>
             {activeFiltersHandler('Group')}
@@ -507,21 +526,21 @@ query MyQuery {
       <SlideItem>
         <div
           style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 100,
-              width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
           }}
         >
           <p>Select the skills of the freelancer: </p>
           <div>
             <SearchableDropdown
-                placeholder="Skills"
-                options={skills}
-                onFilterSet={(value) => activateFilter('Skills', value)}
-              />
+              placeholder="Skills"
+              options={skills}
+              onFilterSet={(value) => activateFilter('Skills', value)}
+            />
           </div>
           <ActiveFilters key={rerenderKey}>
             {activeFiltersHandler('Skills')}
@@ -531,21 +550,21 @@ query MyQuery {
       <SlideItem>
         <div
           style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 100,
-              width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
           }}
         >
           <p>Select the hard skills of the freelancer: </p>
           <div>
-          <SearchableDropdown
-                placeholder="Hard skills"
-                options={tags}
-                onFilterSet={(value) => activateFilter('Tags', value)}
-              />
+            <SearchableDropdown
+              placeholder="Hard skills"
+              options={tags}
+              onFilterSet={(value) => activateFilter('Tags', value)}
+            />
           </div>
           <ActiveFilters key={rerenderKey}>
             {activeFiltersHandler('Tags')}
@@ -555,22 +574,22 @@ query MyQuery {
       <SlideItem>
         <div
           style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 100,
-              width: '80%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
           }}
         >
           <p>Select the hard skills of the freelancer: </p>
           <div>
             <SliderFilter
-                label="Hourly Rate: "
-                value={hRateFilter}
-                domain={[0, 150]}
-                onValueChange={(value) => activateFilter('hRate', value)}
-              />
+              label="Hourly Rate: "
+              value={hRateFilter}
+              domain={[0, 150]}
+              onValueChange={(value) => activateFilter('hRate', value)}
+            />
           </div>
         </div>
       </SlideItem>
@@ -578,4 +597,3 @@ query MyQuery {
   )
 }
 export default SwiperWizard
-

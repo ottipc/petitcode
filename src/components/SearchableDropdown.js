@@ -1,15 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
-import './Custom.css';
-
+import './Custom.css'
 
 const Wrapper = styled.div`
   margin-right: 20px;
   :focus {
-      outline: none;
-      border: 1px solid #02BD94;
-    }
+    outline: none;
+    border: 1px solid #02bd94;
+  }
 `
 
 const Container = styled.div`
@@ -19,7 +18,7 @@ const Container = styled.div`
 const SearchAndToggle = styled.div`
   display: flex;
   flex-direction: column;
-  color: #656A6C;
+  color: #656a6c;
   ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
@@ -30,19 +29,19 @@ const SearchAndToggle = styled.div`
     padding: 0px 20px;
     border: 1px solid #e5e6e7;
     border-radius: 3px;
-    margin-bottom:10px;
+    margin-bottom: 10px;
     :focus {
       outline: none;
       border: 1px solid #eb9330;
     }
   }
-`;
+`
 
 const Items = styled.div`
   overflow: auto;
   min-height: 10px;
   max-height: 200px;
-`;
+`
 
 const Item = styled.div`
   display: flex;
@@ -52,56 +51,60 @@ const Item = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FFFFFF;
-  padding:10px;
-  border-bottom: 1px solid #E7EAEC;
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #e7eaec;
   position: relative;
   margin: 0;
-  height:40px;
+  height: 40px;
   color: #6a6c6e;
-  &:hover{
-    background-color: #F2F1F1;
+  &:hover {
+    background-color: #f2f1f1;
   }
-`;
+`
 
 const ItemLabel = styled.div`
-  color: #656A6C;
+  color: #656a6c;
   ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 0.95rem;
   line-height: 1.75rem;
-  color: hsla(0,0%,0%,0.8);
-`;
+  color: hsla(0, 0%, 0%, 0.8);
+`
 
 const DropdownContainer = styled.div`
   cursor: pointer;
 `
 const Placeholder = styled.p`
-  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
   font-size: 1rem;
-  font-style:italic;
-  color: hsla(0,0%,0%,0.8);
+  font-style: italic;
+  color: hsla(0, 0%, 0%, 0.8);
   font-weight: bold;
   line-height: 1.75rem;
 `
 
-
 const SearchableDropdown = (props) => {
+  const [value, setValue] = useState([])
 
-  const [value, setValue] = useState([]);
+  const { onFilterSet, selectedItems } = props
 
-  const {onFilterSet, selectedItems} = props; 
-
-  if (typeof selectedItems !== 'undefined' && JSON.stringify(value) !== JSON.stringify(selectedItems)) {
-    setValue(selectedItems);
+  if (
+    typeof selectedItems !== 'undefined' &&
+    JSON.stringify(value) !== JSON.stringify(selectedItems)
+  ) {
+    setValue(selectedItems)
   }
 
   const customContentRenderer = ({ props, state, methods }) => (
-  <DropdownContainer><Placeholder>{props.placeholder}</Placeholder></DropdownContainer>
-  );
+    <DropdownContainer>
+      <Placeholder>{props.placeholder}</Placeholder>
+    </DropdownContainer>
+  )
 
   const customDropdownRenderer = ({ props, state, methods }) => {
-    const regexp = new RegExp(state.search, "i");
+    const regexp = new RegExp(state.search, 'i')
 
     return (
       <div>
@@ -114,20 +117,20 @@ const SearchableDropdown = (props) => {
         </SearchAndToggle>
         <Items>
           {props.options
-            .filter(item => regexp.test(item[props.searchBy] || item.label))
-            .map(option => (
+            .filter((item) => regexp.test(item[props.searchBy] || item.label))
+            .map((option) => (
               <Item key={option.value} onClick={() => methods.addItem(option)}>
                 <ItemLabel>{option.label}</ItemLabel>
               </Item>
             ))}
         </Items>
       </div>
-    );
-  };
+    )
+  }
 
-  const onFilterChangeHandler = value => {
-    onFilterSet(value);
-  };
+  const onFilterChangeHandler = (value) => {
+    onFilterSet(value)
+  }
 
   return (
     <Wrapper>
@@ -135,12 +138,12 @@ const SearchableDropdown = (props) => {
         <Select
           values={value}
           options={props.options}
-          style={{border: 'none'}}
+          style={{ border: 'none' }}
           placeholder={props.placeholder}
           onChange={(values) => onFilterChangeHandler(values)}
           dropdownRenderer={customDropdownRenderer}
           contentRenderer={customContentRenderer}
-          multi={true}
+          multi
         />
       </Container>
     </Wrapper>

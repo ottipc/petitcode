@@ -61,18 +61,26 @@ const Filter = (props) => {
   const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
 
-
-  if (typeof props.activeFilters !== 'undefined' && props.activeFilters != null && JSON.stringify(activeFilters) !== JSON.stringify(props.activeFilters) && initialRender) {
-    setActiveFilters(props.activeFilters);
-    setInitialRender(false);
+  if (
+    typeof props.activeFilters !== 'undefined' &&
+    props.activeFilters != null &&
+    JSON.stringify(activeFilters) !== JSON.stringify(props.activeFilters) &&
+    initialRender
+  ) {
+    setActiveFilters(props.activeFilters)
+    setInitialRender(false)
   }
 
   if (activeFilters.length > 0) {
     const searchFilter = activeFilters.filter(
       (filter) => typeof filter.Search !== 'undefined'
     )
-    if (typeof searchFilter[0] !== 'undefined' && searchFilter[0].Search !== '' && searchFilterValue !== searchFilter[0].Search) {
-      setSearchFilterValue(searchFilter[0].Search);
+    if (
+      typeof searchFilter[0] !== 'undefined' &&
+      searchFilter[0].Search !== '' &&
+      searchFilterValue !== searchFilter[0].Search
+    ) {
+      setSearchFilterValue(searchFilter[0].Search)
     }
   }
 
@@ -80,8 +88,12 @@ const Filter = (props) => {
     const dateFilter = activeFilters.filter(
       (filter) => typeof filter.Date !== 'undefined'
     )
-    if (typeof dateFilter[0] !== 'undefined' && dateFilter[0].Date !== '' && dateFilterValue !== dateFilter[0].Date) {
-      setDateFilterValue(dateFilter[0].Date);
+    if (
+      typeof dateFilter[0] !== 'undefined' &&
+      dateFilter[0].Date !== '' &&
+      dateFilterValue !== dateFilter[0].Date
+    ) {
+      setDateFilterValue(dateFilter[0].Date)
     }
   }
 
@@ -89,12 +101,21 @@ const Filter = (props) => {
     const hRateFilter = activeFilters.filter(
       (filter) => typeof filter.hRate !== 'undefined'
     )
-    if (typeof hRateFilter[0] !== 'undefined' && hRateFilter[0].hRate !== '' && hRateFilterValue !== hRateFilter[0].hRate) {
-      setHRateFilterValue(hRateFilter[0].hRate);
+    if (
+      typeof hRateFilter[0] !== 'undefined' &&
+      hRateFilter[0].hRate !== '' &&
+      hRateFilterValue !== hRateFilter[0].hRate
+    ) {
+      setHRateFilterValue(hRateFilter[0].hRate)
     }
   }
 
-  if (typeof activeFilters !== 'undefined' && activeFilters != null && activeFilters.length > 0 && initialFilter) {
+  if (
+    typeof activeFilters !== 'undefined' &&
+    activeFilters != null &&
+    activeFilters.length > 0 &&
+    initialFilter
+  ) {
     filterCards(activeFilters)
     setInitialFilter(false)
     setRerenderKey(Math.random())
@@ -262,135 +283,135 @@ const Filter = (props) => {
     let renderFilters = []
     const validFilters = ['Group', 'Skills', 'Tags', 'Type']
     if (activeFilters) {
-    renderFilters = activeFilters.map((type) => {
-      const props = Object.entries(type)
-      if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
-        return (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'baseline'
-            }}
-          >
-            <p
-              style={{
-                color: '#656A6C',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '13px',
-                fontStyle: 'italic',
-                marginRight: 10
-              }}
-            >
-              {props[0][0]}
-            </p>
-            {props[0][1].map((value) => {
-              return (
-                <div
-                  style={{
-                    backgroundColor: '#A4A3A3',
-                    height: 14,
-                    paddingTop: 10,
-                    paddingBottom: 10,
-                    paddingLeft: 10,
-                    borderRadius: 10,
-                    display: 'flex',
-                    alignItems: 'center',
-                    marginRight: 10
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: '10px',
-                      color: 'white',
-                      marginBottom: '0px'
-                    }}
-                  >
-                    {value}
-                  </p>
-                  <div>
-                    <button
-                      style={{
-                        border: 'none',
-                        fontSize: 10,
-                        color: 'white',
-                        float: 'right'
-                      }}
-                      onClick={() => removeFilter(props[0][0], value)}
-                    >
-                      X
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )
-      } else if (
-        props[0][0] === 'Rating' &&
-        typeof props[0][1] !== 'undefined' &&
-        props[0][1] > 0
-      ) {
-        return (
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'baseline'
-            }}
-          >
-            <p
-              style={{
-                color: '#656A6C',
-                fontFamily: 'Poppins, sans-serif',
-                fontSize: '13px',
-                fontStyle: 'italic',
-                marginRight: 10
-              }}
-            >
-              {props[0][0]}
-            </p>
+      renderFilters = activeFilters.map((type) => {
+        const props = Object.entries(type)
+        if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
+          return (
             <div
               style={{
-                backgroundColor: '#A4A3A3',
-                height: 14,
-                paddingTop: 10,
-                paddingBottom: 10,
-                paddingLeft: 10,
-                borderRadius: 10,
                 display: 'flex',
-                alignItems: 'center',
-                marginRight: 10
+                flexDirection: 'row',
+                alignItems: 'baseline'
               }}
             >
               <p
                 style={{
-                  fontSize: '10px',
-                  color: 'white',
-                  marginBottom: '0px'
+                  color: '#656A6C',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '13px',
+                  fontStyle: 'italic',
+                  marginRight: 10
                 }}
               >
-                More than {props[0][1]}
+                {props[0][0]}
               </p>
-              <div>
-                <button
+              {props[0][1].map((value) => {
+                return (
+                  <div
+                    style={{
+                      backgroundColor: '#A4A3A3',
+                      height: 14,
+                      paddingTop: 10,
+                      paddingBottom: 10,
+                      paddingLeft: 10,
+                      borderRadius: 10,
+                      display: 'flex',
+                      alignItems: 'center',
+                      marginRight: 10
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: '10px',
+                        color: 'white',
+                        marginBottom: '0px'
+                      }}
+                    >
+                      {value}
+                    </p>
+                    <div>
+                      <button
+                        style={{
+                          border: 'none',
+                          fontSize: 10,
+                          color: 'white',
+                          float: 'right'
+                        }}
+                        onClick={() => removeFilter(props[0][0], value)}
+                      >
+                        X
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )
+        } else if (
+          props[0][0] === 'Rating' &&
+          typeof props[0][1] !== 'undefined' &&
+          props[0][1] > 0
+        ) {
+          return (
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'baseline'
+              }}
+            >
+              <p
+                style={{
+                  color: '#656A6C',
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '13px',
+                  fontStyle: 'italic',
+                  marginRight: 10
+                }}
+              >
+                {props[0][0]}
+              </p>
+              <div
+                style={{
+                  backgroundColor: '#A4A3A3',
+                  height: 14,
+                  paddingTop: 10,
+                  paddingBottom: 10,
+                  paddingLeft: 10,
+                  borderRadius: 10,
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginRight: 10
+                }}
+              >
+                <p
                   style={{
-                    border: 'none',
-                    fontSize: 10,
+                    fontSize: '10px',
                     color: 'white',
-                    float: 'right'
+                    marginBottom: '0px'
                   }}
-                  onClick={() => removeFilter(props[0][0], value)}
                 >
-                  X
-                </button>
+                  More than {props[0][1]}
+                </p>
+                <div>
+                  <button
+                    style={{
+                      border: 'none',
+                      fontSize: 10,
+                      color: 'white',
+                      float: 'right'
+                    }}
+                    onClick={() => removeFilter(props[0][0], value)}
+                  >
+                    X
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )
-      }
-    })
-  }
+          )
+        }
+      })
+    }
     return renderFilters
   }
 
@@ -433,8 +454,11 @@ const Filter = (props) => {
       <Container>
         <ContainerUpper>
           {/* <SearchFilter value={searchFilterValue} searchFilter={value => searchFilter(value)} /> */}
-          <DateFilter value={dateFilterValue} dateFilter={value => dateFilter(value)} />
-        {/* </ContainerUpper>
+          <DateFilter
+            value={dateFilterValue}
+            dateFilter={(value) => dateFilter(value)}
+          />
+          {/* </ContainerUpper>
         <Lower> */}
           <SearchableDropdown
             placeholder="Group"
@@ -475,7 +499,7 @@ const Filter = (props) => {
             domain={[0, 800]}
             onValueChange={(value) => activateFilter('dRate', value)}
           /> */}
-        {/* </Lower> */}
+          {/* </Lower> */}
         </ContainerUpper>
         <ActiveFilters key={rerenderKey}>
           {activeFiltersHandler()}

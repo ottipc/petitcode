@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCalendarWeek ,faCalendarCheck} from '@fortawesome/free-solid-svg-icons'
+import {
+  faCalendarWeek,
+  faCalendarCheck
+} from '@fortawesome/free-solid-svg-icons'
 import { DateRangePicker } from 'rsuite'
 import 'rsuite/dist/styles/rsuite-default.css'
 
 // test
-import './Custom.css';
-
+import './Custom.css'
 
 const Container = styled.div`
   display: flex;
@@ -15,11 +17,11 @@ const Container = styled.div`
   margin-left: 25px;
   display: block;
   width: 20%;
-  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
   @media (max-width: 991px) {
     width: 100%;
     margin-left: 0;
-    
   }
   ${'' /* &:focus{
     border-color: #02BD94;
@@ -27,9 +29,9 @@ const Container = styled.div`
 
   ${'' /* test */}
   -webkit-box-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const Input = styled(DateRangePicker)`
@@ -78,7 +80,7 @@ const DateFilter = (props) => {
 
   if (value !== inputValue && initialRender) {
     setInputValue(value)
-    setInitialRender(false);
+    setInitialRender(false)
   }
 
   const formatDate = (value) => {
@@ -121,7 +123,7 @@ const DateFilter = (props) => {
           border: '1px solid #e5e6e7',
           padding: '0px 12px',
           fontSize: '12px',
-          lineHeight: '1.5',
+          lineHeight: '1.5'
           // fontFamily: 'Poppins, sans-serif'
         }}
         onOk={(value) => setDateHandler(value)}

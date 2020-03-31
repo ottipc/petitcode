@@ -12,17 +12,17 @@ const Container = styled.div`
 
   ${'' /* test */}
   display: flex;
--webkit-box-align: center;
-align-items: center;
--webkit-box-flex: 1;
-flex: 1;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  flex: 1;
   @media (max-width: 991px) {
     width: 100%;
     margin-right: 0;
     margin-bottom: 5px;
   }
   @media (max-width: 420px) {
-    display:block;
+    display: block;
   }
 `
 
@@ -39,20 +39,19 @@ const Input = styled.input`
   width: 80%;
   ${'' /* test */}
   height: 38px;
-  &:focus{
+  &:focus {
     border-color: #eb9330;
   }
   ${'' /* test */}
   display: flex;
-flex: 1;
-height: 32px;
-position: relative;
-outline: 0;
-right: 0;
-@media (max-width: 420px) {
-    width:73%;
+  flex: 1;
+  height: 32px;
+  position: relative;
+  outline: 0;
+  right: 0;
+  @media (max-width: 420px) {
+    width: 73%;
   }
-
 `
 
 const Button = styled.button`
@@ -72,16 +71,16 @@ const Button = styled.button`
   text-transform: uppercase;
   cursor: pointer;
   outline: 0;
-  transition: all .4s ease-out;
+  transition: all 0.4s ease-out;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
-  color: hsla(0,0%,0%,0.8);
-  &:hover{
-    background: rgb(135,135,135) none repeat scroll 0% 0%;
-    color:#fff;
+  color: hsla(0, 0%, 0%, 0.8);
+  &:hover {
+    background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+    color: #fff;
   }
-@media (max-width: 420px) {
-    width:27%;
+  @media (max-width: 420px) {
+    width: 27%;
   }
 `
 
@@ -92,16 +91,16 @@ const SearchFilter = (props) => {
 
   if (value !== inputValue && initialRender) {
     setInputValue(value)
-    setInitialRender(false);
+    setInitialRender(false)
   }
 
   const searchHandler = () => {
     searchFilter(inputValue)
   }
 
-  const onChangeHandler = value => {
+  const onChangeHandler = (value) => {
     if (onChangeValue) {
-      onChangeValue(value);
+      onChangeValue(value)
     }
     setInputValue(value)
   }

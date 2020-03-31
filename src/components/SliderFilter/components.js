@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 // *******************************************************
 // RAIL
@@ -9,8 +9,8 @@ const railOuterStyle = {
   height: 42,
   transform: 'translate(0%, -50%)',
   borderRadius: 7,
-  cursor: 'pointer',
-};
+  cursor: 'pointer'
+}
 
 const railInnerStyle = {
   position: 'absolute',
@@ -19,8 +19,8 @@ const railInnerStyle = {
   transform: 'translate(0%, -50%)',
   borderRadius: 7,
   pointerEvents: 'none',
-  backgroundColor: 'rgb(155,155,155)',
-};
+  backgroundColor: 'rgb(155,155,155)'
+}
 
 export const SliderRail = ({ getRailProps }) => {
   return (
@@ -28,8 +28,8 @@ export const SliderRail = ({ getRailProps }) => {
       <div style={railOuterStyle} {...getRailProps()} />
       <div style={railInnerStyle} />
     </>
-  );
-};
+  )
+}
 
 // *******************************************************
 // HANDLE COMPONENT
@@ -39,19 +39,24 @@ export const Handle = ({
   domain: [min, max],
   handle: { id, value, percent },
   disabled = false,
-  getHandleProps,
+  getHandleProps
 }) => {
   return (
     <>
-      <p style={{
+      <p
+        style={{
           left: `${percent}%`,
           top: -35,
           position: 'absolute',
           fontSize: '12px',
           color: 'hsla(0,0%,0%,0.8)',
           // fontFamily: 'Poppins',
-          fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
-      }}>{Math.floor(value * 100) / 100}</p>
+          fontFamily:
+            'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif'
+        }}
+      >
+        {Math.floor(value * 100) / 100}
+      </p>
       <div
         style={{
           left: `${percent}%`,
@@ -61,7 +66,7 @@ export const Handle = ({
           width: 28,
           height: 28,
           cursor: 'pointer',
-          backgroundColor: 'transparent',
+          backgroundColor: 'transparent'
         }}
         {...getHandleProps(id)}
       />
@@ -79,12 +84,12 @@ export const Handle = ({
           height: 14,
           borderRadius: '50%',
           boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, 0.3)',
-          backgroundColor: disabled ? '#666' : 'white',
+          backgroundColor: disabled ? '#666' : 'white'
         }}
       />
     </>
-  );
-};
+  )
+}
 
 // *******************************************************
 // KEYBOARD HANDLE COMPONENT
@@ -94,7 +99,7 @@ export const KeyboardHandle = ({
   domain: [min, max],
   handle: { id, value, percent },
   disabled = false,
-  getHandleProps,
+  getHandleProps
 }) => {
   return (
     <button
@@ -110,23 +115,18 @@ export const KeyboardHandle = ({
         height: 24,
         borderRadius: '50%',
         boxShadow: '1px 1px 1px 1px rgba(0, 0, 0, 0.3)',
-        backgroundColor: disabled ? '#666' : '#9BBFD4',
+        backgroundColor: disabled ? '#666' : '#9BBFD4'
       }}
       {...getHandleProps(id)}
     />
-  );
-};
+  )
+}
 
 // *******************************************************
 // TRACK COMPONENT
 // *******************************************************
 
-export const Track = ({
-  source,
-  target,
-  getTrackProps,
-  disabled = false,
-}) => {
+export const Track = ({ source, target, getTrackProps, disabled = false }) => {
   return (
     <div
       style={{
@@ -138,18 +138,18 @@ export const Track = ({
         top: 0,
         cursor: 'pointer',
         left: `${source.percent}%`,
-        width: `${target.percent - source.percent}%`,
+        width: `${target.percent - source.percent}%`
       }}
       {...getTrackProps()}
     />
-  );
-};
+  )
+}
 
 // *******************************************************
 // TICK COMPONENT
 // *******************************************************
 
-export const Tick = ({ tick, count, format = d => d }) => {
+export const Tick = ({ tick, count, format = (d) => d }) => {
   return (
     <div>
       <div
@@ -159,7 +159,7 @@ export const Tick = ({ tick, count, format = d => d }) => {
           width: 1,
           height: 5,
           backgroundColor: 'rgb(200,200,200)',
-          left: `${tick.percent}%`,
+          left: `${tick.percent}%`
         }}
       />
       <div
@@ -170,11 +170,11 @@ export const Tick = ({ tick, count, format = d => d }) => {
           textAlign: 'center',
           marginLeft: `${-(100 / count) / 2}%`,
           width: `${100 / count}%`,
-          left: `${tick.percent}%`,
+          left: `${tick.percent}%`
         }}
       >
         {format(tick.value)}
       </div>
     </div>
-  );
-};
+  )
+}

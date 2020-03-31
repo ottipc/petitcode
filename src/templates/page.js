@@ -35,7 +35,7 @@ class PageTemplate extends React.PureComponent {
       }
     } = data.contentfulPage
 
-    console.log('location', location);
+    console.log('location', location)
 
     return (
       // <ClientContext.Provider value={client}>
@@ -77,14 +77,19 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          {location.pathname.indexOf('freelancers') < 0 && <MDXProvider components={components}>
-            <MDXRenderer>{body}</MDXRenderer>
-          </MDXProvider>}
-          {location.pathname.indexOf('freelancers') >= 0 && 
+          {location.pathname.indexOf('freelancers') < 0 && (
+            <MDXProvider components={components}>
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
+          )}
+          {location.pathname.indexOf('freelancers') >= 0 && (
             <DefaultLayout>
-              <Freelancers activeFilters={location.state.activeFilters} csvData={location.state.csvData}/>
+              <Freelancers
+                activeFilters={location.state.activeFilters}
+                csvData={location.state.csvData}
+              />
             </DefaultLayout>
-          }
+          )}
         </Layout>
       </LocationContext.Provider>
       // </ClientContext.Provider>

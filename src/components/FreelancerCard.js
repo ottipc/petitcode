@@ -5,13 +5,11 @@ import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 
 import noImage from '../assets/noImage.png'
 // test
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/themes/translucent.css';
-import MD5 from "crypto-js/md5";
-import './Tooltip.css';
-
-
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/translucent.css'
+import MD5 from 'crypto-js/md5'
+import './Tooltip.css'
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -21,16 +19,17 @@ const ContentWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-	transition-property: transform;
+  transition-property: transform;
   height: 100%;
-  font-family: 'Fira Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-family: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
 `
 const Image = styled.img`
   width: 70px;
   height: 70px;
   border-radius: 35px;
   margin-top: 30px;
-  margin-bottom:0;
+  margin-bottom: 0;
 `
 
 const Name = styled.p`
@@ -47,10 +46,10 @@ const Name = styled.p`
   line-height: 1.75rem;
   font-weight: 600;
   text-align: center;
-  cursor:pointer;
-  color: hsla(0,0%,0%,0.8);
+  cursor: pointer;
+  color: hsla(0, 0%, 0%, 0.8);
   text-transform: capitalize;
-  &:hover{
+  &:hover {
     color: #020206;
   }
 `
@@ -79,13 +78,13 @@ const Tags = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  color: hsla(0,0%,0%,0.8);
+  color: hsla(0, 0%, 0%, 0.8);
   font-size: 1rem;
   line-height: 1.75rem;
   text-align: center;
   margin-bottom: 6px;
-  margin-bottom:0;
-  color: hsla(0,0%,0%,0.8);
+  margin-bottom: 0;
+  color: hsla(0, 0%, 0%, 0.8);
 `
 
 const Rate = styled.div`
@@ -100,7 +99,7 @@ const RateValue = styled.p`
   font-weight: 600;
   line-height: 11px;
   margin-bottom: 5px;
-  color: hsla(0,0%,0%,0.8);
+  color: hsla(0, 0%, 0%, 0.8);
 `
 
 const RateLabel = styled.p`
@@ -108,7 +107,7 @@ const RateLabel = styled.p`
   font-size: 0.8rem;
   line-height: 11px;
   text-transform: uppercase;
-  color: hsla(0,0%,0%,0.8);
+  color: hsla(0, 0%, 0%, 0.8);
 `
 
 const GroupsSection = styled.div`
@@ -136,19 +135,17 @@ const Group = styled.div`
   background: rgb(135, 135, 135) none repeat scroll 0% 0%;
 `
 
-const RatingWrapper = styled.div`
-
-`
+const RatingWrapper = styled.div``
 const Wrapper = styled.div`
-   &:hover {
+  &:hover {
     transform: scale(1.01);
-	}
+  }
 `
 const Type = styled.div`
-   position:absolute;
-   padding-right: 0;
+  position: absolute;
+  padding-right: 0;
   width: 20px;
-  height:20px;
+  height: 20px;
   background-image: linear-gradient(135deg, #eb9330 14px, #fff 14px);
 `
 const Availabilities = styled.div`
@@ -167,25 +164,24 @@ const Availabilities = styled.div`
 const LinkBtn = styled.button`
   padding: 0px 1em;
   border-radius: 1em;
-  background: rgb(135,135,135) none repeat scroll 0% 0%;
-  color: rgb(255,255,255);
+  background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
   font-size: 1rem;
   line-height: 2em;
   margin: 12px 2px;
-  a{
+  a {
     color: #fff;
-    text-decoration:none;
+    text-decoration: none;
     font-size: 1rem;
-   &:focus{
-    color: #fff;
-    text-decoration:none; 
-   }
-   :hover{
-     color: #fff;
-    text-decoration:none;
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+    :hover {
+      color: #fff;
+      text-decoration: none;
     }
   }
-
 `
 
 const FreelancerCard = (props) => {
@@ -216,95 +212,142 @@ const FreelancerCard = (props) => {
       MGMENT: 'M',
       MAR: 'M'
     }
-    
+
     const array = groupsData.split(', ').map((cat, index) => {
-      return <Tippy theme ='translucent'  content={<span style={{fontSize:'12px',textAlign:'center',display:'block'}}>{cat.replace(/\s+/g, '')}</span>}>
-      <Group key={index}>{abrev[cat.replace(/\s+/g, '')]}</Group></Tippy>
+      return (
+        <Tippy
+          theme="translucent"
+          content={
+            <span
+              style={{
+                fontSize: '12px',
+                textAlign: 'center',
+                display: 'block'
+              }}
+            >
+              {cat.replace(/\s+/g, '')}
+            </span>
+          }
+        >
+          <Group key={index}>{abrev[cat.replace(/\s+/g, '')]}</Group>
+        </Tippy>
+      )
     })
     return array
   }
 
   const formatAv = (dates) => {
-    let array=''
-    if (dates.unavailabilities.length > 0){
-       array = dates.split(', ').slice(0, 2).map((cat, index) => {
-        return <div key={index}>{cat}</div>
-      })
+    let array = ''
+    if (dates.unavailabilities.length > 0) {
+      array = dates
+        .split(', ')
+        .slice(0, 2)
+        .map((cat, index) => {
+          return <div key={index}>{cat}</div>
+        })
       return array
-    }else{
+    } else {
       return <div>test</div>
     }
-   
-    
   }
 
-  
   const TypeToolip = () => {
-    return <div style={{fontSize:'12px'}}>
-    {/* Self-managed partner */}
-    {data.type}
-    </div>
-   }
+    return (
+      <div style={{ fontSize: '12px' }}>
+        {/* Self-managed partner */}
+        {data.type}
+      </div>
+    )
+  }
   const StarsToolip = () => {
-     return <span className='raiting-tooltip' style={{fontSize:'12px'}}>
-     Based on ratings by colleagues. Assessment criteria can be changed in Settings / My Network / General.
-     </span>
-    }
-  const TagsToolip = () => {
-      return <span className='tags-tooltip' style={{fontSize:'12px'}}>
-     {data.tags}
+    return (
+      <span className="raiting-tooltip" style={{ fontSize: '12px' }}>
+        Based on ratings by colleagues. Assessment criteria can be changed in
+        Settings / My Network / General.
       </span>
-   }
-   const NameToolip = () => {
-    return <span className='tags-tooltip' style={{fontSize:'12px'}}>
-   {data.name + ' ' + data.surname}
-    </span>
- }
-
+    )
+  }
+  const TagsToolip = () => {
+    return (
+      <span className="tags-tooltip" style={{ fontSize: '12px' }}>
+        {data.tags}
+      </span>
+    )
+  }
+  const NameToolip = () => {
+    return (
+      <span className="tags-tooltip" style={{ fontSize: '12px' }}>
+        {data.name + ' ' + data.surname}
+      </span>
+    )
+  }
 
   return (
     <Wrapper>
-    
-      <Tippy theme ='translucent' content= {data.type}>
-          {data.type === "self managed" ? <Type></Type> :''}
-       </Tippy>
-    <ContentWrapper>
-      <Image src={noImage} />
-      <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
-      <Tippy theme ='translucent' content={<NameToolip></NameToolip>}>
-        <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
+      <Tippy theme="translucent" content={data.type}>
+        {data.type === 'self managed' ? <Type /> : ''}
       </Tippy>
-      {/* <Address>{formatAddress(data.address)}</Address> */}
-      <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
-        <Tags>{data.tags}</Tags>
-      </Tippy>
-      <Tippy theme ='translucent' content={<StarsToolip></StarsToolip>}>
-        <RatingWrapper>
-        <Ratings
-          rating={parseFloat(data.rating)}
-          widgetDimensions="13px"
-          widgetSpacings="0px"
-        >
-          <Ratings.Widget />
-          <Ratings.Widget />
-          <Ratings.Widget />
-          <Ratings.Widget />
-          <Ratings.Widget />
-        </Ratings></RatingWrapper>
-      </Tippy>
-      <RatesSection>
-        {/* <Rate>
+      <ContentWrapper>
+        <Image src={noImage} />
+        <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
+        <Tippy theme="translucent" content={<NameToolip />}>
+          <Name>
+            {data.name.split(' ')[0] + ' ' + data.surname.charAt(0) + '.'}
+          </Name>
+        </Tippy>
+        {/* <Address>{formatAddress(data.address)}</Address> */}
+        <Tippy theme="translucent" content={<TagsToolip />}>
+          <Tags>{data.tags}</Tags>
+        </Tippy>
+        <Tippy theme="translucent" content={<StarsToolip />}>
+          <RatingWrapper>
+            <Ratings
+              rating={parseFloat(data.rating)}
+              widgetDimensions="13px"
+              widgetSpacings="0px"
+            >
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+              <Ratings.Widget />
+            </Ratings>
+          </RatingWrapper>
+        </Tippy>
+        <RatesSection>
+          {/* <Rate>
           <RateValue>{data.hourly_rate}</RateValue>
           <RateLabel>Hourly rate</RateLabel>
         </Rate> */}
-        <Rate>
-          <RateValue>{data.hourly_rate}</RateValue>
-          <RateLabel>Hourly rate</RateLabel>
-        </Rate>
-      </RatesSection>
-      <Availabilities>{data.unavailabilities ? data.unavailabilities.split(', ').slice(0, 2).toString().replace(',',' '):'Available'}</Availabilities>
-     <LinkBtn><a href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' + data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' + MD5(data.email).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}>CTA</a></LinkBtn>
-    </ContentWrapper>
+          <Rate>
+            <RateValue>{data.hourly_rate}</RateValue>
+            <RateLabel>Hourly rate</RateLabel>
+          </Rate>
+        </RatesSection>
+        <Availabilities>
+          {data.unavailabilities
+            ? data.unavailabilities
+                .split(', ')
+                .slice(0, 2)
+                .toString()
+                .replace(',', ' ')
+            : 'Available'}
+        </Availabilities>
+        <LinkBtn>
+          <a
+            href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' +
+              data.name.split(' ')[0] +
+              ' ' +
+              data.surname.charAt(0) +
+              '.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' +
+              MD5(
+                data.email
+              ).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}
+          >
+            CTA
+          </a>
+        </LinkBtn>
+      </ContentWrapper>
     </Wrapper>
   )
 }

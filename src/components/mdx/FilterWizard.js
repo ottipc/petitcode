@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   padding: 25px;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: rgba(221,221,221,0.4);
+  background-color: rgba(221, 221, 221, 0.4);
 `
 const Container = styled.div`
   display: flex;

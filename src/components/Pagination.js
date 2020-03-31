@@ -4,7 +4,8 @@ import styled from 'styled-components'
 const Container = styled.nav`
   display: flex;
   justify-content: flex-end;
-  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
 `
 
 const Paginator = styled.ul`
@@ -31,14 +32,14 @@ const Page = styled.li`
   font-size: 13px;
   color: #676a6c;
   background-color: white;
-  &:first-child{
+  &:first-child {
     border-top-left-radius: 4px;
 
-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
-  &:last-child{
+  &:last-child {
     border-top-right-radius: 4px;
-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 `
 const SelectedPage = styled.li`
@@ -56,15 +57,15 @@ const SelectedPage = styled.li`
   background-color: #eb9330;
   font-size: 1rem;
   line-height: 1.75rem;
-  a{
-    color:#fff;
+  a {
+    color: #fff;
     width: 100%;
-text-align: center;
-background: none !important;
-&:hover{
-  color:#fff;
-  background: none !important;
-}
+    text-align: center;
+    background: none !important;
+    &:hover {
+      color: #fff;
+      background: none !important;
+    }
   }
 `
 
@@ -72,9 +73,9 @@ const PageNumber = styled.a`
   cursor: default;
   font-size: 1rem;
   line-height: 1.75rem;
-  color: hsla(0,0%,0%,0.8);
-  &:hover{
-    text-decoration:none;
+  color: hsla(0, 0%, 0%, 0.8);
+  &:hover {
+    text-decoration: none;
     z-index: 2;
     color: #23527c;
     background-color: #eeeeee;
@@ -82,15 +83,14 @@ const PageNumber = styled.a`
     width: 100%;
     text-align: center;
   }
-  
 `
 const PaginationText = styled.div`
   margin: 22px 10px 58px 0px;
   ${'' /* font-family: 'Poppins', sans-serif; */}
   font-size: 0.95rem;
   line-height: 1.75rem;
-  color: hsla(0,0%,0%,0.8);
-  span{
+  color: hsla(0, 0%, 0%, 0.8);
+  span {
     margin-left: 3px;
   }
 `
@@ -113,7 +113,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
       )
     }
     return (
-      
       <Page key={number} className="page-item">
         <PageNumber onClick={() => paginate(number)} className="page-link">
           {number}
@@ -124,7 +123,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 
   return (
     <Container>
-      <PaginationText><b>{totalPosts}</b><span>Results</span></PaginationText>
+      <PaginationText>
+        <b>{totalPosts}</b>
+        <span>Results</span>
+      </PaginationText>
       <Paginator>{pages}</Paginator>
     </Container>
   )
