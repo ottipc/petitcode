@@ -31,15 +31,16 @@ const Input = styled.input`
   width: 92%;
   border: 1px solid #e5e6e7;
   padding: 8px 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   float: left;
   width: 80%;
   ${'' /* test */}
   height: 38px;
   &:focus{
-    border-color: #02BD94;
+    border-color: #eb9330;
   }
   ${'' /* test */}
   display: flex;
@@ -59,27 +60,26 @@ const Button = styled.button`
   width: 9%;
   border: 1px solid #e5e6e7;
   margin-left: -1px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 12px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 0.8rem;
   line-height: 0.5;
   float: left;
   width: 20%;
   padding: 8px;
-  ${'' /* test */}
-  height: 38px;
-  ${'' /* test */}
   height: 32px;
-
-width: 67px;
-text-transform: uppercase;
-cursor: pointer;
-outline: 0;
-transition: all .4s ease-out;
-border-bottom-right-radius: 5px;
-border-top-right-radius: 5px;
-&:hover{
-  background-color: #e6e6e6;
-}
+  width: 67px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: 0;
+  transition: all .4s ease-out;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  color: hsla(0,0%,0%,0.8);
+  &:hover{
+    background: rgb(135,135,135) none repeat scroll 0% 0%;
+    color:#fff;
+  }
 @media (max-width: 420px) {
     width:27%;
   }
@@ -87,7 +87,13 @@ border-top-right-radius: 5px;
 
 const SearchFilter = (props) => {
   const [inputValue, setInputValue] = useState('')
-  const { searchFilter, onChangeValue } = props
+  const [initialRender, setInitialRender] = useState(true)
+  const { searchFilter, onChangeValue, value } = props
+
+  if (value !== inputValue && initialRender) {
+    setInputValue(value)
+    setInitialRender(false);
+  }
 
   const searchHandler = () => {
     searchFilter(inputValue)
@@ -103,6 +109,7 @@ const SearchFilter = (props) => {
   return (
     <Container>
       <Input
+        value={inputValue}
         type="text"
         placeholder="Search by email or name..."
         onChange={(value) => onChangeHandler(value.target.value)}

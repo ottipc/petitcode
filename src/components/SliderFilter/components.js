@@ -47,9 +47,10 @@ export const Handle = ({
           left: `${percent}%`,
           top: -35,
           position: 'absolute',
-          fontSize: '11px',
-          color: '#A4A3A3',
-          fontFamily: 'Poppins',
+          fontSize: '12px',
+          color: 'hsla(0,0%,0%,0.8)',
+          // fontFamily: 'Poppins',
+          fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
       }}>{Math.floor(value * 100) / 100}</p>
       <div
         style={{
@@ -132,7 +133,7 @@ export const Track = ({
         position: 'absolute',
         height: 6,
         zIndex: 1,
-        backgroundColor: disabled ? '#999' : '#02BD94',
+        backgroundColor: disabled ? '#999' : '#eb9330',
         borderRadius: 7,
         top: 0,
         cursor: 'pointer',

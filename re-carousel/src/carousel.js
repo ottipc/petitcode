@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 const styles = {
   wrapper: {
     width: '100%',
-    height: '100%',
-    position: 'relative'
+    height: '250%',
+    position: 'relative',
   },
   frame: {
     width: '100%',
@@ -22,6 +22,7 @@ class Carousel extends React.Component {
       frames: [].concat(props.frames || props.children || []),
       current: 0,
       activeFilters: props.activeFilters,
+      csvData: props.csvData,
     }
 
     this.mounted = false
@@ -385,7 +386,7 @@ class Carousel extends React.Component {
           onMouseDown={this.onTouchStart} >
           {
             frames.map((frame, i) => {
-              const frameStyle = objectAssign({zIndex: 99 - i}, styles.frame)
+              const frameStyle = objectAssign({zIndex: 5 - i}, styles.frame)
               return <div ref={'f' + i} key={i} style={frameStyle}>{frame}</div>
             })
           }
@@ -396,6 +397,7 @@ class Carousel extends React.Component {
             <Widget
               key={i}
               activeFilters={this.state.activeFilters}
+              csvData={this.state.csvData}
               index={current}
               total={frames.length}
               prevHandler={this.prev}

@@ -5,7 +5,7 @@ const styles = {
   wrapper: {
     position: 'absolute',
     width: '100%',
-    zIndex: '100',
+    zIndex: '5',
     bottom: '0',
     textAlign: 'center'
   },
@@ -30,12 +30,12 @@ const styles = {
 export default function Buttons(props) {
   const prevBtnStyle = Object.assign({}, styles.btn, styles.left)
   const nextBtnStyle = Object.assign({}, styles.btn, styles.right)
-  const { index, total, loop, prevHandler, nextHandler, activeFilters } = props
+  const { index, total, loop, csvData, prevHandler, nextHandler, activeFilters } = props
 
   const filterFinish = () => {
-    navigate('/freelancers',
+    navigate('/en/freelancers',
       {
-        state: { activeFilters },
+        state: { activeFilters, csvData },
       }
     );
   }

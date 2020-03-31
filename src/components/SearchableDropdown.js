@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
-import './Drop.css';
+import './Custom.css';
+
+
 const Wrapper = styled.div`
-  ${'' /* width: 10%; */}
   margin-right: 20px;
   :focus {
       outline: none;
@@ -19,7 +20,8 @@ const SearchAndToggle = styled.div`
   display: flex;
   flex-direction: column;
   color: #656A6C;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
   background: #f7f7f7;
   input {
@@ -31,7 +33,7 @@ const SearchAndToggle = styled.div`
     margin-bottom:10px;
     :focus {
       outline: none;
-      border: 1px solid #02BD94;
+      border: 1px solid #eb9330;
     }
   }
 `;
@@ -48,41 +50,51 @@ const Item = styled.div`
   align-items: baseline;
   ${'' /* test */}
   display: flex;
-justify-content: space-between;
-align-items: center;
-background-color: #FFFFFF;
-padding:10px;
-border-bottom: 1px solid #E7EAEC;
-color: #656A6C;
-position: relative;
-margin: 0;
-height:40px;
-&:hover{
-  background-color: #F2F1F1;
-}
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding:10px;
+  border-bottom: 1px solid #E7EAEC;
+  position: relative;
+  margin: 0;
+  height:40px;
+  color: #6a6c6e;
+  &:hover{
+    background-color: #F2F1F1;
+  }
 `;
 
 const ItemLabel = styled.div`
   color: #656A6C;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75rem;
+  color: hsla(0,0%,0%,0.8);
 `;
 
 const DropdownContainer = styled.div`
   cursor: pointer;
 `
 const Placeholder = styled.p`
-  ${'' /* color: #656A6C; */}
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-size: 1rem;
   font-style:italic;
-  color: #8e8e93;
+  color: hsla(0,0%,0%,0.8);
+  font-weight: bold;
+  line-height: 1.75rem;
 `
 
 
 const SearchableDropdown = (props) => {
 
-  const {onFilterSet} = props; 
+  const [value, setValue] = useState([]);
+
+  const {onFilterSet, selectedItems} = props; 
+
+  if (typeof selectedItems !== 'undefined' && JSON.stringify(value) !== JSON.stringify(selectedItems)) {
+    setValue(selectedItems);
+  }
 
   const customContentRenderer = ({ props, state, methods }) => (
   <DropdownContainer><Placeholder>{props.placeholder}</Placeholder></DropdownContainer>
@@ -121,7 +133,7 @@ const SearchableDropdown = (props) => {
     <Wrapper>
       <Container>
         <Select
-          values={props.selectedItems}
+          values={value}
           options={props.options}
           style={{border: 'none'}}
           placeholder={props.placeholder}

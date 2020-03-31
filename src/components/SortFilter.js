@@ -10,7 +10,8 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
+  ${'' /* font-family: 'Poppins', sans-serif; */}
+  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 13px;
   color: #676a6c;
 `

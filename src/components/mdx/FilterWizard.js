@@ -4,14 +4,14 @@ import SwiperWizard from '../Swiper/SwiperWizard'
 
 const Wrapper = styled.div`
   padding: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgba(221,221,221,0.4);
 `
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 15px 20px 20px 20px;
   height: 200px;
   justify-content: center;
   align-items: center;
@@ -20,8 +20,7 @@ const Container = styled.div`
 const ContainerInner = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white;
-  width: 85%;
+  width: 100%;
   height: 150px;
 `
 

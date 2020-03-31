@@ -4,11 +4,18 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { GraphQLClient, ClientContext } from 'graphql-hooks'
+import DefaultLayout from '../components/mdx/DefaultLayout'
+import Freelancers from '../components/mdx/Freelancers'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 
 import components from '../components/mdx-components'
+
+// const client = new GraphQLClient({
+//   url: '/graphql'
+// })
 
 class PageTemplate extends React.PureComponent {
   static propTypes = {
@@ -28,7 +35,10 @@ class PageTemplate extends React.PureComponent {
       }
     } = data.contentfulPage
 
+    console.log('location', location);
+
     return (
+      // <ClientContext.Provider value={client}>
       <LocationContext.Provider
         value={{
           activeContentfulId: contentfulId,
@@ -67,12 +77,17 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <MDXProvider components={components}>
+          {location.pathname.indexOf('freelancers') < 0 && <MDXProvider components={components}>
             <MDXRenderer>{body}</MDXRenderer>
-          </MDXProvider>
-          {/* {extraContent} */}
+          </MDXProvider>}
+          {location.pathname.indexOf('freelancers') >= 0 && 
+            <DefaultLayout>
+              <Freelancers activeFilters={location.state.activeFilters} csvData={location.state.csvData}/>
+            </DefaultLayout>
+          }
         </Layout>
       </LocationContext.Provider>
+      // </ClientContext.Provider>
     )
   }
 }

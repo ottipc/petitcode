@@ -16,13 +16,12 @@ const ContainerUpper = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 100%;
+  width: 75%;
   padding-bottom: 20px;
+  justify-content: space-between;
   @media (max-width: 991px) {
     flex-direction: column;
   }
-
- 
 `
 const Container = styled.div`
   display: flex;
@@ -46,21 +45,56 @@ const ActiveFilters = styled.div`
 `
 
 const Filter = (props) => {
-  const [searchFilterValue, setSearchFilterValue] = useState()
+  const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState()
+  const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
   const [groupFilter, setGroupFilter] = useState()
   const [skillsFilter, setSkillsFilter] = useState()
   const [tagsFilter, setTagsFilter] = useState()
   const [ratingFilter, setRatingFilter] = useState()
   const [typeFilter, setTypeFilter] = useState()
-  const [hRateFilter, setHRateFilter] = useState()
+  const [hRateFilter, setHRateFilter] = useState([0, 150])
   const [dRateFilter, setDRateFilter] = useState()
-  const [activeFilters, setActiveFilters] = useState(typeof props.activeFilters !== 'undefined' ? props.activeFilters : [])
+  const [activeFilters, setActiveFilters] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
+  const [initialRender, setInitialRender] = useState(true)
   const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
 
-  if (activeFilters && initialFilter) {
+
+  if (typeof props.activeFilters !== 'undefined' && props.activeFilters != null && JSON.stringify(activeFilters) !== JSON.stringify(props.activeFilters) && initialRender) {
+    setActiveFilters(props.activeFilters);
+    setInitialRender(false);
+  }
+
+  if (activeFilters.length > 0) {
+    const searchFilter = activeFilters.filter(
+      (filter) => typeof filter.Search !== 'undefined'
+    )
+    if (typeof searchFilter[0] !== 'undefined' && searchFilter[0].Search !== '' && searchFilterValue !== searchFilter[0].Search) {
+      setSearchFilterValue(searchFilter[0].Search);
+    }
+  }
+
+  if (activeFilters.length > 0) {
+    const dateFilter = activeFilters.filter(
+      (filter) => typeof filter.Date !== 'undefined'
+    )
+    if (typeof dateFilter[0] !== 'undefined' && dateFilter[0].Date !== '' && dateFilterValue !== dateFilter[0].Date) {
+      setDateFilterValue(dateFilter[0].Date);
+    }
+  }
+
+  if (activeFilters.length > 0) {
+    const hRateFilter = activeFilters.filter(
+      (filter) => typeof filter.hRate !== 'undefined'
+    )
+    if (typeof hRateFilter[0] !== 'undefined' && hRateFilter[0].hRate !== '' && hRateFilterValue !== hRateFilter[0].hRate) {
+      setHRateFilterValue(hRateFilter[0].hRate);
+    }
+  }
+
+  if (typeof activeFilters !== 'undefined' && activeFilters != null && activeFilters.length > 0 && initialFilter) {
     filterCards(activeFilters)
     setInitialFilter(false)
     setRerenderKey(Math.random())
@@ -155,7 +189,7 @@ const Filter = (props) => {
         }
         break
       case 'hRate':
-        setHRateFilter(value)
+        setHRateFilterValue(value)
         af.forEach((filter) => {
           if (Object.keys(filter)[0] === 'hRate') {
             filter.hRate = value
@@ -215,6 +249,9 @@ const Filter = (props) => {
       case 'Type':
         setTypeFilter(newFilterArray)
         break
+      case 'hRate':
+        setHRateFilterValue(newFilterArray)
+        break
     }
     setActiveFilters(af)
     setRerenderKey(Math.random())
@@ -224,6 +261,7 @@ const Filter = (props) => {
   const activeFiltersHandler = () => {
     let renderFilters = []
     const validFilters = ['Group', 'Skills', 'Tags', 'Type']
+    if (activeFilters) {
     renderFilters = activeFilters.map((type) => {
       const props = Object.entries(type)
       if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
@@ -352,6 +390,7 @@ const Filter = (props) => {
         )
       }
     })
+  }
     return renderFilters
   }
 
@@ -393,10 +432,10 @@ const Filter = (props) => {
     <Wrapper>
       <Container>
         <ContainerUpper>
-          <SearchFilter searchFilter={value => searchFilter(value)} />
-          <DateFilter dateFilter={value => dateFilter(value)} />
-        </ContainerUpper>
-        <Lower>
+          {/* <SearchFilter value={searchFilterValue} searchFilter={value => searchFilter(value)} /> */}
+          <DateFilter value={dateFilterValue} dateFilter={value => dateFilter(value)} />
+        {/* </ContainerUpper>
+        <Lower> */}
           <SearchableDropdown
             placeholder="Group"
             selectedItems={groupFilter}
@@ -405,15 +444,17 @@ const Filter = (props) => {
           />
           <SearchableDropdown
             placeholder="Skills"
+            selectedItems={skillsFilter}
             options={skills}
             onFilterSet={(value) => activateFilter('Skills', value)}
           />
           <SearchableDropdown
-            placeholder="Tags"
+            placeholder="Hard skills"
+            selectedItems={tagsFilter}
             options={tags}
             onFilterSet={(value) => activateFilter('Tags', value)}
           />
-          <RatingsDropdown
+          {/* <RatingsDropdown
             placeholder="Rating"
             onUncheckFilter={() => activateFilter('Rating', 0)}
             onFilterSet={(value) => activateFilter('Rating', value)}
@@ -422,18 +463,20 @@ const Filter = (props) => {
             placeholder="Type"
             options={typeOptions}
             onFilterSet={(value) => activateFilter('Type', value)}
-          />
+          /> */}
           <SliderFilter
             label="Hourly Rate: "
             domain={[0, 150]}
+            value={hRateFilterValue}
             onValueChange={(value) => activateFilter('hRate', value)}
           />
-          <SliderFilter
+          {/* <SliderFilter
             label="Daily Rate: "
             domain={[0, 800]}
             onValueChange={(value) => activateFilter('dRate', value)}
-          />
-        </Lower>
+          /> */}
+        {/* </Lower> */}
+        </ContainerUpper>
         <ActiveFilters key={rerenderKey}>
           {activeFiltersHandler()}
         </ActiveFilters>

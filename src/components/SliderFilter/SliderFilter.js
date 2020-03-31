@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import { Slider, Rail, Handles, Tracks, Ticks } from 'react-compound-slider';
 import { SliderRail, Handle, Track, Tick } from "./components";
-import '../Drop.css';
+import '../Custom.css';
 
 const sliderStyle = {
     position: 'relative',
@@ -29,24 +29,36 @@ const Container = styled.div`
 const SliderWrapper= styled.div`
    ${'' /* width: 100%; */}
    display: flex;
-
-align-items: center;
-
-flex-wrap: wrap;
-width: 380px;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 380px;
+   @media (max-width: 947px) {
+    padding-top:15px;
+  } 
+   @media (max-width: 902px) {
+    ${'' /* margin-top: 10px; */}
+  } 
 p{
   margin-right:15px !important;
-
-  @media (max-width: 434px) {
-    margin-bottom: 15px !important;
+  @media (max-width: 457px) {
+    padding-bottom: 20px ;
   } 
+  ${'' /* @media (max-width: 434px) {
+    margin-bottom: 15px !important;
+  }  */}
 }
 `
 
 const SliderFilter = (props) => {
 
-const {onValueChange} = props;
+const {onValueChange, value} = props;
 const [values, setValues] = useState(props.domain); 
+const [initialRender, setInitialRender] = useState(true)
+
+if (value !== values && initialRender) {
+  setValues(value)
+  setInitialRender(false);
+}
 
 const onChange = (value) => {
     onValueChange(value);
@@ -58,14 +70,17 @@ const onChange = (value) => {
     <SliderWrapper>
       <p 
         style={{
-          width: 80,
+          width: 105,
           marginBottom: 0, 
-          color: '#A4A3A3', 
+          color: 'hsla(0,0%,0%,0.8)', 
           marginRight: '0', 
           fontStyle: 'italic', 
-          fontFamily: 'Poppins, sans-serif', 
-          fontSize: '13px',
-          lineHeight: '2.9',
+          // fontFamily: 'Poppins, sans-serif', 
+          fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
+          fontSize: '1rem',
+          lineHeight: '1.75rem',
+          fontWeight: 'bold'
+      
         }}
       >
         {props.label}
