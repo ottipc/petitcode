@@ -5,7 +5,8 @@ const styles = {
   wrapper: {
     width: '100%',
     height: '250%',
-    position: 'relative'
+    position: 'relative',
+    zIndex: 200,
   },
   frame: {
     width: '100%',

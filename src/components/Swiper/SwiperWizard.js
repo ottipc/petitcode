@@ -11,6 +11,7 @@ import { groupOptions, typeOptions } from '../options'
 import RatingsDropdown from '../RatingsDropdown'
 import SliderFilter from '../SliderFilter/SliderFilter'
 import { useQuery } from 'graphql-hooks'
+import '../Custom.css'
 
 const Lower = styled.div`
   width: 100%;

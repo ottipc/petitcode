@@ -14,7 +14,7 @@ import Drop from '../../components/Drop'
 import ListView from '../../components/ListView'
 import Tooltip from '../../components/Tooltip'
 import TableComponent from '../../components/TableComponent'
-import '../../components/Custom.css'
+import './Custom.css'
 
 const CardGrid = styled.div`
   width: 100%;
@@ -122,7 +122,7 @@ export default function Freelancers({ location, ...props }) {
   const locationState =
     typeof props.activeFilters !== 'undefined' && props.activeFilters != null
       ? props.activeFilters
-      : null
+      : []
 
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
@@ -417,6 +417,7 @@ export default function Freelancers({ location, ...props }) {
     <>
       <Metatags />
       <Container>
+        <h1>Talents</h1>
         <Filter
           tags={tags}
           skills={skills}
