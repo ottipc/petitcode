@@ -333,7 +333,7 @@ const Filter = (props) => {
                 >
                   <p
                     style={{
-                      fontSize: '0.85rem',
+                      fontSize: '0.9rem',
                       color: 'white',
                       marginBottom: '0px',
                       lineHeight:'1'
@@ -345,7 +345,7 @@ const Filter = (props) => {
                       <button
                         style={{
                           border: 'none',
-                          fontSize: 10,
+                          fontSize: '0.8rem',
                           color: 'white',
                           float: 'right'
                         }}

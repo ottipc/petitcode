@@ -98,7 +98,10 @@ color: rgb(255, 255, 255);
 font-size: 1rem;
 line-height: 2em;
 @media (max-width: 650px) {
-  padding: 0px 11px;
+  padding: 0px 10px;
+  }
+@media (max-width: 599px) {
+  padding: 0px 1em;
   }
 a{
   color: #fff;

@@ -3,8 +3,11 @@ import styled from 'styled-components'
 import Select from 'react-dropdown-select'
 import './Custom.css'
 
+
+
 const Wrapper = styled.div`
   margin-right: 20px;
+  ${'' /* width: 113px; */}
   :focus {
     outline: none;
     border: 1px solid #02bd94;
@@ -20,12 +23,12 @@ const SearchAndToggle = styled.div`
   flex-direction: column;
   color: #656A6C;
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
-  font-size: 13px;
+  font-size: 0.95rem;
   background: #f7f7f7;
   input {
     margin: 10px 10px 0;
     line-height: 30px;
-    padding: 0px 20px;
+    padding: 0px 5px;
     border: 1px solid #e5e6e7;
     border-radius: 3px;
     margin-bottom: 10px;
@@ -40,6 +43,7 @@ const Items = styled.div`
   overflow: auto;
   min-height: 10px;
   max-height: 200px;
+  overflow-x: hidden;
 `
 
 const Item = styled.div`
@@ -65,7 +69,8 @@ const ItemLabel = styled.div`
   color: #656A6C;
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 0.95rem;
-  line-height: 1.75rem;
+  ${'' /* line-height: 1.75rem; */}
+  line-height: 1;
   color: hsla(0,0%,0%,0.8);
   @media(max-width:676px){
     font-size:13px;

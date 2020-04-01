@@ -440,7 +440,8 @@ body {
 
 @media(max-width:992px) {
     .react-dropdown-select-dropdown-position-bottom {
-        width: 140px !important
+        width: 140px !important;
+        left: -30px!important;
     }
 
     .react-dropdown-select-dropdown-position-bottom span {
@@ -450,6 +451,7 @@ body {
 
     .css-1nfngl6-DropDown {
         left: -20px;
+        
     }
 }
 
