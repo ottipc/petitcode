@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import SwiperWizard from '../Swiper/SwiperWizard'
 
 const Wrapper = styled.div`
-  padding: 25px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 35px;
+  padding-left: 60px;
+  padding-right: 60px;
   background-color: rgba(221, 221, 221, 0.4);
 `
 const Container = styled.div`

@@ -437,7 +437,6 @@ export default function Freelancers({ location, ...props }) {
       <Metatags />
       <Title>Talent</Title>
       <Container>
-        <h1>Talents</h1>
         <Filter
           tags={tags}
           skills={skills}
@@ -486,7 +485,7 @@ export default function Freelancers({ location, ...props }) {
           <TableComponent
             list={list}
             currentCards={currentCards}
-            csvData={csvData}
+            csvData={filteredData ? filteredData : csvData}
           />
         )}
 

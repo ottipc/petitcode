@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-  background-color: white;
+  background-color: transparent;
   width: 100%;
 `
 const SearchAndToggle = styled.div`
