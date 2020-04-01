@@ -26,6 +26,22 @@ const ActiveFilters = styled.div`
   justify-content: center;
   padding-top: 15px;
 `
+const Header = styled.p`
+  ${'' /* font-size: 28px; */}
+  font-size: 1.75rem;
+  line-height: 42px;
+  font-family: inherit;
+  font-weight: bolder;
+  text-align: left;
+  margin-bottom: 5px;
+  line-height: 1.75rem;
+  display: block;
+  @media (min-width: 300px) {
+    font-size: calc( 20px + (8) * ((100vw - 300px) / 1620) );
+  line-height: calc( 1.3em + (0) * ((100vw - 300px) / 1620) );
+  }
+  
+`
 
 const SwiperWizard = () => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
@@ -483,10 +499,10 @@ const SwiperWizard = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 100,
-            width: '80%'
+            width: '100%'
           }}
         >
-          <p>Select the date of availability of a freelancer: </p>
+          <Header>Select the date of availability of a freelancer: </Header>
           <div
             style={{
               display: 'flex',
@@ -508,10 +524,10 @@ const SwiperWizard = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 100,
-            width: '80%'
+            width: '100%'
           }}
         >
-          <p>Select the group of the freelancer: </p>
+          <Header>Select the group of the freelancer: </Header>
           <div>
             <SearchableDropdown
               placeholder="Group"
@@ -532,10 +548,10 @@ const SwiperWizard = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 100,
-            width: '80%'
+            width: '100%'
           }}
         >
-          <p>Select the skills of the freelancer: </p>
+          <Header>Select the skills of the freelancer: </Header>
           <div>
             <SearchableDropdown
               placeholder="Skills"
@@ -556,10 +572,10 @@ const SwiperWizard = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 100,
-            width: '80%'
+            width: '100%'
           }}
         >
-          <p>Select the hard skills of the freelancer: </p>
+          <Header>Select the hard skills of the freelancer: </Header>
           <div>
             <SearchableDropdown
               placeholder="Hard skills"
@@ -580,11 +596,11 @@ const SwiperWizard = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 100,
-            width: '80%'
+            width: '100%'
           }}
         >
-          <p>Select the hard skills of the freelancer: </p>
-          <div>
+          <Header>Select the hard skills of the freelancer: </Header>
+          <div className='hourly-rate-filter'>
             <SliderFilter
               label="Hourly Rate: "
               value={hRateFilter}

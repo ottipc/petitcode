@@ -88,8 +88,8 @@ const SliderFilter = (props) => {
         >
           {props.label}
         </p>
-        <div style={{ width: '250px', display: 'flex', alignItems: 'center' }}>
-          <Slider
+        <div className="slider-element-wrapper" style={{ width: '250px', display: 'flex', alignItems: 'center' }}>
+          <Slider className="slider-element"
             mode={2}
             step={0.01}
             domain={props.domain}

@@ -15,9 +15,11 @@ const styles = {
     cursor: 'pointer',
     userSelect: 'none',
     position: 'absolute',
-    bottom: '0',
-    font: '12px sans-serif',
-    color: 'black'
+    bottom: '-40px',
+    font: '1rem sans-serif',
+    color: 'black',
+    lineHeight: '1.75rem',
+    fontWeight: 'bold'
   },
   left: {
     left: '0'
@@ -49,17 +51,17 @@ export default function Buttons(props) {
   return (
     <div style={styles.wrapper}>
       {(loop || index !== 0) && (
-        <div style={prevBtnStyle} onClick={prevHandler}>
+        <div className='swiper-btn-previous' style={prevBtnStyle} onClick={prevHandler}>
           Previous
         </div>
       )}
       {(loop || index !== total - 1) && (
-        <div style={nextBtnStyle} onClick={nextHandler}>
+        <div className='swiper-btn-next' style={nextBtnStyle} onClick={nextHandler}>
           Next
         </div>
       )}
       {(loop || index === total - 1) && (
-        <div style={nextBtnStyle} onClick={() => filterFinish()}>
+        <div className='swiper-btn-finish' style={nextBtnStyle} onClick={() => filterFinish()}>
           Finish
         </div>
       )}
