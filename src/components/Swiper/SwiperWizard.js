@@ -36,7 +36,7 @@ const Header = styled.p`
   margin-bottom: 5px;
   line-height: 1.75rem;
   display: block;
-  @media (min-width: 300px) {
+  @media (min-width: 250px) {
     font-size: calc( 20px + (8) * ((100vw - 300px) / 1620) );
   line-height: calc( 1.3em + (0) * ((100vw - 300px) / 1620) );
   }
