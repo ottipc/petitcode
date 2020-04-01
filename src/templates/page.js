@@ -77,16 +77,16 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          {location.pathname.indexOf('freelancers') < 0 && (
+          {location.pathname.indexOf('talents') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
           )}
-          {location.pathname.indexOf('freelancers') >= 0 && (
+          {location.pathname.indexOf('talents') >= 0 && (
             <DefaultLayout>
               <Freelancers
-                activeFilters={location.state.activeFilters}
-                csvData={location.state.csvData}
+                activeFilters={location.state !== 'undefined' ? location.state.activeFilters : []}
+                csvData={location.state !== 'undefined' ? location.state.csvData : []}
               />
             </DefaultLayout>
           )}

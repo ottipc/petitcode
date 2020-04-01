@@ -311,7 +311,7 @@ const FreelancerCard = (props) => {
         </Rate>
       </RatesSection>
      <Availabilities>{data.unavailabilities ?'Until '+ until+ ' From '+ from :'Available'}</Availabilities>
-     <LinkBtn><a href="mailto:info@petitcode.com">Contact</a></LinkBtn>
+     <LinkBtn><a href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' + data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' + MD5(data.email).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}>Contact</a></LinkBtn>
     </ContentWrapper>
     </Wrapper>
   )

@@ -5,7 +5,7 @@ const styles = {
   wrapper: {
     position: 'absolute',
     width: '100%',
-    zIndex: '5',
+    zIndex: '205',
     bottom: '0',
     textAlign: 'center'
   },
@@ -41,7 +41,7 @@ export default function Buttons(props) {
   } = props
 
   const filterFinish = () => {
-    navigate('/en/freelancers', {
+    navigate('/en/talents', {
       state: { activeFilters, csvData }
     })
   }

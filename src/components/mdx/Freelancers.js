@@ -141,7 +141,7 @@ export default function Freelancers({ location, ...props }) {
   const locationState =
     typeof props.activeFilters !== 'undefined' && props.activeFilters != null
       ? props.activeFilters
-      : null
+      : []
 
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
@@ -485,7 +485,7 @@ export default function Freelancers({ location, ...props }) {
           <TableComponent
             list={list}
             currentCards={currentCards}
-            csvData={csvData}
+            csvData={filteredData ? filteredData : csvData}
           />
         )}
 
