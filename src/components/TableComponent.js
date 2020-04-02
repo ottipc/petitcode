@@ -89,33 +89,48 @@ background-image: linear-gradient(135deg, #000000 14px, #fff 14px);
 position: absolute;
 top: 0;
 `
-const LinkBtn = styled.button`
-background-color:#000000;
-padding: 0px 1em;
-border-radius: 1em;
-background: rgb(135, 135, 135) none repeat scroll 0% 0%;
-color: rgb(255, 255, 255);
-font-size: 1rem;
-line-height: 2em;
-@media (max-width: 650px) {
-  padding: 0px 10px;
-  }
-@media (max-width: 599px) {
-  padding: 0px 1em;
-  }
-a{
-  color: #fff;
-  text-decoration:none;
- &:focus{
-  color: #fff;
-  text-decoration:none; 
- }
- :hover{
-   color: #fff;
-  text-decoration:none;
-  }
-}
+// const LinkBtn = styled.button`
+// background-color:#000000;
+// padding: 0px 1em;
+// border-radius: 1em;
+// background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+// color: rgb(255, 255, 255);
+// font-size: 1rem;
+// line-height: 2em;
+// @media (max-width: 650px) {
+//   padding: 0px 10px;
+//   }
+// @media (max-width: 599px) {
+//   padding: 0px 1em;
+//   }
+// a{
+//   color: #fff;
+//   text-decoration:none;
+//  &:focus{
+//   color: #fff;
+//   text-decoration:none; 
+//  }
+//  :hover{
+//    color: #fff;
+//   text-decoration:none;
+//   }
+// }
 
+// `
+
+const LinkBtn = styled.button`
+  background: #000;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  padding: 0.55em 0.7em;
+  line-height: 1em;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.22);
+  margin-bottom: 10px;
+  a {
+    color: #fff;
+  }
 `
 
 
@@ -126,6 +141,7 @@ const  TableComponent = (props) => {
   let currentCards = [props.currentCards]
 
   let list = csvData.map(x => x)
+  console.log('rerencder', csvData);
 
   csvData.forEach(data => {
     if (data.unavailabilities.length > 0) {
@@ -218,7 +234,7 @@ const columns = [
     <Name>{row.name.split(" ")[0]} {row.surname.charAt(0)+'.'}
     </Name>
     
-    <div className='ratings'><Ratings
+    {/* <div className='ratings'><Ratings
     rating={parseFloat(row.rating)}
     widgetDimensions="13px"
     widgetSpacings="0px"
@@ -228,11 +244,12 @@ const columns = [
     <Ratings.Widget />
     <Ratings.Widget />
     <Ratings.Widget />
-  </Ratings></div></div>
+  </Ratings></div> */}
+    </div>
     </div>
   },
   {
-    name: 'Tags',
+    name: 'Hard Skills',
     selector: 'tags',
     left: true,
     hide: 'sm',
@@ -244,10 +261,10 @@ const columns = [
     sortable: true,
     left: true,
     hide: 'sm',
-    cell: row =><Rate>{row.daily_rate}</Rate>
+    cell: row =><Rate>{parseFloat(row.daily_rate) === 0 ? 640 : row.daily_rate * 1.25}</Rate>
   },
   {
-    name: 'Groups',
+    name: 'Industries',
     selector: 'groups',
     left: true,
     hide: 'md',

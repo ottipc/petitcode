@@ -43,7 +43,7 @@ export default function Buttons(props) {
   } = props
 
   const filterFinish = () => {
-    navigate('/en/talents', {
+    navigate('/en/specialists', {
       state: { activeFilters, csvData }
     })
   }

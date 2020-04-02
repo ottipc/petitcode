@@ -38,13 +38,14 @@ const Title = styled.h1`
   padding-top: 0;
   margin-bottom: 1.75rem;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.2rem;
   line-height: 1.4;
   margin-bottom: 42px;
-      `
+`
 const Container = styled.div`
   width: 100%;
   ${'' /* background-color: rgba(221, 221, 221, 0.3); */}
@@ -81,7 +82,7 @@ const ViewLink = styled.a`
     color: #020206;
   }
   @media (max-width: 506px) {
-    padding-left:0;
+    padding-left: 0;
   }
   .las {
     font-family: 'Line Awesome Free';
@@ -175,6 +176,7 @@ export default function Freelancers({ location, ...props }) {
     if (
       typeof props.csvData !== 'undefined' &&
       props.csvData != null &&
+      props.csvData.length > 0 &&
       JSON.stringify(csvData) !== JSON.stringify(props.csvData)
     ) {
       setCsvData(props.csvData)
@@ -342,14 +344,14 @@ export default function Freelancers({ location, ...props }) {
       if (
         activeFilters.filter(
           (filter) =>
-            typeof filter.Group !== 'undefined' && filter.Group.length > 0
+            typeof filter.Industries !== 'undefined' && filter.Industries.length > 0
         ).length > 0
       ) {
         const groupFilter = activeFilters.filter(
-          (filter) => typeof filter.Group !== 'undefined'
+          (filter) => typeof filter.Industries !== 'undefined'
         )
         filteredData = filteredData.filter((entity) =>
-          groupFilter[0].Group.every((item) =>
+          groupFilter[0].Industries.every((item) =>
             entity.groups.split(', ').includes(item)
           )
         )
@@ -435,7 +437,7 @@ export default function Freelancers({ location, ...props }) {
   return (
     <>
       <Metatags />
-      <Title>Talent</Title>
+      <Title>Request your specialst</Title>
       <Container>
         <Filter
           tags={tags}
@@ -447,9 +449,7 @@ export default function Freelancers({ location, ...props }) {
           {show ? (
             <WrapperDropown>
               {' '}
-              <Drop
-                onChangeSelection={(value) => setSortOrder(value)}
-              />{' '}
+              <Drop onChangeSelection={(value) => setSortOrder(value)} />{' '}
             </WrapperDropown>
           ) : (
             ''
@@ -483,6 +483,7 @@ export default function Freelancers({ location, ...props }) {
           <CardGrid key={rerenderKey}>{currentCards}</CardGrid>
         ) : (
           <TableComponent
+            key={rerenderKey}
             list={list}
             currentCards={currentCards}
             csvData={filteredData ? filteredData : csvData}

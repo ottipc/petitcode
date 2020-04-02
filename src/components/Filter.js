@@ -10,7 +10,7 @@ import DateFilter from './DateFilter'
 
 const Wrapper = styled.div`
   padding: 0px;
-  padding-bottom:25px;
+  padding-bottom: 25px;
 `
 
 const ContainerUpper = styled.div`
@@ -21,7 +21,6 @@ const ContainerUpper = styled.div`
   padding-bottom: 20px;
   justify-content: space-between;
   flex-wrap: wrap;
- 
 `
 const Container = styled.div`
   display: flex;
@@ -30,7 +29,7 @@ const Container = styled.div`
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 15px 20px 20px 20px;
-  border: 1px solid hsla(0,0%,0%,0.12);
+  border: 1px solid hsla(0, 0%, 0%, 0.12);
 `
 const Lower = styled.div`
   width: 100%;
@@ -56,13 +55,14 @@ const Filter = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState()
   const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
+  const [dRateFilterValue, setDRateFilterValue] = useState([0, 800])
   const [groupFilter, setGroupFilter] = useState()
   const [skillsFilter, setSkillsFilter] = useState()
   const [tagsFilter, setTagsFilter] = useState()
   const [ratingFilter, setRatingFilter] = useState()
   const [typeFilter, setTypeFilter] = useState()
   const [hRateFilter, setHRateFilter] = useState([0, 150])
-  const [dRateFilter, setDRateFilter] = useState()
+  const [dRateFilter, setDRateFilter] = useState([0, 800])
   const [activeFilters, setActiveFilters] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
   const [initialRender, setInitialRender] = useState(true)
@@ -106,15 +106,15 @@ const Filter = (props) => {
   }
 
   if (activeFilters.length > 0) {
-    const hRateFilter = activeFilters.filter(
-      (filter) => typeof filter.hRate !== 'undefined'
+    const dRateFilter = activeFilters.filter(
+      (filter) => typeof filter.dRate !== 'undefined'
     )
     if (
-      typeof hRateFilter[0] !== 'undefined' &&
-      hRateFilter[0].hRate !== '' &&
-      hRateFilterValue !== hRateFilter[0].hRate
+      typeof dRateFilter[0] !== 'undefined' &&
+      dRateFilter[0].dRate !== '' &&
+      dRateFilterValue !== dRateFilter[0].dRate
     ) {
-      setHRateFilterValue(hRateFilter[0].hRate)
+      setDRateFilterValue(dRateFilter[0].dRate)
     }
   }
 
@@ -133,11 +133,11 @@ const Filter = (props) => {
     const af = activeFilters
     let added = false
     switch (type) {
-      case 'Group':
+      case 'Industries':
         setGroupFilter(value)
         af.forEach((filter) => {
-          if (Object.keys(filter)[0] === 'Group') {
-            filter.Group = value.map((entry) => {
+          if (Object.keys(filter)[0] === 'Industries') {
+            filter.Industries = value.map((entry) => {
               return entry.value
             })
             added = true
@@ -145,7 +145,7 @@ const Filter = (props) => {
         })
         if (!added) {
           af.push({
-            Group: value.map((entry) => {
+            Industries: value.map((entry) => {
               return entry.value
             })
           })
@@ -263,7 +263,7 @@ const Filter = (props) => {
     })
 
     switch (group) {
-      case 'Group':
+      case 'Industries':
         setGroupFilter(newFilterArray)
         break
       case 'Skills':
@@ -289,7 +289,7 @@ const Filter = (props) => {
 
   const activeFiltersHandler = () => {
     let renderFilters = []
-    const validFilters = ['Group', 'Skills', 'Tags', 'Type']
+    const validFilters = ['Industries', 'Skills', 'Tags', 'Type']
     renderFilters = activeFilters.map((type) => {
       const props = Object.entries(type)
       if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
@@ -300,13 +300,14 @@ const Filter = (props) => {
               flexDirection: 'column',
               alignItems: 'baseline',
               marginTop: '2px',
-              marginRight:'5px'
+              marginRight: '5px'
             }}
           >
             <p
               style={{
                 color: 'hsla(0,0%,0%,0.8)',
-                fontFamily: 'Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
+                fontFamily:
+                  'Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
                 fontSize: '1rem',
                 fontStyle: 'italic',
                 marginRight: 10,
@@ -328,7 +329,7 @@ const Filter = (props) => {
                     display: 'flex',
                     alignItems: 'center',
                     marginRight: 10,
-                    marginBottom: 4,
+                    marginBottom: 4
                   }}
                 >
                   <p
@@ -336,7 +337,7 @@ const Filter = (props) => {
                       fontSize: '0.9rem',
                       color: 'white',
                       marginBottom: '0px',
-                      lineHeight:'1'
+                      lineHeight: '1'
                     }}
                   >
                       {value}
@@ -353,76 +354,76 @@ const Filter = (props) => {
                       >
                         X
                       </button>
-                    </div>
                   </div>
-                )
-              })}
-            </div>
-          )
-        } else if (
-          props[0][0] === 'Rating' &&
-          typeof props[0][1] !== 'undefined' &&
-          props[0][1] > 0
-        ) {
-          return (
+                </div>
+              )
+            })}
+          </div>
+        )
+      } else if (
+        props[0][0] === 'Rating' &&
+        typeof props[0][1] !== 'undefined' &&
+        props[0][1] > 0
+      ) {
+        return (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'baseline'
+            }}
+          >
+            <p
+              style={{
+                color: '#656A6C',
+                fontFamily: 'Poppins, sans-serif',
+                fontSize: '13px',
+                fontStyle: 'italic',
+                marginRight: 10
+              }}
+            >
+              {props[0][0]}
+            </p>
             <div
               style={{
+                backgroundColor: '#A4A3A3',
+                height: 14,
+                paddingTop: 10,
+                paddingBottom: 10,
+                paddingLeft: 10,
+                borderRadius: 10,
                 display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'baseline'
+                alignItems: 'center',
+                marginRight: 10
               }}
             >
               <p
                 style={{
-                  color: '#656A6C',
-                  fontFamily: 'Poppins, sans-serif',
-                  fontSize: '13px',
-                  fontStyle: 'italic',
-                  marginRight: 10
+                  fontSize: '10px',
+                  color: 'white',
+                  marginBottom: '0px'
                 }}
               >
-                {props[0][0]}
+                More than {props[0][1]}
               </p>
-              <div
-                style={{
-                  backgroundColor: '#A4A3A3',
-                  height: 14,
-                  paddingTop: 10,
-                  paddingBottom: 10,
-                  paddingLeft: 10,
-                  borderRadius: 10,
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginRight: 10
-                }}
-              >
-                <p
+              <div>
+                <button
                   style={{
-                    fontSize: '10px',
+                    border: 'none',
+                    fontSize: 10,
                     color: 'white',
-                    marginBottom: '0px'
+                    float: 'right'
                   }}
+                  onClick={() => removeFilter(props[0][0], value)}
                 >
-                  More than {props[0][1]}
-                </p>
-                <div>
-                  <button
-                    style={{
-                      border: 'none',
-                      fontSize: 10,
-                      color: 'white',
-                      float: 'right'
-                    }}
-                    onClick={() => removeFilter(props[0][0], value)}
-                  >
-                    X
-                  </button>
-                </div>
+                  X
+                </button>
               </div>
             </div>
-          )
-        }
-      })
+          </div>
+        )
+      }
+    })
     return renderFilters
   }
 
@@ -465,29 +466,25 @@ const Filter = (props) => {
       <Container>
         <ContainerUpper>
           {/* <SearchFilter value={searchFilterValue} searchFilter={value => searchFilter(value)} /> */}
-          <DateFilter
-            value={dateFilterValue}
-            dateFilter={(value) => dateFilter(value)}
-          />
           {/* </ContainerUpper>
         <Lower> */}
           <SearchableDropdown
-            placeholder="Group"
+            placeholder="Industries"
             selectedItems={groupFilter}
             options={groupOptions}
-            onFilterSet={(value) => activateFilter('Group', value)}
-          />
-          <SearchableDropdown
-            placeholder="Skills"
-            selectedItems={skillsFilter}
-            options={skills}
-            onFilterSet={(value) => activateFilter('Skills', value)}
+            onFilterSet={(value) => activateFilter('Industries', value)}
           />
           <SearchableDropdown
             placeholder="Hard skills"
             selectedItems={tagsFilter}
             options={tags}
             onFilterSet={(value) => activateFilter('Tags', value)}
+          />
+          <SearchableDropdown
+            placeholder="Skills"
+            selectedItems={skillsFilter}
+            options={skills}
+            onFilterSet={(value) => activateFilter('Industries', value)}
           />
           {/* <RatingsDropdown
             placeholder="Rating"
@@ -499,17 +496,22 @@ const Filter = (props) => {
             options={typeOptions}
             onFilterSet={(value) => activateFilter('Type', value)}
           /> */}
-          <SliderFilter
+          {/* <SliderFilter
             label="Hourly Rate: "
             domain={[0, 150]}
             value={hRateFilterValue}
             onValueChange={(value) => activateFilter('hRate', value)}
-          />
-          {/* <SliderFilter
+          /> */}
+          <SliderFilter
             label="Daily Rate: "
             domain={[0, 800]}
+            value={dRateFilterValue}
             onValueChange={(value) => activateFilter('dRate', value)}
-          /> */}
+          />
+          <DateFilter
+            value={dateFilterValue}
+            dateFilter={(value) => dateFilter(value)}
+          />
           {/* </Lower> */}
         </ContainerUpper>
         <ActiveFilters key={rerenderKey}>

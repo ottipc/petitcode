@@ -66,8 +66,9 @@ const Item = styled.div`
 `
 
 const ItemLabel = styled.div`
-  color: #656A6C;
-  font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
+  color: #656a6c;
+  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+    sans-serif;
   font-size: 0.95rem;
   ${'' /* line-height: 1.75rem; */}
   line-height: 1;
@@ -76,7 +77,7 @@ const ItemLabel = styled.div`
     font-size:13px;
     line-height:1;
   }
-`;
+`
 
 const DropdownContainer = styled.div`
   cursor: pointer;

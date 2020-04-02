@@ -35,6 +35,15 @@ class PageTemplate extends React.PureComponent {
       }
     } = data.contentfulPage
 
+    const activeFilters =
+      location.state !== 'undefined' && location.state != null
+        ? location.state.activeFilters
+        : []
+    const csvData =
+      location.state !== 'undefined' && location.state != null
+        ? location.state.csvData
+        : []
+
     console.log('location', location)
 
     return (
@@ -77,17 +86,14 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          {location.pathname.indexOf('talents') < 0 && (
+          {location.pathname.indexOf('specialists') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>
             </MDXProvider>
           )}
-          {location.pathname.indexOf('talents') >= 0 && (
+          {location.pathname.indexOf('specialists') >= 0 && (
             <DefaultLayout>
-              <Freelancers
-                activeFilters={location.state !== 'undefined' ? location.state.activeFilters : []}
-                csvData={location.state !== 'undefined' ? location.state.csvData : []}
-              />
+              <Freelancers activeFilters={activeFilters} csvData={csvData} />
             </DefaultLayout>
           )}
         </Layout>

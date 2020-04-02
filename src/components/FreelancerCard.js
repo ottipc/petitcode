@@ -4,13 +4,11 @@ import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
 import user from '../assets/user.png'
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/themes/translucent.css';
+import Tippy from '@tippyjs/react'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/translucent.css'
 import MD5 from 'crypto-js/md5'
-import './Tooltip.css';
-
-
+import './Tooltip.css'
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -137,7 +135,7 @@ const Group = styled.div`
   color: white;
   font-weight: bold;
   background: rgb(135, 135, 135) none repeat scroll 0% 0%;
-  background:hsla(0,0%,0%,0.8);
+  background: hsla(0, 0%, 0%, 0.8);
 `
 
 const RatingWrapper = styled.div``
@@ -150,8 +148,8 @@ const Type = styled.div`
   position: absolute;
   padding-right: 0;
   width: 20px;
-  height:20px;
-  background-image: linear-gradient(135deg,#000000 14px, #fff 14px);
+  height: 20px;
+  background-image: linear-gradient(135deg, #000000 14px, #fff 14px);
 `
 const Availabilities = styled.div`
     color: #6a6c6e;
@@ -165,47 +163,58 @@ const Availabilities = styled.div`
     }
 }
 `
+// const LinkBtn = styled.button`
+//   padding: 0px 1em;
+//   border-radius: 1em;
+//   background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+//   color: rgb(255, 255, 255);
+//   font-size: 1rem;
+//   line-height: 2em;
+//   margin: 12px 2px;
+//   a {
+//     color: #fff;
+//     text-decoration: none;
+//     font-size: 1rem;
+//     &:focus {
+//       color: #fff;
+//       text-decoration: none;
+//     }
+//     :hover {
+//       color: #fff;
+//       text-decoration: none;
+//     }
+//   }
+// `
+
 const LinkBtn = styled.button`
-  padding: 0px 1em;
-  border-radius: 1em;
-  background: rgb(135, 135, 135) none repeat scroll 0% 0%;
-  color: rgb(255, 255, 255);
-  font-size: 1rem;
-  line-height: 2em;
-  margin: 12px 2px;
+  background: #000;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  padding: 0.55em 0.7em;
+  line-height: 1em;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.22);
+  margin-bottom: 10px;
   a {
     color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    &:focus {
-      color: #fff;
-      text-decoration: none;
-    }
-    :hover {
-      color: #fff;
-      text-decoration: none;
-    }
   }
 `
 
 const FreelancerCard = (props) => {
   const { data, filters } = props
 
-  const dates = data.unavailabilities.split(', ');
-  let until = dates[0];
-  let from = '';
-  if(dates[1]){
-  
-   from = dates[1];
+  const dates = data.unavailabilities.split(', ')
+  let until = dates[0]
+  let from = ''
+  if (dates[1]) {
+    from = dates[1]
 
-   const du = until.split('-');
-   const df= from.split('-');
-    until= du[2] + "/" + du[1] + "/" + du[0];
-    from =df[2] + "/" + df[1] + "/" + df[0];
-
-}
-
-
+    const du = until.split('-')
+    const df = from.split('-')
+    until = du[2] + '/' + du[1] + '/' + du[0]
+    from = df[2] + '/' + df[1] + '/' + df[0]
+  }
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')
@@ -281,17 +290,18 @@ const FreelancerCard = (props) => {
 
   return (
     <Wrapper>
-    
-    <ContentWrapper>
-      <Image src={user} />
-      <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
-      <Name>{data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}</Name>
-      {/* <Address>{formatAddress(data.address)}</Address> */}
-      <Tippy theme ='translucent' content={<TagsToolip></TagsToolip>}>
-        <Tags>{data.tags}</Tags>
-      </Tippy>
-     
-        <RatingWrapper>
+      <ContentWrapper>
+        <Image src={user} />
+        <GroupsSection>{formatGroups(data.groups)}</GroupsSection>
+        <Name>
+          {data.name.split(' ')[0] + ' ' + data.surname.charAt(0) + '.'}
+        </Name>
+        {/* <Address>{formatAddress(data.address)}</Address> */}
+        <Tippy theme="translucent" content={<TagsToolip />}>
+          <Tags>{data.tags}</Tags>
+        </Tippy>
+
+        {/* <RatingWrapper>
         <Ratings
           rating={parseFloat(data.rating)}
           widgetDimensions="13px"
@@ -302,17 +312,36 @@ const FreelancerCard = (props) => {
           <Ratings.Widget />
           <Ratings.Widget />
           <Ratings.Widget />
-        </Ratings></RatingWrapper>
-      
-      <RatesSection>
-        <Rate>
-          <RateValue>{data.daily_rate}</RateValue>
-          <RateLabel>Daily rate</RateLabel>
-        </Rate>
-      </RatesSection>
-     <Availabilities>{data.unavailabilities ?'Until '+ until+ ' From '+ from :'Available'}</Availabilities>
-     <LinkBtn><a href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' + data.name.split(" ")[0] + ' ' + data.surname.charAt(0)+'.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' + MD5(data.email).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}>Contact</a></LinkBtn>
-    </ContentWrapper>
+        </Ratings></RatingWrapper> */}
+
+        <RatesSection>
+          <Rate>
+            <RateValue>
+              {parseFloat(data.daily_rate) === 0 ? 640 : data.daily_rate * 1.25}
+            </RateValue>
+            <RateLabel>Daily rate</RateLabel>
+          </Rate>
+        </RatesSection>
+        <Availabilities>
+          {data.unavailabilities
+            ? 'Until ' + until + ' From ' + from
+            : 'Available'}
+        </Availabilities>
+        <LinkBtn>
+          <a
+            href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' +
+              data.name.split(' ')[0] +
+              ' ' +
+              data.surname.charAt(0) +
+              '.'}%20%0D%0A%0D%0A${filters}%0D%0A%0D%0A${'ID: ' +
+              MD5(
+                data.email
+              ).toString()}%0D%0A%0D%0APlease%20get%20back%20to%20me%20as%20soon%20as%20you%20can%20via%20mail%20or%20phone%3A______________________.%0D%0A%0D%0AThank%20you.Kindly%2C%0D%0Ayour%20Name`}
+          >
+            Contact
+          </a>
+        </LinkBtn>
+      </ContentWrapper>
     </Wrapper>
   )
 }

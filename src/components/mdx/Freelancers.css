@@ -90,7 +90,7 @@ body {
 }
 
 .rs-picker-daterange-menu {
-    z-index: 100;
+    z-index: 200;
 }
 .rs-picker-subtle .rs-picker-toggle.active {
     background: #fff !important;
@@ -425,6 +425,10 @@ body {
     background-color: #eeeeee;
     border-color: #ddd;
     text-align: center;
+}
+
+.SectionContent__Wrapper-cjecYL {
+    padding: 0vh 224px;
 }
 
 .dpYvgs:focus {

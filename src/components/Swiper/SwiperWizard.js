@@ -52,7 +52,7 @@ const SwiperWizard = () => {
   const [ratingFilter, setRatingFilter] = useState([])
   const [typeFilter, setTypeFilter] = useState([])
   const [hRateFilter, setHRateFilter] = useState([0, 150])
-  const [dRateFilter, setDRateFilter] = useState([])
+  const [dRateFilter, setDRateFilter] = useState([0, 800])
   const [activeFilters, setActiveFilters] = useState([])
   const [csvData, setCsvData] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
@@ -148,11 +148,11 @@ const SwiperWizard = () => {
     const af = activeFilters
     let added = false
     switch (type) {
-      case 'Group':
+      case 'Industries':
         setGroupFilter(value)
         af.forEach((filter) => {
-          if (Object.keys(filter)[0] === 'Group') {
-            filter.Group = value.map((entry) => {
+          if (Object.keys(filter)[0] === 'Industries') {
+            filter.Industries = value.map((entry) => {
               return entry.value
             })
             added = true
@@ -160,7 +160,7 @@ const SwiperWizard = () => {
         })
         if (!added) {
           af.push({
-            Group: value.map((entry) => {
+            Industries: value.map((entry) => {
               return entry.value
             })
           })
@@ -308,7 +308,7 @@ const SwiperWizard = () => {
     })
 
     switch (group) {
-      case 'Group':
+      case 'Industries':
         setGroupFilter(newFilterArray)
         break
       case 'Skills':
@@ -333,7 +333,7 @@ const SwiperWizard = () => {
 
   const activeFiltersHandler = (type) => {
     let renderFilters = []
-    const validFilters = ['Group', 'Skills', 'Tags', 'Type']
+    const validFilters = ['Industries', 'Skills', 'Tags', 'Type']
     if (activeFilters) {
       renderFilters = activeFilters
         .filter((filter) => filter.hasOwnProperty(type))
@@ -502,41 +502,16 @@ const SwiperWizard = () => {
             width: '100%'
           }}
         >
-          <Header>Select the date of availability of a freelancer: </Header>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%'
-            }}
-          >
-            <DateFilter dateFilter={(value) => dateFilter(value)} />
-          </div>
-        </div>
-      </SlideItem>
-      <SlideItem>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            height: 100,
-            width: '100%'
-          }}
-        >
           <Header>Select the group of the freelancer: </Header>
           <div>
             <SearchableDropdown
-              placeholder="Group"
+              placeholder="Industries"
               options={groupOptions}
-              onFilterSet={(value) => activateFilter('Group', value)}
+              onFilterSet={(value) => activateFilter('Industries', value)}
             />
           </div>
           <ActiveFilters key={rerenderKey}>
-            {activeFiltersHandler('Group')}
+            {activeFiltersHandler('Industries')}
           </ActiveFilters>
         </div>
       </SlideItem>
@@ -602,11 +577,36 @@ const SwiperWizard = () => {
           <Header>Select the hard skills of the freelancer: </Header>
           <div className='hourly-rate-filter'>
             <SliderFilter
-              label="Hourly Rate: "
-              value={hRateFilter}
-              domain={[0, 150]}
-              onValueChange={(value) => activateFilter('hRate', value)}
+              label="Daily Rate: "
+              value={dRateFilter}
+              domain={[0, 800]}
+              onValueChange={(value) => activateFilter('dRate', value)}
             />
+          </div>
+        </div>
+      </SlideItem>
+      <SlideItem>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: 100,
+            width: '80%'
+          }}
+        >
+          <Header>Select the date of availability of a freelancer: </Header>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%'
+            }}
+          >
+            <DateFilter dateFilter={(value) => dateFilter(value)} />
           </div>
         </div>
       </SlideItem>

@@ -110,6 +110,11 @@ const DateFilter = (props) => {
     dateFilter(dateRange)
   }
 
+  const cleanDateHandler = () => {
+    setInputValue([])
+    dateFilter([])
+  }
+
   return (
     <Container>
       <DateRangePicker
@@ -126,6 +131,7 @@ const DateFilter = (props) => {
           // fontFamily: 'Poppins, sans-serif'
         }}
         onOk={(value) => setDateHandler(value)}
+        onClean={() => cleanDateHandler()}
       />
       <Button>
         <FontAwesomeIcon icon={faCalendarCheck} />
