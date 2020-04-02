@@ -69,11 +69,22 @@ const Filter = (props) => {
   const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
 
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
   if (
-    JSON.stringify(activeFilters) !== localStorage.getItem('activeFilters') &&
-    localStorage.getItem('activeFilters') != null
+    JSON.stringify(activeFilters) !== readCookie('activeFilters') &&
+    readCookie('activeFilters')
   ) {
-    setActiveFilters(JSON.parse(localStorage.getItem('activeFilters')))
+    setActiveFilters(JSON.parse(readCookie('activeFilters')))
     setInitialRender(false)
   }
 
@@ -243,7 +254,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
-    localStorage.removeItem('activeFilters')
+    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -282,7 +293,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
-    localStorage.removeItem('activeFilters')
+    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -440,7 +451,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Search: value })
     }
-    localStorage.removeItem('activeFilters')
+    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     setActiveFilters(af)
     filterCards(af)
   }
@@ -458,7 +469,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Date: value })
     }
-    localStorage.removeItem('activeFilters')
+    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     setActiveFilters(af)
     filterCards(af)
   }
