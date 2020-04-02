@@ -20,12 +20,11 @@ const Container = styled.div`
   width: 380px;
   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
-  ${'' /* @media (max-width: 991px) {
-    width: 100%;
-    margin-left: 0;
-  } */}
-  @media (max-width: 1377px) {
+  ${'' /* @media (max-width: 1377px) {
    margin-bottom:15px;
+  } */}
+  @media (max-width: 1422px) {
+    margin-top: 15px;
   }
   @media (max-width: 480px) {
    width:100%;

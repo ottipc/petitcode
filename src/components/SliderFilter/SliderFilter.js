@@ -36,9 +36,9 @@ const SliderWrapper = styled.div`
   ${'' /* @media (max-width: 1377px) {
     padding-top: 15px;
   } */}
-  @media (max-width: 682px) {
+  ${'' /* @media (max-width: 682px) {
     margin-top: 10px;
-  } 
+  }  */}
   @media (max-width: 480px) {
    width:100%;
   }
@@ -81,9 +81,10 @@ const SliderFilter = (props) => {
             // fontFamily: 'Poppins, sans-serif',
             fontFamily:
               'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
-            fontSize: '1rem',
+            fontSize: '1.1rem',
             lineHeight: '1.75rem',
-            fontWeight: 'bold'
+            fontWeight: 'bold',
+            paddingBottom: '3px'
           }}
         >
           {props.label}

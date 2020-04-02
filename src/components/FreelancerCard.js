@@ -155,9 +155,10 @@ const Availabilities = styled.div`
     color: #6a6c6e;
     font-size: 1rem;
     line-height: 1.75rem;
-    margin-top: 4px;
+    ${'' /* margin-top: 4px; */}
     color: hsla(0,0%,0%,0.8);
     text-transform:capitalize;
+    padding: 8px 26px;
     &:hover{
       cursor:pointer;
     }
@@ -198,6 +199,10 @@ const LinkBtn = styled.button`
   margin-bottom: 10px;
   a {
     color: #fff;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration:none;
   }
 `
 
