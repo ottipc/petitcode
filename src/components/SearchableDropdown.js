@@ -8,6 +8,7 @@ import './Custom.css'
 const Wrapper = styled.div`
   margin-right: 20px;
   ${'' /* width: 113px; */}
+  margin-bottom: 10px;
   :focus {
     outline: none;
     border: 1px solid #02bd94;
@@ -85,7 +86,7 @@ const DropdownContainer = styled.div`
 const Placeholder = styled.p`
   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   ${'' /* font-style:italic; */}
   color: hsla(0,0%,0%,0.8);
   font-weight: bold;

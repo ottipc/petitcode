@@ -24,7 +24,8 @@ font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-se
 font-size: 0.9rem;
 color: white;
 font-weight: bold;
-background: rgb(135, 135, 135) none repeat scroll 0% 0%;
+${'' /* background: rgb(135, 135, 135) none repeat scroll 0% 0%; */}
+background:#000000;
 `
 const Name = styled.a`
 @font-face {
@@ -130,6 +131,10 @@ const LinkBtn = styled.button`
   margin-bottom: 10px;
   a {
     color: #fff;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration:none;
   }
 `
 
@@ -294,7 +299,7 @@ const ExpanableComponent = ({ data }) =>
 <div className='footable-row-detail-inner'>
 <div className='footable-row-detail-row tags-row'><div className='footable-row-detail'>Tags:</div><div className='footable-row-value'>{data.tags}</div></div>
 <div className='footable-row-detail-row daily-rate-row'><div className='footable-row-detail'>Daily rate:</div><div className='footable-row-value'>{data.daily_rate}</div></div>
-<div className='footable-row-detail-row groups-row'><div className='footable-row-detail'>Groups:</div><div className='footable-row-value row-categories'>{formatCategories(data.groups)}</div></div>
+<div className='footable-row-detail-row groups-row'><div className='footable-row-detail'>Industries:</div><div className='footable-row-value row-categories'>{formatCategories(data.groups)}</div></div>
 <div className='footable-row-detail-row available-row'><div className='footable-row-detail'>Availability:</div><div className='footable-row-value'>{data.unavailabilities ?'Until '+ data.until+ ' From '+ data.from :'Available'}</div></div>
 <div className='footable-row-detail-row cta-row'><div className='footable-row-detail'>Contact :</div><div className='footable-row-value'><LinkBtn>Contact</LinkBtn></div></div>
 

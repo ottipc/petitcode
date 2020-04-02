@@ -295,6 +295,7 @@ body {
     font-weight: normal;
     line-height: 2.0em;
     color: hsla(0, 0%, 0%, 0.8);
+    color: #fff;
 
 }
 
@@ -373,7 +374,9 @@ body {
     font-size: 0.95rem;
     color: hsla(0, 0%, 0%, 0.8);
 }
-
+.rdt_Pagination span{
+    font-weight: bold;
+}
 .rdt_Pagination #pagination-previous-page {
     background-color: #000000;
 }
@@ -610,4 +613,23 @@ body {
  .gzmtPb,
 .djAYXR{
     display: none;
+}
+@media (max-width: 467px) {
+.SliderFilter__SliderWrapper-kJYQAr > p{
+    padding-bottom: 27px !important;
+    padding-top: 3px!important;
+}
+.DateFilter__Container-iEdyjr{
+    padding-top: 27px!important;
+   
+}
+.FilterWizard__Wrapper-dtbQIK .DateFilter__Container-iEdyjr{
+    padding-top: 0!important;
+    margin-top: 0;
+   
+}
+.FilterWizard__Wrapper-dtbQIK .SliderFilter__SliderWrapper-kJYQAr > p{
+    padding-bottom: 0 !important;
+    padding-top: 10px!important;
+}
 }

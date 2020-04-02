@@ -63,7 +63,6 @@ const ViewLinkWrapper = styled.div`
     padding-top: 10px;
   }
 `
-// added
 
 const ViewLink = styled.a`
   ${'' /* font-family: 'Poppins', sans-serif; */}
@@ -94,18 +93,14 @@ const ViewLink = styled.a`
     vertical-align: -0.0667em;
   }
   .la-bars::before {
-    ${'' /* content: "\f0c9"; */}
     content: "\f07a";
   }
 `
-// end added
-// added
 const WrapperDropown = styled.div`
   padding: 0 25px;
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
-  ${'' /* font-family: 'Poppins', sans-serif; */}
   font-family: 'Noto Sans','Helvetica Neue','Segoe UI','Helvetica','Arial',sans-serif;
   font-size: 0.95rem;
   color: hsla(0, 0%, 0%, 0.8);
@@ -115,14 +110,12 @@ const WrapperDropown = styled.div`
 
 const SortWrapper = styled.div`
   width: 100%;
-  ${'' /* //  display:flex; */}
   justify-content: space-between;
   @media (max-width: 455px) {
     display: flex;
     flex-direction: column;
   }
 `
-// end added
 
 export default function Freelancers({ location, ...props }) {
   const [csvData, setCsvData] = useState([])

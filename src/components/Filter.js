@@ -45,7 +45,7 @@ const ActiveFilters = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  ${'' /* margin-top: 10px; */}
   @media (max-width: 992px) {
     flex-direction: column;
   }

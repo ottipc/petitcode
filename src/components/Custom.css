@@ -564,10 +564,11 @@ body {
 
 
 
-  .FilterWizard__Wrapper-dtbQIK .jgRjlz{
+  .FilterWizard__Wrapper-dtbQIK .SearchableDropdown__Placeholder-hkLvLL{
       /* font-size: 1.25rem; */
       font-size: calc( 18px + (2) * ((100vw - 300px) / 1620) );
       line-height: calc( 1.3em + (0) * ((100vw - 300px) / 1620) );
+      color: #000000;
   }
   .FilterWizard__Wrapper-dtbQIK .react-dropdown-select-dropdown-position-bottom{
       width: unset !important;
@@ -593,6 +594,7 @@ body {
     line-height: calc( 1.3em + (0) * ((100vw - 300px) / 1620) ) !important;
     width: 100% !important;
     text-align: center;
+    color: #000000 !important;
   }
 
   .FilterWizard__Wrapper-dtbQIK .SwiperWizard__ActiveFilters-cWpmmj{
