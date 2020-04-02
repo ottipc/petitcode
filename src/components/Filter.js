@@ -473,21 +473,18 @@ const Filter = (props) => {
           {/* </ContainerUpper>
         <Lower> */}
           <SearchableDropdown
-            key={rerenderKey}
             placeholder="Industries"
             selectedItems={groupFilter}
             options={groupOptions}
             onFilterSet={(value) => activateFilter('Industries', value)}
           />
           <SearchableDropdown
-            key={rerenderKey}
             placeholder="Hard skills"
             selectedItems={tagsFilter}
             options={tags}
             onFilterSet={(value) => activateFilter('Tags', value)}
           />
           <SearchableDropdown
-            key={rerenderKey}
             placeholder="Skills"
             selectedItems={skillsFilter}
             options={skills}
