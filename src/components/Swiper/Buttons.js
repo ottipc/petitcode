@@ -43,8 +43,9 @@ export default function Buttons(props) {
   } = props
 
   const filterFinish = () => {
+    localStorage.setItem('activeFilters', JSON.stringify(activeFilters));
     navigate('/en/specialists', {
-      state: { activeFilters, csvData }
+      state: { csvData }
     })
   }
 

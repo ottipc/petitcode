@@ -427,9 +427,23 @@ body {
     text-align: center;
 }
 
-.SectionContent__Wrapper-cjecYL {
-    padding: 0vh 224px;
-}
+@media screen and (min-width: 1620px) {
+    .SectionContent__Wrapper-cjecYL {
+        padding: 0vh 224px;
+    } 
+} 
+
+@media screen and (max-width: 1619px) and (min-width: 992px) {
+    .SectionContent__Wrapper-cjecYL {
+        padding: 0vh 112px;
+    }
+} 
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .SectionContent__Wrapper-cjecYL {
+        padding: 0vh 56px;
+    }
+} 
 
 .dpYvgs:focus {
 

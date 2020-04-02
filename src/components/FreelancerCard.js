@@ -198,6 +198,7 @@ const LinkBtn = styled.button`
   margin-bottom: 10px;
   a {
     color: #fff;
+    font-size: 1rem;
   }
 `
 

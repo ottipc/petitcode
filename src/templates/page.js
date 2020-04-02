@@ -44,8 +44,6 @@ class PageTemplate extends React.PureComponent {
         ? location.state.csvData
         : []
 
-    console.log('location', location)
-
     return (
       // <ClientContext.Provider value={client}>
       <LocationContext.Provider

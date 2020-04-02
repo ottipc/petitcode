@@ -140,8 +140,8 @@ export default function Freelancers({ location, ...props }) {
   let currentCards = []
   let list = []
   const locationState =
-    typeof props.activeFilters !== 'undefined' && props.activeFilters != null
-      ? props.activeFilters
+    localStorage.getItem('activeFilters') != null
+      ? JSON.parse(localStorage.getItem('activeFilters'))
       : []
 
   const data = useStaticQuery(graphql`
@@ -189,29 +189,29 @@ export default function Freelancers({ location, ...props }) {
         return entities.sort((a, b) =>
           a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
         )
-        break
       case '2':
         return entities.sort((a, b) =>
           a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1
         )
-        break
       case '3':
         return entities.sort((a, b) =>
           parseFloat(a.hourly_rate) < parseFloat(b.hourly_rate) ? 1 : -1
         )
-        break
       case '4':
         return entities.sort((a, b) =>
           parseFloat(a.daily_rate) < parseFloat(b.daily_rate) ? 1 : -1
         )
-        break
       default:
         return entities
-        break
     }
   }
 
+  const beforeUnload = () => {
+    localStorage.removeItem('activeFilters');
+  }
+
   useEffect(() => {
+    window.addEventListener("beforeunload", beforeUnload);
     setCsvData(
       sortEntities(
         data.allDataCsv.nodes.filter(
@@ -443,7 +443,7 @@ export default function Freelancers({ location, ...props }) {
           tags={tags}
           skills={skills}
           filterCards={(filter) => filterCards(filter)}
-          activeFilters={locationState}
+          // activeFilters={locationState}
         />
         <SortWrapper>
           {show ? (

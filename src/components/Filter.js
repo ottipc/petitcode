@@ -70,12 +70,10 @@ const Filter = (props) => {
   const { tags, skills, filterCards } = props
 
   if (
-    typeof props.activeFilters !== 'undefined' &&
-    props.activeFilters != null &&
-    JSON.stringify(activeFilters) !== JSON.stringify(props.activeFilters) &&
-    initialRender
+    JSON.stringify(activeFilters) !== localStorage.getItem('activeFilters') &&
+    localStorage.getItem('activeFilters') != null
   ) {
-    setActiveFilters(props.activeFilters)
+    setActiveFilters(JSON.parse(localStorage.getItem('activeFilters')))
     setInitialRender(false)
   }
 
@@ -245,6 +243,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
+    localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -283,6 +282,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
+    localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -440,6 +440,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Search: value })
     }
+    localStorage.removeItem('activeFilters')
     setActiveFilters(af)
     filterCards(af)
   }
@@ -457,6 +458,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Date: value })
     }
+    localStorage.removeItem('activeFilters')
     setActiveFilters(af)
     filterCards(af)
   }
