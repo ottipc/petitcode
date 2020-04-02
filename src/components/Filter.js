@@ -68,23 +68,14 @@ const Filter = (props) => {
   const [initialRender, setInitialRender] = useState(true)
   const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
-
-  function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
+  
+  const localStorageValue = typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters')
 
   if (
-    JSON.stringify(activeFilters) !== readCookie('activeFilters') &&
-    readCookie('activeFilters')
+    JSON.stringify(activeFilters) !== localStorageValue &&
+    typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters') != null
   ) {
-    setActiveFilters(JSON.parse(readCookie('activeFilters')))
+    setActiveFilters(JSON.parse(typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters')))
     setInitialRender(false)
   }
 
@@ -254,7 +245,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
-    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -293,7 +284,7 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
-    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -451,7 +442,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Search: value })
     }
-    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
     setActiveFilters(af)
     filterCards(af)
   }
@@ -469,7 +460,7 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Date: value })
     }
-    document.cookie = "activeFilters= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
     setActiveFilters(af)
     filterCards(af)
   }

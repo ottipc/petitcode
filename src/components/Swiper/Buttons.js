@@ -43,7 +43,7 @@ export default function Buttons(props) {
   } = props
 
   const filterFinish = () => {
-    document.cookie = 'activeFilters=' + JSON.stringify(activeFilters)
+    typeof localStorage !== 'undefined' && localStorage.setItem('activeFilters', JSON.stringify(activeFilters));
     navigate('/en/specialists', {
       state: { csvData }
     })
