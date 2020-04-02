@@ -132,10 +132,6 @@ export default function Freelancers({ location, ...props }) {
   let indexOfFirstCard = 0
   let currentCards = []
   let list = []
-  const locationState =
-    localStorage.getItem('activeFilters') != null
-      ? JSON.parse(localStorage.getItem('activeFilters'))
-      : []
 
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
