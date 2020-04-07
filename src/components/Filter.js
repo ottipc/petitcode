@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import SearchableDropdown from './SearchableDropdown'
-import RatingsDropdown from './RatingsDropdown'
 import SliderFilter from './SliderFilter/SliderFilter'
-import { groupOptions, typeOptions } from './options'
-
-import SearchFilter from './SearchFilter'
+import { groupOptions } from './options'
 import DateFilter from './DateFilter'
 
 const Wrapper = styled.div`
@@ -31,15 +28,6 @@ const Container = styled.div`
   padding: 15px 20px 20px 20px;
   border: 1px solid hsla(0, 0%, 0%, 0.12);
 `
-const Lower = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  @media (max-width: 459px) {
-    margin-bottom: 10px;
-  }
-`
 
 const ActiveFilters = styled.div`
   width: 100%;
@@ -51,32 +39,39 @@ const ActiveFilters = styled.div`
   }
 `
 
-const Filter = (props) => {
+const Filter = (props: any) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState()
-  const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
+  // const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
   const [dRateFilterValue, setDRateFilterValue] = useState([0, 800])
   const [groupFilter, setGroupFilter] = useState()
   const [skillsFilter, setSkillsFilter] = useState()
   const [tagsFilter, setTagsFilter] = useState()
-  const [ratingFilter, setRatingFilter] = useState()
-  const [typeFilter, setTypeFilter] = useState()
-  const [hRateFilter, setHRateFilter] = useState([0, 150])
-  const [dRateFilter, setDRateFilter] = useState([0, 800])
+  // const [ratingFilter, setRatingFilter] = useState()
+  // const [typeFilter, setTypeFilter] = useState()
+  // const [hRateFilter, setHRateFilter] = useState([0, 150])
+  // const [dRateFilter, setDRateFilter] = useState([0, 800])
   const [activeFilters, setActiveFilters] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
-  const [initialRender, setInitialRender] = useState(true)
+  // const [initialRender, setInitialRender] = useState(true)
   const [initialFilter, setInitialFilter] = useState(true)
   const { tags, skills, filterCards } = props
-  
-  const localStorageValue = typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters')
+
+  const localStorageValue =
+    typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters')
 
   if (
     JSON.stringify(activeFilters) !== localStorageValue &&
-    typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters') != null
+    typeof localStorage !== 'undefined' &&
+    localStorage.getItem('activeFilters') != null
   ) {
-    setActiveFilters(JSON.parse(typeof localStorage !== 'undefined' && localStorage.getItem('activeFilters')))
-    setInitialRender(false)
+    setActiveFilters(
+      JSON.parse(
+        typeof localStorage !== 'undefined' &&
+          localStorage.getItem('activeFilters')
+      )
+    )
+    // setInitialRender(false)
   }
 
   if (activeFilters.length > 0) {
@@ -188,7 +183,7 @@ const Filter = (props) => {
         }
         break
       case 'Rating':
-        setRatingFilter(value)
+        // setRatingFilter(value)
         af.forEach((filter) => {
           if (Object.keys(filter)[0] === 'Rating') {
             filter.Rating = value
@@ -200,7 +195,7 @@ const Filter = (props) => {
         }
         break
       case 'Type':
-        setTypeFilter(value)
+        // setTypeFilter(value)
         af.forEach((filter) => {
           if (Object.keys(filter)[0] === 'Type') {
             filter.Type = value.map((entry) => {
@@ -218,7 +213,7 @@ const Filter = (props) => {
         }
         break
       case 'hRate':
-        setHRateFilterValue(value)
+        // setHRateFilterValue(value)
         af.forEach((filter) => {
           if (Object.keys(filter)[0] === 'hRate') {
             filter.hRate = value
@@ -230,7 +225,7 @@ const Filter = (props) => {
         }
         break
       case 'dRate':
-        setDRateFilter(value)
+        // setDRateFilter(value)
         af.forEach((filter) => {
           if (Object.keys(filter)[0] === 'dRate') {
             filter.dRate = value
@@ -245,7 +240,8 @@ const Filter = (props) => {
         break
     }
     setActiveFilters(af)
-    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
+    typeof localStorage !== 'undefined' &&
+      localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -274,17 +270,18 @@ const Filter = (props) => {
         setTagsFilter(newFilterArray)
         break
       case 'Rating':
-        setRatingFilter(newFilterArray)
+        // setRatingFilter(newFilterArray)
         break
       case 'Type':
-        setTypeFilter(newFilterArray)
+        // setTypeFilter(newFilterArray)
         break
       case 'hRate':
-        setHRateFilterValue(newFilterArray)
+        // setHRateFilterValue(newFilterArray)
         break
     }
     setActiveFilters(af)
-    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
+    typeof localStorage !== 'undefined' &&
+      localStorage.removeItem('activeFilters')
     setRerenderKey(Math.random())
     filterCards(af)
   }
@@ -292,11 +289,12 @@ const Filter = (props) => {
   const activeFiltersHandler = () => {
     let renderFilters = []
     const validFilters = ['Industries', 'Skills', 'Tags', 'Type']
-    renderFilters = activeFilters.map((type) => {
+    renderFilters = activeFilters.map((type, index) => {
       const props = Object.entries(type)
       if (props[0][1].length > 0 && validFilters.includes(props[0][0])) {
         return (
           <div
+            key={index}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -318,9 +316,10 @@ const Filter = (props) => {
             >
               {props[0][0]}
             </p>
-            {props[0][1].map((value) => {
+            {props[0][1].map((value, index) => {
               return (
                 <div
+                  key={index}
                   style={{
                     backgroundColor: '#878787',
                     height: 14,
@@ -342,20 +341,20 @@ const Filter = (props) => {
                       lineHeight: '1'
                     }}
                   >
-                      {value}
-                    </p>
-                    <div>
-                      <button
-                        style={{
-                          border: 'none',
-                          fontSize: '0.8rem',
-                          color: 'white',
-                          float: 'right'
-                        }}
-                        onClick={() => removeFilter(props[0][0], value)}
-                      >
-                        X
-                      </button>
+                    {value}
+                  </p>
+                  <div>
+                    <button
+                      style={{
+                        border: 'none',
+                        fontSize: '0.8rem',
+                        color: 'white',
+                        float: 'right'
+                      }}
+                      onClick={() => removeFilter(props[0][0], value)}
+                    >
+                      X
+                    </button>
                   </div>
                 </div>
               )
@@ -369,6 +368,7 @@ const Filter = (props) => {
       ) {
         return (
           <div
+            key={index}
             style={{
               display: 'flex',
               flexDirection: 'row',
@@ -416,7 +416,7 @@ const Filter = (props) => {
                     color: 'white',
                     float: 'right'
                   }}
-                  onClick={() => removeFilter(props[0][0], value)}
+                  onClick={() => removeFilter(props[0][0], 'value')}
                 >
                   X
                 </button>
@@ -429,23 +429,24 @@ const Filter = (props) => {
     return renderFilters
   }
 
-  const searchFilter = (value) => {
-    const af = activeFilters
-    let added = false
-    setSearchFilterValue(value)
-    af.forEach((filter) => {
-      if (Object.keys(filter)[0] === 'Search') {
-        filter.Search = value
-        added = true
-      }
-    })
-    if (!added) {
-      af.push({ Search: value })
-    }
-    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
-    setActiveFilters(af)
-    filterCards(af)
-  }
+  // const searchFilter = (value) => {
+  //   const af = activeFilters
+  //   let added = false
+  //   setSearchFilterValue(value)
+  //   af.forEach((filter) => {
+  //     if (Object.keys(filter)[0] === 'Search') {
+  //       filter.Search = value
+  //       added = true
+  //     }
+  //   })
+  //   if (!added) {
+  //     af.push({ Search: value })
+  //   }
+  //   typeof localStorage !== 'undefined' &&
+  //     localStorage.removeItem('activeFilters')
+  //   setActiveFilters(af)
+  //   filterCards(af)
+  // }
 
   const dateFilter = (value) => {
     const af = activeFilters
@@ -460,7 +461,8 @@ const Filter = (props) => {
     if (!added) {
       af.push({ Date: value })
     }
-    typeof localStorage !== 'undefined' && localStorage.removeItem('activeFilters')
+    typeof localStorage !== 'undefined' &&
+      localStorage.removeItem('activeFilters')
     setActiveFilters(af)
     filterCards(af)
   }
