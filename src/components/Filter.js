@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import SearchableDropdown from './SearchableDropdown'
 import SliderFilter from './SliderFilter/SliderFilter'
 import { groupOptions } from './options'
+import propTypes from 'prop-types'
 import DateFilter from './DateFilter'
 
 const Wrapper = styled.div`
@@ -39,7 +40,7 @@ const ActiveFilters = styled.div`
   }
 `
 
-const Filter = (props: any) => {
+const Filter = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState()
   // const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
@@ -526,6 +527,12 @@ const Filter = (props: any) => {
       </Container>
     </Wrapper>
   )
+}
+
+Filter.prototype.propTypes = {
+  tags: propTypes.array,
+  skills: propTypes.array,
+  filterCards: propTypes.array
 }
 
 export default Filter
