@@ -4,11 +4,18 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { GraphQLClient, ClientContext } from 'graphql-hooks'
+import DefaultLayout from '../components/mdx/DefaultLayout'
+import Freelancers from '../components/mdx/Freelancers'
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 
 import components from '../components/mdx-components'
+
+// const client = new GraphQLClient({
+//   url: '/graphql'
+// })
 
 class PageTemplate extends React.PureComponent {
   static propTypes = {
@@ -27,8 +34,22 @@ class PageTemplate extends React.PureComponent {
         childMdx: { body }
       }
     } = data.contentfulPage
+    let activeFilters = []
+    let csvData = []
+
+    if (typeof location !== 'undefined' && location != null) {
+      activeFilters =
+        location.state !== 'undefined' && location.state != null
+          ? location.state.activeFilters
+          : []
+      csvData =
+        location.state !== 'undefined' && location.state != null
+          ? location.state.csvData
+          : []
+    }
 
     return (
+      // <ClientContext.Provider value={client}>
       <LocationContext.Provider
         value={{
           activeContentfulId: contentfulId,
@@ -67,12 +88,19 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <MDXProvider components={components}>
-            <MDXRenderer>{body}</MDXRenderer>
-          </MDXProvider>
-          {/* {extraContent} */}
+          {location.pathname.indexOf('specialists') < 0 && (
+            <MDXProvider components={components}>
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
+          )}
+          {location.pathname.indexOf('specialists') >= 0 && (
+            <DefaultLayout>
+              <Freelancers activeFilters={activeFilters} csvData={csvData} />
+            </DefaultLayout>
+          )}
         </Layout>
       </LocationContext.Provider>
+      // </ClientContext.Provider>
     )
   }
 }
