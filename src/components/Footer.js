@@ -95,9 +95,9 @@ export default function Footer() {
     <FooterWrapper>
       <FooterGrid>
         <Column>
-          <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
+          {/* <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
             <Logo />
-          </LogoMenuItem>
+          </LogoMenuItem> */}
         </Column>
         <Column>
           <ContactWrapper>
@@ -116,18 +116,18 @@ export default function Footer() {
         <BottomGridElement>
           <Link contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
         </BottomGridElement>
-        <BottomGridElement>
+        {/* <BottomGridElement>
           <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
-        </BottomGridElement>
+        </BottomGridElement> */}
         <BottomGridElement>
           <Link contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
         <BottomGridElement>
           <Link contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
         </BottomGridElement>
-        <BottomGridElement>
+        {/* <BottomGridElement>
           <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
-        </BottomGridElement>
+        </BottomGridElement> */}
         <BottomGridElement>
           <Link contentfulId="Ezme8PAhPlfrFV77vHXig" />
         </BottomGridElement>

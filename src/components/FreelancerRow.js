@@ -4,6 +4,7 @@ import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
 import Tippy from '@tippyjs/react'
+import propTypes from 'prop-types'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/translucent.css'
 
