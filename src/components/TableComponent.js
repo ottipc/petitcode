@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import DataTable from 'react-data-table-component'
 import styled from 'styled-components'
-import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
-import noImage from '../assets/noImage.png'
 import user from '../assets/user.png'
 import './Custom.css'
 import MD5 from 'crypto-js/md5'
@@ -51,16 +49,16 @@ const Name = styled.a`
     color: #020206;
   }
 `
-const Address = styled.div`
-  font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
-    sans-serif;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-size: 1rem;
-  line-height: 13px;
-  text-align: start;
-  width: 200px;
-  display: block;
-`
+// const Address = styled.div`
+//   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
+//     sans-serif;
+//   color: hsla(0, 0%, 0%, 0.8);
+//   font-size: 1rem;
+//   line-height: 13px;
+//   text-align: start;
+//   width: 200px;
+//   display: block;
+// `
 const Tags = styled.div`
   width: 200px;
   display: block;
@@ -141,14 +139,12 @@ const LinkBtn = styled.button`
 
 const TableComponent = (props) => {
   const csvData = [...props.csvData]
-  const currentCards = [props.currentCards]
+  // const currentCards = [props.currentCards]
   const filters = props.filters
-
-  const list = csvData.map((x) => x)
 
   csvData.forEach((data) => {
     if (data.unavailabilities.length > 0) {
-      const name = data.name
+      // const name = data.name
       const dates = data.unavailabilities.split(', ')
       let until = dates[0]
       let from = ''
@@ -165,20 +161,20 @@ const TableComponent = (props) => {
     }
   })
 
-  const formatAddress = (adressData) => {
-    const array = adressData.split(', ')
-    const town =
-      typeof array[array.length - 2] !== 'undefined'
-        ? array[array.length - 2] + ', '
-        : ''
-    const country =
-      typeof array[array.length - 1] !== 'undefined'
-        ? array[array.length - 1]
-        : ''
-    const formatedAddress = town + country
+  // const formatAddress = (adressData) => {
+  //   const array = adressData.split(', ')
+  //   const town =
+  //     typeof array[array.length - 2] !== 'undefined'
+  //       ? array[array.length - 2] + ', '
+  //       : ''
+  //   const country =
+  //     typeof array[array.length - 1] !== 'undefined'
+  //       ? array[array.length - 1]
+  //       : ''
+  //   const formatedAddress = town + country
 
-    return formatedAddress
-  }
+  //   return formatedAddress
+  // }
 
   const formatCategories = (categoriesData) => {
     const abrev = {
@@ -214,22 +210,22 @@ const TableComponent = (props) => {
     return array
   }
 
-  const StarsToolip = () => {
-    return (
-      <span className="raiting-tooltip" style={{ fontSize: '12px' }}>
-        Based on ratings by colleagues. Assessment criteria can be changed in
-        Settings / My Network / General.
-      </span>
-    )
-  }
+  // const StarsToolip = () => {
+  //   return (
+  //     <span className="raiting-tooltip" style={{ fontSize: '12px' }}>
+  //       Based on ratings by colleagues. Assessment criteria can be changed in
+  //       Settings / My Network / General.
+  //     </span>
+  //   )
+  // }
 
-  const TagsToolip = () => {
-    return (
-      <span className="tags-tooltip" style={{ fontSize: '12px' }}>
-        {row.tags}
-      </span>
-    )
-  }
+  // const TagsToolip = () => {
+  //   return (
+  //     <span className="tags-tooltip" style={{ fontSize: '12px' }}>
+  //       {row.tags}
+  //     </span>
+  //   )
+  // }
 
   const columns = [
     {
@@ -401,6 +397,12 @@ const TableComponent = (props) => {
       paginationPerPage="24"
     />
   )
+}
+
+FreelancerCard.propTypes = {
+  csvData: propTypes.any,
+  filters: propTypes.any,
+  data: propTypes.any
 }
 
 export default TableComponent
