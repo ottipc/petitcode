@@ -5,7 +5,7 @@ import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
 
-import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
+// import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
 
 const FooterWrapper = styled.div`
   ${({
@@ -46,22 +46,27 @@ const ContactWrapper = styled.div`
 
   & a {
     padding: 0.2em 0;
+    color: #6e6e6e;
+  }
+
+  & a:hover {
+    color: black;
   }
 `
 
-const LogoMenuItem = styled(Link)`
-  transition: opacity 0.15s linear;
-  &:after {
-    display: none;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-`
-const Logo = styled(PetitcodeLogo)`
-  width: 100%;
-  max-width: 200px;
-`
+// const LogoMenuItem = styled(Link)`
+//   transition: opacity 0.15s linear;
+//   &:after {
+//     display: none;
+//   }
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `
+// const Logo = styled(PetitcodeLogo)`
+//   width: 100%;
+//   max-width: 200px;
+// `
 const BottomGrid = styled.div`
   ${({
     theme: {
@@ -88,6 +93,14 @@ const BottomGrid = styled.div`
 
 const BottomGridElement = styled.div`
   padding: 0 1rem;
+
+  & a {
+    color: #6e6e6e;
+  }
+
+  & a:hover {
+    color: black;
+  }
 `
 
 export default function Footer() {

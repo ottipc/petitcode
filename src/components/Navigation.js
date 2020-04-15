@@ -80,6 +80,7 @@ const ListItem = styled.li`
 
 const MenuBasicStyling = css`
   letter-spacing: 4px;
+  color: white;
 
   &:hover {
     text-decoration: none;
