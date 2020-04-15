@@ -34,6 +34,11 @@ const LogoWrapper = styled.div`
     display: block;
     width: 100%;
     height: auto;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 0.5;
   }
 
   & svg.notext {
@@ -117,12 +122,14 @@ const ContactWrapper = styled.div`
     display: block;
     opacity: 1;
     transition: 0.15s opacity linear;
+    color: white;
 
     &:last-child {
       margin-right: none;
     }
 
     &:hover {
+      color: white;
       opacity: 0.5;
     }
   }
