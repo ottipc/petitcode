@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import './Custom.css'
+import propTypes from 'prop-types'
 
 const DropdownFilterOption = styled.option`
   border-bottom: 1px solid #e7eaec;
@@ -46,8 +47,8 @@ const Drop = (props) => {
   )
 }
 
-Filter.propTypes = {
-  onChangeSelection: propTypes.any,
+Drop.propTypes = {
+  onChangeSelection: propTypes.any
 }
 
 export default Drop

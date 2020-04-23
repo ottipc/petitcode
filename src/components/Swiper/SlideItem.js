@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 
 const SlideItem = (props) => {
   return (
@@ -9,7 +10,7 @@ const SlideItem = (props) => {
 }
 
 SlideItem.propTypes = {
-  children: propTypes.any,
+  children: propTypes.any
 }
 
 export default SlideItem

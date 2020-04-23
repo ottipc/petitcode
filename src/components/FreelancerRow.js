@@ -4,6 +4,7 @@ import Ratings from 'react-ratings-declarative'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import noImage from '../assets/noImage.png'
 import Tippy from '@tippyjs/react'
+import propTypes from 'prop-types'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/translucent.css'
 
@@ -186,7 +187,11 @@ const FreelancerRow = (props) => {
     }
     const array = categoriesData.split(', ').map((cat, index) => {
       return (
-        <Tippy key={index} theme="translucent" content={cat.replace(/\s+/g, '')}>
+        <Tippy
+          key={index}
+          theme="translucent"
+          content={cat.replace(/\s+/g, '')}
+        >
           <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
         </Tippy>
       )
@@ -216,11 +221,7 @@ const FreelancerRow = (props) => {
   return (
     <ContentWrapper>
       <Tippy theme="translucent" content={<TypeToolip />}>
-        {data.type === 'self managed' ? (
-          <ContentTdFirst />
-        ) : (
-          <ContentTdTest />
-        )}
+        {data.type === 'self managed' ? <ContentTdFirst /> : <ContentTdTest />}
       </Tippy>
 
       <ContentTd>

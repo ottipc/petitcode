@@ -6,6 +6,7 @@ import user from '../assets/user.png'
 import './Custom.css'
 import MD5 from 'crypto-js/md5'
 import Tippy from '@tippyjs/react'
+import propTypes from 'prop-types'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/translucent.css'
 import './Tooltip.css'
@@ -399,7 +400,7 @@ const TableComponent = (props) => {
   )
 }
 
-FreelancerCard.propTypes = {
+TableComponent.propTypes = {
   csvData: propTypes.any,
   filters: propTypes.any,
   data: propTypes.any

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 import { Handle, Track } from './components'
 import '../Custom.css'
+import propTypes from 'prop-types'
 
 const sliderStyle = {
   position: 'relative',
@@ -145,7 +146,7 @@ SliderFilter.propTypes = {
   target: propTypes.any,
   tick: propTypes.any,
   count: propTypes.any,
-  format: propTypes.any,
+  format: propTypes.any
 }
 
 export default SliderFilter

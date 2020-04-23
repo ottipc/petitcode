@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import propTypes from 'prop-types'
 
 const Container = styled.nav`
   display: flex;

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Drop from './Drop'
+import propTypes from 'prop-types'
 
 const Wrapper = styled.div`
   padding: 0 25px;
@@ -23,7 +24,7 @@ const SortFilter = ({ filter, currentCards }) => {
 
 SortFilter.propTypes = {
   filter: propTypes.any,
-  currentCards: propTypes.any,
+  currentCards: propTypes.any
 }
 
 export default SortFilter

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Ratings from 'react-ratings-declarative'
+import propTypes from 'prop-types'
 import Poppins from '../assets/fonts/Poppins-Regular.ttf'
 import user from '../assets/user.png'
 import Tippy from '@tippyjs/react'
@@ -353,7 +353,7 @@ const FreelancerCard = (props) => {
 
 FreelancerCard.propTypes = {
   data: propTypes.any,
-  filters: propTypes.any,
+  filters: propTypes.any
 }
 
 export default FreelancerCard

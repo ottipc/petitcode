@@ -1,5 +1,6 @@
 import React from 'react'
 import { navigate } from 'gatsby'
+import propTypes from 'prop-types'
 
 const styles = {
   wrapper: {
@@ -90,5 +91,5 @@ Buttons.propTypes = {
   csvData: propTypes.any,
   prevHandler: propTypes.any,
   nextHandler: propTypes.any,
-  activeFilters: propTypes.any,
+  activeFilters: propTypes.any
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
 import './Custom.css'
+import propTypes from 'prop-types'
 
 const Wrapper = styled.div`
   margin-right: 20px;
@@ -165,7 +166,7 @@ SearchableDropdown.propTypes = {
   methods: propTypes.any,
   placeholder: propTypes.any,
   options: propTypes.any,
-  searchBy: propTypeps.any,
+  searchBy: propTypes.any
 }
 
 export default SearchableDropdown
