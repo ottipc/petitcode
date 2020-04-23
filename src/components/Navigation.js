@@ -80,6 +80,7 @@ const ListItem = styled.li`
 
 const MenuBasicStyling = css`
   letter-spacing: 4px;
+  color: white;
 
   &:hover {
     text-decoration: none;
@@ -115,11 +116,11 @@ class Navigation extends React.PureComponent {
                 <ListItem>
                   <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
                 </ListItem>
-                <ListItem>
+                {/* <ListItem>
                   <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
                     Blog
                   </MenuLink>
-                </ListItem>
+                </ListItem> */}
               </List>
             </ContentWrapper>
           </Wrapper>

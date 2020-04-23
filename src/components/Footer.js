@@ -5,7 +5,7 @@ import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
 
-import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
+// import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
 
 const FooterWrapper = styled.div`
   ${({
@@ -46,22 +46,27 @@ const ContactWrapper = styled.div`
 
   & a {
     padding: 0.2em 0;
+    color: #6e6e6e;
+  }
+
+  & a:hover {
+    color: black;
   }
 `
 
-const LogoMenuItem = styled(Link)`
-  transition: opacity 0.15s linear;
-  &:after {
-    display: none;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-`
-const Logo = styled(PetitcodeLogo)`
-  width: 100%;
-  max-width: 200px;
-`
+// const LogoMenuItem = styled(Link)`
+//   transition: opacity 0.15s linear;
+//   &:after {
+//     display: none;
+//   }
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// `
+// const Logo = styled(PetitcodeLogo)`
+//   width: 100%;
+//   max-width: 200px;
+// `
 const BottomGrid = styled.div`
   ${({
     theme: {
@@ -88,6 +93,14 @@ const BottomGrid = styled.div`
 
 const BottomGridElement = styled.div`
   padding: 0 1rem;
+
+  & a {
+    color: #6e6e6e;
+  }
+
+  & a:hover {
+    color: black;
+  }
 `
 
 export default function Footer() {
@@ -95,9 +108,9 @@ export default function Footer() {
     <FooterWrapper>
       <FooterGrid>
         <Column>
-          <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
+          {/* <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
             <Logo />
-          </LogoMenuItem>
+          </LogoMenuItem> */}
         </Column>
         <Column>
           <ContactWrapper>
@@ -116,18 +129,18 @@ export default function Footer() {
         <BottomGridElement>
           <Link contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
         </BottomGridElement>
-        <BottomGridElement>
+        {/* <BottomGridElement>
           <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
-        </BottomGridElement>
+        </BottomGridElement> */}
         <BottomGridElement>
           <Link contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
         <BottomGridElement>
           <Link contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
         </BottomGridElement>
-        <BottomGridElement>
+        {/* <BottomGridElement>
           <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
-        </BottomGridElement>
+        </BottomGridElement> */}
         <BottomGridElement>
           <Link contentfulId="Ezme8PAhPlfrFV77vHXig" />
         </BottomGridElement>

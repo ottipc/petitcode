@@ -122,9 +122,9 @@ class BlogTemplate extends React.PureComponent {
                   <MDXRenderer>{body}</MDXRenderer>
                 </MDXProvider>
               </BlogPostMainContent>
-              <MdxLink type="CTA" contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+              {/* <MdxLink type="CTA" contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
                 Back
-              </MdxLink>
+              </MdxLink> */}
             </BlogPostContent>
           </BlogPostWrapper>
         </Layout>

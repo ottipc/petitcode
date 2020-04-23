@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Slider, Rail, Handles, Tracks } from 'react-compound-slider'
 import { Handle, Track } from './components'
+import propTypes from 'prop-types'
 import '../Custom.css'
 import propTypes from 'prop-types'
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Select from 'react-dropdown-select'
 import Switch from 'react-switch'
 import Ratings from 'react-ratings-declarative'
+import propTypes from 'prop-types'
 import './Custom.css'
 
 const Wrapper = styled.div`

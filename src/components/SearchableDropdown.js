@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Select from 'react-dropdown-select'
+import propTypes from 'prop-types'
 import './Custom.css'
 import propTypes from 'prop-types'
 

@@ -3,16 +3,12 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faBorderAll } from '@fortawesome/free-solid-svg-icons'
-import Metatags from '../../components/Metatags'
 import FreelancerCard from '../../components/FreelancerCard'
 import Pagination from '../../components/Pagination'
 import Filter from '../../components/Filter'
-import FilterWizard from './FilterWizard'
+import propTypes from 'prop-types'
 // added
-import SortFilter from '../../components/SortFilter'
 import Drop from '../../components/Drop'
-import ListView from '../../components/ListView'
-import Tooltip from '../../components/Tooltip'
 import TableComponent from '../../components/TableComponent'
 import './Freelancers.css'
 
@@ -122,7 +118,7 @@ export default function Freelancers({ location, ...props }) {
   const [csvData, setCsvData] = useState([])
   const [filteredData, setFilteredData] = useState()
   const [currentPage, setCurrentPage] = useState(1)
-  const [cardsPerPage, setCardsPerPage] = useState(24)
+  const cardsPerPage = 24
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
   const [show, setDisplay] = useState(true)
@@ -433,8 +429,7 @@ export default function Freelancers({ location, ...props }) {
   }
 
   return (
-    <>
-      <Metatags />
+    <div>
       <Title>Request your specialst</Title>
       <Container>
         <Filter
@@ -506,6 +501,11 @@ export default function Freelancers({ location, ...props }) {
           ''
         )}
       </Container>
-    </>
+    </div>
   )
+}
+
+Freelancers.propTypes = {
+  location: propTypes.any,
+  csvData: propTypes.any
 }
