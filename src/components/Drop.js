@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import './Custom.css'
-import propTypes from 'prop-types'
 
 const DropdownFilterOption = styled.option`
   border-bottom: 1px solid #e7eaec;

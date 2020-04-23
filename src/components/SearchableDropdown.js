@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Select from 'react-dropdown-select'
 import propTypes from 'prop-types'
 import './Custom.css'
-import propTypes from 'prop-types'
 
 const Wrapper = styled.div`
   margin-right: 20px;

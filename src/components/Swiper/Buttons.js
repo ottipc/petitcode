@@ -1,7 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { navigate } from 'gatsby'
-import propTypes from 'prop-types'
 
 const styles = {
   wrapper: {

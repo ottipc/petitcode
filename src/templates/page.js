@@ -12,6 +12,7 @@ import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
 
 import components from '../components/mdx-components'
+import FloatingActionButton from '../components/FloatingActionButton'
 
 // const client = new GraphQLClient({
 //   url: '/graphql'
@@ -88,6 +89,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
+          <FloatingActionButton />
           {location.pathname.indexOf('specialists') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>

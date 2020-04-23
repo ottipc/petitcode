@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import propTypes from 'prop-types'
 import Drop from './Drop'
-import propTypes from 'prop-types'
 
 const Wrapper = styled.div`
   padding: 0 25px;
