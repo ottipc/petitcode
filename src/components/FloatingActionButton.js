@@ -15,10 +15,13 @@ const Wrapper = styled.button`
 `
 
 const FloatingActionButton = (props) => {
+
+  const {onClick} = props;
+
   return (
     <div>
-      <Wrapper>
-        <p>Click me</p>
+      <Wrapper onClick={() => onClick()}>
+        <p>{props.children}</p>
       </Wrapper>
     </div>
   )

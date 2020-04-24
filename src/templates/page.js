@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import styled from 'styled-components'
 import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
@@ -7,6 +8,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import DefaultLayout from '../components/mdx/DefaultLayout'
 import Freelancers from '../components/mdx/Freelancers'
+import Modal from 'react-modal';
 
 import Layout from '../components/Layout'
 import { LocationContext } from '../utils/Contexts'
@@ -14,17 +16,85 @@ import { LocationContext } from '../utils/Contexts'
 import components from '../components/mdx-components'
 import FloatingActionButton from '../components/FloatingActionButton'
 
-// const client = new GraphQLClient({
-//   url: '/graphql'
-// })
+const customStyles = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.58)",
+    zIndex: '10000'
+  },
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+const ModalContainer = styled.div`
+  width: 100vh;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+const CloseButton = styled.button`
+  float: right;
+`
+const ModalContent = styled.p`
+  font-size: 28px;
+  line-height: 42px;
+`
+const ActionButton = styled.button`
+  font-size: 28px;
+  line-height: 42px;
+  font-weight: bold;
+`
+
+Modal.setAppElement('#___gatsby')
 
 class PageTemplate extends React.PureComponent {
+
+  
   static propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired
   }
+  
+  
+  constructor () {
+    super();
+
+    const renderModalContent = 
+      <ModalContainer>
+        <ModalContent>I'm looking for</ModalContent>
+        <ModalContent><ActionButton onClick={() => changeContent('team')}>Team</ActionButton> / <ActionButton onClick={() => changeContent('freelancer')}>Freelancer</ActionButton> / <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton> </ModalContent>
+        <ModalContent>for my</ModalContent>
+        <ModalContent>Project / Company</ModalContent>
+      </ModalContainer>
+
+    const changeContent = (value) => {
+      this.setState({modalContent: 
+      <ModalContainer>
+        <ModalContent>{value}</ModalContent>
+      </ModalContainer>});
+    }
+
+    this.state = {
+      showModal: false,
+      modalContent: renderModalContent    
+    };
+  }
 
   render() {
+    const renderModalContent = 
+      <ModalContainer>
+        <ModalContent>I'm looking for</ModalContent>
+        <ModalContent><ActionButton onClick={() => changeContent('team')}>Team</ActionButton> / <ActionButton onClick={() => changeContent('freelancer')}>Freelancer</ActionButton> / <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton> </ModalContent>
+        <ModalContent>for my</ModalContent>
+        <ModalContent>Project / Company</ModalContent>
+      </ModalContainer>
     const { location, data } = this.props
     const {
       title,
@@ -49,6 +119,20 @@ class PageTemplate extends React.PureComponent {
           : []
     }
 
+    const switchModal = () => {
+      this.setState({showModal: !this.state.showModal})
+      if (this.state.showModal) {
+        this.setState({modalContent: renderModalContent});
+      }
+    }
+
+    const changeContent = (value) => {
+      this.setState({modalContent: 
+      <ModalContainer>
+        <ModalContent>{value}</ModalContent>
+      </ModalContainer>});
+    }
+
     return (
       // <ClientContext.Provider value={client}>
       <LocationContext.Provider
@@ -59,6 +143,10 @@ class PageTemplate extends React.PureComponent {
         }}
       >
         <Layout>
+        <Modal isOpen={this.state.showModal} style={customStyles}>
+          <CloseButton onClick={() => switchModal()}>close</CloseButton>
+          {this.state.modalContent}
+        </Modal>
           <Helmet
             /**
              * Meta information based on:
@@ -89,7 +177,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <FloatingActionButton />
+          <FloatingActionButton onClick={switchModal}>FAB</FloatingActionButton>
           {location.pathname.indexOf('specialists') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>
