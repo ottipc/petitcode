@@ -6,6 +6,10 @@ body {
     color: hsla(0, 0%, 0%, 0.8);
 }
 
+.Columns__ColumnContentText-kxCwWT p {
+    margin-bottom: 28px !important;
+}
+
 .sort-wrapper select {
     color: hsla(0, 0%, 0%, 0.8);
     font-weight: bold;
