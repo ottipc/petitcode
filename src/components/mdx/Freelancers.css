@@ -2,6 +2,10 @@ body {
     font-family: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 }
 
+.Columns__ColumnContentText-kxCwWT p {
+    margin-bottom: 28px !important;
+}
+
 .sort-wrapper .sorting-label {
     color: hsla(0, 0%, 0%, 0.8);
 }
