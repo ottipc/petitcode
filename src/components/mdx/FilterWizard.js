@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 200px;
+  height: 100%;
   justify-content: center;
   align-items: center;
 `
@@ -26,13 +26,13 @@ const ContainerInner = styled.div`
 
 const FilterWizard = (props) => {
   return (
-    <Wrapper>
+    // <Wrapper>
       <Container>
         <ContainerInner>
           <SwiperWizard />
         </ContainerInner>
       </Container>
-    </Wrapper>
+    // </Wrapper>
   )
 }
 

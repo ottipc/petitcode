@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const styles = {
   wrapper: {
     width: '100%',
-    height: '250%',
+    height: '100%',
     position: 'relative',
     zIndex: 200
   },
@@ -408,7 +408,7 @@ class Carousel extends React.Component {
       <div style={wrapperStyle}>
         <div
           ref="wrapper"
-          style={objectAssign({ overflow: 'hidden' }, wrapperStyle)}
+          style={objectAssign({ overflow: 'initial' }, wrapperStyle)}
           onTouchStart={this.onTouchStart}
           className={this.props.className}
           onMouseDown={this.onTouchStart}

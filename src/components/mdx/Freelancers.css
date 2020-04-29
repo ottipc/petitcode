@@ -90,7 +90,7 @@ body {
 }
 
 .rs-picker-daterange-menu {
-    z-index: 200;
+    z-index: 99999;
 }
 .rs-picker-subtle .rs-picker-toggle.active {
     background: #fff !important;

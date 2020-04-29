@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 const SlideItem = (props) => {
   return (
-    <div style={{ height: 200, display: 'flex', justifyContent: 'center' }}>
+    <div style={{ height: '100%', display: 'flex', justifyContent: 'center' }}>
       {props.children}
     </div>
   )

@@ -478,6 +478,7 @@ body {
 .widget-container .widget-svg .widget{
     fill:#878787 !important;
 }
+
 .rs-picker-menu .rs-calendar .rs-calendar-table-cell-content{
     border-radius: 1em;
     color: rgba(0, 0, 0, 0.8);
@@ -666,4 +667,11 @@ body {
     .FilterWizard__Wrapper-dtbQIK .slider-handles p:nth-of-type(2){
         left: 93% !important;
     }
+}
+
+.ReactModal__Content {
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
 }

@@ -34,3 +34,7 @@ export const GlobalContext = createContext({
   activeLocale: defaultLocale,
   pathname: '/'
 })
+
+export const ModalContext = createContext({
+  handleShowModal: () => {},
+})

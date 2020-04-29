@@ -9,9 +9,10 @@ import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import DefaultLayout from '../components/mdx/DefaultLayout'
 import Freelancers from '../components/mdx/Freelancers'
 import Modal from 'react-modal';
+import FilterWizard from '../components/mdx/FilterWizard';
 
 import Layout from '../components/Layout'
-import { LocationContext } from '../utils/Contexts'
+import { LocationContext, ModalContext } from '../utils/Contexts'
 
 import components from '../components/mdx-components'
 import FloatingActionButton from '../components/FloatingActionButton'
@@ -40,11 +41,15 @@ const ModalContainer = styled.div`
   align-items: center;
 `
 const CloseButton = styled.button`
-  float: right;
+   position: absolute;
+   right: 20px;
 `
 const ModalContent = styled.p`
   font-size: 28px;
   line-height: 42px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `
 const ActionButton = styled.button`
   font-size: 28px;
@@ -66,6 +71,7 @@ class PageTemplate extends React.PureComponent {
   constructor () {
     super();
 
+    const localStorageValue = typeof localStorage !== 'undefined' && localStorage.getItem('showModal')
     const renderModalContent = 
       <ModalContainer>
         <ModalContent>I'm looking for</ModalContent>
@@ -75,15 +81,43 @@ class PageTemplate extends React.PureComponent {
       </ModalContainer>
 
     const changeContent = (value) => {
-      this.setState({modalContent: 
-      <ModalContainer>
-        <ModalContent>{value}</ModalContent>
-      </ModalContainer>});
+      switch(value) {
+        case 'team':
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent>{value}</ModalContent>
+          </ModalContainer>});
+          break;
+        case 'freelancer':
+          console.log('free');
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent><FilterWizard page={value}/></ModalContent>
+          </ModalContainer>});
+          break;
+        case 'FTE':
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent><FilterWizard page={value}/></ModalContent>
+          </ModalContainer>});
+          break;
+        default:
+          break;
+      }
+    }
+
+    this.handleShowModal = () => {
+      if (typeof localStorage !== 'undefined' &&
+      (localStorage.getItem('showModal') == null || localStorage.getItem('showModal') === true)) {
+        this.setState({showModal: true})
+      }
+      typeof localStorage !== 'undefined' && localStorage.setItem('showModal', false)
     }
 
     this.state = {
       showModal: false,
-      modalContent: renderModalContent    
+      modalContent: renderModalContent,
+      handleShowModal: this.handleShowModal,    
     };
   }
 
@@ -127,14 +161,32 @@ class PageTemplate extends React.PureComponent {
     }
 
     const changeContent = (value) => {
-      this.setState({modalContent: 
-      <ModalContainer>
-        <ModalContent>{value}</ModalContent>
-      </ModalContainer>});
+      switch(value) {
+        case 'team':
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent>{value}</ModalContent>
+          </ModalContainer>});
+          break;
+        case 'freelancer':
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent><FilterWizard page={value}/></ModalContent>
+          </ModalContainer>});
+          break;
+        case 'FTE':
+          this.setState({modalContent: 
+          <ModalContainer>
+            <ModalContent><FilterWizard page={value}/></ModalContent>
+          </ModalContainer>});
+          break;
+        default:
+          break;
+      }
     }
 
     return (
-      // <ClientContext.Provider value={client}>
+      <ModalContext.Provider value={this.state}>
       <LocationContext.Provider
         value={{
           activeContentfulId: contentfulId,
@@ -143,10 +195,10 @@ class PageTemplate extends React.PureComponent {
         }}
       >
         <Layout>
-        <Modal isOpen={this.state.showModal} style={customStyles}>
-          <CloseButton onClick={() => switchModal()}>close</CloseButton>
-          {this.state.modalContent}
-        </Modal>
+          <Modal isOpen={this.state.showModal} style={customStyles}>
+            <CloseButton onClick={() => switchModal()}>close</CloseButton>
+            {this.state.modalContent}
+          </Modal>
           <Helmet
             /**
              * Meta information based on:
@@ -166,7 +218,7 @@ class PageTemplate extends React.PureComponent {
               {
                 property: 'og:description',
                 content: description
-              }
+              },
               // heroImage && {
               //   property: 'twitter:image:src',
               //   content: `${seoImage.file.url}?w=1200&h=628&fit=fill`
@@ -190,7 +242,7 @@ class PageTemplate extends React.PureComponent {
           )}
         </Layout>
       </LocationContext.Provider>
-      // </ClientContext.Provider>
+      </ModalContext.Provider>
     )
   }
 }
