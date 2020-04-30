@@ -6,6 +6,10 @@ body {
     margin-bottom: 28px !important;
 }
 
+.Columns__ColumnContentText-sc-1n7mtif-2 p {
+    margin-bottom: 28px !important;
+}
+
 .sort-wrapper .sorting-label {
     color: hsla(0, 0%, 0%, 0.8);
 }
