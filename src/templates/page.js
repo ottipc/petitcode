@@ -10,7 +10,7 @@ import DefaultLayout from '../components/mdx/DefaultLayout'
 import Freelancers from '../components/mdx/Freelancers'
 import Modal from 'react-modal';
 import FilterWizard from '../components/mdx/FilterWizard';
-
+import * as typeformEmbed from '@typeform/embed'
 import Layout from '../components/Layout'
 import { LocationContext, ModalContext } from '../utils/Contexts'
 
@@ -71,7 +71,7 @@ class PageTemplate extends React.PureComponent {
   constructor () {
     super();
 
-    const localStorageValue = typeof localStorage !== 'undefined' && localStorage.getItem('showModal')
+    this.typeformContainer = null;
     const renderModalContent = 
       <ModalContainer>
         <ModalContent>I'm looking for</ModalContent>
@@ -80,12 +80,23 @@ class PageTemplate extends React.PureComponent {
         <ModalContent>Project / Company</ModalContent>
       </ModalContainer>
 
+    const renderForm = ref => {
+      if (ref) {
+        console.log('form2', ref)
+        typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
+          hideFooter: true,
+          hideHeaders: true,
+          opacity: 0
+        });
+      }
+    }
+
     const changeContent = (value) => {
       switch(value) {
         case 'team':
           this.setState({modalContent: 
           <ModalContainer>
-            <ModalContent>{value}</ModalContent>
+            <ModalContent ref={ref => renderForm(ref)}></ModalContent>
           </ModalContainer>});
           break;
         case 'freelancer':
@@ -160,12 +171,23 @@ class PageTemplate extends React.PureComponent {
       }
     }
 
+    const renderForm = ref => {
+      if (ref) {
+        console.log('form2', ref)
+        typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
+          hideFooter: true,
+          hideHeaders: true,
+          opacity: 0
+        });
+      }
+    }
+
     const changeContent = (value) => {
       switch(value) {
         case 'team':
           this.setState({modalContent: 
           <ModalContainer>
-            <ModalContent>{value}</ModalContent>
+            <ModalContent ref={ref => renderForm(ref)}></ModalContent>
           </ModalContainer>});
           break;
         case 'freelancer':
