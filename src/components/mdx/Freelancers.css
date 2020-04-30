@@ -10,6 +10,16 @@ body {
     margin-bottom: 28px !important;
 }
 
+.Columns__ColumnContentText-kxCwWT a:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
+.Columns__ColumnContentText-sc-1n7mtif-2 a:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
+
 .sort-wrapper .sorting-label {
     color: hsla(0, 0%, 0%, 0.8);
 }
