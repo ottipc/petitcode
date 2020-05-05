@@ -123,7 +123,7 @@ const PaginationTable = ({
       </Page>
     )
   })
-  console.log('pages', pages)
+
 
   return (
     <Container>

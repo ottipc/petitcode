@@ -12,7 +12,8 @@ import Modal from 'react-modal';
 import FilterWizard from '../components/mdx/FilterWizard';
 import * as typeformEmbed from '@typeform/embed'
 import Layout from '../components/Layout'
-import { LocationContext, ModalContext } from '../utils/Contexts'
+import { LocationContext, ModalContext, NavigationContext } from '../utils/Contexts'
+import Hamburger from '../components/Hamburger'
 
 import components from '../components/mdx-components'
 import FloatingActionButton from '../components/FloatingActionButton'
@@ -82,7 +83,6 @@ class PageTemplate extends React.PureComponent {
 
     const renderForm = ref => {
       if (ref) {
-        console.log('form2', ref)
         typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
           hideFooter: true,
           hideHeaders: true,
@@ -100,7 +100,6 @@ class PageTemplate extends React.PureComponent {
           </ModalContainer>});
           break;
         case 'freelancer':
-          console.log('free');
           this.setState({modalContent: 
           <ModalContainer>
             <ModalContent><FilterWizard page={value}/></ModalContent>
@@ -120,7 +119,9 @@ class PageTemplate extends React.PureComponent {
     this.handleShowModal = () => {
       if (typeof localStorage !== 'undefined' &&
       (localStorage.getItem('showModal') == null || localStorage.getItem('showModal') === true)) {
-        this.setState({showModal: true})
+        if (this.state.fabRef) {
+          this.state.fabRef.click();
+        }
       }
       typeof localStorage !== 'undefined' && localStorage.setItem('showModal', false)
     }
@@ -128,7 +129,8 @@ class PageTemplate extends React.PureComponent {
     this.state = {
       showModal: false,
       modalContent: renderModalContent,
-      handleShowModal: this.handleShowModal,    
+      handleShowModal: this.handleShowModal, 
+      fabRef: null,   
     };
   }
 
@@ -171,9 +173,14 @@ class PageTemplate extends React.PureComponent {
       }
     }
 
+    const getRef = (ref) => {
+      if (ref && this.state.fabRef !== ref ) {
+        this.setState({fabRef: ref});
+      }
+    }
+
     const renderForm = ref => {
       if (ref) {
-        console.log('form2', ref)
         typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
           hideFooter: true,
           hideHeaders: true,
@@ -251,7 +258,7 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <FloatingActionButton onClick={switchModal}>FAB</FloatingActionButton>
+          <FloatingActionButton getRef={getRef} onClick={switchModal}><Hamburger /></FloatingActionButton>
           {location.pathname.indexOf('specialists') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>
@@ -268,6 +275,8 @@ class PageTemplate extends React.PureComponent {
     )
   }
 }
+
+PageTemplate.contextType = NavigationContext;
 
 export default PageTemplate
 
