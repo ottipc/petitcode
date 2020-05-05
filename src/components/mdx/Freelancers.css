@@ -10,6 +10,22 @@ body {
     margin-bottom: 28px !important;
 }
 
+.FilterWizard__Container-iSnNdV .SearchableDropdown__Placeholder-hkLvLL {
+    color: white;
+}
+
+.FilterWizard__Container-iSnNdV .react-dropdown-select-dropdown-handle {
+    color: white;
+}
+
+.FilterWizard__Container-iSnNdV .slider-tracks div {
+    background-color: white !important;
+}
+
+.FilterWizard__Container-iSnNdV .SliderFilter__SliderWrapper-kJYQAr p {
+    color: white !important;
+}
+
 .sort-wrapper select {
     color: hsla(0, 0%, 0%, 0.8);
     font-weight: bold;

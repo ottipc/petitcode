@@ -18,7 +18,7 @@ const styles = {
     position: 'absolute',
     bottom: '-40px',
     font: '1rem sans-serif',
-    color: 'black',
+    color: 'white',
     lineHeight: '1.75rem',
     fontWeight: 'bold'
   },

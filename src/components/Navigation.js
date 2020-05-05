@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-
+import Configurator from './Configurator'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
 import { LocationContext } from '../utils/Contexts'
@@ -106,7 +106,8 @@ class Navigation extends React.PureComponent {
         {({ activeLocale }) => (
           <Wrapper navigationActive={navigationActive}>
             <ContentWrapper>
-              <Logo />
+              {/* <Logo /> */}
+              <Configurator />
               <List>
                 <ListItem>
                   <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
