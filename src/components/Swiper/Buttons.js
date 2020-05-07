@@ -38,17 +38,27 @@ export default function Buttons(props) {
     total,
     loop,
     csvData,
+    page,
     prevHandler,
     nextHandler,
     activeFilters
   } = props
 
   const filterFinish = () => {
-    typeof localStorage !== 'undefined' &&
-      localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
-    navigate('/en/specialists', {
-      state: { csvData }
-    })
+    if (page && page === 'freelancer') {
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
+      navigate('/en/specialists', {
+        state: { csvData, page }
+      })
+    }
+    else {
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
+      navigate('/en/fte', {
+        state: { csvData, page }
+      })
+    }
   }
 
   return (

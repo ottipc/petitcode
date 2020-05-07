@@ -15,26 +15,33 @@ const FooterWrapper = styled.div`
       spacing: { viewport }
     }
   }) => css`
-    padding: ${spacings.s4} ${viewport.default} 0;
-
-    @media (min-width: ${breakpoints.medium}) {
-      padding: ${spacings.s4} ${viewport.medium} 0;
-    }
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    align-items: center;
+    height: 95px;
   `}
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `
 
 const FooterGrid = styled(GridWrapper)`
   display: flex;
-  justify-content: space-around;
+  flex: 1;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   text-align: center;
-  margin-top: ${({ theme }) => theme.spacings.s2};
+  align-items: center;
+  margin-top: 9px;
 `
 
 const Column = styled.div`
   flex: 0 0 30%;
-  min-width: 300px;
-  margin-bottom: ${({ theme }) => theme.spacings.s2};
+  min-width: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,11 +81,9 @@ const BottomGrid = styled.div`
       spacing: { viewport }
     }
   }) => css`
-    padding: 0 0 ${viewport.default};
-
-    @media (min-width: ${breakpoints.medium}) {
-      padding: 0 0 ${viewport.medium};
-    }
+    flex: 6;
+    justify-content: space-around;
+    align-items: center;
   `}
 
   font-size: 0.8em;
@@ -88,7 +93,6 @@ const BottomGrid = styled.div`
   font-family: ${({ theme }) => theme.fonts.header.join(', ')};
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 `
 
 const BottomGridElement = styled.div`
@@ -106,25 +110,6 @@ const BottomGridElement = styled.div`
 export default function Footer() {
   return (
     <FooterWrapper>
-      <FooterGrid>
-        <Column>
-          {/* <LogoMenuItem contentfulId="53wynjaqusBYYrDx4S4v3E" aria-label="Home">
-            <Logo />
-          </LogoMenuItem> */}
-        </Column>
-        <Column>
-          <ContactWrapper>
-            <a href="mailto:info@petitcode.com">info@petitcode.com</a>
-            <br />
-            <a className="nohover" href="tel:+4930549065690">
-              +49 30 549 065 690
-            </a>
-          </ContactWrapper>
-        </Column>
-        <Column>
-          <Social />
-        </Column>
-      </FooterGrid>
       <BottomGrid>
         <BottomGridElement>
           <Link contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
@@ -148,6 +133,11 @@ export default function Footer() {
           Copyright © {new Date().getFullYear()} petitcode GmbH
         </BottomGridElement>
       </BottomGrid>
+      <FooterGrid>
+        <Column>
+          <Social />
+        </Column>
+      </FooterGrid>
     </FooterWrapper>
   )
 }

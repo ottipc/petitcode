@@ -2,6 +2,18 @@ body {
     font-family: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 }
 
+body div#hubspot-messages-iframe-container {
+   z-index: 9999 !important;
+}
+
+body div#hubspot-messages-iframe-container iframe {
+    margin-bottom: 104px !important;
+ }
+ 
+body div#hubspot-messages-iframe-container .widget-app-container {
+    padding-bottom: 0 !important;
+}
+ 
 .sort-wrapper .sorting-label {
     color: hsla(0, 0%, 0%, 0.8);
 }

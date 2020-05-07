@@ -23,7 +23,8 @@ class Carousel extends React.Component {
       frames: [].concat(props.frames || props.children || []),
       current: 0,
       activeFilters: props.activeFilters,
-      csvData: props.csvData
+      csvData: props.csvData,
+      page: props.page
     }
 
     this.mounted = false
@@ -431,6 +432,7 @@ class Carousel extends React.Component {
                 key={i}
                 activeFilters={this.state.activeFilters}
                 csvData={this.state.csvData}
+                page={this.state.page}
                 index={current}
                 total={frames.length}
                 prevHandler={this.prev}

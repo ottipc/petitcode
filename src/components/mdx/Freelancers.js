@@ -129,6 +129,7 @@ export default function Freelancers({ location, ...props }) {
   let indexOfFirstCard = 0
   let currentCards = []
   let list = []
+  const path = typeof localStorage !== 'undefined' && localStorage.getItem('page') ? localStorage.getItem('page') : 'freelancer';
 
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
@@ -203,7 +204,7 @@ export default function Freelancers({ location, ...props }) {
       setCsvData(
         sortEntities(
           data.allDataCsv.nodes.filter(
-            (entity) => entity.name !== '' && entity.surname !== ''
+            (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
           )
         )
       )

@@ -123,6 +123,7 @@ const Configurator = () => {
         )
         break
       case 'freelancer':
+        typeof localStorage !== 'undefined' && localStorage.setItem('page', value)
         setContent(
           <ModalContainer>
             <ModalContent>
@@ -132,6 +133,7 @@ const Configurator = () => {
         )
         break
       case 'FTE':
+        typeof localStorage !== 'undefined' && localStorage.setItem('page', value)
         setContent(
           <ModalContainer>
             <ModalContent>

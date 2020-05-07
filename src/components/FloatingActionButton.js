@@ -6,6 +6,8 @@ import './Custom.css'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
+console.log(typeof theme.spacing.viewport.default);
+
 const Wrapper = styled.button`
   width: 60px;
   height: 60px;
@@ -13,8 +15,8 @@ const Wrapper = styled.button`
   border-radius: 50%;
   position: fixed;
   right: 90px;
-  bottom: 45px;
-  z-index: 1000;
+  bottom: 120px;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;

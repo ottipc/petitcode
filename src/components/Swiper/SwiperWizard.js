@@ -36,7 +36,7 @@ const Header = styled.p`
   }
 `
 
-const SwiperWizard = () => {
+const SwiperWizard = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState([])
   const [groupFilter, setGroupFilter] = useState([])
@@ -51,6 +51,7 @@ const SwiperWizard = () => {
   const [rerenderKey, setRerenderKey] = useState(0)
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
+  const {page} = props;
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -468,6 +469,7 @@ const SwiperWizard = () => {
       key={rerenderKey}
       activeFilters={activeFilters}
       csvData={csvData}
+      page={page}
       widgets={[Buttons]}
     >
       {/* <SlideItem>

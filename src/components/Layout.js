@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   ${({ hasAcceptedCookies }) =>
     !hasAcceptedCookies &&
     css`
-      padding-bottom: 6em;
+      padding-bottom: 0em;
     `}
 `
 
@@ -32,6 +32,9 @@ export default function Layout({ children }) {
 
   const toggleNavigation = () => {
     setNavigationActive(!navigationActive)
+    if (navigationActive === true) {
+      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true')
+    }
   }
 
   return (

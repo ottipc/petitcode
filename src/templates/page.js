@@ -132,9 +132,31 @@ class PageTemplate extends React.PureComponent {
       handleShowModal: this.handleShowModal, 
       fabRef: null,   
     };
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
+  componentDidMount() {
+    window.addEventListener('wheel', this.handleScroll);
+  };
+  
+  componentWillUnmount() {
+    window.removeEventListener('wheel', this.handleScroll);
+  };
+  
+  handleScroll(event) {
+    if (this.state.fabRef && typeof localStorage !== 'undefined' && (localStorage.getItem('showOverlay') == null || localStorage.getItem('showOverlay') === 'true') && window.location.pathname.split('/')[2] === '') {
+      this.state.fabRef.click();
+      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'false')
+    }
+  };
+
   render() {
+
+    if (window.location.pathname.split('/')[2] === '') {
+      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true');
+    }
+
     const renderModalContent = 
       <ModalContainer>
         <ModalContent>I'm looking for</ModalContent>

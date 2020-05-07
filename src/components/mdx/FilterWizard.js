@@ -25,11 +25,12 @@ const ContainerInner = styled.div`
 `
 
 const FilterWizard = (props) => {
+  const {page} = props;
   return (
     // <Wrapper>
       <Container>
         <ContainerInner>
-          <SwiperWizard />
+          <SwiperWizard page={page} />
         </ContainerInner>
       </Container>
     // </Wrapper>

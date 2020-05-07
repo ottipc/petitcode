@@ -31,6 +31,7 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `mtyay169tt6k`,
+        environment: 'development',
         ...(isProduction && !isStaging
           ? {
               accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
