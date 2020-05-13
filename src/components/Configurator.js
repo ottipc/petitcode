@@ -20,6 +20,15 @@ const ModalContent = styled.p`
   display: flex;
   justify-content: center;
 `
+const ModalForm = styled.p`
+  font-size: 28px;
+  line-height: 42px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`
+
 const ActionButton = styled.button`
   font-size: 28px;
   line-height: 42px;
@@ -118,7 +127,7 @@ const Configurator = () => {
       case 'team':
         setContent(
           <ModalContainer>
-            <ModalContent ref={(ref) => renderForm(ref)} />
+            <ModalForm ref={(ref) => renderForm(ref)} />
           </ModalContainer>
         )
         break

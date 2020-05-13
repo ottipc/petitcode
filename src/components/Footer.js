@@ -19,10 +19,11 @@ const FooterWrapper = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 999;
-    background-color: white;
+    z-index: 9999;
     align-items: center;
     height: 95px;
+    color: white;
+    mix-blend-mode: difference;
   `}
   @media (max-width: 767px) {
     flex-direction: column;
@@ -32,7 +33,7 @@ const FooterWrapper = styled.div`
 const FooterGrid = styled(GridWrapper)`
   display: flex;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: end;
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
@@ -82,8 +83,13 @@ const BottomGrid = styled.div`
     }
   }) => css`
     flex: 6;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
+    padding-left: 10%;
+
+  @media (max-width: 767px) {
+    padding-left: 0;
+  }
   `}
 
   font-size: 0.8em;
@@ -96,7 +102,8 @@ const BottomGrid = styled.div`
 `
 
 const BottomGridElement = styled.div`
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+  color: white;
 
   & a {
     color: #6e6e6e;
@@ -112,24 +119,36 @@ export default function Footer() {
     <FooterWrapper>
       <BottomGrid>
         <BottomGridElement>
-          <Link contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
+          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
+        </BottomGridElement>
+        <BottomGridElement>
+          /
         </BottomGridElement>
         {/* <BottomGridElement>
           <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
         </BottomGridElement> */}
         <BottomGridElement>
-          <Link contentfulId="48IUmDegZRVtDgbQTmATA6" />
+          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
         <BottomGridElement>
-          <Link contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
+          /
+        </BottomGridElement>
+        <BottomGridElement>
+          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
+        </BottomGridElement>
+        <BottomGridElement>
+          /
         </BottomGridElement>
         {/* <BottomGridElement>
           <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
         </BottomGridElement> */}
         <BottomGridElement>
-          <Link contentfulId="Ezme8PAhPlfrFV77vHXig" />
+          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="Ezme8PAhPlfrFV77vHXig" />
         </BottomGridElement>
         <BottomGridElement>
+          /
+        </BottomGridElement>
+        <BottomGridElement style={{color: 'white', fontSize: 13.5}}>
           Copyright © {new Date().getFullYear()} petitcode GmbH
         </BottomGridElement>
       </BottomGrid>

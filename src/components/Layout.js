@@ -25,15 +25,22 @@ export default function Layout({ children }) {
   const [scrollToSection, setScrollToSection] = useState(null)
   const [sections, setSections] = useState([])
   const [isScrolling, setIsScrolling] = useState(false)
+  const [content, setContent] = useState('HAMBURGER');
 
   const handleIsScrollingIntersection = ({ isIntersecting }) => {
     setIsScrolling(!isIntersecting)
   }
 
-  const toggleNavigation = () => {
+  const toggleNavigation = (value) => {
     setNavigationActive(!navigationActive)
     if (navigationActive === true) {
       typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true')
+      setTimeout(() => {
+        setContent(value);
+      }, 3000);
+    }
+    if (navigationActive === false) {
+      setContent(value);
     }
   }
 
@@ -41,7 +48,8 @@ export default function Layout({ children }) {
     <NavigationContext.Provider
       value={{
         toggleNavigation,
-        navigationActive
+        navigationActive,
+        content
       }}
     >
       <SectionContext.Provider

@@ -73,7 +73,7 @@ const HamburgerWrapper = styled.div`
 `
 
 export default function Overlays() {
-  const { navigationActive } = useContext(NavigationContext)
+  const { navigationActive, content } = useContext(NavigationContext)
 
   return (
     <>
@@ -86,7 +86,7 @@ export default function Overlays() {
       <LanguageSelectWrapper>
         <LanguageSelect />
       </LanguageSelectWrapper>
-      <Navigation navigationActive={navigationActive} />
+      <Navigation navigationActive={navigationActive} content={content}/>
     </>
   )
 }

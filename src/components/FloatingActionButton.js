@@ -6,8 +6,6 @@ import './Custom.css'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
-console.log(typeof theme.spacing.viewport.default);
-
 const Wrapper = styled.button`
   width: 60px;
   height: 60px;
@@ -16,7 +14,7 @@ const Wrapper = styled.button`
   position: fixed;
   right: 90px;
   bottom: 120px;
-  z-index: 10000;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,7 +168,7 @@ const FloatingActionButton = (props) => {
       <Wrapper
       //  onClick={() => onClick()}
       >
-        <HamburgerWrapper ref={ref => getRef(ref)} onClick={toggleNavigation} aria-label="toggle menu">
+        <HamburgerWrapper ref={ref => getRef(ref)} onClick={() => toggleNavigation('FAB')} aria-label="toggle menu">
         <HamburgerBox>
           <p style={{fontSize: 14}}>FAB</p>
         </HamburgerBox>

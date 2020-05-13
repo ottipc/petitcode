@@ -100,30 +100,55 @@ class Navigation extends React.PureComponent {
   }
 
   render() {
-    const { navigationActive } = this.props
+    const { navigationActive, content } = this.props
+    let overlayContent = 
+      <ContentWrapper>
+      <Logo />
+      {/* <Configurator /> */}
+      <List>
+        <ListItem>
+          <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+            References
+          </MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+        </ListItem>
+        {/* <ListItem>
+          <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+            Blog
+          </MenuLink>
+        </ListItem> */}
+      </List>
+      </ContentWrapper>
+
+    if (content && content === 'FAB') {
+      overlayContent = 
+      <ContentWrapper>
+      {/* <Logo /> */}
+      <Configurator />
+      {/* <List>
+        <ListItem>
+          <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+            References
+          </MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+            Blog
+          </MenuLink>
+        </ListItem>
+      </List> */}
+      </ContentWrapper>
+    }
     return (
       <LocationContext.Consumer>
         {({ activeLocale }) => (
           <Wrapper navigationActive={navigationActive}>
-            <ContentWrapper>
-              {/* <Logo /> */}
-              <Configurator />
-              <List>
-                <ListItem>
-                  <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
-                    References
-                  </MenuLink>
-                </ListItem>
-                <ListItem>
-                  <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
-                </ListItem>
-                {/* <ListItem>
-                  <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
-                    Blog
-                  </MenuLink>
-                </ListItem> */}
-              </List>
-            </ContentWrapper>
+            {overlayContent}
           </Wrapper>
         )}
       </LocationContext.Consumer>

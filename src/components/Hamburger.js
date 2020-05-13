@@ -145,7 +145,7 @@ export default function Hamburger() {
   const { toggleNavigation, navigationActive } = useContext(NavigationContext)
 
   return (
-    <HamburgerWrapper onClick={toggleNavigation} aria-label="toggle menu">
+    <HamburgerWrapper onClick={() => toggleNavigation('HAMBURGER')} aria-label="toggle menu">
       <HamburgerBox>
         <HamburgerInner navigationActive={navigationActive} />
       </HamburgerBox>

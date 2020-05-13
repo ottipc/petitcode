@@ -145,7 +145,7 @@ class PageTemplate extends React.PureComponent {
   };
   
   handleScroll(event) {
-    if (this.state.fabRef && typeof localStorage !== 'undefined' && (localStorage.getItem('showOverlay') == null || localStorage.getItem('showOverlay') === 'true') && window.location.pathname.split('/')[2] === '') {
+    if (this.state.fabRef && typeof localStorage !== 'undefined' && (localStorage.getItem('showOverlay') == null || localStorage.getItem('showOverlay') === 'true') && (window.location.pathname.split('/')[2] === '' || typeof window.location.pathname.split('/')[2] === 'undefined')) {
       this.state.fabRef.click();
       typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'false')
     }
@@ -153,7 +153,7 @@ class PageTemplate extends React.PureComponent {
 
   render() {
 
-    if (window.location.pathname.split('/')[2] === '') {
+    if (typeof window !== 'undefined' && window.location.pathname.split('/')[2] === '') {
       typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true');
     }
 

@@ -158,7 +158,6 @@ const RatingWrapper = styled.div``
 
 const FreelancerRow = (props) => {
   const { data } = props
-  console.log('card data', data)
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')

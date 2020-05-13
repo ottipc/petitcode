@@ -8,7 +8,7 @@ import TwitterLogo from '../../assets/icons/social/twitter.svg'
 const Link = styled.a`
   font-weight: bold;
   width: 30px;
-  color: #6e6e6e;
+  color: white;
 
   &:hover {
     color: black;
