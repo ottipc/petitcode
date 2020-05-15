@@ -145,12 +145,12 @@ export default function Footer() {
         <BottomGridElement>
           <Link style={{color: 'white', fontSize: 13.5}} contentfulId="Ezme8PAhPlfrFV77vHXig" />
         </BottomGridElement>
-        <BottomGridElement>
+        {/* <BottomGridElement>
           /
         </BottomGridElement>
         <BottomGridElement style={{color: 'white', fontSize: 13.5}}>
           Copyright © {new Date().getFullYear()} petitcode GmbH
-        </BottomGridElement>
+        </BottomGridElement> */}
       </BottomGrid>
       <FooterGrid>
         <Column>

@@ -38,14 +38,14 @@ const LanguageSelectWrapper = styled.div`
   mix-blend-mode: difference;
   color: white;
   position: fixed;
-  z-index: 1100;
+  z-index: 11000;
   bottom: ${({ theme }) => theme.spacing.viewport.default};
   left: ${({ theme }) => theme.spacing.viewport.default};
   transform: translateX(-50%);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     bottom: ${({ theme }) => theme.spacing.viewport.medium};
-    left: ${({ theme }) => theme.spacing.viewport.medium};
+    left: ${({ theme }) => (parseInt(theme.spacing.viewport.medium)*2.2).toString() + 'px'};
   }
 
   & a:after {

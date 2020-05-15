@@ -6,8 +6,8 @@ import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
 const hamburgerLayerWidth = '34px'
-const hamburgerLayerHeight = '1px'
-const hamburgerLayerSpacing = '8px'
+const hamburgerLayerHeight = '4px'
+const hamburgerLayerSpacing = '4px'
 const hamburgerPaddingX = theme.spacings.s1
 const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'

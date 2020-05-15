@@ -37,7 +37,7 @@ export default function Layout({ children }) {
       typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true')
       setTimeout(() => {
         setContent(value);
-      }, 3000);
+      }, 300);
     }
     if (navigationActive === false) {
       setContent(value);

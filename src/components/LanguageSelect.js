@@ -24,7 +24,12 @@ const SwitcherLink = styled(Link)`
   &:hover {
     color: white;
     opacity: 0.8;
-    text-decoration: none;
+    text-decoration: underline;
+  }
+  &:active {
+    color: white;
+    opacity: 0.8;
+    text-decoration: underline;
   }
   &[aria-current='page'] {
     display: none;
