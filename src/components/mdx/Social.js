@@ -8,11 +8,6 @@ import TwitterLogo from '../../assets/icons/social/twitter.svg'
 const Link = styled.a`
   font-weight: bold;
   width: 30px;
-  color: #6e6e6e;
-
-  &:hover {
-    color: black;
-  }
 
   & + & {
     margin-left: ${({ theme }) => theme.spacings.s2};

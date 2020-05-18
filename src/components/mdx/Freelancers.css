@@ -2,34 +2,40 @@ body {
     font-family: 'Fira Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 }
 
+body div#hubspot-messages-iframe-container {
+   z-index: 9999 !important;
+}
+
+body div#hubspot-messages-iframe-container iframe {
+    margin-bottom: 104px !important;
+ }
+ 
+body div#hubspot-messages-iframe-container .widget-app-container {
+    padding-bottom: 0 !important;
+}
+ 
+.sort-wrapper .sorting-label {
+    color: hsla(0, 0%, 0%, 0.8);
+}
+
 .Columns__ColumnContentText-kxCwWT p {
     margin-bottom: 28px !important;
 }
 
-.Columns__ColumnContentText-sc-1n7mtif-2 p {
-    margin-bottom: 28px !important;
+.FilterWizard__Container-iSnNdV .SearchableDropdown__Placeholder-hkLvLL {
+    color: white;
 }
 
-.Columns__ColumnContentText-kxCwWT a:hover {
+.FilterWizard__Container-iSnNdV .react-dropdown-select-dropdown-handle {
+    color: white;
+}
+
+.FilterWizard__Container-iSnNdV .slider-tracks div {
+    background-color: white !important;
+}
+
+.FilterWizard__Container-iSnNdV .SliderFilter__SliderWrapper-kJYQAr p {
     color: white !important;
-    text-decoration: underline !important;
-}
-
-.Columns__ColumnContentText-sc-1n7mtif-2 a:hover {
-    color: white !important;
-    text-decoration: underline !important;
-}
-
-.Columns__ColumnContentText-kxCwWT h1 {
-    margin-bottom: 42px !important;
-}
-
-.Columns__ColumnContentText-sc-1n7mtif-2 h1 {
-    margin-bottom: 42px !important;
-}
-
-.sort-wrapper .sorting-label {
-    color: hsla(0, 0%, 0%, 0.8);
 }
 
 .sort-wrapper select {
@@ -116,7 +122,7 @@ body {
 }
 
 .rs-picker-daterange-menu {
-    z-index: 200;
+    z-index: 99999;
 }
 .rs-picker-subtle .rs-picker-toggle.active {
     background: #fff !important;
@@ -456,9 +462,9 @@ body {
     text-align: center;
 }
 
-@media screen and (min-width: 1620px) {
+/* @media screen and (min-width: 1620px) {
     .SectionContent__Wrapper-cjecYL {
-        padding: 0vh 224px;
+        padding: 10vh 224px;
     } 
 } 
 
@@ -472,7 +478,7 @@ body {
     .SectionContent__Wrapper-cjecYL {
         padding: 0vh 56px;
     }
-} 
+}  */
 
 .dpYvgs:focus {
 

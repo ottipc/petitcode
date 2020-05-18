@@ -45,8 +45,7 @@ const ContactWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s1};
 
   & a {
-    padding: 0.2em 0;
-    color: #6e6e6e;
+    padding: 0.2em 0;;
   }
 
   & a:hover {
