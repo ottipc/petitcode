@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { navigate } from 'gatsby'
+import styled from 'styled-components';
 
 const styles = {
   wrapper: {
@@ -11,16 +12,17 @@ const styles = {
     textAlign: 'center'
   },
   btn: {
-    // width: '30px',
+    width: '30px',
     height: '30px',
     cursor: 'pointer',
     userSelect: 'none',
     position: 'absolute',
     bottom: '-40px',
-    font: '1rem sans-serif',
+    font: '3rem sans-serif',
     color: 'white',
     lineHeight: '1.75rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
   },
   left: {
     left: '0'
@@ -29,6 +31,12 @@ const styles = {
     right: '0'
   }
 }
+
+const Wrapper = styled.div `
+  @media (max-width: 767px) {
+    bottom: -100px !important;
+  }
+`
 
 export default function Buttons(props) {
   const prevBtnStyle = Object.assign({}, styles.btn, styles.left)
@@ -62,14 +70,14 @@ export default function Buttons(props) {
   }
 
   return (
-    <div style={styles.wrapper}>
+    <Wrapper style={styles.wrapper}>
       {(loop || index !== 0) && (
         <div
           className="swiper-btn-previous"
           style={prevBtnStyle}
           onClick={prevHandler}
         >
-          Previous
+          {"<"}
         </div>
       )}
       {(loop || index !== total - 1) && (
@@ -78,7 +86,7 @@ export default function Buttons(props) {
           style={nextBtnStyle}
           onClick={nextHandler}
         >
-          Next
+          {">"}
         </div>
       )}
       {(loop || index === total - 1) && (
@@ -87,10 +95,10 @@ export default function Buttons(props) {
           style={nextBtnStyle}
           onClick={() => filterFinish()}
         >
-          Finish
+          {">"}
         </div>
       )}
-    </div>
+    </Wrapper>
   )
 }
 

@@ -9,7 +9,8 @@ const List = styled.ul({
   display: 'flex',
   margin: 0,
   listStyleType: 'none',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  marginLeft: '25px',
 })
 
 const ListItem = styled.li({

@@ -7,8 +7,8 @@ import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
 const Wrapper = styled.button`
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background-color: black;
   border-radius: 50%;
   position: fixed;
@@ -157,6 +157,13 @@ const HamburgerInner = styled.span`
     `}
 `
 
+const FABContent = styled.p `
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+`
+
 const FloatingActionButton = (props) => {
 
   const { toggleNavigation, navigationActive } = useContext(NavigationContext)
@@ -170,7 +177,7 @@ const FloatingActionButton = (props) => {
       >
         <HamburgerWrapper ref={ref => getRef(ref)} onClick={() => toggleNavigation('FAB')} aria-label="toggle menu">
         <HamburgerBox>
-          <p style={{fontSize: 14}}>FAB</p>
+          <FABContent>?</FABContent>
         </HamburgerBox>
       </HamburgerWrapper>
       </Wrapper>

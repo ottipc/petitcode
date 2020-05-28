@@ -22,6 +22,10 @@ const Wrapper = styled.nav`
   padding: 5rem;
   transition: left 0.15s ease-in;
 
+  @media (max-width: 767px) {
+    padding: 3rem;
+  }
+
   ${({ navigationActive }) =>
     navigationActive &&
     css`
@@ -33,6 +37,14 @@ const ContentWrapper = styled(GridWrapper)`
   display: flex;
   align-items: center;
   justify-content: space-around;
+`
+
+const ConfiguratorWrapper = styled(GridWrapper)`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 `
 
 const Logo = styled(PetitcodeTransparent)`
@@ -114,17 +126,17 @@ class Navigation extends React.PureComponent {
         <ListItem>
           <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
         </ListItem>
-        {/* <ListItem>
-          <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
-            Blog
+        <ListItem>
+          <MenuLink contentfulId="7vHFANsUbzTuIZrYiPLwzd">
+            About pc
           </MenuLink>
-        </ListItem> */}
+        </ListItem>
       </List>
       </ContentWrapper>
 
     if (content && content === 'FAB') {
       overlayContent = 
-      <ContentWrapper>
+      <ConfiguratorWrapper>
       {/* <Logo /> */}
       <Configurator />
       {/* <List>
@@ -142,7 +154,7 @@ class Navigation extends React.PureComponent {
           </MenuLink>
         </ListItem>
       </List> */}
-      </ContentWrapper>
+      </ConfiguratorWrapper>
     }
     return (
       <LocationContext.Consumer>

@@ -29,6 +29,8 @@ const LogoWrapper = styled.div`
   width: 100%;
   max-width: 120px;
   padding: ${({ theme }) => theme.spacing.viewport.default};
+  margin-top: 1.5%;
+  margin-left: 1.5%;
 
   & svg {
     display: block;

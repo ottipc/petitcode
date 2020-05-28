@@ -32,7 +32,9 @@ const GridImageWrapper = styled.div`
   align-items: center;
   max-width: ${({ maxWidth = '100%' }) => maxWidth};
   width: 100%;
-  margin: 0 auto ${({ theme }) => theme.spacings.s2};
+  // margin: 0 auto ${({ theme }) => theme.spacings.s2};
+  height: 100%;
+  justify-content: center;
 
   & img {
     margin: 0;

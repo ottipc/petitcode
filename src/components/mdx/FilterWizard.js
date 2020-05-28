@@ -15,13 +15,18 @@ const Container = styled.div`
   height: 100%;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    justify-content: end;
+    padding-top: 50%;
+  }
 `
 
 const ContainerInner = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 150px;
+  height: 30%;
 `
 
 const FilterWizard = (props) => {

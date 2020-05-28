@@ -9,6 +9,8 @@ import DateFilter from './DateFilter'
 const Wrapper = styled.div`
   padding: 0px;
   padding-bottom: 25px;
+  width: 103%;
+  margin-left: -1.5%;
 `
 
 const ContainerUpper = styled.div`

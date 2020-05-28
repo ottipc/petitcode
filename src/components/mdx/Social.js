@@ -7,11 +7,13 @@ import TwitterLogo from '../../assets/icons/social/twitter.svg'
 
 const Link = styled.a`
   font-weight: bold;
-  width: 30px;
+  width: 35px;
   color: white;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
 
   &:hover {
-    color: black;
+    color: white;
+    text-decoration: underline;
   }
 
   & + & {
@@ -28,7 +30,7 @@ export default function Social() {
         rel="noopener"
         aria-label="Find us on facebook"
       >
-        <FacebookLogo />
+        FB
       </Link>
       &nbsp;
       <Link
@@ -37,7 +39,7 @@ export default function Social() {
         rel="noopener"
         aria-label="Find us on instagram"
       >
-        <InstagramLogo />
+        IN
       </Link>
       &nbsp;
       <Link
@@ -46,7 +48,7 @@ export default function Social() {
         rel="noopener"
         aria-label="Find us on twitter"
       >
-        <TwitterLogo />
+        TW
       </Link>
     </div>
   )

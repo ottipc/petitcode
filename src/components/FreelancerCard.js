@@ -246,7 +246,7 @@ const FreelancerCard = (props) => {
       MAR: 'M'
     }
 
-    const array = groupsData.split(', ').map((cat, index) => {
+    const array = groupsData.split(', ').filter(entity => typeof abrev[entity.trim()] !== 'undefined').map((cat, index) => {
       return (
         <Tippy
           key={index}
@@ -334,7 +334,7 @@ const FreelancerCard = (props) => {
         </Availabilities>
         <LinkBtn>
           <a
-            href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20developer&body=Hi%20petitcode%20HR%20Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20freelancer${' ' +
+            href={`mailto:info@petitcode.com?subject=Interested%20in%20booking%20this%20specialist&body=Hi%20petitcode%20HR-Team%2C%0D%0A%0D%0AI%20am%20interested%20in%20the%20specialist${' ' +
               data.name.split(' ')[0] +
               ' ' +
               data.surname.charAt(0) +
