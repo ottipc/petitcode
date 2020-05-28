@@ -66,7 +66,8 @@ const DateFilter = (props) => {
   const [initialRender, setInitialRender] = useState(true)
   const { dateFilter, value } = props
 
-  if (value !== inputValue && initialRender) {
+  if (typeof value !== 'undefined' && value != null && value !== inputValue && initialRender) {
+    console.log('adasdasdasd', value);
     setInputValue(value)
     setInitialRender(false)
   }

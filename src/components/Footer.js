@@ -16,7 +16,7 @@ const FooterWrapper = styled.div`
     }
   }) => css`
     display: flex;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     z-index: 9999;
@@ -122,8 +122,11 @@ const BottomGridElement = styled.div`
 `
 
 export default function Footer() {
+
+  const page = typeof window !== 'undefined' && window.location.pathname.split('/').filter(entity => entity != '')[1];
+
   return (
-    <FooterWrapper>
+    <FooterWrapper style={{position: typeof page !== 'undefined' ? 'relative' : 'fixed'}}>
       <BottomGrid>
         <BottomGridElement>
           <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
@@ -156,7 +159,7 @@ export default function Footer() {
           /
         </BottomGridElement>
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="7vHFANsUbzTuIZrYiPLwzd" />
+          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
         </BottomGridElement>  
       </BottomGrid>
       <FooterGrid>

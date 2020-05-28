@@ -115,21 +115,6 @@ const SortWrapper = styled.div`
 `
 
 export default function Freelancers({ location, ...props }) {
-  const [csvData, setCsvData] = useState([])
-  const [filteredData, setFilteredData] = useState()
-  const [currentPage, setCurrentPage] = useState(1)
-  const cardsPerPage = 24
-  const [skills, setSkills] = useState([])
-  const [tags, setTags] = useState([])
-  const [show, setDisplay] = useState(true)
-  const [sortOrder, setSortOrder] = useState('1')
-  const [rerenderKey, setRerenderKey] = useState(0)
-  const [filtersString, setFiltersString] = useState('')
-  let indexOfLastCard = 0
-  let indexOfFirstCard = 0
-  let currentCards = []
-  let list = []
-  const path = typeof localStorage !== 'undefined' && localStorage.getItem('page') ? localStorage.getItem('page') : 'freelancer';
 
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
@@ -159,17 +144,7 @@ export default function Freelancers({ location, ...props }) {
     }
   `)
 
-  if (typeof props !== 'undefined' && props != null) {
-    if (
-      typeof props.csvData !== 'undefined' &&
-      props.csvData != null &&
-      props.csvData.length > 0 &&
-      JSON.stringify(csvData) !== JSON.stringify(props.csvData)
-    ) {
-      setCsvData(props.csvData)
-    }
-  }
-
+  const [sortOrder, setSortOrder] = useState('1')
   const sortEntities = (entities) => {
     switch (sortOrder) {
       case '1':
@@ -193,13 +168,43 @@ export default function Freelancers({ location, ...props }) {
     }
   }
 
+  const path = typeof localStorage !== 'undefined' && localStorage.getItem('page') ? localStorage.getItem('page') : 'freelancer';
+  const [csvData, setCsvData] = useState(sortEntities(
+    data.allDataCsv.nodes.filter(
+      (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
+    )
+  ))
+  const [filteredData, setFilteredData] = useState()
+  const [currentPage, setCurrentPage] = useState(1)
+  const cardsPerPage = 24
+  const [skills, setSkills] = useState([])
+  const [tags, setTags] = useState([])
+  const [show, setDisplay] = useState(true)
+  const [rerenderKey, setRerenderKey] = useState(0)
+  const [filtersString, setFiltersString] = useState('')
+  let indexOfLastCard = 0
+  let indexOfFirstCard = 0
+  let currentCards = []
+  let list = []
+
+  if (typeof props !== 'undefined' && props != null) {
+    if (
+      typeof props.csvData !== 'undefined' &&
+      props.csvData != null &&
+      props.csvData.length > 0 &&
+      JSON.stringify(csvData) !== JSON.stringify(props.csvData)
+    ) {
+      setCsvData(props.csvData)
+    }
+  }
+
   const beforeUnload = () => {
     typeof localStorage !== 'undefined' &&
       localStorage.removeItem('activeFilters')
   }
 
   useEffect(() => {
-    window.addEventListener('beforeunload', beforeUnload)
+    typeof window !== 'undefined' && window.addEventListener('beforeunload', beforeUnload)
     if (csvData.length <= 0) {
       setCsvData(
         sortEntities(
@@ -431,7 +436,7 @@ export default function Freelancers({ location, ...props }) {
 
   return (
     <div>
-      <Title>Request your specialst</Title>
+      <Title>Request your specialist</Title>
       <Container>
         <Filter
           tags={tags}
