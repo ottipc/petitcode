@@ -127,7 +127,7 @@ class Navigation extends React.PureComponent {
           <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink contentfulId="7vHFANsUbzTuIZrYiPLwzd">
+          <MenuLink contentfulId="2dUcR1WFWhI5Ns3anZksDf">
             About pc
           </MenuLink>
         </ListItem>

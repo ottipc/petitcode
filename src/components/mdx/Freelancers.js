@@ -436,7 +436,7 @@ export default function Freelancers({ location, ...props }) {
 
   return (
     <div style={{marginTop: '-10vh'}}>
-      <Title>Request your specialist</Title>
+      <Title>Request your specialst</Title>
       <Container>
         <Filter
           tags={tags}
