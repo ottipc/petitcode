@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-
+import { Location } from "@reach/router"
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
@@ -123,10 +123,10 @@ const BottomGridElement = styled.div`
 
 export default function Footer() {
 
-  const page = typeof window !== 'undefined' && window.location.pathname.split('/').filter(entity => entity != '')[1];
-
   return (
-    <FooterWrapper style={{position: typeof page !== 'undefined' ? 'relative' : 'fixed'}}>
+    <Location>
+      {({location}) => (
+    <FooterWrapper style={{position: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'relative' : 'fixed'}}>
       <BottomGrid>
         <BottomGridElement>
           <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
@@ -168,5 +168,7 @@ export default function Footer() {
         </Column>
       </FooterGrid>
     </FooterWrapper>
+      )}
+    </Location>
   )
 }

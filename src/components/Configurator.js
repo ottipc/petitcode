@@ -75,6 +75,7 @@ const ActionButton = styled.button`
   line-height: 42px;
   font-weight: bold;
   border-radius: 0px;
+  color: white;
 
   &:hover {
     background-color: white;
@@ -132,7 +133,7 @@ const Placeholder = styled.div`
 const Configurator = () => {
   const [selection, setSelection] = useState(null)
   const [content, setContent] = useState(
-    <ModalContainer>
+    <ModalContainer className='configuratorContainer'>
       <MessageContent>I'm looking for a</MessageContent>
       <MessageContent>
         <ActionButton onClick={() => selectConfigurator('consultant')}>
@@ -159,7 +160,7 @@ const Configurator = () => {
 
   const selectConfigurator = (value) => {
     setContent(
-      <ModalContainer>
+      <ModalContainer className='configuratorContainer'>
         <MessageContent>I'm looking for a</MessageContent>
         <MessageContent>
           <ActionButton onClick={() => selectConfigurator('consultant')}>
@@ -220,7 +221,7 @@ const Configurator = () => {
       case 'freelancer':
         typeof localStorage !== 'undefined' && localStorage.setItem('page', value);
         setContent(
-          <ModalContainer>
+          <ModalContainer className='configuratorContainer'>
             <ModalContent>
               <FilterWizard page={value} />
               <ConfirmButton onClick={() => changeContent('back')}>
@@ -233,7 +234,7 @@ const Configurator = () => {
       case 'FTE':
         typeof localStorage !== 'undefined' && localStorage.setItem('page', value);
         setContent(
-          <ModalContainer>
+          <ModalContainer className='configuratorContainer'>
             <ModalContent>
               <FilterWizard page={value} />
               <ConfirmButton onClick={() => changeContent('back')}>
@@ -245,7 +246,7 @@ const Configurator = () => {
         break
       case 'back':
         setContent(
-          <ModalContainer>
+          <ModalContainer className='configuratorContainer'>
           <MessageContent>I'm looking for a</MessageContent>
           <MessageContent>
             <ActionButton onClick={() => selectConfigurator('team')}>
