@@ -71,7 +71,6 @@ const ItemLabel = styled.div`
   font-family: 'Noto Sans', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial',
     sans-serif;
   font-size: 0.95rem;
-  ${'' /* line-height: 1.75rem; */}
   line-height: 1;
   color: hsla(0, 0%, 0%, 0.8);
   @media (max-width: 676px) {
