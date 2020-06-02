@@ -13,10 +13,6 @@ import { LocationContext } from '../utils/Contexts'
 
 import components from '../components/mdx-components'
 
-// const client = new GraphQLClient({
-//   url: '/graphql'
-// })
-
 class PageTemplate extends React.PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
