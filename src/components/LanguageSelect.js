@@ -9,7 +9,8 @@ const List = styled.ul({
   display: 'flex',
   margin: 0,
   listStyleType: 'none',
-  textTransform: 'uppercase'
+  textTransform: 'uppercase',
+  marginLeft: '25px',
 })
 
 const ListItem = styled.li({
@@ -19,11 +20,17 @@ const ListItem = styled.li({
 const SwitcherLink = styled(Link)`
   transition: 0.3s opacity linear;
   color: white;
+  font-weight: bold;
 
   &:hover {
     color: white;
     opacity: 0.8;
-    text-decoration: none;
+    text-decoration: underline;
+  }
+  &:active {
+    color: white;
+    opacity: 0.8;
+    text-decoration: underline;
   }
   &[aria-current='page'] {
     display: none;

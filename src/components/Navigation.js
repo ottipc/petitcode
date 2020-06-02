@@ -1,7 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-
+import Configurator from './Configurator'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
 import { LocationContext } from '../utils/Contexts'
@@ -22,6 +22,10 @@ const Wrapper = styled.nav`
   padding: 5rem;
   transition: left 0.15s ease-in;
 
+  @media (max-width: 767px) {
+    padding: 3rem;
+  }
+
   ${({ navigationActive }) =>
     navigationActive &&
     css`
@@ -33,6 +37,14 @@ const ContentWrapper = styled(GridWrapper)`
   display: flex;
   align-items: center;
   justify-content: space-around;
+`
+
+const ConfiguratorWrapper = styled(GridWrapper)`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
 `
 
 const Logo = styled(PetitcodeTransparent)`
@@ -100,29 +112,55 @@ class Navigation extends React.PureComponent {
   }
 
   render() {
-    const { navigationActive } = this.props
+    const { navigationActive, content } = this.props
+    let overlayContent = 
+      <ContentWrapper>
+      <Logo />
+      {/* <Configurator /> */}
+      <List>
+        <ListItem>
+          <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+            References
+          </MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="2dUcR1WFWhI5Ns3anZksDf">
+            About pc
+          </MenuLink>
+        </ListItem>
+      </List>
+      </ContentWrapper>
+
+    if (content && content === 'FAB') {
+      overlayContent = 
+      <ConfiguratorWrapper>
+      {/* <Logo /> */}
+      <Configurator />
+      {/* <List>
+        <ListItem>
+          <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+            References
+          </MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+            Blog
+          </MenuLink>
+        </ListItem>
+      </List> */}
+      </ConfiguratorWrapper>
+    }
     return (
       <LocationContext.Consumer>
         {({ activeLocale }) => (
           <Wrapper navigationActive={navigationActive}>
-            <ContentWrapper>
-              <Logo />
-              <List>
-                <ListItem>
-                  <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
-                    References
-                  </MenuLink>
-                </ListItem>
-                <ListItem>
-                  <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
-                </ListItem>
-                {/* <ListItem>
-                  <MenuLink contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
-                    Blog
-                  </MenuLink>
-                </ListItem> */}
-              </List>
-            </ContentWrapper>
+            {overlayContent}
           </Wrapper>
         )}
       </LocationContext.Consumer>

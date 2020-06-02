@@ -24,7 +24,7 @@ const SortFilter = ({ filter, currentCards }) => {
 
 SortFilter.propTypes = {
   filter: propTypes.any,
-  currentCards: propTypes.any,
+  currentCards: propTypes.any
 }
 
 export default SortFilter

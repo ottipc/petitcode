@@ -48,7 +48,7 @@ const Drop = (props) => {
 }
 
 Drop.propTypes = {
-  onChangeSelection: propTypes.any,
+  onChangeSelection: propTypes.any
 }
 
 export default Drop

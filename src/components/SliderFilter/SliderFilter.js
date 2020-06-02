@@ -146,7 +146,7 @@ SliderFilter.propTypes = {
   target: propTypes.any,
   tick: propTypes.any,
   count: propTypes.any,
-  format: propTypes.any,
+  format: propTypes.any
 }
 
 export default SliderFilter

@@ -1,6 +1,7 @@
 import React from 'react'
 import propTypes from 'prop-types'
 import { navigate } from 'gatsby'
+import styled from 'styled-components';
 
 const styles = {
   wrapper: {
@@ -11,16 +12,17 @@ const styles = {
     textAlign: 'center'
   },
   btn: {
-    // width: '30px',
+    width: '30px',
     height: '30px',
     cursor: 'pointer',
     userSelect: 'none',
     position: 'absolute',
     bottom: '-40px',
-    font: '1rem sans-serif',
-    color: 'black',
+    font: '3rem sans-serif',
+    color: 'white',
     lineHeight: '1.75rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontFamily: 'Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif',
   },
   left: {
     left: '0'
@@ -30,6 +32,12 @@ const styles = {
   }
 }
 
+const Wrapper = styled.div `
+  @media (max-width: 767px) {
+    bottom: -100px !important;
+  }
+`
+
 export default function Buttons(props) {
   const prevBtnStyle = Object.assign({}, styles.btn, styles.left)
   const nextBtnStyle = Object.assign({}, styles.btn, styles.right)
@@ -38,28 +46,38 @@ export default function Buttons(props) {
     total,
     loop,
     csvData,
+    page,
     prevHandler,
     nextHandler,
     activeFilters
   } = props
 
   const filterFinish = () => {
-    typeof localStorage !== 'undefined' &&
-      localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
-    navigate('/en/specialists', {
-      state: { csvData }
-    })
+    if (page && page === 'freelancer') {
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
+      navigate('/en/specialists', {
+        state: { csvData, page }
+      })
+    }
+    else {
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
+      navigate('/en/fte', {
+        state: { csvData, page }
+      })
+    }
   }
 
   return (
-    <div style={styles.wrapper}>
+    <Wrapper style={styles.wrapper}>
       {(loop || index !== 0) && (
         <div
           className="swiper-btn-previous"
           style={prevBtnStyle}
           onClick={prevHandler}
         >
-          Previous
+          {"<"}
         </div>
       )}
       {(loop || index !== total - 1) && (
@@ -68,7 +86,7 @@ export default function Buttons(props) {
           style={nextBtnStyle}
           onClick={nextHandler}
         >
-          Next
+          {">"}
         </div>
       )}
       {(loop || index === total - 1) && (
@@ -77,10 +95,10 @@ export default function Buttons(props) {
           style={nextBtnStyle}
           onClick={() => filterFinish()}
         >
-          Finish
+          {">"}
         </div>
       )}
-    </div>
+    </Wrapper>
   )
 }
 
@@ -91,5 +109,5 @@ Buttons.propTypes = {
   csvData: propTypes.any,
   prevHandler: propTypes.any,
   nextHandler: propTypes.any,
-  activeFilters: propTypes.any,
+  activeFilters: propTypes.any
 }

@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faCalendarCheck
 } from '@fortawesome/free-solid-svg-icons'
 import propTypes from 'prop-types'
-import { DateRangePicker } from 'rsuite'
+// import { DateRangePicker, DatePicker } from 'rsuite'
+import { DateRange } from 'react-date-range';
 // import 'rsuite/dist/styles/rsuite-default.css'
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import './Custom.css'
 
 const Container = styled.div`
@@ -61,13 +64,100 @@ const Button = styled.button`
   }
 `
 
+const PickerContainer = styled.div `
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 100%;
+
+  &:focus {
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    width: 100%;
+  }
+`
+
+const Input = styled.div `
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid rgb(229, 230, 231);
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Noto Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+
+  &:active {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid rgb(229, 230, 231);
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: "Noto Sans", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+
+  }
+`
+
 const DateFilter = (props) => {
+
+  const reconstructDate = date => {
+    const formated = JSON.parse(date);
+    let reconstructed = [];
+    if (formated) {
+    reconstructed = [
+      {
+        startDate: new Date(formated[0].startDate),
+        endDate: new Date(formated[0].endDate),
+        key: 'selection',
+        color: 'black',
+      }
+    ]
+  } 
+  else {
+    reconstructed = [
+      {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: 'selection',
+        color: 'black',
+      }
+    ]
+  }
+    return reconstructed;
+  }
+
   const [inputValue, setInputValue] = useState([])
   const [initialRender, setInitialRender] = useState(true)
+  const [showPicker, setShowPicker] = useState(false);
   const { dateFilter, value } = props
+  const [firstClick, setFirstClick] = useState(true);
+  const [state, setState] = useState(typeof localStorage !== 'undefined' && localStorage.getItem('availabilities') != null ? reconstructDate(localStorage.getItem('availabilities')) :
+  [
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+      color: 'black',
+    }
+  ]);
 
-  if (value !== inputValue && initialRender) {
+  if (typeof value !== 'undefined' && value != null && value !== inputValue && initialRender) {
     setInputValue(value)
+    setState([
+      {
+        startDate: new Date(value[0]),
+        endDate: new Date(value[value.length - 1]),
+        key: 'selection',
+        color: 'black'
+      }
+    ]);
     setInitialRender(false)
   }
 
@@ -86,8 +176,10 @@ const DateFilter = (props) => {
   }
 
   const setDateHandler = (date) => {
-    const startDate = new Date(date[0])
-    const endDate = new Date(date[1])
+    setState(date);
+    typeof localStorage !== 'undefined' && localStorage.setItem('availabilities', JSON.stringify(date));
+    const startDate = new Date(date[0].startDate)
+    const endDate = new Date(date[0].endDate)
     for (
       var dateRange = [], dt = startDate;
       dt <= endDate;
@@ -97,16 +189,38 @@ const DateFilter = (props) => {
     }
     setInputValue(dateRange)
     dateFilter(dateRange)
+    if (firstClick) {
+      setFirstClick(false);
+    }
+    else {
+      togglePicker();
+      setFirstClick(true);
+    }
   }
 
   const cleanDateHandler = () => {
+    console.log('clean');
     setInputValue([])
     dateFilter([])
+    typeof localStorage !== 'undefined' && localStorage.setItem('availabilities', null);
   }
+
+  const togglePicker = () => {
+    setShowPicker(!showPicker);
+  }
+
+  useEffect(() => {  
+    // returned function will be called on component unmount 
+    return () => {
+      if (typeof window != 'undefined' && (window.location.pathname.split('/')[2] === '' || typeof window.location.pathname.split('/')[2] === 'undefined')) {
+        cleanDateHandler();
+      }
+    }
+  }, [])
 
   return (
     <Container>
-      <DateRangePicker
+      {/* <DateRangePicker
         appearance="subtle"
         placeholder="Availability"
         value={inputValue}
@@ -121,7 +235,18 @@ const DateFilter = (props) => {
         }}
         onOk={(value) => setDateHandler(value)}
         onClean={() => cleanDateHandler()}
+      /> */}
+      <PickerContainer>
+    <Input key={JSON.stringify(state)}  onClick={() => togglePicker()} >{state[0].startDate != null && state[0].endDate != null ? formatDate(state[0].startDate) + ' - ' + formatDate(state[0].endDate) : ''}</Input>
+      <div style={{display: showPicker ? 'flex' : 'none', position: 'absolute', zIndex: 999, boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px 0px', marginTop: '40px'}}>
+      <DateRange
+        editableDateInputs={true}
+        onChange={item => setDateHandler([item.selection])}
+        moveRangeOnFirstSelection={false}
+        ranges={state}
       />
+      </div>
+      </PickerContainer>
       <Button>
         <FontAwesomeIcon icon={faCalendarCheck} />
       </Button>

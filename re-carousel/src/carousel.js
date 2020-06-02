@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const styles = {
   wrapper: {
     width: '100%',
-    height: '250%',
+    height: '100%',
     position: 'relative',
     zIndex: 200
   },
@@ -23,7 +23,8 @@ class Carousel extends React.Component {
       frames: [].concat(props.frames || props.children || []),
       current: 0,
       activeFilters: props.activeFilters,
-      csvData: props.csvData
+      csvData: props.csvData,
+      page: props.page
     }
 
     this.mounted = false
@@ -408,7 +409,7 @@ class Carousel extends React.Component {
       <div style={wrapperStyle}>
         <div
           ref="wrapper"
-          style={objectAssign({ overflow: 'hidden' }, wrapperStyle)}
+          style={objectAssign({ overflow: 'initial' }, wrapperStyle)}
           onTouchStart={this.onTouchStart}
           className={this.props.className}
           onMouseDown={this.onTouchStart}
@@ -431,6 +432,7 @@ class Carousel extends React.Component {
                 key={i}
                 activeFilters={this.state.activeFilters}
                 csvData={this.state.csvData}
+                page={this.state.page}
                 index={current}
                 total={frames.length}
                 prevHandler={this.prev}

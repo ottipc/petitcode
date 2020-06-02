@@ -30,13 +30,14 @@ const Header = styled.p`
   margin-bottom: 5px;
   line-height: 1.75rem;
   display: block;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
   @media (min-width: 250px) {
-    font-size: calc(20px + (8) * ((100vw - 300px) / 1620));
+    font-size: calc(21px + (8) * ((100vw - 300px) / 1620));
     line-height: calc(1.3em + (0) * ((100vw - 300px) / 1620));
   }
 `
 
-const SwiperWizard = () => {
+const SwiperWizard = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState([])
   const [groupFilter, setGroupFilter] = useState([])
@@ -51,6 +52,7 @@ const SwiperWizard = () => {
   const [rerenderKey, setRerenderKey] = useState(0)
   const [skills, setSkills] = useState([])
   const [tags, setTags] = useState([])
+  const {page} = props;
 
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -468,6 +470,7 @@ const SwiperWizard = () => {
       key={rerenderKey}
       activeFilters={activeFilters}
       csvData={csvData}
+      page={page}
       widgets={[Buttons]}
     >
       {/* <SlideItem>
@@ -496,7 +499,7 @@ const SwiperWizard = () => {
             width: '100%'
           }}
         >
-          <Header>Select the group of the freelancer: </Header>
+          <Header>Select the group of the specialist: </Header>
           <div>
             <SearchableDropdown
               placeholder="Industries"
@@ -520,7 +523,7 @@ const SwiperWizard = () => {
             width: '100%'
           }}
         >
-          <Header>Select the skills of the freelancer: </Header>
+          <Header>Select the skills of the specialist: </Header>
           <div>
             <SearchableDropdown
               placeholder="Skills"
@@ -544,7 +547,7 @@ const SwiperWizard = () => {
             width: '100%'
           }}
         >
-          <Header>Select the hard skills of the freelancer: </Header>
+          <Header>Select the hard skills of the specialist: </Header>
           <div>
             <SearchableDropdown
               placeholder="Hard skills"
@@ -568,7 +571,7 @@ const SwiperWizard = () => {
             width: '100%'
           }}
         >
-          <Header>Select the hard skills of the freelancer: </Header>
+          <Header>Select the hard skills of the specialist: </Header>
           <div className="hourly-rate-filter">
             <SliderFilter
               label="Daily Rate: "
@@ -590,7 +593,7 @@ const SwiperWizard = () => {
             width: '80%'
           }}
         >
-          <Header>Select the date of availability of a freelancer: </Header>
+          <Header>Select the date of availability of the specialist: </Header>
           <div
             style={{
               display: 'flex',

@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   ${({ hasAcceptedCookies }) =>
     !hasAcceptedCookies &&
     css`
-      padding-bottom: 6em;
+      padding-bottom: 0em;
     `}
 `
 
@@ -25,20 +25,31 @@ export default function Layout({ children }) {
   const [scrollToSection, setScrollToSection] = useState(null)
   const [sections, setSections] = useState([])
   const [isScrolling, setIsScrolling] = useState(false)
+  const [content, setContent] = useState('HAMBURGER');
 
   const handleIsScrollingIntersection = ({ isIntersecting }) => {
     setIsScrolling(!isIntersecting)
   }
 
-  const toggleNavigation = () => {
+  const toggleNavigation = (value) => {
     setNavigationActive(!navigationActive)
+    if (navigationActive === true) {
+      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true')
+      setTimeout(() => {
+        setContent(value);
+      }, 300);
+    }
+    if (navigationActive === false) {
+      setContent(value);
+    }
   }
 
   return (
     <NavigationContext.Provider
       value={{
         toggleNavigation,
-        navigationActive
+        navigationActive,
+        content
       }}
     >
       <SectionContext.Provider

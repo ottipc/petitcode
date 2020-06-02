@@ -158,7 +158,6 @@ const RatingWrapper = styled.div``
 
 const FreelancerRow = (props) => {
   const { data } = props
-  console.log('card data', data)
 
   const formatAddress = (adressData) => {
     const array = adressData.split(', ')
@@ -187,7 +186,11 @@ const FreelancerRow = (props) => {
     }
     const array = categoriesData.split(', ').map((cat, index) => {
       return (
-        <Tippy key={index} theme="translucent" content={cat.replace(/\s+/g, '')}>
+        <Tippy
+          key={index}
+          theme="translucent"
+          content={cat.replace(/\s+/g, '')}
+        >
           <Category key={index}>{abrev[cat.replace(/\s+/g, '')]}</Category>
         </Tippy>
       )
@@ -217,11 +220,7 @@ const FreelancerRow = (props) => {
   return (
     <ContentWrapper>
       <Tippy theme="translucent" content={<TypeToolip />}>
-        {data.type === 'self managed' ? (
-          <ContentTdFirst />
-        ) : (
-          <ContentTdTest />
-        )}
+        {data.type === 'self managed' ? <ContentTdFirst /> : <ContentTdTest />}
       </Tippy>
 
       <ContentTd>

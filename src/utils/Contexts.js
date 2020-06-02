@@ -10,7 +10,8 @@ export const LocationContext = createContext({
 
 export const NavigationContext = createContext({
   toggleNavigation: () => {},
-  navigationActive: false
+  navigationActive: false,
+  content: 'HAMBURGER',
 })
 
 export const SectionContext = createContext({
@@ -33,4 +34,8 @@ export const GlobalContext = createContext({
   defaultLocale,
   activeLocale: defaultLocale,
   pathname: '/'
+})
+
+export const ModalContext = createContext({
+  handleShowModal: () => {},
 })

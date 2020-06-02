@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import Observer from '@researchgate/react-intersection-observer'
 import Image from 'gatsby-image'
 
-import { SectionContext, GlobalContext } from '../../utils/Contexts'
+import { SectionContext, GlobalContext, ModalContext } from '../../utils/Contexts'
 
 const OuterWrapper = styled.div`
   ${({ video, image }) =>
@@ -130,6 +130,10 @@ function Section({ video, image, inverted, children, nr, scrollId = null }) {
     (i) => i.contentful_id === image
   )
 
+  const onEndCallback = ref => {
+    ref.nativeEvent.target.play();
+  }
+
   return (
     <OuterWrapper id={scrollId} video={video} image={image}>
       <Observer
@@ -141,9 +145,13 @@ function Section({ video, image, inverted, children, nr, scrollId = null }) {
           {(videoData || backgroundImage) && (
             <BackgroundWrapper>
               {video && videoData && (
-                <Video autoPlay loop muted playsInline>
-                  <source src={videoData.file.url} type="video/mp4" />
-                </Video>
+                <ModalContext.Consumer>
+                  {({handleShowModal}) => (
+                  <Video autoPlay muted playsInline onEnded={ref => {onEndCallback(ref); handleShowModal()}}>
+                    <source src={videoData.file.url} type="video/mp4" />
+                  </Video>
+                  )}
+                </ModalContext.Consumer>
               )}
               {image && backgroundImage && <Image {...backgroundImage} />}
             </BackgroundWrapper>

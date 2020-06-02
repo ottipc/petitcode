@@ -165,7 +165,7 @@ SearchableDropdown.propTypes = {
   methods: propTypes.any,
   placeholder: propTypes.any,
   options: propTypes.any,
-  searchBy: propTypes.any,
+  searchBy: propTypes.any
 }
 
 export default SearchableDropdown

@@ -1,13 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 // import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-
+import propTypes from 'prop-types'
+import './Custom.css'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 
+const Wrapper = styled.button`
+  width: 70px;
+  height: 70px;
+  background-color: black;
+  border-radius: 50%;
+  position: fixed;
+  right: 90px;
+  bottom: 120px;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 const hamburgerLayerWidth = '34px'
-const hamburgerLayerHeight = '4px'
-const hamburgerLayerSpacing = '4px'
+const hamburgerLayerHeight = '1px'
+const hamburgerLayerSpacing = '8px'
 const hamburgerPaddingX = theme.spacings.s1
 const hamburgerPaddingY = theme.spacings.s1
 const hamburgerActiveLayerColor = '#000000'
@@ -45,11 +59,13 @@ const HamburgerWrapper = styled.button`
 const HamburgerBox = styled.span`
   width: ${hamburgerLayerWidth};
   height: calc(${hamburgerLayerHeight} * 3 + ${hamburgerLayerSpacing} * 2);
-  display: inline-block;
+  display: flex;
   position: relative;
   vertical-align: middle;
   /* 3dx */
   perspective: calc(${hamburgerLayerWidth} * 2);
+  justify-content: center;
+  align-items: center;
 `
 
 const HamburgerInner = styled.span`
@@ -141,18 +157,34 @@ const HamburgerInner = styled.span`
     `}
 `
 
-export default function Hamburger() {
+const FABContent = styled.p `
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+`
+
+const FloatingActionButton = (props) => {
+
   const { toggleNavigation, navigationActive } = useContext(NavigationContext)
+  // const {onClick} = props;
+  const {getRef} = props;
 
   return (
-    <HamburgerWrapper onClick={() => toggleNavigation('HAMBURGER')} aria-label="toggle menu">
-      <HamburgerBox>
-        <HamburgerInner navigationActive={navigationActive} />
-      </HamburgerBox>
-    </HamburgerWrapper>
+    <div>
+      <Wrapper
+      //  onClick={() => onClick()}
+      >
+        <HamburgerWrapper ref={ref => getRef(ref)} onClick={() => toggleNavigation('FAB')} aria-label="toggle menu">
+        <HamburgerBox>
+          <FABContent>?</FABContent>
+        </HamburgerBox>
+      </HamburgerWrapper>
+      </Wrapper>
+    </div>
   )
 }
 
-// Hamburger.propTypes = {
-//   colorScheme: propTypes.string.isRequired
-// }
+FloatingActionButton.propTypes = {}
+
+export default FloatingActionButton
