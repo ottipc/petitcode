@@ -37,6 +37,10 @@ const LogoWrapper = styled.div`
     width: 100%;
     height: auto;
     color: white;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+      color: black;
+    }
   }
 
   &:hover {
