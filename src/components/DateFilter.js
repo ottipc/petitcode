@@ -6,7 +6,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import propTypes from 'prop-types'
 import { DateRangePicker } from 'rsuite'
-import 'rsuite/dist/styles/rsuite-default.css'
+// import 'rsuite/dist/styles/rsuite-default.css'
 import './Custom.css'
 
 const Container = styled.div`
