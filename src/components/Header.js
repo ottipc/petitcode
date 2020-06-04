@@ -38,7 +38,7 @@ const LogoWrapper = styled.div`
     height: auto;
     color: white;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+    @media (max-width: 767px) {
       color: black;
     }
   }

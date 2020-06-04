@@ -25,7 +25,7 @@ const FooterWrapper = styled.div`
     color: white;
     mix-blend-mode: difference;
   `}
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+  @media (max-width: 767px) {
     flex-direction: column;
   }
 `
@@ -39,7 +39,7 @@ const FooterGrid = styled(GridWrapper)`
   align-items: center;
   margin-top: 9px;
   margin-right: 2%;
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+  @media (max-width: 767px) {
     color: black;
     justify-content: center;
     margin-top: 0px;
@@ -52,7 +52,7 @@ const Column = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+  @media (max-width: 767px) {
     margin-bottom: 10px;
   }
 `
@@ -96,7 +96,7 @@ const BottomGrid = styled.div`
     padding-left: 15%;
     padding-top: 11px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
+  @media (max-width: 767px) {
     padding-left: 0;
     flex: 1;
   }
