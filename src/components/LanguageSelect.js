@@ -15,8 +15,12 @@ const List = styled.ul({
 
 const ListItem = styled.li`
   margin: 0.25rem;
-  @media (max-width: ${({ theme }) => theme.breakpoints.medium}) {
-    margin-bottom: 3px;
+  margin-bottom: -2px;
+  @media (min-width: 499px) and (max-width: 1273px) {
+    margin-bottom: 0px;
+  }
+  @media (max-width: 498px) {
+    margin-bottom: -2px;
   }
 `
 
