@@ -128,7 +128,7 @@ class Navigation extends React.PureComponent {
         </ListItem>
         <ListItem>
           <MenuLink contentfulId="2dUcR1WFWhI5Ns3anZksDf">
-            About pc
+            Company
           </MenuLink>
         </ListItem>
       </List>
