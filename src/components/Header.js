@@ -30,7 +30,7 @@ const LogoWrapper = styled.div`
   max-width: 120px;
   padding: ${({ theme }) => theme.spacing.viewport.default};
   margin-top: 1.5%;
-  margin-left: 1.5%;
+  margin-left: ${({ theme }) => ((parseInt(theme.spacing.viewport.medium)*2)-28).toString() + 'px'};
 
   & svg {
     display: block;

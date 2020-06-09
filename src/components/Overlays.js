@@ -83,9 +83,9 @@ export default function Overlays() {
           <Hamburger />
         </HamburgerWrapper>
       </HeaderWrapper>
-      <LanguageSelectWrapper>
+      {/* <LanguageSelectWrapper>
         <LanguageSelect />
-      </LanguageSelectWrapper>
+      </LanguageSelectWrapper> */}
       <Navigation navigationActive={navigationActive} content={content}/>
     </>
   )

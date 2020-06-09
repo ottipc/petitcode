@@ -9,15 +9,20 @@ import { NavigationContext } from '../utils/Contexts'
 const Wrapper = styled.button`
   width: 70px;
   height: 70px;
-  background-color: black;
+  background-color: white;
   border-radius: 50%;
   position: fixed;
-  right: 90px;
-  bottom: 120px;
+  right: 14px;
+  bottom: 20px;
   z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
+  mix-blend-mode: difference;
+  border: none;
+  @media (max-width: 767px) {
+    bottom: 95px;
+  }
 `
 const hamburgerLayerWidth = '34px'
 const hamburgerLayerHeight = '1px'
@@ -159,7 +164,8 @@ const HamburgerInner = styled.span`
 
 const FABContent = styled.p `
   font-size: 35px;
-  color: white;
+  color: black;
+  mix-blend-mode: difference;
   font-weight: bold;
   font-family: Noto Sans,Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
 `

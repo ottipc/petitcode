@@ -5,13 +5,15 @@ import styled from 'styled-components'
 import { defaultLocale, langs } from '../data/languages'
 import { GlobalContext, LocationContext } from '../utils/Contexts'
 
-const List = styled.ul({
-  display: 'flex',
-  margin: 0,
-  listStyleType: 'none',
-  textTransform: 'uppercase',
-  marginLeft: '25px',
-})
+const List = styled.ul`
+  display: flex;
+  margin: 0;
+  list-style-type: none;
+  text-transform: uppercase;
+  @media (max-width: 767px) {
+    margin-left: 25px;
+  }
+`
 
 const ListItem = styled.li`
   margin: 0.25rem;
@@ -20,7 +22,7 @@ const ListItem = styled.li`
     margin-bottom: 0px;
   }
   @media (max-width: 498px) {
-    margin-bottom: -2px;
+    margin-bottom: 1px;
   }
 `
 

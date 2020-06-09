@@ -4,8 +4,28 @@ import { Location } from "@reach/router"
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
+import LanguageSelect from './LanguageSelect'
 
 // import PetitcodeLogo from '../assets/petitcode-logo-text.svg'
+
+const LanguageSelectWrapper = styled.div`
+  mix-blend-mode: difference;
+  color: white;
+  position: fixed;
+  z-index: 11000;
+  bottom: ${({ theme }) => theme.spacing.viewport.default};
+  left: ${({ theme }) => theme.spacing.viewport.default};
+  transform: translateX(-50%);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    bottom: ${({ theme }) => theme.spacing.viewport.medium};
+    left: ${({ theme }) => (parseInt(theme.spacing.viewport.medium)*2).toString() + 'px'};
+  }
+
+  & a:after {
+    background: white;
+  }
+`
 
 const FooterWrapper = styled.div`
   ${({
@@ -27,6 +47,7 @@ const FooterWrapper = styled.div`
   `}
   @media (max-width: 767px) {
     flex-direction: column;
+    justify-content: flex-end;
   }
 `
 
@@ -43,6 +64,7 @@ const FooterGrid = styled(GridWrapper)`
     color: black;
     justify-content: center;
     margin-top: 0px;
+    display: none;
   }
 `
 
@@ -98,7 +120,16 @@ const BottomGrid = styled.div`
 
   @media (max-width: 767px) {
     padding-left: 0;
-    flex: 1;
+    padding-top: 0;
+    flex: unset;
+    justify-content: center;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 623px) and (min-width: 499px) {
+    width: 80%;
+  }
+  @media (max-width: 328px) and (min-width: 261px) {
+    width: 80%;
   }
   `}
 
@@ -130,6 +161,9 @@ export default function Footer() {
     <Location>
       {({location}) => (
     <FooterWrapper style={{position: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'relative' : 'fixed'}}>
+      <LanguageSelectWrapper>
+        <LanguageSelect />
+      </LanguageSelectWrapper>
       <BottomGrid>
         <BottomGridElement>
           <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
@@ -167,7 +201,7 @@ export default function Footer() {
       </BottomGrid>
       <FooterGrid>
         <Column>
-          <Social />
+          {/* <Social /> */}
         </Column>
       </FooterGrid>
     </FooterWrapper>

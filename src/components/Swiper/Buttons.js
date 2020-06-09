@@ -53,20 +53,11 @@ export default function Buttons(props) {
   } = props
 
   const filterFinish = () => {
-    if (page && page === 'freelancer') {
       typeof localStorage !== 'undefined' &&
         localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
       navigate('/en/specialists', {
         state: { csvData, page }
       })
-    }
-    else {
-      typeof localStorage !== 'undefined' &&
-        localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
-      navigate('/en/fte', {
-        state: { csvData, page }
-      })
-    }
   }
 
   return (

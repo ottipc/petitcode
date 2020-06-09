@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import Configurator from './Configurator'
@@ -6,6 +6,7 @@ import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
 import { LocationContext } from '../utils/Contexts'
 import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
+import { NavigationContext } from '../utils/Contexts'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -106,28 +107,29 @@ const MenuLink = styled(Link)`
   ${MenuBasicStyling}
 `
 
-class Navigation extends React.PureComponent {
-  static propTypes = {
-    navigationActive: propTypes.bool.isRequired
-  }
+const Navigation = (props) => {
+  // static propTypes = {
+  //   navigationActive: propTypes.bool.isRequired
+  // }
 
-  render() {
-    const { navigationActive, content } = this.props
+  // render() {
+    const { toggleNavigation } = useContext(NavigationContext)
+    const { navigationActive, content } = props
     let overlayContent = 
       <ContentWrapper>
       <Logo />
       {/* <Configurator /> */}
       <List>
         <ListItem>
-          <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+          <MenuLink onClick={() => toggleNavigation()} contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
             References
           </MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+          <MenuLink onClick={() => toggleNavigation()} contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink contentfulId="2dUcR1WFWhI5Ns3anZksDf">
+          <MenuLink onClick={() => toggleNavigation()} contentfulId="2dUcR1WFWhI5Ns3anZksDf">
             Company
           </MenuLink>
         </ListItem>
@@ -166,6 +168,7 @@ class Navigation extends React.PureComponent {
       </LocationContext.Consumer>
     )
   }
-}
+// }
+
 
 export default Navigation
