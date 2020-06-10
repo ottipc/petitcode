@@ -39,7 +39,7 @@ const LanguageSelectWrapper = styled.div`
   color: white;
   position: fixed;
   z-index: 11000;
-  bottom: ${({ theme }) => theme.spacing.viewport.default};
+  bottom: ${({ theme }) => (parseInt(theme.spacing.viewport.default)*1.64).toString() + 'px'};
   left: ${({ theme }) => theme.spacing.viewport.default};
   transform: translateX(-50%);
 

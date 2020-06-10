@@ -7,7 +7,7 @@ import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
 import { Location } from "@reach/router"
 
-const Wrapper = styled.button`
+const Wrapper = styled.div`
   width: 70px;
   height: 70px;
   background-color: white;
@@ -22,7 +22,7 @@ const Wrapper = styled.button`
   mix-blend-mode: difference;
   border: none;
   @media (max-width: 767px) {
-    bottom: 95px;
+    bottom: 14px;
   }
 `
 const hamburgerLayerWidth = '34px'
@@ -182,18 +182,18 @@ const FloatingActionButton = (props) => {
     {({location}) => (
     <div>
       <Wrapper
-        style={{
-          mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
-          backgroundColor: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'black' : 'white',      
-        }}
+        // style={{
+        //   mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
+        //   backgroundColor: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'black' : 'white',      
+        // }}
       >
         <HamburgerWrapper ref={ref => getRef(ref)} onClick={() => toggleNavigation('FAB')} aria-label="toggle menu">
         <HamburgerBox>
           <FABContent
-            style={{
-              mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
-              color: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'white' : 'black',      
-            }}
+            // style={{
+            //   mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
+            //   color: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'white' : 'black',      
+            // }}
           >?</FABContent>
         </HamburgerBox>
       </HamburgerWrapper>

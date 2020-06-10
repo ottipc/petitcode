@@ -11,7 +11,10 @@ const List = styled.ul`
   list-style-type: none;
   text-transform: uppercase;
   @media (max-width: 767px) {
-    margin-left: 25px;
+    margin-left: 49px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    margin-left: 12px;
   }
 `
 

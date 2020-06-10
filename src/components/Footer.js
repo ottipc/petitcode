@@ -47,7 +47,7 @@ const FooterWrapper = styled.div`
   `}
   @media (max-width: 767px) {
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
   }
 `
 
@@ -123,13 +123,10 @@ const BottomGrid = styled.div`
     padding-top: 0;
     flex: unset;
     justify-content: center;
-    margin-bottom: 14px;
+    width: 60%;
   }
-  @media (max-width: 623px) and (min-width: 499px) {
-    width: 80%;
-  }
-  @media (max-width: 328px) and (min-width: 261px) {
-    width: 80%;
+  @media (max-width: 340px) {
+    width: 54%;
   }
   `}
 
@@ -155,6 +152,31 @@ const BottomGridElement = styled.div`
   }
 `
 
+const BottomGridSeparator = styled.div`
+  padding: 0 0.5rem;
+  color: white;
+
+  & a {
+    color: #6e6e6e;
+  }
+
+  & a:hover {
+    color: black;
+  }
+
+  @media (max-width: 590px) {
+    display: none;
+  }
+`
+
+const LinkStyle = styled(Link)`
+  color: white !important;
+  font-size: 13.5px;
+  @media (max-width: 767px) {
+    font-size: 11px;
+  }
+`
+
 export default function Footer() {
 
   return (
@@ -166,37 +188,37 @@ export default function Footer() {
       </LanguageSelectWrapper> */}
       <BottomGrid>
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
+          <LinkStyle contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
         </BottomGridElement>
-        <BottomGridElement>
+        <BottomGridSeparator>
           /
-        </BottomGridElement>
+        </BottomGridSeparator>
         {/* <BottomGridElement>
           <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
         </BottomGridElement> */}
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="48IUmDegZRVtDgbQTmATA6" />
+          <LinkStyle contentfulId="48IUmDegZRVtDgbQTmATA6" />
         </BottomGridElement>
-        <BottomGridElement>
+        <BottomGridSeparator>
           /
-        </BottomGridElement>
+        </BottomGridSeparator>
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
+          <LinkStyle contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
         </BottomGridElement>
-        <BottomGridElement>
+        <BottomGridSeparator>
           /
-        </BottomGridElement>
+        </BottomGridSeparator>
         {/* <BottomGridElement>
           <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
         </BottomGridElement> */}
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="Ezme8PAhPlfrFV77vHXig" />
+          <LinkStyle contentfulId="Ezme8PAhPlfrFV77vHXig" />
         </BottomGridElement>
-        <BottomGridElement>
+        <BottomGridSeparator>
           /
-        </BottomGridElement>
+        </BottomGridSeparator>
         <BottomGridElement>
-          <Link style={{color: 'white', fontSize: 13.5}} contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
+          <LinkStyle contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
         </BottomGridElement>  
       </BottomGrid>
       <FooterGrid>

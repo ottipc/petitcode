@@ -28,12 +28,12 @@ export default function RedirectIndex({ data }) {
       <Metatags />
       <p>You will be redirected...</p>
       <p>If this does not work, you may visit</p>
-      <p>
+      <div>
         <Link href="/en/">Petitcode in English</Link>
-      </p>
-      <p>
+      </div>
+      <div>
         <Link href="/de/">Petitcode in German</Link>
-      </p>
+      </div>
     </>
   )
 }
