@@ -46,14 +46,14 @@ const Filter = (props) => {
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState()
   // const [hRateFilterValue, setHRateFilterValue] = useState([0, 150])
-  const [dRateFilterValue, setDRateFilterValue] = useState([0, 800])
+  const [dRateFilterValue, setDRateFilterValue] = useState([0, 1000])
   const [groupFilter, setGroupFilter] = useState()
   const [skillsFilter, setSkillsFilter] = useState()
   const [tagsFilter, setTagsFilter] = useState()
   // const [ratingFilter, setRatingFilter] = useState()
   // const [typeFilter, setTypeFilter] = useState()
   // const [hRateFilter, setHRateFilter] = useState([0, 150])
-  // const [dRateFilter, setDRateFilter] = useState([0, 800])
+  // const [dRateFilter, setDRateFilter] = useState([0, 1000])
   const [activeFilters, setActiveFilters] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
   // const [initialRender, setInitialRender] = useState(true)
@@ -513,7 +513,7 @@ const Filter = (props) => {
           /> */}
           <SliderFilter
             label="Daily Rate: "
-            domain={[0, 800]}
+            domain={[0, 1000]}
             value={dRateFilterValue}
             onValueChange={(value) => activateFilter('dRate', value)}
           />

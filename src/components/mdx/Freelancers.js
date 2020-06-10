@@ -427,10 +427,11 @@ export default function Freelancers({ location, ...props }) {
         const dRateFilter = activeFilters.filter(
           (filter) => typeof filter.dRate !== 'undefined'
         )
+        console.log(filteredData);
         filteredData = filteredData.filter(
           (entity) =>
-            parseFloat(entity.daily_rate) >= dRateFilter[0].dRate[0] &&
-            parseFloat(entity.daily_rate) <= dRateFilter[0].dRate[1]
+            parseFloat(entity.daily_rate != '0' ? entity.daily_rate*1.25 : '640') >= dRateFilter[0].dRate[0] &&
+            parseFloat(entity.daily_rate != '0' ? entity.daily_rate*1.25 : '640') <= dRateFilter[0].dRate[1]
         )
       }
       setFilteredData(sortEntities(filteredData))

@@ -46,7 +46,7 @@ const SwiperWizard = (props) => {
   const [ratingFilter, setRatingFilter] = useState([])
   const [typeFilter, setTypeFilter] = useState([])
   const [hRateFilter, setHRateFilter] = useState([0, 150])
-  const [dRateFilter, setDRateFilter] = useState([0, 800])
+  const [dRateFilter, setDRateFilter] = useState([0, 1000])
   const [activeFilters, setActiveFilters] = useState([])
   const [csvData, setCsvData] = useState([])
   const [rerenderKey, setRerenderKey] = useState(0)
@@ -576,7 +576,7 @@ const SwiperWizard = (props) => {
             <SliderFilter
               label="Daily Rate: "
               value={dRateFilter}
-              domain={[0, 800]}
+              domain={[0, 1000]}
               onValueChange={(value) => activateFilter('dRate', value)}
             />
           </div>
