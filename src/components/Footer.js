@@ -39,7 +39,7 @@ const FooterWrapper = styled.div`
     position: relative;
     bottom: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 199;
     align-items: center;
     height: 95px;
     color: white;
@@ -161,9 +161,9 @@ export default function Footer() {
     <Location>
       {({location}) => (
     <FooterWrapper style={{position: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'relative' : 'fixed'}}>
-      <LanguageSelectWrapper>
+      {/* <LanguageSelectWrapper>
         <LanguageSelect />
-      </LanguageSelectWrapper>
+      </LanguageSelectWrapper> */}
       <BottomGrid>
         <BottomGridElement>
           <Link style={{color: 'white', fontSize: 13.5}} contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />

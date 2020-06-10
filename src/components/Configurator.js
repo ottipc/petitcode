@@ -154,7 +154,7 @@ const Configurator = () => {
       </MessageContent>
       <MessageContent>for my</MessageContent>
       <MessageContent>Project / Company</MessageContent>
-      <Placeholder />
+      {/* <Placeholder /> */}
     </ModalContainer>
   )
 
@@ -267,7 +267,7 @@ const Configurator = () => {
           </MessageContent>
           <MessageContent>for my</MessageContent>
           <MessageContent>Project / Company</MessageContent>
-          <Placeholder />
+          {/* <Placeholder /> */}
         </ModalContainer>
         )
         break;

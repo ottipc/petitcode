@@ -194,7 +194,9 @@ export default function Freelancers({ location, ...props }) {
       props.csvData.length > 0 &&
       JSON.stringify(csvData) !== JSON.stringify(props.csvData)
     ) {
-      setCsvData(props.csvData)
+      setCsvData(props.csvData.filter(
+        (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
+      ))
     }
   }
 

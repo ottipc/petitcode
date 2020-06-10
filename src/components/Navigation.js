@@ -24,7 +24,7 @@ const Wrapper = styled.nav`
   transition: left 0.15s ease-in;
 
   @media (max-width: 767px) {
-    padding: 3rem;
+    padding: 5rem 3rem 3rem 3rem;
   }
 
   ${({ navigationActive }) =>

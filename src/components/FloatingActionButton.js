@@ -5,6 +5,7 @@ import propTypes from 'prop-types'
 import './Custom.css'
 import theme from '../utils/styling/theme'
 import { NavigationContext } from '../utils/Contexts'
+import { Location } from "@reach/router"
 
 const Wrapper = styled.button`
   width: 70px;
@@ -177,17 +178,29 @@ const FloatingActionButton = (props) => {
   const {getRef} = props;
 
   return (
+    <Location>
+    {({location}) => (
     <div>
       <Wrapper
-      //  onClick={() => onClick()}
+        style={{
+          mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
+          backgroundColor: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'black' : 'white',      
+        }}
       >
         <HamburgerWrapper ref={ref => getRef(ref)} onClick={() => toggleNavigation('FAB')} aria-label="toggle menu">
         <HamburgerBox>
-          <FABContent>?</FABContent>
+          <FABContent
+            style={{
+              mixBlendMode: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'unset' : 'difference',
+              color: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'white' : 'black',      
+            }}
+          >?</FABContent>
         </HamburgerBox>
       </HamburgerWrapper>
       </Wrapper>
     </div>
+    )}
+    </Location>
   )
 }
 
