@@ -107,29 +107,29 @@ module.exports = {
               respectDNT: true
             }
           },
-          {
-            resolve: 'gatsby-plugin-hubspot',
-            options: {
-              trackingCode: '3948482',
-              respectDNT: true,
-              productionOnly: true
-            }
-          },
-          {
-            resolve: "gatsby-plugin-google-tagmanager",
-            options: {
-              id: "GTM-M7ZJ4FX",
+          // {
+          //   resolve: 'gatsby-plugin-hubspot',
+          //   options: {
+          //     trackingCode: '3948482',
+          //     respectDNT: true,
+          //     productionOnly: true
+          //   }
+          // },
+          // {
+          //   resolve: "gatsby-plugin-google-tagmanager",
+          //   options: {
+          //     id: "GTM-M7ZJ4FX",
         
-              // Include GTM in development.
-              // Defaults to false meaning GTM will only be loaded in production.
-              includeInDevelopment: true,
+          //     // Include GTM in development.
+          //     // Defaults to false meaning GTM will only be loaded in production.
+          //     includeInDevelopment: true,
         
-              // datalayer to be set before GTM is loaded
-              // should be an object or a function that is executed in the browser
-              // Defaults to null
-              defaultDataLayer: { platform: "gatsby" },
-            },
-          },
+          //     // datalayer to be set before GTM is loaded
+          //     // should be an object or a function that is executed in the browser
+          //     // Defaults to null
+          //     defaultDataLayer: { platform: "gatsby" },
+          //   },
+          // },
         ]
       : [])
   ]
