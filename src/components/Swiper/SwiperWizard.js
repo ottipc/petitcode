@@ -10,7 +10,6 @@ import SearchableDropdown from '../SearchableDropdown'
 import { groupOptions } from '../options'
 // import RatingsDropdown from '../RatingsDropdown'
 import SliderFilter from '../SliderFilter/SliderFilter'
-// import { useQuery } from 'graphql-hooks'
 import '../Custom.css'
 
 const ActiveFilters = styled.div`
