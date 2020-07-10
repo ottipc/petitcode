@@ -1,11 +1,11 @@
 export const groupOptions = [
-  { key: '0', value: 'First Interview', label: 'First Interview' },
-  { key: '1', value: 'Contacted', label: 'Contacted' },
-  { key: '2', value: 'New Partners', label: 'New Partners' },
-  { key: '3', value: 'DEV', label: 'DEV' },
-  { key: '4', value: 'DES', label: 'DES' },
-  { key: '5', value: 'MAR', label: 'MAR' },
-  { key: '6', value: 'MGMENT', label: 'MGMENT' }
+  { key: '0', value: 'Content', label: 'Content' },
+  { key: '1', value: 'Development', label: 'Development' },
+  { key: '2', value: 'Design', label: 'Design' },
+  { key: '3', value: 'Marketing', label: 'Marketing' },
+  { key: '4', value: 'Management', label: 'Management' },
+  { key: '5', value: 'Strategy', label: 'Strategy' },
+  { key: '6', value: 'Data', label: 'Data' }
 ]
 
 export const typeOptions = [
