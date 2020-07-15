@@ -7,6 +7,7 @@ export const groupOptions = [
   { key: '5', value: 'Strategy', label: 'Strategy' },
   { key: '6', value: 'Data', label: 'Data' }
 ]
+
 export const typeOptions = [
   { key: '0', value: 'vendor', label: 'Vendor' },
   { key: '1', value: 'freelancer', label: 'Freelancer' },
