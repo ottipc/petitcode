@@ -57,9 +57,14 @@ export default function Buttons(props) {
   const filterFinish = locale => {
       typeof localStorage !== 'undefined' &&
         localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
-      navigate(`/${locale}/specialists`, {
-        state: { csvData, page }
-      })
+      if (location.pathname === `/${locale}/specialists`) {
+        location.reload();
+      }
+      else {
+        navigate(`/${locale}/specialists`, {
+          state: { csvData, page }
+        })
+      }
   }
 
   return (
