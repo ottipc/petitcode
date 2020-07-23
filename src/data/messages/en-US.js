@@ -7,5 +7,6 @@ module.exports = {
   JobPostingMetaPPH: 'Price per Hour: {{pricePerHour}}',
   JobPostingMetaPPY: 'Price per Year: {{pricePerYear}}',
   JobPostingMetaCommission: 'Commission: {{commission}}',
-  JobPostingMetaReferredBy: 'Referred by {{referredBy}}'
+  JobPostingMetaReferredBy: 'Referred by {{referredBy}}',
+  specialistGroup: 'Select the group of the specialist: '
 }

@@ -13,5 +13,6 @@ module.exports = {
   'Your skills': 'Deine Skills',
   'Benefits of working with Company / Project / Client':
     'Vorteile bei Firma / Projekt / Kunde zu arbeiten',
-  'What you will do at the company': 'Deine Aufgabengebiete'
+  'What you will do at the company': 'Deine Aufgabengebiete',
+  specialistGroup: 'Select the group of the specialist: '
 }

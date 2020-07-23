@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import propTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import FilterWizard from './mdx/FilterWizard'
 import { navigate } from 'gatsby'
 import * as typeformEmbed from '@typeform/embed'
+import { getUserLangKey } from 'ptz-i18n'
+import { GlobalContext } from '../utils/Contexts'
 
 const ModalContainer = styled.div`
   width: 100%;
@@ -131,6 +133,8 @@ const Placeholder = styled.div`
 `
 
 const Configurator = () => {
+  const { activeLocale } = useContext(GlobalContext)
+  console.log('loc', activeLocale);
   const [selection, setSelection] = useState(null)
   const [content, setContent] = useState(
     <ModalContainer className='configuratorContainer'>
@@ -216,7 +220,7 @@ const Configurator = () => {
         )
         break
       case 'consultant':
-        navigate('/en/company')
+        navigate(`/${activeLocale}/company`)
       break
       case 'freelancer':
         typeof localStorage !== 'undefined' && localStorage.setItem('page', value);

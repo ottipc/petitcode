@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import propTypes from 'prop-types'
 import { navigate } from 'gatsby'
 import styled from 'styled-components';
+import { GlobalContext } from '../../utils/Contexts'
 
 const styles = {
   wrapper: {
@@ -39,6 +40,7 @@ const Wrapper = styled.div `
 `
 
 export default function Buttons(props) {
+  const { activeLocale } = useContext(GlobalContext)
   const prevBtnStyle = Object.assign({}, styles.btn, styles.left)
   const nextBtnStyle = Object.assign({}, styles.btn, styles.right)
   const {
@@ -52,10 +54,10 @@ export default function Buttons(props) {
     activeFilters
   } = props
 
-  const filterFinish = () => {
+  const filterFinish = locale => {
       typeof localStorage !== 'undefined' &&
         localStorage.setItem('activeFilters', JSON.stringify(activeFilters))
-      navigate('/en/specialists', {
+      navigate(`/${locale}/specialists`, {
         state: { csvData, page }
       })
   }
@@ -84,7 +86,7 @@ export default function Buttons(props) {
         <div
           className="swiper-btn-finish"
           style={nextBtnStyle}
-          onClick={() => filterFinish()}
+          onClick={() => filterFinish(activeLocale)}
         >
           {">"}
         </div>

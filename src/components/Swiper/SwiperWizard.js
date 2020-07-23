@@ -11,6 +11,7 @@ import { groupOptions } from '../options'
 // import RatingsDropdown from '../RatingsDropdown'
 import SliderFilter from '../SliderFilter/SliderFilter'
 import '../Custom.css'
+import {useTranslation} from "react-i18next";
 
 const ActiveFilters = styled.div`
   width: 100%;
@@ -37,6 +38,7 @@ const Header = styled.p`
 `
 
 const SwiperWizard = (props) => {
+  const {t, i18n} = useTranslation();
   const [searchFilterValue, setSearchFilterValue] = useState('')
   const [dateFilterValue, setDateFilterValue] = useState([])
   const [groupFilter, setGroupFilter] = useState([])
@@ -498,7 +500,7 @@ const SwiperWizard = (props) => {
             width: '100%'
           }}
         >
-          <Header>Select the group of the specialist: </Header>
+          <Header>{t('specialistGroup')}</Header>
           <div>
             <SearchableDropdown
               placeholder="Industries"
