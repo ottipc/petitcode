@@ -134,7 +134,6 @@ const Placeholder = styled.div`
 
 const Configurator = () => {
   const { activeLocale } = useContext(GlobalContext)
-  console.log('loc', activeLocale);
   const [selection, setSelection] = useState(null)
   const [content, setContent] = useState(
     <ModalContainer className='configuratorContainer'>

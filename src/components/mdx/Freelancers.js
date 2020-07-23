@@ -234,7 +234,7 @@ export default function Freelancers({ location, ...props }) {
     const skillsArr = []
     const skillsCheck = []
     list = sortEntities(csvData).map((entry, index) => {
-      entry.tags.split(', ').forEach((tag) => {
+      entry.tags.split(', ').filter(tag => tag !== '').forEach((tag) => {
         if (
           tagsCheck.findIndex(
             (item) => tag.toLowerCase() === item.toLowerCase()
@@ -244,7 +244,7 @@ export default function Freelancers({ location, ...props }) {
           tagsArr.push({ key: tagsArr.length, value: tag, label: tag })
         }
       })
-      entry.skills.split(', ').forEach((skill) => {
+      entry.skills.split(', ').filter(skill => skill !== '').forEach((skill) => {
         if (
           skillsCheck.findIndex(
             (item) => skill.toLowerCase() === item.toLowerCase()
