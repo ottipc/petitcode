@@ -115,7 +115,6 @@ const SortWrapper = styled.div`
 `
 
 export default function Freelancers({ location, ...props }) {
-
   const data = useStaticQuery(graphql`
     query FreelancersQuery {
       allDataCsv {
@@ -168,12 +167,20 @@ export default function Freelancers({ location, ...props }) {
     }
   }
 
-  const path = typeof localStorage !== 'undefined' && localStorage.getItem('page') ? localStorage.getItem('page') : 'freelancer';
-  const [csvData, setCsvData] = useState(sortEntities(
-    data.allDataCsv.nodes.filter(
-      (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
+  const path =
+    typeof localStorage !== 'undefined' && localStorage.getItem('page')
+      ? localStorage.getItem('page')
+      : 'freelancer'
+  const [csvData, setCsvData] = useState(
+    sortEntities(
+      data.allDataCsv.nodes.filter(
+        (entity) =>
+          entity.name !== '' &&
+          entity.surname !== '' &&
+          entity.partner_type === path.toLowerCase()
+      )
     )
-  ))
+  )
   const [filteredData, setFilteredData] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const cardsPerPage = 24
@@ -192,13 +199,24 @@ export default function Freelancers({ location, ...props }) {
       typeof props.csvData !== 'undefined' &&
       props.csvData != null &&
       props.csvData.length > 0 &&
-      JSON.stringify(csvData) !== JSON.stringify(props.csvData.filter(
-        (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
-      ))
+      JSON.stringify(csvData) !==
+        JSON.stringify(
+          props.csvData.filter(
+            (entity) =>
+              entity.name !== '' &&
+              entity.surname !== '' &&
+              entity.partner_type === path.toLowerCase()
+          )
+        )
     ) {
-      setCsvData(props.csvData.filter(
-        (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
-      ))
+      setCsvData(
+        props.csvData.filter(
+          (entity) =>
+            entity.name !== '' &&
+            entity.surname !== '' &&
+            entity.partner_type === path.toLowerCase()
+        )
+      )
     }
   }
 
@@ -208,12 +226,16 @@ export default function Freelancers({ location, ...props }) {
   }
 
   useEffect(() => {
-    typeof window !== 'undefined' && window.addEventListener('beforeunload', beforeUnload)
+    typeof window !== 'undefined' &&
+      window.addEventListener('beforeunload', beforeUnload)
     if (csvData.length <= 0) {
       setCsvData(
         sortEntities(
           data.allDataCsv.nodes.filter(
-            (entity) => entity.name !== '' && entity.surname !== '' && entity.partner_type === path.toLowerCase()
+            (entity) =>
+              entity.name !== '' &&
+              entity.surname !== '' &&
+              entity.partner_type === path.toLowerCase()
           )
         )
       )
@@ -234,26 +256,36 @@ export default function Freelancers({ location, ...props }) {
     const skillsArr = []
     const skillsCheck = []
     list = sortEntities(csvData).map((entry, index) => {
-      entry.tags.split(', ').filter(tag => tag !== '').forEach((tag) => {
-        if (
-          tagsCheck.findIndex(
-            (item) => tag.toLowerCase() === item.toLowerCase()
-          ) < 0
-        ) {
-          tagsCheck.push(tag)
-          tagsArr.push({ key: tagsArr.length, value: tag, label: tag })
-        }
-      })
-      entry.skills.split(', ').filter(skill => skill !== '').forEach((skill) => {
-        if (
-          skillsCheck.findIndex(
-            (item) => skill.toLowerCase() === item.toLowerCase()
-          ) < 0
-        ) {
-          skillsCheck.push(skill)
-          skillsArr.push({ key: skillsArr.length, value: skill, label: skill })
-        }
-      })
+      entry.tags
+        .split(', ')
+        .filter((tag) => tag !== '')
+        .forEach((tag) => {
+          if (
+            tagsCheck.findIndex(
+              (item) => tag.toLowerCase() === item.toLowerCase()
+            ) < 0
+          ) {
+            tagsCheck.push(tag)
+            tagsArr.push({ key: tagsArr.length, value: tag, label: tag })
+          }
+        })
+      entry.skills
+        .split(', ')
+        .filter((skill) => skill !== '')
+        .forEach((skill) => {
+          if (
+            skillsCheck.findIndex(
+              (item) => skill.toLowerCase() === item.toLowerCase()
+            ) < 0
+          ) {
+            skillsCheck.push(skill)
+            skillsArr.push({
+              key: skillsArr.length,
+              value: skill,
+              label: skill
+            })
+          }
+        })
       return <FreelancerCard filters={filtersString} key={index} data={entry} />
     })
 
@@ -427,11 +459,15 @@ export default function Freelancers({ location, ...props }) {
         const dRateFilter = activeFilters.filter(
           (filter) => typeof filter.dRate !== 'undefined'
         )
-        console.log(filteredData);
+        console.log(filteredData)
         filteredData = filteredData.filter(
           (entity) =>
-            parseFloat(entity.daily_rate != '0' ? entity.daily_rate*1.25 : '640') >= dRateFilter[0].dRate[0] &&
-            parseFloat(entity.daily_rate != '0' ? entity.daily_rate*1.25 : '640') <= dRateFilter[0].dRate[1]
+            parseFloat(
+              entity.daily_rate !== '0' ? entity.daily_rate * 1.25 : '640'
+            ) >= dRateFilter[0].dRate[0] &&
+            parseFloat(
+              entity.daily_rate !== '0' ? entity.daily_rate * 1.25 : '640'
+            ) <= dRateFilter[0].dRate[1]
         )
       }
       setFilteredData(sortEntities(filteredData))
@@ -440,8 +476,8 @@ export default function Freelancers({ location, ...props }) {
   }
 
   return (
-    <div style={{marginTop: '-10vh'}}>
-      <Title>Request your specialst</Title>
+    <div style={{ marginTop: '-10vh' }}>
+      <Title>Request your specialist</Title>
       <Container>
         <Filter
           tags={tags}
