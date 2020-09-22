@@ -182,16 +182,7 @@ export default function Footer() {
   return (
     <Location>
       {({ location }) => (
-        <FooterWrapper
-          style={{
-            position:
-              typeof location.pathname
-                .split('/')
-                .filter((path) => path !== '')[1] !== 'undefined'
-                ? 'relative'
-                : 'fixed'
-          }}
-        >
+        <FooterWrapper>
           {/* <LanguageSelectWrapper>
         <LanguageSelect />
       </LanguageSelectWrapper> */}
