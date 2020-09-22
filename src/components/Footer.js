@@ -220,6 +220,10 @@ export default function Footer() {
             <BottomGridElement>
               <LinkStyle contentfulId="5OYuXaPuspYS8Z2GiwMRjd" />
             </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            <BottomGridElement>
+              <LinkStyle contentfulId="2dUcR1WFWhI5Ns3anZksDf" title="Contact us" hash="contact" />
+            </BottomGridElement>
           </BottomGrid>
           <FooterGrid>
             <Column>{/* <Social /> */}</Column>
