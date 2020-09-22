@@ -7,28 +7,32 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import DefaultLayout from '../components/mdx/DefaultLayout'
 import Freelancers from '../components/mdx/Freelancers'
-import Modal from 'react-modal';
-import FilterWizard from '../components/mdx/FilterWizard';
+import Modal from 'react-modal'
+import FilterWizard from '../components/mdx/FilterWizard'
 import * as typeformEmbed from '@typeform/embed'
 import Layout from '../components/Layout'
-import { LocationContext, ModalContext, NavigationContext } from '../utils/Contexts'
+import {
+  LocationContext,
+  ModalContext,
+  NavigationContext
+} from '../utils/Contexts'
 
 import components from '../components/mdx-components'
 
 const customStyles = {
   overlay: {
-    backgroundColor: "rgba(0, 0, 0, 0.58)",
+    backgroundColor: 'rgba(0, 0, 0, 0.58)',
     zIndex: '10000'
   },
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
   }
-};
+}
 
 const ModalContainer = styled.div`
   width: 100vh;
@@ -39,8 +43,8 @@ const ModalContainer = styled.div`
   align-items: center;
 `
 const CloseButton = styled.button`
-   position: absolute;
-   right: 20px;
+  position: absolute;
+  right: 20px;
 `
 const ModalContent = styled.p`
   font-size: 28px;
@@ -58,93 +62,135 @@ const ActionButton = styled.button`
 Modal.setAppElement('#___gatsby')
 
 class PageTemplate extends React.PureComponent {
-
-  
   static propTypes = {
     data: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired
   }
-  
-  
-  constructor () {
-    super();
 
-    this.typeformContainer = null;
-    const renderModalContent = 
+  constructor() {
+    super()
+
+    this.typeformContainer = null
+    const renderModalContent = (
       <ModalContainer>
         <ModalContent>I'm looking for</ModalContent>
-        <ModalContent><ActionButton onClick={() => changeContent('team')}>Team</ActionButton> / <ActionButton onClick={() => changeContent('freelancer')}>Freelancer</ActionButton> / <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton> </ModalContent>
+        <ModalContent>
+          <ActionButton onClick={() => changeContent('team')}>
+            Team
+          </ActionButton>{' '}
+          /{' '}
+          <ActionButton onClick={() => changeContent('freelancer')}>
+            Freelancer
+          </ActionButton>{' '}
+          /{' '}
+          <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton>{' '}
+        </ModalContent>
         <ModalContent>for my</ModalContent>
         <ModalContent>Project / Company</ModalContent>
       </ModalContainer>
+    )
 
-    const renderForm = ref => {
+    const renderForm = (ref) => {
       if (ref) {
-        typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
-          hideFooter: true,
-          hideHeaders: true,
-          opacity: 0
-        });
+        typeformEmbed.makeWidget(
+          ref,
+          'https://seb432889.typeform.com/to/O8jf2l',
+          {
+            hideFooter: true,
+            hideHeaders: true,
+            opacity: 0
+          }
+        )
       }
     }
 
     const changeContent = (value) => {
-      switch(value) {
+      switch (value) {
         case 'team':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent ref={ref => renderForm(ref)}></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent ref={(ref) => renderForm(ref)} />
+              </ModalContainer>
+            )
+          })
+          break
         case 'freelancer':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent><FilterWizard page={value}/></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent>
+                  <FilterWizard page={value} />
+                </ModalContent>
+              </ModalContainer>
+            )
+          })
+          break
         case 'FTE':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent><FilterWizard page={value}/></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent>
+                  <FilterWizard page={value} />
+                </ModalContent>
+              </ModalContainer>
+            )
+          })
+          break
         default:
-          break;
+          break
       }
     }
 
     this.handleShowModal = () => {
-      if (typeof localStorage !== 'undefined' &&
-      (localStorage.getItem('showModal') == null || localStorage.getItem('showModal') === true)) {
+      if (
+        typeof localStorage !== 'undefined' &&
+        (localStorage.getItem('showModal') == null ||
+          localStorage.getItem('showModal') === true)
+      ) {
         if (this.state.fabRef) {
-          this.state.fabRef.click();
+          this.state.fabRef.click()
         }
       }
-      typeof localStorage !== 'undefined' && localStorage.setItem('showModal', false)
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('showModal', false)
     }
 
     this.state = {
       showModal: false,
       modalContent: renderModalContent,
-      handleShowModal: this.handleShowModal, 
-      fabRef: null,   
-    };
+      handleShowModal: this.handleShowModal,
+      fabRef: null
+    }
   }
 
-
   render() {
-
-    if (typeof window !== 'undefined' && window.location.pathname.split('/')[2] === '') {
-      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'true');
+    if (
+      typeof window !== 'undefined' &&
+      window.location.pathname.split('/')[2] === ''
+    ) {
+      typeof localStorage !== 'undefined' &&
+        localStorage.setItem('showOverlay', 'true')
     }
 
-    const renderModalContent = 
+    const renderModalContent = (
       <ModalContainer>
         <ModalContent>I'm looking for</ModalContent>
-        <ModalContent><ActionButton onClick={() => changeContent('team')}>Team</ActionButton> / <ActionButton onClick={() => changeContent('freelancer')}>Freelancer</ActionButton> / <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton> </ModalContent>
+        <ModalContent>
+          <ActionButton onClick={() => changeContent('team')}>
+            Team
+          </ActionButton>{' '}
+          /{' '}
+          <ActionButton onClick={() => changeContent('freelancer')}>
+            Freelancer
+          </ActionButton>{' '}
+          /{' '}
+          <ActionButton onClick={() => changeContent('FTE')}>FTE</ActionButton>{' '}
+        </ModalContent>
         <ModalContent>for my</ModalContent>
         <ModalContent>Project / Company</ModalContent>
       </ModalContainer>
+    )
     const { location, data } = this.props
     const {
       title,
@@ -170,115 +216,132 @@ class PageTemplate extends React.PureComponent {
     }
 
     const switchModal = () => {
-      this.setState({showModal: !this.state.showModal})
+      this.setState({ showModal: !this.state.showModal })
       if (this.state.showModal) {
-        this.setState({modalContent: renderModalContent});
+        this.setState({ modalContent: renderModalContent })
       }
     }
 
     const getRef = (ref) => {
-      if (ref && this.state.fabRef !== ref ) {
-        this.setState({fabRef: ref});
+      if (ref && this.state.fabRef !== ref) {
+        this.setState({ fabRef: ref })
       }
     }
 
-    const renderForm = ref => {
+    const renderForm = (ref) => {
       if (ref) {
-        typeformEmbed.makeWidget(ref, "https://seb432889.typeform.com/to/O8jf2l", {
-          hideFooter: true,
-          hideHeaders: true,
-          opacity: 0
-        });
+        typeformEmbed.makeWidget(
+          ref,
+          'https://seb432889.typeform.com/to/O8jf2l',
+          {
+            hideFooter: true,
+            hideHeaders: true,
+            opacity: 0
+          }
+        )
       }
     }
 
     const changeContent = (value) => {
-      switch(value) {
+      switch (value) {
         case 'team':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent ref={ref => renderForm(ref)}></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent ref={(ref) => renderForm(ref)} />
+              </ModalContainer>
+            )
+          })
+          break
         case 'freelancer':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent><FilterWizard page={value}/></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent>
+                  <FilterWizard page={value} />
+                </ModalContent>
+              </ModalContainer>
+            )
+          })
+          break
         case 'FTE':
-          this.setState({modalContent: 
-          <ModalContainer>
-            <ModalContent><FilterWizard page={value}/></ModalContent>
-          </ModalContainer>});
-          break;
+          this.setState({
+            modalContent: (
+              <ModalContainer>
+                <ModalContent>
+                  <FilterWizard page={value} />
+                </ModalContent>
+              </ModalContainer>
+            )
+          })
+          break
         default:
-          break;
+          break
       }
     }
 
     return (
       <ModalContext.Provider value={this.state}>
-      <LocationContext.Provider
-        value={{
-          activeContentfulId: contentfulId,
-          activeLocale: locale,
-          location
-        }}
-      >
-        <Layout>
-          <Modal isOpen={this.state.showModal} style={customStyles}>
-            <CloseButton onClick={() => switchModal()}>close</CloseButton>
-            {this.state.modalContent}
-          </Modal>
-          <Helmet
-            /**
-             * Meta information based on:
-             * https://moz.com/blog/meta-data-templates-123
-             * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
-             */
-            title={title}
-            meta={[
-              {
-                property: 'og:title',
-                content: title
-              },
-              {
-                name: 'description',
-                content: description
-              },
-              {
-                property: 'og:description',
-                content: description
-              },
-              // heroImage && {
-              //   property: 'twitter:image:src',
-              //   content: `${seoImage.file.url}?w=1200&h=628&fit=fill`
-              // },
-              // heroImage && {
-              //   property: 'og:image',
-              //   content: `${seoImage.file.url}?w=1200&h=630&fit=fill`
-              // }
-            ].filter(Boolean)}
-          />
-          {location.pathname.indexOf('specialists') < 0 && (
-            <MDXProvider components={components}>
-              <MDXRenderer>{body}</MDXRenderer>
-            </MDXProvider>
-          )}
-          {location.pathname.indexOf('specialists') >= 0 && (
-            <DefaultLayout>
-              <Freelancers activeFilters={activeFilters} csvData={csvData} />
-            </DefaultLayout>
-          )}
-        </Layout>
-      </LocationContext.Provider>
+        <LocationContext.Provider
+          value={{
+            activeContentfulId: contentfulId,
+            activeLocale: locale,
+            location
+          }}
+        >
+          <Layout>
+            <Modal isOpen={this.state.showModal} style={customStyles}>
+              <CloseButton onClick={() => switchModal()}>close</CloseButton>
+              {this.state.modalContent}
+            </Modal>
+            <Helmet
+              /**
+               * Meta information based on:
+               * https://moz.com/blog/meta-data-templates-123
+               * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+               */
+              title={title}
+              meta={[
+                {
+                  property: 'og:title',
+                  content: title
+                },
+                {
+                  name: 'description',
+                  content: description
+                },
+                {
+                  property: 'og:description',
+                  content: description
+                }
+                // heroImage && {
+                //   property: 'twitter:image:src',
+                //   content: `${seoImage.file.url}?w=1200&h=628&fit=fill`
+                // },
+                // heroImage && {
+                //   property: 'og:image',
+                //   content: `${seoImage.file.url}?w=1200&h=630&fit=fill`
+                // }
+              ].filter(Boolean)}
+            />
+            {location.pathname.indexOf('specialists') < 0 && (
+              <MDXProvider components={components}>
+                <MDXRenderer>{body}</MDXRenderer>
+              </MDXProvider>
+            )}
+            {location.pathname.indexOf('specialists') >= 0 && (
+              <DefaultLayout>
+                <Freelancers activeFilters={activeFilters} csvData={csvData} />
+              </DefaultLayout>
+            )}
+          </Layout>
+        </LocationContext.Provider>
       </ModalContext.Provider>
     )
   }
 }
 
-PageTemplate.contextType = NavigationContext;
+PageTemplate.contextType = NavigationContext
 
 export default PageTemplate
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Location } from "@reach/router"
+import { Location } from '@reach/router'
 import Social from './mdx/Social'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
@@ -19,7 +19,8 @@ const LanguageSelectWrapper = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     bottom: ${({ theme }) => theme.spacing.viewport.medium};
-    left: ${({ theme }) => (parseInt(theme.spacing.viewport.medium)*2).toString() + 'px'};
+    left: ${({ theme }) =>
+      (parseInt(theme.spacing.viewport.medium) * 2).toString() + 'px'};
   }
 
   & a:after {
@@ -84,7 +85,7 @@ const ContactWrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.spacings.s1};
 
   & a {
-    padding: 0.2em 0;;
+    padding: 0.2em 0;
   }
 
   & a:hover {
@@ -118,16 +119,16 @@ const BottomGrid = styled.div`
     padding-left: 15%;
     padding-top: 11px;
 
-  @media (max-width: 767px) {
-    padding-left: 0;
-    padding-top: 0;
-    flex: unset;
-    justify-content: center;
-    width: 60%;
-  }
-  @media (max-width: 340px) {
-    width: 54%;
-  }
+    @media (max-width: 767px) {
+      padding-left: 0;
+      padding-top: 0;
+      flex: unset;
+      justify-content: center;
+      width: 60%;
+    }
+    @media (max-width: 340px) {
+      width: 54%;
+    }
   `}
 
   font-size: 0.8em;
@@ -178,63 +179,61 @@ const LinkStyle = styled(Link)`
 `
 
 export default function Footer() {
-
   return (
     <Location>
-      {({location}) => (
-    <FooterWrapper style={{position: typeof location.pathname.split('/').filter(path => path !== '')[1] !== 'undefined'  ? 'relative' : 'fixed'}}>
-      {/* <LanguageSelectWrapper>
+      {({ location }) => (
+        <FooterWrapper
+          style={{
+            position:
+              typeof location.pathname
+                .split('/')
+                .filter((path) => path !== '')[1] !== 'undefined'
+                ? 'relative'
+                : 'fixed'
+          }}
+        >
+          {/* <LanguageSelectWrapper>
         <LanguageSelect />
       </LanguageSelectWrapper> */}
-      <BottomGrid>
-        <BottomGridElement>
-          <LinkStyle contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
-        </BottomGridElement>
-        <BottomGridSeparator>
-          /
-        </BottomGridSeparator>
-        {/* <BottomGridElement>
+          <BottomGrid>
+            <BottomGridElement>
+              <LinkStyle contentfulId="1CSUzUvU84YrJ6JrhKW1Pn" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            {/* <BottomGridElement>
           <Link contentfulId="p7lyUYtWHxeVV6Qyalcyh" />
         </BottomGridElement> */}
-        <BottomGridElement>
-          <LinkStyle contentfulId="48IUmDegZRVtDgbQTmATA6" />
-        </BottomGridElement>
-        <BottomGridSeparator>
-          /
-        </BottomGridSeparator>
-        <BottomGridElement>
-          <LinkStyle contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
-        </BottomGridElement>
-        <BottomGridSeparator>
-          /
-        </BottomGridSeparator>
-        {/* <BottomGridElement>
+            <BottomGridElement>
+              <LinkStyle contentfulId="48IUmDegZRVtDgbQTmATA6" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            <BottomGridElement>
+              <LinkStyle contentfulId="5Fx0TC8IlAt4eCLHeFVpop" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            {/* <BottomGridElement>
           <Link contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
         </BottomGridElement> */}
-        <BottomGridElement>
-          <LinkStyle contentfulId="Ezme8PAhPlfrFV77vHXig" />
-        </BottomGridElement>
-        <BottomGridSeparator>
-          /
-        </BottomGridSeparator>
-        <BottomGridElement>
-          <LinkStyle contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
-        </BottomGridElement>
-        <BottomGridSeparator>/</BottomGridSeparator>
-        <BottomGridElement>
-          <LinkStyle contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
-        </BottomGridElement>
-        <BottomGridSeparator>/</BottomGridSeparator>
-        <BottomGridElement>
-          <LinkStyle contentfulId="5OYuXaPuspYS8Z2GiwMRjd" />
-        </BottomGridElement>
-      </BottomGrid>
-      <FooterGrid>
-        <Column>
-          {/* <Social /> */}
-        </Column>
-      </FooterGrid>
-    </FooterWrapper>
+            <BottomGridElement>
+              <LinkStyle contentfulId="Ezme8PAhPlfrFV77vHXig" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            <BottomGridElement>
+              <LinkStyle contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            <BottomGridElement>
+              <LinkStyle contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
+            </BottomGridElement>
+            <BottomGridSeparator>/</BottomGridSeparator>
+            <BottomGridElement>
+              <LinkStyle contentfulId="5OYuXaPuspYS8Z2GiwMRjd" />
+            </BottomGridElement>
+          </BottomGrid>
+          <FooterGrid>
+            <Column>{/* <Social /> */}</Column>
+          </FooterGrid>
+        </FooterWrapper>
       )}
     </Location>
   )

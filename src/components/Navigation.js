@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components'
 import Configurator from './Configurator'
 import GridWrapper from './GridWrapper'
 import Link from './mdx/Link'
-import { LocationContext } from '../utils/Contexts'
+import { LocationContext , NavigationContext } from '../utils/Contexts'
 import PetitcodeTransparent from '../assets/petitcode-transparent.svg'
-import { NavigationContext } from '../utils/Contexts'
+
 
 const Wrapper = styled.nav`
   display: flex;
@@ -113,40 +113,55 @@ const Navigation = (props) => {
   // }
 
   // render() {
-    const { toggleNavigation } = useContext(NavigationContext)
-    const { navigationActive, content } = props
-    let overlayContent = 
-      <ContentWrapper>
+  const { toggleNavigation } = useContext(NavigationContext)
+  const { navigationActive, content } = props
+  let overlayContent = (
+    <ContentWrapper>
       <Logo />
       {/* <Configurator /> */}
       <List>
         <ListItem>
-          <MenuLink onClick={() => toggleNavigation()} contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
+          <MenuLink
+            onClick={() => toggleNavigation()}
+            contentfulId="5Fx0TC8IlAt4eCLHeFVpop"
+          >
             References
           </MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink onClick={() => toggleNavigation()} contentfulId="Ezme8PAhPlfrFV77vHXig">Jobs</MenuLink>
+          <MenuLink
+            onClick={() => toggleNavigation()}
+            contentfulId="Ezme8PAhPlfrFV77vHXig"
+          >
+            Jobs
+          </MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink onClick={() => toggleNavigation()} contentfulId="2dUcR1WFWhI5Ns3anZksDf">
+          <MenuLink
+            onClick={() => toggleNavigation()}
+            contentfulId="2dUcR1WFWhI5Ns3anZksDf"
+          >
             About Us
           </MenuLink>
         </ListItem>
         <ListItem>
-          <MenuLink onClick={() => toggleNavigation()} contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+          <MenuLink
+            onClick={() => toggleNavigation()}
+            contentfulId="7AqmrDmqEpQyzCG8cmMY7p"
+          >
             Blog
           </MenuLink>
         </ListItem>
       </List>
-      </ContentWrapper>
+    </ContentWrapper>
+  )
 
-    if (content && content === 'FAB') {
-      overlayContent = 
+  if (content && content === 'FAB') {
+    overlayContent = (
       <ConfiguratorWrapper>
-      {/* <Logo /> */}
-      <Configurator />
-      {/* <List>
+        {/* <Logo /> */}
+        <Configurator />
+        {/* <List>
         <ListItem>
           <MenuLink contentfulId="5Fx0TC8IlAt4eCLHeFVpop">
             References
@@ -162,18 +177,16 @@ const Navigation = (props) => {
         </ListItem>
       </List> */}
       </ConfiguratorWrapper>
-    }
-    return (
-      <LocationContext.Consumer>
-        {({ activeLocale }) => (
-          <Wrapper navigationActive={navigationActive}>
-            {overlayContent}
-          </Wrapper>
-        )}
-      </LocationContext.Consumer>
     )
   }
+  return (
+    <LocationContext.Consumer>
+      {({ activeLocale }) => (
+        <Wrapper navigationActive={navigationActive}>{overlayContent}</Wrapper>
+      )}
+    </LocationContext.Consumer>
+  )
+}
 // }
-
 
 export default Navigation
