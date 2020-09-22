@@ -130,7 +130,12 @@ const Navigation = (props) => {
         </ListItem>
         <ListItem>
           <MenuLink onClick={() => toggleNavigation()} contentfulId="2dUcR1WFWhI5Ns3anZksDf">
-            Company
+            About Us
+          </MenuLink>
+        </ListItem>
+        <ListItem>
+          <MenuLink onClick={() => toggleNavigation()} contentfulId="7AqmrDmqEpQyzCG8cmMY7p">
+            Blog
           </MenuLink>
         </ListItem>
       </List>

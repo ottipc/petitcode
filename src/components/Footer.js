@@ -219,7 +219,15 @@ export default function Footer() {
         </BottomGridSeparator>
         <BottomGridElement>
           <LinkStyle contentfulId="2dUcR1WFWhI5Ns3anZksDf" />
-        </BottomGridElement>  
+        </BottomGridElement>
+        <BottomGridSeparator>/</BottomGridSeparator>
+        <BottomGridElement>
+          <LinkStyle contentfulId="7AqmrDmqEpQyzCG8cmMY7p" />
+        </BottomGridElement>
+        <BottomGridSeparator>/</BottomGridSeparator>
+        <BottomGridElement>
+          <LinkStyle contentfulId="5OYuXaPuspYS8Z2GiwMRjd" />
+        </BottomGridElement>
       </BottomGrid>
       <FooterGrid>
         <Column>

@@ -5,7 +5,6 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { GraphQLClient, ClientContext } from 'graphql-hooks'
 import DefaultLayout from '../components/mdx/DefaultLayout'
 import Freelancers from '../components/mdx/Freelancers'
 import Modal from 'react-modal';
@@ -13,10 +12,8 @@ import FilterWizard from '../components/mdx/FilterWizard';
 import * as typeformEmbed from '@typeform/embed'
 import Layout from '../components/Layout'
 import { LocationContext, ModalContext, NavigationContext } from '../utils/Contexts'
-import Hamburger from '../components/Hamburger'
 
 import components from '../components/mdx-components'
-import FloatingActionButton from '../components/FloatingActionButton'
 
 const customStyles = {
   overlay: {
@@ -132,24 +129,8 @@ class PageTemplate extends React.PureComponent {
       handleShowModal: this.handleShowModal, 
       fabRef: null,   
     };
-
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
-  componentDidMount() {
-    window.addEventListener('wheel', this.handleScroll);
-  };
-  
-  componentWillUnmount() {
-    window.removeEventListener('wheel', this.handleScroll);
-  };
-  
-  handleScroll(event) {
-    if (this.state.fabRef && typeof localStorage !== 'undefined' && (localStorage.getItem('showOverlay') == null || localStorage.getItem('showOverlay') === 'true') && (window.location.pathname.split('/')[2] === '' || typeof window.location.pathname.split('/')[2] === 'undefined')) {
-      this.state.fabRef.click();
-      typeof localStorage !== 'undefined' && localStorage.setItem('showOverlay', 'false')
-    }
-  };
 
   render() {
 
@@ -280,7 +261,6 @@ class PageTemplate extends React.PureComponent {
               // }
             ].filter(Boolean)}
           />
-          <FloatingActionButton getRef={getRef} onClick={switchModal}><Hamburger /></FloatingActionButton>
           {location.pathname.indexOf('specialists') < 0 && (
             <MDXProvider components={components}>
               <MDXRenderer>{body}</MDXRenderer>
