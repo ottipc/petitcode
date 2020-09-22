@@ -64,8 +64,8 @@ export default function ClientForm({ children, scrollTo }) {
                 <InputField
                   input={input}
                   meta={meta}
-                  type="text"
-                  label="Contact"
+                  type="email"
+                  label="Email Address"
                   margin="normal"
                 />
               )}
